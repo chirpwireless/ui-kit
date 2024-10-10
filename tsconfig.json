@@ -1,0 +1,60 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+        "lib": [
+            "ES2020",
+            "DOM",
+            "DOM.Iterable"
+        ],
+        "module": "ESNext",
+        "declaration": true,
+        "outDir": "./dist",
+        "emitDeclarationOnly": true,
+        "skipLibCheck": true,
+        "allowImportingTsExtensions": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "noEmit": false,
+        "moduleResolution": "node", // Убедитесь, что разрешение модулей настроено корректно
+        "jsx": "react-jsx",
+        /* Linting */
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitAny": true,
+        "baseUrl": "./",
+        "types": [
+            "node",
+            "vite/client"
+        ],
+        "paths": {
+            "@mui/material/*": [
+                "./node_modules/@mui/material/*"
+            ],
+            "@mui/system/*": [
+                "./node_modules/@mui/system/*"
+            ],
+            "@chirp/ui/*": [
+                "./src/*"
+            ],
+        }
+    },
+    "include": [
+        "src/**/*",
+        "./src",
+        "./vite.config.ts",
+        ".storybook/*",
+        "src/styles/theme.d.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "references": [
+        {
+            "path": "./tsconfig.node.json"
+        }
+    ]
+}

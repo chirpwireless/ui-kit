@@ -1,0 +1,13 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "stylelint.validate": [
+        "css",
+        "scss"
+    ],
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+    "files.autoSave": "onFocusChange",
+    "[xml]": {
+        "editor.defaultFormatter": "redhat.vscode-xml"
+    }
+}
