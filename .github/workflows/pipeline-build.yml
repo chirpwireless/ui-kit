@@ -37,6 +37,7 @@ jobs:
             uses: actions/setup-node@v4
             with:
                 node-version-file: '.nvmrc'
+                cache: 'yarn'
           - name: Run build
             run: yarn build
           - name: Publish package
