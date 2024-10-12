@@ -16,8 +16,7 @@ concurrency:
 jobs:
   build:
       if: ${{github.actor != 'chirpwireless-golang-builder[bot]'}}
-      runs-on:
-          group: builder
+      runs-on: ubuntu-latest
       permissions:
           contents: write
           packages: write
