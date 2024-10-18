@@ -34,7 +34,6 @@ export const TreeSelect: React.FC<TreeSelectProps> = ({
     const selectRef = useRef<HTMLDivElement | null>(null);
 
     const handleNodeSelect = (node: TreeNodeType, isParent?: boolean) => {
-        console.log('node', node, 'isParent', isParent);
         if (!isParent) {
             onChange && onChange(node);
             setOpen(false);
