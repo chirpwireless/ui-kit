@@ -1,4 +1,4 @@
-name: Merge
+name: Publish
 
 on:
   workflow_dispatch:
@@ -40,7 +40,6 @@ jobs:
           - name: Run build
             run: yarn build
           - name: Publish package
-            if: ${{github.event_name != 'pull_request' && github.ref == 'refs/heads/main'}}
             env:
                 NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             run: |
