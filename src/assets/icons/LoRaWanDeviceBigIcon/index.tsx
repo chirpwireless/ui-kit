@@ -76,3 +76,4 @@ export const LoRaWanDeviceBigIcon: FC = () => (
             />
         </defs>
     </svg>
+);
