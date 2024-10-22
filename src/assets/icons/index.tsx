@@ -142,3 +142,4 @@ export * from './WiFiIcon';
 export * from './YoutubeIcon';
 export * from './Zipper';
 export * from './SimDeviceIcon';
+export * from './LoRaWanDeviceBigIcon';
