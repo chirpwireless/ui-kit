@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { AlertsCount } from '@chirp/ui/lib';
-import { EnergyIcon, LoRaDeviceIcon, LoRaDeviceIconBig, SimDeviceBigIcon } from '@chirp/ui/assets/icons';
-import { useTheme } from '@emotion/react';
 
 const meta: Meta<typeof AlertsCount> = {
     title: 'UI/AlertsCount',

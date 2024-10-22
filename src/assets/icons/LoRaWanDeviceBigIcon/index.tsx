@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 export const LoRaWanDeviceBigIcon: FC = () => (
     <svg
         width="84"

@@ -1,5 +1,4 @@
 import { Theme } from '@mui/material';
-import { CurrentTheme } from '@chirp/ui/styles/constants';
 import { FC } from 'react';
 
 interface Props {
