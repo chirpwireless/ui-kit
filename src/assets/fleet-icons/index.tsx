@@ -52,7 +52,6 @@ export { default as PlusIcon } from './plus.svg?react';
 export { default as SystemAttributeIcon } from './system-attribute.svg?react';
 export { default as UserManagmentIcon } from './user-managment.svg?react';
 export { default as EnergyIcon } from './energy.svg?react';
-export { LoRaWanDeviceBigIcon } from '../icons/LoRaWanDeviceBigIcon';
-export { LoRaDeviceIcon } from '../icons/LoRaDeviceIcon';
+export { LoRaWanDeviceBigIcon, LoRaWanDeviceIcon } from '../icons/LoRaWanDeviceIcon';
 export { SimDeviceIcon, SimDeviceBigIcon } from '../icons/SimDeviceIcon';
 export { default as CarIcon } from './car.svg?react';
