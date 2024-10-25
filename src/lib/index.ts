@@ -89,4 +89,4 @@ export { LineChart } from './charts/line-chart';
 
 export { DonutChart } from './charts/donut-chart';
 
-export { BaseWidget, ListWidget } from './widgets';
+export { BaseWidget, ListWidget, DonutWidget } from './widgets';

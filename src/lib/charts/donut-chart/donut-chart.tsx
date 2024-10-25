@@ -11,22 +11,23 @@ import * as S from './style';
 
 echarts.use([TitleComponent, EChartsPieChart, SVGRenderer]);
 
-export type DataType = {
+const DONUT_CHART_DIAMETER = '88px';
+
+export type DonutChartDataType = {
     name: string;
     value: number;
 };
 
-export interface ILineChartProps {
-    data: DataType[];
-    colors?: string[];
+export interface IDonutChartProps {
+    data: DonutChartDataType[];
+    colors: string[];
     centerText?: React.ReactNode;
 }
 
-const DonutChart: FC<ILineChartProps> = memo(({ colors, centerText, data }) => {
+const DonutChart: FC<IDonutChartProps> = memo(({ colors, centerText, data }) => {
     const option: EChartsOption = {
         series: [
             {
-                name: 'Access From',
                 type: 'pie',
                 radius: ['0%', '100%'],
                 avoidLabelOverlap: false,
@@ -46,7 +47,7 @@ const DonutChart: FC<ILineChartProps> = memo(({ colors, centerText, data }) => {
     };
 
     return (
-        <Box position="relative">
+        <Box position="relative" sx={{ width: DONUT_CHART_DIAMETER, height: DONUT_CHART_DIAMETER }}>
             <S.Text
                 variant="subtitle1"
                 sx={{
@@ -67,7 +68,7 @@ const DonutChart: FC<ILineChartProps> = memo(({ colors, centerText, data }) => {
                 lazyUpdate={true}
                 echarts={echarts}
                 option={option}
-                style={{ width: '88px', height: '88px' }}
+                style={{ width: DONUT_CHART_DIAMETER, height: DONUT_CHART_DIAMETER }}
             />
         </Box>
     );
