@@ -88,3 +88,5 @@ export { Switch } from './switch';
 export { LineChart } from './charts/line-chart';
 
 export { BaseWidget, ListWidget } from './widgets';
+
+export { StackedChart } from './charts/stacked-chart';
