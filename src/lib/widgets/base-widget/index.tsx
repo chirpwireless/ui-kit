@@ -36,9 +36,9 @@ export const BaseWidget: FC<PropsWithChildren<IBaseWidgetProps>> = ({
                         <Stack direction="row" justifyContent="space-between" alignItems="flex-start">
                             <Stack gap={2}>
                                 <S.WidgetTypeName color="text.tertiary" variant="button">
-                                    {resolveWidgetTypName}
+                                    {title}
                                 </S.WidgetTypeName>
-                                <Typography variant="h4">{title}</Typography>
+                                <Typography variant="h4">{resolveWidgetTypName}</Typography>
                             </Stack>
                             <Stack direction="row">
                                 <IconButton size="small" variant="gray" onClick={onFavoriteClick}>

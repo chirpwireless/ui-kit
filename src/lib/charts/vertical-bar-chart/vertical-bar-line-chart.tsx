@@ -8,16 +8,16 @@ import { useTheme } from '@emotion/react';
 
 echarts.use([TitleComponent, GridComponent, EChartsBarChart, CanvasRenderer]);
 
-type DataType = string | number;
+export type VerticalBarsChartDataType = string | number;
 
-export interface ILineChartProps {
-    data: DataType[];
+export interface IVerticalBarsChartProps {
+    data: VerticalBarsChartDataType[];
     style?: CSSProperties;
     color?: string; // Цвет баров
     unit?: string; // Единица измерения
 }
 
-const VerticalBarChart: FC<ILineChartProps> = memo(({ data, style, color, unit = '' }) => {
+const VerticalBarChart: FC<IVerticalBarsChartProps> = memo(({ data, style, color, unit = '' }) => {
     const theme = useTheme();
 
     const option = {
