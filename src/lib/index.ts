@@ -90,3 +90,5 @@ export { LineChart } from './charts/line-chart';
 export { DonutChart } from './charts/donut-chart';
 
 export { BaseWidget, ListWidget, DonutWidget } from './widgets';
+
+export { VerticalBarChart } from './charts/vertical-bar-chart';
