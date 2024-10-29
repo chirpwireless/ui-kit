@@ -6,7 +6,7 @@ import { Box } from '@mui/material';
 import { mockStackedData } from './mock-data';
 
 const meta: Meta<typeof StackedChart> = {
-    title: 'UI/StackedChart',
+    title: 'UI/Charts/StackedChart',
     component: StackedChart,
     parameters: {
         layout: 'centered',
@@ -20,6 +20,7 @@ type Story = StoryObj<typeof StackedChart>;
 
 export const Default: Story = {
     render: () => {
+        const preparedData = mockStackedData.map((elem) => elem.fuel_consumption);
         return (
             <Box
                 sx={{
@@ -40,8 +41,9 @@ export const Default: Story = {
                         '#CCFF5F',
                         '#E8C92D',
                     ]}
+                    handleClick={(data) => console.log(data)}
                     style={{ width: '100%', height: '100%' }}
-                    data={mockStackedData}
+                    data={preparedData}
                 />
             </Box>
         );

@@ -3,24 +3,25 @@ import * as echarts from 'echarts/core';
 import { LineChart as EChartsLineChart } from 'echarts/charts';
 import { GridComponent, TitleComponent } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
-import { CSSProperties, FC, memo } from 'react';
+import { CSSProperties, FC, memo, useRef } from 'react';
 import { useTheme } from '@mui/material';
-import { EChartsOption } from 'echarts';
+import { EChartsOption } from 'echarts-for-react';
 
 echarts.use([TitleComponent, GridComponent, EChartsLineChart, CanvasRenderer]);
 
-type DataType = Record<string, number>;
+export type StackedLineChartDataType = Record<string, number>;
 
 export interface IStackedChartProps {
-    data: DataType[];
+    data: StackedLineChartDataType[];
     xAxisData?: string[];
     colors: string[];
     style: CSSProperties;
+    handleClick?: (params: any) => void;
 }
 
 const StackedChart: FC<IStackedChartProps> = memo(({ data = [], xAxisData, style, colors }) => {
     const theme = useTheme();
-
+    const chartRef = useRef<ReactEChartsCore>(null);
     const seriesKeys = Object.keys(data?.[0]);
 
     const seriesData: EChartsOption['series'] = data.map((elem, idx) => ({
@@ -59,7 +60,13 @@ const StackedChart: FC<IStackedChartProps> = memo(({ data = [], xAxisData, style
             },
             data: xAxisData ?? seriesKeys, // используем кастомные значения или значения по умолчанию
         },
-
+        grid: {
+            left: 0,
+            right: 10,
+            top: 20,
+            bottom: 0,
+            containLabel: true, // гарантирует, что метки осей остаются видимыми
+        },
         yAxis: {
             type: 'value',
             nameLocation: 'end',
@@ -76,11 +83,7 @@ const StackedChart: FC<IStackedChartProps> = memo(({ data = [], xAxisData, style
         series: seriesData,
     };
 
-    return (
-        <>
-            <ReactEChartsCore lazyUpdate={true} echarts={echarts} option={option} style={style} />
-        </>
-    );
+    return <ReactEChartsCore ref={chartRef} lazyUpdate notMerge echarts={echarts} option={option} style={style} />;
 });
 
 export default StackedChart;
