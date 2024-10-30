@@ -3,7 +3,7 @@ import { StackedChart } from '@chirp/ui/lib';
 import { Box } from '@mui/system';
 import { Stack } from '@mui/material';
 import { StackedLineChartDataType } from '../../charts/stacked-chart/stacked-line-chart';
-import { ColorListItem } from '../common/color-list-item.tsx/list-item';
+import { ColorListItem } from '../common/color-list-item/list-item';
 
 export interface ICurrentItemContentProps {
     itemName: string;

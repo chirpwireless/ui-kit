@@ -3,7 +3,7 @@ import { BaseWidget, IBaseWidgetProps } from '../base-widget';
 import { DonutChart } from '@chirp/ui/lib';
 import { Box } from '@mui/system';
 import { Stack } from '@mui/material';
-import { ColorListItem } from '../common/color-list-item.tsx/list-item';
+import { ColorListItem } from '../common/color-list-item/list-item';
 import { DonutChartDataType } from '../../charts/donut-chart/donut-chart';
 
 export interface IDonutWidgetProps extends IBaseWidgetProps {
