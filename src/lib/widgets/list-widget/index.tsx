@@ -43,6 +43,7 @@ export const ListWidget = <T,>(props: PropsWithChildren<IListWidgetProps<T>>) =>
                                 color: 'text.primary',
                             }}
                             variant="button"
+                            textAlign="end"
                         >
                             {String(row[valueKey])}
                         </Typography>

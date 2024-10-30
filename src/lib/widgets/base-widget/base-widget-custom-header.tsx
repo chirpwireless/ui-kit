@@ -1,17 +1,17 @@
 import { IconButton, Typography } from '@chirp/ui/lib';
 import { Stack } from '@mui/material';
 
-import * as S from './styles';
+import * as S from '../stacked-line-widget/styles';
 import { FC } from 'react';
 import { LeftArrowBlackIcon } from '@chirp/ui/assets/fleet-icons';
 
-interface ICustomHeaderProps {
+interface IBaseWidgetCustomHeaderProps {
     title: string;
     typeText: string;
     onBackClick: () => void;
 }
 
-export const CustomHeader: FC<ICustomHeaderProps> = ({ title, typeText, onBackClick }) => {
+export const BaseWidgetCustomHeader: FC<IBaseWidgetCustomHeaderProps> = ({ title, typeText, onBackClick }) => {
     return (
         <Stack direction="row" gap={2} alignItems="center">
             <IconButton variant="gray" onClick={onBackClick} size="small">
