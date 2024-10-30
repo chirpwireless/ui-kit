@@ -10,6 +10,7 @@ export interface IBaseWidgetProps {
     title: string;
     isFavorite?: boolean;
     customHeader?: React.ReactNode;
+    customHeader?: React.ReactNode;
     onFavoriteClick: () => void;
     onDeleteClick: () => void;
     wrapperSxProps?: SxProps;
