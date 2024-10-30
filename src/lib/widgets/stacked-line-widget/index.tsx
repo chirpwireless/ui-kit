@@ -4,7 +4,7 @@ import { Checkbox, Select, StackedChart } from '@chirp/ui/lib';
 import { Box } from '@mui/system';
 import { Stack, useTheme } from '@mui/material';
 import { StackedLineChartDataType } from '../../charts/stacked-chart/stacked-line-chart';
-import { ColorListItem } from '../common/color-list-item.tsx/list-item';
+import { ColorListItem } from '../common/color-list-item/list-item';
 import { arrayToMap } from '@chirp/ui/helpers/array-to-map';
 
 import * as S from './styles';
