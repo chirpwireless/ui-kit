@@ -1,4 +1,4 @@
-import { PropsWithChildren, useEffect, useMemo, useState } from 'react';
+import { PropsWithChildren, useEffect, useState } from 'react';
 import { BaseWidget, IBaseWidgetProps } from '../base-widget';
 import { Typography, VerticalBarChart } from '@chirp/ui/lib';
 import { Box } from '@mui/system';
