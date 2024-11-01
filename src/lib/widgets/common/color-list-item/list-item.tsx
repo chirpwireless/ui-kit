@@ -23,7 +23,6 @@ export const ColorListItem: FC<IColorListItemProps> = ({ color, name, value, onC
         <Stack
             direction="row"
             justifyContent="space-between"
-            alignItems="center"
             sx={{
                 cursor: onClick && 'pointer',
             }}
