@@ -59,7 +59,7 @@ export const StackedLineChartWidget = <T,>(props: PropsWithChildren<IStackedLine
     const mappedOptions = useMemo(() => {
         return arrayToMap(selectOptions, 'value');
     }, [selectOptions]);
-    console.log(preparedData);
+
     return (
         <BaseWidget
             title={title}
