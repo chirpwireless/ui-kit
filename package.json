@@ -70,6 +70,7 @@
         "@storybook/test": "7.6.20",
         "@types/d3-shape": "^3.1.0",
         "@types/mapbox__mapbox-gl-draw": "^1.4.8",
+        "@types/mapbox__mapbox-gl-geocoder": "^5.0.0",
         "@types/node": "^20.10.5",
         "@types/react": "^18.2.45",
         "@typescript-eslint/eslint-plugin": "^6.15.0",
@@ -98,5 +99,7 @@
     "sideEffects": [
         "**/*.css"
     ],
-    "dependencies": {}
+    "dependencies": {
+        "@mapbox/mapbox-gl-geocoder": "^5.0.3"
+    }
 }
