@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Map } from '@chirp/ui/lib';
 import { Box } from '@mui/material';
 import { useState } from 'react';
+import { mockTripData } from './mock';
 
 const meta: Meta<typeof Map> = {
     title: 'UI/Map',
@@ -160,6 +161,25 @@ export const ClearData: Story = {
             <Box sx={{ width: '1200px', height: '1200px' }}>
                 <button onClick={() => setDrawState(null)}>Clear data</button>
                 <Map onChange={setDrawState} data={drawState} coordinates={{ lon: 49.108891, lat: 55.796391 }} />
+            </Box>
+        );
+    },
+};
+
+export const TripData: Story = {
+    render: () => {
+        const [shouldAnimate, setShouldAnimate] = useState(false);
+
+        return (
+            <Box sx={{ width: '1200px', height: '1200px' }}>
+                <button onClick={() => setShouldAnimate(true)}>Start Animation</button>
+                <Map
+                    data={mockTripData}
+                    isSingleDraw={false}
+                    shouldAnimate={shouldAnimate}
+                    onAnimationEnd={() => setShouldAnimate(false)}
+                    animationDuration={30000}
+                />
             </Box>
         );
     },
