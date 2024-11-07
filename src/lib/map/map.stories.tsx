@@ -253,3 +253,21 @@ export const ClearData: Story = {
         );
     },
 };
+
+export const EmptyDrawable: Story = {
+    render: () => {
+        const [drawState, setDrawState] = useState<GeoJSON.GeoJSON | null>(null);
+
+        return (
+            <Box sx={{ width: '1200px', height: '1200px' }}>
+                <Map
+                    onChange={setDrawState}
+                    data={drawState}
+                    isSingleDraw
+                    coordinates={{ lon: 49.108891, lat: 55.796391 }}
+                    isDrawable
+                />
+            </Box>
+        );
+    },
+};
