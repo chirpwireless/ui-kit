@@ -2,6 +2,7 @@ import { Box, useTheme } from '@mui/material';
 import mapboxgl, { MapEventType } from 'mapbox-gl';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import bboxTurf from '@turf/bbox';
 import circleTurf from '@turf/circle';
 
@@ -16,6 +17,7 @@ import { AnyObject } from '@chirp/ui/helpers/global';
 import { customDrawStyles } from './constance';
 import { mapMarkerArrowSvgString, mapMarkerSvgString } from './mp-marker-string';
 import { createPopupContent } from './create-popup-content';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 mapboxgl.accessToken = import.meta.env.VITE_UI_MAPBOX_TOKEN || '';
 
@@ -26,6 +28,7 @@ type Props = {
     isSingleDraw?: boolean; // draw only one feature, after draw mode change - delete all features
     data?: GeoJSON.GeoJSON | null; // only one feature, if you want provide feature collection - develop it
     markerVisibility?: { [key: number]: boolean };
+    isLineMarkersNeeded?: boolean;
     onChange?: (value: GeoJSON.GeoJSON) => void;
     accessToken?: string;
     centeringCoordinates?: Coordinates;
@@ -43,6 +46,7 @@ export const Map: React.FC<Props> = ({
     isDrawable = false,
     isSingleDraw = true,
     centeringCoordinates,
+    isLineMarkersNeeded = true,
     getMapStyleId = getUiKitMapStyleId,
     markerVisibility = {},
     shouldAnimate = false,
@@ -55,7 +59,7 @@ export const Map: React.FC<Props> = ({
     const drawRef = useRef<MapboxDraw | null>(null);
     const [_, setActiveDrawMode] = useState('');
     const { isMobile } = useBreakpoints();
-    const markerRefs = useRef<{ [key: number]: mapboxgl.Marker }>({});
+    const markerRefs = useRef<{ [key: number | string]: mapboxgl.Marker }>({});
     const animationMarkerRef = useRef<mapboxgl.Marker | null>(null);
     const [isAnimating, setIsAnimating] = useState(false);
 
@@ -147,6 +151,14 @@ export const Map: React.FC<Props> = ({
             'bottom-right',
         );
         map.current.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'bottom-right');
+        map.current.addControl(
+            new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+                placeholder: 'Search location',
+                collapsed: true,
+            }),
+            'bottom-right',
+        );
 
         const geolocate = new mapboxgl.GeolocateControl({
             positionOptions: {
@@ -216,6 +228,7 @@ export const Map: React.FC<Props> = ({
                         const markerGeometry = marker.geometry;
                         const popupData: Record<string, string> = marker?.properties?.popupData;
                         const device_id = marker.properties?.device_id;
+                        const lineId = marker.properties?.lineId;
 
                         if (markerGeometry.type === 'Point') {
                             if (data.features.length === 1) {
@@ -247,13 +260,89 @@ export const Map: React.FC<Props> = ({
                                     delete markerRefs.current[device_id];
                                 }
                             }
+                        } else if (markerGeometry.type === 'LineString') {
+                            const sourceId = `route-${lineId}`;
+                            if (markerVisibility[lineId] !== undefined) {
+                                if (map.current.getSource(sourceId)) {
+                                    // Visibility линий
+                                    if (markerVisibility[lineId]) {
+                                        map.current.setLayoutProperty(sourceId, 'visibility', 'visible');
+                                    } else {
+                                        map.current.setLayoutProperty(sourceId, 'visibility', 'none');
+                                    }
+
+                                    (map.current.getSource(sourceId) as mapboxgl.GeoJSONSource).setData({
+                                        type: 'FeatureCollection',
+                                        features: [marker],
+                                    });
+                                } else {
+                                    map.current.addSource(sourceId, {
+                                        type: 'geojson',
+                                        data: {
+                                            type: 'FeatureCollection',
+                                            features: [marker],
+                                        },
+                                    });
+
+                                    map.current.addLayer({
+                                        id: sourceId,
+                                        type: 'line',
+                                        source: sourceId,
+                                        layout: {
+                                            'line-join': 'round',
+                                            'line-cap': 'round',
+                                        },
+                                        paint: {
+                                            'line-color': '#FF4D14',
+                                            'line-width': 1,
+                                        },
+                                    });
+                                }
+                            }
+
+                            // Отрисовка маркеров на линии
+                            if (markerGeometry.coordinates && Array.isArray(markerGeometry.coordinates)) {
+                                markerGeometry.coordinates.forEach((coordinate, index) => {
+                                    if (Array.isArray(coordinate) && coordinate.length === 2) {
+                                        const markerElement = document.createElement('div');
+
+                                        if (index === 0) {
+                                            markerElement.classList.add('start-line-marker');
+                                        } else if (index === markerGeometry.coordinates.length - 1) {
+                                            markerElement.classList.add('end-line-marker');
+                                        } else if (isLineMarkersNeeded) {
+                                            markerElement.classList.add('common-line-marker');
+                                        }
+
+                                        if (map.current) {
+                                            const markerKey = `${lineId}-${index}`;
+                                            if (markerVisibility[lineId]) {
+                                                if (!markerRefs.current[markerKey]) {
+                                                    const lineMarker = new mapboxgl.Marker(markerElement)
+                                                        .setLngLat(coordinate as [number, number])
+                                                        .addTo(map.current);
+
+                                                    markerRefs.current[markerKey] = lineMarker;
+                                                }
+                                            } else {
+                                                if (markerRefs.current[markerKey]) {
+                                                    markerRefs.current[markerKey].remove();
+                                                    delete markerRefs.current[markerKey];
+                                                }
+                                            }
+                                        }
+                                    }
+                                });
+                            }
                         }
                     }
                 }
-
-                (map.current?.getSource('mapbox-gl-draw-cold') as mapboxgl.GeoJSONSource)?.setData(data);
             }
         }
+
+        map.current.on('style.load', () => {
+            addDataToMap();
+        });
 
         if (singleMarkerCenter?.length === 2) {
             map.current.flyTo({ center: singleMarkerCenter as [number, number], essential: true });

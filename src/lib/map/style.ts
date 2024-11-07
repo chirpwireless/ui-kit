@@ -1,4 +1,4 @@
-import { alpha, styled } from '@mui/material';
+import { styled } from '@mui/material';
 import { Box } from '@mui/material';
 
 import { CurrentTheme, SIDEBAR_WIDTH } from '@chirp/ui/styles/constants';
@@ -9,6 +9,8 @@ import fullScreenDarkIcon from '@chirp/ui/assets/fleet-icons/full-screen-dark.sv
 import minusDarkIcon from '@chirp/ui/assets/fleet-icons/minus-dark.svg';
 import plusDarkIcon from '@chirp/ui/assets/fleet-icons/plus-dark.svg';
 import locationUserIcon from '@chirp/ui/assets/fleet-icons/location-user.svg';
+import { height, minWidth, palette, width } from '@mui/system';
+import { color } from 'echarts';
 
 interface Props {
     isFullScreenMap?: boolean;
@@ -130,6 +132,40 @@ export const MapContainer = styled(Box, {
 
     '&&& .mapboxgl-ctrl': {
         marginBottom: '2px',
+    },
+
+    '.mapboxgl-ctrl-geocoder--collapsed': {
+        height: '28px',
+        width: '28px',
+        minWidth: 0,
+    },
+
+    '.mapboxgl-ctrl-geocoder.mapboxgl-ctrl': {
+        backgroundColor: theme.palette.background.tertiary,
+
+        '.mapboxgl-ctrl-geocoder--input': {
+            color: theme.palette.text.primary,
+            '&:placeholder': {
+                color: theme.palette.text.tertiary,
+            },
+            '&:focus': {
+                outline: 'none',
+            },
+        },
+
+        svg: {
+            left: '4px',
+            top: '4px',
+            fill: theme.palette.text.primary,
+        },
+    },
+
+    '.mapboxgl-ctrl-geocoder--input': {
+        height: '28px',
+
+        svg: {
+            fill: '#ff0000 !important',
+        },
     },
 
     '.mapboxgl-ctrl-zoom-in': {
@@ -393,6 +429,29 @@ export const MapContainer = styled(Box, {
             color: theme.palette.text.tertiary,
             padding: '8px',
         },
+
+    '.common-line-marker': {
+        width: '6px',
+        height: '6px',
+        backgroundColor: theme.palette.accent.accent,
+        borderRadius: '50%',
+    },
+
+    '.start-line-marker': {
+        width: '6px',
+        height: '6px',
+        backgroundColor: theme.palette.accent.accent,
+        borderRadius: '50%',
+        boxShadow: '0 0 11.08px #55E050, 0 0 28px #55E050',
+    },
+
+    '.end-line-marker': {
+        width: '6px',
+        height: '6px',
+        backgroundColor: theme.palette.accent.accent,
+        borderRadius: '50%',
+        boxShadow: '0 0 11.08px red, 0 0 28px red',
+    },
 }));
 
 export const MapDrawModeTabsWrapper = styled(Box)(() => ({
