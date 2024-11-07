@@ -33,7 +33,7 @@ type Props = {
     accessToken?: string;
     centeringCoordinates?: Coordinates;
     getMapStyleId?: (themeMode: string) => string;
-    shouldAnimate?: boolean; // Запуск анимации по изменению этого значения
+    animateLineId?: number; // id по которому запускается анимация
     animationDuration?: number;
     onAnimationEnd?: () => void;
 };
@@ -49,7 +49,7 @@ export const Map: React.FC<Props> = ({
     isLineMarkersNeeded = true,
     getMapStyleId = getUiKitMapStyleId,
     markerVisibility = {},
-    shouldAnimate = false,
+    animateLineId,
     animationDuration = 3000,
     onAnimationEnd,
 }) => {
@@ -375,16 +375,15 @@ export const Map: React.FC<Props> = ({
 
     // Функция для запуска анимации
     const startAnimation = useCallback(() => {
-        if (!map.current || isAnimating || !data) return;
+        if (!map.current || isAnimating || !data || animateLineId == null) return;
 
-        if (
-            data.type === 'FeatureCollection' &&
-            data.features.some((feature) => feature.geometry.type === 'LineString')
-        ) {
-            const lineFeature = data.features.find((feature) => feature.geometry.type === 'LineString');
+        if (data.type === 'FeatureCollection') {
+            const lineFeature = data.features.find(
+                (feature) => feature.geometry.type === 'LineString' && feature.properties?.lineId === animateLineId,
+            );
 
             if (!lineFeature) {
-                console.warn('No LineString found in data for animation.');
+                console.warn(`No LineString found in data with lineId ${animateLineId} for animation.`);
                 setIsAnimating(false);
                 return;
             }
@@ -395,7 +394,7 @@ export const Map: React.FC<Props> = ({
                 lineFeature.geometry.type === 'LineString'
                     ? (lineFeature.geometry.coordinates as [number, number][])
                     : [];
-            const totalFrames = animationDuration / 16; // Assuming 60 FPS
+            const totalFrames = animationDuration / 16; // 60 FPS
             let frame = 0;
 
             // Создаем кастомный HTML-элемент для маркера со стрелкой
@@ -403,7 +402,7 @@ export const Map: React.FC<Props> = ({
             arrowElement.innerHTML = mapMarkerArrowSvgString;
             arrowElement.style.width = '34px';
             arrowElement.style.height = '34px';
-            arrowElement.style.transformOrigin = 'center'; // Устанавливаем центр как точку вращения
+            arrowElement.style.transformOrigin = 'center'; // устанавливаем центр как точку вращения
 
             // svg внутри элемента
             const svgElement = arrowElement.querySelector('svg');
@@ -418,9 +417,10 @@ export const Map: React.FC<Props> = ({
                 .addTo(map.current);
 
             const animate = () => {
+                // завершение анимации
                 if (frame >= totalFrames) {
                     setIsAnimating(false);
-                    animationMarkerRef.current?.remove(); // Удаляем маркер после завершения анимации
+                    animationMarkerRef.current?.remove();
                     onAnimationEnd && onAnimationEnd();
                     return;
                 }
@@ -454,10 +454,10 @@ export const Map: React.FC<Props> = ({
 
     // Вызов анимации при изменении shouldAnimate
     useEffect(() => {
-        if (shouldAnimate) {
+        if (animateLineId) {
             startAnimation();
         }
-    }, [shouldAnimate, startAnimation]);
+    }, [animateLineId, startAnimation]);
 
     useEffect(() => {
         if (map.current && centeringCoordinates?.lat && centeringCoordinates?.lon) {

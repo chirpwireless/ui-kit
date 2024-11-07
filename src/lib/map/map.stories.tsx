@@ -257,17 +257,18 @@ export const ClearData: Story = {
 
 export const TripData: Story = {
     render: () => {
-        const [shouldAnimate, setShouldAnimate] = useState(false);
+        const [shouldAnimate, setShouldAnimate] = useState<number>();
 
         return (
             <Box sx={{ width: '1200px', height: '1200px' }}>
-                <button onClick={() => setShouldAnimate(true)}>Start Animation</button>
+                <button onClick={() => setShouldAnimate(1176)}>Start Animation</button>
                 <Map
                     data={mockTripData}
-                    isSingleDraw={false}
-                    shouldAnimate={shouldAnimate}
-                    onAnimationEnd={() => setShouldAnimate(false)}
+                    animateLineId={shouldAnimate}
+                    onAnimationEnd={() => setShouldAnimate(undefined)}
                     animationDuration={30000}
+                    markerVisibility={{ 1176: true, 351: true }}
+                    isLineMarkersNeeded={false}
                 />
             </Box>
         );
