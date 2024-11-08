@@ -103,6 +103,7 @@ export const RangePicker: FC<RangePickerProps> = ({
                         label="Input"
                         error={!isStartDateValid}
                         value={startInputDate}
+                        placeholder="Start date"
                         onChange={(e) => handleInputDateChange(e, 'start')}
                     />
                     <div>
@@ -116,6 +117,7 @@ export const RangePicker: FC<RangePickerProps> = ({
                         label="Label"
                         error={!isEndDateValid}
                         value={endInputDate}
+                        placeholder="End date"
                         onChange={(e) => handleInputDateChange(e, 'end')}
                     />
                 </Stack>
