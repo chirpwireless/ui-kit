@@ -2,13 +2,13 @@ import mapboxgl from 'mapbox-gl';
 import moment from 'moment';
 
 const ZOOM_BREAKPOINTS = {
-    HIGH: 14, // Показывать каждый 2-й попап
-    MEDIUM: 11, // Показывать каждый 20-й попап
-    LOW: 8, // Показывать каждый 40-й попап
-    NONE: 7.5, // Не показывать попапы
+    HIGH: 14, // показывать каждый 2-й попап
+    MEDIUM: 11, // показывать каждый 10-й попап
+    LOW: 8, // показывать каждый 40-й попап
+    NONE: 7.5, // ничего не показывать
 };
 
-// Массив для хранения активных попапов
+// массив для хранения активных попапов
 let activePopups: mapboxgl.Popup[] = [];
 
 /**
@@ -45,11 +45,11 @@ export const createPopupsForLineString = (
     } else if (zoom >= ZOOM_BREAKPOINTS.LOW) {
         popupInterval = 40; // Показывать каждый 40-й попап
     }
-    // Удаляем все предыдущие попапы перед созданием новых
+    // очищаем все предыдущие попапы перед созданием новых
     activePopups.forEach((popup) => popup.remove());
     activePopups = [];
 
-    // Создаем новые попапы
+    // создаем новые попапы
     coordinates.forEach((coordinate, index) => {
         if (index % popupInterval === 0) {
             const speed = speeds ? speeds[index] : null;
@@ -65,7 +65,7 @@ export const createPopupsForLineString = (
                 .setHTML(popupContent);
 
             popup.addTo(map);
-            activePopups.push(popup); // Добавляем попап в массив активных попапов
+            activePopups.push(popup); // добавляем попап в массив активных попапов
         }
     });
 };
