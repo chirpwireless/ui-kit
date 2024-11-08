@@ -151,7 +151,7 @@ export const RangePicker: FC<RangePickerProps> = ({
             </Stack>
             <Stack justifyContent="flex-end" direction="row" gap="8px">
                 <Button size="medium" variant="secondary" onClick={handleClearDateRange}>
-                    Clear filter
+                    Clear data range
                 </Button>
                 <Button
                     size="medium"
