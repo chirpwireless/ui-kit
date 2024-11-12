@@ -169,7 +169,6 @@ export const DrawableMap: React.FC<IDrawableMapProps> = (props) => {
         setActiveDrawMode(key);
         drawRef.current.changeMode(key);
     };
-    console.log(drawRef?.current?.getMode?.());
 
     return (
         <BaseMap {...baseProps} mapRef={map} onMapLoad={() => onMapLoad(drawMode)}>
