@@ -74,7 +74,6 @@ export const PhoneField: FC<IMuiPhoneNumberProps> = ({
                 onFocus={() => setIsFocusedState(true)}
                 onBlur={() => setIsFocusedState(false)}
                 value={localValue}
-                onCountryChange={console.log}
                 InputProps={{
                     endAdornment: (
                         <InputAdornment position="end">
