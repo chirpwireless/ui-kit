@@ -6,12 +6,10 @@ import * as S from './styles';
 import { SelectIndicator } from '../select-indicator';
 import { getParsedNumber } from './get-parsed-number';
 import { CountryCode, getCountryCallingCode } from 'libphonenumber-js';
-import { CountryCode, getCountryCallingCode } from 'libphonenumber-js';
 
 type IMuiPhoneNumberProps = Omit<MuiPhoneNumberProps, 'onChange'> & {
     onChange: (value: string) => void;
     value: string;
-    onlyCountries: string[];
     onlyCountries: string[];
 };
 
