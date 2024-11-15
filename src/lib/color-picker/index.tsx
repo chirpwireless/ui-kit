@@ -1,4 +1,4 @@
-import { FC, useMemo, useRef, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import { HexAlphaColorPicker } from 'react-colorful';
 import { Box, Popover, Stack } from '@mui/material';
 import { hex2rgba } from '@chirp/ui/helpers/colors';
