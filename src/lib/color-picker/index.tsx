@@ -72,23 +72,21 @@ export const ColorPicker: FC<IColorPickerProps> = ({
     };
     return (
         <>
-            <Stack direction="row" gap={0.5} ref={controlRef} alignItems="flex-end">
-                <Stack>
-                    <TextField
-                        value={color}
-                        onChange={(e) => handleChange(e.target.value)}
-                        label={label}
-                        inputProps={{
-                            style: {
-                                textTransform: 'uppercase',
-                            },
-                        }}
-                        error={isError}
-                        sx={{ border: 'none' }}
-                    />
-                </Stack>
+            <S.Control direction="row" gap={0.5} ref={controlRef} alignItems="flex-end">
+                <TextField
+                    value={color}
+                    onChange={(e) => handleChange(e.target.value)}
+                    label={label}
+                    inputProps={{
+                        style: {
+                            textTransform: 'uppercase',
+                        },
+                    }}
+                    error={isError}
+                    sx={{ border: 'none' }}
+                />
                 <ClickableColorCell color={color} size="large" onClick={() => setPopoverState(true)} />
-            </Stack>
+            </S.Control>
             <Popover
                 open={popoverState}
                 anchorEl={controlRef.current}

@@ -1,14 +1,11 @@
 import { styled, Box, Stack } from '@mui/material';
 
 export const Control = styled(Stack)(({ theme }) => ({
-    backgroundColor: theme.palette.background.fifthInput,
-    borderRadius: '8px',
-    height: '40px',
-    width: '100%',
-    padding: '12px 16px',
-    ...theme.typography.button,
-    color: theme.palette.text.tertiary,
-    textTransform: 'uppercase',
+    '.MuiInputBase-root input': {
+        ...theme.typography.button,
+        color: theme.palette.text.tertiary,
+        textTransform: 'uppercase',
+    },
 }));
 
 export const Wrapper = styled(Box)(({ theme }) => ({
