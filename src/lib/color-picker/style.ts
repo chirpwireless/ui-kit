@@ -72,10 +72,10 @@ export const StyledTextField = styled(Stack)(({ theme }) => ({
         textTransform: 'uppercase',
         outline: 'none',
         '&::-webkit-outer-spin-button, &::-webkit-inner-spin-button': {
-            '-webkitAppearance': 'none',
+            '-WebkitAppearance': 'none',
             margin: 0,
         },
 
-        '-mozAppearance': 'textfield',
+        '-MozAppearance': 'textfield',
     },
 }));
