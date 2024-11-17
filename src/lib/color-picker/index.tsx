@@ -1,22 +1,33 @@
-import { FC, useRef, useState } from 'react';
+import { FC, ReactNode, useEffect, useRef, useState } from 'react';
 import { HexAlphaColorPicker } from 'react-colorful';
 import { Box, Popover, Stack } from '@mui/material';
 import { hex2rgba } from '@chirp/ui/helpers/colors';
 import { CloseIcon } from '@chirp/ui/assets/icons';
 
 import { ClickableColorCell } from './clickable-color-cell/clickable-color-cell';
-import { INITIAL_PREVIOUS_COLORS } from './constants';
+import { HEX_REGEXP, INITIAL_PREVIOUS_COLORS } from './constants';
 import { IconButton } from '../icon-button';
 import { Typography } from '../typogrpahy';
 import * as S from './style';
+import { TextField } from '../text-field';
 
 interface IColorPickerProps {
     color: string;
     onChange: (value: string) => void;
+    label?: ReactNode;
     previousColors?: string[];
+    isError?: boolean;
+    setError?: (value: boolean) => void;
 }
 
-export const ColorPicker: FC<IColorPickerProps> = ({ previousColors = INITIAL_PREVIOUS_COLORS, color, onChange }) => {
+export const ColorPicker: FC<IColorPickerProps> = ({
+    previousColors = INITIAL_PREVIOUS_COLORS,
+    color,
+    onChange,
+    label,
+    setError,
+    isError,
+}) => {
     const controlRef = useRef(null);
     const [popoverState, setPopoverState] = useState(false);
 
@@ -43,6 +54,15 @@ export const ColorPicker: FC<IColorPickerProps> = ({ previousColors = INITIAL_PR
         }
     };
 
+    useEffect(() => {
+        if (!setError) return;
+
+        const isValid = HEX_REGEXP.test(color);
+
+        if (!isValid) setError(true);
+        else setError(false);
+    }, [color]);
+
     const handleChange = (value: string) => {
         onChange(value);
 
@@ -50,13 +70,23 @@ export const ColorPicker: FC<IColorPickerProps> = ({ previousColors = INITIAL_PR
 
         setAlphaState(Math.round(rgbaColor[3] * 100));
     };
-
     return (
         <>
-            <Stack direction="row" gap={0.5} ref={controlRef}>
-                <S.Control>
-                    {color.slice(0, 7)} {alphaState === 100 || !String(alphaState)?.length ? null : `${alphaState}%`}
-                </S.Control>
+            <Stack direction="row" gap={0.5} ref={controlRef} alignItems="flex-end">
+                <Stack>
+                    <TextField
+                        value={color}
+                        onChange={(e) => handleChange(e.target.value)}
+                        label={label}
+                        inputProps={{
+                            style: {
+                                textTransform: 'uppercase',
+                            },
+                        }}
+                        error={isError}
+                        sx={{ border: 'none' }}
+                    />
+                </Stack>
                 <ClickableColorCell color={color} size="large" onClick={() => setPopoverState(true)} />
             </Stack>
             <Popover

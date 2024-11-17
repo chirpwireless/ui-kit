@@ -9,3 +9,5 @@ export const INITIAL_PREVIOUS_COLORS = [
     '#FFFFFF',
     '#000000',
 ];
+
+export const HEX_REGEXP = new RegExp(/^#[0-9A-Fa-f]{6}[0-9a-fA-F]{0,2}$/i);
