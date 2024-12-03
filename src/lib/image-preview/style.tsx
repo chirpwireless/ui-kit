@@ -1,9 +1,11 @@
-import { Box, Stack, styled } from '@mui/material';
+import { Stack, styled } from '@mui/material';
 import { Button } from '../button';
 
-export const ImageWrapper = styled(Box)(({ theme }) => ({
+export const ImageWrapper = styled(Stack)(({ theme }) => ({
     position: 'relative',
     backgroundColor: theme.palette.background.background9,
+    alignItems: 'center',
+    overflow: 'hidden',
 }));
 
 export const Image = styled('img')({
@@ -36,7 +38,7 @@ export const DeleteBtn = styled(Button)(({ theme }) => ({
 
 export const EmptyFallbackWrapper = styled(Stack)(({ theme }) => ({
     height: '100%',
-    width: '100%',
+    width: '150px',
     alignItems: 'center',
     justifyContent: 'center',
     padding: '5px',

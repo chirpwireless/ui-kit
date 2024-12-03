@@ -6,14 +6,15 @@ import { PhotoUploadIcon } from '@chirp/ui/assets/fleet-icons';
 import Stack from '@mui/material/Stack';
 
 export interface IImagePreviewProps {
-    onLoad?: (file: File) => void;
     previewUrl?: string;
-    borderRadius: number | string;
+    borderRadius?: number | string;
     title?: string;
     subTitle?: string;
-    onRemove?: () => void;
     width?: string;
-    height?: number;
+    height?: string;
+
+    onRemove?: () => void;
+    onLoad?: (file: File) => void;
 }
 
 const VALID_FILE_FORMATS = ['image/png', 'image/jpeg'];
@@ -72,9 +73,9 @@ export const ImagePreview: FC<IImagePreviewProps> = ({
                 onLoad && (
                     <S.EmptyFallbackWrapper>
                         <S.UploadInput type="file" onChange={handleUploadImage} accept="image/png, image/jpeg" />
-                        <Stack gap={2} alignItems="center">
+                        <Stack gap="8px" alignItems="center">
                             <PhotoUploadIcon />
-                            <Stack gap={1} alignItems="center">
+                            <Stack gap="4px" alignItems="center">
                                 <Typography
                                     sx={{
                                         color: 'text.text1',
