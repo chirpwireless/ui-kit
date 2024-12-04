@@ -1,9 +1,20 @@
-import { CircularProgress, Stack, CircularProgressProps } from '@mui/material';
+import * as S from './style';
+import { TLoaderSize } from './types';
 
-export const Loader = (props: CircularProgressProps) => {
+interface ILoader {
+    text?: string;
+    size?: TLoaderSize;
+}
+
+export const Loader: React.FC<ILoader> = ({ text, size = 'small' }) => {
     return (
-        <Stack width="100%" height="100%" flexGrow={1} justifyContent="center" alignItems="center">
-            <CircularProgress size={40} {...props} />
-        </Stack>
+        <S.LoaderContainer text={text}>
+            <S.LoaderSpan size={size}>
+                {[...Array(8)].map((_, index) => (
+                    <S.LoaderElement key={index} index={index} size={size} />
+                ))}
+            </S.LoaderSpan>
+            {text && <S.LoaderText>{text}</S.LoaderText>}
+        </S.LoaderContainer>
     );
 };
