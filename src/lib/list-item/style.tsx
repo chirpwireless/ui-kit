@@ -11,12 +11,12 @@ export const ListItem = styled(MUIListItem)(({ theme }) => ({
     width: '100%',
     height: '56px',
     borderBottom: '1px solid',
-    borderColor: theme.palette.border.primary,
+    borderColor: theme.palette.border.border3,
     position: 'relative',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
     '&:hover': {
-        backgroundColor: theme.palette.background.primary,
+        backgroundColor: theme.palette.background.background7,
         borderRadius: '8px',
         '.MuiTypography-body1': {
             color: theme.palette.base.color6,
@@ -35,7 +35,7 @@ export const AccordionListItem = styled(MUIListItem)(({ theme }) => ({
     width: '100%',
     borderBottom: '1px solid',
     padding: 0,
-    borderColor: theme.palette.border.primary,
+    borderColor: theme.palette.border.border3,
     position: 'relative',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
@@ -46,7 +46,7 @@ export const AccordionListItem = styled(MUIListItem)(({ theme }) => ({
         '.accordion-summary-wrapper, .MuiCollapse-root': {
             borderRadius: '8px',
             transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
-            backgroundColor: theme.palette.background.primary,
+            backgroundColor: theme.palette.background.background7,
         },
     },
 
