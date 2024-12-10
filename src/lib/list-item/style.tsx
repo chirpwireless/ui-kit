@@ -39,6 +39,12 @@ export const AccordionListItem = styled(MUIListItem)(({ theme }) => ({
     position: 'relative',
     alignItems: 'flex-start',
     justifyContent: 'space-between',
+
+    '.MuiAccordionActions-root': {
+        svg: {
+            color: theme.palette.text.text8,
+        },
+    },
     '&:hover': {
         '.MuiTypography-body1.title': {
             color: theme.palette.base.color6,
