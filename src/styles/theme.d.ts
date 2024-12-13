@@ -253,15 +253,11 @@ export interface CustomPalette extends ReferencePalette {
     //     tertiaryInput: string;
     // };
     // text: CustomTypeText; // TODO: remove after move on new design system
-    alerts: {
-        green: string;
-        yellow: string;
-        red: string;
-
-        success: string;
-        warning: string;
-        alert: string;
-    };
+    // alerts: {
+    //     green: string;
+    //     yellow: string;
+    //     red: string;
+    // };
 
     // new colors
     // пока оставляем старые типы для совместимости

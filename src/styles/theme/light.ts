@@ -15,6 +15,13 @@ export const referenceLightThemePalette: Omit<PaletteOptions, 'base' | 'darkenin
     primaryColors: {
         accent: 'rgba(255, 77, 20, 1)', // #ff4d14
         accentHover: 'rgba(231, 68, 15, 1)', // #e7440f
+
+        // TODO: remove
+        primary: '#FFFFFF',
+        secondary: '#EBEBEB',
+        tertiary: '#BABABA',
+        quaternary: '#F4F4F4',
+        fifth: '#444444',
     },
     text: {
         primary: 'rgba(16, 16, 16, 1)', // #141414
@@ -150,7 +157,7 @@ export const lightTheme: ThemeOptions = {
             secondary: '#EBEBEB',
             tertiary: '#BABABA',
             quaternary: referenceLightThemePalette.darkShades.primary, //'#F4F4F4',
-            fifth: '#',
+            fifth: '#444444',
         },
         accent: {
             accent: referenceLightThemePalette.primaryColors.accent, //'#FF4D14',
@@ -196,12 +203,12 @@ export const lightTheme: ThemeOptions = {
             textInput80: '#5C5C5CCC',
             textInput802: '#5C5C5CCC',
         },
-        alerts: {
-            ...referenceLightThemePalette.alerts,
-            green: referenceLightThemePalette.alerts.success, // '#55E050',
-            yellow: referenceLightThemePalette.alerts.warning, // '#FFF614',
-            red: referenceLightThemePalette.alerts.alert, //'#FF4949',
-        },
+        // alerts: {
+        //     ...referenceLightThemePalette.alerts,
+        //     green: referenceLightThemePalette.alerts.success, // '#55E050',
+        //     yellow: referenceLightThemePalette.alerts.warning, // '#FFF614',
+        //     red: referenceLightThemePalette.alerts.alert, //'#FF4949',
+        // },
 
         // new colors:
         darkening: {
