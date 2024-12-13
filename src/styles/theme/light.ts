@@ -103,12 +103,6 @@ export const lightTheme: ThemeOptions = {
         ...referenceLightThemePalette,
         mode: CurrentTheme.Light,
         // REFERENCE COLORS
-        info: {
-            main: 'rgba(244, 244, 244, 1)', // #efefef
-            light: 'rgba(255, 255, 255, 1)', // #ffffff
-            dark: 'rgba(255, 255, 255, 1)', // #ffffff
-        },
-
         // FLEET COLORS
         // primary: {
         //     main: '#FF4D14',
