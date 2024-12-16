@@ -32,8 +32,8 @@ export const DeviceWidget: Story = {
             headerAction={() => alert('headerAction')}
             headerActionContent={<PlusIcon />}
             footer={
-                <Stack alignItems="center" direction="row" color="alerts.yellow" gap="8px">
-                    <Stack alignItems="center" direction="row" color="alerts.yellow" gap="8px">
+                <Stack alignItems="center" direction="row" color="alerts.warning" gap="8px">
+                    <Stack alignItems="center" direction="row" color="alerts.warning" gap="8px">
                         <WarningIcon />
                         <Typography variant="h3">12</Typography>
                     </Stack>
