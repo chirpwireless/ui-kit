@@ -1,6 +1,5 @@
 import { Autocomplete as MuiAutocomplete, styled } from '@mui/material';
 
-// TODO: fix height select
 export const Autocomplete = styled(MuiAutocomplete)(({ theme }) => ({
     borderRadius: '8px',
     border: 'none',
