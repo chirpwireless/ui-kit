@@ -110,3 +110,5 @@ export { ClickableColorCell } from './color-picker/clickable-color-cell/clickabl
 export { TripMap } from './map/trip-map';
 
 export { BaseCard, ColumnCard, CardWithImage } from './cards';
+
+export { Widget as ChirpWidget } from './chirp-widgets';
