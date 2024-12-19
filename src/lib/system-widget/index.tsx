@@ -1,10 +1,11 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import { FC } from 'react';
 
 import * as S from './style';
 import { Tooltip } from '../tooltip';
 import { getTimeString } from '../chirp-widgets/helpers';
 import { SwitchViewButton } from '../chirp-widgets/switch-view-button';
+import { Typography } from '../typogrpahy';
 
 type ValueType = number | string | boolean | null;
 
@@ -22,14 +23,7 @@ const Value: FC<{ value: ValueType; units: string | null }> = ({ value, units })
 
     return (
         <Tooltip title={stringValue} placement="top">
-            <Typography
-                fontSize="14px"
-                lineHeight="20px"
-                color="lightShades.primary"
-                noWrap
-                maxWidth="100%"
-                sx={{ '& + &': { mt: '4px' } }}
-            >
+            <Typography variant="title16" color="text.text2" noWrap maxWidth="100%" sx={{ '& + &': { mt: '4px' } }}>
                 {stringValue} {units}
             </Typography>
         </Tooltip>
@@ -42,16 +36,15 @@ export const SystemWidget: FC<Props> = ({ attributeName, title, value, units, da
     return (
         <S.Card>
             <Stack direction="row" alignItems="center" justifyContent="space-between" mb="8px" spacing="16px">
-                <Typography fontSize="12px" lineHeight="16px" color="lightShades.ternary" noWrap title={title}>
+                <Typography variant="text12" color="text.text4" noWrap title={title}>
                     {title}
                 </Typography>
-                <Typography fontSize="12px" lineHeight="16px" color="text.secondary" flexShrink={0}>
+                <Typography variant="text12" color="text.text8" flexShrink={0}>
                     Last update:
                     <Typography
                         component="span"
-                        fontSize="12px"
-                        lineHeight="16px"
-                        color="lightShades.ternary"
+                        variant="text12"
+                        color="text.text4"
                         sx={{ verticalAlign: 'bottom', ml: '4px' }}
                     >
                         {getTimeString(date)}

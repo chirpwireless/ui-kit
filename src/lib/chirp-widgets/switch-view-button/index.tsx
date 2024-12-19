@@ -33,7 +33,7 @@ export const SwitchViewButton: React.FC<Props> = ({
             disabled={disabled}
             onClick={handleClick}
         >
-            <PinIcon />
+            <PinIcon outlined={!isAccent} />
         </IconButton>
     );
 };

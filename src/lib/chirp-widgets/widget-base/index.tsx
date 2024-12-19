@@ -124,7 +124,7 @@ export const WidgetBase: React.FC<WidgetBaseProps> = (props) => {
         setIsBoundariesLoading(true);
         console.log(from, to);
 
-        // TODO: здесь нужно во внешнуюю функцию передавать рендж и сохранять его
+        // TODO(Zavur): здесь нужно во внешнуюю функцию передавать рендж и сохранять его
         // await updateWidgetSettings(id, attributeName, { valueFrom: from ?? undefined, valueTo: to ?? undefined });
 
         setIsBoundariesLoading(false);
