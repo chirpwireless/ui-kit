@@ -1,13 +1,12 @@
 import { Serie } from '@nivo/line';
 import moment from 'moment';
 
-import { Metrics, Timequant, AttributeConfig, CalculatedValues, WidgetTypes } from '../types';
 import { AttributeConverter } from './unitConverter';
-import { isTodayDate } from '@chirp/ui/helpers/date';
+import { AttributeConfig, CalculatedValues, Metrics, Timequant, WidgetTypes } from '../types';
 
-export * from './emptyStateValue';
-
-export * from './unitConverter';
+export const toValidTimeString = (property: string) => {
+    return property.replace(/\s(\d{2})/, 'T$1:00Z');
+};
 
 export const getChartData = ({
     attribute,
@@ -25,33 +24,21 @@ export const getChartData = ({
     const chartData = [];
     const filteredData = [];
 
-    const getValue = (attributeValue: string | number) => {
+    for (const property in metrics) {
+        const attributeValue = config.display_value ? metrics[property][config.display_value] : metrics[property].avg;
         let graphValue = 0;
 
         if (config.type !== 'text' && typeof attributeValue === 'number') {
             graphValue = shouldBeConverted ? unitsConverter.convert(attributeValue) : attributeValue;
         }
 
-        return Number(graphValue.toFixed(2));
-    };
-
-    for (const property in metrics) {
         const dateTime = moment.unix(Number(property)).toDate();
-
-        const metric = metrics[property];
-        const graphValue = getValue(metric[config.display_value ?? 'avg']);
-
-        const item = {
-            x: dateTime,
-            y: graphValue,
-            min: getValue(metric.min),
-            max: getValue(metric.max),
-        };
+        const item = { x: dateTime, y: Number(graphValue.toFixed(1)) };
         chartData.push(item);
 
         // skip empty values on the graph for cases when the timequant is less
         // than the device sends values, so that the graph is smoother
-        if (graphValue || metric.lastDate) {
+        if (graphValue || metrics[property].lastDate) {
             filteredData.push(item);
         }
     }
@@ -100,7 +87,7 @@ export const getTimequant = (after: number, before: number): Timequant => {
 
 export const getTimeString = (timestamp: number) => {
     const timeInMilliseconds = timestamp * 1000;
-    const isToday = isTodayDate(new Date(timeInMilliseconds));
+    const isToday = moment().isSame(timeInMilliseconds, 'day');
 
     const dateString = isToday
         ? moment(timeInMilliseconds).local().format('HH:mm')
@@ -131,7 +118,7 @@ export const getValueString = ({
     }
 
     if (typeof value === 'number' && config.type === WidgetTypes.Graphic && unitsConverter) {
-        return shouldBeConverted ? unitsConverter.convert(value) : value;
+        return (shouldBeConverted ? unitsConverter.convert(value) : value).toFixed(1);
     }
 
     return value;

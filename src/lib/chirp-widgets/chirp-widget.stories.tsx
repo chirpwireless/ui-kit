@@ -30,7 +30,7 @@ export const String: Story = {
         };
 
         return (
-            <Box width="300px">
+            <Box width="414px">
                 <ChirpWidget
                     deviceId="28584348-d0b1-4d74-8182-7c2343ba30be"
                     lastSeen={1734513384}
@@ -45,7 +45,7 @@ export const String: Story = {
                         type: configTypeState,
                         sensor_type: 'none',
                         display_value: 'avg',
-                        color: '#fff',
+                        color: 'text.text1',
                         title: '',
                         units: '',
                         icon: '',
@@ -72,7 +72,7 @@ export const Boolean: Story = {
         };
 
         return (
-            <Box width="300px">
+            <Box width="414px">
                 <ChirpWidget
                     deviceId="28584348-d0b1-4d74-8182-7c2343ba30be"
                     lastSeen={1734513384}
@@ -87,8 +87,8 @@ export const Boolean: Story = {
                         type: configTypeState,
                         sensor_type: 'none',
                         display_value: 'avg',
-                        alertColor: 'red',
-                        color: '#fff',
+                        alertColor: '',
+                        color: 'text.text1',
                         title: '',
                         units: '',
                         icon: '',
@@ -115,7 +115,7 @@ export const Graphic: Story = {
         };
 
         return (
-            <Box width="300px">
+            <Box width="414px">
                 <ChirpWidget
                     deviceId="28584348-d0b1-4d74-8182-7c2343ba30be"
                     attributeName="rssi"
@@ -260,7 +260,7 @@ export const Graphic: Story = {
                     period="Last 24h"
                     config={{
                         title: 'RSSI',
-                        units: 'dBm',
+                        units: '°C',
                         type: configTypeState,
                         color: '#55E050',
                         // alertColor: 'none',
