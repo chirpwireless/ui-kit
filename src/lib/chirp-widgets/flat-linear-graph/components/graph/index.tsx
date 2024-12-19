@@ -3,7 +3,7 @@ import { LineSvgProps, ResponsiveLine, Serie } from '@nivo/line';
 import { Scale } from '@nivo/scales';
 import { useMemo } from 'react';
 
-import { AttributeConfig, CalculatedValues, Timequant, Timequants } from '../../../types';
+import { AttributeConfig, CalculatedValues, Timequant, Timequants } from '@chirp/ui/lib/chirp-widgets/types';
 import { AreaLayer } from '../custom-area';
 import { CustomLine } from '../custom-line';
 import { Skeleton } from '../skeleton/Skeleton';

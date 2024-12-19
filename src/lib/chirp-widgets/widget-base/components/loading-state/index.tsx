@@ -3,7 +3,7 @@ import { Box, Stack, useTheme } from '@mui/material';
 import * as S from '../../style';
 import { TextSkeleton } from '@chirp/ui/lib/text-skeleton';
 import { Skeleton } from '@chirp/ui/lib/skeleton';
-import { FlatLinearGraph } from '../../../flat-linear-graph';
+import { FlatLinearGraph } from '@chirp/ui/lib/chirp-widgets/flat-linear-graph';
 
 type LoadingStateProps = {
     withSensor?: boolean;

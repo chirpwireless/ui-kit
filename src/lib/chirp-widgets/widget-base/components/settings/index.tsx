@@ -1,8 +1,8 @@
 import { ClickAwayListener, Stack } from '@mui/material';
 import { FC, useEffect, useState } from 'react';
 
-import { converter } from '../../../graphic-widget/converter';
-import { AttributeConfig, ValueBoundaries } from '../../../types';
+import { converter } from '@chirp/ui/lib/chirp-widgets/graphic-widget/converter';
+import { AttributeConfig, ValueBoundaries } from '@chirp/ui/lib/chirp-widgets/types';
 import * as S from '../../style';
 import { ValueBoundariesForm } from './value-boundaries-form';
 import { ManageIcon } from '@chirp/ui/assets/icons';

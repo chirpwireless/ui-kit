@@ -2,7 +2,7 @@ import { useTheme } from '@nivo/core';
 import { SliceTooltipProps } from '@nivo/line';
 import { TableTooltip } from '@nivo/tooltip';
 import moment from 'moment';
-import { AttributeConfig, WidgetTypes } from '../../../types';
+import { AttributeConfig, WidgetTypes } from '@chirp/ui/lib/chirp-widgets/types';
 import { Typography } from '@chirp/ui/lib/typogrpahy';
 
 export const Tooltip = ({
