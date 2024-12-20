@@ -155,6 +155,7 @@ type BaseColorNameType =
     | 'color13'
     | 'color14'
     | 'color18'
+    | 'color23'
     | 'color20';
 
 export interface ReferencePalette {
@@ -167,7 +168,7 @@ export interface ReferencePalette {
         secondary: string;
         ternary: string;
         quaternary: string;
-        fifth?: string;
+        fifth: string;
     };
     lightShades: {
         primary: string;
@@ -250,7 +251,6 @@ export interface CustomPalette extends ReferencePalette {
     // border: {
     //     primary: string;
     //     secondary: string;
-    //     tertiaryInput: string;
     // };
     // text: CustomTypeText; // TODO: remove after move on new design system
     // alerts: {
@@ -266,7 +266,6 @@ export interface CustomPalette extends ReferencePalette {
     border: {
         primary: string;
         secondary: string;
-        tertiaryInput: string;
     } & Record<BorderColorNameType, string>;
     darkening: Record<DarkeningColorNameType, string>;
     base: Record<BaseColorNameType, string>;

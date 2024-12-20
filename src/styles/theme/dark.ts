@@ -1,5 +1,6 @@
 import { CurrentTheme } from '@chirp/ui/styles/constants';
-import { PaletteOptions, ThemeOptions } from '@mui/material/styles';
+import { alpha, PaletteOptions, ThemeOptions } from '@mui/material/styles';
+import { referenceLightThemePalette } from './light';
 
 export const referenceDarkThemePalette: Omit<PaletteOptions, 'base' | 'darkening' | 'border' | 'accent' | 'shadow'> = {
     primary: {
@@ -51,7 +52,7 @@ export const referenceDarkThemePalette: Omit<PaletteOptions, 'base' | 'darkening
         alert: 'rgba(255, 73, 73, 1)', // #ff4949
     },
     additionalColors: {
-        buttonSecondary: 'rgba(255, 77, 20, 0.2)', // #ff4d1433
+        buttonSecondary: 'rgba(255, 77, 20, 0.1)', // #ff4d141a
         buttonSecondaryHv: 'rgba(255, 77, 20, 0.3)', // #ff4d144d
         blue: 'rgba(95, 117, 255, 1)', // #5f75ff
         lightYellow: 'rgba(253, 255, 132, 1)', // #fdff84
@@ -88,6 +89,7 @@ export const referenceDarkThemePalette: Omit<PaletteOptions, 'base' | 'darkening
         900: '#292A2D',
     },
     background: {
+        primary: 'rgba(16, 16, 16, 1)', // #101010
         default: 'rgba(35, 35, 35, 1)', // #232323
         paper: 'rgba(23, 23, 23, 0.8)', // #171717
     },
@@ -121,7 +123,7 @@ export const darkTheme: ThemeOptions = {
             secondary: referenceDarkThemePalette.darkShades.ternary, // '#232323',
             tertiary: referenceDarkThemePalette.darkShades.secondary, //'#171717',
             fifth: referenceDarkThemePalette.darkShades.fifth, // '#444444',
-            fifthInput: '#353535',
+            fifthInput: referenceDarkThemePalette.darkShades.quaternary, // '#353535',
 
             // new colors
             background1: referenceDarkThemePalette.darkShades.primary, // '#101010',
@@ -137,9 +139,9 @@ export const darkTheme: ThemeOptions = {
             background11: referenceDarkThemePalette.darkShades.fifth, // '#444444',
             background12: referenceDarkThemePalette.darkShades.fifth, // '#444444',
             background13: referenceDarkThemePalette.darkShades.secondary, //'#171717',
-            background14: '#00000080',
-            background15: '#171717CC',
-            background16: '#171717CC',
+            background14: alpha(referenceLightThemePalette.darkShades.primary, 0.5), //'#00000080',
+            background15: alpha(referenceLightThemePalette.darkShades.secondary, 0.8), //'#171717CC',
+            background16: alpha(referenceLightThemePalette.darkShades.secondary, 0.8), //'#171717CC',
         },
 
         accent: {
@@ -148,19 +150,18 @@ export const darkTheme: ThemeOptions = {
             accentHover: referenceDarkThemePalette.primaryColors.accentHover, //'#E7440F',
         },
         border: {
-            primary: '#BABABA1A',
-            secondary: '#BABABA4D',
-            tertiaryInput: '#10101026',
+            primary: referenceDarkThemePalette.borders.primary, //'#BABABA1A',
+            secondary: referenceDarkThemePalette.borders.secondary, //'#BABABA4D',
 
             // new colors
-            border1: '#BABABA4D',
-            border2: '#2323241A',
-            border3: '#BABABA1A',
-            border4: '#00000033',
-            border5: '#BABABA',
-            input: '#5C5C5C24',
-            input2: '#5C5C5C3D',
-            input3: '#BABABA',
+            border1: referenceDarkThemePalette.borders.secondary, //'#BABABA4D',
+            border2: alpha(referenceDarkThemePalette.darkShades.ternary, 0.1), // '#2323241A',
+            border3: referenceDarkThemePalette.borders.primary, //'#BABABA1A',
+            border4: alpha(referenceLightThemePalette.darkShades.primary, 0.2), //'#00000033',
+            border5: referenceDarkThemePalette.borders.secondary, //'#BABABA4D',
+            input: alpha(referenceDarkThemePalette.darkShades.secondary, 0.14), //'#5C5C5C24',
+            input2: alpha(referenceDarkThemePalette.darkShades.secondary, 0.24), //'#5C5C5C3D',
+            input3: referenceDarkThemePalette.borders.secondary, //'#BABABA4D',
             input4Error: referenceDarkThemePalette.alerts.alert, //'#FF4949',
         },
         // alerts: {
@@ -200,12 +201,12 @@ export const darkTheme: ThemeOptions = {
             color1: referenceDarkThemePalette.lightShades.primary, //'#FFFFFF',
             color2: referenceDarkThemePalette.darkShades.primary, // '#101010',
             color3: referenceDarkThemePalette.darkShades.quaternary, // '#353535',
-            color4: '#B7B7B7',
+            color4: alpha(referenceDarkThemePalette.lightShades.primary, 0.7), // '#B7B7B7',
             color5: referenceDarkThemePalette.lightShades.primary, //'#FFFFFF',
             color6: referenceDarkThemePalette.primaryColors.accent, // '#FF4D14',
             hover: referenceDarkThemePalette.primaryColors.accentHover, // '#E7440F',
-            color61: '#FF4D141A',
-            color62: '#FF4D140D',
+            color61: referenceDarkThemePalette.additionalColors.buttonSecondary, //'#FF4D141A',
+            color62: '#FF4D1414',
             color63: referenceDarkThemePalette.additionalColors.buttonSecondary, // '#FF4D1433',
             color7: referenceDarkThemePalette.alerts.alert, //'#FF4949',
             color8: referenceDarkThemePalette.lightShades.primary, //'#FFFFFF',
@@ -214,7 +215,7 @@ export const darkTheme: ThemeOptions = {
             color10: '#D9D9D9',
             color11: '#586DEC',
             color12: '#7AD9E9',
-            color16: '#85EDFF',
+            color16: referenceDarkThemePalette.additionalColors.lightBlue, //'#85EDFF',
             color17: '#50E0DB',
             color22: '#AB6CFF',
             color19: referenceDarkThemePalette.additionalColors.purple, //'#CCA6FF',
@@ -223,6 +224,7 @@ export const darkTheme: ThemeOptions = {
             color14: '#FFB114',
             color18: '#FFE314',
             color20: '#CCFF5F',
+            color23: referenceDarkThemePalette.additionalColors.blue, //'#5F75FF',
         },
     },
 };
