@@ -116,9 +116,8 @@ export const darkTheme: ThemeOptions = {
         //     main: '#FF4D14',
         // },
         background: {
-            // нижние два цвета будут использоваться из референса
-            default: 'rgba(35, 35, 35, 1)', // #232323
-            paper: 'rgba(23, 23, 23, 0.8)', // #171717
+            ...referenceDarkThemePalette.background,
+
             primary: referenceDarkThemePalette.darkShades.primary, // '#101010',
             secondary: referenceDarkThemePalette.darkShades.ternary, // '#232323',
             tertiary: referenceDarkThemePalette.darkShades.secondary, //'#171717',
@@ -206,7 +205,7 @@ export const darkTheme: ThemeOptions = {
             color6: referenceDarkThemePalette.primaryColors.accent, // '#FF4D14',
             hover: referenceDarkThemePalette.primaryColors.accentHover, // '#E7440F',
             color61: referenceDarkThemePalette.additionalColors.buttonSecondary, //'#FF4D141A',
-            color62: '#FF4D1414',
+            color62: alpha(referenceDarkThemePalette.primaryColors.accent, 0.2), //'#FF4D1414',
             color63: referenceDarkThemePalette.additionalColors.buttonSecondary, // '#FF4D1433',
             color7: referenceDarkThemePalette.alerts.alert, //'#FF4949',
             color8: referenceDarkThemePalette.lightShades.primary, //'#FFFFFF',

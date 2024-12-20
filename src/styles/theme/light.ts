@@ -118,11 +118,8 @@ export const lightTheme: ThemeOptions = {
             primary: '0px 3px 40px 2px rgba(0, 0, 0, 0.14), 0px 8px 10px 1px rgba(0, 0, 0, 0.14)',
         },
         background: {
-            // нижние два цвета будут использоваться из референса
-            default: 'rgba(255, 255, 255, 1)', // #ffffff
-            paper: 'rgba(232,232,232 ,0.8)', // #e8e8e8cc
-            // default: '#F4F4F4',
-            // paper: '#E5E5E5',
+            ...referenceLightThemePalette.background,
+
             primary: referenceLightThemePalette.darkShades.fifth, //'#F4F4F4',
             secondary: referenceLightThemePalette.lightShades.primary, // #FFFFFF
             tertiary: referenceLightThemePalette.lightShades.primary, // #FFFFFF
@@ -213,7 +210,7 @@ export const lightTheme: ThemeOptions = {
             color6: referenceLightThemePalette.primaryColors.accent, //'#FF4D14',
             hover: referenceLightThemePalette.primaryColors.accentHover, //'#E7440F',
             color61: referenceLightThemePalette.additionalColors.buttonSecondary, // #FF4D141A
-            color62: '#FF4D1414',
+            color62: alpha(referenceDarkThemePalette.primaryColors.accent, 0.2), //'#FF4D1414',
             color63: referenceLightThemePalette.additionalColors.buttonSecondary, //'#FF4D1433',
             color7: referenceLightThemePalette.alerts.alert, //'#FF4949',
             color8: referenceLightThemePalette.grey?.[50] || '#000000', //'#000000',
