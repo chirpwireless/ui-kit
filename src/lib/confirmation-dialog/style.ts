@@ -9,14 +9,21 @@ export const Dialog = styled(MuiDialog)(({ theme }) => ({
 
     [`& .${dialogClasses.paper}`]: {
         alignItems: 'center',
-        width: '100%',
+        width: '360px',
         minWidth: '360px',
-        maxWidth: '450px',
         overflow: 'hidden',
         margin: '0px',
-        padding: '0px 20px 20px',
+        padding: '20px 20px 30px',
         borderRadius: '12px',
-        backgroundColor: theme.palette.background.secondary,
+        backgroundColor: theme.palette.background.background7,
+    },
+
+    '.MuiBackdrop-root': {
+        backdropFilter: 'blur(20px)',
+        backgroundColor:
+            theme.palette.mode === 'dark'
+                ? alpha(theme.palette.darkening.darkening, 0.4)
+                : alpha(theme.palette.darkening.darkening, 0.2),
     },
 }));
 
@@ -36,7 +43,6 @@ export const IconWrapper = styled(Stack)(({ theme }) => ({
     width: '72px',
     height: '72px',
     borderRadius: '50%',
-    marginTop: '20px',
     color: theme.palette.base.color6,
     backgroundImage: `linear-gradient(180deg,
     ${alpha(theme.palette.base.color6, 0.2)} 0%,
@@ -60,7 +66,6 @@ export const ButtonGroup = styled(Stack)(() => ({
     flexDirection: 'row',
     gap: '8px',
     width: '100%',
-    paddingBottom: '10px',
 
     button: {
         padding: '12px 16px',

@@ -6,16 +6,24 @@ export const Dialog = styled(MuiDialog)(({ theme }) => ({
     '.MuiPaper-root': {
         width: '360px',
         minWidth: '360px',
-        padding: '20px',
+        padding: '20px 20px 30px',
         borderRadius: '12px',
-        background: theme.palette.background.secondary,
+        background: theme.palette.background.background7,
 
         [theme.breakpoints.down('sm')]: {
             width: '100%',
             minWidth: 'auto',
             margin: '8px',
-            padding: '20px',
+            padding: '20px 20px 30px',
         },
+    },
+
+    '.MuiBackdrop-root': {
+        backdropFilter: 'blur(20px)',
+        backgroundColor:
+            theme.palette.mode === 'dark'
+                ? alpha(theme.palette.darkening.darkening, 0.4)
+                : alpha(theme.palette.darkening.darkening, 0.2),
     },
 }));
 
@@ -23,7 +31,7 @@ export const Card = styled(Stack)(({ theme }) => ({
     alignItems: 'center',
     maxWidth: '360px',
     width: '100%',
-    background: theme.palette.background.secondary,
+    background: theme.palette.background.background7,
 }));
 
 export const IconWrapper = styled(Stack)(({ theme }) => ({
