@@ -48,9 +48,9 @@ export const createFlatChartTheme = (theme: MuiTheme): ChartTheme => ({
             padding: 0,
         },
         container: {
-            //   background: theme.palette.darkShades.primary,
+            background: theme.palette.darkShades.primary,
             borderRadius: 4,
-            //   border: `1px solid ${theme.palette.borders.primary}`,
+            border: `1px solid ${theme.palette.borders.primary}`,
             fontFamily: theme.typography.fontFamily,
             padding: '4px 12px',
         },
@@ -62,7 +62,7 @@ export const createFlatChartTheme = (theme: MuiTheme): ChartTheme => ({
                 //  8px as was set in Figma is too small
                 fontSize: '10px',
                 shapeRendering: 'crispEdges',
-                // textShadow: `${theme.palette.darkShades.primary} 0 0 5px`,
+                textShadow: `${theme.palette.darkShades.primary} 0 0 5px`,
             },
         },
     },
