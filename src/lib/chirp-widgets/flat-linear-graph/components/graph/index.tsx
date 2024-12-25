@@ -7,7 +7,7 @@ import { AttributeConfig, CalculatedValues, Series, Timequant, Timequants } from
 import { AreaLayer } from '../custom-area';
 import { CustomLine } from '../custom-line';
 import { Skeleton } from '../skeleton';
-import { Tooltip } from '../tooltip';
+import { Tooltip } from '../Tooltip';
 import { DEFAULT_COLORS, DEFAULT_DEFS, createFlatChartTheme } from './chart-theme';
 import { getFlatChartDefs } from './helpers';
 import * as S from './style';
