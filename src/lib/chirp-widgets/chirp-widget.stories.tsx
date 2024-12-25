@@ -283,6 +283,8 @@ export const Graphic: Story = {
                             color: '#fff',
                             // whitecolor: 'none',
                             // whitealertColor: 'none',
+                            // valueFrom: 2,
+                            // valueTo: 4,
                             sensor_type: 'none',
                             icon: 'none',
                             value_map: 'none',
