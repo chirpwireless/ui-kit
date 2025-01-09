@@ -6,10 +6,9 @@ import * as S from './style';
 import { CloseIcon } from '@chirp/ui/assets/icons';
 import { IconButton } from '../icon-button';
 
-export type SelectPropsType = SelectProps &
-    Omit<React.InputHTMLAttributes<HTMLInputElement>, 'id'> & {
-        onClear?: () => void;
-    };
+export type SelectPropsType = SelectProps & {
+    onClear?: () => void;
+};
 
 export const Select: FC<SelectPropsType> = ({
     label,
