@@ -20,8 +20,7 @@ export const getFlatChartDefs = (color: string, shadowColor: string) => {
             rotation: 108,
             lineWidth: 1,
             background: 'transparent',
-            // color: palette.additionalColors.blue,
-            color: 'blue',
+            color: palette.additionalColors.blue,
         },
         {
             id: 'flat-lines-pattern-max',
@@ -39,8 +38,7 @@ export const getFlatChartDefs = (color: string, shadowColor: string) => {
             rotation: 108,
             lineWidth: 1,
             background: 'transparent',
-            // color: palette.additionalColors.mutedGreen,
-            color: 'green',
+            color: palette.additionalColors.mutedGreen,
         },
         {
             id: `flat-area-gradient-shadow`,
