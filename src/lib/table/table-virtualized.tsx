@@ -5,7 +5,7 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { Table } from './components/table';
 import { useReactTable } from './hooks/useReactTable';
-import { ITableContainerProps as TableProps } from './table';
+import { ITableContainerProps as TableProps } from './table-component';
 
 const DEFAULT_ESTIMATE_SIZE = 40;
 const HEADER_SIZE = 50;
