@@ -29,7 +29,7 @@ type Props<TData> = {
     renderEmptyBlock?(): ReactElement;
 };
 
-export const Table = <TData,>({
+export const TableComponent = <TData,>({
     table,
     rows: allRows,
     sx = {},

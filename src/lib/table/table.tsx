@@ -2,7 +2,7 @@ import { SxProps } from '@mui/material';
 import { SortingState } from '@tanstack/react-table';
 import { ReactElement } from 'react';
 
-import { Table as TableComponent } from './components/table';
+import { TableComponent } from './components/table-component';
 import { useReactTable } from './hooks/useReactTable';
 import { TableColumnDef } from './types';
 
