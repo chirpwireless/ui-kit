@@ -120,3 +120,5 @@ export { FilterItem } from './filter-item';
 export { SystemWidget } from './system-widget';
 
 export { Dropdown } from './dropdown';
+
+export { DropdownMultiselect } from './dropdown-multiselect';
