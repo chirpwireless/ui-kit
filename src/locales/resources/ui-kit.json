@@ -31,6 +31,10 @@
             "Search location": "Search location",
             "Search": "Search"
         },
+        "modal": {
+            "Cancel": "Cancel",
+            "Confirm": "Confirm"
+        },
         "DropdownMultiselect": {
             "Search by name": "Search by name"
         },
