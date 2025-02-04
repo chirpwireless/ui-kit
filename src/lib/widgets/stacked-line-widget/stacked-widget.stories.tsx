@@ -38,7 +38,6 @@ export const Default: Story = {
         const theme = useTheme();
         const [favoriteState, setFavoriteState] = useState(false);
         const [deleteState, setDeleteState] = useState(false);
-        console.log(theme);
 
         return (
             <Box

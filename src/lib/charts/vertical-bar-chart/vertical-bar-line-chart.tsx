@@ -29,7 +29,7 @@ const VerticalBarChart: FC<IVerticalBarsChartProps> = memo(({ data, style, color
         }
         return copyOfArray;
     }, [data]);
-    console.log(paddedData);
+
     const option = {
         textStyle: {
             color: theme.palette.text.text8,
