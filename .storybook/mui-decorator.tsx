@@ -1,15 +1,16 @@
-import { StoryContext, StoryFn } from '@storybook/react';
+import { StoryContext } from '@storybook/react';
 
 import '@chirp/ui/styles/style.scss';
 import { ThemeProvider } from '@chirp/ui/styles/theme/theme-provider';
 import { CssBaseline } from '@mui/material';
 
-const MuiDecorator = (StoryComponent: StoryFn, context: StoryContext) => {
+const MuiDecorator = (Story: React.ComponentType, context: StoryContext) => {
     const theme = context.parameters.theme || context.globals.theme;
+
     return (
         <ThemeProvider mode={theme}>
             <CssBaseline />
-            {StoryComponent(context.args, context)}
+            <Story />
         </ThemeProvider>
     );
 };

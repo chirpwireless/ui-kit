@@ -8,6 +8,7 @@ import { themeTemplate } from './template';
 
 export const getTheme = (mode: PaletteMode = 'light', customPalette?: PaletteOptions): Theme => {
     const { palette } = mode === 'light' ? lightTheme() : darkTheme();
+    console.log(palette);
 
     const options = {
         ...themeTemplate,
