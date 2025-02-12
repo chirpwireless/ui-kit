@@ -15,8 +15,6 @@ const MuiDecorator = (Story: React.ComponentType, context: StoryContext) => {
         changeLanguage(lang);
     }, [lang]);
 
-    console.log(lang);
-
     return (
         <I18nextProvider i18n={i18n}>
             <ThemeProvider mode={theme}>

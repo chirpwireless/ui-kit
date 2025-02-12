@@ -152,7 +152,6 @@ export const BaseMap: FC<PropsWithChildren<IBaseMapProps>> = ({
     }, []);
 
     const updateControlTexts = (trans: TFunction<'uiKit', 'map'>) => {
-        console.log(i18n.language);
         // Обновляем кнопку "Моё местоположение"
         const geolocateButton = document.querySelector('.mapboxgl-ctrl-icon') as HTMLElement;
         if (geolocateButton) {
