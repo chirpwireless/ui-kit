@@ -17,7 +17,13 @@
             "Online data": "Online data",
             "Data for period": "Data for period",
             "Reset": "Reset",
-            "All": "All"
+            "All": "All",
+            "On": "On",
+            "Off": "Off",
+            "from": "From",
+            "to": "To",
+            "Saved": "Saved",
+            "Save": "Save"
         },
         "colorPicker": {
             "Color": "Color"
@@ -105,7 +111,13 @@
             "Online data": "Données en ligne",
             "Data for period": "Données pour la période",
             "Reset": "Réinitialiser",
-            "All": "Tous"
+            "All": "Tous",
+            "On": "Activé",
+            "Off": "Désactivé",
+            "from": "De",
+            "to": "À",
+            "Saved": "Enregistré",
+            "Save": "Enregistrer"
         },
         "colorPicker": {
             "Color": "Couleur"
@@ -193,7 +205,13 @@
             "Online data": "Online-Daten",
             "Data for period": "Daten für den Zeitraum",
             "Reset": "Zurücksetzen",
-            "All": "Alle"
+            "All": "Alle",
+            "On": "Ein",
+            "Off": "Aus",
+            "from": "Von",
+            "to": "Bis",
+            "Saved": "Gespeichert",
+            "Save": "Speichern"
         },
         "colorPicker": {
             "Color": "Farbe"
@@ -295,7 +313,13 @@
             "ZoomOut": "Alejar",
             "CtrlMessage": "Usa ctrl + desplazamiento para hacer zoom en el mapa",
             "CmdMessage": "Usa ⌘ + desplazamiento para hacer zoom en el mapa",
-            "Message": "Usa dos dedos para mover el mapa"
+            "Message": "Usa dos dedos para mover el mapa",
+            "On": "Encendido",
+            "Off": "Apagado",
+            "from": "Desde",
+            "to": "Hasta",
+            "Saved": "Guardado",
+            "Save": "Guardar"
         },
         "colorPicker": {
             "Color": "Color"
@@ -370,7 +394,13 @@
             "Online data": "Онлайн-данные",
             "Data for period": "Данные за период",
             "Reset": "Сброс",
-            "All": "Все"
+            "All": "Все",
+            "On": "Включено",
+            "Off": "Выключено",
+            "from": "От",
+            "to": "До",
+            "Saved": "Сохранено",
+            "Save": "Сохранить"
         },
         "colorPicker": {
             "Color": "Цвет"
