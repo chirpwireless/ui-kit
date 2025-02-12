@@ -66,6 +66,7 @@ export const BaseMap: FC<PropsWithChildren<IBaseMapProps>> = ({
             minZoom: 1,
             projection: { name: 'equirectangular' },
             scrollZoom,
+
             logoPosition: 'bottom-right',
             maxBounds: [
                 [-180, -72],
