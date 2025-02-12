@@ -66,7 +66,6 @@ export const BaseMap: FC<PropsWithChildren<IBaseMapProps>> = ({
             minZoom: 1,
             projection: { name: 'equirectangular' },
             scrollZoom,
-
             logoPosition: 'bottom-right',
             maxBounds: [
                 [-180, -72],
@@ -185,6 +184,15 @@ export const BaseMap: FC<PropsWithChildren<IBaseMapProps>> = ({
         if (geocoderControl) {
             // @ts-ignore
             geocoderControl.setPlaceholder(t('Search'));
+        }
+
+        const mapboxglScrollZoomBlocker = document.querySelector('.mapboxgl-scroll-zoom-blocker') as HTMLElement;
+        if (mapboxglScrollZoomBlocker) {
+            mapboxglScrollZoomBlocker.innerHTML = t('CtrlMessage');
+        }
+        const mapboxglTouchPanBlocker = document.querySelector('.mapboxgl-touch-pan-blocker') as HTMLElement;
+        if (mapboxglTouchPanBlocker) {
+            mapboxglTouchPanBlocker.innerHTML = t('Message');
         }
     };
 
