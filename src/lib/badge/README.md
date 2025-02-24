@@ -23,19 +23,19 @@ The component supports three variants:
 
 ### `Badge` Props
 
-| Name    | Description                                      | Type                                              | Default  |
-| ------- | ------------------------------------------------ | ------------------------------------------------- | -------- | ---------- | ----------- |
-| index   | Index of the badge (useful for dynamic lists)    | `number`                                          |          |
-| text    | The content of the badge                         | `string`                                          | Required |
-| getRef  | Function to get a reference to the badge element | `(index: number) => React.RefObject<HTMLElement>` |          |
-| variant | The badge variant                                | `'primary'                                        | 'danger' | 'success'` | `'primary'` |
+| Name    | Description                                      | Type                                              | Default   |
+| ------- | ------------------------------------------------ | ------------------------------------------------- | --------- |
+| index   | Index of the badge (useful for dynamic lists)    | `number`                                          |           |
+| text    | The content of the badge                         | `string`                                          | Required  |
+| getRef  | Function to get a reference to the badge element | `(index: number) => React.RefObject<HTMLElement>` |           |
+| variant | The badge variant                                | `'primary'  'danger'  'success'`                  | 'primary' |
 
 ### `SimpleBadge` Props
 
-| Name    | Description              | Type       | Default    |
-| ------- | ------------------------ | ---------- | ---------- | ---------- | --------- |
-| text    | The content of the badge | `string    | ReactNode` | Required   |
-| variant | The badge variant        | `'primary' | 'danger'   | 'success'` | 'primary' |
+| Name    | Description              | Type                           | Default   |
+| ------- | ------------------------ | ------------------------------ | --------- |
+| text    | The content of the badge | `string, ReactNode`            | Required  |
+| variant | The badge variant        | `'primary' 'danger' 'success'` | 'primary' |
 
 ## Styling
 
