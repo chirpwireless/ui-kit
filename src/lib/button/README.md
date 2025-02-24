@@ -32,11 +32,11 @@ The component supports three sizes:
 
 ## Properties
 
-| Name      | Description                              | Type       | Default     |
-| --------- | ---------------------------------------- | ---------- | ----------- | ---------- | ---------- | ----------- | ----------- |
-| fullWidth | If `true`, button takes full width       | `boolean`  | `false`     |
-| size      | Button size (`large`, `medium`, `small`) | `'large'   | 'medium'    | 'small'`   | `'medium'` |
-| variant   | Button variant                           | `'primary' | 'secondary' | 'tertiary' | 'text'     | 'outlined'` | `'primary'` |
+| Name      | Description                              | Type                                                 | Default     |
+| --------- | ---------------------------------------- | ---------------------------------------------------- | ----------- |
+| fullWidth | If `true`, button takes full width       | `boolean` `false`                                    |             |
+| size      | Button size (`large`, `medium`, `small`) | `'large'   'medium'    'small'`                      | `'medium'`  |
+| variant   | Button variant                           | `'primary' 'secondary' 'tertiary' 'text' 'outlined'` | `'primary'` |
 
 ## Styling
 

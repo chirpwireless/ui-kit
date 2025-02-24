@@ -25,11 +25,11 @@ The `Checkbox` component supports two variants:
 ## Properties
 
 | Name                   | Description                                     | Type                                 | Default       |
-| ---------------------- | ----------------------------------------------- | ------------------------------------ | ------------- | --- |
+| ---------------------- | ----------------------------------------------- | ------------------------------------ | ------------- |
 | label                  | Text or element to display next to the checkbox | `ReactNode`                          |               |
 | variant                | Type of checkbox variant                        | `'check' \| 'visible'`               | `'check'`     |
 | labelTypographyVariant | Typography variant for the label                | `CustomTypographyVariant`            | `'caption12'` |
-| formControlLabelProps  | Additional props for `FormControlLabel`         | `Omit<FormControlLabelProps, 'label' | 'control'>`   |     |
+| formControlLabelProps  | Additional props for `FormControlLabel`         | `Omit<FormControlLabelProps, 'label' | 'control'>`   |
 | ...CheckboxProps       | Any other props supported by MUI's `Checkbox`   |                                      |               |
 
 ## Example

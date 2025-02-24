@@ -18,11 +18,11 @@ import { Radio } from '@chirpwireless/ui-kit';
 
 ## Properties
 
-| Name                     | Description                                                                              | Type                                 | Default Value |
+| Name                     | Description                                                                              | Type                                 | Default Value |           |
 | ------------------------ | ---------------------------------------------------------------------------------------- | ------------------------------------ | ------------- | --------- |
-| `label`                  | The label displayed next to the radio button.                                            | `ReactNode`                          | -             |
+| `label`                  | The label displayed next to the radio button.                                            | `ReactNode`                          | -             |           |
 | `variant`                | The variant of the radio button. Can be either 'check' or 'visible'.                     | `'check'                             | 'visible'`    | `'check'` |
-| `labelTypographyVariant` | The typography variant for the label text.                                               | `CustomTypographyVariant`            | `'body1'`     |
+| `labelTypographyVariant` | The typography variant for the label text.                                               | `CustomTypographyVariant`            | `'body1'`     |           |
 | `formControlLabelProps`  | Additional props for the `FormControlLabel` component (excluding 'label' and 'control'). | `Omit<FormControlLabelProps, 'label' | 'control'>`   | -         |
 
 ## Features
