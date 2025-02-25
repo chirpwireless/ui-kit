@@ -61,11 +61,11 @@ Extends `BaseMap` by adding support for rendering GeoJSON features, markers, and
 
 | Prop                   | Type                            | Default | Description                                              |
 | ---------------------- | ------------------------------- | ------- | -------------------------------------------------------- | ---------------------------------------- |
-| `data`                 | `GeoJSON.GeoJSON                | null`   | `null`                                                   | GeoJSON data to be displayed on the map. |
-| `coordinates`          | `{ lat: number; lon: number; }` | `null`  | Initial map center coordinates.                          |
-| `scrollZoom`           | `boolean`                       | `true`  | Enables or disables scroll zoom.                         |
-| `isLineMarkersNeeded`  | `boolean`                       | `true`  | Whether to display intermediate markers on `LineString`. |
-| `centeringCoordinates` | `{ lat: number; lon: number; }` | `null`  | Coordinates to re-center the map dynamically.            |
+| `data`                 | `GeoJSON.GeoJSON                | `null`  | `null`                                                   | GeoJSON data to be displayed on the map. |
+| `coordinates`          | `{ lat: number; lon: number; }` | `null`  | Initial map center coordinates.                          |                                          |
+| `scrollZoom`           | `boolean`                       | `true`  | Enables or disables scroll zoom.                         |                                          |
+| `isLineMarkersNeeded`  | `boolean`                       | `true`  | Whether to display intermediate markers on `LineString`. |                                          |
+| `centeringCoordinates` | `{ lat: number; lon: number; }` | `null`  | Coordinates to re-center the map dynamically.            |                                          |
 
 #### Usage
 
