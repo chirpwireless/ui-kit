@@ -24,14 +24,14 @@ A core map component that initializes a Mapbox GL instance with basic controls a
 
 #### Props
 
-| Prop            | Type                                 | Default              | Description                                                  |
+| Prop            | Type                                 | Default              | Description                                                  |                                         |
 | --------------- | ------------------------------------ | -------------------- | ------------------------------------------------------------ | --------------------------------------- |
 | `mapRef`        | `RefObject<mapboxgl.Map              | null>`               | `null`                                                       | A reference to the Mapbox map instance. |
-| `coordinates`   | `{ lat: number; lon: number; }`      | `null`               | Initial map center coordinates.                              |
-| `scrollZoom`    | `boolean`                            | `true`               | Enables or disables scroll zoom.                             |
-| `getMapStyleId` | `(themeMode: PaletteMode) => string` | `getUiKitMapStyleId` | Function to determine the map style based on the theme mode. |
-| `onMapLoad`     | `() => void`                         | Required             | Callback fired when the map is loaded.                       |
-| `sx`            | `SxProps`                            | `undefined`          | Custom styles.                                               |
+| `coordinates`   | `{ lat: number; lon: number; }`      | `null`               | Initial map center coordinates.                              |                                         |
+| `scrollZoom`    | `boolean`                            | `true`               | Enables or disables scroll zoom.                             |                                         |
+| `getMapStyleId` | `(themeMode: PaletteMode) => string` | `getUiKitMapStyleId` | Function to determine the map style based on the theme mode. |                                         |
+| `onMapLoad`     | `() => void`                         | Required             | Callback fired when the map is loaded.                       |                                         |
+| `sx`            | `SxProps`                            | `undefined`          | Custom styles.                                               |                                         |
 
 #### Usage
 
