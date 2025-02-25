@@ -59,7 +59,7 @@ Extends `BaseMap` by adding support for rendering GeoJSON features, markers, and
 
 #### Props
 
-| Prop                   | Type                            | Default | Description                                              |
+| Prop                   | Type                            | Default | Description                                              |                                          |
 | ---------------------- | ------------------------------- | ------- | -------------------------------------------------------- | ---------------------------------------- |
 | `data`                 | `GeoJSON.GeoJSON                | `null`  | `null`                                                   | GeoJSON data to be displayed on the map. |
 | `coordinates`          | `{ lat: number; lon: number; }` | `null`  | Initial map center coordinates.                          |                                          |
