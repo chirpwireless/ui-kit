@@ -113,3 +113,8 @@ Ensure you have a valid Mapbox API key set up in your environment:
 ```sh
 VITE_UI_MAPBOX_TOKEN=your_mapbox_token
 ```
+
+## Other varaints of map:
+
+- [TripMap](trip-map/README.md)
+- [DrawableMap](drawable-map/README.md)
