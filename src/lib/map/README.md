@@ -24,14 +24,14 @@ A core map component that initializes a Mapbox GL instance with basic controls a
 
 #### Props
 
-| Prop            | Type                                 | Default              | Description                                                  |                                         |
-| --------------- | ------------------------------------ | -------------------- | ------------------------------------------------------------ | --------------------------------------- |
-| `mapRef`        | `RefObject<mapboxgl.Map              | null>`               | `null`                                                       | A reference to the Mapbox map instance. |
-| `coordinates`   | `{ lat: number; lon: number; }`      | `null`               | Initial map center coordinates.                              |                                         |
-| `scrollZoom`    | `boolean`                            | `true`               | Enables or disables scroll zoom.                             |                                         |
-| `getMapStyleId` | `(themeMode: PaletteMode) => string` | `getUiKitMapStyleId` | Function to determine the map style based on the theme mode. |                                         |
-| `onMapLoad`     | `() => void`                         | Required             | Callback fired when the map is loaded.                       |                                         |
-| `sx`            | `SxProps`                            | `undefined`          | Custom styles.                                               |                                         |
+| Prop            | Type                                 | Default              | Description                                                  |     |
+| --------------- | ------------------------------------ | -------------------- | ------------------------------------------------------------ | --- |
+| `mapRef`        | `RefObject<mapboxgl.Map or null>`    | `null`               | A reference to the Mapbox map instance.                      |
+| `coordinates`   | `{ lat: number; lon: number; }`      | `null`               | Initial map center coordinates.                              |     |
+| `scrollZoom`    | `boolean`                            | `true`               | Enables or disables scroll zoom.                             |     |
+| `getMapStyleId` | `(themeMode: PaletteMode) => string` | `getUiKitMapStyleId` | Function to determine the map style based on the theme mode. |     |
+| `onMapLoad`     | `() => void`                         | Required             | Callback fired when the map is loaded.                       |     |
+| `sx`            | `SxProps`                            | `undefined`          | Custom styles.                                               |     |
 
 #### Usage
 
@@ -61,7 +61,7 @@ Extends `BaseMap` by adding support for rendering GeoJSON features, markers, and
 
 | Prop                   | Type                            | Default | Description                                              |                                          |
 | ---------------------- | ------------------------------- | ------- | -------------------------------------------------------- | ---------------------------------------- |
-| `data`                 | `GeoJSON.GeoJSON                | `null`  | `null`                                                   | GeoJSON data to be displayed on the map. |
+| `data`                 | `GeoJSON.GeoJSON`               | `null`  | `null`                                                   | GeoJSON data to be displayed on the map. |
 | `coordinates`          | `{ lat: number; lon: number; }` | `null`  | Initial map center coordinates.                          |                                          |
 | `scrollZoom`           | `boolean`                       | `true`  | Enables or disables scroll zoom.                         |                                          |
 | `isLineMarkersNeeded`  | `boolean`                       | `true`  | Whether to display intermediate markers on `LineString`. |                                          |
