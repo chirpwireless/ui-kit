@@ -1,12 +1,12 @@
 import * as S from './style';
 import { TLoaderSize } from './types';
 
-interface ILoader {
+export interface ILoaderProps {
     text?: string;
     size?: TLoaderSize;
 }
 
-export const Loader: React.FC<ILoader> = ({ text, size = 'small' }) => {
+export const Loader: React.FC<ILoaderProps> = ({ text, size = 'small' }) => {
     return (
         <S.LoaderContainer text={text}>
             <S.LoaderSpan size={size}>

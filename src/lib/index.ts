@@ -24,7 +24,7 @@ export { TextField } from './text-field';
 
 export { Badge, SimpleBadge } from './badge';
 
-export { Loader } from './loader';
+export { Loader, type ILoaderProps } from './loader';
 
 export { Modal } from './modal';
 
