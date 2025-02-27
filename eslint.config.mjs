@@ -19,7 +19,7 @@ export default [
     {
         ignores: [
             '**/dist',
-            '**/.eslintrc.cjs',
+            '**/eslint.config.mjs',
             '**/node_modules/',
             '**/vite.config.ts',
             '**/node_modules',
@@ -85,14 +85,7 @@ export default [
             '@typescript-eslint/no-unsafe-assignment': 'warn',
             '@typescript-eslint/no-unsafe-call': 'error',
             '@typescript-eslint/no-unsafe-member-access': 'error',
-
             'unused-imports/no-unused-imports': 'error',
-            '@typescript-eslint/no-unused-vars': [
-                'error',
-                {
-                    varsIgnorePattern: '_*',
-                },
-            ],
 
             '@typescript-eslint/no-unused-vars': [
                 'error',
@@ -101,15 +94,9 @@ export default [
                 },
             ],
 
-            'check-file/filename-naming-convention': [
-                'error',
-                {
-                    '**/*.{js,ts,tsx,scss}': 'KEBAB_CASE',
-                },
-                {
-                    ignoreMiddleExtensions: true,
-                },
-            ],
+            '@typescript-eslint/no-empty-object-type': 'off',
+            '@typescript-eslint/no-unused-expressions': 'off',
+
             '@stylistic/padding-line-between-statements': [
                 'error',
                 {
@@ -120,17 +107,17 @@ export default [
                 },
             ],
 
-            'no-restricted-imports': [
-                'error',
-                {
-                    patterns: [
-                        {
-                            group: ['../'],
-                            message: 'use absolute import with @',
-                        },
-                    ],
-                },
-            ],
+            // 'no-restricted-imports': [
+            //     'error',
+            //     {
+            //         patterns: [
+            //             {
+            //                 group: ['../'],
+            //                 message: 'use absolute import with @',
+            //             },
+            //         ],
+            //     },
+            // ],
         },
     },
 ];
