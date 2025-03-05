@@ -67,7 +67,6 @@ export const ColorPicker: FC<IColorPickerProps> = ({
             if (!setError) return;
 
             const isValid = HEX_REGEXP.test(color);
-            console.log(isValid);
 
             setError(!isValid);
         },
