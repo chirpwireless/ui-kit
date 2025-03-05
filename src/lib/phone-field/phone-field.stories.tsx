@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { PhoneField, TextField } from '@chirp/ui/lib';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const meta: Meta<typeof PhoneField> = {
     title: 'UI/PhoneField',
@@ -99,29 +99,6 @@ export const Empty: Story = {
                     sx={{
                         width: '257px',
                     }}
-                />
-            </>
-        );
-    },
-};
-
-export const Test: Story = {
-    render: () => {
-        const [value, setValue] = useState<string>('');
-        const [updated, setUpdated] = useState(false);
-
-        useEffect(() => {
-            // return;
-
-            setUpdated((prev) => !prev);
-        }, [value]);
-
-        return (
-            <>
-                <TextField
-                    value={value}
-                    className={updated ? 'updated' : ''}
-                    onChange={(e) => setValue(e.target.value)}
                 />
             </>
         );
