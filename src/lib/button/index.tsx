@@ -14,13 +14,7 @@ export const Button: FC<IButtonProps> = ({ children, isLoading, variant, disable
                     <Loader size="small" color={theme.palette.base.color1} />
                 </S.LoaderWrapper>
             )}
-            <S.ButtonWrapper
-                {...props}
-                variant={variant}
-                isLoading={isLoading}
-                disabled={isLoading || disabled}
-                disableRipple
-            >
+            <S.ButtonWrapper {...props} variant={variant} disabled={isLoading || disabled} disableRipple>
                 {isLoading && <S.Backdrop variant={variant} />}
                 {children}
             </S.ButtonWrapper>
