@@ -8,7 +8,7 @@ export const Button: FC<IButtonProps> = ({ children, isLoading, variant, disable
     const theme = useTheme();
 
     return (
-        <Box position="relative">
+        <Box position="relative" width={props.fullWidth ? '100%' : 'auto'}>
             {isLoading && (
                 <S.LoaderWrapper>
                     <Loader size="small" color={theme.palette.base.color1} />
