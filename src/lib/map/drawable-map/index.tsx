@@ -159,8 +159,6 @@ export const DrawableMap: React.FC<IDrawableMapProps> = memo((props) => {
     );
 
     useEffect(() => {
-        console.log('1useEffect(() => {addDataToMap, data}');
-
         if (!map.current || !drawRef.current) return;
 
         if (map.current.isStyleLoaded()) {
