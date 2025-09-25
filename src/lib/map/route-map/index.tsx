@@ -199,7 +199,7 @@ export const RouteMap: React.FC<IRouteMapProps> = ({ data, ...baseProps }) => {
 
         const handleEnter = (e: mapboxgl.MapMouseEvent) => {
             mapInstance.getCanvas().style.cursor = 'pointer';
-            popup.setLngLat(e.lngLat).setHTML('Planned return to the warehouse').addTo(mapInstance);
+            popup.setLngLat(e.lngLat).setHTML(t('Planned return to the warehouse')).addTo(mapInstance);
         };
 
         const handleLeave = () => {
@@ -214,7 +214,7 @@ export const RouteMap: React.FC<IRouteMapProps> = ({ data, ...baseProps }) => {
             mapInstance.off('mouseenter', 'warehouse_route-hitbox', handleEnter);
             mapInstance.off('mouseleave', 'warehouse_route-hitbox', handleLeave);
         };
-    }, [addDataToMap, data]);
+    }, [addDataToMap, data, t]);
 
     useEffect(() => {
         if (!data) return;

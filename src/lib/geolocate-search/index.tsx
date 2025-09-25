@@ -103,7 +103,7 @@ export const GeolocateSearch: FC<IGeolocateSearchProps> = ({
                     title={showTooltip ? localSelectedValue?.place_name : ''}
                     disableInteractive
                 >
-                    <TextField ref={ref} {...params} {...textFieldProps} />
+                    <TextField ref={ref} {...params} disabled={disabled} {...textFieldProps} />
                 </Tooltip>
             )}
         />

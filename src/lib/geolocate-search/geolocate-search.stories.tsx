@@ -39,3 +39,27 @@ export const Default: Story = {
         );
     },
 };
+
+export const Disabled: Story = {
+    render: () => {
+        const [selectedState, setSelectedState] = useState<GeocodeFeature['geometry']['coordinates'] | null>(null);
+
+        return (
+            <Stack>
+                <p>{JSON.stringify(selectedState)}</p>
+                <GeolocateSearch
+                    selectedValue={selectedState}
+                    sx={{
+                        width: '400px',
+                    }}
+                    disabled
+                    onSelect={(value) => setSelectedState(value ? value.geometry.coordinates : null)}
+                    textFieldProps={{
+                        label: 'Search input',
+                        placeholder: 'Search',
+                    }}
+                />
+            </Stack>
+        );
+    },
+};
