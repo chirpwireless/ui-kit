@@ -2,6 +2,7 @@
     "en": {
         "Photo": "Photo",
         "Drag to reorder": "Drag to reorder",
+        "Planned return to the warehouse": "Planned return to the warehouse",
 
         "widgets": {
             "No data": "No data",
@@ -119,6 +120,7 @@
     "fr": {
         "Photo": "Photo",
         "Drag to reorder": "Drag to reorder",
+        "Planned return to the warehouse": "Retour prévu à l'entrepôt",
         "widgets": {
             "No data": "Pas de données",
             "Current value": "Valeur actuelle {{value}}",
@@ -235,6 +237,7 @@
     "de": {
         "Photo": "Foto",
         "Drag to reorder": "Zur Reihenfolge ziehen",
+        "Planned return to the warehouse": "Geplante Rückkehr ins Lager",
         "widgets": {
             "No data": "Keine Daten",
             "Current value": "Aktueller Wert {{value}}",
@@ -352,6 +355,7 @@
     "es": {
         "Photo": "Foto",
         "Drag to reorder": "Arrastre para reordenar",
+        "Planned return to the warehouse": "Regreso planificado al almacén",
         "widgets": {
             "No data": "No hay datos",
             "Current value": "Valor actual {{value}}",
@@ -468,6 +472,7 @@
     "ru": {
         "Photo": "Фото",
         "Drag to reorder": "Перетащите для сортировки",
+        "Planned return to the warehouse": "Планируемое возвращение на склад",
         "widgets": {
             "No data": "Нет данных",
             "Current value": "Текущее {{value}}",
