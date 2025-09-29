@@ -9,7 +9,6 @@ import { checkCirclePolygon, getCircleGeometryFromPolygon } from '@chirp/ui/help
 import MapboxDraw from '@mapbox/mapbox-gl-draw';
 import { Coordinates } from '../map.types';
 import { MapDrawModeTabs } from './map-draw-tabs';
-import { AnyObject } from '@chirp/ui/helpers/global';
 import { customDrawStyles, typedGeodesicDraw } from '../constance';
 import { BaseMap, IBaseMapProps } from '../base-map';
 import { mapMarkerEndSvgContainer, mapMarkerStartSvgContainer } from '../svg-containers';
@@ -21,6 +20,10 @@ mapboxgl.accessToken = (import.meta.env.VITE_UI_MAPBOX_TOKEN || '') as string;
 
 // FYI: withStartEndLineIndicators - for display one single line.
 // if you want display array of geojson - develop it
+interface MapboxDrawEvent {
+    features: GeoJSON.Feature[];
+}
+
 interface IDrawableMapProps extends Omit<IBaseMapProps, 'mapRef' | 'onMapLoad'> {
     coordinates?: Coordinates;
     scrollZoom?: boolean;
@@ -50,10 +53,10 @@ export const DrawableMap: React.FC<IDrawableMapProps> = memo((props) => {
 
     const theme = useTheme();
     const markersRef = useRef<HTMLDivElement[]>([]);
-    const map = useRef<mapboxgl.Map>(null);
+    const map = useRef<mapboxgl.Map | null>(null);
     const drawRef = useRef<MapboxDraw | null>(null);
     const deleteLastPointMarkerRef = useRef<mapboxgl.Marker | null>(null);
-    const [_, setActiveDrawMode] = useState('');
+    const [_, setActiveDrawMode] = useState<string>('');
 
     const handleChange = (feature: GeoJSON.Feature) => {
         if (!map.current) return;
@@ -89,24 +92,36 @@ export const DrawableMap: React.FC<IDrawableMapProps> = memo((props) => {
         });
 
         drawRef.current = draw;
-        map.current.addControl(draw, 'top-left');
+        map.current.addControl(draw as mapboxgl.IControl, 'top-left');
 
         // Слушаем события создания, обновления и удаления
-        map.current.on('draw.create' as MapEventType, (e: AnyObject) => {
-            const features = e.features as GeoJSON.Feature[];
-            handleChange(features[0]);
+        map.current.on('draw.create' as MapEventType, (e: unknown) => {
+            const drawEvent = e as MapboxDrawEvent;
+            const features = drawEvent.features;
+
+            if (features.length > 0) {
+                handleChange(features[0]);
+            }
         });
 
-        map.current.on('draw.update' as MapEventType, (e: AnyObject) => {
-            const features = e.features as GeoJSON.Feature[];
-            handleChange(features[0]);
-            deleteLastPointMarkerRef.current?.remove();
+        map.current.on('draw.update' as MapEventType, (e: unknown) => {
+            const drawEvent = e as MapboxDrawEvent;
+            const features = drawEvent.features;
+
+            if (features.length > 0) {
+                handleChange(features[0]);
+                deleteLastPointMarkerRef.current?.remove();
+            }
         });
 
-        map.current.on('draw.delete' as MapEventType, (e: AnyObject) => {
-            const features = e.features as GeoJSON.Feature[];
-            handleChange(features[0]);
-            deleteLastPointMarkerRef.current?.remove();
+        map.current.on('draw.delete' as MapEventType, (e: unknown) => {
+            const drawEvent = e as MapboxDrawEvent;
+            const features = drawEvent.features;
+
+            if (features.length > 0) {
+                handleChange(features[0]);
+                deleteLastPointMarkerRef.current?.remove();
+            }
         });
 
         if (defaultDrawMode) {
@@ -165,8 +180,8 @@ export const DrawableMap: React.FC<IDrawableMapProps> = memo((props) => {
                     const endMarker = document.createElement('div');
                     endMarker.classList.add('start-end-line-marker');
                     endMarker.innerHTML = mapMarkerEndSvgContainer(theme.palette);
-                    new mapboxgl.Marker(startMarker).setLngLat(startPoint as [number, number]).addTo(map.current);
-                    new mapboxgl.Marker(endMarker).setLngLat(endPoint as [number, number]).addTo(map.current);
+                    new mapboxgl.Marker(startMarker).setLngLat(startPoint as [number, number]).addTo(map.current!);
+                    new mapboxgl.Marker(endMarker).setLngLat(endPoint as [number, number]).addTo(map.current!);
                     markersRef.current = [startMarker, endMarker];
                 }
             }
@@ -202,8 +217,8 @@ export const DrawableMap: React.FC<IDrawableMapProps> = memo((props) => {
 
         if (
             !lastPoint?.length ||
-            (lastPoint[0] === deleteLastPointMarkerRef.current?.getLngLat().lng &&
-                lastPoint[1] === deleteLastPointMarkerRef.current?.getLngLat().lat)
+            (lastPoint[0] === deleteLastPointMarkerRef.current?.getLngLat()?.lng &&
+                lastPoint[1] === deleteLastPointMarkerRef.current?.getLngLat()?.lat)
         )
             return; // Удалить предыдущий маркер, если есть
         else deleteLastPointMarkerRef.current?.remove();
@@ -213,8 +228,8 @@ export const DrawableMap: React.FC<IDrawableMapProps> = memo((props) => {
 
         markerEl.style.pointerEvents = 'auto'; // 🔹 по умолчанию у mapboxgl.Marker — none
 
-        const marker = new mapboxgl.Marker(markerEl).setLngLat(lastPoint).addTo(map.current) as mapboxgl.Marker;
-        deleteLastPointMarkerRef.current = marker;
+        const marker = new mapboxgl.Marker(markerEl).setLngLat(lastPoint).addTo(map.current!);
+        deleteLastPointMarkerRef.current = marker as unknown as mapboxgl.Marker;
 
         markerEl.onclick = () => {
             if (isCircle) {
@@ -319,9 +334,13 @@ export const DrawableMap: React.FC<IDrawableMapProps> = memo((props) => {
     };
 
     return (
-        <BaseMap {...baseProps} mapRef={map} onMapLoad={() => onMapLoad(drawMode)}>
+        <BaseMap
+            {...baseProps}
+            mapRef={map as React.RefObject<mapboxgl.Map | null>}
+            onMapLoad={() => onMapLoad(drawMode)}
+        >
             {!drawMode ? (
-                <MapDrawModeTabs activeMode={drawRef?.current?.getMode?.()} onChangeMode={handleChangeMode} />
+                <MapDrawModeTabs activeMode={drawRef?.current?.getMode?.() || ''} onChangeMode={handleChangeMode} />
             ) : null}
         </BaseMap>
     );
