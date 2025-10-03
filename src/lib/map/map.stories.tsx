@@ -188,8 +188,8 @@ export const Centering: Story = {
                 lat: 27.707938391380537,
                 lon: 50.629305557231135,
             },
-            { lat: 35.707938391380537, lon: 50.629305557231135 },
-            { lat: 45.707938391380537, lon: 50.629305557231135 },
+            { lat: 59.707938391380537, lon: 59.629305557231135 },
+            { lat: 55.707938391380537, lon: 37.629305557231135 },
         ];
 
         return (
@@ -208,7 +208,23 @@ export const Centering: Story = {
                         Line 3
                     </label>
                 </Box>
-                <FeatureMap data={null} centeringCoordinates={centers[data]} />
+                <FeatureMap
+                    data={
+                        {
+                            type: 'FeatureCollection',
+                            features: [
+                                {
+                                    type: 'Feature',
+                                    geometry: {
+                                        type: 'Point',
+                                        coordinates: [centers[data].lon, centers[data].lat],
+                                    },
+                                },
+                            ],
+                        } as GeoJSON.FeatureCollection
+                    }
+                    centeringCoordinates={centers[data]}
+                />
             </Box>
         );
     },
