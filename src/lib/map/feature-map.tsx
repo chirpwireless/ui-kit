@@ -166,7 +166,11 @@ export const FeatureMap: React.FC<IFeatureMapProps> = ({
     // Центрирование карты по координатам centeringCoordinates
     useEffect(() => {
         if (map.current && centeringCoordinates?.lat && centeringCoordinates?.lon) {
-            map.current.flyTo({ center: [centeringCoordinates?.lon, centeringCoordinates?.lat], essential: true });
+            map.current.flyTo({
+                center: [centeringCoordinates?.lon, centeringCoordinates?.lat],
+                essential: true,
+                zoom: 15,
+            });
         }
     }, [centeringCoordinates]);
 
