@@ -92,8 +92,23 @@ export const DrawRouteMap: React.FC<IDrawRouteMapProps> = memo((props) => {
 
         map.current.on('draw.modechange' as MapEventType, (e: AnyObject) => {
             // Переключаемся обратно только если не было клика на вершине
-            if (e.mode === 'simple_select' && Array.isArray(e.features) && !e.features.length) {
+
+            const draw = drawRef.current;
+
+            if (!draw) return;
+
+            const features = draw.getAll().features;
+
+            const hasLineString = features.some(
+                (f) =>
+                    f.geometry?.type === 'LineString' &&
+                    Array.isArray(f.geometry.coordinates) &&
+                    f.geometry.coordinates.length > 1,
+            );
+
+            if (e.mode === 'simple_select' && !hasLineString) {
                 drawRef.current?.changeMode('draw_line_string');
+                deleteLastPointMarkerRef.current?.remove();
             }
         });
 
