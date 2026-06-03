@@ -1,77 +1,51 @@
-import type { ThemeOptions } from '@mui/material';
+import type { ThemeOptions } from '@mui/material/styles';
+
+import './augmentation';
 
 export const themeTemplate: ThemeOptions = {
     spacing: 4,
     typography: {
         fontSize: 16,
         fontFamily: '"Alliance No.2", Arial, sans-serif',
+        h1: {
+            fontSize: 40,
+            lineHeight: '48px',
+            fontWeight: 500,
+        },
         h2: {
             fontSize: 24,
             lineHeight: '32px',
-            fontWeight: 500,
-            letterSpacing: '0.15%',
+            fontWeight: 400,
         },
         h3: {
             fontSize: 20,
             lineHeight: '24px',
-            fontWeight: 500,
+            fontWeight: 400,
             letterSpacing: '0.15px',
         },
-        title16: {
-            fontSize: 16,
-            lineHeight: '20px',
-            fontWeight: 500,
-            letterSpacing: '0.5%',
-        },
-        title14: {
-            fontSize: 14,
-            lineHeight: '20px',
-            fontWeight: 500,
-            letterSpacing: '0.5%',
-        },
-        title12: {
-            fontSize: 12,
-            lineHeight: '20px',
-            fontWeight: 500,
-            letterSpacing: '0.4%',
-        },
-        text13: {
-            fontSize: 13,
+        h4: {
+            fontSize: 18,
             lineHeight: '20px',
             fontWeight: 400,
-            letterSpacing: '0.5px',
+            letterSpacing: '0.3px',
         },
-        caption12: {
-            fontSize: 12,
-            lineHeight: '16px',
+        h5: {
+            fontSize: 18,
             fontWeight: 400,
-            letterSpacing: '0.4px',
-        },
-        caption8: {
-            fontSize: 8,
-            lineHeight: '20px',
-            fontWeight: 400,
-            letterSpacing: '0.5%',
-        },
-        mono10: {
-            fontSize: 12,
-            lineHeight: '13px',
-            fontWeight: 400,
-            letterSpacing: '0.5%',
-            fontFamily: '"Simplon mono", Arial, sans-serif',
+            letterSpacing: '0.3px',
         },
         paragraphPrimary: {
             fontSize: 14,
             lineHeight: '20px',
             fontWeight: 400,
-            letterSpacing: '0.5%',
+            letterSpacing: '0.5px',
             fontFamily: '"Simplon mono", Arial, sans-serif',
         },
         paragraphSecondary: {
             fontSize: 12,
-            lineHeight: '24px',
+            lineHeight: '18px',
             fontWeight: 400,
-            letterSpacing: '0.5%',
+            letterSpacing: '0px',
             fontFamily: '"Simplon mono", Arial, sans-serif',
         },
         subtitle1: {
@@ -81,8 +55,8 @@ export const themeTemplate: ThemeOptions = {
             letterSpacing: '0.3px',
         },
         subtitle2: {
-            fontSize: 16,
-            lineHeight: '24px',
+            fontSize: 12,
+            lineHeight: '20px',
             fontWeight: 400,
             letterSpacing: '0.5px',
             fontFamily: '"Simplon mono", Arial, sans-serif',
@@ -96,15 +70,16 @@ export const themeTemplate: ThemeOptions = {
         body2: {
             fontSize: 14,
             fontWeight: 400,
-            letterSpacing: '0.25px',
+            lineHeight: '20px',
+            letterSpacing: '0.2px',
             fontFamily: '"Alliance No.2", Arial, sans-serif',
         },
         button: {
             fontSize: 13,
-            lineHeight: '16px',
+            lineHeight: '20px',
             fontWeight: 500,
             textTransform: 'none',
-            letterSpacing: '0.4px',
+            letterSpacing: '0.5px',
             fontFamily: '"Alliance No.2", Arial, sans-serif',
         },
         caption: {
@@ -116,7 +91,7 @@ export const themeTemplate: ThemeOptions = {
         },
         overline: {
             fontSize: 10,
-            lineHeight: '13px',
+            lineHeight: '12px',
             fontWeight: 400,
             letterSpacing: '0.5px',
             textTransform: 'none',

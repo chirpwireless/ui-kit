@@ -1,11 +1,55 @@
 {
     "name": "@chirpwireless/ui-kit",
-    "version": "0.408.0",
+    "version": "1.0.0-rc.0",
     "type": "module",
     "declaration": true,
-    "main": "dist/index.cjs.js",
-    "module": "dist/index.es.js",
+    "main": "dist/chirp-ui.cjs.js",
+    "module": "dist/chirp-ui.es.js",
     "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/chirp-ui.es.js",
+            "require": "./dist/chirp-ui.cjs.js"
+        },
+        "./theme": {
+            "types": "./dist/theme/index.d.ts",
+            "import": "./dist/theme/index.es.js",
+            "require": "./dist/theme/index.cjs.js"
+        },
+        "./theme/augmentation": {
+            "types": "./dist/theme/augmentation.d.ts",
+            "import": "./dist/theme/augmentation.es.js",
+            "require": "./dist/theme/augmentation.cjs.js"
+        },
+        "./icons": {
+            "types": "./dist/icons/index.d.ts",
+            "import": "./dist/icons/index.es.js",
+            "require": "./dist/icons/index.cjs.js"
+        },
+        "./layouts": {
+            "types": "./dist/layouts/index.d.ts",
+            "import": "./dist/layouts/index.es.js",
+            "require": "./dist/layouts/index.cjs.js"
+        },
+        "./locales": {
+            "types": "./dist/locales/index.d.ts",
+            "import": "./dist/locales/index.es.js",
+            "require": "./dist/locales/index.cjs.js"
+        },
+        "./legacy": {
+            "types": "./dist/_legacy/index.d.ts",
+            "import": "./dist/_legacy/index.es.js",
+            "require": "./dist/_legacy/index.cjs.js"
+        },
+        "./legacy/icons": {
+            "types": "./dist/_legacy/assets/index.d.ts",
+            "import": "./dist/_legacy/assets/index.es.js",
+            "require": "./dist/_legacy/assets/index.cjs.js"
+        },
+        "./styles.css": "./dist/style.css",
+        "./package.json": "./package.json"
+    },
     "files": [
         "dist"
     ],
@@ -34,10 +78,10 @@
         "@mapbox/mapbox-gl-geocoder": "^5.0.3",
         "@mapbox/mapbox-gl-language": "^1.0.1",
         "@mapbox/mapbox-sdk": "^0.16.1",
-        "@mui/base": "5.0.0-beta.68",
-        "@mui/icons-material": "^5.16.14",
-        "@mui/lab": "^5.0.0-alpha.170",
-        "@mui/material": "^5.16.14",
+        "@mui/base": "^5.0.0-beta.68",
+        "@mui/icons-material": "^7.0.0",
+        "@mui/lab": "^7.0.0",
+        "@mui/material": "^7.0.0",
         "@mui/styled-engine-sc": "^6.0.0-alpha.18",
         "@mui/x-tree-view": "^7.15.0",
         "@nivo/line": "^0.88.0",
@@ -112,7 +156,8 @@
         "vite-plugin-svgr": "^4.2.0"
     },
     "sideEffects": [
-        "**/*.css"
+        "**/*.css",
+        "**/*.scss"
     ],
     "dependencies": {}
 }

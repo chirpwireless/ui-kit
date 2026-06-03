@@ -1,5 +1,7 @@
 export * from './use-breakpoints';
 
+export * from './useLayout';
+
 export * from './use-debounce';
 
 export * from './use-download-xlsx';

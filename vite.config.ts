@@ -32,6 +32,9 @@ export default defineConfig(({ mode }) => {
             svgr(),
             dts({
                 insertTypesEntry: true,
+                entryRoot: 'src',
+                include: ['src/**/*.ts', 'src/**/*.tsx'],
+                exclude: ['src/**/*.stories.tsx', 'src/**/*.test.ts', 'src/**/*.test.tsx'],
             }),
         ],
 
@@ -60,7 +63,16 @@ export default defineConfig(({ mode }) => {
                             ]),
                     ),
                 },
-                external: ['react', 'react-dom', '@mui/material', 'react-i18next', 'i18next', 'react-toastify'], // Внешние зависимости
+                external: [
+                    'react',
+                    'react-dom',
+                    'react-i18next',
+                    'i18next',
+                    'react-toastify',
+                    // Treat the entire @mui/* namespace as external so consumers manage peer deps.
+                    /^@mui\//,
+                    /^@emotion\//,
+                ],
                 output: {
                     minifyInternalExports: false,
                     inlineDynamicImports: false, // отключите инлайн динамические импорты

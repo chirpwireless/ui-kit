@@ -1,0 +1,103 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title='Docs/Migration v0 → v1' />
+
+# Migration: v0.x → v1.0
+
+`@chirpwireless/ui-kit` v1.0 — мажорный rewrite. Новый публичный API: shell-компоненты
+(`BaseLayout`, `Sidebar`, `UserMenu`, `Header`), обновлённая тема, чистый набор иконок.
+Старая поверхность сохранена под подпутем `/legacy` на одну минорную итерацию для плавной миграции.
+
+## Что нового
+
+- **Shell-компоненты** — `BaseLayout` + `Sidebar` + `UserMenu` + `Header`. Generic, без знания про auth /
+  organizations / wallets / feature-flags. Всё прокидывается props/slots.
+- **Тема**: семантическая палитра (`neutral`, `primaryColors`, `borders`, `alerts`, `widgets`) +
+  типографика Alliance No.2 / Simplon mono. Два бренд-варианта: `default` (Kilo-blue) и `chirp` (orange).
+- **Иконки**: фокусированный chirp-набор в `@chirpwireless/ui-kit/icons`. Старые наборы
+  (`new-icons`, `themed-fleet-icons`, `fleet-icons`) доступны через `@chirpwireless/ui-kit/legacy`.
+- **MUI 7** в peerDependencies.
+
+## Subpath exports
+
+```ts
+import { Sidebar, UserMenu, BaseLayout, getTheme } from '@chirpwireless/ui-kit';
+import { DashboardIcon, BellIcon } from '@chirpwireless/ui-kit/icons';
+import { getTheme, type ThemeVariant } from '@chirpwireless/ui-kit/theme';
+import '@chirpwireless/ui-kit/styles.css';
+
+// Legacy (deprecated):
+import { Modal, BadgeSelect } from '@chirpwireless/ui-kit/legacy';
+```
+
+## Минимальная интеграция
+
+```tsx
+import {
+    BaseLayout,
+    Sidebar,
+    UserMenu,
+    useLayout,
+    getTheme,
+    type SidebarItem,
+} from '@chirpwireless/ui-kit';
+import { DashboardIcon, Settings, UserIcon } from '@chirpwireless/ui-kit/icons';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+
+const groups: SidebarItem[][] = [
+    [
+        { name: 'Overview', href: '/overview', icon: <DashboardIcon />, match: /\/overview/ },
+        { name: 'Settings', href: '/settings', icon: <Settings />, match: /\/settings/ },
+    ],
+];
+
+export const App = () => {
+    const layout = useLayout();
+
+    return (
+        <ThemeProvider theme={getTheme({ mode: 'light', variant: 'default' })}>
+            <CssBaseline />
+            <BaseLayout
+                isSidebarOpen={layout.isSidebarOpen}
+                isSidebarCollapsed={layout.isSidebarCollapsed}
+                sidebar={
+                    <Sidebar
+                        groups={groups}
+                        isOpen={layout.isSidebarOpen}
+                        isCollapsed={layout.isSidebarCollapsed}
+                        onCollapseToggle={layout.toggleSidebarCollapsed}
+                        footerSlot={
+                            <UserMenu
+                                user={{ name: 'J.D.', subtitle: 'Acme Inc.' }}
+                                menuItems={[{ id: 'p', label: 'Profile', icon: <UserIcon />, onClick: () => {} }]}
+                                onLogout={() => {}}
+                            />
+                        }
+                    />
+                }
+            >
+                <YourRoutes />
+            </BaseLayout>
+        </ThemeProvider>
+    );
+};
+```
+
+## Breaking changes
+
+- `lightTheme` / `darkTheme` из корневого экспорта переименованы:
+  - **Old**: `import { lightTheme, darkTheme } from '@chirpwireless/ui-kit';` → теперь это `kiloLightTheme` /
+    `kiloDarkTheme` (или используйте фабрику `getTheme`).
+  - Legacy theme (с `background1..16`, `text1..9`) доступна как `legacyLightTheme` / `legacyDarkTheme`.
+- `LogoutIcon` из старого `./assets/icons` → переименован в `LegacyLogoutIcon` при экспорте из корня.
+  Новая иконка — `import { LogoutIcon } from '@chirpwireless/ui-kit/icons'`.
+- MUI 5 → 7. Потребитель обязан обновить свои peers.
+- `@mui/base` / `@mui/styled-engine-sc` убраны из peerDependencies. UserMenu теперь использует MUI 7
+  `Menu` напрямую.
+
+## Что осталось как было
+
+- `helpers`, `hooks`, основные `lib`-компоненты (Modal, Cards, Table, Charts, Maps) — через корневой
+  экспорт. Их API не менялся.
+- `useBreakpoints`, `useDebounce`, `useToggle` — на месте.
+- `uiKitLocaleModule` — i18next-ресурсы по-прежнему мерджатся в потребителя.
