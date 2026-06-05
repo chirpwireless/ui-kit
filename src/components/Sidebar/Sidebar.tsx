@@ -17,6 +17,7 @@ export const Sidebar = ({
     isCollapsed,
     onCollapseToggle,
     onItemClick,
+    onParentClick,
     activePathname,
     logo,
     logoCollapsed,
@@ -32,13 +33,15 @@ export const Sidebar = ({
 
     const handleParentClick = useCallback(
         (item: SidebarItem) => {
+            onParentClick?.(item);
+
             if (isCollapsed) {
                 onCollapseToggle();
             }
 
             setMenuParentIsOpen((prev) => ({ ...prev, [item.name]: !prev[item.name] }));
         },
-        [isCollapsed, onCollapseToggle],
+        [isCollapsed, onCollapseToggle, onParentClick],
     );
 
     const handleItemClick = useCallback(

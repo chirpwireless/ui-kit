@@ -221,6 +221,8 @@ export const RoutesList: FC<RoutesListProps> = ({
                     );
                 })}
             </Stack>
+
+            {item.appendSlot?.(Boolean(menuParentIsOpen[item.name]))}
         </>
     );
 };
