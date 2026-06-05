@@ -1,18 +1,17 @@
 import { jsxRuntimeExports as r } from "../../jsx-runtime-BgepH7Pb.js";
-import { Stack as p } from "@mui/material";
-import { SidebarToggle as s } from "./SidebarToggle.es.js";
-import { SideBarToggledWrap as x, LogoCollapsedWrap as g, AppLogo as m, LogoWrap as a } from "./style.es.js";
-const d = ({
+import { Stack as c } from "@mui/material";
+import { SidebarToggle as g } from "./SidebarToggle.es.js";
+import { SideBarToggledWrap as m, LogoCollapsedWrap as s, AppLogo as l, LogoWrap as x } from "./style.es.js";
+const h = ({
   isSidebarCollapsed: t,
-  isSidebarHovered: n,
-  onToggle: o,
-  logo: e,
-  logoCollapsed: i,
-  logoHref: l = "/"
+  isSidebarHovered: o,
+  onToggle: e,
+  logo: n,
+  logoCollapsed: i
 }) => {
-  const c = () => t ? n ? null : /* @__PURE__ */ r.jsx(g, { children: i ?? e }) : /* @__PURE__ */ r.jsx(m, { children: /* @__PURE__ */ r.jsx("a", { href: l, style: { display: "inline-flex", textDecoration: "none", color: "inherit" }, children: /* @__PURE__ */ r.jsx(a, { children: e }) }) });
+  const p = () => t ? o ? null : /* @__PURE__ */ r.jsx(s, { children: i ?? n }) : /* @__PURE__ */ r.jsx(l, { children: /* @__PURE__ */ r.jsx(x, { children: n }) });
   return /* @__PURE__ */ r.jsxs(
-    p,
+    c,
     {
       direction: "row",
       width: "100%",
@@ -20,13 +19,13 @@ const d = ({
       alignItems: "start",
       gap: 0,
       children: [
-        c(),
-        n ? /* @__PURE__ */ r.jsx(x, { children: /* @__PURE__ */ r.jsx(
-          s,
+        p(),
+        o ? /* @__PURE__ */ r.jsx(m, { children: /* @__PURE__ */ r.jsx(
+          g,
           {
-            isSidebarHovered: n,
+            isSidebarHovered: o,
             isSidebarCollapsed: t,
-            onToggle: o
+            onToggle: e
           }
         ) }) : null
       ]
@@ -34,5 +33,5 @@ const d = ({
   );
 };
 export {
-  d as SidebarLogo
+  h as SidebarLogo
 };

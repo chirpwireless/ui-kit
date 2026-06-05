@@ -7,5 +7,5 @@ interface SidebarLogoProps {
     logoCollapsed?: ReactNode;
     logoHref?: string;
 }
-export declare const SidebarLogo: ({ isSidebarCollapsed, isSidebarHovered, onToggle, logo, logoCollapsed, logoHref, }: SidebarLogoProps) => import("react/jsx-runtime").JSX.Element;
+export declare const SidebarLogo: ({ isSidebarCollapsed, isSidebarHovered, onToggle, logo, logoCollapsed, }: SidebarLogoProps) => import("react/jsx-runtime").JSX.Element;
 export {};

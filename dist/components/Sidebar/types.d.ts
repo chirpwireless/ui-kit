@@ -10,6 +10,11 @@ export interface SidebarItem {
     hasDivider?: boolean;
     onClick?: () => void;
     children?: SidebarItem[];
+    /**
+     * Extra content rendered right after this top-level item (e.g. a "manage" row).
+     * Receives the item's current expanded state. App-specific; kept generic via a render fn.
+     */
+    appendSlot?: (isExpanded: boolean) => ReactNode;
 }
 export interface SidebarLinkComponentProps {
     href: string;
@@ -32,6 +37,8 @@ export interface SidebarProps {
     onCollapseToggle: () => void;
     /** Called when a leaf item is clicked. */
     onItemClick?: (item: SidebarItem, event: MouseEvent<HTMLAnchorElement>) => void;
+    /** Called when a collapsible parent item is clicked (e.g. to lazily load its children). */
+    onParentClick?: (item: SidebarItem) => void;
     /** Active pathname used to highlight matching items via `item.match`. */
     activePathname?: string;
     /** Logo node rendered when the sidebar is expanded. */
