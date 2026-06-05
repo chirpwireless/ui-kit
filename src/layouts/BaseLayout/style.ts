@@ -60,6 +60,10 @@ export const AppContainer = styled(Box, {
 
 export const LayoutRoot = styled(Box)({
     minHeight: '100vh',
+    // Use dynamic viewport height where supported so mobile browser chrome doesn't clip the layout.
+    '@supports (min-height: 100dvh)': {
+        minHeight: '100dvh',
+    },
     display: 'flex',
     flexFlow: 'column nowrap',
 });

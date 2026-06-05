@@ -1,8 +1,8 @@
-export const SIDEBAR_WIDTH = 230;
+export const SIDEBAR_WIDTH = 250;
 
 export const CLOSED_SIDEBAR_WIDTH = 69;
 
-export const SIDEBAR_COLLAPSED_WIDTH = 69;
+export const SIDEBAR_COLLAPSED_WIDTH = 36;
 
 export const HEADER_HEIGHT = 64;
 
