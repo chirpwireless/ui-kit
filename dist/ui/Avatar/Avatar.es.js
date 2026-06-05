@@ -1,7 +1,28 @@
-import { jsxRuntimeExports as i } from "../../jsx-runtime-BgepH7Pb.js";
-import { Avatar as n } from "@mui/material";
-import { getUserInitials as s } from "../../helpers/userName.es.js";
-const f = ({ avatar: t, userName: r, sx: o }) => t ? /* @__PURE__ */ i.jsx(n, { src: t, sx: o, alt: r }) : /* @__PURE__ */ i.jsx(n, { sx: o, children: r ? s(r) : "" });
+import { jsxRuntimeExports as n } from "../../jsx-runtime-BgepH7Pb.js";
+import { useState as R, useCallback as U, useEffect as m } from "react";
+import { Avatar as v } from "@mui/material";
+import { getUserInitials as b } from "../../helpers/userName.es.js";
+const A = ({ avatar: r, userName: e, sx: o, loader: i }) => {
+  const [t, s] = R(""), a = U(
+    async (c) => {
+      if (!i) {
+        s(c);
+        return;
+      }
+      const f = await i(c);
+      f && s(URL.createObjectURL(f));
+    },
+    [i]
+  );
+  return m(() => {
+    r && a(r);
+  }, [r, a]), m(
+    () => () => {
+      t.startsWith("blob:") && URL.revokeObjectURL(t);
+    },
+    [t]
+  ), t ? /* @__PURE__ */ n.jsx(v, { src: t, sx: o, alt: e }) : /* @__PURE__ */ n.jsx(v, { sx: o, children: e ? b(e) : "" });
+};
 export {
-  f as Avatar
+  A as Avatar
 };
