@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=(e,t)=>t?e*Math.pow(.0006213712,2):e*.0006213712,r=e=>e*5280,n=(e,t)=>t?`${Math.round(e)} mi2, (${Math.round(r(e))} ft2)`:`${Math.round(e)} mi, (${Math.round(r(e))} ft)`;exports.formatedMilesFeetValue=n;exports.metersToMiles=o;exports.milesToFeet=r;

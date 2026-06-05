@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("../../../geocoding-BVLOYWxi.cjs"),o=e.mbxGeocoding({accessToken:"pk.eyJ1IjoiY2hpcnAiLCJhIjoiY2xid2JvdWE2MHZ3eDNwbXM5OGpzcnFqNiJ9.YRfFt53eK_f6dWIfrhwWUg"});exports.geocodingClient=o;

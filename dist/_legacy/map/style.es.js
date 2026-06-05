@@ -1,0 +1,568 @@
+import { styled as a, Box as l, alpha as t } from "@mui/material";
+import { SIDEBAR_WIDTH as g, CurrentTheme as c } from "../../styles/constants.es.js";
+const e = "data:image/svg+xml,%3csvg%20width='28'%20height='28'%20viewBox='0%200%2028%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='28'%20height='28'%20rx='3'%20/%3e%3cpath%20d='M7.958%209.625v8.75c0%20.92.746%201.667%201.667%201.667h8.75c.92%200%201.667-.746%201.667-1.667v-8.75c0-.92-.747-1.667-1.667-1.667h-8.75c-.92%200-1.667.747-1.667%201.667Zm6.25%204.166-3.75%203.75m3.334-3.332%203.75-3.75'%20stroke='currentColor'%20stroke-linecap='round'%20stroke-linejoin='round'%20/%3e%3cpath%20d='M10.458%2014.625v2.917h2.917m4.167-4.167V10.46h-2.917'%20stroke='currentColor'%20stroke-linecap='round'%20stroke-linejoin='round'%20/%3e%3c/svg%3e", s = "data:image/svg+xml,%3csvg%20width='28'%20height='28'%20viewBox='0%200%2028%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='28'%20height='28'%20rx='3'%20/%3e%3cpath%20d='M19.208%2014.209H8.792'%20stroke='currentColor'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20/%3e%3c/svg%3e", d = "data:image/svg+xml,%3csvg%20width='28'%20height='28'%20viewBox='0%200%2028%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='28'%20height='28'%20rx='3'%20/%3e%3cpath%20d='M14%208.791v10.417M19.208%2014H8.792'%20stroke='currentColor'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20/%3e%3c/svg%3e", r = "data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='m10%2017.5%206.666-4.167A3.333%203.333%200%200%200%2013.333%2010H6.666a3.333%203.333%200%200%200-3.333%203.333L10%2017.5Zm0-8.333A3.333%203.333%200%201%200%2010%202.5a3.333%203.333%200%200%200%200%206.667Z'%20fill='%23FF4D14'%20/%3e%3c/svg%3e", x = "data:image/svg+xml,%3csvg%20width='28'%20height='28'%20viewBox='0%200%2028%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='28'%20height='28'%20rx='3'%20/%3e%3cpath%20d='m20.042%2020.042-3.125-3.125m-8.959-3.75a5.208%205.208%200%201%201%2010.417%200%205.208%205.208%200%200%201-10.417%200Z'%20stroke='currentColor'%20stroke-linecap='round'%20stroke-linejoin='round'%20/%3e%3c/svg%3e", b = "data:image/svg+xml,%3csvg%20width='28'%20height='28'%20viewBox='0%200%2028%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='28'%20height='28'%20rx='3'%20/%3e%3ccircle%20cx='14.333'%20cy='14.333'%20r='7.708'%20stroke='currentColor'%20stroke-width='1.25'%20/%3e%3cpath%20d='M13.066%2012.632c0-.716.57-1.291%201.28-1.291.708%200%201.278.575%201.278%201.29a1.28%201.28%200%200%201-1.232%201.292h-.663v1.866h1.22v-.751a2.44%202.44%200%200%200%201.885-2.395c0-1.408-1.117-2.476-2.5-2.476-1.384%200-2.5%201.021-2.5%202.476h1.22l.012-.011Zm.488%205.868h1.559v-1.572h-1.559V18.5Z'%20fill='currentColor'%20/%3e%3c/svg%3e", u = "data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='m14.375%205.625-8.75%208.75m0-8.75%208.75%208.75'%20stroke='%23BABABA'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20/%3e%3c/svg%3e", m = "data:image/svg+xml,%3csvg%20width='10'%20height='8'%20viewBox='0%200%2010%208'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M.75%204.75%203%207.25%209.25.75'%20stroke='currentColor'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'%20/%3e%3c/svg%3e", w = a(l, {
+  shouldForwardProp: (o) => o !== "isFullScreenMap" && o !== "isSidebarOpen" && o !== "mobileHeight"
+})(({ theme: o, isFullScreenMap: n = !1, isSidebarOpen: i = !1, mobileHeight: p = "60vh" }) => ({
+  borderRadius: "10px",
+  overflow: "hidden",
+  width: "100%",
+  height: "100%",
+  flexGrow: 1,
+  position: "relative",
+  backgroundColor: o.palette.grey[900],
+  [o.breakpoints.down("lg")]: {
+    height: n ? "100%" : p
+  },
+  [o.breakpoints.between("md", "lg")]: {
+    // optional, it’s less noticeable to recalculate the width of the map when resizing
+    width: i ? `calc(100% + ${g}px)` : "100%"
+  },
+  "canvas:focus-visible": {
+    outline: "none"
+  },
+  ".mapboxgl-ctrl-bottom-right": {
+    position: "absolute",
+    right: "10px",
+    bottom: "10px"
+  },
+  ".mapboxgl-ctrl-bottom-left": {
+    position: "absolute",
+    left: "10px",
+    bottom: "10px"
+  },
+  ".mapboxgl-ctrl.mapboxgl-ctrl-group": {
+    marginRight: 0
+  },
+  ".spider-leg-container .spider-leg-line": {
+    backgroundColor: "#f4f4f4",
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    width: "2px",
+    opacity: 0.45,
+    transformOrigin: "bottom",
+    zIndex: 0,
+    height: 0,
+    display: "none"
+  },
+  ".spider-leg-container:hover .spider-leg-line": {
+    backgroundColor: "#f404f4",
+    opacity: 1
+  },
+  ".spider-leg-container": {
+    width: "1px",
+    height: "1px",
+    overflow: "display",
+    willChange: "transform"
+  },
+  ".spider-leg-container.mapboxgl-marker": {
+    width: "0px!important",
+    height: "0px!important",
+    overflow: "display",
+    willChange: "transform",
+    border: "none!important"
+  },
+  ".spider-leg-container:hover": { cursor: "pointer" },
+  ".spider-leg-container .spider-leg-pin": {
+    position: "relative",
+    zIndex: 1
+  },
+  ".spider-leg-container.animate": {
+    transition: "margin 0.15s linear"
+  },
+  " .spider-leg-container.initial, .spider-leg-container.exit": {
+    marginLeft: "0!important",
+    marginTop: "0!important",
+    height: 0
+  },
+  ".spider-leg-container.animate .spider-leg-line": {
+    transition: "all 0.15s linear",
+    transitionDelay: "inherit"
+  },
+  ".spider-leg-container.animate.initial .spider-leg-line, spider-leg-container.animate.exit .spider-leg-line": {
+    height: "0!important"
+  },
+  ".cluster-custom-pin": {
+    width: "32px",
+    height: "32px",
+    border: "1px solid black",
+    borderRadius: "50%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "black",
+    background: "white",
+    div: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }
+  },
+  ".mapboxgl-ctrl": {
+    margin: 0
+  },
+  ".mapboxgl-ctrl.mapboxgl-ctrl-attrib": {
+    position: "absolute",
+    display: "none",
+    bottom: 0,
+    right: 0
+  },
+  "&&& .mapboxgl-ctrl": {
+    marginBottom: "2px"
+  },
+  ".mapboxgl-ctrl-geocoder--collapsed": {
+    height: "28px",
+    width: "28px",
+    minWidth: 0
+  },
+  ".mapboxgl-ctrl-geocoder.mapboxgl-ctrl:not(.mapboxgl-ctrl-geocoder--collapsed)": {
+    backgroundColor: o.palette.background.background2,
+    border: `1px solid ${t(o.palette.border.input, 0.14)}`,
+    borderRadius: "8px",
+    width: "480px",
+    svg: {
+      left: "12px"
+    },
+    ".mapboxgl-ctrl-geocoder--icon-search": {
+      backgroundColor: o.palette.text.text4
+    },
+    "&:hover": {
+      ".mapboxgl-ctrl-geocoder--icon-search": {
+        backgroundColor: o.palette.text.text4
+      },
+      ".mapboxgl-ctrl-geocoder--input": {
+        color: o.palette.text.text4
+      }
+    },
+    ".mapboxgl-ctrl-geocoder--input:focus": {
+      border: `1px solid ${t(o.palette.border.border5, 0.3)}`,
+      borderRadius: "8px",
+      ".mapboxgl-ctrl-geocoder--icon-search": {
+        backgroundColor: o.palette.text.text7
+      },
+      caretColor: o.palette.base.color6
+    }
+  },
+  ".mapboxgl-ctrl-geocoder.mapboxgl-ctrl": {
+    marginRight: 0,
+    backgroundColor: o.palette.base.color2,
+    ".suggestions-wrapper": {
+      ".suggestions": {
+        ...o.typography.caption12,
+        backgroundColor: o.palette.background.background1,
+        border: `1px solid ${t(o.palette.border.border3, 0.1)}`,
+        borderRadius: "12px",
+        boxShadow: `0px 4px 20px ${t("#5C5C5C", 0.2)}, !important`,
+        color: o.palette.text.text8,
+        padding: "4px",
+        marginBottom: "4px",
+        "li a": {
+          "&:hover": {
+            borderRadius: "6px",
+            background: o.palette.background.background5,
+            color: o.palette.text.text6
+          }
+        },
+        "li.active a": {
+          color: o.palette.base.color6,
+          backgroundColor: o.palette.background.background1,
+          ".mapboxgl-ctrl-geocoder--suggestion .custom-suggestion": {
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center"
+          },
+          ".mapboxgl-ctrl-geocoder--suggestion .custom-suggestion .selected-icon": {
+            width: " 10.5px",
+            height: "7.5px",
+            backgroundColor: o.palette.base.color6,
+            backgroundRepeat: "no-repeat",
+            maskImage: `url("${m}") `,
+            WebkitMaskPositionX: "50%",
+            WebkitMaskPositionY: "50%",
+            backgroundImage: "none"
+          },
+          ".mapboxgl-ctrl-geocoder--suggestion .custom-suggestion .address": {
+            maxWidth: "305px"
+          }
+        }
+      }
+    },
+    ".mapboxgl-ctrl-geocoder--pin-right": {
+      button: {
+        background: "none",
+        svg: {
+          marginTop: "0px",
+          backgroundImage: "none",
+          backgroundColor: o.palette.text.text4,
+          maskImage: `url("${u}") `,
+          WebkitMaskPositionX: "50%",
+          WebkitMaskPositionY: "50%"
+        }
+      }
+    },
+    ".mapboxgl-ctrl-geocoder--icon-search": {
+      backgroundImage: "none",
+      backgroundColor: o.palette.text.text4,
+      maskImage: `url("${x}") `,
+      WebkitMaskPositionX: "50%",
+      WebkitMaskPositionY: "50%"
+    },
+    ".mapboxgl-ctrl-geocoder--input": {
+      color: o.palette.text.text4,
+      "&:placeholder": {
+        color: o.palette.text.text8
+      },
+      "&:focus": {
+        outline: "none"
+      }
+    },
+    svg: {
+      left: "4px",
+      top: "4px",
+      path: { display: "none" }
+    }
+  },
+  ".mapboxgl-ctrl-geocoder--input": {
+    ...o.typography.body1,
+    color: o.palette.text.text1 + "!important",
+    height: "28px",
+    padding: "10px 36px"
+  },
+  ".mapboxgl-ctrl-zoom-in": {
+    marginBottom: "2px",
+    ".mapboxgl-ctrl-icon.mapboxgl-ctrl-icon.mapboxgl-ctrl-icon": {
+      backgroundImage: "none",
+      backgroundColor: o.palette.text.text4,
+      maskImage: `url("${d}") `,
+      WebkitMaskPositionX: "50%",
+      WebkitMaskPositionY: "50%"
+    }
+  },
+  ".mapboxgl-ctrl-zoom-out": {
+    ".mapboxgl-ctrl-icon.mapboxgl-ctrl-icon.mapboxgl-ctrl-icon": {
+      backgroundImage: "none",
+      backgroundColor: o.palette.text.text4,
+      maskImage: `url("${s}") `,
+      WebkitMaskPositionX: "50%",
+      WebkitMaskPositionY: "50%"
+    }
+  },
+  ".help-control": {
+    backgroundImage: "none",
+    backgroundColor: o.palette.text.text4,
+    maskImage: `url("${b}") `,
+    WebkitMaskPositionX: "50%",
+    WebkitMaskPositionY: "50%"
+  },
+  ".help-menu": {
+    display: "none",
+    position: "absolute",
+    bottom: "33px",
+    left: "0",
+    backgroundColor: o.palette.base.color2,
+    boxShadow: `0px 4px 4px 0px ${t("#5C5C5C", 0.14)}`,
+    padding: "7px",
+    borderRadius: "3px",
+    width: "106px",
+    height: "auto"
+  },
+  ".help-menu-item": {
+    display: "flex",
+    alignItems: "center",
+    width: "92px",
+    height: "22px",
+    color: o.palette.text.text4,
+    ...o.typography.overline,
+    "& svg": {
+      width: "22px",
+      height: "22px",
+      marginRight: "8px"
+    }
+  },
+  ".help-menu-divider": {
+    width: "100%",
+    height: "1px",
+    backgroundColor: t(o.palette.border.input, 0.14),
+    marginTop: "4px",
+    marginBottom: "4px"
+  },
+  ".mapboxgl-ctrl-fullscreen.mapboxgl-ctrl-fullscreen.mapboxgl-ctrl-fullscreen.mapboxgl-ctrl-fullscreen": {
+    [o.breakpoints.down("lg")]: {
+      display: "none"
+    },
+    "& span": {
+      backgroundImage: "none",
+      backgroundColor: o.palette.text.text4,
+      maskImage: `url("${e}") `,
+      WebkitMaskPositionX: "50%",
+      WebkitMaskPositionY: "50%"
+    }
+  },
+  ".mapboxgl-ctrl-group.mapboxgl-ctrl-group.mapboxgl-ctrl-group button+button": {
+    borderTop: "none"
+  },
+  ".mapboxgl-ctrl-group.mapboxgl-ctrl-group.mapboxgl-ctrl-group.mapboxgl-ctrl-group button": {
+    padding: "0",
+    backgroundColor: o.palette.base.color2,
+    color: "rgba(186, 186, 186, 1)",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: "3px",
+    width: "28px",
+    height: "28px",
+    cursor: "pointer",
+    display: "flex",
+    border: "none",
+    "&:disabled": {
+      opacity: 0.3,
+      cursor: "default"
+    },
+    span: {
+      width: "20px",
+      height: "20px"
+    },
+    "&:hover": {
+      border: `1px solid ${o.palette.border.border3}`
+    }
+  },
+  ".mapboxgl-ctrl button.mapboxgl-ctrl-shrink .mapboxgl-ctrl-icon": {
+    backgroundImage: "none",
+    backgroundColor: o.palette.text.text4,
+    maskImage: `url("${e}") `,
+    WebkitMaskPositionX: "50%",
+    WebkitMaskPositionY: "50%"
+  },
+  ".mapboxgl-ctrl-geolocate": {
+    "& span": {
+      backgroundImage: "none !important",
+      backgroundColor: o.palette.base.color6,
+      maskImage: `url("${r}") `,
+      WebkitMaskPositionX: "50%",
+      WebkitMaskPositionY: "50%"
+    }
+  },
+  ".mapboxgl-user-location-dot": {
+    background: "#fff",
+    border: "1px solid black",
+    width: "32px",
+    height: "32px",
+    borderRadius: "50%",
+    backgroundImage: `url("${r}")!important`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    "&:before": {
+      display: "none"
+    },
+    "&:after": {
+      display: "none"
+    }
+  },
+  ".mapboxgl-ctrl-group.mapboxgl-ctrl-group.mapboxgl-ctrl-group": {
+    background: "none",
+    boxShadow: "none"
+  },
+  ".single-point": {
+    width: "154px",
+    height: "154px",
+    cursor: "pointer",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "black",
+    "&__inner": {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }
+  },
+  ".mapboxgl-popup.speed-popup": {
+    width: "142px",
+    height: "57px",
+    ".mapboxgl-popup-tip": {
+      display: "none"
+    },
+    "& .mapboxgl-popup-content": {
+      display: "flex",
+      flexDirection: "column",
+      gap: "4px",
+      padding: "8px !important",
+      borderRadius: "4px !important",
+      color: o.palette.text.text4,
+      background: o.palette.background.background15,
+      border: `1px solid ${t(o.palette.border.border3, 0.1)} !important`,
+      backdropFilter: "blur(20px)",
+      boxShadow: `0px 4px 20px 0px ${t("#5C5C5C", 0.14)}} !important`,
+      ...o.typography.paragraphSecondary,
+      "& .speed": {
+        ...o.typography.mono10,
+        color: o.palette.text.text1
+      }
+    }
+  },
+  ".mapbox-control-ruler.mapbox-control-ruler.mapbox-control-ruler": {
+    svg: {
+      display: "none"
+    },
+    button: {
+      backgroundImage: o.palette.mode === c.Dark ? "url(/assets/ruler.svg)" : "url(/assets/ruler-dark.svg)",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      "&.-active": {
+        backgroundImage: "url(/assets/ruler-primary.svg)!important"
+      }
+    }
+  },
+  ".mapboxgl-ctrl-scale.mapboxgl-ctrl-scale.mapboxgl-ctrl-scale": {
+    background: "none",
+    border: "none",
+    width: "100px!important",
+    fontSize: "14px",
+    lineHeight: "16px",
+    color: o.palette.primary.light,
+    textShadow: `2px 2px 0 ${o.palette.text.text1}`,
+    fontFamily: o.typography.body2.fontFamily,
+    textTransform: "uppercase",
+    position: "absolute",
+    left: "8px",
+    bottom: "3px"
+  },
+  ".scale-text": {
+    fontSize: "14px",
+    lineHeight: "16px",
+    color: o.palette.primary.light,
+    textShadow: `2px 2px 0 ${o.palette.text.text1}`,
+    fontFamily: o.typography.body2.fontFamily,
+    textTransform: "uppercase",
+    position: "absolute",
+    left: "80px",
+    bottom: "13px"
+  },
+  ".main-point": {
+    width: "32px",
+    height: "32px",
+    border: "1px solid black",
+    borderRadius: "50%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "black",
+    background: "white",
+    div: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }
+  },
+  ".sub-point": {
+    width: "24px",
+    height: "24px",
+    border: "1px solid black",
+    borderRadius: "50%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "black",
+    background: "white",
+    div: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }
+  },
+  ".mapboxgl-ctrl.mapboxgl-ctrl-group.map-styles-group": {
+    button: {
+      marginBottom: "4px",
+      "&.map-style-button": {
+        stroke: o.palette.text.text1,
+        svg: {
+          opacity: 0.6
+        },
+        "&.active": {
+          color: o.palette.base.color6,
+          stroke: o.palette.base.color6
+        }
+      },
+      "&:last-of-type": {
+        marginBottom: "8px"
+      }
+    }
+  },
+  ".gps-track-tooltip-text": {
+    margin: 0,
+    "& + &": {
+      marginTop: "4px"
+    }
+  },
+  ".mapboxgl-scroll-zoom-blocker, .mapboxgl-scroll-zoom-blocker-show, .mapboxgl-touch-pan-blocker, .mapboxgl-touch-pan-blocker": {
+    fontFamily: o.typography.overline.fontFamily,
+    backgroundColor: o.palette.background.paper,
+    letterSpacing: "0.05em",
+    color: o.palette.text.text8,
+    padding: "8px"
+  },
+  ".common-line-marker": {
+    width: "6px",
+    height: "6px",
+    backgroundColor: o.palette.base.color6,
+    borderRadius: "50%"
+  },
+  ".start-end-line-marker": {
+    width: "6px",
+    height: "6px",
+    backgroundColor: o.palette.base.color6,
+    borderRadius: "50%",
+    ".svg-container": {
+      position: "relative",
+      width: "38px",
+      height: "38px",
+      transform: "translate(-42%, -42%)",
+      svg: {
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)"
+      }
+    }
+  },
+  ".map-marker-arrow": {
+    width: "auto",
+    height: "auto",
+    transformOrigin: "center"
+  }
+})), f = a(l)(({ theme: o }) => ({
+  position: "absolute",
+  top: "12px",
+  left: "50%",
+  transform: "translate(-50%)",
+  backgroundColor: o.palette.background.background1,
+  borderRadius: "6px !important",
+  ".MuiTabs-scroller": {
+    display: "flex",
+    borderRadius: "6px",
+    alignItems: "center",
+    height: "28px",
+    backgroundColor: o.palette.background.background1,
+    border: "none",
+    button: {
+      color: o.palette.text.text1,
+      height: "20px",
+      "&.Mui-selected": {
+        backgroundColor: o.palette.base.color6,
+        color: o.palette.base.color1,
+        "&:hover": {
+          border: "none",
+          backgroundColor: o.palette.base.hover
+        }
+      },
+      "&:hover": {
+        border: `1px solid ${o.palette.border.border5}`,
+        backgroundColor: o.palette.background.background1
+      }
+    }
+  }
+}));
+export {
+  w as MapContainer,
+  f as MapDrawModeTabsWrapper
+};

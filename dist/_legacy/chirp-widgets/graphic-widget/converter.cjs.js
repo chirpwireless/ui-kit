@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t={"°C":{convert:e=>e*1.8+32,alternativeUnits:"°F"},hPa:{convert:e=>e/1.333,alternativeUnits:"mmHg"}};exports.converter=t;

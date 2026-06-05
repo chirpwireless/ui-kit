@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const r=require("../../../jsx-runtime-BRMkMA8J.cjs"),t=require("./style.cjs.js"),c=({color:e,onClick:l,size:o})=>r.jsxRuntimeExports.jsx(t.Cell,{onClick:l,size:o,color:e});exports.ClickableColorCell=c;

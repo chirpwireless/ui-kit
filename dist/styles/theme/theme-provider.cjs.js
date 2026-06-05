@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const i=require("../../jsx-runtime-BRMkMA8J.cjs"),o=require("@mui/material"),s=require("./index.cjs.js"),m=({mode:e,customPalette:r,...t})=>i.jsxRuntimeExports.jsx(o.ThemeProvider,{theme:s.getTheme(e,r),...t});exports.ThemeProvider=m;

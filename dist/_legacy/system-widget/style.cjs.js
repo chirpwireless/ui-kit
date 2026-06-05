@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("@mui/material"),r=e.styled(e.Box)(({theme:t})=>({height:"auto",minHeight:"84px",background:t.palette.background.background7,padding:"20px",borderRadius:"12px"}));exports.Card=r;

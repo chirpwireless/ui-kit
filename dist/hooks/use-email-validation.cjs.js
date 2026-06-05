@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const a=require("react"),i=/^[^\s@]+@[^\s@]+\.[^\s@]+$/,l=()=>{const[s,e]=a.useState(!1);return{emailError:s,validateEmail:t=>{if(!t.length)return!1;const r=i.test(t);return t.trim().length>0?e(!r):e(!1),r},resetEmailError:()=>e(!1)}};exports.useEmailValidation=l;

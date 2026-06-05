@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("@mui/material"),o=e.styled(e.Box)(({theme:t})=>({position:"absolute",backgroundColor:t.palette.base.color6,borderRadius:"4px",padding:"1px 3px",fontSize:"10px",lineHeight:"12px",top:"5px",left:"11px"}));exports.AlertsCount=o;

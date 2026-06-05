@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const r=require("../../jsx-runtime-BRMkMA8J.cjs"),t=require("./style.cjs.js"),i=e=>r.jsxRuntimeExports.jsx(t.Slider,{...e});exports.Slider=i;

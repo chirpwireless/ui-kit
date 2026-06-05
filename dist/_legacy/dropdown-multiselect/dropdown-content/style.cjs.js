@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("@mui/material"),o=e.styled(e.Box)(({theme:r})=>({borderTop:"1px solid",borderColor:r.palette.border.input}));exports.Wrapper=o;

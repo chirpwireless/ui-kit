@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=require("react"),o=e=>Object.freeze(Object.defineProperty({__proto__:null,default:e},Symbol.toStringTag,{value:"Module"})),r=t.lazy(()=>Promise.resolve().then(()=>o(require("./donut-chart.cjs.js")))),n=r;exports.DonutChart=n;

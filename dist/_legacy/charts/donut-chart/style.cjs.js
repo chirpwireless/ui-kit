@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("@mui/material"),t=require("../../typogrpahy/index.cjs.js"),o=e.styled(t.Typography)(()=>({position:"absolute",top:"50%",left:"50%",transform:"translate(-50%, -50%)",zIndex:4}));exports.Text=o;

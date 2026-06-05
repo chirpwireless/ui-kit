@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=require("react"),r=(s=!1)=>{const[l,e]=t.useState(s),a=t.useCallback(()=>{e(c=>!c)},[e]),u=t.useCallback(()=>{e(!0)},[e]),o=t.useCallback(()=>{e(!1)},[e]);return{value:l,setValue:e,toggle:a,setTrue:u,setFalse:o}};exports.useToggle=r;

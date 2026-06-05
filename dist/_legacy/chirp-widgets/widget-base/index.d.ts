@@ -1,0 +1,21 @@
+import { Serie } from '@nivo/line';
+import { AttributeConfig, Settings as TSettings, Timequant } from '../types';
+type WidgetBaseProps = {
+    id: string;
+    attributeName: string;
+    chartData: Serie[] | null;
+    timequant: Timequant;
+    postfix: string;
+    date: string;
+    isLoading: boolean;
+    isError: boolean;
+    isInteractive?: boolean;
+    config: AttributeConfig;
+    period?: string;
+    onUnitsChange?: (shouldBeConverted: boolean) => void;
+    switchView?(attributeName: string): void;
+    value: number | string | boolean | undefined;
+    onSettingsChange?: (settings: TSettings) => void;
+};
+export declare const WidgetBase: React.FC<WidgetBaseProps>;
+export {};

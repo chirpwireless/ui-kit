@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});var o=(r=>(r.Graphic="graphic",r.Text="text",r.Boolean="boolean",r.Group="group",r))(o||{}),e=(r=>(r.hour="hour",r.day="day",r.week="week",r.month="month",r))(e||{});exports.Timequants=e;exports.WidgetTypes=o;

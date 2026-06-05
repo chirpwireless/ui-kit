@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=require("@mui/material"),o=t.styled(t.Stack)(({theme:e})=>({background:e.palette.background.background1,border:`1px solid ${t.alpha(e.palette.border.input,.14)}`,padding:"10px 16px",borderRadius:"8px",width:"400px",minHeight:"50px",position:"relative"}));exports.Root=o;

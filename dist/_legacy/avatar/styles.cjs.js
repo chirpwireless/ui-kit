@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("@mui/material"),a=e.styled(e.Avatar)(({theme:t})=>({color:t.palette.text.text8,backgroundColor:t.palette.text.titleInput}));exports.StyledAvatar=a;

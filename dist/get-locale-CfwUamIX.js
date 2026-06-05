@@ -1,0 +1,2190 @@
+function k(e) {
+  const t = Object.prototype.toString.call(e);
+  return e instanceof Date || typeof e == "object" && t === "[object Date]" ? new e.constructor(+e) : typeof e == "number" || t === "[object Number]" || typeof e == "string" || t === "[object String]" ? new Date(e) : /* @__PURE__ */ new Date(NaN);
+}
+let S = {};
+function j() {
+  return S;
+}
+function p(e, t) {
+  var l, h, c, v;
+  const a = j(), n = (t == null ? void 0 : t.weekStartsOn) ?? ((h = (l = t == null ? void 0 : t.locale) == null ? void 0 : l.options) == null ? void 0 : h.weekStartsOn) ?? a.weekStartsOn ?? ((v = (c = a.locale) == null ? void 0 : c.options) == null ? void 0 : v.weekStartsOn) ?? 0, i = k(e), s = i.getDay(), u = (s < n ? 7 : 0) + s - n;
+  return i.setDate(i.getDate() - u), i.setHours(0, 0, 0, 0), i;
+}
+const D = {
+  lessThanXSeconds: {
+    one: "less than a second",
+    other: "less than {{count}} seconds"
+  },
+  xSeconds: {
+    one: "1 second",
+    other: "{{count}} seconds"
+  },
+  halfAMinute: "half a minute",
+  lessThanXMinutes: {
+    one: "less than a minute",
+    other: "less than {{count}} minutes"
+  },
+  xMinutes: {
+    one: "1 minute",
+    other: "{{count}} minutes"
+  },
+  aboutXHours: {
+    one: "about 1 hour",
+    other: "about {{count}} hours"
+  },
+  xHours: {
+    one: "1 hour",
+    other: "{{count}} hours"
+  },
+  xDays: {
+    one: "1 day",
+    other: "{{count}} days"
+  },
+  aboutXWeeks: {
+    one: "about 1 week",
+    other: "about {{count}} weeks"
+  },
+  xWeeks: {
+    one: "1 week",
+    other: "{{count}} weeks"
+  },
+  aboutXMonths: {
+    one: "about 1 month",
+    other: "about {{count}} months"
+  },
+  xMonths: {
+    one: "1 month",
+    other: "{{count}} months"
+  },
+  aboutXYears: {
+    one: "about 1 year",
+    other: "about {{count}} years"
+  },
+  xYears: {
+    one: "1 year",
+    other: "{{count}} years"
+  },
+  overXYears: {
+    one: "over 1 year",
+    other: "over {{count}} years"
+  },
+  almostXYears: {
+    one: "almost 1 year",
+    other: "almost {{count}} years"
+  }
+}, N = (e, t, a) => {
+  let n;
+  const i = D[e];
+  return typeof i == "string" ? n = i : t === 1 ? n = i.one : n = i.other.replace("{{count}}", t.toString()), a != null && a.addSuffix ? a.comparison && a.comparison > 0 ? "in " + n : n + " ago" : n;
+};
+function m(e) {
+  return (t = {}) => {
+    const a = t.width ? String(t.width) : e.defaultWidth;
+    return e.formats[a] || e.formats[e.defaultWidth];
+  };
+}
+const C = {
+  full: "EEEE, MMMM do, y",
+  long: "MMMM do, y",
+  medium: "MMM d, y",
+  short: "MM/dd/yyyy"
+}, x = {
+  full: "h:mm:ss a zzzz",
+  long: "h:mm:ss a z",
+  medium: "h:mm:ss a",
+  short: "h:mm a"
+}, G = {
+  full: "{{date}} 'at' {{time}}",
+  long: "{{date}} 'at' {{time}}",
+  medium: "{{date}}, {{time}}",
+  short: "{{date}}, {{time}}"
+}, J = {
+  date: m({
+    formats: C,
+    defaultWidth: "full"
+  }),
+  time: m({
+    formats: x,
+    defaultWidth: "full"
+  }),
+  dateTime: m({
+    formats: G,
+    defaultWidth: "full"
+  })
+}, T = {
+  lastWeek: "'last' eeee 'at' p",
+  yesterday: "'yesterday at' p",
+  today: "'today at' p",
+  tomorrow: "'tomorrow at' p",
+  nextWeek: "eeee 'at' p",
+  other: "P"
+}, z = (e, t, a, n) => T[e];
+function r(e) {
+  return (t, a) => {
+    const n = a != null && a.context ? String(a.context) : "standalone";
+    let i;
+    if (n === "formatting" && e.formattingValues) {
+      const u = e.defaultFormattingWidth || e.defaultWidth, l = a != null && a.width ? String(a.width) : u;
+      i = e.formattingValues[l] || e.formattingValues[u];
+    } else {
+      const u = e.defaultWidth, l = a != null && a.width ? String(a.width) : e.defaultWidth;
+      i = e.values[l] || e.values[u];
+    }
+    const s = e.argumentCallback ? e.argumentCallback(t) : t;
+    return i[s];
+  };
+}
+const V = {
+  narrow: ["B", "A"],
+  abbreviated: ["BC", "AD"],
+  wide: ["Before Christ", "Anno Domini"]
+}, F = {
+  narrow: ["1", "2", "3", "4"],
+  abbreviated: ["Q1", "Q2", "Q3", "Q4"],
+  wide: ["1st quarter", "2nd quarter", "3rd quarter", "4th quarter"]
+}, H = {
+  narrow: ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
+  abbreviated: [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
+  wide: [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ]
+}, O = {
+  narrow: ["S", "M", "T", "W", "T", "F", "S"],
+  short: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+  abbreviated: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  wide: [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ]
+}, X = {
+  narrow: {
+    am: "a",
+    pm: "p",
+    midnight: "mi",
+    noon: "n",
+    morning: "morning",
+    afternoon: "afternoon",
+    evening: "evening",
+    night: "night"
+  },
+  abbreviated: {
+    am: "AM",
+    pm: "PM",
+    midnight: "midnight",
+    noon: "noon",
+    morning: "morning",
+    afternoon: "afternoon",
+    evening: "evening",
+    night: "night"
+  },
+  wide: {
+    am: "a.m.",
+    pm: "p.m.",
+    midnight: "midnight",
+    noon: "noon",
+    morning: "morning",
+    afternoon: "afternoon",
+    evening: "evening",
+    night: "night"
+  }
+}, A = {
+  narrow: {
+    am: "a",
+    pm: "p",
+    midnight: "mi",
+    noon: "n",
+    morning: "in the morning",
+    afternoon: "in the afternoon",
+    evening: "in the evening",
+    night: "at night"
+  },
+  abbreviated: {
+    am: "AM",
+    pm: "PM",
+    midnight: "midnight",
+    noon: "noon",
+    morning: "in the morning",
+    afternoon: "in the afternoon",
+    evening: "in the evening",
+    night: "at night"
+  },
+  wide: {
+    am: "a.m.",
+    pm: "p.m.",
+    midnight: "midnight",
+    noon: "noon",
+    morning: "in the morning",
+    afternoon: "in the afternoon",
+    evening: "in the evening",
+    night: "at night"
+  }
+}, E = (e, t) => {
+  const a = Number(e), n = a % 100;
+  if (n > 20 || n < 10)
+    switch (n % 10) {
+      case 1:
+        return a + "st";
+      case 2:
+        return a + "nd";
+      case 3:
+        return a + "rd";
+    }
+  return a + "th";
+}, L = {
+  ordinalNumber: E,
+  era: r({
+    values: V,
+    defaultWidth: "wide"
+  }),
+  quarter: r({
+    values: F,
+    defaultWidth: "wide",
+    argumentCallback: (e) => e - 1
+  }),
+  month: r({
+    values: H,
+    defaultWidth: "wide"
+  }),
+  day: r({
+    values: O,
+    defaultWidth: "wide"
+  }),
+  dayPeriod: r({
+    values: X,
+    defaultWidth: "wide",
+    formattingValues: A,
+    defaultFormattingWidth: "wide"
+  })
+};
+function o(e) {
+  return (t, a = {}) => {
+    const n = a.width, i = n && e.matchPatterns[n] || e.matchPatterns[e.defaultMatchWidth], s = t.match(i);
+    if (!s)
+      return null;
+    const u = s[0], l = n && e.parsePatterns[n] || e.parsePatterns[e.defaultParseWidth], h = Array.isArray(l) ? Q(l, (b) => b.test(u)) : (
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any -- I challange you to fix the type
+      q(l, (b) => b.test(u))
+    );
+    let c;
+    c = e.valueCallback ? e.valueCallback(h) : h, c = a.valueCallback ? (
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any -- I challange you to fix the type
+      a.valueCallback(c)
+    ) : c;
+    const v = t.slice(u.length);
+    return { value: c, rest: v };
+  };
+}
+function q(e, t) {
+  for (const a in e)
+    if (Object.prototype.hasOwnProperty.call(e, a) && t(e[a]))
+      return a;
+}
+function Q(e, t) {
+  for (let a = 0; a < e.length; a++)
+    if (t(e[a]))
+      return a;
+}
+function g(e) {
+  return (t, a = {}) => {
+    const n = t.match(e.matchPattern);
+    if (!n) return null;
+    const i = n[0], s = t.match(e.parsePattern);
+    if (!s) return null;
+    let u = e.valueCallback ? e.valueCallback(s[0]) : s[0];
+    u = a.valueCallback ? a.valueCallback(u) : u;
+    const l = t.slice(i.length);
+    return { value: u, rest: l };
+  };
+}
+const R = /^(\d+)(th|st|nd|rd)?/i, Y = /\d+/i, _ = {
+  narrow: /^(b|a)/i,
+  abbreviated: /^(b\.?\s?c\.?|b\.?\s?c\.?\s?e\.?|a\.?\s?d\.?|c\.?\s?e\.?)/i,
+  wide: /^(before christ|before common era|anno domini|common era)/i
+}, I = {
+  any: [/^b/i, /^(a|c)/i]
+}, B = {
+  narrow: /^[1234]/i,
+  abbreviated: /^q[1234]/i,
+  wide: /^[1234](th|st|nd|rd)? quarter/i
+}, K = {
+  any: [/1/i, /2/i, /3/i, /4/i]
+}, U = {
+  narrow: /^[jfmasond]/i,
+  abbreviated: /^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i,
+  wide: /^(january|february|march|april|may|june|july|august|september|october|november|december)/i
+}, Z = {
+  narrow: [
+    /^j/i,
+    /^f/i,
+    /^m/i,
+    /^a/i,
+    /^m/i,
+    /^j/i,
+    /^j/i,
+    /^a/i,
+    /^s/i,
+    /^o/i,
+    /^n/i,
+    /^d/i
+  ],
+  any: [
+    /^ja/i,
+    /^f/i,
+    /^mar/i,
+    /^ap/i,
+    /^may/i,
+    /^jun/i,
+    /^jul/i,
+    /^au/i,
+    /^s/i,
+    /^o/i,
+    /^n/i,
+    /^d/i
+  ]
+}, ee = {
+  narrow: /^[smtwf]/i,
+  short: /^(su|mo|tu|we|th|fr|sa)/i,
+  abbreviated: /^(sun|mon|tue|wed|thu|fri|sat)/i,
+  wide: /^(sunday|monday|tuesday|wednesday|thursday|friday|saturday)/i
+}, te = {
+  narrow: [/^s/i, /^m/i, /^t/i, /^w/i, /^t/i, /^f/i, /^s/i],
+  any: [/^su/i, /^m/i, /^tu/i, /^w/i, /^th/i, /^f/i, /^sa/i]
+}, ae = {
+  narrow: /^(a|p|mi|n|(in the|at) (morning|afternoon|evening|night))/i,
+  any: /^([ap]\.?\s?m\.?|midnight|noon|(in the|at) (morning|afternoon|evening|night))/i
+}, ne = {
+  any: {
+    am: /^a/i,
+    pm: /^p/i,
+    midnight: /^mi/i,
+    noon: /^no/i,
+    morning: /morning/i,
+    afternoon: /afternoon/i,
+    evening: /evening/i,
+    night: /night/i
+  }
+}, ie = {
+  ordinalNumber: g({
+    matchPattern: R,
+    parsePattern: Y,
+    valueCallback: (e) => parseInt(e, 10)
+  }),
+  era: o({
+    matchPatterns: _,
+    defaultMatchWidth: "wide",
+    parsePatterns: I,
+    defaultParseWidth: "any"
+  }),
+  quarter: o({
+    matchPatterns: B,
+    defaultMatchWidth: "wide",
+    parsePatterns: K,
+    defaultParseWidth: "any",
+    valueCallback: (e) => e + 1
+  }),
+  month: o({
+    matchPatterns: U,
+    defaultMatchWidth: "wide",
+    parsePatterns: Z,
+    defaultParseWidth: "any"
+  }),
+  day: o({
+    matchPatterns: ee,
+    defaultMatchWidth: "wide",
+    parsePatterns: te,
+    defaultParseWidth: "any"
+  }),
+  dayPeriod: o({
+    matchPatterns: ae,
+    defaultMatchWidth: "any",
+    parsePatterns: ne,
+    defaultParseWidth: "any"
+  })
+}, $ = {
+  code: "en-US",
+  formatDistance: N,
+  formatLong: J,
+  formatRelative: z,
+  localize: L,
+  match: ie,
+  options: {
+    weekStartsOn: 0,
+    firstWeekContainsDate: 1
+  }
+};
+function M(e, t, a) {
+  const n = p(e, a), i = p(t, a);
+  return +n == +i;
+}
+const P = {
+  lessThanXSeconds: {
+    standalone: {
+      one: "weniger als 1 Sekunde",
+      other: "weniger als {{count}} Sekunden"
+    },
+    withPreposition: {
+      one: "weniger als 1 Sekunde",
+      other: "weniger als {{count}} Sekunden"
+    }
+  },
+  xSeconds: {
+    standalone: {
+      one: "1 Sekunde",
+      other: "{{count}} Sekunden"
+    },
+    withPreposition: {
+      one: "1 Sekunde",
+      other: "{{count}} Sekunden"
+    }
+  },
+  halfAMinute: {
+    standalone: "eine halbe Minute",
+    withPreposition: "einer halben Minute"
+  },
+  lessThanXMinutes: {
+    standalone: {
+      one: "weniger als 1 Minute",
+      other: "weniger als {{count}} Minuten"
+    },
+    withPreposition: {
+      one: "weniger als 1 Minute",
+      other: "weniger als {{count}} Minuten"
+    }
+  },
+  xMinutes: {
+    standalone: {
+      one: "1 Minute",
+      other: "{{count}} Minuten"
+    },
+    withPreposition: {
+      one: "1 Minute",
+      other: "{{count}} Minuten"
+    }
+  },
+  aboutXHours: {
+    standalone: {
+      one: "etwa 1 Stunde",
+      other: "etwa {{count}} Stunden"
+    },
+    withPreposition: {
+      one: "etwa 1 Stunde",
+      other: "etwa {{count}} Stunden"
+    }
+  },
+  xHours: {
+    standalone: {
+      one: "1 Stunde",
+      other: "{{count}} Stunden"
+    },
+    withPreposition: {
+      one: "1 Stunde",
+      other: "{{count}} Stunden"
+    }
+  },
+  xDays: {
+    standalone: {
+      one: "1 Tag",
+      other: "{{count}} Tage"
+    },
+    withPreposition: {
+      one: "1 Tag",
+      other: "{{count}} Tagen"
+    }
+  },
+  aboutXWeeks: {
+    standalone: {
+      one: "etwa 1 Woche",
+      other: "etwa {{count}} Wochen"
+    },
+    withPreposition: {
+      one: "etwa 1 Woche",
+      other: "etwa {{count}} Wochen"
+    }
+  },
+  xWeeks: {
+    standalone: {
+      one: "1 Woche",
+      other: "{{count}} Wochen"
+    },
+    withPreposition: {
+      one: "1 Woche",
+      other: "{{count}} Wochen"
+    }
+  },
+  aboutXMonths: {
+    standalone: {
+      one: "etwa 1 Monat",
+      other: "etwa {{count}} Monate"
+    },
+    withPreposition: {
+      one: "etwa 1 Monat",
+      other: "etwa {{count}} Monaten"
+    }
+  },
+  xMonths: {
+    standalone: {
+      one: "1 Monat",
+      other: "{{count}} Monate"
+    },
+    withPreposition: {
+      one: "1 Monat",
+      other: "{{count}} Monaten"
+    }
+  },
+  aboutXYears: {
+    standalone: {
+      one: "etwa 1 Jahr",
+      other: "etwa {{count}} Jahre"
+    },
+    withPreposition: {
+      one: "etwa 1 Jahr",
+      other: "etwa {{count}} Jahren"
+    }
+  },
+  xYears: {
+    standalone: {
+      one: "1 Jahr",
+      other: "{{count}} Jahre"
+    },
+    withPreposition: {
+      one: "1 Jahr",
+      other: "{{count}} Jahren"
+    }
+  },
+  overXYears: {
+    standalone: {
+      one: "mehr als 1 Jahr",
+      other: "mehr als {{count}} Jahre"
+    },
+    withPreposition: {
+      one: "mehr als 1 Jahr",
+      other: "mehr als {{count}} Jahren"
+    }
+  },
+  almostXYears: {
+    standalone: {
+      one: "fast 1 Jahr",
+      other: "fast {{count}} Jahre"
+    },
+    withPreposition: {
+      one: "fast 1 Jahr",
+      other: "fast {{count}} Jahren"
+    }
+  }
+}, re = (e, t, a) => {
+  let n;
+  const i = a != null && a.addSuffix ? P[e].withPreposition : P[e].standalone;
+  return typeof i == "string" ? n = i : t === 1 ? n = i.one : n = i.other.replace("{{count}}", String(t)), a != null && a.addSuffix ? a.comparison && a.comparison > 0 ? "in " + n : "vor " + n : n;
+}, oe = {
+  full: "EEEE, do MMMM y",
+  // Montag, 7. Januar 2018
+  long: "do MMMM y",
+  // 7. Januar 2018
+  medium: "do MMM y",
+  // 7. Jan. 2018
+  short: "dd.MM.y"
+  // 07.01.2018
+}, se = {
+  full: "HH:mm:ss zzzz",
+  long: "HH:mm:ss z",
+  medium: "HH:mm:ss",
+  short: "HH:mm"
+}, ue = {
+  full: "{{date}} 'um' {{time}}",
+  long: "{{date}} 'um' {{time}}",
+  medium: "{{date}} {{time}}",
+  short: "{{date}} {{time}}"
+}, de = {
+  date: m({
+    formats: oe,
+    defaultWidth: "full"
+  }),
+  time: m({
+    formats: se,
+    defaultWidth: "full"
+  }),
+  dateTime: m({
+    formats: ue,
+    defaultWidth: "full"
+  })
+}, me = {
+  lastWeek: "'letzten' eeee 'um' p",
+  yesterday: "'gestern um' p",
+  today: "'heute um' p",
+  tomorrow: "'morgen um' p",
+  nextWeek: "eeee 'um' p",
+  other: "P"
+}, le = (e, t, a, n) => me[e], ce = {
+  narrow: ["v.Chr.", "n.Chr."],
+  abbreviated: ["v.Chr.", "n.Chr."],
+  wide: ["vor Christus", "nach Christus"]
+}, he = {
+  narrow: ["1", "2", "3", "4"],
+  abbreviated: ["Q1", "Q2", "Q3", "Q4"],
+  wide: ["1. Quartal", "2. Quartal", "3. Quartal", "4. Quartal"]
+}, w = {
+  narrow: ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
+  abbreviated: [
+    "Jan",
+    "Feb",
+    "Mär",
+    "Apr",
+    "Mai",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Okt",
+    "Nov",
+    "Dez"
+  ],
+  wide: [
+    "Januar",
+    "Februar",
+    "März",
+    "April",
+    "Mai",
+    "Juni",
+    "Juli",
+    "August",
+    "September",
+    "Oktober",
+    "November",
+    "Dezember"
+  ]
+}, fe = {
+  narrow: w.narrow,
+  abbreviated: [
+    "Jan.",
+    "Feb.",
+    "März",
+    "Apr.",
+    "Mai",
+    "Juni",
+    "Juli",
+    "Aug.",
+    "Sep.",
+    "Okt.",
+    "Nov.",
+    "Dez."
+  ],
+  wide: w.wide
+}, ge = {
+  narrow: ["S", "M", "D", "M", "D", "F", "S"],
+  short: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
+  abbreviated: ["So.", "Mo.", "Di.", "Mi.", "Do.", "Fr.", "Sa."],
+  wide: [
+    "Sonntag",
+    "Montag",
+    "Dienstag",
+    "Mittwoch",
+    "Donnerstag",
+    "Freitag",
+    "Samstag"
+  ]
+}, ve = {
+  narrow: {
+    am: "vm.",
+    pm: "nm.",
+    midnight: "Mitternacht",
+    noon: "Mittag",
+    morning: "Morgen",
+    afternoon: "Nachm.",
+    evening: "Abend",
+    night: "Nacht"
+  },
+  abbreviated: {
+    am: "vorm.",
+    pm: "nachm.",
+    midnight: "Mitternacht",
+    noon: "Mittag",
+    morning: "Morgen",
+    afternoon: "Nachmittag",
+    evening: "Abend",
+    night: "Nacht"
+  },
+  wide: {
+    am: "vormittags",
+    pm: "nachmittags",
+    midnight: "Mitternacht",
+    noon: "Mittag",
+    morning: "Morgen",
+    afternoon: "Nachmittag",
+    evening: "Abend",
+    night: "Nacht"
+  }
+}, be = {
+  narrow: {
+    am: "vm.",
+    pm: "nm.",
+    midnight: "Mitternacht",
+    noon: "Mittag",
+    morning: "morgens",
+    afternoon: "nachm.",
+    evening: "abends",
+    night: "nachts"
+  },
+  abbreviated: {
+    am: "vorm.",
+    pm: "nachm.",
+    midnight: "Mitternacht",
+    noon: "Mittag",
+    morning: "morgens",
+    afternoon: "nachmittags",
+    evening: "abends",
+    night: "nachts"
+  },
+  wide: {
+    am: "vormittags",
+    pm: "nachmittags",
+    midnight: "Mitternacht",
+    noon: "Mittag",
+    morning: "morgens",
+    afternoon: "nachmittags",
+    evening: "abends",
+    night: "nachts"
+  }
+}, we = (e) => Number(e) + ".", ye = {
+  ordinalNumber: we,
+  era: r({
+    values: ce,
+    defaultWidth: "wide"
+  }),
+  quarter: r({
+    values: he,
+    defaultWidth: "wide",
+    argumentCallback: (e) => e - 1
+  }),
+  month: r({
+    values: w,
+    formattingValues: fe,
+    defaultWidth: "wide"
+  }),
+  day: r({
+    values: ge,
+    defaultWidth: "wide"
+  }),
+  dayPeriod: r({
+    values: ve,
+    defaultWidth: "wide",
+    formattingValues: be,
+    defaultFormattingWidth: "wide"
+  })
+}, pe = /^(\d+)(\.)?/i, Me = /\d+/i, Pe = {
+  narrow: /^(v\.? ?Chr\.?|n\.? ?Chr\.?)/i,
+  abbreviated: /^(v\.? ?Chr\.?|n\.? ?Chr\.?)/i,
+  wide: /^(vor Christus|vor unserer Zeitrechnung|nach Christus|unserer Zeitrechnung)/i
+}, We = {
+  any: [/^v/i, /^n/i]
+}, $e = {
+  narrow: /^[1234]/i,
+  abbreviated: /^q[1234]/i,
+  wide: /^[1234](\.)? Quartal/i
+}, ke = {
+  any: [/1/i, /2/i, /3/i, /4/i]
+}, Se = {
+  narrow: /^[jfmasond]/i,
+  abbreviated: /^(j[aä]n|feb|mär[z]?|apr|mai|jun[i]?|jul[i]?|aug|sep|okt|nov|dez)\.?/i,
+  wide: /^(januar|februar|märz|april|mai|juni|juli|august|september|oktober|november|dezember)/i
+}, je = {
+  narrow: [
+    /^j/i,
+    /^f/i,
+    /^m/i,
+    /^a/i,
+    /^m/i,
+    /^j/i,
+    /^j/i,
+    /^a/i,
+    /^s/i,
+    /^o/i,
+    /^n/i,
+    /^d/i
+  ],
+  any: [
+    /^j[aä]/i,
+    /^f/i,
+    /^mär/i,
+    /^ap/i,
+    /^mai/i,
+    /^jun/i,
+    /^jul/i,
+    /^au/i,
+    /^s/i,
+    /^o/i,
+    /^n/i,
+    /^d/i
+  ]
+}, De = {
+  narrow: /^[smdmf]/i,
+  short: /^(so|mo|di|mi|do|fr|sa)/i,
+  abbreviated: /^(son?|mon?|die?|mit?|don?|fre?|sam?)\.?/i,
+  wide: /^(sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)/i
+}, Ne = {
+  any: [/^so/i, /^mo/i, /^di/i, /^mi/i, /^do/i, /^f/i, /^sa/i]
+}, Ce = {
+  narrow: /^(vm\.?|nm\.?|Mitternacht|Mittag|morgens|nachm\.?|abends|nachts)/i,
+  abbreviated: /^(vorm\.?|nachm\.?|Mitternacht|Mittag|morgens|nachm\.?|abends|nachts)/i,
+  wide: /^(vormittags|nachmittags|Mitternacht|Mittag|morgens|nachmittags|abends|nachts)/i
+}, xe = {
+  any: {
+    am: /^v/i,
+    pm: /^n/i,
+    midnight: /^Mitte/i,
+    noon: /^Mitta/i,
+    morning: /morgens/i,
+    afternoon: /nachmittags/i,
+    // will never be matched. Afternoon is matched by `pm`
+    evening: /abends/i,
+    night: /nachts/i
+    // will never be matched. Night is matched by `pm`
+  }
+}, Ge = {
+  ordinalNumber: g({
+    matchPattern: pe,
+    parsePattern: Me,
+    valueCallback: (e) => parseInt(e)
+  }),
+  era: o({
+    matchPatterns: Pe,
+    defaultMatchWidth: "wide",
+    parsePatterns: We,
+    defaultParseWidth: "any"
+  }),
+  quarter: o({
+    matchPatterns: $e,
+    defaultMatchWidth: "wide",
+    parsePatterns: ke,
+    defaultParseWidth: "any",
+    valueCallback: (e) => e + 1
+  }),
+  month: o({
+    matchPatterns: Se,
+    defaultMatchWidth: "wide",
+    parsePatterns: je,
+    defaultParseWidth: "any"
+  }),
+  day: o({
+    matchPatterns: De,
+    defaultMatchWidth: "wide",
+    parsePatterns: Ne,
+    defaultParseWidth: "any"
+  }),
+  dayPeriod: o({
+    matchPatterns: Ce,
+    defaultMatchWidth: "wide",
+    parsePatterns: xe,
+    defaultParseWidth: "any"
+  })
+}, Je = {
+  code: "de",
+  formatDistance: re,
+  formatLong: de,
+  formatRelative: le,
+  localize: ye,
+  match: Ge,
+  options: {
+    weekStartsOn: 1,
+    firstWeekContainsDate: 4
+  }
+}, Te = {
+  lessThanXSeconds: {
+    one: "menos de un segundo",
+    other: "menos de {{count}} segundos"
+  },
+  xSeconds: {
+    one: "1 segundo",
+    other: "{{count}} segundos"
+  },
+  halfAMinute: "medio minuto",
+  lessThanXMinutes: {
+    one: "menos de un minuto",
+    other: "menos de {{count}} minutos"
+  },
+  xMinutes: {
+    one: "1 minuto",
+    other: "{{count}} minutos"
+  },
+  aboutXHours: {
+    one: "alrededor de 1 hora",
+    other: "alrededor de {{count}} horas"
+  },
+  xHours: {
+    one: "1 hora",
+    other: "{{count}} horas"
+  },
+  xDays: {
+    one: "1 día",
+    other: "{{count}} días"
+  },
+  aboutXWeeks: {
+    one: "alrededor de 1 semana",
+    other: "alrededor de {{count}} semanas"
+  },
+  xWeeks: {
+    one: "1 semana",
+    other: "{{count}} semanas"
+  },
+  aboutXMonths: {
+    one: "alrededor de 1 mes",
+    other: "alrededor de {{count}} meses"
+  },
+  xMonths: {
+    one: "1 mes",
+    other: "{{count}} meses"
+  },
+  aboutXYears: {
+    one: "alrededor de 1 año",
+    other: "alrededor de {{count}} años"
+  },
+  xYears: {
+    one: "1 año",
+    other: "{{count}} años"
+  },
+  overXYears: {
+    one: "más de 1 año",
+    other: "más de {{count}} años"
+  },
+  almostXYears: {
+    one: "casi 1 año",
+    other: "casi {{count}} años"
+  }
+}, ze = (e, t, a) => {
+  let n;
+  const i = Te[e];
+  return typeof i == "string" ? n = i : t === 1 ? n = i.one : n = i.other.replace("{{count}}", t.toString()), a != null && a.addSuffix ? a.comparison && a.comparison > 0 ? "en " + n : "hace " + n : n;
+}, Ve = {
+  full: "EEEE, d 'de' MMMM 'de' y",
+  long: "d 'de' MMMM 'de' y",
+  medium: "d MMM y",
+  short: "dd/MM/y"
+}, Fe = {
+  full: "HH:mm:ss zzzz",
+  long: "HH:mm:ss z",
+  medium: "HH:mm:ss",
+  short: "HH:mm"
+}, He = {
+  full: "{{date}} 'a las' {{time}}",
+  long: "{{date}} 'a las' {{time}}",
+  medium: "{{date}}, {{time}}",
+  short: "{{date}}, {{time}}"
+}, Oe = {
+  date: m({
+    formats: Ve,
+    defaultWidth: "full"
+  }),
+  time: m({
+    formats: Fe,
+    defaultWidth: "full"
+  }),
+  dateTime: m({
+    formats: He,
+    defaultWidth: "full"
+  })
+}, Xe = {
+  lastWeek: "'el' eeee 'pasado a la' p",
+  yesterday: "'ayer a la' p",
+  today: "'hoy a la' p",
+  tomorrow: "'mañana a la' p",
+  nextWeek: "eeee 'a la' p",
+  other: "P"
+}, Ae = {
+  lastWeek: "'el' eeee 'pasado a las' p",
+  yesterday: "'ayer a las' p",
+  today: "'hoy a las' p",
+  tomorrow: "'mañana a las' p",
+  nextWeek: "eeee 'a las' p",
+  other: "P"
+}, Ee = (e, t, a, n) => t.getHours() !== 1 ? Ae[e] : Xe[e], Le = {
+  narrow: ["AC", "DC"],
+  abbreviated: ["AC", "DC"],
+  wide: ["antes de cristo", "después de cristo"]
+}, qe = {
+  narrow: ["1", "2", "3", "4"],
+  abbreviated: ["T1", "T2", "T3", "T4"],
+  wide: ["1º trimestre", "2º trimestre", "3º trimestre", "4º trimestre"]
+}, Qe = {
+  narrow: ["e", "f", "m", "a", "m", "j", "j", "a", "s", "o", "n", "d"],
+  abbreviated: [
+    "ene",
+    "feb",
+    "mar",
+    "abr",
+    "may",
+    "jun",
+    "jul",
+    "ago",
+    "sep",
+    "oct",
+    "nov",
+    "dic"
+  ],
+  wide: [
+    "enero",
+    "febrero",
+    "marzo",
+    "abril",
+    "mayo",
+    "junio",
+    "julio",
+    "agosto",
+    "septiembre",
+    "octubre",
+    "noviembre",
+    "diciembre"
+  ]
+}, Re = {
+  narrow: ["d", "l", "m", "m", "j", "v", "s"],
+  short: ["do", "lu", "ma", "mi", "ju", "vi", "sá"],
+  abbreviated: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
+  wide: [
+    "domingo",
+    "lunes",
+    "martes",
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado"
+  ]
+}, Ye = {
+  narrow: {
+    am: "a",
+    pm: "p",
+    midnight: "mn",
+    noon: "md",
+    morning: "mañana",
+    afternoon: "tarde",
+    evening: "tarde",
+    night: "noche"
+  },
+  abbreviated: {
+    am: "AM",
+    pm: "PM",
+    midnight: "medianoche",
+    noon: "mediodia",
+    morning: "mañana",
+    afternoon: "tarde",
+    evening: "tarde",
+    night: "noche"
+  },
+  wide: {
+    am: "a.m.",
+    pm: "p.m.",
+    midnight: "medianoche",
+    noon: "mediodia",
+    morning: "mañana",
+    afternoon: "tarde",
+    evening: "tarde",
+    night: "noche"
+  }
+}, _e = {
+  narrow: {
+    am: "a",
+    pm: "p",
+    midnight: "mn",
+    noon: "md",
+    morning: "de la mañana",
+    afternoon: "de la tarde",
+    evening: "de la tarde",
+    night: "de la noche"
+  },
+  abbreviated: {
+    am: "AM",
+    pm: "PM",
+    midnight: "medianoche",
+    noon: "mediodia",
+    morning: "de la mañana",
+    afternoon: "de la tarde",
+    evening: "de la tarde",
+    night: "de la noche"
+  },
+  wide: {
+    am: "a.m.",
+    pm: "p.m.",
+    midnight: "medianoche",
+    noon: "mediodia",
+    morning: "de la mañana",
+    afternoon: "de la tarde",
+    evening: "de la tarde",
+    night: "de la noche"
+  }
+}, Ie = (e, t) => Number(e) + "º", Be = {
+  ordinalNumber: Ie,
+  era: r({
+    values: Le,
+    defaultWidth: "wide"
+  }),
+  quarter: r({
+    values: qe,
+    defaultWidth: "wide",
+    argumentCallback: (e) => Number(e) - 1
+  }),
+  month: r({
+    values: Qe,
+    defaultWidth: "wide"
+  }),
+  day: r({
+    values: Re,
+    defaultWidth: "wide"
+  }),
+  dayPeriod: r({
+    values: Ye,
+    defaultWidth: "wide",
+    formattingValues: _e,
+    defaultFormattingWidth: "wide"
+  })
+}, Ke = /^(\d+)(º)?/i, Ue = /\d+/i, Ze = {
+  narrow: /^(ac|dc|a|d)/i,
+  abbreviated: /^(a\.?\s?c\.?|a\.?\s?e\.?\s?c\.?|d\.?\s?c\.?|e\.?\s?c\.?)/i,
+  wide: /^(antes de cristo|antes de la era com[uú]n|despu[eé]s de cristo|era com[uú]n)/i
+}, et = {
+  any: [/^ac/i, /^dc/i],
+  wide: [
+    /^(antes de cristo|antes de la era com[uú]n)/i,
+    /^(despu[eé]s de cristo|era com[uú]n)/i
+  ]
+}, tt = {
+  narrow: /^[1234]/i,
+  abbreviated: /^T[1234]/i,
+  wide: /^[1234](º)? trimestre/i
+}, at = {
+  any: [/1/i, /2/i, /3/i, /4/i]
+}, nt = {
+  narrow: /^[efmajsond]/i,
+  abbreviated: /^(ene|feb|mar|abr|may|jun|jul|ago|sep|oct|nov|dic)/i,
+  wide: /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i
+}, it = {
+  narrow: [
+    /^e/i,
+    /^f/i,
+    /^m/i,
+    /^a/i,
+    /^m/i,
+    /^j/i,
+    /^j/i,
+    /^a/i,
+    /^s/i,
+    /^o/i,
+    /^n/i,
+    /^d/i
+  ],
+  any: [
+    /^en/i,
+    /^feb/i,
+    /^mar/i,
+    /^abr/i,
+    /^may/i,
+    /^jun/i,
+    /^jul/i,
+    /^ago/i,
+    /^sep/i,
+    /^oct/i,
+    /^nov/i,
+    /^dic/i
+  ]
+}, rt = {
+  narrow: /^[dlmjvs]/i,
+  short: /^(do|lu|ma|mi|ju|vi|s[áa])/i,
+  abbreviated: /^(dom|lun|mar|mi[ée]|jue|vie|s[áa]b)/i,
+  wide: /^(domingo|lunes|martes|mi[ée]rcoles|jueves|viernes|s[áa]bado)/i
+}, ot = {
+  narrow: [/^d/i, /^l/i, /^m/i, /^m/i, /^j/i, /^v/i, /^s/i],
+  any: [/^do/i, /^lu/i, /^ma/i, /^mi/i, /^ju/i, /^vi/i, /^sa/i]
+}, st = {
+  narrow: /^(a|p|mn|md|(de la|a las) (mañana|tarde|noche))/i,
+  any: /^([ap]\.?\s?m\.?|medianoche|mediodia|(de la|a las) (mañana|tarde|noche))/i
+}, ut = {
+  any: {
+    am: /^a/i,
+    pm: /^p/i,
+    midnight: /^mn/i,
+    noon: /^md/i,
+    morning: /mañana/i,
+    afternoon: /tarde/i,
+    evening: /tarde/i,
+    night: /noche/i
+  }
+}, dt = {
+  ordinalNumber: g({
+    matchPattern: Ke,
+    parsePattern: Ue,
+    valueCallback: function(e) {
+      return parseInt(e, 10);
+    }
+  }),
+  era: o({
+    matchPatterns: Ze,
+    defaultMatchWidth: "wide",
+    parsePatterns: et,
+    defaultParseWidth: "any"
+  }),
+  quarter: o({
+    matchPatterns: tt,
+    defaultMatchWidth: "wide",
+    parsePatterns: at,
+    defaultParseWidth: "any",
+    valueCallback: (e) => e + 1
+  }),
+  month: o({
+    matchPatterns: nt,
+    defaultMatchWidth: "wide",
+    parsePatterns: it,
+    defaultParseWidth: "any"
+  }),
+  day: o({
+    matchPatterns: rt,
+    defaultMatchWidth: "wide",
+    parsePatterns: ot,
+    defaultParseWidth: "any"
+  }),
+  dayPeriod: o({
+    matchPatterns: st,
+    defaultMatchWidth: "any",
+    parsePatterns: ut,
+    defaultParseWidth: "any"
+  })
+}, mt = {
+  code: "es",
+  formatDistance: ze,
+  formatLong: Oe,
+  formatRelative: Ee,
+  localize: Be,
+  match: dt,
+  options: {
+    weekStartsOn: 1,
+    firstWeekContainsDate: 1
+  }
+}, lt = {
+  lessThanXSeconds: {
+    one: "moins d’une seconde",
+    other: "moins de {{count}} secondes"
+  },
+  xSeconds: {
+    one: "1 seconde",
+    other: "{{count}} secondes"
+  },
+  halfAMinute: "30 secondes",
+  lessThanXMinutes: {
+    one: "moins d’une minute",
+    other: "moins de {{count}} minutes"
+  },
+  xMinutes: {
+    one: "1 minute",
+    other: "{{count}} minutes"
+  },
+  aboutXHours: {
+    one: "environ 1 heure",
+    other: "environ {{count}} heures"
+  },
+  xHours: {
+    one: "1 heure",
+    other: "{{count}} heures"
+  },
+  xDays: {
+    one: "1 jour",
+    other: "{{count}} jours"
+  },
+  aboutXWeeks: {
+    one: "environ 1 semaine",
+    other: "environ {{count}} semaines"
+  },
+  xWeeks: {
+    one: "1 semaine",
+    other: "{{count}} semaines"
+  },
+  aboutXMonths: {
+    one: "environ 1 mois",
+    other: "environ {{count}} mois"
+  },
+  xMonths: {
+    one: "1 mois",
+    other: "{{count}} mois"
+  },
+  aboutXYears: {
+    one: "environ 1 an",
+    other: "environ {{count}} ans"
+  },
+  xYears: {
+    one: "1 an",
+    other: "{{count}} ans"
+  },
+  overXYears: {
+    one: "plus d’un an",
+    other: "plus de {{count}} ans"
+  },
+  almostXYears: {
+    one: "presqu’un an",
+    other: "presque {{count}} ans"
+  }
+}, ct = (e, t, a) => {
+  let n;
+  const i = lt[e];
+  return typeof i == "string" ? n = i : t === 1 ? n = i.one : n = i.other.replace("{{count}}", String(t)), a != null && a.addSuffix ? a.comparison && a.comparison > 0 ? "dans " + n : "il y a " + n : n;
+}, ht = {
+  full: "EEEE d MMMM y",
+  long: "d MMMM y",
+  medium: "d MMM y",
+  short: "dd/MM/y"
+}, ft = {
+  full: "HH:mm:ss zzzz",
+  long: "HH:mm:ss z",
+  medium: "HH:mm:ss",
+  short: "HH:mm"
+}, gt = {
+  full: "{{date}} 'à' {{time}}",
+  long: "{{date}} 'à' {{time}}",
+  medium: "{{date}}, {{time}}",
+  short: "{{date}}, {{time}}"
+}, vt = {
+  date: m({
+    formats: ht,
+    defaultWidth: "full"
+  }),
+  time: m({
+    formats: ft,
+    defaultWidth: "full"
+  }),
+  dateTime: m({
+    formats: gt,
+    defaultWidth: "full"
+  })
+}, bt = {
+  lastWeek: "eeee 'dernier à' p",
+  yesterday: "'hier à' p",
+  today: "'aujourd’hui à' p",
+  tomorrow: "'demain à' p'",
+  nextWeek: "eeee 'prochain à' p",
+  other: "P"
+}, wt = (e, t, a, n) => bt[e], yt = {
+  narrow: ["av. J.-C", "ap. J.-C"],
+  abbreviated: ["av. J.-C", "ap. J.-C"],
+  wide: ["avant Jésus-Christ", "après Jésus-Christ"]
+}, pt = {
+  narrow: ["T1", "T2", "T3", "T4"],
+  abbreviated: ["1er trim.", "2ème trim.", "3ème trim.", "4ème trim."],
+  wide: ["1er trimestre", "2ème trimestre", "3ème trimestre", "4ème trimestre"]
+}, Mt = {
+  narrow: ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
+  abbreviated: [
+    "janv.",
+    "févr.",
+    "mars",
+    "avr.",
+    "mai",
+    "juin",
+    "juil.",
+    "août",
+    "sept.",
+    "oct.",
+    "nov.",
+    "déc."
+  ],
+  wide: [
+    "janvier",
+    "février",
+    "mars",
+    "avril",
+    "mai",
+    "juin",
+    "juillet",
+    "août",
+    "septembre",
+    "octobre",
+    "novembre",
+    "décembre"
+  ]
+}, Pt = {
+  narrow: ["D", "L", "M", "M", "J", "V", "S"],
+  short: ["di", "lu", "ma", "me", "je", "ve", "sa"],
+  abbreviated: ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
+  wide: [
+    "dimanche",
+    "lundi",
+    "mardi",
+    "mercredi",
+    "jeudi",
+    "vendredi",
+    "samedi"
+  ]
+}, Wt = {
+  narrow: {
+    am: "AM",
+    pm: "PM",
+    midnight: "minuit",
+    noon: "midi",
+    morning: "mat.",
+    afternoon: "ap.m.",
+    evening: "soir",
+    night: "mat."
+  },
+  abbreviated: {
+    am: "AM",
+    pm: "PM",
+    midnight: "minuit",
+    noon: "midi",
+    morning: "matin",
+    afternoon: "après-midi",
+    evening: "soir",
+    night: "matin"
+  },
+  wide: {
+    am: "AM",
+    pm: "PM",
+    midnight: "minuit",
+    noon: "midi",
+    morning: "du matin",
+    afternoon: "de l’après-midi",
+    evening: "du soir",
+    night: "du matin"
+  }
+}, $t = (e, t) => {
+  const a = Number(e), n = t == null ? void 0 : t.unit;
+  if (a === 0) return "0";
+  const i = ["year", "week", "hour", "minute", "second"];
+  let s;
+  return a === 1 ? s = n && i.includes(n) ? "ère" : "er" : s = "ème", a + s;
+}, kt = ["MMM", "MMMM"], St = {
+  preprocessor: (e, t) => e.getDate() === 1 || !t.some(
+    (n) => n.isToken && kt.includes(n.value)
+  ) ? t : t.map(
+    (n) => n.isToken && n.value === "do" ? { isToken: !0, value: "d" } : n
+  ),
+  ordinalNumber: $t,
+  era: r({
+    values: yt,
+    defaultWidth: "wide"
+  }),
+  quarter: r({
+    values: pt,
+    defaultWidth: "wide",
+    argumentCallback: (e) => e - 1
+  }),
+  month: r({
+    values: Mt,
+    defaultWidth: "wide"
+  }),
+  day: r({
+    values: Pt,
+    defaultWidth: "wide"
+  }),
+  dayPeriod: r({
+    values: Wt,
+    defaultWidth: "wide"
+  })
+}, jt = /^(\d+)(ième|ère|ème|er|e)?/i, Dt = /\d+/i, Nt = {
+  narrow: /^(av\.J\.C|ap\.J\.C|ap\.J\.-C)/i,
+  abbreviated: /^(av\.J\.-C|av\.J-C|apr\.J\.-C|apr\.J-C|ap\.J-C)/i,
+  wide: /^(avant Jésus-Christ|après Jésus-Christ)/i
+}, Ct = {
+  any: [/^av/i, /^ap/i]
+}, xt = {
+  narrow: /^T?[1234]/i,
+  abbreviated: /^[1234](er|ème|e)? trim\.?/i,
+  wide: /^[1234](er|ème|e)? trimestre/i
+}, Gt = {
+  any: [/1/i, /2/i, /3/i, /4/i]
+}, Jt = {
+  narrow: /^[jfmasond]/i,
+  abbreviated: /^(janv|févr|mars|avr|mai|juin|juill|juil|août|sept|oct|nov|déc)\.?/i,
+  wide: /^(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)/i
+}, Tt = {
+  narrow: [
+    /^j/i,
+    /^f/i,
+    /^m/i,
+    /^a/i,
+    /^m/i,
+    /^j/i,
+    /^j/i,
+    /^a/i,
+    /^s/i,
+    /^o/i,
+    /^n/i,
+    /^d/i
+  ],
+  any: [
+    /^ja/i,
+    /^f/i,
+    /^mar/i,
+    /^av/i,
+    /^ma/i,
+    /^juin/i,
+    /^juil/i,
+    /^ao/i,
+    /^s/i,
+    /^o/i,
+    /^n/i,
+    /^d/i
+  ]
+}, zt = {
+  narrow: /^[lmjvsd]/i,
+  short: /^(di|lu|ma|me|je|ve|sa)/i,
+  abbreviated: /^(dim|lun|mar|mer|jeu|ven|sam)\.?/i,
+  wide: /^(dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi)/i
+}, Vt = {
+  narrow: [/^d/i, /^l/i, /^m/i, /^m/i, /^j/i, /^v/i, /^s/i],
+  any: [/^di/i, /^lu/i, /^ma/i, /^me/i, /^je/i, /^ve/i, /^sa/i]
+}, Ft = {
+  narrow: /^(a|p|minuit|midi|mat\.?|ap\.?m\.?|soir|nuit)/i,
+  any: /^([ap]\.?\s?m\.?|du matin|de l'après[-\s]midi|du soir|de la nuit)/i
+}, Ht = {
+  any: {
+    am: /^a/i,
+    pm: /^p/i,
+    midnight: /^min/i,
+    noon: /^mid/i,
+    morning: /mat/i,
+    afternoon: /ap/i,
+    evening: /soir/i,
+    night: /nuit/i
+  }
+}, Ot = {
+  ordinalNumber: g({
+    matchPattern: jt,
+    parsePattern: Dt,
+    valueCallback: (e) => parseInt(e)
+  }),
+  era: o({
+    matchPatterns: Nt,
+    defaultMatchWidth: "wide",
+    parsePatterns: Ct,
+    defaultParseWidth: "any"
+  }),
+  quarter: o({
+    matchPatterns: xt,
+    defaultMatchWidth: "wide",
+    parsePatterns: Gt,
+    defaultParseWidth: "any",
+    valueCallback: (e) => e + 1
+  }),
+  month: o({
+    matchPatterns: Jt,
+    defaultMatchWidth: "wide",
+    parsePatterns: Tt,
+    defaultParseWidth: "any"
+  }),
+  day: o({
+    matchPatterns: zt,
+    defaultMatchWidth: "wide",
+    parsePatterns: Vt,
+    defaultParseWidth: "any"
+  }),
+  dayPeriod: o({
+    matchPatterns: Ft,
+    defaultMatchWidth: "any",
+    parsePatterns: Ht,
+    defaultParseWidth: "any"
+  })
+}, Xt = {
+  code: "fr",
+  formatDistance: ct,
+  formatLong: vt,
+  formatRelative: wt,
+  localize: St,
+  match: Ot,
+  options: {
+    weekStartsOn: 1,
+    firstWeekContainsDate: 4
+  }
+};
+function f(e, t) {
+  if (e.one !== void 0 && t === 1)
+    return e.one;
+  const a = t % 10, n = t % 100;
+  return a === 1 && n !== 11 ? e.singularNominative.replace("{{count}}", String(t)) : a >= 2 && a <= 4 && (n < 10 || n > 20) ? e.singularGenitive.replace("{{count}}", String(t)) : e.pluralGenitive.replace("{{count}}", String(t));
+}
+function d(e) {
+  return (t, a) => a != null && a.addSuffix ? a.comparison && a.comparison > 0 ? e.future ? f(e.future, t) : "через " + f(e.regular, t) : e.past ? f(e.past, t) : f(e.regular, t) + " назад" : f(e.regular, t);
+}
+const At = {
+  lessThanXSeconds: d({
+    regular: {
+      one: "меньше секунды",
+      singularNominative: "меньше {{count}} секунды",
+      singularGenitive: "меньше {{count}} секунд",
+      pluralGenitive: "меньше {{count}} секунд"
+    },
+    future: {
+      one: "меньше, чем через секунду",
+      singularNominative: "меньше, чем через {{count}} секунду",
+      singularGenitive: "меньше, чем через {{count}} секунды",
+      pluralGenitive: "меньше, чем через {{count}} секунд"
+    }
+  }),
+  xSeconds: d({
+    regular: {
+      singularNominative: "{{count}} секунда",
+      singularGenitive: "{{count}} секунды",
+      pluralGenitive: "{{count}} секунд"
+    },
+    past: {
+      singularNominative: "{{count}} секунду назад",
+      singularGenitive: "{{count}} секунды назад",
+      pluralGenitive: "{{count}} секунд назад"
+    },
+    future: {
+      singularNominative: "через {{count}} секунду",
+      singularGenitive: "через {{count}} секунды",
+      pluralGenitive: "через {{count}} секунд"
+    }
+  }),
+  halfAMinute: (e, t) => t != null && t.addSuffix ? t.comparison && t.comparison > 0 ? "через полминуты" : "полминуты назад" : "полминуты",
+  lessThanXMinutes: d({
+    regular: {
+      one: "меньше минуты",
+      singularNominative: "меньше {{count}} минуты",
+      singularGenitive: "меньше {{count}} минут",
+      pluralGenitive: "меньше {{count}} минут"
+    },
+    future: {
+      one: "меньше, чем через минуту",
+      singularNominative: "меньше, чем через {{count}} минуту",
+      singularGenitive: "меньше, чем через {{count}} минуты",
+      pluralGenitive: "меньше, чем через {{count}} минут"
+    }
+  }),
+  xMinutes: d({
+    regular: {
+      singularNominative: "{{count}} минута",
+      singularGenitive: "{{count}} минуты",
+      pluralGenitive: "{{count}} минут"
+    },
+    past: {
+      singularNominative: "{{count}} минуту назад",
+      singularGenitive: "{{count}} минуты назад",
+      pluralGenitive: "{{count}} минут назад"
+    },
+    future: {
+      singularNominative: "через {{count}} минуту",
+      singularGenitive: "через {{count}} минуты",
+      pluralGenitive: "через {{count}} минут"
+    }
+  }),
+  aboutXHours: d({
+    regular: {
+      singularNominative: "около {{count}} часа",
+      singularGenitive: "около {{count}} часов",
+      pluralGenitive: "около {{count}} часов"
+    },
+    future: {
+      singularNominative: "приблизительно через {{count}} час",
+      singularGenitive: "приблизительно через {{count}} часа",
+      pluralGenitive: "приблизительно через {{count}} часов"
+    }
+  }),
+  xHours: d({
+    regular: {
+      singularNominative: "{{count}} час",
+      singularGenitive: "{{count}} часа",
+      pluralGenitive: "{{count}} часов"
+    }
+  }),
+  xDays: d({
+    regular: {
+      singularNominative: "{{count}} день",
+      singularGenitive: "{{count}} дня",
+      pluralGenitive: "{{count}} дней"
+    }
+  }),
+  aboutXWeeks: d({
+    regular: {
+      singularNominative: "около {{count}} недели",
+      singularGenitive: "около {{count}} недель",
+      pluralGenitive: "около {{count}} недель"
+    },
+    future: {
+      singularNominative: "приблизительно через {{count}} неделю",
+      singularGenitive: "приблизительно через {{count}} недели",
+      pluralGenitive: "приблизительно через {{count}} недель"
+    }
+  }),
+  xWeeks: d({
+    regular: {
+      singularNominative: "{{count}} неделя",
+      singularGenitive: "{{count}} недели",
+      pluralGenitive: "{{count}} недель"
+    }
+  }),
+  aboutXMonths: d({
+    regular: {
+      singularNominative: "около {{count}} месяца",
+      singularGenitive: "около {{count}} месяцев",
+      pluralGenitive: "около {{count}} месяцев"
+    },
+    future: {
+      singularNominative: "приблизительно через {{count}} месяц",
+      singularGenitive: "приблизительно через {{count}} месяца",
+      pluralGenitive: "приблизительно через {{count}} месяцев"
+    }
+  }),
+  xMonths: d({
+    regular: {
+      singularNominative: "{{count}} месяц",
+      singularGenitive: "{{count}} месяца",
+      pluralGenitive: "{{count}} месяцев"
+    }
+  }),
+  aboutXYears: d({
+    regular: {
+      singularNominative: "около {{count}} года",
+      singularGenitive: "около {{count}} лет",
+      pluralGenitive: "около {{count}} лет"
+    },
+    future: {
+      singularNominative: "приблизительно через {{count}} год",
+      singularGenitive: "приблизительно через {{count}} года",
+      pluralGenitive: "приблизительно через {{count}} лет"
+    }
+  }),
+  xYears: d({
+    regular: {
+      singularNominative: "{{count}} год",
+      singularGenitive: "{{count}} года",
+      pluralGenitive: "{{count}} лет"
+    }
+  }),
+  overXYears: d({
+    regular: {
+      singularNominative: "больше {{count}} года",
+      singularGenitive: "больше {{count}} лет",
+      pluralGenitive: "больше {{count}} лет"
+    },
+    future: {
+      singularNominative: "больше, чем через {{count}} год",
+      singularGenitive: "больше, чем через {{count}} года",
+      pluralGenitive: "больше, чем через {{count}} лет"
+    }
+  }),
+  almostXYears: d({
+    regular: {
+      singularNominative: "почти {{count}} год",
+      singularGenitive: "почти {{count}} года",
+      pluralGenitive: "почти {{count}} лет"
+    },
+    future: {
+      singularNominative: "почти через {{count}} год",
+      singularGenitive: "почти через {{count}} года",
+      pluralGenitive: "почти через {{count}} лет"
+    }
+  })
+}, Et = (e, t, a) => At[e](t, a), Lt = {
+  full: "EEEE, d MMMM y 'г.'",
+  long: "d MMMM y 'г.'",
+  medium: "d MMM y 'г.'",
+  short: "dd.MM.y"
+}, qt = {
+  full: "H:mm:ss zzzz",
+  long: "H:mm:ss z",
+  medium: "H:mm:ss",
+  short: "H:mm"
+}, Qt = {
+  any: "{{date}}, {{time}}"
+}, Rt = {
+  date: m({
+    formats: Lt,
+    defaultWidth: "full"
+  }),
+  time: m({
+    formats: qt,
+    defaultWidth: "full"
+  }),
+  dateTime: m({
+    formats: Qt,
+    defaultWidth: "any"
+  })
+}, y = [
+  "воскресенье",
+  "понедельник",
+  "вторник",
+  "среду",
+  "четверг",
+  "пятницу",
+  "субботу"
+];
+function Yt(e) {
+  const t = y[e];
+  switch (e) {
+    case 0:
+      return "'в прошлое " + t + " в' p";
+    case 1:
+    case 2:
+    case 4:
+      return "'в прошлый " + t + " в' p";
+    case 3:
+    case 5:
+    case 6:
+      return "'в прошлую " + t + " в' p";
+  }
+}
+function W(e) {
+  const t = y[e];
+  return e === 2 ? "'во " + t + " в' p" : "'в " + t + " в' p";
+}
+function _t(e) {
+  const t = y[e];
+  switch (e) {
+    case 0:
+      return "'в следующее " + t + " в' p";
+    case 1:
+    case 2:
+    case 4:
+      return "'в следующий " + t + " в' p";
+    case 3:
+    case 5:
+    case 6:
+      return "'в следующую " + t + " в' p";
+  }
+}
+const It = {
+  lastWeek: (e, t, a) => {
+    const n = e.getDay();
+    return M(e, t, a) ? W(n) : Yt(n);
+  },
+  yesterday: "'вчера в' p",
+  today: "'сегодня в' p",
+  tomorrow: "'завтра в' p",
+  nextWeek: (e, t, a) => {
+    const n = e.getDay();
+    return M(e, t, a) ? W(n) : _t(n);
+  },
+  other: "P"
+}, Bt = (e, t, a, n) => {
+  const i = It[e];
+  return typeof i == "function" ? i(t, a, n) : i;
+}, Kt = {
+  narrow: ["до н.э.", "н.э."],
+  abbreviated: ["до н. э.", "н. э."],
+  wide: ["до нашей эры", "нашей эры"]
+}, Ut = {
+  narrow: ["1", "2", "3", "4"],
+  abbreviated: ["1-й кв.", "2-й кв.", "3-й кв.", "4-й кв."],
+  wide: ["1-й квартал", "2-й квартал", "3-й квартал", "4-й квартал"]
+}, Zt = {
+  narrow: ["Я", "Ф", "М", "А", "М", "И", "И", "А", "С", "О", "Н", "Д"],
+  abbreviated: [
+    "янв.",
+    "фев.",
+    "март",
+    "апр.",
+    "май",
+    "июнь",
+    "июль",
+    "авг.",
+    "сент.",
+    "окт.",
+    "нояб.",
+    "дек."
+  ],
+  wide: [
+    "январь",
+    "февраль",
+    "март",
+    "апрель",
+    "май",
+    "июнь",
+    "июль",
+    "август",
+    "сентябрь",
+    "октябрь",
+    "ноябрь",
+    "декабрь"
+  ]
+}, ea = {
+  narrow: ["Я", "Ф", "М", "А", "М", "И", "И", "А", "С", "О", "Н", "Д"],
+  abbreviated: [
+    "янв.",
+    "фев.",
+    "мар.",
+    "апр.",
+    "мая",
+    "июн.",
+    "июл.",
+    "авг.",
+    "сент.",
+    "окт.",
+    "нояб.",
+    "дек."
+  ],
+  wide: [
+    "января",
+    "февраля",
+    "марта",
+    "апреля",
+    "мая",
+    "июня",
+    "июля",
+    "августа",
+    "сентября",
+    "октября",
+    "ноября",
+    "декабря"
+  ]
+}, ta = {
+  narrow: ["В", "П", "В", "С", "Ч", "П", "С"],
+  short: ["вс", "пн", "вт", "ср", "чт", "пт", "сб"],
+  abbreviated: ["вск", "пнд", "втр", "срд", "чтв", "птн", "суб"],
+  wide: [
+    "воскресенье",
+    "понедельник",
+    "вторник",
+    "среда",
+    "четверг",
+    "пятница",
+    "суббота"
+  ]
+}, aa = {
+  narrow: {
+    am: "ДП",
+    pm: "ПП",
+    midnight: "полн.",
+    noon: "полд.",
+    morning: "утро",
+    afternoon: "день",
+    evening: "веч.",
+    night: "ночь"
+  },
+  abbreviated: {
+    am: "ДП",
+    pm: "ПП",
+    midnight: "полн.",
+    noon: "полд.",
+    morning: "утро",
+    afternoon: "день",
+    evening: "веч.",
+    night: "ночь"
+  },
+  wide: {
+    am: "ДП",
+    pm: "ПП",
+    midnight: "полночь",
+    noon: "полдень",
+    morning: "утро",
+    afternoon: "день",
+    evening: "вечер",
+    night: "ночь"
+  }
+}, na = {
+  narrow: {
+    am: "ДП",
+    pm: "ПП",
+    midnight: "полн.",
+    noon: "полд.",
+    morning: "утра",
+    afternoon: "дня",
+    evening: "веч.",
+    night: "ночи"
+  },
+  abbreviated: {
+    am: "ДП",
+    pm: "ПП",
+    midnight: "полн.",
+    noon: "полд.",
+    morning: "утра",
+    afternoon: "дня",
+    evening: "веч.",
+    night: "ночи"
+  },
+  wide: {
+    am: "ДП",
+    pm: "ПП",
+    midnight: "полночь",
+    noon: "полдень",
+    morning: "утра",
+    afternoon: "дня",
+    evening: "вечера",
+    night: "ночи"
+  }
+}, ia = (e, t) => {
+  const a = Number(e), n = t == null ? void 0 : t.unit;
+  let i;
+  return n === "date" ? i = "-е" : n === "week" || n === "minute" || n === "second" ? i = "-я" : i = "-й", a + i;
+}, ra = {
+  ordinalNumber: ia,
+  era: r({
+    values: Kt,
+    defaultWidth: "wide"
+  }),
+  quarter: r({
+    values: Ut,
+    defaultWidth: "wide",
+    argumentCallback: (e) => e - 1
+  }),
+  month: r({
+    values: Zt,
+    defaultWidth: "wide",
+    formattingValues: ea,
+    defaultFormattingWidth: "wide"
+  }),
+  day: r({
+    values: ta,
+    defaultWidth: "wide"
+  }),
+  dayPeriod: r({
+    values: aa,
+    defaultWidth: "any",
+    formattingValues: na,
+    defaultFormattingWidth: "wide"
+  })
+}, oa = /^(\d+)(-?(е|я|й|ое|ье|ая|ья|ый|ой|ий|ый))?/i, sa = /\d+/i, ua = {
+  narrow: /^((до )?н\.?\s?э\.?)/i,
+  abbreviated: /^((до )?н\.?\s?э\.?)/i,
+  wide: /^(до нашей эры|нашей эры|наша эра)/i
+}, da = {
+  any: [/^д/i, /^н/i]
+}, ma = {
+  narrow: /^[1234]/i,
+  abbreviated: /^[1234](-?[ыои]?й?)? кв.?/i,
+  wide: /^[1234](-?[ыои]?й?)? квартал/i
+}, la = {
+  any: [/1/i, /2/i, /3/i, /4/i]
+}, ca = {
+  narrow: /^[яфмаисонд]/i,
+  abbreviated: /^(янв|фев|март?|апр|ма[йя]|июн[ья]?|июл[ья]?|авг|сент?|окт|нояб?|дек)\.?/i,
+  wide: /^(январ[ья]|феврал[ья]|марта?|апрел[ья]|ма[йя]|июн[ья]|июл[ья]|августа?|сентябр[ья]|октябр[ья]|октябр[ья]|ноябр[ья]|декабр[ья])/i
+}, ha = {
+  narrow: [
+    /^я/i,
+    /^ф/i,
+    /^м/i,
+    /^а/i,
+    /^м/i,
+    /^и/i,
+    /^и/i,
+    /^а/i,
+    /^с/i,
+    /^о/i,
+    /^н/i,
+    /^я/i
+  ],
+  any: [
+    /^я/i,
+    /^ф/i,
+    /^мар/i,
+    /^ап/i,
+    /^ма[йя]/i,
+    /^июн/i,
+    /^июл/i,
+    /^ав/i,
+    /^с/i,
+    /^о/i,
+    /^н/i,
+    /^д/i
+  ]
+}, fa = {
+  narrow: /^[впсч]/i,
+  short: /^(вс|во|пн|по|вт|ср|чт|че|пт|пя|сб|су)\.?/i,
+  abbreviated: /^(вск|вос|пнд|пон|втр|вто|срд|сре|чтв|чет|птн|пят|суб).?/i,
+  wide: /^(воскресень[ея]|понедельника?|вторника?|сред[аы]|четверга?|пятниц[аы]|суббот[аы])/i
+}, ga = {
+  narrow: [/^в/i, /^п/i, /^в/i, /^с/i, /^ч/i, /^п/i, /^с/i],
+  any: [/^в[ос]/i, /^п[он]/i, /^в/i, /^ср/i, /^ч/i, /^п[ят]/i, /^с[уб]/i]
+}, va = {
+  narrow: /^([дп]п|полн\.?|полд\.?|утр[оа]|день|дня|веч\.?|ноч[ьи])/i,
+  abbreviated: /^([дп]п|полн\.?|полд\.?|утр[оа]|день|дня|веч\.?|ноч[ьи])/i,
+  wide: /^([дп]п|полночь|полдень|утр[оа]|день|дня|вечера?|ноч[ьи])/i
+}, ba = {
+  any: {
+    am: /^дп/i,
+    pm: /^пп/i,
+    midnight: /^полн/i,
+    noon: /^полд/i,
+    morning: /^у/i,
+    afternoon: /^д[ен]/i,
+    evening: /^в/i,
+    night: /^н/i
+  }
+}, wa = {
+  ordinalNumber: g({
+    matchPattern: oa,
+    parsePattern: sa,
+    valueCallback: (e) => parseInt(e, 10)
+  }),
+  era: o({
+    matchPatterns: ua,
+    defaultMatchWidth: "wide",
+    parsePatterns: da,
+    defaultParseWidth: "any"
+  }),
+  quarter: o({
+    matchPatterns: ma,
+    defaultMatchWidth: "wide",
+    parsePatterns: la,
+    defaultParseWidth: "any",
+    valueCallback: (e) => e + 1
+  }),
+  month: o({
+    matchPatterns: ca,
+    defaultMatchWidth: "wide",
+    parsePatterns: ha,
+    defaultParseWidth: "any"
+  }),
+  day: o({
+    matchPatterns: fa,
+    defaultMatchWidth: "wide",
+    parsePatterns: ga,
+    defaultParseWidth: "any"
+  }),
+  dayPeriod: o({
+    matchPatterns: va,
+    defaultMatchWidth: "wide",
+    parsePatterns: ba,
+    defaultParseWidth: "any"
+  })
+}, ya = {
+  code: "ru",
+  formatDistance: Et,
+  formatLong: Rt,
+  formatRelative: Bt,
+  localize: ra,
+  match: wa,
+  options: {
+    weekStartsOn: 1,
+    firstWeekContainsDate: 1
+  }
+}, pa = {
+  en: $,
+  ru: ya,
+  fr: Xt,
+  de: Je,
+  es: mt
+}, Ma = (e) => {
+  const t = e.split("-")[0];
+  return pa[t] || $;
+};
+export {
+  $ as enUS,
+  j as getDefaultOptions,
+  Ma as getLocaleObj,
+  p as startOfWeek,
+  k as toDate
+};

@@ -1,0 +1,13 @@
+const e = {
+  "°C": {
+    convert: (t) => Math.round((t * 1.8 + 32) * 10) / 10,
+    alternativeUnits: "°F"
+  },
+  hPa: {
+    convert: (t) => t / 1.333,
+    alternativeUnits: "mmHg"
+  }
+};
+export {
+  e as converter
+};

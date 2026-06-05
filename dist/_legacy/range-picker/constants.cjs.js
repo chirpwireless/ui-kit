@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=require("../../moment-Bp7fbP4q.cjs"),o=t.hooks(),s={today:[t.hooks().startOf("day"),t.hooks().endOf("day")],"last week":[t.hooks().subtract(1,"week"),o],"last month":[t.hooks().subtract(1,"month"),o],"last 2 months":[t.hooks().subtract(2,"month"),o]};exports.QUICK_SELECT_OPTIONS=s;

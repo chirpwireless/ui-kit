@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=require("../../jsx-runtime-BRMkMA8J.cjs"),e=require("./style.cjs.js"),o=()=>t.jsxRuntimeExports.jsx(e.ToastContainer,{autoClose:2e3,closeButton:!1,closeOnClick:!1,icon:!1,hideProgressBar:!0,limit:5,position:"bottom-right"});exports.ToastContainer=o;

@@ -1,0 +1,1 @@
+"use strict";const e=require("./core-CdRJz9pD.cjs");function o(t,n,u){var r=t.get("borderRadius");if(r==null)return u?{cornerRadius:0}:null;e.isArray(r)||(r=[r,r,r,r]);var i=Math.abs(n.r||0-n.r0||0);return{cornerRadius:e.map(r,function(a){return e.parsePercent(a,i)})}}exports.getSectorCornerRadius=o;

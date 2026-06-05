@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const s=require("../../jsx-runtime-BRMkMA8J.cjs"),i=require("@mui/material"),n=require("../../helpers/userName.cjs.js"),a=({avatar:r,userName:t,sx:e})=>r?s.jsxRuntimeExports.jsx(i.Avatar,{src:r,sx:e,alt:t}):s.jsxRuntimeExports.jsx(i.Avatar,{sx:e,children:t?n.getUserInitials(t):""});exports.Avatar=a;

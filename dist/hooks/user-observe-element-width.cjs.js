@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=require("react"),o=()=>{const[n,u]=t.useState(0),r=t.useRef(null);return t.useEffect(()=>{const e=r.current,s=new ResizeObserver(c=>{u(c[0].contentRect.width)});return e&&s.observe(e),()=>{e&&s.unobserve(e)}},[]),{width:n,ref:r}};exports.useObserveElementWidth=o;

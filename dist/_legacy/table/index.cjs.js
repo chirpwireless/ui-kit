@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("./table.cjs.js"),l=require("./table-virtualized.cjs.js");exports.Table=e.Table;exports.TableVirtualized=l.TableVirtualized;

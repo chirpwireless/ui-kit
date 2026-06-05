@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("@mui/material"),r=e.styled("div")(()=>({position:"sticky",top:0,whiteSpace:"nowrap"}));exports.HeaderWrapper=r;

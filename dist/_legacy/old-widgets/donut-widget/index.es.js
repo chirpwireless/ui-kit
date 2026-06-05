@@ -1,0 +1,123 @@
+import { jsxRuntimeExports as t } from "../../../jsx-runtime-BgepH7Pb.js";
+import { useState as x } from "react";
+import { BaseWidget as u } from "../base-widget/index.es.js";
+import { Box as g, Stack as n } from "@mui/material";
+import "../../select-indicator/style.es.js";
+import "../../avatar/styles.es.js";
+import "../../typogrpahy/index.es.js";
+import "../../link/index.es.js";
+import "../../skeleton/index.es.js";
+import "../../theme-switch/index.es.js";
+import "../../button/style.es.js";
+import "../../loader/style.es.js";
+import "../../icon-button/style.es.js";
+import "../../action-dialog/style.es.js";
+import "../../alerts-count/index.es.js";
+import "../../autocomplete/index.es.js";
+import "../../text-field/style.es.js";
+import "../../badge/index.es.js";
+import "../../modal/style.es.js";
+import "../../confirmation-dialog/style.es.js";
+import "react-i18next";
+import "../../dialog/index.es.js";
+import "../../select/style.es.js";
+import "../../search-input/style.es.js";
+import "@mui/material/MenuItem";
+import "../../image-preview/style.es.js";
+import "@mui/material/Stack";
+import "@mui/x-tree-view";
+import "../../tree-select/style.es.js";
+import "../../phone-field/styles.es.js";
+import "../../tabs/style.es.js";
+import "../../map/base-map.es.js";
+import "../../../index-BaJfFTpt.js";
+import "../../../mapbox-gl-BQVqFhjB.js";
+import "../../../moment-DHYryOIn.js";
+import "../../map/constance.es.js";
+import "../../list-item/index.es.js";
+import "../../checkbox/style.es.js";
+import "../../table/components/skeleton-rows.es.js";
+import "../../table/components/table-head/style.es.js";
+import "../../table/style.es.js";
+import "../../table/components/table-component/style.es.js";
+/* empty css                                 */
+import "../../range-picker/styles.es.js";
+import "../../range-picker/constants.es.js";
+import "../../range-picker/components/range-picker-menu.es.js";
+import "../../toast/style.es.js";
+import "../../toast-container/style.es.js";
+import "../../switch/style.es.js";
+import "../../charts/line-chart/index.es.js";
+import { DonutChart as j } from "../../charts/donut-chart/index.es.js";
+import "../list-widget/styles.es.js";
+import { BaseWidgetCustomHeader as f } from "../base-widget/base-widget-custom-header.es.js";
+import { ColorListItem as h } from "../common/color-list-item/list-item.es.js";
+import "../stacked-line-widget/styles.es.js";
+import "../../widgets/base-widget/style.es.js";
+import "../../widgets/quantitative-list-widget/style.es.js";
+import "../../widgets/progress-widget/style.es.js";
+import "../../widgets/list-with-icons-widget/style.es.js";
+import "@mui/material/styles";
+import "../../../style-7NNmyytw.js";
+import "../../charts/vertical-bar-chart/index.es.js";
+import "../../charts/zoom-bar-chart/index.es.js";
+import "../../charts/stacked-chart/index.es.js";
+import "../../user-popup/style.es.js";
+import "../../logout/style.es.js";
+import "../../language-selector/style.es.js";
+import "../../map/drawable-map/index.es.js";
+import "../../color-picker/clickable-color-cell/style.es.js";
+import "../../color-picker/style.es.js";
+import "../../map/trip-map/index.es.js";
+import "../../cards/base-card/styles.es.js";
+import "../../cards/column-card/styles.es.js";
+import "../../cards/card-with-image/styles.es.js";
+import "../../../lodash-DMsYbvmB.js";
+import "../../chirp-widgets/current-value/style.es.js";
+import "../../chirp-widgets/widget-base/style.es.js";
+import "../../chirp-widgets/flat-linear-graph/index.es.js";
+import "../../chirp-widgets/widget-base/components/settings/value-boundaries-form/style.es.js";
+import "../../widget-toggle/style.es.js";
+import "../../filter-item/style.es.js";
+import "../../chirp-widgets/progress-bar/style.es.js";
+import "../../system-widget/style.es.js";
+import "../../dropdown-multiselect/dropdown-button/style.es.js";
+import "../../dropdown-multiselect/dropdown-content/style.es.js";
+import "../../badge-select/style.es.js";
+import "../../slider/style.es.js";
+import "../../map/helpers/geocoding-client.es.js";
+import "../../select-with-search/style.es.js";
+const to = (s) => {
+  const { data: o, colors: m, centerText: l, title: p, renderSelectedContent: c, ...a } = s, [r, e] = x(null);
+  return /* @__PURE__ */ t.jsx(
+    u,
+    {
+      ...a,
+      title: p,
+      customHeader: r !== null ? /* @__PURE__ */ t.jsx(
+        f,
+        {
+          typeText: p,
+          title: r.name,
+          onBackClick: () => e(null)
+        }
+      ) : void 0,
+      children: r ? c(r) : /* @__PURE__ */ t.jsx(g, { py: 5, children: /* @__PURE__ */ t.jsxs(n, { direction: "row", gap: 4, alignItems: "center", children: [
+        /* @__PURE__ */ t.jsx(j, { centerText: l, colors: m, data: o }),
+        /* @__PURE__ */ t.jsx(n, { gap: 1, width: "100%", children: o == null ? void 0 : o.map((i, d) => /* @__PURE__ */ t.jsx(
+          h,
+          {
+            name: i.name,
+            onClick: () => e(i),
+            value: i.value,
+            color: m[d % m.length]
+          },
+          i.name
+        )) })
+      ] }) })
+    }
+  );
+};
+export {
+  to as DonutWidget
+};

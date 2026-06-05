@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("@mui/material"),t=o.styled(o.Radio)(({theme:e})=>({color:e.palette.text.text8,"&:hover":{color:e.palette.base.color6},"&.Mui-checked":{color:e.palette.base.color6}}));exports.StyledRadio=t;

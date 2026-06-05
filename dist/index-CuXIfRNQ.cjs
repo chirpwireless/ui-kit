@@ -1,0 +1,1 @@
+"use strict";const f=require("./index-C63T9eUT.cjs");function u(t,e={}){if(t.bbox!=null&&e.recompute!==!0)return t.bbox;const i=[1/0,1/0,-1/0,-1/0];return f.coordEach(t,n=>{i[0]>n[0]&&(i[0]=n[0]),i[1]>n[1]&&(i[1]=n[1]),i[2]<n[0]&&(i[2]=n[0]),i[3]<n[1]&&(i[3]=n[1])}),i}var b=u;exports.index_default=b;
