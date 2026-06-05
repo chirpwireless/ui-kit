@@ -7,7 +7,7 @@ import { CurrentTheme, HEADER_HEIGHT } from '../../styles/constants';
 import { chirpPalette } from '../../theme/palette';
 
 const getSolidBackground = (theme: Theme): string =>
-    theme.palette.mode === CurrentTheme.Dark ? chirpPalette(theme).neutral.black : chirpPalette(theme).neutral.white;
+    theme.palette.mode === CurrentTheme.Dark ? chirpPalette(theme).neutral.grey1 : chirpPalette(theme).neutral.white;
 
 export interface HeaderProps {
     logo?: ReactNode;
@@ -22,13 +22,13 @@ const HeaderRoot = styled('header', {
     shouldForwardProp: (prop) => prop !== 'transparent',
 })<{ transparent?: boolean }>(({ theme, transparent }) => ({
     width: '100%',
-    height: HEADER_HEIGHT,
+    minHeight: HEADER_HEIGHT,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '0 16px',
+    padding: '12px 24px',
     backgroundColor: transparent ? 'transparent' : getSolidBackground(theme),
-    borderBottom: transparent ? 'none' : `1px solid ${theme.palette.borders.primary}`,
+    borderBottom: transparent ? 'none' : `1px solid ${chirpPalette(theme).borders.ternary}`,
     color: chirpPalette(theme).neutral.primary,
 }));
 
