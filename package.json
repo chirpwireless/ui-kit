@@ -32,6 +32,11 @@
             "import": "./dist/layouts/index.es.js",
             "require": "./dist/layouts/index.cjs.js"
         },
+        "./shell": {
+            "types": "./dist/shell.d.ts",
+            "import": "./dist/shell.es.js",
+            "require": "./dist/shell.cjs.js"
+        },
         "./locales": {
             "types": "./dist/locales/resources/index.d.ts",
             "import": "./dist/locales/resources/index.es.js",

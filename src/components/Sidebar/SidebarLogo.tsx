@@ -20,7 +20,6 @@ export const SidebarLogo = ({
     onToggle,
     logo,
     logoCollapsed,
-    logoHref = '/',
 }: SidebarLogoProps) => {
     const renderLogo = () => {
         if (isSidebarCollapsed) {
@@ -29,11 +28,11 @@ export const SidebarLogo = ({
             return <S.LogoCollapsedWrap>{logoCollapsed ?? logo}</S.LogoCollapsedWrap>;
         }
 
+        // Render the logo node as-is — the consumer provides its own link wrapper (SPA Link,
+        // external anchor, disabled state, …). `logoHref` is kept only as a hint for plain-logo apps.
         return (
             <S.AppLogo>
-                <a href={logoHref} style={{ display: 'inline-flex', textDecoration: 'none', color: 'inherit' }}>
-                    <S.LogoWrap>{logo}</S.LogoWrap>
-                </a>
+                <S.LogoWrap>{logo}</S.LogoWrap>
             </S.AppLogo>
         );
     };
