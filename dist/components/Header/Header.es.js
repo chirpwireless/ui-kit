@@ -1,25 +1,27 @@
-import { jsxRuntimeExports as e } from "../../jsx-runtime-BgepH7Pb.js";
-import { styled as a, Stack as n, IconButton as s } from "@mui/material";
-import { ToggleSidebarIcon as d } from "../../icons/ToggleSidebarIcon/index.es.js";
-import { HEADER_HEIGHT as c, CurrentTheme as p } from "../../styles/constants.es.js";
-import { chirpPalette as t } from "../../theme/palette.es.js";
-const m = a("header")(({ theme: r }) => ({
+import { jsxRuntimeExports as t } from "../../jsx-runtime-BgepH7Pb.js";
+import { styled as l, Stack as s, IconButton as d } from "@mui/material";
+import { ToggleSidebarIcon as c } from "../../icons/ToggleSidebarIcon/index.es.js";
+import { HEADER_HEIGHT as p, CurrentTheme as m } from "../../styles/constants.es.js";
+import { chirpPalette as e } from "../../theme/palette.es.js";
+const g = (r) => r.palette.mode === m.Dark ? e(r).neutral.black : e(r).neutral.white, u = l("header", {
+  shouldForwardProp: (r) => r !== "transparent"
+})(({ theme: r, transparent: o }) => ({
   width: "100%",
-  height: c,
+  height: p,
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
   padding: "0 16px",
-  backgroundColor: r.palette.mode === p.Dark ? t(r).neutral.black : t(r).neutral.white,
-  borderBottom: `1px solid ${r.palette.borders.primary}`,
-  color: t(r).neutral.primary
-})), b = ({ logo: r, rightSlot: i, onMenuOpen: o, showMenuButton: l = !0 }) => /* @__PURE__ */ e.jsxs(m, { children: [
-  /* @__PURE__ */ e.jsxs(n, { direction: "row", alignItems: "center", gap: 2, children: [
-    l && o ? /* @__PURE__ */ e.jsx(s, { onClick: o, size: "small", edge: "start", color: "inherit", children: /* @__PURE__ */ e.jsx(d, {}) }) : null,
+  backgroundColor: o ? "transparent" : g(r),
+  borderBottom: o ? "none" : `1px solid ${r.palette.borders.primary}`,
+  color: e(r).neutral.primary
+})), k = ({ logo: r, rightSlot: o, onMenuOpen: i, showMenuButton: n = !0, transparent: a }) => /* @__PURE__ */ t.jsxs(u, { transparent: a, children: [
+  /* @__PURE__ */ t.jsxs(s, { direction: "row", alignItems: "center", gap: 2, children: [
+    n && i ? /* @__PURE__ */ t.jsx(d, { onClick: i, size: "small", edge: "start", color: "inherit", children: /* @__PURE__ */ t.jsx(c, {}) }) : null,
     r
   ] }),
-  i
+  o
 ] });
 export {
-  b as Header
+  k as Header
 };

@@ -4,5 +4,6 @@ export interface HeaderProps {
     rightSlot?: ReactNode;
     onMenuOpen?: () => void;
     showMenuButton?: boolean;
+    transparent?: boolean;
 }
-export declare const Header: ({ logo, rightSlot, onMenuOpen, showMenuButton }: HeaderProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Header: ({ logo, rightSlot, onMenuOpen, showMenuButton, transparent }: HeaderProps) => import("react/jsx-runtime").JSX.Element;
