@@ -37,6 +37,11 @@
             "import": "./dist/shell.es.js",
             "require": "./dist/shell.cjs.js"
         },
+        "./primitives": {
+            "types": "./dist/primitives.d.ts",
+            "import": "./dist/primitives.es.js",
+            "require": "./dist/primitives.cjs.js"
+        },
         "./locales": {
             "types": "./dist/locales/resources/index.d.ts",
             "import": "./dist/locales/resources/index.es.js",
