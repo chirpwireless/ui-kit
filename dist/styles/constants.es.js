@@ -1,4 +1,4 @@
-const D = 230, I = 69, t = 69, H = 64, o = 160, s = "2", R = "days";
+const D = 250, I = 69, t = 36, H = 64, o = 160, s = "2", R = "days";
 var _ = /* @__PURE__ */ ((E) => (E.Light = "light", E.Dark = "dark", E))(_ || {});
 export {
   o as BOTTOM_DRAWER_VISIBLE_SIZE,
