@@ -1,18 +1,19 @@
-import { styled as t, Drawer as w, drawerClasses as i, Box as e, Stack as l, List as x, ListItem as s, Typography as u } from "@mui/material";
-import { CLOSED_SIDEBAR_WIDTH as f, SIDEBAR_COLLAPSED_WIDTH as c, SIDEBAR_WIDTH as g, CurrentTheme as a } from "../../styles/constants.es.js";
-const p = (o, r) => ({
+import { styled as n, Drawer as x, drawerClasses as a, Box as t, Stack as l, List as u, ListItem as c, Typography as f } from "@mui/material";
+import { CLOSED_SIDEBAR_WIDTH as b, SIDEBAR_COLLAPSED_WIDTH as g, SIDEBAR_WIDTH as w, CurrentTheme as d } from "../../styles/constants.es.js";
+import { chirpPalette as r } from "../../theme/palette.es.js";
+const s = (o, i) => ({
   transition: o.transitions.create("width", {
     easing: o.transitions.easing.sharp,
     duration: o.transitions.duration.enteringScreen
   }),
-  background: o.palette.mode === a.Dark ? o.palette.neutral.black : o.palette.neutral.white,
+  background: o.palette.mode === d.Dark ? r(o).neutral.black : r(o).neutral.white,
   borderRight: `1px solid ${o.palette.borders.primary}`,
   border: "none",
   overflow: "visible",
   marginTop: 0,
   zIndex: 1e3,
   position: "fixed",
-  width: r ? c : g,
+  width: i ? g : w,
   [o.breakpoints.between("md", "lg")]: {
     width: "100%",
     height: "100%"
@@ -21,90 +22,90 @@ const p = (o, r) => ({
     width: "100%",
     height: "100%"
   }
-}), d = (o) => ({
+}), p = (o) => ({
   transition: o.transitions.create("width", {
     easing: o.transitions.easing.sharp,
     duration: o.transitions.duration.leavingScreen
   }),
   overflow: "hidden",
   width: 0,
-  background: o.palette.mode === a.Dark ? o.palette.neutral.black : o.palette.neutral.white,
+  background: o.palette.mode === d.Dark ? r(o).neutral.black : r(o).neutral.white,
   zIndex: 2e3,
   [o.breakpoints.up("lg")]: {
     overflow: "visible",
     position: "fixed",
-    width: f,
+    width: b,
     zIndex: 100
   }
-}), y = t(w, {
+}), L = n(x, {
   shouldForwardProp: (o) => o !== "isCollapsed"
-})(({ theme: o, open: r, isCollapsed: n }) => ({
+})(({ theme: o, open: i, isCollapsed: e }) => ({
   display: "flex",
   flexDirection: "column",
-  width: n ? c : g,
+  width: e ? g : w,
   flexShrink: 0,
   whiteSpace: "nowrap",
   position: "absolute",
   boxSizing: "border-box",
-  [`.${i.paper}`]: {
+  [`.${a.paper}`]: {
     padding: 0
   },
   [o.breakpoints.up("lg")]: {
-    [`.${i.paper}`]: {
-      padding: n ? "16px 0px" : "16px 4px"
+    [`.${a.paper}`]: {
+      padding: e ? "16px 0px" : "16px 4px"
     }
   },
-  ...r && {
-    ...p(o, n),
-    [`& .${i.paper}`]: {
-      ...p(o, n)
+  ...i && {
+    ...s(o, e),
+    [`& .${a.paper}`]: {
+      ...s(o, e)
     }
   },
-  ...!r && {
-    ...d(o),
-    [`& .${i.paper}`]: {
-      ...d(o)
+  ...!i && {
+    ...p(o),
+    [`& .${a.paper}`]: {
+      ...p(o)
     }
   }
-})), I = t(e)({
+})), k = n(t)({
   display: "flex",
   alignItems: "center",
   overflow: "hidden",
   padding: 0,
   height: 60
-}), L = t("div")({
+}), D = n("div")({
   display: "inline-flex",
   minWidth: 145,
   overflow: "hidden",
   position: "relative",
   textDecoration: "none",
   padding: "0px 10px"
-}), k = t(l)(({ theme: o }) => ({
+}), m = n(l)(({ theme: o }) => ({
   height: 60,
   width: "100%",
   flexDirection: "row",
   alignItems: "start",
   justifyContent: "center",
   padding: "10px 0px",
-  color: o.palette.neutral.primary
-})), D = t(e)(({ theme: o }) => ({
+  color: r(o).neutral.primary
+})), v = n(t)(({ theme: o }) => ({
   height: 60,
   padding: "10px 0",
-  color: o.palette.neutral.grey4
-})), v = t(e, {
+  color: r(o).neutral.grey4
+})), S = n(t, {
   shouldForwardProp: (o) => o !== "isActive"
-})(({ isActive: o, theme: r }) => ({
-  color: o ? r.palette.primaryColors.accent : r.palette.primary.contrastText,
-  background: o ? r.palette.primaryColors.accentLight : "transparent",
+})(({ isActive: o, theme: i }) => ({
+  color: o ? r(i).primaryColors.accent : i.palette.primary.contrastText,
+  background: o ? r(i).primaryColors.accentLight : "transparent",
   width: "100%",
   padding: 0,
   cursor: "pointer",
   overflow: "hidden",
   borderRadius: 6,
   "&:hover": {
-    background: o ? r.palette.primaryColors.accentLight : r.palette.primaryColors.accentLight2 ?? r.palette.primaryColors.accentLight
+    background: o ? r(i).primaryColors.accentLight : r(i).primaryColors.accentLight2 ?? r(i).primaryColors.accentLight
   }
-})), S = t(x)({
+})), C = n(u)({
   display: "flex",
   flexFlow: "column nowrap",
   alignItems: "center",
@@ -112,12 +113,12 @@ const p = (o, r) => ({
   padding: 0,
   overflowX: "hidden",
   overflowY: "auto"
-}), m = t(s)({
+}), T = n(c)({
   padding: 0,
   "& + &": {
     marginTop: 4
   }
-}), C = t(s, {
+}), P = n(c, {
   shouldForwardProp: (o) => o !== "noPadding"
 })(({ noPadding: o }) => ({
   padding: 0,
@@ -125,12 +126,12 @@ const p = (o, r) => ({
   "&& > *": {
     paddingLeft: o ? 0 : 8
   }
-})), T = t(e, {
+})), W = n(t, {
   shouldForwardProp: (o) => o !== "isSidebarCollapsed" && o !== "disabled"
-})(({ disabled: o, isSidebarCollapsed: r }) => ({
+})(({ disabled: o, isSidebarCollapsed: i }) => ({
   display: "flex",
   alignItems: "center",
-  justifyContent: r ? "center" : "space-between",
+  justifyContent: i ? "center" : "space-between",
   borderRadius: 4,
   padding: 6,
   flexGrow: 1,
@@ -140,7 +141,7 @@ const p = (o, r) => ({
   opacity: o ? 0.7 : 1,
   cursor: o ? "not-allowed" : "pointer",
   pointerEvents: o ? "none" : "auto"
-})), P = t(l)({
+})), B = n(l)({
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "space-between",
@@ -150,7 +151,7 @@ const p = (o, r) => ({
   flexGrow: 1,
   color: "currentcolor",
   cursor: "pointer"
-}), W = t(e, {
+}), F = n(t, {
   shouldForwardProp: (o) => o !== "isOpen"
 })(({ isOpen: o }) => ({
   display: "flex",
@@ -158,7 +159,7 @@ const p = (o, r) => ({
   justifyContent: "center",
   transform: o ? "rotate(180deg)" : "rotate(0deg)",
   transition: "transform 0.2s ease"
-})), B = t(u)({
+})), R = n(f)({
   marginLeft: 8,
   fontSize: 12,
   lineHeight: "18px",
@@ -166,29 +167,29 @@ const p = (o, r) => ({
   whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis"
-}), F = t("footer")(({ theme: o }) => ({
-  backgroundColor: o.palette.mode === a.Dark ? o.palette.neutral.black : o.palette.neutral.white,
+}), $ = n("footer")(({ theme: o }) => ({
+  backgroundColor: o.palette.mode === d.Dark ? r(o).neutral.black : r(o).neutral.white,
   marginTop: "auto",
   overflow: "hidden",
-  color: o.palette.neutral.primary,
+  color: r(o).neutral.primary,
   textAlign: "center",
   [o.breakpoints.down("lg")]: {
     padding: "8px 16px"
   }
 }));
 export {
-  I as AppLogo,
-  W as DropdownIconWrapper,
-  F as Footer,
-  T as LinkBox,
-  B as LinkText,
-  S as List,
-  C as ListChildItem,
-  m as ListItem,
-  k as LogoCollapsedWrap,
-  L as LogoWrap,
-  P as MenuParentItem,
-  D as SideBarToggledWrap,
-  y as SidebarDrawer,
-  v as SidebarItemBox
+  k as AppLogo,
+  F as DropdownIconWrapper,
+  $ as Footer,
+  W as LinkBox,
+  R as LinkText,
+  C as List,
+  P as ListChildItem,
+  T as ListItem,
+  m as LogoCollapsedWrap,
+  D as LogoWrap,
+  B as MenuParentItem,
+  v as SideBarToggledWrap,
+  L as SidebarDrawer,
+  S as SidebarItemBox
 };

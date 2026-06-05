@@ -1,14 +1,15 @@
-import { styled as o, Stack as n, IconButton as a, Menu as i, alpha as p, MenuItem as d } from "@mui/material";
-import { SIDEBAR_WIDTH as r, CurrentTheme as e } from "../../styles/constants.es.js";
-const c = o(n)({
+import { styled as o, Stack as a, IconButton as e, Menu as p, alpha as d, MenuItem as l } from "@mui/material";
+import { SIDEBAR_WIDTH as n, CurrentTheme as i } from "../../styles/constants.es.js";
+import { chirpPalette as r } from "../../theme/palette.es.js";
+const g = o(a)({
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "space-between",
   padding: 0,
   marginTop: 24,
   gap: 8
-}), s = o(a)(({ theme: t }) => ({
-  color: t.palette.neutral.primary,
+}), m = o(e)(({ theme: t }) => ({
+  color: r(t).neutral.primary,
   flexShrink: 0,
   transition: "all 0.25s",
   padding: 0,
@@ -27,37 +28,37 @@ const c = o(n)({
     padding: "0 6px",
     marginRight: 10
   }
-})), g = o(n)({
+})), x = o(a)({
   alignItems: "center",
   justifyContent: "center",
   position: "relative",
   height: 40,
   minWidth: 32
-}), m = o(i)(({ theme: t }) => ({
-  width: r,
+}), f = o(p)(({ theme: t }) => ({
+  width: n,
   padding: 0,
   ".MuiList-root": {
     paddingTop: 0,
     paddingBottom: 0,
-    backgroundColor: t.palette.mode === e.Dark ? t.palette.neutral.grey1 : t.palette.neutral.white,
+    backgroundColor: t.palette.mode === i.Dark ? r(t).neutral.grey1 : r(t).neutral.white,
     ".MuiDivider-root": {
       marginTop: 0,
       marginBottom: 0
     }
   },
   "& .MuiPaper-root": {
-    width: r,
-    maxWidth: r,
-    minWidth: r,
+    width: n,
+    maxWidth: n,
+    minWidth: n,
     left: "0 !important",
     right: "auto !important",
     borderRadius: 12,
     marginTop: 8,
-    backgroundColor: t.palette.mode === e.Dark ? t.palette.neutral.grey1 : t.palette.neutral.white,
-    boxShadow: `0 8px 24px ${t.palette.shadow ?? "rgba(0, 0, 0, 0.14)"}`,
-    border: `1px solid ${p(
+    backgroundColor: t.palette.mode === i.Dark ? r(t).neutral.grey1 : r(t).neutral.white,
+    boxShadow: `0 8px 24px ${r(t).shadow ?? "rgba(0, 0, 0, 0.14)"}`,
+    border: `1px solid ${d(
       t.palette.borders.primary,
-      t.palette.mode === e.Dark ? 0.1 : 0.6
+      t.palette.mode === i.Dark ? 0.1 : 0.6
     )}`,
     backdropFilter: "blur(10px)",
     backgroundImage: "none",
@@ -70,31 +71,31 @@ const c = o(n)({
       position: "fixed"
     }
   }
-})), x = o(d)(({ theme: t }) => ({
+})), h = o(l)(({ theme: t }) => ({
   padding: 12,
   border: "none",
   fontSize: 12,
   lineHeight: "18px",
-  color: t.palette.neutral.primary,
+  color: r(t).neutral.primary,
   cursor: "pointer",
-  minWidth: `calc(${r}px - 2px)`,
+  minWidth: `calc(${n}px - 2px)`,
   "&:first-of-type": {
     borderTop: "none"
   },
   "&:hover": {
-    backgroundColor: t.palette.mode === e.Dark ? t.palette.neutral.grey1 : t.palette.neutral.white
+    backgroundColor: t.palette.mode === i.Dark ? r(t).neutral.grey1 : r(t).neutral.white
   }
-})), b = o(n)({
+})), b = o(a)({
   cursor: "pointer",
   flexDirection: "row",
   gap: 8,
   width: "100%"
 });
 export {
-  g as AlertsIcon,
-  c as AvatarContainer,
-  s as IconButton,
-  m as Menu,
-  x as MenuItem,
+  x as AlertsIcon,
+  g as AvatarContainer,
+  m as IconButton,
+  f as Menu,
+  h as MenuItem,
   b as UserMenuWrap
 };

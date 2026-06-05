@@ -1,23 +1,24 @@
-import { jsxRuntimeExports as r } from "../../jsx-runtime-BgepH7Pb.js";
-import { styled as a, Stack as i, IconButton as n } from "@mui/material";
-import { ToggleSidebarIcon as s } from "../../icons/ToggleSidebarIcon/index.es.js";
-import { HEADER_HEIGHT as d, CurrentTheme as p } from "../../styles/constants.es.js";
-const c = a("header")(({ theme: e }) => ({
+import { jsxRuntimeExports as e } from "../../jsx-runtime-BgepH7Pb.js";
+import { styled as a, Stack as n, IconButton as s } from "@mui/material";
+import { ToggleSidebarIcon as d } from "../../icons/ToggleSidebarIcon/index.es.js";
+import { HEADER_HEIGHT as c, CurrentTheme as p } from "../../styles/constants.es.js";
+import { chirpPalette as t } from "../../theme/palette.es.js";
+const m = a("header")(({ theme: r }) => ({
   width: "100%",
-  height: d,
+  height: c,
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
   padding: "0 16px",
-  backgroundColor: e.palette.mode === p.Dark ? e.palette.neutral.black : e.palette.neutral.white,
-  borderBottom: `1px solid ${e.palette.borders.primary}`,
-  color: e.palette.neutral.primary
-})), b = ({ logo: e, rightSlot: o, onMenuOpen: t, showMenuButton: l = !0 }) => /* @__PURE__ */ r.jsxs(c, { children: [
-  /* @__PURE__ */ r.jsxs(i, { direction: "row", alignItems: "center", gap: 2, children: [
-    l && t ? /* @__PURE__ */ r.jsx(n, { onClick: t, size: "small", edge: "start", color: "inherit", children: /* @__PURE__ */ r.jsx(s, {}) }) : null,
-    e
+  backgroundColor: r.palette.mode === p.Dark ? t(r).neutral.black : t(r).neutral.white,
+  borderBottom: `1px solid ${r.palette.borders.primary}`,
+  color: t(r).neutral.primary
+})), b = ({ logo: r, rightSlot: i, onMenuOpen: o, showMenuButton: l = !0 }) => /* @__PURE__ */ e.jsxs(m, { children: [
+  /* @__PURE__ */ e.jsxs(n, { direction: "row", alignItems: "center", gap: 2, children: [
+    l && o ? /* @__PURE__ */ e.jsx(s, { onClick: o, size: "small", edge: "start", color: "inherit", children: /* @__PURE__ */ e.jsx(d, {}) }) : null,
+    r
   ] }),
-  o
+  i
 ] });
 export {
   b as Header

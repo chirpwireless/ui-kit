@@ -1,9 +1,10 @@
-import { styled as d, Box as s } from "@mui/material";
-import { SIDEBAR_COLLAPSED_WIDTH as o, SIDEBAR_WIDTH as r, CLOSED_SIDEBAR_WIDTH as t, CurrentTheme as l } from "../../styles/constants.es.js";
-const g = d(s, {
+import { styled as s, Box as l } from "@mui/material";
+import { SIDEBAR_COLLAPSED_WIDTH as o, SIDEBAR_WIDTH as a, CLOSED_SIDEBAR_WIDTH as t, CurrentTheme as p } from "../../styles/constants.es.js";
+import { chirpPalette as d } from "../../theme/palette.es.js";
+const c = s(l, {
   shouldForwardProp: (n) => n !== "isOpen" && n !== "isSidebarCollapsed"
-})(({ theme: n, isOpen: a, isSidebarCollapsed: i }) => ({
-  backgroundColor: n.palette.mode === l.Dark ? n.palette.neutral.black : n.palette.neutral.white,
+})(({ theme: n, isOpen: r, isSidebarCollapsed: i }) => ({
+  backgroundColor: n.palette.mode === p.Dark ? d(n).neutral.black : d(n).neutral.white,
   display: "flex",
   flexFlow: "row nowrap",
   minHeight: "100%",
@@ -15,7 +16,7 @@ const g = d(s, {
   flexGrow: 1,
   padding: 4,
   [n.breakpoints.between("md", "lg")]: {
-    overflow: a ? "hidden" : "auto",
+    overflow: r ? "hidden" : "auto",
     padding: 0
   },
   [n.breakpoints.up("lg")]: {
@@ -23,28 +24,28 @@ const g = d(s, {
     width: `calc(100% - ${i ? o : t}px)`
   },
   [n.breakpoints.down("md")]: {
-    overflow: a ? "hidden" : "auto",
+    overflow: r ? "hidden" : "auto",
     padding: 0
   },
   [n.breakpoints.down("lg")]: {
     flexDirection: "column"
   },
-  ...a && {
+  ...r && {
     [n.breakpoints.up("md")]: {
-      marginLeft: i ? o : r,
-      width: `calc(100% - ${i ? o : r}px)`,
+      marginLeft: i ? o : a,
+      width: `calc(100% - ${i ? o : a}px)`,
       transition: n.transitions.create(["width", "margin"], {
         easing: n.transitions.easing.sharp,
         duration: n.transitions.duration.enteringScreen
       })
     }
   }
-})), w = d(s)({
+})), u = s(l)({
   minHeight: "100vh",
   display: "flex",
   flexFlow: "column nowrap"
 });
 export {
-  g as AppContainer,
-  w as LayoutRoot
+  c as AppContainer,
+  u as LayoutRoot
 };
