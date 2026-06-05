@@ -3,14 +3,14 @@
     "version": "1.0.0-rc.0",
     "type": "module",
     "declaration": true,
-    "main": "dist/chirp-ui.cjs.js",
-    "module": "dist/chirp-ui.es.js",
+    "main": "dist/index.cjs.js",
+    "module": "dist/index.es.js",
     "types": "dist/index.d.ts",
     "exports": {
         ".": {
             "types": "./dist/index.d.ts",
-            "import": "./dist/chirp-ui.es.js",
-            "require": "./dist/chirp-ui.cjs.js"
+            "import": "./dist/index.es.js",
+            "require": "./dist/index.cjs.js"
         },
         "./theme": {
             "types": "./dist/theme/index.d.ts",
@@ -33,9 +33,9 @@
             "require": "./dist/layouts/index.cjs.js"
         },
         "./locales": {
-            "types": "./dist/locales/index.d.ts",
-            "import": "./dist/locales/index.es.js",
-            "require": "./dist/locales/index.cjs.js"
+            "types": "./dist/locales/resources/index.d.ts",
+            "import": "./dist/locales/resources/index.es.js",
+            "require": "./dist/locales/resources/index.cjs.js"
         },
         "./legacy": {
             "types": "./dist/_legacy/index.d.ts",

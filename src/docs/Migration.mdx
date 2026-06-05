@@ -97,7 +97,20 @@ export const App = () => {
 
 ## Что осталось как было
 
-- `helpers`, `hooks`, основные `lib`-компоненты (Modal, Cards, Table, Charts, Maps) — через корневой
-  экспорт. Их API не менялся.
+- `helpers`, `hooks` — через корневой экспорт. Их API не менялся.
 - `useBreakpoints`, `useDebounce`, `useToggle` — на месте.
 - `uiKitLocaleModule` — i18next-ресурсы по-прежнему мерджатся в потребителя.
+
+## Что переехало под `/legacy`
+
+Весь v0.x UI-слой (Modal, Cards, Table, Charts, Maps, Tabs, Select, Autocomplete, …),
+legacy-тема (`theme-provider`, reference-палитры, `legacyLightTheme` / `legacyDarkTheme`) и
+старые наборы иконок больше **не** реэкспортятся из корня — только через подпуть:
+
+```ts
+import { Modal, Table, BadgeSelect } from '@chirpwireless/ui-kit/legacy';
+import { legacyLightTheme } from '@chirpwireless/ui-kit/legacy';
+import { ChirpAltIcon } from '@chirpwireless/ui-kit/legacy/icons';
+```
+
+Так корневой entry остаётся чисто v1, и потребитель не вытягивает legacy случайно.

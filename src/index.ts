@@ -66,36 +66,12 @@ export {
     CurrentTheme,
 } from './styles/constants';
 
-// --- Legacy v0.x API (kept for backward compatibility while consumers migrate) ---
+// --- Shared infrastructure (helpers / hooks / i18n) ---
+// The full v0.x component + theme + icon surface now lives behind the `/legacy`
+// subpath so the root entry stays v1-only and consumers can't pull legacy by accident.
 
 export * from './helpers';
 
 export * from './hooks';
-
-export * from './lib';
-
-export * from './assets/fleet-icons';
-
-export * from './assets/themed-fleet-icons';
-
-export {
-    CheckCircleOutlinedIcon,
-    ChirpAltIcon,
-    ChirpErrorIcon,
-    CloseIcon,
-    ErrorIcon,
-    LogoutIcon as LegacyLogoutIcon,
-    SuccessIcon,
-} from './assets/icons';
-
-export * from './styles/theme/theme-provider';
-
-export { referenceDarkThemePalette, referenceLightThemePalette } from './styles/theme/reference-palettes';
-
-export { lightTheme as legacyLightTheme } from './styles/theme/light';
-
-export { darkTheme as legacyDarkTheme } from './styles/theme/dark';
-
-export { type ReferencePaletteType } from './styles/theme/types';
 
 export { uiKitLocaleModule } from './locales/resources/merged-resourses';

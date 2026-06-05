@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react';
 import { lightTheme } from './theme/light';
 import { Stack } from '@mui/material';
-import { ClickableColorCell, Typography } from '../lib';
+import { ClickableColorCell, Typography } from '../_legacy';
 import { useTheme } from '@emotion/react';
 import { darkTheme } from './theme/dark';
 
