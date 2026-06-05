@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=require("@mui/material"),o=require("../../theme/palette.cjs.js"),r=t.styled(t.IconButton)(({theme:e})=>({color:o.chirpPalette(e).neutral.primary,padding:0,"&:hover":{backgroundColor:"transparent"}}));exports.IconButton=r;

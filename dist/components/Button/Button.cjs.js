@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("../../jsx-runtime-BRMkMA8J.cjs"),n=require("./style.cjs.js"),s=({children:t,...e})=>o.jsxRuntimeExports.jsx(n.Button,{...e,disableRipple:!0,children:t});exports.Button=s;
