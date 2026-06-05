@@ -5,6 +5,7 @@ import { Avatar as MuiAvatar, Box, ClickAwayListener, Divider, Stack, Typography
 
 import { Checkmark, DropdownIcon, LogoutIcon } from '../../icons';
 import { CurrentTheme } from '../../styles/constants';
+import { chirpPalette } from '../../theme/palette';
 import { Avatar } from '../../ui/Avatar';
 import * as S from './styles';
 import type { UserMenuProps } from './types';
@@ -196,8 +197,8 @@ export const UserMenu = ({
                                             '&:hover': {
                                                 backgroundColor:
                                                     theme.palette.mode === CurrentTheme.Dark
-                                                        ? theme.palette.neutral.grey1
-                                                        : theme.palette.neutral.white,
+                                                        ? chirpPalette(theme).neutral.grey1
+                                                        : chirpPalette(theme).neutral.white,
                                             },
                                         }}
                                     >
