@@ -1,1 +1,3 @@
-export declare const IconButton: import('@emotion/styled').StyledComponent<import('@mui/material').IconButtonOwnProps & Omit<import('@mui/material').ButtonBaseOwnProps, "classes"> & import('../../../node_modules/@mui/material/OverridableComponent').CommonProps & Omit<import('react').DetailedHTMLProps<import('react').ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "color" | "disabled" | "loading" | "loadingIndicator" | "className" | "style" | "classes" | "action" | "centerRipple" | "children" | "disableRipple" | "disableTouchRipple" | "focusRipple" | "focusVisibleClassName" | "LinkComponent" | "onFocusVisible" | "sx" | "tabIndex" | "TouchRippleProps" | "touchRippleRef" | "disableFocusRipple" | "size" | "edge"> & import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme>, {}, {}>;
+import { FC } from 'react';
+import { IconButtonProps } from '@mui/material';
+export declare const IconButton: FC<IconButtonProps>;
