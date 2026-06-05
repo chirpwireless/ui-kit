@@ -4,6 +4,7 @@ import { IconButton, Stack, styled } from '@mui/material';
 
 import { ToggleSidebarIcon } from '../../icons';
 import { CurrentTheme, HEADER_HEIGHT } from '../../styles/constants';
+import { chirpPalette } from '../../theme/palette';
 
 export interface HeaderProps {
     logo?: ReactNode;
@@ -20,9 +21,11 @@ const HeaderRoot = styled('header')(({ theme }) => ({
     justifyContent: 'space-between',
     padding: '0 16px',
     backgroundColor:
-        theme.palette.mode === CurrentTheme.Dark ? theme.palette.neutral.black : theme.palette.neutral.white,
+        theme.palette.mode === CurrentTheme.Dark
+            ? chirpPalette(theme).neutral.black
+            : chirpPalette(theme).neutral.white,
     borderBottom: `1px solid ${theme.palette.borders.primary}`,
-    color: theme.palette.neutral.primary,
+    color: chirpPalette(theme).neutral.primary,
 }));
 
 export const Header = ({ logo, rightSlot, onMenuOpen, showMenuButton = true }: HeaderProps) => (

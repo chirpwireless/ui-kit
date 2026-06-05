@@ -9,6 +9,7 @@ import {
 
 import { CurrentTheme, SIDEBAR_WIDTH } from '../../styles/constants';
 import '../../theme/augmentation';
+import { chirpPalette } from '../../theme/palette';
 
 export const AvatarContainer = styled(Stack)({
     flexDirection: 'row',
@@ -20,7 +21,7 @@ export const AvatarContainer = styled(Stack)({
 });
 
 export const IconButton = styled(MuiIconButton)(({ theme }) => ({
-    color: theme.palette.neutral.primary,
+    color: chirpPalette(theme).neutral.primary,
     flexShrink: 0,
     transition: 'all 0.25s',
     padding: 0,
@@ -59,7 +60,9 @@ export const Menu = styled(MuiMenu)(({ theme }) => ({
         paddingTop: 0,
         paddingBottom: 0,
         backgroundColor:
-            theme.palette.mode === CurrentTheme.Dark ? theme.palette.neutral.grey1 : theme.palette.neutral.white,
+            theme.palette.mode === CurrentTheme.Dark
+                ? chirpPalette(theme).neutral.grey1
+                : chirpPalette(theme).neutral.white,
 
         '.MuiDivider-root': {
             marginTop: 0,
@@ -76,8 +79,10 @@ export const Menu = styled(MuiMenu)(({ theme }) => ({
         borderRadius: 12,
         marginTop: 8,
         backgroundColor:
-            theme.palette.mode === CurrentTheme.Dark ? theme.palette.neutral.grey1 : theme.palette.neutral.white,
-        boxShadow: `0 8px 24px ${theme.palette.shadow ?? 'rgba(0, 0, 0, 0.14)'}`,
+            theme.palette.mode === CurrentTheme.Dark
+                ? chirpPalette(theme).neutral.grey1
+                : chirpPalette(theme).neutral.white,
+        boxShadow: `0 8px 24px ${chirpPalette(theme).shadow ?? 'rgba(0, 0, 0, 0.14)'}`,
         border: `1px solid ${alpha(
             theme.palette.borders.primary,
             theme.palette.mode === CurrentTheme.Dark ? 0.1 : 0.6,
@@ -101,7 +106,7 @@ export const MenuItem = styled(MuiMenuItem)(({ theme }) => ({
     border: 'none',
     fontSize: 12,
     lineHeight: '18px',
-    color: theme.palette.neutral.primary,
+    color: chirpPalette(theme).neutral.primary,
     cursor: 'pointer',
     minWidth: `calc(${SIDEBAR_WIDTH}px - 2px)`,
 
@@ -111,7 +116,9 @@ export const MenuItem = styled(MuiMenuItem)(({ theme }) => ({
 
     '&:hover': {
         backgroundColor:
-            theme.palette.mode === CurrentTheme.Dark ? theme.palette.neutral.grey1 : theme.palette.neutral.white,
+            theme.palette.mode === CurrentTheme.Dark
+                ? chirpPalette(theme).neutral.grey1
+                : chirpPalette(theme).neutral.white,
     },
 }));
 

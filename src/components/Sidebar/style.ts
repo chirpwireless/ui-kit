@@ -13,6 +13,7 @@ import {
 
 import { CLOSED_SIDEBAR_WIDTH, CurrentTheme, SIDEBAR_COLLAPSED_WIDTH, SIDEBAR_WIDTH } from '../../styles/constants';
 import '../../theme/augmentation';
+import { chirpPalette } from '../../theme/palette';
 
 interface DrawerProps {
     isOpen?: boolean;
@@ -24,7 +25,10 @@ const openedMixin = (theme: Theme, isCollapsed?: boolean): CSSObject => ({
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
     }),
-    background: theme.palette.mode === CurrentTheme.Dark ? theme.palette.neutral.black : theme.palette.neutral.white,
+    background:
+        theme.palette.mode === CurrentTheme.Dark
+            ? chirpPalette(theme).neutral.black
+            : chirpPalette(theme).neutral.white,
     borderRight: `1px solid ${theme.palette.borders.primary}`,
     border: 'none',
     overflow: 'visible',
@@ -50,7 +54,10 @@ const closedMixin = (theme: Theme): CSSObject => ({
     }),
     overflow: 'hidden',
     width: 0,
-    background: theme.palette.mode === CurrentTheme.Dark ? theme.palette.neutral.black : theme.palette.neutral.white,
+    background:
+        theme.palette.mode === CurrentTheme.Dark
+            ? chirpPalette(theme).neutral.black
+            : chirpPalette(theme).neutral.white,
     zIndex: 2000,
 
     [theme.breakpoints.up('lg')]: {
@@ -121,20 +128,20 @@ export const LogoCollapsedWrap = styled(Stack)(({ theme }) => ({
     alignItems: 'start',
     justifyContent: 'center',
     padding: '10px 0px',
-    color: theme.palette.neutral.primary,
+    color: chirpPalette(theme).neutral.primary,
 }));
 
 export const SideBarToggledWrap = styled(Box)(({ theme }) => ({
     height: 60,
     padding: '10px 0',
-    color: theme.palette.neutral.grey4,
+    color: chirpPalette(theme).neutral.grey4,
 }));
 
 export const SidebarItemBox = styled(Box, {
     shouldForwardProp: (prop) => prop !== 'isActive',
 })<{ isActive?: boolean }>(({ isActive, theme }) => ({
-    color: isActive ? theme.palette.primaryColors.accent : theme.palette.primary.contrastText,
-    background: isActive ? theme.palette.primaryColors.accentLight : 'transparent',
+    color: isActive ? chirpPalette(theme).primaryColors.accent : theme.palette.primary.contrastText,
+    background: isActive ? chirpPalette(theme).primaryColors.accentLight : 'transparent',
     width: '100%',
     padding: 0,
     cursor: 'pointer',
@@ -143,8 +150,8 @@ export const SidebarItemBox = styled(Box, {
 
     '&:hover': {
         background: isActive
-            ? theme.palette.primaryColors.accentLight
-            : (theme.palette.primaryColors.accentLight2 ?? theme.palette.primaryColors.accentLight),
+            ? chirpPalette(theme).primaryColors.accentLight
+            : (chirpPalette(theme).primaryColors.accentLight2 ?? chirpPalette(theme).primaryColors.accentLight),
     },
 }));
 
@@ -231,10 +238,12 @@ export const LinkText = styled(Typography)({
 
 export const Footer = styled('footer')(({ theme }) => ({
     backgroundColor:
-        theme.palette.mode === CurrentTheme.Dark ? theme.palette.neutral.black : theme.palette.neutral.white,
+        theme.palette.mode === CurrentTheme.Dark
+            ? chirpPalette(theme).neutral.black
+            : chirpPalette(theme).neutral.white,
     marginTop: 'auto',
     overflow: 'hidden',
-    color: theme.palette.neutral.primary,
+    color: chirpPalette(theme).neutral.primary,
     textAlign: 'center',
 
     [theme.breakpoints.down('lg')]: {

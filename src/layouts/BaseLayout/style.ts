@@ -2,6 +2,7 @@ import { Box, styled } from '@mui/material';
 
 import { CLOSED_SIDEBAR_WIDTH, CurrentTheme, SIDEBAR_COLLAPSED_WIDTH, SIDEBAR_WIDTH } from '../../styles/constants';
 import '../../theme/augmentation';
+import { chirpPalette } from '../../theme/palette';
 
 interface AppContainerProps {
     isOpen?: boolean;
@@ -12,7 +13,9 @@ export const AppContainer = styled(Box, {
     shouldForwardProp: (prop) => prop !== 'isOpen' && prop !== 'isSidebarCollapsed',
 })<AppContainerProps>(({ theme, isOpen, isSidebarCollapsed }) => ({
     backgroundColor:
-        theme.palette.mode === CurrentTheme.Dark ? theme.palette.neutral.black : theme.palette.neutral.white,
+        theme.palette.mode === CurrentTheme.Dark
+            ? chirpPalette(theme).neutral.black
+            : chirpPalette(theme).neutral.white,
     display: 'flex',
     flexFlow: 'row nowrap',
     minHeight: '100%',
