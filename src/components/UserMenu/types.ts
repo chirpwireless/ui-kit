@@ -6,6 +6,9 @@ export interface UserMenuUser {
     subtitle?: string;
 }
 
+/** Optional async loader for protected avatar URLs (auth-gated). Returns a Blob to display. */
+export type AvatarLoader = (url: string) => Promise<Blob | null | undefined>;
+
 export interface UserMenuItem {
     id: string;
     label: string;
@@ -24,6 +27,9 @@ export interface UserMenuProps {
     user: UserMenuUser;
     isMobile?: boolean;
     isCollapsed?: boolean;
+
+    /** Async loader for protected avatar URLs. Passed through to the avatar. */
+    avatarLoader?: AvatarLoader;
 
     /** Top section items: Users, Subscription, Organization Settings, etc. */
     menuItems?: UserMenuItem[];

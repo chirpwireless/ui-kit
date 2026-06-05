@@ -14,6 +14,7 @@ export const UserMenu = ({
     user,
     isMobile,
     isCollapsed,
+    avatarLoader,
     menuItems = [],
     organizations,
     currentOrganizationId,
@@ -70,13 +71,18 @@ export const UserMenu = ({
                         <S.AvatarContainer>
                             {isCollapsed ? (
                                 <Stack direction="row" alignItems="center" justifyContent="center" width="100%">
-                                    <Avatar avatar={user.avatar} userName={user.name} sx={{ width: 32, height: 32 }} />
+                                    <Avatar
+                                        avatar={user.avatar}
+                                        userName={user.name}
+                                        loader={avatarLoader}
+                                        sx={{ width: 32, height: 32 }}
+                                    />
                                 </Stack>
                             ) : (
                                 <>
                                     <S.UserMenuWrap onClick={handleMenuClick}>
                                         <S.IconButton>
-                                            <Avatar avatar={user.avatar} userName={user.name} />
+                                            <Avatar avatar={user.avatar} userName={user.name} loader={avatarLoader} />
                                         </S.IconButton>
                                         <Stack
                                             direction="column"
@@ -126,7 +132,7 @@ export const UserMenu = ({
                         <S.AvatarContainer>
                             <S.IconButton onClick={handleMenuClick}>
                                 <Stack direction="row" gap="8px" alignItems="center" sx={{ cursor: 'pointer' }}>
-                                    <Avatar avatar={user.avatar} userName={user.name} />
+                                    <Avatar avatar={user.avatar} userName={user.name} loader={avatarLoader} />
                                     <Typography fontSize="16px" lineHeight="16px" color="neutral.primary">
                                         {user.name}
                                     </Typography>
@@ -156,6 +162,7 @@ export const UserMenu = ({
                                                 sx={{ width: 40, height: 40 }}
                                                 avatar={user.avatar}
                                                 userName={user.name}
+                                                loader={avatarLoader}
                                             />
                                             <Typography fontSize="16px" lineHeight="16px" color="neutral.primary">
                                                 {user.name}
@@ -187,69 +194,71 @@ export const UserMenu = ({
                                 </S.MenuItem>
                             ))}
 
-                            {organizations && organizations.length > 0 ? (
-                                <>
-                                    <Divider />
-                                    <S.MenuItem
-                                        color="neutral.grey4"
-                                        sx={{
-                                            cursor: 'default',
-                                            '&:hover': {
-                                                backgroundColor:
-                                                    theme.palette.mode === CurrentTheme.Dark
-                                                        ? chirpPalette(theme).neutral.grey1
-                                                        : chirpPalette(theme).neutral.white,
-                                            },
-                                        }}
-                                    >
-                                        {organizationsLabel}
-                                    </S.MenuItem>
-                                    {organizations.map((org) => {
-                                        const isCurrent = currentOrganizationId === org.id;
+                            {/* MUI Menu clones its children to inject props — pass a flat array, never a Fragment. */}
+                            {organizations && organizations.length > 0
+                                ? [
+                                      <Divider key="org-divider" />,
+                                      <S.MenuItem
+                                          key="org-label"
+                                          color="neutral.grey4"
+                                          sx={{
+                                              cursor: 'default',
+                                              '&:hover': {
+                                                  backgroundColor:
+                                                      theme.palette.mode === CurrentTheme.Dark
+                                                          ? chirpPalette(theme).neutral.grey1
+                                                          : chirpPalette(theme).neutral.white,
+                                              },
+                                          }}
+                                      >
+                                          {organizationsLabel}
+                                      </S.MenuItem>,
+                                      ...organizations.map((org) => {
+                                          const isCurrent = currentOrganizationId === org.id;
 
-                                        return (
-                                            <S.MenuItem key={org.id} onClick={() => handleSelectOrganization(org.id)}>
-                                                <Stack
-                                                    direction="row"
-                                                    alignItems="center"
-                                                    justifyContent="space-between"
-                                                    width="100%"
-                                                >
-                                                    <Stack direction="row" alignItems="center" gap={2}>
-                                                        <MuiAvatar sx={{ width: 24, height: 24 }}>
-                                                            {org.name?.[0] ?? ''}
-                                                        </MuiAvatar>
-                                                        <Typography
-                                                            variant="body1"
-                                                            title={org.name}
-                                                            sx={{
-                                                                width: org.badge ? '100px' : '165px',
-                                                                overflow: 'hidden',
-                                                                textOverflow: 'ellipsis',
-                                                                whiteSpace: 'nowrap',
-                                                            }}
-                                                        >
-                                                            {org.name}
-                                                        </Typography>
-                                                        {org.badge}
-                                                    </Stack>
-                                                    {isCurrent ? (
-                                                        <Stack
-                                                            width={24}
-                                                            height={24}
-                                                            alignItems="center"
-                                                            justifyContent="center"
-                                                            color="primaryColors.accent"
-                                                        >
-                                                            <Checkmark />
-                                                        </Stack>
-                                                    ) : null}
-                                                </Stack>
-                                            </S.MenuItem>
-                                        );
-                                    })}
-                                </>
-                            ) : null}
+                                          return (
+                                              <S.MenuItem key={org.id} onClick={() => handleSelectOrganization(org.id)}>
+                                                  <Stack
+                                                      direction="row"
+                                                      alignItems="center"
+                                                      justifyContent="space-between"
+                                                      width="100%"
+                                                  >
+                                                      <Stack direction="row" alignItems="center" gap={2}>
+                                                          <MuiAvatar sx={{ width: 24, height: 24 }}>
+                                                              {org.name?.[0] ?? ''}
+                                                          </MuiAvatar>
+                                                          <Typography
+                                                              variant="body1"
+                                                              title={org.name}
+                                                              sx={{
+                                                                  width: org.badge ? '100px' : '165px',
+                                                                  overflow: 'hidden',
+                                                                  textOverflow: 'ellipsis',
+                                                                  whiteSpace: 'nowrap',
+                                                              }}
+                                                          >
+                                                              {org.name}
+                                                          </Typography>
+                                                          {org.badge}
+                                                      </Stack>
+                                                      {isCurrent ? (
+                                                          <Stack
+                                                              width={24}
+                                                              height={24}
+                                                              alignItems="center"
+                                                              justifyContent="center"
+                                                              color="primaryColors.accent"
+                                                          >
+                                                              <Checkmark />
+                                                          </Stack>
+                                                      ) : null}
+                                                  </Stack>
+                                              </S.MenuItem>
+                                          );
+                                      }),
+                                  ]
+                                : null}
 
                             <Divider />
                             <S.MenuItem onClick={handleLogout}>
