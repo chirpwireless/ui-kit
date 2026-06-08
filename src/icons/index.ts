@@ -8,6 +8,8 @@ export { DashboardIcon } from './DashboardIcon';
 
 export { DropdownIcon } from './DropdownIcon';
 
+export { EditIcon } from './EditIcon';
+
 export { LogoutIcon } from './LogoutIcon';
 
 export { MoneyIcon } from './MoneyIcon';
@@ -21,5 +23,7 @@ export { SelectIcon } from './SelectIcon';
 export { Settings } from './Settings';
 
 export { ToggleSidebarIcon } from './ToggleSidebarIcon';
+
+export { TrashIcon } from './TrashIcon';
 
 export { UserIcon } from './UserIcon';
