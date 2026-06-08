@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("../../jsx-runtime-BRMkMA8J.cjs"),n=require("../../icons/CaretDownIcon/index.cjs.js"),o=require("./style.cjs.js"),r=({className:t})=>e.jsxRuntimeExports.jsx(o.Root,{className:t,children:e.jsxRuntimeExports.jsx(n.CaretDownIcon,{})});exports.SelectIndicator=r;
