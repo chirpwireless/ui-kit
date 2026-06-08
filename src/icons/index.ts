@@ -1,3 +1,5 @@
+export { CaretDownIcon } from './CaretDownIcon';
+
 export { Checkmark } from './Checkmark';
 
 export { ChevronDownIcon } from './ChevronDownIcon';
@@ -13,6 +15,8 @@ export { MoneyIcon } from './MoneyIcon';
 export { NotificationIcon } from './NotificationIcon';
 
 export { SearchIcon } from './SearchIcon';
+
+export { SelectIcon } from './SelectIcon';
 
 export { Settings } from './Settings';
 
