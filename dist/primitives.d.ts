@@ -13,3 +13,4 @@ export { Toggle, MobileToggle } from './components/Toggle';
 export { ThemeSwitch } from './components/ThemeSwitch';
 export { MultiSelectOrCreate } from './components/MultiSelectOrCreate';
 export type { MultiSelectOrCreateProps, Tag } from './components/MultiSelectOrCreate';
+export { Tabs, TabBadge, TabsContainer } from './components/Tabs';
