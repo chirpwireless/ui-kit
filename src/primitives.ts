@@ -9,6 +9,10 @@ export { IconButton } from './components/IconButton';
 
 export { TextField, MaskedInput } from './components/TextField';
 
+// The bare styled MUI TextField (no FormControl wrapper), exposed so apps can extend it via
+// `styled(TextFieldStyled)` for layout tweaks without re-declaring the field styling.
+export { TextField as TextFieldStyled } from './components/TextField/style';
+
 export { PhoneField } from './components/PhoneField';
 
 export { SearchInput } from './components/SearchInput';
