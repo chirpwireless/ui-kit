@@ -112,6 +112,17 @@ export declare const uiKitModule: {
                     France: string;
                 };
             };
+            Search: string;
+            "Enter tag name here to add new tag...": string;
+            "Enter tag name": string;
+            "Select tags": string;
+            "Are you sure you want to delete \"{{name}}\" tag?": string;
+            "After you delete this tag, the devices it's assigned to will no longer use it.": string;
+            Cancel: string;
+            "Yes, delete": string;
+            "Are you sure you want to edit \"{{name}}\" tag?": string;
+            "After you edit this tag, the devices it is assigned to will use the updated name.": string;
+            "Yes, edit": string;
         };
         fr: {
             Photo: string;
@@ -219,6 +230,17 @@ export declare const uiKitModule: {
                     France: string;
                 };
             };
+            Search: string;
+            "Enter tag name here to add new tag...": string;
+            "Enter tag name": string;
+            "Select tags": string;
+            "Are you sure you want to delete \"{{name}}\" tag?": string;
+            "After you delete this tag, the devices it's assigned to will no longer use it.": string;
+            Cancel: string;
+            "Yes, delete": string;
+            "Are you sure you want to edit \"{{name}}\" tag?": string;
+            "After you edit this tag, the devices it is assigned to will use the updated name.": string;
+            "Yes, edit": string;
         };
         de: {
             Photo: string;
@@ -326,6 +348,17 @@ export declare const uiKitModule: {
                     France: string;
                 };
             };
+            Search: string;
+            "Enter tag name here to add new tag...": string;
+            "Enter tag name": string;
+            "Select tags": string;
+            "Are you sure you want to delete \"{{name}}\" tag?": string;
+            "After you delete this tag, the devices it's assigned to will no longer use it.": string;
+            Cancel: string;
+            "Yes, delete": string;
+            "Are you sure you want to edit \"{{name}}\" tag?": string;
+            "After you edit this tag, the devices it is assigned to will use the updated name.": string;
+            "Yes, edit": string;
         };
         es: {
             Photo: string;
@@ -433,6 +466,17 @@ export declare const uiKitModule: {
                     France: string;
                 };
             };
+            Search: string;
+            "Enter tag name here to add new tag...": string;
+            "Enter tag name": string;
+            "Select tags": string;
+            "Are you sure you want to delete \"{{name}}\" tag?": string;
+            "After you delete this tag, the devices it's assigned to will no longer use it.": string;
+            Cancel: string;
+            "Yes, delete": string;
+            "Are you sure you want to edit \"{{name}}\" tag?": string;
+            "After you edit this tag, the devices it is assigned to will use the updated name.": string;
+            "Yes, edit": string;
         };
         ru: {
             Photo: string;
@@ -540,6 +584,17 @@ export declare const uiKitModule: {
                     France: string;
                 };
             };
+            Search: string;
+            "Enter tag name here to add new tag...": string;
+            "Enter tag name": string;
+            "Select tags": string;
+            "Are you sure you want to delete \"{{name}}\" tag?": string;
+            "After you delete this tag, the devices it's assigned to will no longer use it.": string;
+            Cancel: string;
+            "Yes, delete": string;
+            "Are you sure you want to edit \"{{name}}\" tag?": string;
+            "After you edit this tag, the devices it is assigned to will use the updated name.": string;
+            "Yes, edit": string;
         };
     };
 };

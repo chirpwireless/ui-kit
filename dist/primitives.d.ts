@@ -8,3 +8,8 @@ export { SearchInput } from './components/SearchInput';
 export { Select, InputLabel } from './components/Select';
 export { Autocomplete } from './components/Autocomplete';
 export { SelectIndicator } from './components/SelectIndicator';
+export { Checkbox } from './components/Checkbox';
+export { Toggle, MobileToggle } from './components/Toggle';
+export { ThemeSwitch } from './components/ThemeSwitch';
+export { MultiSelectOrCreate } from './components/MultiSelectOrCreate';
+export type { MultiSelectOrCreateProps, Tag } from './components/MultiSelectOrCreate';

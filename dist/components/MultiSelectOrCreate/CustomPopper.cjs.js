@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const i=require("../../jsx-runtime-BRMkMA8J.cjs"),n=require("@mui/material"),s=o=>{const{anchorEl:t,...r}=o,e=t&&"clientWidth"in t?t.clientWidth:void 0;return i.jsxRuntimeExports.jsx(n.Popper,{anchorEl:t,...r,placement:"bottom-start",style:{zIndex:1300,width:e,maxWidth:e}})};exports.CustomPopper=s;
