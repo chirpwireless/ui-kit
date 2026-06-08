@@ -4,6 +4,8 @@ export { CaretUpIcon } from './CaretUpIcon';
 
 export { SortIcon } from './SortIcon';
 
+export { StepIcon } from './StepIcon';
+
 export { CheckCircleIcon } from './CheckCircleIcon';
 
 export { Checkmark } from './Checkmark';
