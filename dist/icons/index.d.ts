@@ -1,4 +1,7 @@
 export { BackIcon } from './BackIcon';
+export { ErrorSolidIcon } from './ErrorSolidIcon';
+export { SuccessSolidIcon } from './SuccessSolidIcon';
+export { WarningSolidIcon } from './WarningSolidIcon';
 export { CaretDownIcon } from './CaretDownIcon';
 export { CaretUpIcon } from './CaretUpIcon';
 export { SortIcon } from './SortIcon';

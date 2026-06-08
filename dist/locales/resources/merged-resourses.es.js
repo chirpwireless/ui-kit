@@ -1,4 +1,7 @@
 const e = {
+  error: "error",
+  warning: "warning",
+  success: "success",
   Photo: "Photo",
   widgets: {
     "No data": "No data",
@@ -117,6 +120,9 @@ const e = {
   "After you edit this tag, the devices it is assigned to will use the updated name.": "After you edit this tag, the devices it is assigned to will use the updated name.",
   "Yes, edit": "Yes, edit"
 }, a = {
+  error: "erreur",
+  warning: "avertissement",
+  success: "succès",
   Photo: "Photo",
   widgets: {
     "No data": "Pas de données",
@@ -235,6 +241,9 @@ const e = {
   "After you edit this tag, the devices it is assigned to will use the updated name.": "Après avoir modifié ce tag, les appareils auxquels il est attribué utiliseront le nom mis à jour.",
   "Yes, edit": "Oui, modifier"
 }, t = {
+  error: "Fehler",
+  warning: "Warnung",
+  success: "Erfolg",
   Photo: "Foto",
   widgets: {
     "No data": "Keine Daten",
@@ -353,6 +362,9 @@ const e = {
   "After you edit this tag, the devices it is assigned to will use the updated name.": "Nach der Bearbeitung dieses Tags verwenden die zugewiesenen Geräte den aktualisierten Namen.",
   "Yes, edit": "Ja, bearbeiten"
 }, n = {
+  error: "error",
+  warning: "advertencia",
+  success: "éxito",
   Photo: "Foto",
   widgets: {
     "No data": "No hay datos",
@@ -471,6 +483,9 @@ const e = {
   "After you edit this tag, the devices it is assigned to will use the updated name.": "Después de editar esta etiqueta, los dispositivos a los que está asignada usarán el nombre actualizado.",
   "Yes, edit": "Sí, editar"
 }, o = {
+  error: "ошибка",
+  warning: "предупреждение",
+  success: "успех",
   Photo: "Фото",
   widgets: {
     "No data": "Нет данных",
@@ -596,11 +611,11 @@ const e = {
   ru: o
 }, i = {
   uiKit: r
-}, l = {
+}, s = {
   ...i
 };
 export {
-  l as mergedResources,
+  s as mergedResources,
   r as uiKitLocaleModule,
   i as uiKitModule
 };

@@ -7,6 +7,9 @@ export { uiKit as uiKitLocaleModule };
 export declare const uiKitModule: {
     uiKit: {
         en: {
+            error: string;
+            warning: string;
+            success: string;
             Photo: string;
             widgets: {
                 "No data": string;
@@ -126,6 +129,9 @@ export declare const uiKitModule: {
             "Yes, edit": string;
         };
         fr: {
+            error: string;
+            warning: string;
+            success: string;
             Photo: string;
             widgets: {
                 "No data": string;
@@ -245,6 +251,9 @@ export declare const uiKitModule: {
             "Yes, edit": string;
         };
         de: {
+            error: string;
+            warning: string;
+            success: string;
             Photo: string;
             widgets: {
                 "No data": string;
@@ -364,6 +373,9 @@ export declare const uiKitModule: {
             "Yes, edit": string;
         };
         es: {
+            error: string;
+            warning: string;
+            success: string;
             Photo: string;
             widgets: {
                 "No data": string;
@@ -483,6 +495,9 @@ export declare const uiKitModule: {
             "Yes, edit": string;
         };
         ru: {
+            error: string;
+            warning: string;
+            success: string;
             Photo: string;
             widgets: {
                 "No data": string;

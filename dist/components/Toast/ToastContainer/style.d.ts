@@ -1,0 +1,1 @@
+export declare const Container: import('@emotion/styled').StyledComponent<import('react-toastify').ToastContainerProps & import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme>, {}, {}>;
