@@ -1,6 +1,12 @@
-import CheckIcon from '@mui/icons-material/Check';
-import CloseIcon from '@mui/icons-material/Close';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+// Named imports from the @mui/icons-material barrel (NOT default subpath imports): when this
+// package is pre-bundled by a consumer's vite (optimizeDeps), a default CJS subpath import
+// (`import X from '@mui/icons-material/KeyboardArrowDown'`) resolves to the module namespace
+// OBJECT instead of the component, breaking `styled(X)` with "Element type is invalid ... got: object".
+import {
+    Check as CheckIcon,
+    Close as CloseIcon,
+    KeyboardArrowDown as KeyboardArrowDownIcon,
+} from '@mui/icons-material';
 import {
     Autocomplete,
     Box,
