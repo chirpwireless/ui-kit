@@ -37,8 +37,10 @@ import "../../list-item/index.es.js";
 import "../../checkbox/style.es.js";
 import "../../table/components/skeleton-rows.es.js";
 import "../../table/components/table-head/style.es.js";
+import "@tanstack/react-table";
 import "../../table/style.es.js";
 import "../../table/components/table-component/style.es.js";
+import "@tanstack/react-virtual";
 /* empty css                                 */
 import "../../range-picker/styles.es.js";
 import "../../range-picker/constants.es.js";
@@ -57,7 +59,7 @@ import "../quantitative-list-widget/style.es.js";
 import "../progress-widget/style.es.js";
 import "../list-with-icons-widget/style.es.js";
 import "@mui/material/styles";
-import { Dot$1 as Ho, Label$1 as Io, LabelAndDotWrapper$1 as Jo, LegendContainer$1 as Ko } from "../../../style-7NNmyytw.js";
+import { Dot$1 as Jo, Label$1 as Ko, LabelAndDotWrapper$1 as Mo, LegendContainer$1 as No } from "../../../style-CvP40jkz.js";
 import "../../charts/vertical-bar-chart/index.es.js";
 import "../../charts/zoom-bar-chart/index.es.js";
 import "../../charts/stacked-chart/index.es.js";
@@ -87,8 +89,8 @@ import "../../slider/style.es.js";
 import "../../map/helpers/geocoding-client.es.js";
 import "../../select-with-search/style.es.js";
 export {
-  Ho as Dot,
-  Io as Label,
-  Jo as LabelAndDotWrapper,
-  Ko as LegendContainer
+  Jo as Dot,
+  Ko as Label,
+  Mo as LabelAndDotWrapper,
+  No as LegendContainer
 };

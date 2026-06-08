@@ -1,5 +1,5 @@
 import { jsxRuntimeExports as e } from "../../../jsx-runtime-BgepH7Pb.js";
-import { flexRender as h } from "../../../index-C88AG_8U.js";
+import { flexRender as h } from "@tanstack/react-table";
 import { Row as n, Cell as f } from "../style.es.js";
 import { TableCell as g } from "./table-cell.es.js";
 const R = ({

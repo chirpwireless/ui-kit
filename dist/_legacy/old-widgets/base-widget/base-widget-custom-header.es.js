@@ -38,8 +38,10 @@ import "../../list-item/index.es.js";
 import "../../checkbox/style.es.js";
 import "../../table/components/skeleton-rows.es.js";
 import "../../table/components/table-head/style.es.js";
+import "@tanstack/react-table";
 import "../../table/style.es.js";
 import "../../table/components/table-component/style.es.js";
+import "@tanstack/react-virtual";
 /* empty css                                 */
 import "../../range-picker/styles.es.js";
 import "../../range-picker/constants.es.js";
@@ -58,7 +60,7 @@ import "../../widgets/quantitative-list-widget/style.es.js";
 import "../../widgets/progress-widget/style.es.js";
 import "../../widgets/list-with-icons-widget/style.es.js";
 import "@mui/material/styles";
-import "../../../style-7NNmyytw.js";
+import "../../../style-CvP40jkz.js";
 import "../../charts/vertical-bar-chart/index.es.js";
 import "../../charts/zoom-bar-chart/index.es.js";
 import "../../charts/stacked-chart/index.es.js";
@@ -87,7 +89,7 @@ import "../../badge-select/style.es.js";
 import "../../slider/style.es.js";
 import "../../map/helpers/geocoding-client.es.js";
 import "../../select-with-search/style.es.js";
-const Or = ({ title: i, typeText: o, onBackClick: m }) => /* @__PURE__ */ r.jsxs(t, { direction: "row", gap: 2, alignItems: "center", children: [
+const Qr = ({ title: i, typeText: o, onBackClick: m }) => /* @__PURE__ */ r.jsxs(t, { direction: "row", gap: 2, alignItems: "center", children: [
   /* @__PURE__ */ r.jsx(e, { variant: "gray", onClick: m, size: "small", children: /* @__PURE__ */ r.jsx(p, {}) }),
   /* @__PURE__ */ r.jsxs(t, { gap: 2, children: [
     /* @__PURE__ */ r.jsx(t, { direction: "row", justifyContent: "space-between", alignItems: "center", children: /* @__PURE__ */ r.jsx(n, { variant: "title12", children: i }) }),
@@ -95,5 +97,5 @@ const Or = ({ title: i, typeText: o, onBackClick: m }) => /* @__PURE__ */ r.jsxs
   ] })
 ] });
 export {
-  Or as BaseWidgetCustomHeader
+  Qr as BaseWidgetCustomHeader
 };

@@ -38,8 +38,10 @@ import "../../list-item/index.es.js";
 import "../../checkbox/style.es.js";
 import "../../table/components/skeleton-rows.es.js";
 import "../../table/components/table-head/style.es.js";
+import "@tanstack/react-table";
 import "../../table/style.es.js";
 import "../../table/components/table-component/style.es.js";
+import "@tanstack/react-virtual";
 /* empty css                                 */
 import "../../range-picker/styles.es.js";
 import "../../range-picker/constants.es.js";
@@ -57,7 +59,7 @@ import "../quantitative-list-widget/style.es.js";
 import "../progress-widget/style.es.js";
 import "../list-with-icons-widget/style.es.js";
 import "@mui/material/styles";
-import { LabelAndDotWrapper as u, Dot as y, Label as C, LegendContainer as D } from "../../../style-7NNmyytw.js";
+import { LabelAndDotWrapper as u, Dot as y, Label as C, LegendContainer as D } from "../../../style-CvP40jkz.js";
 import "../../charts/vertical-bar-chart/index.es.js";
 import "../../charts/zoom-bar-chart/index.es.js";
 import { StackedChart as L } from "../../charts/stacked-chart/index.es.js";
@@ -86,7 +88,7 @@ import "../../badge-select/style.es.js";
 import "../../slider/style.es.js";
 import "../../map/helpers/geocoding-client.es.js";
 import "../../select-with-search/style.es.js";
-const mr = (e) => {
+const er = (e) => {
   const a = g(), { chartData: o, selectedItems: i, colors: r, chartStyles: n, emptyFallbackMsg: s, xAxisData: l, ...c } = e, m = o.length > 0, h = b(() => i.map((p, d) => /* @__PURE__ */ t.jsxs(u, { children: [
     /* @__PURE__ */ t.jsx(y, { bgcolor: r[d % r.length] }),
     /* @__PURE__ */ t.jsx(C, { variant: "caption12", children: p.label })
@@ -109,5 +111,5 @@ const mr = (e) => {
   );
 };
 export {
-  mr as LineChartWidget
+  er as LineChartWidget
 };

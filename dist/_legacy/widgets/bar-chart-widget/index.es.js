@@ -1,7 +1,7 @@
 import { jsxRuntimeExports as o } from "../../../jsx-runtime-BgepH7Pb.js";
 import { useCallback as v } from "react";
 import { BaseWidget as C } from "../base-widget/index.es.js";
-import { LegendContainer$1 as D, LabelAndDotWrapper$1 as L, Dot$1 as W, Label$1 as w } from "../../../style-7NNmyytw.js";
+import { LegendContainer$1 as D, LabelAndDotWrapper$1 as L, Dot$1 as W, Label$1 as w } from "../../../style-CvP40jkz.js";
 import { useTheme as F, Stack as T } from "@mui/material";
 import "../../select-indicator/style.es.js";
 import "../../avatar/styles.es.js";
@@ -39,8 +39,10 @@ import "../../list-item/index.es.js";
 import "../../checkbox/style.es.js";
 import "../../table/components/skeleton-rows.es.js";
 import "../../table/components/table-head/style.es.js";
+import "@tanstack/react-table";
 import "../../table/style.es.js";
 import "../../table/components/table-component/style.es.js";
+import "@tanstack/react-virtual";
 /* empty css                                 */
 import "../../range-picker/styles.es.js";
 import "../../range-picker/constants.es.js";
@@ -86,7 +88,7 @@ import "../../badge-select/style.es.js";
 import "../../slider/style.es.js";
 import "../../map/helpers/geocoding-client.es.js";
 import "../../select-with-search/style.es.js";
-const ho = (d) => {
+const fo = (d) => {
   const { legendItems: n, data: i, legendContainerSx: x, emptyFallbackMsg: h, ...y } = d, t = F(), { t: p, i18n: a } = z("uiKit", { keyPrefix: "widgets" }), s = i.categories.length && i.series.length, f = v(
     (r) => {
       var c, g;
@@ -133,5 +135,5 @@ const ho = (d) => {
   );
 };
 export {
-  ho as BarChartWidget
+  fo as BarChartWidget
 };

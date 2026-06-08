@@ -38,8 +38,10 @@ import "../../list-item/index.es.js";
 import { Checkbox as O } from "../../checkbox/index.es.js";
 import "../../table/components/skeleton-rows.es.js";
 import "../../table/components/table-head/style.es.js";
+import "@tanstack/react-table";
 import "../../table/style.es.js";
 import "../../table/components/table-component/style.es.js";
+import "@tanstack/react-virtual";
 /* empty css                                 */
 import "../../range-picker/styles.es.js";
 import "../../range-picker/constants.es.js";
@@ -57,7 +59,7 @@ import "../../widgets/quantitative-list-widget/style.es.js";
 import "../../widgets/progress-widget/style.es.js";
 import "../../widgets/list-with-icons-widget/style.es.js";
 import "@mui/material/styles";
-import "../../../style-7NNmyytw.js";
+import "../../../style-CvP40jkz.js";
 import "../../charts/vertical-bar-chart/index.es.js";
 import "../../charts/zoom-bar-chart/index.es.js";
 import { StackedChart as K } from "../../charts/stacked-chart/index.es.js";
@@ -89,7 +91,7 @@ import "../../select-with-search/style.es.js";
 import { arrayToMap as L } from "../../../helpers/array-to-map.es.js";
 import { StyledMenuItem as V } from "./styles.es.js";
 import { CurrentItemContent as D } from "./current-item-content.es.js";
-const Sr = (I) => {
+const Mr = (I) => {
   var j, v;
   const { t: u } = W("uiKit", { keyPrefix: "widgets" }), S = T(), {
     collection: l,
@@ -190,5 +192,5 @@ const Sr = (I) => {
   );
 };
 export {
-  Sr as StackedLineChartWidget
+  Mr as StackedLineChartWidget
 };

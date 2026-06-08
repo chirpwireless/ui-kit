@@ -37,8 +37,10 @@ import "../../_legacy/list-item/index.es.js";
 import "../../_legacy/checkbox/style.es.js";
 import "../../_legacy/table/components/skeleton-rows.es.js";
 import "../../_legacy/table/components/table-head/style.es.js";
+import "@tanstack/react-table";
 import "../../_legacy/table/style.es.js";
 import "../../_legacy/table/components/table-component/style.es.js";
+import "@tanstack/react-virtual";
 /* empty css                              */
 import "../../_legacy/range-picker/styles.es.js";
 import "../../_legacy/range-picker/constants.es.js";
@@ -57,7 +59,7 @@ import "../../_legacy/widgets/quantitative-list-widget/style.es.js";
 import "../../_legacy/widgets/progress-widget/style.es.js";
 import "../../_legacy/widgets/list-with-icons-widget/style.es.js";
 import "@mui/material/styles";
-import "../../style-7NNmyytw.js";
+import "../../style-CvP40jkz.js";
 import "../../_legacy/charts/vertical-bar-chart/index.es.js";
 import "../../_legacy/charts/zoom-bar-chart/index.es.js";
 import "../../_legacy/charts/stacked-chart/index.es.js";
@@ -86,7 +88,7 @@ import "../../_legacy/badge-select/style.es.js";
 import "../../_legacy/slider/style.es.js";
 import "../../_legacy/map/helpers/geocoding-client.es.js";
 import "../../_legacy/select-with-search/style.es.js";
-const No = (o) => {
+const Uo = (o) => {
   var r, i, m, p, t, n, d, s, u;
   return {
     MuiCssBaseline: {
@@ -265,5 +267,5 @@ const No = (o) => {
   };
 };
 export {
-  No as createComponents
+  Uo as createComponents
 };

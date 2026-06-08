@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("react"),r=(e,t)=>{const u=o.useRef(void 0);return o.useCallback(()=>{clearTimeout(u.current),u.current=setTimeout(()=>{e==null||e()},t)},[e,t])};exports.useDebounceCallback=r;

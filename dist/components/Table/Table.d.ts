@@ -1,0 +1,21 @@
+import { SxProps } from '@mui/material';
+import { SortingState } from '@tanstack/react-table';
+import { ReactElement } from 'react';
+import { TableColumnDef } from './types';
+export type Props<TData> = {
+    data: TData[];
+    columns: TableColumnDef<TData>[];
+    sx?: SxProps;
+    isLoading?: boolean;
+    enableSorting?: boolean;
+    defaultSorting?: SortingState;
+    expandedRowIndex?: number;
+    onRowClick?(row: TData): void;
+    renderEmptyBlock?(): ReactElement;
+    renderExpandableBlock?(row: TData): ReactElement;
+    getRowDisableHover?(row: TData): boolean;
+    getCanExpand?(row: TData): boolean;
+    page?: number;
+};
+declare const TableContainer: <TData>({ data, columns, sx, isLoading, enableSorting, defaultSorting, expandedRowIndex, onRowClick, renderExpandableBlock, renderEmptyBlock, getRowDisableHover, getCanExpand, page, }: Props<TData>) => import("react/jsx-runtime").JSX.Element;
+export { TableContainer as Table };

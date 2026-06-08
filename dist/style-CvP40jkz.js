@@ -37,8 +37,10 @@ import "./_legacy/list-item/index.es.js";
 import "./_legacy/checkbox/style.es.js";
 import "./_legacy/table/components/skeleton-rows.es.js";
 import "./_legacy/table/components/table-head/style.es.js";
+import "@tanstack/react-table";
 import "./_legacy/table/style.es.js";
 import "./_legacy/table/components/table-component/style.es.js";
+import "@tanstack/react-virtual";
 /* empty css                          */
 import "./_legacy/range-picker/styles.es.js";
 import "./_legacy/range-picker/constants.es.js";
@@ -85,7 +87,7 @@ import "./_legacy/badge-select/style.es.js";
 import "./_legacy/slider/style.es.js";
 import "./_legacy/map/helpers/geocoding-client.es.js";
 import "./_legacy/select-with-search/style.es.js";
-const Yt = t(r)(() => ({
+const Et = t(r)(() => ({
   flexDirection: "row",
   gap: "16px",
   maxWidth: "359px",
@@ -93,18 +95,18 @@ const Yt = t(r)(() => ({
   rowGap: "8px",
   minHeight: "40px",
   alignItems: "flex-start"
-})), qt = t(r)(() => ({
+})), Ft = t(r)(() => ({
   flexDirection: "row",
   alignItems: "center",
   gap: "8px",
   whiteSpace: "nowrap"
-})), Et = t(r)(() => ({
-  width: "4px",
-  height: "4px",
-  borderRadius: "50%"
-})), Ft = t(p)(({ theme: o }) => ({
-  color: o.palette.text.textInput80
 })), Jt = t(r)(() => ({
+  width: "4px",
+  height: "4px",
+  borderRadius: "50%"
+})), Kt = t(p)(({ theme: o }) => ({
+  color: o.palette.text.textInput80
+})), Mt = t(r)(() => ({
   flexDirection: "row",
   gap: "16px",
   maxWidth: "359px",
@@ -112,23 +114,23 @@ const Yt = t(r)(() => ({
   rowGap: "8px",
   minHeight: "40px",
   alignItems: "flex-start"
-})), Kt = t(r)(() => ({
+})), Nt = t(r)(() => ({
   flexDirection: "row",
   alignItems: "center",
   gap: "8px",
   whiteSpace: "nowrap"
-})), Mt = t(r)(() => ({
+})), Ot = t(r)(() => ({
   width: "4px",
   height: "4px",
   borderRadius: "50%"
-})), Nt = t(p)(({ theme: o }) => ({
+})), Qt = t(p)(({ theme: o }) => ({
   color: o.palette.text.textInput80
-})), Ot = t("label")`
+})), Ut = t("label")`
     display: flex;
     width: max-content;
     cursor: pointer;
     align-items: center;
-`, Qt = t("input")`
+`, Vt = t("input")`
     position: absolute;
     width: 0;
     height: 0;
@@ -139,14 +141,14 @@ const Yt = t(r)(() => ({
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     white-space: nowrap;
-`, Ut = t("span")(({ theme: o }) => ({
+`, Xt = t("span")(({ theme: o }) => ({
   width: "32px",
   height: "18px",
   position: "relative",
   borderRadius: "20px",
   border: "1px solid",
   borderColor: o.palette.base.color6
-})), Vt = t(e)(({ checked: o, theme: i }) => ({
+})), Zt = t(e)(({ checked: o, theme: i }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -160,24 +162,24 @@ const Yt = t(r)(() => ({
   borderColor: i.palette.base.color6,
   borderRadius: "17px",
   transition: "0.4s"
-})), Xt = t(p)(({ theme: o }) => ({
+})), _t = t(p)(({ theme: o }) => ({
   marginRight: "12px",
   userSelect: "none",
   fontSize: "12px",
   color: o.palette.text.text7
 }));
 export {
-  Ut as Checkmark,
-  Vt as CheckmarkPin,
-  Et as Dot,
-  Mt as Dot$1,
-  Qt as HiddenInput,
-  Ft as Label,
-  Nt as Label$1,
-  Xt as Label$2,
-  qt as LabelAndDotWrapper,
-  Kt as LabelAndDotWrapper$1,
-  Yt as LegendContainer,
-  Jt as LegendContainer$1,
-  Ot as Toggle
+  Xt as Checkmark,
+  Zt as CheckmarkPin,
+  Jt as Dot,
+  Ot as Dot$1,
+  Vt as HiddenInput,
+  Kt as Label,
+  Qt as Label$1,
+  _t as Label$2,
+  Ft as LabelAndDotWrapper,
+  Nt as LabelAndDotWrapper$1,
+  Et as LegendContainer,
+  Mt as LegendContainer$1,
+  Ut as Toggle
 };

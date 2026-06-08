@@ -1,4 +1,4 @@
-import { useReactTable as p, getGroupedRowModel as c, getSortedRowModel as m, getCoreRowModel as u } from "../../../index-C88AG_8U.js";
+import { useReactTable as p, getGroupedRowModel as c, getSortedRowModel as m, getCoreRowModel as u } from "@tanstack/react-table";
 import { useState as w } from "react";
 const d = (e) => "accessorKey" in e && e.accessorKey ? e.accessorKey : e.header || e.id, M = (e, o) => (
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment

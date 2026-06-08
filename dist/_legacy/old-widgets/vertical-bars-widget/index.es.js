@@ -38,8 +38,10 @@ import "../../list-item/index.es.js";
 import "../../checkbox/style.es.js";
 import "../../table/components/skeleton-rows.es.js";
 import "../../table/components/table-head/style.es.js";
+import "@tanstack/react-table";
 import "../../table/style.es.js";
 import "../../table/components/table-component/style.es.js";
+import "@tanstack/react-virtual";
 /* empty css                                 */
 import "../../range-picker/styles.es.js";
 import "../../range-picker/constants.es.js";
@@ -58,7 +60,7 @@ import "../../widgets/quantitative-list-widget/style.es.js";
 import "../../widgets/progress-widget/style.es.js";
 import "../../widgets/list-with-icons-widget/style.es.js";
 import "@mui/material/styles";
-import "../../../style-7NNmyytw.js";
+import "../../../style-CvP40jkz.js";
 import { VerticalBarChart as w } from "../../charts/vertical-bar-chart/index.es.js";
 import "../../charts/zoom-bar-chart/index.es.js";
 import "../../charts/stacked-chart/index.es.js";
@@ -87,7 +89,7 @@ import "../../badge-select/style.es.js";
 import "../../slider/style.es.js";
 import "../../map/helpers/geocoding-client.es.js";
 import "../../select-with-search/style.es.js";
-const cr = (h) => {
+const lr = (h) => {
   const x = B(), { collection: r, valueKey: i, maxItems: E = 10, chartStyles: m, nameKey: e, unit: d, listLabel: u, ...f } = h, [j, g] = s([]), [y, b] = s([]);
   return D(() => {
     if (!(r != null && r.length)) return;
@@ -122,5 +124,5 @@ const cr = (h) => {
   ] }) }) });
 };
 export {
-  cr as VerticalBarsChartWidget
+  lr as VerticalBarsChartWidget
 };

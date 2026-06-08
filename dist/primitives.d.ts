@@ -33,3 +33,5 @@ export { Card } from './components/Card';
 export type { CardProps } from './components/Card';
 export { SimpleCard, SimpleSmallCard } from './components/SimpleCard';
 export { GeneralInfoCard } from './components/GeneralInfoCard';
+export { Table, TableVirtualized, TableVirtualizedInfinite } from './components/Table';
+export type { TableColumn, TableColumnDef, ExtendedTableColumnDef } from './components/Table';
