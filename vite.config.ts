@@ -72,6 +72,8 @@ export default defineConfig(({ mode }) => {
                     'react-imask',
                     'mui-tel-input',
                     'react-dropzone',
+                    'react-date-range',
+                    /^date-fns/,
                     // Externalize @tanstack/* (react-table, react-virtual) — they are peer deps and
                     // rely on internal module state; a bundled copy duplicates it.
                     /^@tanstack\//,

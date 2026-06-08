@@ -107,6 +107,9 @@ export const RangePicker: FC<RangePickerProps> = ({
     const isStartDateValid = moment(startInputDate).isValid();
     const isEndDateValid = moment(endInputDate).isValid() && moment(startInputDate) <= moment(endInputDate);
 
+    // date-fns v2 `Locale` resolves as an error type to the type-aware linter (legacy `typings`
+    // field) once date-fns is a dep; safe at runtime. Legacy file — left as-is.
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     registerLocale(i18n.language.split('-')[0], getLocaleObj(i18n.language));
 
     const handleQuickSelect = (option: keyof typeof QUICK_SELECT_OPTIONS) => {
