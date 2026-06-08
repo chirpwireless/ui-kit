@@ -104,3 +104,7 @@ export {
     MAX_DATE_OF_DATE_FILTER,
     QUICK_SELECT_OPTIONS,
 } from './components/RangePicker';
+
+export { BaseModal } from './components/BaseModal';
+
+export type { BaseModalProps } from './components/BaseModal';
