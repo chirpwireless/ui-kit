@@ -72,3 +72,9 @@ export type { CardProps } from './components/Card';
 export { SimpleCard, SimpleSmallCard } from './components/SimpleCard';
 
 export { GeneralInfoCard } from './components/GeneralInfoCard';
+
+export { Table, TableVirtualized, TableVirtualizedInfinite } from './components/Table';
+
+export { DEFAULT_ESTIMATE_SIZE } from './components/Table/TableVirtualizedInfinite';
+
+export type { TableColumn, TableColumnDef, ExtendedTableColumnDef } from './components/Table';

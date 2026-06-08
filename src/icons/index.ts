@@ -1,5 +1,9 @@
 export { CaretDownIcon } from './CaretDownIcon';
 
+export { CaretUpIcon } from './CaretUpIcon';
+
+export { SortIcon } from './SortIcon';
+
 export { CheckCircleIcon } from './CheckCircleIcon';
 
 export { Checkmark } from './Checkmark';

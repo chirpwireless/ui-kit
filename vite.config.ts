@@ -71,6 +71,9 @@ export default defineConfig(({ mode }) => {
                     'react-toastify',
                     'react-imask',
                     'mui-tel-input',
+                    // Externalize @tanstack/* (react-table, react-virtual) — they are peer deps and
+                    // rely on internal module state; a bundled copy duplicates it.
+                    /^@tanstack\//,
                     // Must be external — a bundled copy gives components like GeneralInfoCard their own
                     // react-router context, breaking useNavigate() ("must be used within a <Router>").
                     'react-router-dom',

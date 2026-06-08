@@ -4,6 +4,8 @@ export * from './useLayout';
 
 export * from './use-debounce';
 
+export * from './use-debounce-callback';
+
 export * from './use-download-xlsx';
 
 export * from './use-toggle';
