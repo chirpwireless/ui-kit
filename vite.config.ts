@@ -71,6 +71,7 @@ export default defineConfig(({ mode }) => {
                     'react-toastify',
                     'react-imask',
                     'mui-tel-input',
+                    'react-dropzone',
                     // Externalize @tanstack/* (react-table, react-virtual) — they are peer deps and
                     // rely on internal module state; a bundled copy duplicates it.
                     /^@tanstack\//,
