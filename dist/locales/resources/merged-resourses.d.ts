@@ -119,6 +119,7 @@ export declare const uiKitModule: {
             "Are you sure you want to delete \"{{name}}\" tag?": string;
             "After you delete this tag, the devices it's assigned to will no longer use it.": string;
             Cancel: string;
+            Confirm: string;
             "Yes, delete": string;
             "Are you sure you want to edit \"{{name}}\" tag?": string;
             "After you edit this tag, the devices it is assigned to will use the updated name.": string;
@@ -237,6 +238,7 @@ export declare const uiKitModule: {
             "Are you sure you want to delete \"{{name}}\" tag?": string;
             "After you delete this tag, the devices it's assigned to will no longer use it.": string;
             Cancel: string;
+            Confirm: string;
             "Yes, delete": string;
             "Are you sure you want to edit \"{{name}}\" tag?": string;
             "After you edit this tag, the devices it is assigned to will use the updated name.": string;
@@ -355,6 +357,7 @@ export declare const uiKitModule: {
             "Are you sure you want to delete \"{{name}}\" tag?": string;
             "After you delete this tag, the devices it's assigned to will no longer use it.": string;
             Cancel: string;
+            Confirm: string;
             "Yes, delete": string;
             "Are you sure you want to edit \"{{name}}\" tag?": string;
             "After you edit this tag, the devices it is assigned to will use the updated name.": string;
@@ -473,6 +476,7 @@ export declare const uiKitModule: {
             "Are you sure you want to delete \"{{name}}\" tag?": string;
             "After you delete this tag, the devices it's assigned to will no longer use it.": string;
             Cancel: string;
+            Confirm: string;
             "Yes, delete": string;
             "Are you sure you want to edit \"{{name}}\" tag?": string;
             "After you edit this tag, the devices it is assigned to will use the updated name.": string;
@@ -591,6 +595,7 @@ export declare const uiKitModule: {
             "Are you sure you want to delete \"{{name}}\" tag?": string;
             "After you delete this tag, the devices it's assigned to will no longer use it.": string;
             Cancel: string;
+            Confirm: string;
             "Yes, delete": string;
             "Are you sure you want to edit \"{{name}}\" tag?": string;
             "After you edit this tag, the devices it is assigned to will use the updated name.": string;

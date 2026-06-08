@@ -1,5 +1,6 @@
 export { CaretDownIcon } from './CaretDownIcon';
 export { Checkmark } from './Checkmark';
+export { CloseIcon } from './CloseIcon';
 export { ChevronDownIcon } from './ChevronDownIcon';
 export { DashboardIcon } from './DashboardIcon';
 export { DropdownIcon } from './DropdownIcon';
