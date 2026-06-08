@@ -16,3 +16,9 @@ export { TextField as TextFieldStyled } from './components/TextField/style';
 export { PhoneField } from './components/PhoneField';
 
 export { SearchInput } from './components/SearchInput';
+
+export { Select, InputLabel } from './components/Select';
+
+export { Autocomplete } from './components/Autocomplete';
+
+export { SelectIndicator } from './components/SelectIndicator';
