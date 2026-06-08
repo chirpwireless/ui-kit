@@ -71,6 +71,10 @@ export default defineConfig(({ mode }) => {
                     'react-toastify',
                     'react-imask',
                     'mui-tel-input',
+                    // Must be external — a bundled copy gives components like GeneralInfoCard their own
+                    // react-router context, breaking useNavigate() ("must be used within a <Router>").
+                    'react-router-dom',
+                    'react-router',
                     // Treat the entire @mui/* namespace as external so consumers manage peer deps.
                     /^@mui\//,
                     /^@emotion\//,
