@@ -34,3 +34,11 @@ export { MultiSelectOrCreate } from './components/MultiSelectOrCreate';
 export type { MultiSelectOrCreateProps, Tag } from './components/MultiSelectOrCreate';
 
 export { Tabs, TabBadge, TabsContainer } from './components/Tabs';
+
+export { Tooltip } from './components/Tooltip';
+
+export { Badge, SimpleBadge } from './components/Badge';
+
+export { FilterItem } from './components/FilterItem';
+
+export type { FilterItemProps } from './components/FilterItem';
