@@ -1,9 +1,7 @@
 import { jsxRuntimeExports as a } from "../../jsx-runtime-BgepH7Pb.js";
 import { useState as d, useRef as E, useMemo as ne, useCallback as r, createElement as we } from "react";
-import ye from "@mui/icons-material/Check";
-import Ie from "@mui/icons-material/Close";
-import Ae from "@mui/icons-material/KeyboardArrowDown";
-import { styled as Se, Box as w, ClickAwayListener as oe, TextField as ae, InputAdornment as be, IconButton as j, Typography as Pe, FormControl as Ee, Autocomplete as je } from "@mui/material";
+import { KeyboardArrowDown as ye, Check as Ae, Close as Se } from "@mui/icons-material";
+import { styled as Ie, Box as w, ClickAwayListener as oe, TextField as ae, InputAdornment as be, IconButton as j, Typography as Pe, FormControl as Ee, Autocomplete as je } from "@mui/material";
 import { useTranslation as ve } from "react-i18next";
 import { EditIcon as Ne } from "../../icons/EditIcon/index.es.js";
 import { TrashIcon as Ve } from "../../icons/TrashIcon/index.es.js";
@@ -12,10 +10,10 @@ import { Checkbox as Me } from "../Checkbox/Checkbox.es.js";
 import { InputLabel as Oe } from "../Select/components/InputLabel/index.es.js";
 import { CustomPaper as De } from "./CustomPaper.es.js";
 import { CustomPopper as Re } from "./CustomPopper.es.js";
-const Le = Se(Ae)(({ theme: i }) => ({
+const Le = Ie(ye)(({ theme: i }) => ({
   fontSize: "18px",
   color: ke(i).neutral.grey4
-})), $e = ({
+})), Xe = ({
   tags: i,
   onTagsChange: c,
   onCreateTag: R,
@@ -28,7 +26,7 @@ const Le = Se(Ae)(({ theme: i }) => ({
   enterTagNamePlaceholder: Y,
   multiple: u = !0
 }) => {
-  const { t: l } = ve("uiKit"), [se, de] = d(""), [h, y] = d(""), [B, v] = d(null), [g, N] = d(null), [x, I] = d(""), [T, V] = d(null), [m, k] = d(null), [A, C] = d(!1), [F, S] = d(!1), [K, f] = d(""), M = E(null), W = E(null), b = E(null), O = ne(() => i.filter((n) => n.selected), [i]), _ = r(
+  const { t: l } = ve("uiKit"), [se, de] = d(""), [h, y] = d(""), [B, v] = d(null), [g, N] = d(null), [x, A] = d(""), [T, V] = d(null), [m, k] = d(null), [S, C] = d(!1), [F, I] = d(!1), [K, f] = d(""), M = E(null), W = E(null), b = E(null), O = ne(() => i.filter((n) => n.selected), [i]), _ = r(
     (n) => {
       if (u) {
         const t = i.map((e) => e.id === n ? { ...e, selected: !e.selected } : e);
@@ -45,26 +43,26 @@ const Le = Se(Ae)(({ theme: i }) => ({
   ), q = r(
     (n) => {
       const t = n.trim();
-      t && !i.some((e) => e.name.toLowerCase() === t.toLowerCase()) && (R(t), f(""), S(!1));
+      t && !i.some((e) => e.name.toLowerCase() === t.toLowerCase()) && (R(t), f(""), I(!1));
     },
     [i, R]
   ), G = r(() => {
-    S(!0), f(""), setTimeout(() => {
+    I(!0), f(""), setTimeout(() => {
       var n;
       return (n = M.current) == null ? void 0 : n.focus();
     }, 0);
   }, []), J = r(() => {
-    S(!1), f("");
+    I(!1), f("");
   }, []), Q = r((n, t) => {
     t.stopPropagation(), k(n);
   }, []), X = r(() => {
-    m && (N(m.id), I(m.name), k(null));
+    m && (N(m.id), A(m.name), k(null));
   }, [m]), Z = r(() => {
     k(null);
   }, []), P = r(() => {
-    g && x.trim() && L(g, x.trim()), N(null), I("");
+    g && x.trim() && L(g, x.trim()), N(null), A("");
   }, [g, x, L]), D = r(() => {
-    N(null), I("");
+    N(null), A("");
   }, []), $ = r((n, t) => {
     t.stopPropagation(), V(n);
   }, []), U = r(() => {
@@ -223,7 +221,7 @@ const Le = Se(Ae)(({ theme: i }) => ({
             {
               size: "small",
               value: x,
-              onChange: (o) => I(o.target.value),
+              onChange: (o) => A(o.target.value),
               onKeyDown: (o) => {
                 o.key === "Enter" ? (o.preventDefault(), P()) : o.key === "Escape" && D();
               },
@@ -239,7 +237,7 @@ const Le = Se(Ae)(({ theme: i }) => ({
                       onClick: (o) => {
                         o.stopPropagation(), P();
                       },
-                      children: /* @__PURE__ */ a.jsx(ye, { fontSize: "small" })
+                      children: /* @__PURE__ */ a.jsx(Ae, { fontSize: "small" })
                     }
                   ),
                   /* @__PURE__ */ a.jsx(
@@ -249,7 +247,7 @@ const Le = Se(Ae)(({ theme: i }) => ({
                       onClick: (o) => {
                         o.stopPropagation(), D();
                       },
-                      children: /* @__PURE__ */ a.jsx(Ie, { fontSize: "small" })
+                      children: /* @__PURE__ */ a.jsx(Se, { fontSize: "small" })
                     }
                   )
                 ] })
@@ -329,14 +327,14 @@ const Le = Se(Ae)(({ theme: i }) => ({
       $
     ]
   ), Ce = r(() => {
-    A && (C(!1), y(""), S(!1), f(""));
-  }, [A]);
+    S && (C(!1), y(""), I(!1), f(""));
+  }, [S]);
   return /* @__PURE__ */ a.jsx(oe, { onClickAway: Ce, children: /* @__PURE__ */ a.jsxs(Ee, { fullWidth: !0, children: [
     /* @__PURE__ */ a.jsx(
       Oe,
       {
         label: re,
-        className: A ? "Mui-focused" : void 0,
+        className: S ? "Mui-focused" : void 0,
         sx: {
           "&.MuiInputLabel-shrink": {
             fontSize: "14px",
@@ -357,7 +355,7 @@ const Le = Se(Ae)(({ theme: i }) => ({
       je,
       {
         multiple: u,
-        open: A,
+        open: S,
         onOpen: ce,
         onClose: xe,
         disabled: ie,
@@ -451,5 +449,5 @@ const Le = Se(Ae)(({ theme: i }) => ({
   ] }) });
 };
 export {
-  $e as MultiSelectOrCreate
+  Xe as MultiSelectOrCreate
 };
