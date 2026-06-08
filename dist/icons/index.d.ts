@@ -1,3 +1,4 @@
+export { BackIcon } from './BackIcon';
 export { CaretDownIcon } from './CaretDownIcon';
 export { CaretUpIcon } from './CaretUpIcon';
 export { SortIcon } from './SortIcon';
