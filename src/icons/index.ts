@@ -12,6 +12,8 @@ export { MoneyIcon } from './MoneyIcon';
 
 export { NotificationIcon } from './NotificationIcon';
 
+export { SearchIcon } from './SearchIcon';
+
 export { Settings } from './Settings';
 
 export { ToggleSidebarIcon } from './ToggleSidebarIcon';

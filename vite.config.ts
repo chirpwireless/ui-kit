@@ -69,6 +69,8 @@ export default defineConfig(({ mode }) => {
                     'react-i18next',
                     'i18next',
                     'react-toastify',
+                    'react-imask',
+                    'mui-tel-input',
                     // Treat the entire @mui/* namespace as external so consumers manage peer deps.
                     /^@mui\//,
                     /^@emotion\//,
