@@ -1,5 +1,8 @@
 {
     "en": {
+        "error": "error",
+        "warning": "warning",
+        "success": "success",
         "Photo": "Photo",
         "widgets": {
             "No data": "No data",
@@ -119,6 +122,9 @@
         "Yes, edit": "Yes, edit"
     },
     "fr": {
+        "error": "erreur",
+        "warning": "avertissement",
+        "success": "succès",
         "Photo": "Photo",
         "widgets": {
             "No data": "Pas de données",
@@ -238,6 +244,9 @@
         "Yes, edit": "Oui, modifier"
     },
     "de": {
+        "error": "Fehler",
+        "warning": "Warnung",
+        "success": "Erfolg",
         "Photo": "Foto",
         "widgets": {
             "No data": "Keine Daten",
@@ -357,6 +366,9 @@
         "Yes, edit": "Ja, bearbeiten"
     },
     "es": {
+        "error": "error",
+        "warning": "advertencia",
+        "success": "éxito",
         "Photo": "Foto",
         "widgets": {
             "No data": "No hay datos",
@@ -476,6 +488,9 @@
         "Yes, edit": "Sí, editar"
     },
     "ru": {
+        "error": "ошибка",
+        "warning": "предупреждение",
+        "success": "успех",
         "Photo": "Фото",
         "widgets": {
             "No data": "Нет данных",
