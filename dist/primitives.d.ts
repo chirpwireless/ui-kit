@@ -39,3 +39,4 @@ export type { TableColumn, TableColumnDef, ExtendedTableColumnDef } from './comp
 export { Accordion } from './components/Accordion';
 export { Stepper } from './components/Stepper';
 export { Dropzone } from './components/Dropzone';
+export type { Props as DropzoneProps } from './components/Dropzone';
