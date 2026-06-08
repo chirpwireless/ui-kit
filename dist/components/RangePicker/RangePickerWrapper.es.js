@@ -64,9 +64,9 @@ const a = (t, r) => {
       display: "none"
     },
     ".rdrMonthAndYearPickers select": {
-      "-moz-appearance": "none",
+      MozAppearance: "none",
       appearance: "none",
-      "-webkit-appearance": "none",
+      WebkitAppearance: "none",
       border: "0",
       background: "transparent",
       padding: "10px 30px 10px 10px",
