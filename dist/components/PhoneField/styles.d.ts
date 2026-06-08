@@ -1,0 +1,1 @@
+export declare const PhoneField: import('@emotion/styled').StyledComponent<import('mui-tel-input').MuiTelInputProps & import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme>, {}, {}>;

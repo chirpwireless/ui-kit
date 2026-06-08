@@ -1,10 +1,10 @@
-import { jsxRuntimeExports as L } from "../../jsx-runtime-BgepH7Pb.js";
-import * as z from "react";
-import { useRef as j, useMemo as N, useCallback as K, useEffect as P } from "react";
-import { flushSync as H } from "react-dom";
+import { jsxRuntimeExports as W } from "../../jsx-runtime-BgepH7Pb.js";
+import * as y from "react";
+import { useRef as j, useMemo as L, useCallback as N, useEffect as K } from "react";
+import { flushSync as P } from "react-dom";
 import { TableComponent as $ } from "./components/table-component/index.es.js";
-import { useReactTable as B } from "./hooks/use-react-table.es.js";
-function J(r, a, t) {
+import { useReactTable as H } from "./hooks/use-react-table.es.js";
+function J(r, d, t) {
   const e = new Array(r);
   return new Proxy(e, {
     get(s, n, o) {
@@ -15,13 +15,13 @@ function J(r, a, t) {
           if (Number.isInteger(l) && l >= 0 && l < r) {
             let h = s[l];
             if (!h) {
-              const c = a[l * 2];
+              const c = d[l * 2];
               h = s[l] = {
                 index: l,
                 key: t(l),
                 start: c,
-                size: a[l * 2 + 1],
-                end: c + a[l * 2 + 1],
+                size: d[l * 2 + 1],
+                end: c + d[l * 2 + 1],
                 lane: 0
               };
             }
@@ -34,7 +34,7 @@ function J(r, a, t) {
     }
   });
 }
-function I(r, a, t) {
+function M(r, d, t) {
   let e = t.initialDeps ?? [], s, n = !0;
   function o() {
     var i;
@@ -42,18 +42,18 @@ function I(r, a, t) {
     let h = 0;
     l && (h = Date.now());
     const c = r();
-    if (!(c.length !== e.length || c.some((v, u) => e[u] !== v)))
+    if (!(c.length !== e.length || c.some((p, u) => e[u] !== p)))
       return s;
     e = c;
-    let d = 0;
-    if (l && (d = Date.now()), s = a(...c), l) {
-      const v = Math.round((Date.now() - h) * 100) / 100, u = Math.round((Date.now() - d) * 100) / 100, S = u / 16, g = (m, b) => {
-        for (m = String(m); m.length < b; )
+    let a = 0;
+    if (l && (a = Date.now()), s = d(...c), l) {
+      const p = Math.round((Date.now() - h) * 100) / 100, u = Math.round((Date.now() - a) * 100) / 100, S = u / 16, v = (m, E) => {
+        for (m = String(m); m.length < E; )
           m = " " + m;
         return m;
       };
       console.info(
-        `%c⏱ ${g(u, 5)} /${g(v, 5)} ms`,
+        `%c⏱ ${v(u, 5)} /${v(p, 5)} ms`,
         `
             font-size: .6rem;
             font-weight: bold;
@@ -70,33 +70,33 @@ function I(r, a, t) {
     e = i;
   }, o;
 }
-function F(r, a) {
+function D(r, d) {
   if (r === void 0)
     throw new Error("Unexpected undefined");
   return r;
 }
-const D = (r, a) => Math.abs(r - a) < 1.01, U = (r, a, t) => {
+const B = (r, d) => Math.abs(r - d) < 1.01, q = (r, d, t) => {
   let e;
   return function(...s) {
-    r.clearTimeout(e), e = r.setTimeout(() => a.apply(this, s), t);
+    r.clearTimeout(e), e = r.setTimeout(() => d.apply(this, s), t);
   };
 };
-let T;
-const R = () => {
-  if (T !== void 0) return T;
-  if (typeof navigator > "u") return T = !1;
-  if (/iP(hone|od|ad)/.test(navigator.userAgent)) return T = !0;
+let _;
+const A = () => {
+  if (_ !== void 0) return _;
+  if (typeof navigator > "u") return _ = !1;
+  if (/iP(hone|od|ad)/.test(navigator.userAgent)) return _ = !0;
   const r = navigator.maxTouchPoints;
-  return T = navigator.platform === "MacIntel" && r !== void 0 && r > 0;
+  return _ = navigator.platform === "MacIntel" && r !== void 0 && r > 0;
 }, k = (r) => {
-  const { offsetWidth: a, offsetHeight: t } = r;
-  return { width: a, height: t };
-}, q = (r) => r, X = (r) => {
-  const a = Math.max(r.startIndex - r.overscan, 0), e = Math.min(r.endIndex + r.overscan, r.count - 1) - a + 1, s = new Array(e);
+  const { offsetWidth: d, offsetHeight: t } = r;
+  return { width: d, height: t };
+}, U = (r) => r, X = (r) => {
+  const d = Math.max(r.startIndex - r.overscan, 0), e = Math.min(r.endIndex + r.overscan, r.count - 1) - d + 1, s = new Array(e);
   for (let n = 0; n < e; n++)
-    s[n] = a + n;
+    s[n] = d + n;
   return s;
-}, Z = (r, a) => {
+}, Z = (r, d) => {
   const t = r.scrollElement;
   if (!t)
     return;
@@ -105,7 +105,7 @@ const R = () => {
     return;
   const s = (o) => {
     const { width: i, height: l } = o;
-    a({ width: Math.round(i), height: Math.round(l) });
+    d({ width: Math.round(i), height: Math.round(l) });
   };
   if (s(k(t)), !e.ResizeObserver)
     return () => {
@@ -127,9 +127,9 @@ const R = () => {
   return n.observe(t, { box: "border-box" }), () => {
     n.unobserve(t);
   };
-}, w = {
+}, T = {
   passive: !0
-}, Y = typeof window > "u" ? !0 : "onscrollend" in window, G = (r, a, t) => {
+}, Y = typeof window > "u" ? !0 : "onscrollend" in window, G = (r, d, t) => {
   const e = r.scrollElement;
   if (!e)
     return;
@@ -138,40 +138,49 @@ const R = () => {
     return;
   const n = r.options.useScrollendEvent && Y;
   let o = 0;
-  const i = n ? null : U(
+  const i = n ? null : q(
     s,
-    () => a(o, !1),
+    () => d(o, !1),
     r.options.isScrollingResetDelay
   ), l = (f) => () => {
-    o = t(e), i == null || i(), a(o, f);
+    o = t(e), i == null || i(), d(o, f);
   }, h = l(!0), c = l(!1);
-  return e.addEventListener("scroll", h, w), n && e.addEventListener("scrollend", c, w), () => {
+  return e.addEventListener("scroll", h, T), n && e.addEventListener("scrollend", c, T), () => {
     e.removeEventListener("scroll", h), n && e.removeEventListener("scrollend", c);
   };
-}, Q = (r, a) => G(r, a, (t) => {
+}, Q = (r, d) => G(r, d, (t) => {
   const { horizontal: e, isRtl: s } = r.options;
   return e ? t.scrollLeft * (s && -1 || 1) : t.scrollTop;
-}), tt = (r, a, t) => {
-  if (a != null && a.borderBoxSize) {
-    const e = a.borderBoxSize[0];
+}), tt = (r, d, t) => {
+  if (t.options.useCachedMeasurements) {
+    const e = t.indexFromElement(r), s = t.options.getItemKey(e);
+    return t.itemSizeCache.get(s) ?? t.options.estimateSize(e);
+  }
+  if (d != null && d.borderBoxSize) {
+    const e = d.borderBoxSize[0];
     if (e)
       return Math.round(
         e[t.options.horizontal ? "inlineSize" : "blockSize"]
       );
   }
+  if (!d) {
+    const e = t.indexFromElement(r), s = t.options.getItemKey(e), n = t.itemSizeCache.get(s);
+    if (n !== void 0)
+      return n;
+  }
   return r[t.options.horizontal ? "offsetWidth" : "offsetHeight"];
 }, et = (r, {
-  adjustments: a = 0,
+  adjustments: d = 0,
   behavior: t
 }, e) => {
   var s, n;
   (n = (s = e.scrollElement) == null ? void 0 : s.scrollTo) == null || n.call(s, {
-    [e.options.horizontal ? "left" : "top"]: r + a,
+    [e.options.horizontal ? "left" : "top"]: r + d,
     behavior: t
   });
 }, st = et;
 class nt {
-  constructor(a) {
+  constructor(d) {
     this.unsubs = [], this.scrollElement = null, this.targetWindow = null, this.isScrolling = !1, this.scrollState = null, this.measurementsCache = [], this._flatMeasurements = null, this.itemSizeCache = /* @__PURE__ */ new Map(), this.itemSizeCacheVersion = 0, this.laneAssignments = /* @__PURE__ */ new Map(), this.pendingMin = null, this.prevLanes = void 0, this.lanesChangedFlag = !1, this.lanesSettling = !1, this.pendingScrollAnchor = null, this.scrollRect = null, this.scrollOffset = null, this.scrollDirection = null, this.scrollAdjustments = 0, this._iosDeferredAdjustment = 0, this._iosTouching = !1, this._iosJustTouchEnded = !1, this._iosTouchEndTimerId = null, this._intendedScrollOffset = null, this.elementsCache = /* @__PURE__ */ new Map(), this.now = () => {
       var t, e, s;
       return ((s = (e = (t = this.targetWindow) == null ? void 0 : t.performance) == null ? void 0 : e.now) == null ? void 0 : s.call(e)) ?? Date.now();
@@ -223,7 +232,7 @@ class nt {
         scrollPaddingStart: 0,
         scrollPaddingEnd: 0,
         horizontal: !1,
-        getItemKey: q,
+        getItemKey: U,
         rangeExtractor: X,
         onChange: () => {
         },
@@ -242,32 +251,50 @@ class nt {
         isRtl: !1,
         useScrollendEvent: !1,
         useAnimationFrameWithResizeObserver: !1,
-        laneAssignmentMode: "estimate"
+        laneAssignmentMode: "estimate",
+        useCachedMeasurements: !1
       };
-      for (const h in t) {
-        const c = t[h];
-        c !== void 0 && (n[h] = c);
+      for (const a in t) {
+        const p = t[a];
+        p !== void 0 && (n[a] = p);
       }
       const o = this.options;
-      let i = null, l = null;
+      let i = null, l = null, h = !1;
       if (o !== void 0 && o.enabled && n.enabled && n.anchorTo === "end" && this.scrollElement !== null) {
-        const h = o.count, c = n.count, f = this.getMeasurements(), d = h > 0 ? ((e = f[0]) == null ? void 0 : e.key) ?? o.getItemKey(0) : null, v = h > 0 ? ((s = f[h - 1]) == null ? void 0 : s.key) ?? o.getItemKey(h - 1) : null;
-        if (c !== h || h > 0 && c > 0 && (n.getItemKey(0) !== d || n.getItemKey(c - 1) !== v)) {
-          const g = h > 0 ? this.getVirtualItemForOffset(this.getScrollOffset()) ?? f[0] : null;
+        const a = o.count, p = n.count, u = this.getMeasurements(), S = a > 0 ? ((e = u[0]) == null ? void 0 : e.key) ?? o.getItemKey(0) : null, v = a > 0 ? ((s = u[a - 1]) == null ? void 0 : s.key) ?? o.getItemKey(a - 1) : null;
+        if (p !== a || a > 0 && p > 0 && (n.getItemKey(0) !== S || n.getItemKey(p - 1) !== v)) {
+          h = !0;
+          const g = a > 0 ? this.getVirtualItemForOffset(this.getScrollOffset()) ?? u[0] : null;
           g && (i = [g.key, this.getScrollOffset() - g.start]);
-          const m = n.followOnAppend === !0 ? "auto" : n.followOnAppend || null;
-          m && c > h && this.isAtEnd(o.scrollEndThreshold) && (h === 0 || n.getItemKey(c - 1) !== v) && (l = m);
+          const x = n.followOnAppend === !0 ? "auto" : n.followOnAppend || null;
+          x && p > a && this.isAtEnd(o.scrollEndThreshold) && (a === 0 || n.getItemKey(p - 1) !== v) && (l = x);
         }
       }
-      this.options = n, (i || l) && (this.pendingScrollAnchor = [
-        (i == null ? void 0 : i[0]) ?? null,
-        (i == null ? void 0 : i[1]) ?? 0,
-        l
+      this.options = n, h && (this.pendingMin = 0, this.itemSizeCacheVersion++);
+      let c = !1, f = 0;
+      if (i && this.scrollOffset !== null) {
+        const [a, p] = i, u = this.getMeasurements(), { count: S, getItemKey: v } = this.options;
+        let m = 0;
+        for (; m < S && v(m) !== a; )
+          m++;
+        if (m < S) {
+          const E = u[m];
+          if (E) {
+            const g = E.start + p;
+            g !== this.scrollOffset && (f = g - this.scrollOffset, this.scrollOffset = g, c = !0);
+          }
+        }
+      }
+      (c || l) && (this.pendingScrollAnchor = [
+        c ? i[0] : null,
+        c ? i[1] : 0,
+        l,
+        f
       ]);
     }, this.notify = (t) => {
       var e, s;
       (s = (e = this.options).onChange) == null || s.call(e, this, t);
-    }, this.maybeNotify = I(
+    }, this.maybeNotify = M(
       () => (this.calculateRange(), [
         this.isScrolling,
         this.range ? this.range.startIndex : null,
@@ -311,18 +338,18 @@ class nt {
           const n = this.scrollElement, o = () => {
             this._iosTouching = !0, this._iosJustTouchEnded = !1, this._iosTouchEndTimerId !== null && this.targetWindow != null && (this.targetWindow.clearTimeout(this._iosTouchEndTimerId), this._iosTouchEndTimerId = null);
           }, i = () => {
-            this._iosTouching = !1, !(!R() || this.targetWindow == null) && (this._iosJustTouchEnded = !0, this._iosTouchEndTimerId = this.targetWindow.setTimeout(() => {
+            this._iosTouching = !1, !(!A() || this.targetWindow == null) && (this._iosJustTouchEnded = !0, this._iosTouchEndTimerId = this.targetWindow.setTimeout(() => {
               this._iosJustTouchEnded = !1, this._iosTouchEndTimerId = null, this._flushIosDeferredIfReady();
             }, 150));
           };
           n.addEventListener(
             "touchstart",
             o,
-            w
+            T
           ), n.addEventListener(
             "touchend",
             i,
-            w
+            T
           ), this.unsubs.push(() => {
             n.removeEventListener("touchstart", o), n.removeEventListener("touchend", i), this._iosTouchEndTimerId !== null && this.targetWindow != null && (this.targetWindow.clearTimeout(this._iosTouchEndTimerId), this._iosTouchEndTimerId = null);
           });
@@ -334,19 +361,11 @@ class nt {
       }
       const s = this.pendingScrollAnchor;
       if (this.pendingScrollAnchor = null, s && this.scrollElement && this.options.enabled) {
-        const [n, o, i] = s;
-        if (n !== null) {
-          const { count: l, getItemKey: h } = this.options;
-          let c = 0;
-          for (; c < l && h(c) !== n; )
-            c++;
-          const f = c < l ? this.getMeasurements()[c] : void 0;
-          if (f) {
-            const d = f.start + o - this.getScrollOffset();
-            D(d, 0) || this.applyScrollAdjustment(d);
-          }
-        }
-        i && this.scrollToEnd({ behavior: i });
+        const [n, o, i, l] = s;
+        n !== null && !i && (A() && (this.isScrolling || this._iosTouching || this._iosJustTouchEnded) ? l !== 0 && (this._iosDeferredAdjustment += l) : this._scrollToOffset(this.getScrollOffset(), {
+          adjustments: void 0,
+          behavior: void 0
+        })), i && this.scrollToEnd({ behavior: i });
       }
     }, this._flushIosDeferredIfReady = () => {
       if (this._iosDeferredAdjustment === 0 || this.isScrolling || this._iosTouching || this._iosJustTouchEnded) return;
@@ -370,7 +389,7 @@ class nt {
           break;
       }
       return n.size === this.options.lanes ? Array.from(n.values()).sort((o, i) => o.end === i.end ? o.index - i.index : o.end - i.end)[0] : void 0;
-    }, this.getMeasurementOptions = I(
+    }, this.getMeasurementOptions = M(
       () => [
         this.options.count,
         this.options.paddingStart,
@@ -392,7 +411,7 @@ class nt {
       {
         key: !1
       }
-    ), this.getMeasurements = I(
+    ), this.getMeasurements = M(
       () => [this.getMeasurementOptions(), this.itemSizeCacheVersion],
       ({
         count: t,
@@ -415,61 +434,61 @@ class nt {
         const f = this.lanesSettling ? 0 : this.pendingMin ?? 0;
         if (this.pendingMin = null, this.lanesSettling && this.measurementsCache.length === t && (this.lanesSettling = !1), i === 1) {
           const u = this.options.gap, S = t * 2;
-          let g = this._flatMeasurements;
-          if (!g || g.length < S) {
-            const p = new Float64Array(S);
-            g && f > 0 && p.set(g.subarray(0, f * 2)), g = p, this._flatMeasurements = g;
+          let v = this._flatMeasurements;
+          if (!v || v.length < S) {
+            const g = new Float64Array(S);
+            v && f > 0 && g.set(v.subarray(0, f * 2)), v = g, this._flatMeasurements = v;
           }
           let m;
           if (f === 0)
             m = e + s;
           else {
-            const p = f - 1;
-            m = g[p * 2] + g[p * 2 + 1] + u;
+            const g = f - 1;
+            m = v[g * 2] + v[g * 2 + 1] + u;
           }
-          for (let p = f; p < t; p++) {
-            const x = n(p), M = c.get(x), _ = typeof M == "number" ? M : this.options.estimateSize(p);
-            g[p * 2] = m, g[p * 2 + 1] = _, m += _ + u;
+          for (let g = f; g < t; g++) {
+            const x = n(g), z = c.get(x), I = typeof z == "number" ? z : this.options.estimateSize(g);
+            v[g * 2] = m, v[g * 2 + 1] = I, m += I + u;
           }
-          const b = J(t, g, n);
-          return this.measurementsCache = b, b;
+          const E = J(t, v, n);
+          return this.measurementsCache = E, E;
         }
-        const d = this.measurementsCache.slice(0, f), v = new Array(i).fill(
+        const a = this.measurementsCache.slice(0, f), p = new Array(i).fill(
           void 0
         );
         for (let u = 0; u < f; u++) {
-          const S = d[u];
-          S && (v[S.lane] = u);
+          const S = a[u];
+          S && (p[S.lane] = u);
         }
         for (let u = f; u < t; u++) {
-          const S = n(u), g = this.laneAssignments.get(u);
-          let m, b;
-          const p = l === "estimate" || c.has(S);
-          if (g !== void 0 && this.options.lanes > 1) {
-            m = g;
-            const O = v[m], E = O !== void 0 ? d[O] : void 0;
-            b = E ? E.end + this.options.gap : e + s;
+          const S = n(u), v = this.laneAssignments.get(u);
+          let m, E;
+          const g = l === "estimate" || c.has(S);
+          if (v !== void 0 && this.options.lanes > 1) {
+            m = v;
+            const O = p[m], b = O !== void 0 ? a[O] : void 0;
+            E = b ? b.end + this.options.gap : e + s;
           } else {
-            const O = this.options.lanes === 1 ? d[u - 1] : this.getFurthestMeasurement(d, u);
-            b = O ? O.end + this.options.gap : e + s, m = O ? O.lane : u % this.options.lanes, this.options.lanes > 1 && p && this.laneAssignments.set(u, m);
+            const O = this.options.lanes === 1 ? a[u - 1] : this.getFurthestMeasurement(a, u);
+            E = O ? O.end + this.options.gap : e + s, m = O ? O.lane : u % this.options.lanes, this.options.lanes > 1 && g && this.laneAssignments.set(u, m);
           }
-          const x = c.get(S), M = typeof x == "number" ? x : this.options.estimateSize(u), _ = b + M;
-          d[u] = {
+          const x = c.get(S), z = typeof x == "number" ? x : this.options.estimateSize(u), I = E + z;
+          a[u] = {
             index: u,
-            start: b,
-            size: M,
-            end: _,
+            start: E,
+            size: z,
+            end: I,
             key: S,
             lane: m
-          }, v[m] = u;
+          }, p[m] = u;
         }
-        return this.measurementsCache = d, d;
+        return this.measurementsCache = a, a;
       },
       {
         key: process.env.NODE_ENV !== "production" && "getMeasurements",
         debug: () => this.options.debug
       }
-    ), this.calculateRange = I(
+    ), this.calculateRange = M(
       () => [
         this.getMeasurements(),
         this.getSize(),
@@ -490,7 +509,7 @@ class nt {
         key: process.env.NODE_ENV !== "production" && "calculateRange",
         debug: () => this.options.debug
       }
-    ), this.getVirtualIndexes = I(
+    ), this.getVirtualIndexes = M(
       () => {
         let t = null, e = null;
         const s = this.calculateRange();
@@ -550,13 +569,13 @@ class nt {
       if (this.options.lanes === 1 && h !== null)
         l = this.options.getItemKey(t), i = h[t * 2], o = h[t * 2 + 1];
       else {
-        const d = this.measurementsCache[t];
-        if (!d) return;
-        l = d.key, i = d.start, o = d.size;
+        const a = this.measurementsCache[t];
+        if (!a) return;
+        l = a.key, i = a.start, o = a.size;
       }
       const c = this.itemSizeCache.get(l) ?? o, f = e - c;
       if (f !== 0) {
-        const d = this.options.anchorTo === "end" && ((s = this.scrollState) == null ? void 0 : s.behavior) !== "smooth" && this.getVirtualDistanceFromEnd() <= this.options.scrollEndThreshold, v = d ? this.getTotalSize() : 0, u = ((n = this.scrollState) == null ? void 0 : n.behavior) !== "smooth" && (this.shouldAdjustScrollPositionOnItemSizeChange !== void 0 ? this.shouldAdjustScrollPositionOnItemSizeChange(
+        const a = this.options.anchorTo === "end" && ((s = this.scrollState) == null ? void 0 : s.behavior) !== "smooth" && this.getVirtualDistanceFromEnd() <= this.options.scrollEndThreshold, p = a ? this.getTotalSize() : 0, u = ((n = this.scrollState) == null ? void 0 : n.behavior) !== "smooth" && (this.shouldAdjustScrollPositionOnItemSizeChange !== void 0 ? this.shouldAdjustScrollPositionOnItemSizeChange(
           // The callback expects a VirtualItem; build one lazily only
           // when the consumer actually supplied a custom predicate.
           this.measurementsCache[t] ?? {
@@ -578,9 +597,9 @@ class nt {
           // behavior can pass shouldAdjustScrollPositionOnItemSizeChange.
           i < this.getScrollOffset() + this.scrollAdjustments && this.scrollDirection !== "backward"
         ));
-        (this.pendingMin === null || t < this.pendingMin) && (this.pendingMin = t), this.itemSizeCache.set(l, e), this.itemSizeCacheVersion++, d ? this.applyScrollAdjustment(this.getTotalSize() - v) : u && this.applyScrollAdjustment(f), this.notify(!1);
+        (this.pendingMin === null || t < this.pendingMin) && (this.pendingMin = t), this.itemSizeCache.set(l, e), this.itemSizeCacheVersion++, a ? this.applyScrollAdjustment(this.getTotalSize() - p) : u && this.applyScrollAdjustment(f), this.notify(!1);
       }
-    }, this.getVirtualItems = I(
+    }, this.getVirtualItems = M(
       () => [this.getVirtualIndexes(), this.getMeasurements()],
       (t, e) => {
         const s = [];
@@ -598,13 +617,13 @@ class nt {
       const e = this.getMeasurements();
       if (e.length === 0)
         return;
-      const s = this._flatMeasurements, n = this.options.lanes === 1 && s != null, o = W(
+      const s = this._flatMeasurements, n = this.options.lanes === 1 && s != null, o = V(
         0,
         e.length - 1,
-        n ? (i) => s[i * 2] : (i) => F(e[i]).start,
+        n ? (i) => s[i * 2] : (i) => D(e[i]).start,
         t
       );
-      return F(e[o]);
+      return D(e[o]);
     }, this.getMaxScrollOffset = () => {
       if (!this.scrollElement) return 0;
       if ("scrollHeight" in this.scrollElement)
@@ -731,11 +750,11 @@ class nt {
       this._intendedScrollOffset = t + (e ?? 0), this.options.scrollToFn(t, { behavior: s, adjustments: e }, this);
     }, this.measure = () => {
       this.pendingMin = null, this.itemSizeCache.clear(), this.laneAssignments.clear(), this.itemSizeCacheVersion++, this.notify(!1);
-    }, this.setOptions(a);
+    }, this.setOptions(d);
   }
-  applyScrollAdjustment(a, t) {
-    a !== 0 && (process.env.NODE_ENV !== "production" && this.options.debug && console.info("correction", a), R() && (this.isScrolling || this._iosTouching || this._iosJustTouchEnded) ? this._iosDeferredAdjustment += a : this._scrollToOffset(this.getScrollOffset(), {
-      adjustments: this.scrollAdjustments += a,
+  applyScrollAdjustment(d, t) {
+    d !== 0 && (process.env.NODE_ENV !== "production" && this.options.debug && console.info("correction", d), A() && (this.isScrolling || this._iosTouching || this._iosJustTouchEnded) ? this._iosDeferredAdjustment += d : this._scrollToOffset(this.getScrollOffset(), {
+      adjustments: this.scrollAdjustments += d,
       behavior: t
     }));
   }
@@ -755,7 +774,7 @@ class nt {
       return;
     }
     const e = this.scrollState.index != null ? this.getOffsetForIndex(this.scrollState.index, this.scrollState.align) : void 0, s = e ? e[0] : this.scrollState.lastTargetOffset, n = 1, o = s !== this.scrollState.lastTargetOffset;
-    if (!o && D(s, this.getScrollOffset())) {
+    if (!o && B(s, this.getScrollOffset())) {
       if (this.scrollState.stableFrames++, this.scrollState.stableFrames >= n) {
         this.getScrollOffset() !== s && this._scrollToOffset(s, {
           adjustments: void 0,
@@ -773,13 +792,13 @@ class nt {
     this.scheduleScrollReconcile();
   }
 }
-const W = (r, a, t, e) => {
-  for (; r <= a; ) {
-    const s = (r + a) / 2 | 0, n = t(s);
+const V = (r, d, t, e) => {
+  for (; r <= d; ) {
+    const s = (r + d) / 2 | 0, n = t(s);
     if (n < e)
       r = s + 1;
     else if (n > e)
-      a = s - 1;
+      d = s - 1;
     else
       return s;
   }
@@ -787,7 +806,7 @@ const W = (r, a, t, e) => {
 };
 function it({
   measurements: r,
-  outerSize: a,
+  outerSize: d,
   scrollOffset: t,
   lanes: e,
   flat: s
@@ -798,40 +817,92 @@ function it({
       startIndex: 0,
       endIndex: n
     };
-  let l = W(0, n, o, t), h = l;
+  let l = V(0, n, o, t), h = l;
   if (e === 1)
-    for (; h < n && i(h) < t + a; )
+    for (; h < n && i(h) < t + d; )
       h++;
   else if (e > 1) {
     const c = Array(e).fill(0);
-    for (; h < n && c.some((d) => d < t + a); ) {
-      const d = r[h];
-      c[d.lane] = d.end, h++;
+    for (; h < n && c.some((a) => a < t + d); ) {
+      const a = r[h];
+      c[a.lane] = a.end, h++;
     }
-    const f = Array(e).fill(t + a);
-    for (; l >= 0 && f.some((d) => d >= t); ) {
-      const d = r[l];
-      f[d.lane] = d.start, l--;
+    const f = Array(e).fill(t + d);
+    for (; l >= 0 && f.some((a) => a >= t); ) {
+      const a = r[l];
+      f[a.lane] = a.start, l--;
     }
     l = Math.max(0, l - l % e), h = Math.min(n, h + (e - 1 - h % e));
   }
   return { startIndex: l, endIndex: h };
 }
-const V = typeof document < "u" ? z.useLayoutEffect : z.useEffect;
+const F = typeof document < "u" ? y.useLayoutEffect : y.useEffect;
 function ot({
   useFlushSync: r = !0,
-  ...a
+  directDomUpdates: d = !1,
+  directDomUpdatesMode: t = "transform",
+  ...e
 }) {
-  const t = z.useReducer((n) => n + 1, 0)[1], e = {
-    ...a,
-    onChange: (n, o) => {
-      var i;
-      r && o ? H(t) : t(), (i = a.onChange) == null || i.call(a, n, o);
+  const s = y.useReducer((h) => h + 1, 0)[1], n = y.useRef({
+    enabled: d,
+    mode: t,
+    container: null,
+    lastSize: null,
+    // Keyed by the element itself so a remounted node (same key, new DOM
+    // node — e.g. when `enabled` is toggled off then on) is treated as fresh
+    // and gets its style written.
+    lastPositions: /* @__PURE__ */ new WeakMap(),
+    prevRange: null
+  });
+  n.current.enabled = d, n.current.mode = t;
+  const o = (h) => {
+    const c = n.current;
+    if (!c.enabled) return;
+    const f = h.getTotalSize();
+    if (c.container && f !== c.lastSize) {
+      c.lastSize = f;
+      const m = h.options.horizontal ? "width" : "height";
+      c.container.style[m] = `${f}px`;
     }
-  }, [s] = z.useState(
-    () => new nt(e)
-  );
-  return s.setOptions(e), V(() => s._didMount(), []), V(() => s._willUpdate()), s;
+    const a = !!h.options.horizontal, p = c.mode === "transform", u = a ? "left" : "top", S = h.options.scrollMargin, v = h.getVirtualItems();
+    for (const m of v) {
+      const E = m.start - S, g = h.elementsCache.get(m.key);
+      g && c.lastPositions.get(g) !== E && (c.lastPositions.set(g, E), p ? g.style.transform = a ? `translate3d(${E}px, 0, 0)` : `translate3d(0, ${E}px, 0)` : g.style[u] = `${E}px`);
+    }
+  }, i = {
+    ...e,
+    onChange: (h, c) => {
+      var f;
+      const a = n.current;
+      let p = !0;
+      if (a.enabled) {
+        o(h);
+        const u = h.range, S = a.prevRange;
+        p = !S || S.isScrolling !== h.isScrolling || S.startIndex !== (u == null ? void 0 : u.startIndex) || S.endIndex !== (u == null ? void 0 : u.endIndex), p && (a.prevRange = u ? {
+          startIndex: u.startIndex,
+          endIndex: u.endIndex,
+          isScrolling: h.isScrolling
+        } : null);
+      }
+      p && (r && c ? P(s) : s()), (f = e.onChange) == null || f.call(e, h, c);
+    }
+  }, [l] = y.useState(() => {
+    const h = new nt(i);
+    return Object.assign(h, {
+      containerRef: (c) => {
+        const f = n.current;
+        if (f.container = c, f.lastSize = null, c && f.enabled) {
+          const a = h.getTotalSize();
+          f.lastSize = a;
+          const p = h.options.horizontal ? "width" : "height";
+          c.style[p] = `${a}px`;
+        }
+      }
+    });
+  });
+  return l.setOptions(i), F(() => l._didMount(), []), F(() => l._willUpdate()), F(() => {
+    o(l);
+  }), l;
 }
 function lt(r) {
   return ot({
@@ -843,7 +914,7 @@ function lt(r) {
 }
 const rt = 40, ht = 50, mt = ({
   data: r,
-  columns: a,
+  columns: d,
   sx: t = {},
   isLoading: e,
   enableSorting: s,
@@ -854,54 +925,54 @@ const rt = 40, ht = 50, mt = ({
   onBottomReached: h,
   onRowClick: c,
   renderEmptyBlock: f,
-  renderExpandableBlock: d,
-  onRowDoubleClick: v,
+  renderExpandableBlock: a,
+  onRowDoubleClick: p,
   columnWidths: u
 }) => {
-  const S = j(null), { table: g, rows: m } = B({
+  const S = j(null), { table: v, rows: m } = H({
     data: r,
-    columns: a,
+    columns: d,
     enableSorting: s,
     defaultSorting: n
-  }), b = lt({
+  }), E = lt({
     count: m.length,
     estimateSize: () => l,
     getScrollElement: () => (S == null ? void 0 : S.current) ?? null,
     overscan: 5
-  }), p = b.getVirtualItems(), x = b.getTotalSize() + ht, M = N(
-    () => p.map((E) => {
-      const y = m[E.index], A = {
-        height: `${E.size}px`
+  }), g = E.getVirtualItems(), x = E.getTotalSize() + ht, z = L(
+    () => g.map((b) => {
+      const w = m[b.index], C = {
+        height: `${b.size}px`
       };
-      return { ...y, sx: A };
+      return { ...w, sx: C };
     }),
-    [p, m]
-  ), _ = K(
-    (E) => {
-      if (E) {
-        const { scrollHeight: y, scrollTop: A, clientHeight: C } = E;
-        y - A - C < C - 100 && !e && i && (h == null || h());
+    [g, m]
+  ), I = N(
+    (b) => {
+      if (b) {
+        const { scrollHeight: w, scrollTop: C, clientHeight: R } = b;
+        w - C - R < R - 100 && !e && i && (h == null || h());
       }
     },
     [h, e, i]
   );
-  P(() => {
-    _(S.current);
-  }, [_]);
+  K(() => {
+    I(S.current);
+  }, [I]);
   const O = (() => {
-    var E;
-    return { marginTop: `${(E = p == null ? void 0 : p[0]) == null ? void 0 : E.start}px` };
+    var b;
+    return { marginTop: `${(b = g == null ? void 0 : g[0]) == null ? void 0 : b.start}px` };
   })();
-  return /* @__PURE__ */ L.jsx(
+  return /* @__PURE__ */ W.jsx(
     $,
     {
       isVirtualized: !0,
-      table: g,
+      table: v,
       columnWidths: u,
-      rows: M,
+      rows: z,
       sx: {
         ...t,
-        height: M.length ? `${x}px` : "100%",
+        height: z.length ? `${x}px` : "100%",
         cursor: c ? "pointer" : "default",
         overflowY: "initial"
       },
@@ -910,10 +981,10 @@ const rt = 40, ht = 50, mt = ({
       tableSx: O,
       expandedRowIndex: o,
       onRowClick: c,
-      onRowDoubleClick: v,
+      onRowDoubleClick: p,
       renderEmptyBlock: f,
-      renderExpandableBlock: d,
-      onScroll: (E) => _(E.target),
+      renderExpandableBlock: a,
+      onScroll: (b) => I(b.target),
       ref: S
     }
   );

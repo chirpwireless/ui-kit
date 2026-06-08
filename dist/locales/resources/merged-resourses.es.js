@@ -69,7 +69,8 @@ const e = {
     "Search by name": "Search by name"
   },
   SearchInput: {
-    "Search location": "Search location"
+    "Search location": "Search location",
+    "Search by name": "Search by name"
   },
   RangePicker: {
     "Choose date range": "Choose date range",
@@ -174,7 +175,8 @@ const e = {
     "Search by name": "Rechercher par nom"
   },
   SearchInput: {
-    "Search location": "Rechercher un emplacement"
+    "Search location": "Rechercher un emplacement",
+    "Search by name": "Rechercher par nom"
   },
   RangePicker: {
     "Choose date range": "Choisir une plage de dates",
@@ -279,7 +281,8 @@ const e = {
     "Search by name": "Nach Namen suchen"
   },
   SearchInput: {
-    "Search location": "Standort suchen"
+    "Search location": "Standort suchen",
+    "Search by name": "Nach Name suchen"
   },
   RangePicker: {
     "Choose date range": "Datumsbereich auswählen",
@@ -384,7 +387,8 @@ const e = {
     "Search by name": "Buscar por nombre"
   },
   SearchInput: {
-    "Search location": "Buscar ubicación"
+    "Search location": "Buscar ubicación",
+    "Search by name": "Buscar por nombre"
   },
   RangePicker: {
     "Choose date range": "Elegir rango de fechas",
@@ -418,7 +422,7 @@ const e = {
       France: "Francia"
     }
   }
-}, n = {
+}, r = {
   Photo: "Фото",
   widgets: {
     "No data": "Нет данных",
@@ -489,7 +493,8 @@ const e = {
     "Search by name": "Поиск по названию"
   },
   SearchInput: {
-    "Search location": "Поиск местоположения"
+    "Search location": "Поиск местоположения",
+    "Search by name": "Поиск по названию"
   },
   RangePicker: {
     "Choose date range": "Выберите диапазон дат",
@@ -523,19 +528,19 @@ const e = {
       France: "Франция"
     }
   }
-}, r = {
+}, n = {
   en: e,
   fr: a,
   de: t,
   es: o,
-  ru: n
+  ru: r
 }, l = {
-  uiKit: r
+  uiKit: n
 }, i = {
   ...l
 };
 export {
   i as mergedResources,
-  r as uiKitLocaleModule,
+  n as uiKitLocaleModule,
   l as uiKitModule
 };

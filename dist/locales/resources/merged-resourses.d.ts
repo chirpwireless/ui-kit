@@ -78,6 +78,7 @@ export declare const uiKitModule: {
             };
             SearchInput: {
                 "Search location": string;
+                "Search by name": string;
             };
             RangePicker: {
                 "Choose date range": string;
@@ -184,6 +185,7 @@ export declare const uiKitModule: {
             };
             SearchInput: {
                 "Search location": string;
+                "Search by name": string;
             };
             RangePicker: {
                 "Choose date range": string;
@@ -290,6 +292,7 @@ export declare const uiKitModule: {
             };
             SearchInput: {
                 "Search location": string;
+                "Search by name": string;
             };
             RangePicker: {
                 "Choose date range": string;
@@ -396,6 +399,7 @@ export declare const uiKitModule: {
             };
             SearchInput: {
                 "Search location": string;
+                "Search by name": string;
             };
             RangePicker: {
                 "Choose date range": string;
@@ -502,6 +506,7 @@ export declare const uiKitModule: {
             };
             SearchInput: {
                 "Search location": string;
+                "Search by name": string;
             };
             RangePicker: {
                 "Choose date range": string;

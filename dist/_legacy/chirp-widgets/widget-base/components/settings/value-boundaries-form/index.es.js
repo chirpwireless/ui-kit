@@ -1,26 +1,26 @@
 import { jsxRuntimeExports as ie } from "../../../../../../jsx-runtime-BgepH7Pb.js";
-import { Stack as rt } from "@mui/material";
-import b, { useMemo as Wt, useEffect as jt } from "react";
-import { Form as qt, ResetInput as Ht, TextField as Gt } from "./style.es.js";
-import { numericFormat as $t } from "../../../../../../helpers/validation.es.js";
-import { Checkmark as Yt } from "../../../../../../assets/icons/Checkmark/index.es.js";
-import { Button as Kt } from "../../../../../button/index.es.js";
-import { Typography as zt } from "../../../../../typogrpahy/index.es.js";
-import { useTranslation as Jt } from "react-i18next";
-var ge = (e) => e.type === "checkbox", ue = (e) => e instanceof Date, q = (e) => e == null;
-const Vt = (e) => typeof e == "object";
-var p = (e) => !q(e) && !Array.isArray(e) && Vt(e) && !ue(e), _t = (e) => p(e) && e.target ? ge(e.target) ? e.target.checked : e.target.value : e, vt = (e, s) => s.split(".").some((t, a, u) => !isNaN(Number(t)) && e.has(u.slice(0, a).join("."))), Qt = (e) => {
+import { Stack as st } from "@mui/material";
+import b, { useMemo as Ht, useEffect as jt } from "react";
+import { Form as Gt, ResetInput as $t, TextField as Yt } from "./style.es.js";
+import { numericFormat as Kt } from "../../../../../../helpers/validation.es.js";
+import { Checkmark as zt } from "../../../../../../assets/icons/Checkmark/index.es.js";
+import { Button as Jt } from "../../../../../button/index.es.js";
+import { Typography as Qt } from "../../../../../typogrpahy/index.es.js";
+import { useTranslation as Xt } from "react-i18next";
+var Ve = (e) => e.type === "checkbox", ue = (e) => e instanceof Date, H = (e) => e == null;
+const vt = (e) => typeof e == "object";
+var p = (e) => !H(e) && !Array.isArray(e) && vt(e) && !ue(e), Ue = (e) => p(e) && e.target ? Ve(e.target) ? e.target.checked : e.target.value : e, bt = (e, s) => s.split(".").some((t, a, u) => !isNaN(Number(t)) && e.has(u.slice(0, a).join("."))), Ft = (e) => {
   const s = e.constructor && e.constructor.prototype;
   return p(s) && s.hasOwnProperty("isPrototypeOf");
-}, we = typeof window < "u" && typeof window.HTMLElement < "u" && typeof document < "u";
+}, ke = typeof window < "u" && typeof window.HTMLElement < "u" && typeof document < "u";
 function N(e) {
   if (e instanceof Date)
     return new Date(e);
   const s = typeof FileList < "u" && e instanceof FileList;
-  if (we && (e instanceof Blob || s))
+  if (ke && (e instanceof Blob || s))
     return e;
   const t = Array.isArray(e);
-  if (!t && !(p(e) && Qt(e)))
+  if (!t && !(p(e) && Ft(e)))
     return e;
   const a = t ? [] : Object.create(Object.getPrototypeOf(e));
   for (const u in e)
@@ -48,18 +48,18 @@ const ae = {
   pattern: "pattern",
   required: "required",
   validate: "validate"
-}, pe = "form", bt = "root", Ft = ["__proto__", "constructor", "prototype"];
-var Ve = (e) => /^\w*$/.test(e), C = (e) => e === void 0, ke = (e) => e.split(/[.[\]'"]/g).filter(Boolean), m = (e, s, t) => {
+}, pe = "form", xt = "root", At = ["__proto__", "constructor", "prototype"];
+var _e = (e) => /^\w*$/.test(e), R = (e) => e === void 0, Ee = (e) => e.split(/[.[\]'"]/g).filter(Boolean), y = (e, s, t) => {
   if (!s || !p(e))
     return t;
-  const a = Ve(s) ? [s] : ke(s);
-  if (a.some((l) => Ft.includes(l)))
+  const a = _e(s) ? [s] : Ee(s);
+  if (a.some((l) => At.includes(l)))
     return t;
-  const u = a.reduce((l, o) => q(l) ? void 0 : l[o], e);
-  return C(u) || u === e ? C(e[s]) ? t : e[s] : u;
-}, Y = (e) => typeof e == "boolean", G = (e) => typeof e == "function", R = (e, s, t) => {
+  const u = a.reduce((l, o) => H(l) ? void 0 : l[o], e);
+  return R(u) || u === e ? R(e[s]) ? t : e[s] : u;
+}, Y = (e) => typeof e == "boolean", G = (e) => typeof e == "function", C = (e, s, t) => {
   let a = -1;
-  const u = Ve(s) ? [s] : ke(s), l = u.length, o = l - 1;
+  const u = _e(s) ? [s] : Ee(s), l = u.length, o = l - 1;
   for (; ++a < l; ) {
     const f = u[a];
     let S = t;
@@ -67,15 +67,15 @@ var Ve = (e) => /^\w*$/.test(e), C = (e) => e === void 0, ke = (e) => e.split(/[
       const O = e[f];
       S = p(O) || Array.isArray(O) ? O : isNaN(+u[a + 1]) ? {} : [];
     }
-    if (Ft.includes(f))
+    if (At.includes(f))
       return;
     e[f] = S, e = e[f];
   }
 };
-const xt = b.createContext(null);
-xt.displayName = "HookFormControlContext";
-const Be = () => b.useContext(xt);
-var At = (e, s, t, a = !0) => {
+const Dt = b.createContext(null);
+Dt.displayName = "HookFormControlContext";
+const Pe = () => b.useContext(Dt);
+var wt = (e, s, t, a = !0) => {
   const u = {};
   for (const l in e)
     Object.defineProperty(u, l, {
@@ -86,9 +86,9 @@ var At = (e, s, t, a = !0) => {
     });
   return u;
 };
-const Pe = we ? b.useLayoutEffect : b.useEffect;
-function Xt(e) {
-  const s = Be(), { control: t = s, disabled: a, name: u, exact: l } = e || {}, [o, f] = b.useState(() => ({
+const We = ke ? b.useLayoutEffect : b.useEffect;
+function Zt(e) {
+  const s = Pe(), { control: t = s, disabled: a, name: u, exact: l } = e || {}, [o, f] = b.useState(() => ({
     ...t._formState,
     defaultValues: t._defaultValues
   })), S = b.useRef({
@@ -101,7 +101,7 @@ function Xt(e) {
     isValid: !1,
     errors: !1
   });
-  return Pe(() => t._subscribe({
+  return We(() => t._subscribe({
     name: u,
     formState: S.current,
     exact: l,
@@ -114,19 +114,22 @@ function Xt(e) {
     }
   }), [u, a, l]), b.useEffect(() => {
     S.current.isValid && t._setValid(!0);
-  }, [t]), b.useMemo(() => At(o, t, S.current, !1), [o, t]);
+  }, [t]), b.useMemo(() => wt(o, t, S.current, !1), [o, t]);
 }
-var $ = (e) => typeof e == "string", Ue = (e, s, t, a, u) => $(e) ? (a && s.watch.add(e), m(t, e, u)) : Array.isArray(e) ? e.map((l) => (a && s.watch.add(l), m(t, l))) : (a && (s.watchAll = !0), t), Ne = (e) => q(e) || !Vt(e);
+var $ = (e) => typeof e == "string", Ne = (e, s, t, a, u) => $(e) ? (a && s.watch.add(e), y(t, e, u)) : Array.isArray(e) ? e.map((l) => (a && s.watch.add(l), y(t, l))) : (a && (s.watchAll = !0), t), Me = (e) => H(e) || !vt(e);
+const it = (e, s) => s.length === 0 && !Array.isArray(e) && !Ft(e);
 function K(e, s, t = /* @__PURE__ */ new WeakSet()) {
   if (e === s)
     return !0;
-  if (Ne(e) || Ne(s))
+  if (Me(e) || Me(s))
     return Object.is(e, s);
   if (ue(e) && ue(s))
     return Object.is(e.getTime(), s.getTime());
   const a = Object.keys(e), u = Object.keys(s);
   if (a.length !== u.length)
     return !1;
+  if (it(e, a) || it(s, u))
+    return Object.is(e, s);
   if (t.has(e) || t.has(s))
     return !0;
   t.add(e), t.add(s);
@@ -142,124 +145,130 @@ function K(e, s, t = /* @__PURE__ */ new WeakSet()) {
   }
   return !0;
 }
-function Zt(e) {
-  const s = Be(), { control: t = s, name: a, defaultValue: u, disabled: l, exact: o, compute: f } = e || {}, S = b.useRef(u), O = b.useRef(f), H = b.useRef(void 0), v = b.useRef(t), F = b.useRef(a);
+function er(e) {
+  const s = Pe(), { control: t = s, name: a, defaultValue: u, disabled: l, exact: o, compute: f } = e || {}, S = b.useRef(u), O = b.useRef(f), j = b.useRef(void 0), v = b.useRef(t), F = b.useRef(a);
   O.current = f;
-  const [_, W] = b.useState(() => {
-    const k = t._getWatch(a, S.current);
+  const [_, q] = b.useState(() => {
+    const D = t._getWatch(a, S.current);
+    return O.current ? O.current(D) : D;
+  }), T = b.useCallback((D) => {
+    const k = Ne(a, t._names, D || t._formValues, !1, S.current);
     return O.current ? O.current(k) : k;
-  }), T = b.useCallback((k) => {
-    const w = Ue(a, t._names, k || t._formValues, !1, S.current);
-    return O.current ? O.current(w) : w;
-  }, [t._formValues, t._names, a]), M = b.useCallback((k) => {
+  }, [t._formValues, t._names, a]), M = b.useCallback((D) => {
     if (!l) {
-      const w = Ue(a, t._names, k || t._formValues, !1, S.current);
+      const k = Ne(a, t._names, D || t._formValues, !1, S.current);
       if (O.current) {
-        const te = O.current(w);
-        K(te, H.current) || (W(te), H.current = te);
+        const te = O.current(k);
+        K(te, j.current) || (q(te), j.current = te);
       } else
-        W(w);
+        q(k);
     }
   }, [t._formValues, t._names, l, a]);
-  Pe(() => ((v.current !== t || !K(F.current, a)) && (v.current = t, F.current = a, M()), t._subscribe({
+  We(() => ((v.current !== t || !K(F.current, a)) && (v.current = t, F.current = a, M()), t._subscribe({
     name: a,
     formState: {
       values: !0
     },
     exact: o,
-    callback: (k) => {
-      M(k.values);
+    callback: (D) => {
+      M(D.values);
     }
   })), [t, o, a, M]), b.useEffect(() => t._removeUnmounted());
-  const I = v.current !== t, V = F.current, D = b.useMemo(() => {
+  const I = v.current !== t, V = F.current, A = b.useMemo(() => {
     if (l)
       return null;
-    const k = !I && !K(V, a);
-    return I || k ? T() : null;
+    const D = !I && !K(V, a);
+    return I || D ? T() : null;
   }, [l, I, a, V, T]);
-  return D !== null ? D : _;
+  return A !== null ? A : _;
 }
-function er(e) {
-  const s = Be(), { name: t, disabled: a, control: u = s, shouldUnregister: l, defaultValue: o, exact: f = !0 } = e, S = vt(u._names.array, t), O = b.useMemo(() => m(u._formValues, t, m(u._defaultValues, t, o)), [u, t, o]), H = Zt({
+function tr(e) {
+  const s = Pe(), { name: t, disabled: a, control: u = s, shouldUnregister: l, defaultValue: o, exact: f = !0 } = e, S = bt(u._names.array, t), O = b.useMemo(() => y(u._formValues, t, y(u._defaultValues, t, o)), [u, t, o]), j = er({
     control: u,
     name: t,
     defaultValue: O,
     exact: f
-  }), v = Xt({
+  }), v = Zt({
     control: u,
     name: t,
     exact: f
   }), F = b.useRef(e), _ = b.useRef(u.register(t, {
     ...e.rules,
-    value: H,
+    value: j,
     ...Y(e.disabled) ? { disabled: e.disabled } : {}
   }));
   F.current = e;
-  const W = b.useMemo(() => Object.defineProperties({}, {
+  const q = b.useMemo(() => Object.defineProperties({}, {
     invalid: {
       enumerable: !0,
-      get: () => !!m(v.errors, t)
+      get: () => !!y(v.errors, t)
     },
     isDirty: {
       enumerable: !0,
-      get: () => !!m(v.dirtyFields, t)
+      get: () => !!y(v.dirtyFields, t)
     },
     isTouched: {
       enumerable: !0,
-      get: () => !!m(v.touchedFields, t)
+      get: () => !!y(v.touchedFields, t)
     },
     isValidating: {
       enumerable: !0,
-      get: () => !!m(v.validatingFields, t)
+      get: () => !!y(v.validatingFields, t)
     },
     error: {
       enumerable: !0,
-      get: () => m(v.errors, t)
+      get: () => y(v.errors, t)
     }
-  }), [v, t]), T = b.useCallback((D) => _.current.onChange({
+  }), [v, t]), T = b.useCallback((A) => {
+    const D = Ue(A);
+    y(u._fields, t) || (_.current = u.register(t, {
+      ...F.current.rules,
+      value: D
+    })), _.current.onChange({
+      target: {
+        value: Ue(A),
+        name: t
+      },
+      type: ae.CHANGE
+    });
+  }, [t, u]), M = b.useCallback(() => _.current.onBlur({
     target: {
-      value: _t(D),
-      name: t
-    },
-    type: ae.CHANGE
-  }), [t]), M = b.useCallback(() => _.current.onBlur({
-    target: {
-      value: m(u._formValues, t),
+      value: y(u._formValues, t),
       name: t
     },
     type: ae.BLUR
-  }), [t, u._formValues]), I = b.useCallback((D) => {
-    const k = m(u._fields, t);
-    k && k._f && D && (k._f.ref = {
-      focus: () => G(D.focus) && D.focus(),
-      select: () => G(D.select) && D.select(),
-      setCustomValidity: (w) => G(D.setCustomValidity) && D.setCustomValidity(w),
-      reportValidity: () => G(D.reportValidity) && D.reportValidity()
+  }), [t, u._formValues]), I = b.useCallback((A) => {
+    const D = y(u._fields, t);
+    D && D._f && A && (D._f.ref = {
+      focus: () => G(A.focus) && A.focus(),
+      select: () => G(A.select) && A.select(),
+      setCustomValidity: (k) => G(A.setCustomValidity) && A.setCustomValidity(k),
+      reportValidity: () => G(A.reportValidity) && A.reportValidity()
     });
   }, [u._fields, t]), V = b.useMemo(() => ({
     name: t,
-    value: H,
+    value: j,
     ...Y(a) || v.disabled ? { disabled: v.disabled || a } : {},
     onChange: T,
     onBlur: M,
     ref: I
-  }), [t, a, v.disabled, T, M, I, H]);
+  }), [t, a, v.disabled, T, M, I, j]);
   return b.useEffect(() => {
-    const D = u._options.shouldUnregister || l;
+    const A = u._options.shouldUnregister || l;
     u.register(t, {
       ...F.current.rules,
       ...Y(F.current.disabled) ? { disabled: F.current.disabled } : {}
     });
-    const k = (w, te) => {
-      const re = m(u._fields, w);
+    const D = (k, te) => {
+      const re = y(u._fields, k);
       re && re._f && (re._f.mount = te);
     };
-    if (k(t, !0), D) {
-      const w = N(m(u._defaultValues, t, m(u._options.defaultValues, t, F.current.defaultValue)));
-      R(u._defaultValues, t, w), C(m(u._formValues, t)) && R(u._formValues, t, w);
+    if (D(t, !0), A) {
+      const k = N(y(l ? u._defaultValues : u._options.values || u._defaultValues, t, y(u._options.defaultValues, t, F.current.defaultValue)));
+      C(u._defaultValues, t, k), R(y(u._formValues, t)) && C(u._formValues, t, k);
     }
     return !S && u.register(t), () => {
-      (S ? D && !u._state.action : D) ? u.unregister(t) : k(t, !1);
+      (S ? A && !u._state.action : A) ? u.unregister(t) : D(t, !1);
     };
   }, [t, u, S, l]), b.useEffect(() => {
     u._setDisabledField({
@@ -269,18 +278,18 @@ function er(e) {
   }, [a, t, u]), b.useMemo(() => ({
     field: V,
     formState: v,
-    fieldState: W
-  }), [V, v, W]);
+    fieldState: q
+  }), [V, v, q]);
 }
-const tr = (e) => e.render(er(e)), rr = b.createContext(null);
-rr.displayName = "HookFormContext";
-var sr = (e, s, t, a, u) => s ? {
+const rr = (e) => e.render(tr(e)), sr = b.createContext(null);
+sr.displayName = "HookFormContext";
+var ir = (e, s, t, a, u) => s ? {
   ...t[e],
   types: {
     ...t[e] && t[e].types ? t[e].types : {},
     [a]: u || !0
   }
-} : {}, Dt = (e) => Array.isArray(e) ? e.filter(Boolean) : [], xe = (e) => Array.isArray(e) ? e : [e], st = () => {
+} : {}, kt = (e) => Array.isArray(e) ? e.filter(Boolean) : [], Ae = (e) => Array.isArray(e) ? e : [e], at = () => {
   let e = [];
   return {
     get observers() {
@@ -300,29 +309,29 @@ var sr = (e, s, t, a, u) => s ? {
     }
   };
 };
-function wt(e, s) {
+function Et(e, s) {
   const t = {};
   for (const a in e)
     if (e.hasOwnProperty(a)) {
       const u = e[a], l = s[a];
       if (u && p(u) && l) {
-        const o = wt(u, l);
+        const o = Et(u, l);
         p(o) && (t[a] = o);
       } else e[a] && (t[a] = l);
     }
   return t;
 }
-var j = (e) => p(e) && !Object.keys(e).length, We = (e) => e.type === "file", Ae = (e) => {
-  if (!we)
+var W = (e) => p(e) && !Object.keys(e).length, qe = (e) => e.type === "file", De = (e) => {
+  if (!ke)
     return !1;
   const s = e ? e.ownerDocument : 0;
   return e instanceof (s && s.defaultView ? s.defaultView.HTMLElement : HTMLElement);
-}, kt = (e) => e.type === "select-multiple", je = (e) => e.type === "radio", ir = (e) => je(e) || ge(e), Ie = (e) => Ae(e) && e.isConnected;
-function ar(e, s) {
+}, St = (e) => e.type === "select-multiple", He = (e) => e.type === "radio", ar = (e) => He(e) || Ve(e), Ie = (e) => De(e) && e.isConnected;
+function nr(e, s) {
   const t = s.slice(0, -1).length;
   let a = 0;
   for (; a < t; ) {
-    if (q(e)) {
+    if (H(e)) {
       e = void 0;
       break;
     }
@@ -330,70 +339,70 @@ function ar(e, s) {
   }
   return e;
 }
-function nr(e) {
+function lr(e) {
   for (const s in e)
-    if (e.hasOwnProperty(s) && !C(e[s]))
+    if (e.hasOwnProperty(s) && !R(e[s]))
       return !1;
   return !0;
 }
 function B(e, s) {
   if ($(s) && Object.prototype.hasOwnProperty.call(e, s))
     return delete e[s], e;
-  const t = Array.isArray(s) ? s : Ve(s) ? [s] : ke(s), a = t.length === 1 ? e : ar(e, t), u = t.length - 1, l = t[u];
-  return a && delete a[l], u !== 0 && (p(a) && j(a) || Array.isArray(a) && nr(a)) && B(e, t.slice(0, -1)), e;
+  const t = Array.isArray(s) ? s : _e(s) ? [s] : Ee(s), a = t.length === 1 ? e : nr(e, t), u = t.length - 1, l = t[u];
+  return a && delete a[l], u !== 0 && (p(a) && W(a) || Array.isArray(a) && lr(a)) && B(e, t.slice(0, -1)), e;
 }
-var lr = (e) => {
+var ur = (e) => {
   for (const s in e)
     if (G(e[s]))
       return !0;
   return !1;
 };
-function Et(e) {
-  return Array.isArray(e) || p(e) && !lr(e);
+function Ct(e) {
+  return Array.isArray(e) || p(e) && !ur(e);
 }
-function Me(e, s = {}) {
+function Le(e, s = {}) {
   for (const t in e) {
     const a = e[t];
-    Et(a) ? (s[t] = Array.isArray(a) ? [] : {}, Me(a, s[t])) : C(a) || (s[t] = !0);
+    Ct(a) ? (s[t] = Array.isArray(a) ? [] : {}, Le(a, s[t])) : R(a) || (s[t] = !0);
   }
   return s;
 }
-function Le(e) {
+function Be(e) {
   if (e !== !1) {
     if (e === !0)
       return !0;
     if (Array.isArray(e)) {
-      const s = e.map((t) => Le(t));
+      const s = e.map((t) => Be(t));
       return s.some((t) => t !== void 0) ? s : void 0;
     }
     if (p(e)) {
       const s = {};
       for (const t in e) {
-        const a = Le(e[t]);
-        C(a) || (s[t] = a);
+        const a = Be(e[t]);
+        R(a) || (s[t] = a);
       }
       return Object.keys(s).length ? s : void 0;
     }
   }
 }
 function le(e, s, t) {
-  t || (t = Me(s));
+  t || (t = Le(s));
   for (const a in e) {
     const u = e[a];
-    if (Et(u))
-      C(s) || Ne(t[a]) ? t[a] = Me(u, Array.isArray(u) ? [] : {}) : le(u, q(s) ? {} : s[a], t[a]);
+    if (Ct(u))
+      R(s) || Me(t[a]) ? t[a] = Le(u, Array.isArray(u) ? [] : {}) : le(u, H(s) ? {} : s[a], t[a]);
     else {
       const l = s[a];
       t[a] = !K(u, l);
     }
   }
-  return Le(t) || {};
+  return Be(t) || {};
 }
-const it = {
+const nt = {
   value: !1,
   isValid: !1
-}, at = { value: !0, isValid: !0 };
-var St = (e) => {
+}, lt = { value: !0, isValid: !0 };
+var Rt = (e) => {
   if (Array.isArray(e)) {
     if (e.length > 1) {
       const s = e.filter((t) => t && t.checked && !t.disabled).map((t) => t.value);
@@ -401,28 +410,28 @@ var St = (e) => {
     }
     return e[0].checked && !e[0].disabled ? (
       // @ts-expect-error expected to work in the browser
-      e[0].attributes && !C(e[0].attributes.value) ? C(e[0].value) || e[0].value === "" ? at : { value: e[0].value, isValid: !0 } : at
-    ) : it;
+      e[0].attributes && !R(e[0].attributes.value) ? R(e[0].value) || e[0].value === "" ? lt : { value: e[0].value, isValid: !0 } : lt
+    ) : nt;
   }
-  return it;
-}, Rt = (e, { valueAsNumber: s, valueAsDate: t, setValueAs: a }) => C(e) ? e : s ? e === "" ? NaN : e && +e : t && $(e) ? new Date(e) : a ? a(e) : e;
-const nt = {
+  return nt;
+}, Ot = (e, { valueAsNumber: s, valueAsDate: t, setValueAs: a }) => R(e) ? e : s ? e === "" ? NaN : e && +e : t && $(e) ? new Date(e) : a ? a(e) : e;
+const ut = {
   isValid: !1,
   value: null
 };
-var Ct = (e) => Array.isArray(e) ? e.reduce((s, t) => t && t.checked && !t.disabled ? {
+var Tt = (e) => Array.isArray(e) ? e.reduce((s, t) => t && t.checked && !t.disabled ? {
   isValid: !0,
   value: t.value
-} : s, nt) : nt;
-function lt(e) {
+} : s, ut) : ut;
+function ot(e) {
   const s = e.ref;
-  return We(s) ? s.files : je(s) ? Ct(e.refs).value : kt(s) ? [...s.selectedOptions].map(({ value: t }) => t) : ge(s) ? St(e.refs).value : Rt(C(s.value) ? e.ref.value : s.value, e);
+  return qe(s) ? s.files : He(s) ? Tt(e.refs).value : St(s) ? [...s.selectedOptions].map(({ value: t }) => t) : Ve(s) ? Rt(e.refs).value : Ot(R(s.value) ? e.ref.value : s.value, e);
 }
-var ur = (e, s, t, a) => {
+var or = (e, s, t, a) => {
   const u = {};
   for (const l of e) {
-    const o = m(s, l);
-    o && R(u, l, o._f);
+    const o = y(s, l);
+    o && C(u, l, o._f);
   }
   return {
     criteriaMode: t,
@@ -430,18 +439,18 @@ var ur = (e, s, t, a) => {
     fields: u,
     shouldUseNativeValidation: a
   };
-}, De = (e) => e instanceof RegExp, me = (e) => C(e) ? e : De(e) ? e.source : p(e) ? De(e.value) ? e.value.source : e.value : e, ut = (e) => ({
+}, we = (e) => e instanceof RegExp, he = (e) => R(e) ? e : we(e) ? e.source : p(e) ? we(e.value) ? e.value.source : e.value : e, dt = (e) => ({
   isOnSubmit: !e || e === ee.onSubmit,
   isOnBlur: e === ee.onBlur,
   isOnChange: e === ee.onChange,
   isOnAll: e === ee.all,
   isOnTouch: e === ee.onTouched
 });
-const ot = "AsyncFunction";
-var or = (e) => !!e && !!e.validate && !!(G(e.validate) && e.validate.constructor.name === ot || p(e.validate) && Object.values(e.validate).find((s) => s.constructor.name === ot)), dr = (e) => e.mount && (e.required || e.min || e.max || e.maxLength || e.minLength || e.pattern || e.validate), dt = (e, s, t) => !t && (s.watchAll || s.watch.has(e) || [...s.watch].some((a) => e.startsWith(`${a}.`)));
-const he = (e, s, t, a) => {
+const ft = "AsyncFunction";
+var dr = (e) => !!e && !!e.validate && !!(G(e.validate) && e.validate.constructor.name === ft || p(e.validate) && Object.values(e.validate).find((s) => s.constructor.name === ft)), fr = (e) => e.mount && (e.required || e.min || e.max || e.maxLength || e.minLength || e.pattern || e.validate), ct = (e, s, t) => !t && (s.watchAll || s.watch.has(e) || [...s.watch].some((a) => e.startsWith(`${a}.`)));
+const ge = (e, s, t, a) => {
   for (const u of t || Object.keys(e)) {
-    const l = m(e, u);
+    const l = y(e, u);
     if (l) {
       const { _f: o, ...f } = l;
       if (o) {
@@ -449,23 +458,23 @@ const he = (e, s, t, a) => {
           return !0;
         if (o.ref && s(o.ref, o.name) && !a)
           return !0;
-        if (he(f, s))
+        if (ge(f, s))
           break;
-      } else if (p(f) && he(f, s))
+      } else if (p(f) && ge(f, s))
         break;
     }
   }
 };
-function ft(e, s, t) {
-  const a = m(e, t);
-  if (a || Ve(t))
+function yt(e, s, t) {
+  const a = y(e, t);
+  if (a || _e(t))
     return {
       error: a,
       name: t
     };
   const u = t.split(".");
   for (; u.length; ) {
-    const l = u.join("."), o = m(s, l), f = m(e, l);
+    const l = u.join("."), o = y(s, l), f = y(e, l);
     if (o && !Array.isArray(o) && t !== l)
       return { name: t };
     if (f && f.type)
@@ -484,15 +493,15 @@ function ft(e, s, t) {
     name: t
   };
 }
-var fr = (e, s, t, a) => {
+var cr = (e, s, t, a) => {
   t(e);
   const { name: u, ...l } = e;
-  return j(l) || a && Object.keys(l).length >= Object.keys(s).length || Object.keys(l).find((o) => s[o] === (!a || ee.all));
-}, cr = (e, s, t) => !e || !s || e === s || xe(e).some((a) => a && (t ? a === s : a.startsWith(s) || s.startsWith(a))), yr = (e, s, t, a, u) => u.isOnAll ? !1 : !t && u.isOnTouch ? !(s || e) : (t ? a.isOnBlur : u.isOnBlur) ? !e : (t ? a.isOnChange : u.isOnChange) ? e : !0, mr = (e, s) => !Dt(m(e, s)).length && B(e, s), ct = (e, s, t) => {
-  const a = m(e, t), u = Array.isArray(a) ? a : [];
-  return R(u, bt, s[t]), R(e, t, u), e;
+  return W(l) || a && Object.keys(l).length >= Object.keys(s).length || Object.keys(l).find((o) => s[o] === (!a || ee.all));
+}, yr = (e, s, t) => !e || !s || e === s || Ae(e).some((a) => a && (t ? a === s : a.startsWith(s) || s.startsWith(a))), mr = (e, s, t, a, u) => u.isOnAll ? !1 : !t && u.isOnTouch ? !(s || e) : (t ? a.isOnBlur : u.isOnBlur) ? !e : (t ? a.isOnChange : u.isOnChange) ? e : !0, hr = (e, s) => !kt(y(e, s)).length && B(e, s), mt = (e, s, t) => {
+  const a = y(e, t), u = Array.isArray(a) ? a : [];
+  return C(u, xt, s[t]), C(e, t, u), e;
 };
-function yt(e, s, t = "validate") {
+function ht(e, s, t = "validate") {
   if ($(e) || Array.isArray(e) && e.every($) || Y(e) && !e)
     return {
       type: t,
@@ -500,95 +509,95 @@ function yt(e, s, t = "validate") {
       ref: s
     };
 }
-var fe = (e) => p(e) && !De(e) ? e : {
+var fe = (e) => p(e) && !we(e) ? e : {
   value: e,
   message: ""
-}, mt = async (e, s, t, a, u, l) => {
-  const { ref: o, refs: f, required: S, maxLength: O, minLength: H, min: v, max: F, pattern: _, validate: W, name: T, valueAsNumber: M, mount: I } = e._f, V = m(t, T);
+}, gt = async (e, s, t, a, u, l) => {
+  const { ref: o, refs: f, required: S, maxLength: O, minLength: j, min: v, max: F, pattern: _, validate: q, name: T, valueAsNumber: M, mount: I } = e._f, V = y(t, T);
   if (!I || s.has(T))
     return {};
-  const D = f ? f[0] : o, k = (E) => {
-    u && D.reportValidity && (D.setCustomValidity(Y(E) ? "" : E || ""), D.reportValidity());
-  }, w = {}, te = je(o), re = ge(o), _e = te || re, oe = (M || We(o)) && C(o.value) && C(V) || Ae(o) && o.value === "" || V === "" || Array.isArray(V) && !V.length, Q = sr.bind(null, T, a, w), ve = (E, A, P, U = Z.maxLength, z = Z.minLength) => {
-    const se = E ? A : P;
-    w[T] = {
+  const A = f ? f[0] : o, D = (E) => {
+    u && A.reportValidity && (A.setCustomValidity(Y(E) ? "" : E || ""), A.reportValidity());
+  }, k = {}, te = He(o), re = Ve(o), ve = te || re, oe = (M || qe(o)) && R(o.value) && R(V) || De(o) && o.value === "" || V === "" || Array.isArray(V) && !V.length, Q = ir.bind(null, T, a, k), be = (E, w, P, U = Z.maxLength, z = Z.minLength) => {
+    const se = E ? w : P;
+    k[T] = {
       type: E ? U : z,
       message: se,
       ref: o,
       ...Q(E ? U : z, se)
     };
   };
-  if (l ? !Array.isArray(V) || !V.length : S && (!_e && (oe || q(V)) || Y(V) && !V || re && !St(f).isValid || te && !Ct(f).isValid)) {
-    const { value: E, message: A } = $(S) ? { value: !!S, message: S } : fe(S);
-    if (E && (w[T] = {
+  if (l ? !Array.isArray(V) || !V.length : S && (!ve && (oe || H(V)) || Y(V) && !V || re && !Rt(f).isValid || te && !Tt(f).isValid)) {
+    const { value: E, message: w } = $(S) ? { value: !!S, message: S } : fe(S);
+    if (E && (k[T] = {
       type: Z.required,
-      message: A,
-      ref: D,
-      ...Q(Z.required, A)
+      message: w,
+      ref: A,
+      ...Q(Z.required, w)
     }, !a))
-      return k(A), w;
+      return D(w), k;
   }
-  if (!oe && (!q(v) || !q(F))) {
-    let E, A;
+  if (!oe && (!H(v) || !H(F))) {
+    let E, w;
     const P = fe(F), U = fe(v);
-    if (!q(V) && !isNaN(V)) {
+    if (!H(V) && !isNaN(V)) {
       const z = o.valueAsNumber || V && +V;
-      q(P.value) || (E = z > P.value), q(U.value) || (A = z < U.value);
+      H(P.value) || (E = z > P.value), H(U.value) || (w = z < U.value);
     } else {
-      const z = o.valueAsDate || new Date(V), se = (be) => /* @__PURE__ */ new Date((/* @__PURE__ */ new Date()).toDateString() + " " + be), de = o.type == "time", ce = o.type == "week";
-      $(P.value) && V && (E = de ? se(V) > se(P.value) : ce ? V > P.value : z > new Date(P.value)), $(U.value) && V && (A = de ? se(V) < se(U.value) : ce ? V < U.value : z < new Date(U.value));
+      const z = o.valueAsDate || new Date(V), se = (Fe) => /* @__PURE__ */ new Date((/* @__PURE__ */ new Date()).toDateString() + " " + Fe), de = o.type == "time", ce = o.type == "week";
+      $(P.value) && V && (E = de ? se(V) > se(P.value) : ce ? V > P.value : z > new Date(P.value)), $(U.value) && V && (w = de ? se(V) < se(U.value) : ce ? V < U.value : z < new Date(U.value));
     }
-    if ((E || A) && (ve(!!E, P.message, U.message, Z.max, Z.min), !a))
-      return k(w[T].message), w;
+    if ((E || w) && (be(!!E, P.message, U.message, Z.max, Z.min), !a))
+      return D(k[T].message), k;
   }
-  if ((O || H) && !oe && ($(V) || l && Array.isArray(V))) {
-    const E = fe(O), A = fe(H), P = !q(E.value) && V.length > +E.value, U = !q(A.value) && V.length < +A.value;
-    if ((P || U) && (ve(P, E.message, A.message), !a))
-      return k(w[T].message), w;
+  if ((O || j) && !oe && ($(V) || l && Array.isArray(V))) {
+    const E = fe(O), w = fe(j), P = !H(E.value) && V.length > +E.value, U = !H(w.value) && V.length < +w.value;
+    if ((P || U) && (be(P, E.message, w.message), !a))
+      return D(k[T].message), k;
   }
   if (_ && !oe && $(V)) {
-    const { value: E, message: A } = fe(_);
-    if (De(E) && !V.match(E) && (w[T] = {
+    const { value: E, message: w } = fe(_);
+    if (we(E) && !V.match(E) && (k[T] = {
       type: Z.pattern,
-      message: A,
+      message: w,
       ref: o,
-      ...Q(Z.pattern, A)
+      ...Q(Z.pattern, w)
     }, !a))
-      return k(A), w;
+      return D(w), k;
   }
-  if (W) {
-    if (G(W)) {
-      const E = await W(V, t), A = yt(E, D);
-      if (A && (w[T] = {
-        ...A,
-        ...Q(Z.validate, A.message)
+  if (q) {
+    if (G(q)) {
+      const E = await q(V, t), w = ht(E, A);
+      if (w && (k[T] = {
+        ...w,
+        ...Q(Z.validate, w.message)
       }, !a))
-        return k(A.message), w;
-    } else if (p(W)) {
+        return D(w.message), k;
+    } else if (p(q)) {
       let E = {};
-      for (const A in W) {
-        if (!j(E) && !a)
+      for (const w in q) {
+        if (!W(E) && !a)
           break;
-        const P = yt(await W[A](V, t), D, A);
+        const P = ht(await q[w](V, t), A, w);
         P && (E = {
           ...P,
-          ...Q(A, P.message)
-        }, k(P.message), a && (w[T] = E));
+          ...Q(w, P.message)
+        }, D(P.message), a && (k[T] = E));
       }
-      if (!j(E) && (w[T] = {
-        ref: D,
+      if (!W(E) && (k[T] = {
+        ref: A,
         ...E
       }, !a))
-        return w;
+        return k;
     }
   }
-  return k(!0), w;
+  return D(!0), k;
 };
-const hr = {
+const gr = {
   mode: ee.onSubmit,
   reValidateMode: ee.onChange,
   shouldFocusError: !0
-}, Ot = {
+}, pt = {
   submitCount: 0,
   isDirty: !1,
   isReady: !1,
@@ -601,12 +610,12 @@ const hr = {
   dirtyFields: {},
   validatingFields: {}
 };
-function gr(e = {}) {
+function Vr(e = {}) {
   let s = {
-    ...hr,
+    ...gr,
     ...e
   }, t = {
-    ...N(Ot),
+    ...N(pt),
     isLoading: G(s.defaultValues),
     errors: s.errors || {},
     disabled: s.disabled || !1
@@ -623,7 +632,7 @@ function gr(e = {}) {
     watch: /* @__PURE__ */ new Set(),
     registerName: /* @__PURE__ */ new Set()
   }, S, O = 0;
-  const H = {
+  const j = {
     isDirty: !1,
     dirtyFields: !1,
     validatingFields: !1,
@@ -632,20 +641,20 @@ function gr(e = {}) {
     isValid: !1,
     errors: !1
   }, v = {
-    ...H
+    ...j
   };
   let F = {
     ...v
   };
   const _ = {
-    array: st(),
-    state: st()
-  }, W = s.criteriaMode === ee.all, T = (r) => (i) => {
+    array: at(),
+    state: at()
+  }, q = s.criteriaMode === ee.all, T = (r) => (i) => {
     clearTimeout(O), O = setTimeout(r, i);
   }, M = async (r) => {
     if (!o.keepIsValid && !s.disabled && (v.isValid || F.isValid || r)) {
       let i;
-      s.resolver ? (i = j((await Q()).errors), I()) : i = await A({
+      s.resolver ? (i = W((await Q()).errors), I()) : i = await w({
         fields: a,
         onlyCheckValid: !0,
         eventType: ae.VALID
@@ -655,26 +664,26 @@ function gr(e = {}) {
     }
   }, I = (r, i) => {
     !s.disabled && (v.isValidating || v.validatingFields || F.isValidating || F.validatingFields) && ((r || Array.from(f.mount)).forEach((n) => {
-      n && (i ? R(t.validatingFields, n, i) : B(t.validatingFields, n));
+      n && (i ? C(t.validatingFields, n, i) : B(t.validatingFields, n));
     }), _.state.next({
       validatingFields: t.validatingFields,
-      isValidating: !j(t.validatingFields)
+      isValidating: !W(t.validatingFields)
     }));
   }, V = () => {
     t.dirtyFields = le(u, l);
-  }, D = (r, i = [], n, d, y = !0, h = !0) => {
+  }, A = (r, i = [], n, d, m = !0, h = !0) => {
     if (d && n && !s.disabled) {
-      if (o.action = !0, h && Array.isArray(m(a, r))) {
-        const c = n(m(a, r), d.argA, d.argB);
-        y && R(a, r, c);
+      if (o.action = !0, h && Array.isArray(y(a, r))) {
+        const c = n(y(a, r), d.argA, d.argB);
+        m && C(a, r, c);
       }
-      if (h && Array.isArray(m(t.errors, r))) {
-        const c = n(m(t.errors, r), d.argA, d.argB);
-        y && R(t.errors, r, c), mr(t.errors, r);
+      if (h && Array.isArray(y(t.errors, r))) {
+        const c = n(y(t.errors, r), d.argA, d.argB);
+        m && C(t.errors, r, c), hr(t.errors, r);
       }
-      if ((v.touchedFields || F.touchedFields) && h && Array.isArray(m(t.touchedFields, r))) {
-        const c = n(m(t.touchedFields, r), d.argA, d.argB);
-        y && R(t.touchedFields, r, c);
+      if ((v.touchedFields || F.touchedFields) && h && Array.isArray(y(t.touchedFields, r))) {
+        const c = n(y(t.touchedFields, r), d.argA, d.argB);
+        m && C(t.touchedFields, r, c);
       }
       (v.dirtyFields || F.dirtyFields) && V(), _.state.next({
         name: r,
@@ -684,34 +693,34 @@ function gr(e = {}) {
         isValid: t.isValid
       });
     } else
-      R(l, r, i);
-  }, k = (r, i) => {
-    R(t.errors, r, i), _.state.next({
+      C(l, r, i);
+  }, D = (r, i) => {
+    C(t.errors, r, i), _.state.next({
       errors: t.errors
     });
-  }, w = (r) => {
+  }, k = (r) => {
     t.errors = r, _.state.next({
       errors: t.errors,
       isValid: !1
     });
   }, te = (r) => {
-    const i = Ve(r) ? [r] : ke(r);
+    const i = _e(r) ? [r] : Ee(r);
     let n = l, d = u;
-    for (let y = 0; y < i.length - 1; y++) {
-      const h = i[y];
-      if (n = q(n) ? n : n[h], d = q(d) ? d : d[h], n === null && d !== null)
+    for (let m = 0; m < i.length - 1; m++) {
+      const h = i[m];
+      if (n = H(n) ? n : n[h], d = H(d) ? d : d[h], n === null && d !== null)
         return !0;
     }
     return !1;
   }, re = (r, i, n, d) => {
-    const y = m(a, r);
-    if (y) {
+    const m = y(a, r);
+    if (m) {
       if (te(r))
         return;
-      const h = C(m(l, r)), c = m(l, r, C(n) ? m(u, r) : n);
-      C(c) || d && d.defaultChecked || i ? R(l, r, i ? c : lt(y._f)) : de(r, c), o.mount && !o.action && (M(), h && t.isDirty && (v.isDirty || F.isDirty) && (U() || (t.isDirty = !1, _.state.next({ ...t }))));
+      const h = R(y(l, r)), c = y(l, r, R(n) ? y(u, r) : n);
+      R(c) || d && d.defaultChecked || i ? C(l, r, i ? c : ot(m._f)) : de(r, c), o.mount && !o.action && (M(), h && t.isDirty && (v.isDirty || F.isDirty) && (U() || (t.isDirty = !1, _.state.next({ ...t }))));
     }
-  }, _e = (r, i, n, d, y) => {
+  }, ve = (r, i, n, d, m) => {
     let h = !1, c = !1;
     const g = {
       name: r
@@ -719,19 +728,19 @@ function gr(e = {}) {
     if (!s.disabled) {
       if (!n || d) {
         (v.isDirty || F.isDirty) && (c = t.isDirty, t.isDirty = g.isDirty = U(), h = c !== g.isDirty);
-        const x = K(m(u, r), i);
-        c = !!m(t.dirtyFields, r), x !== t.isDirty ? t.dirtyFields = le(u, l) : x ? B(t.dirtyFields, r) : R(t.dirtyFields, r, !0), g.dirtyFields = t.dirtyFields, h = h || (v.dirtyFields || F.dirtyFields) && c !== !x;
+        const x = K(y(u, r), i);
+        c = !!y(t.dirtyFields, r), x !== t.isDirty ? t.dirtyFields = le(u, l) : x ? B(t.dirtyFields, r) : C(t.dirtyFields, r, !0), g.dirtyFields = t.dirtyFields, h = h || (v.dirtyFields || F.dirtyFields) && c !== !x;
       }
       if (n) {
-        const x = m(t.touchedFields, r);
-        x || (R(t.touchedFields, r, n), g.touchedFields = t.touchedFields, h = h || (v.touchedFields || F.touchedFields) && x !== n);
+        const x = y(t.touchedFields, r);
+        x || (C(t.touchedFields, r, n), g.touchedFields = t.touchedFields, h = h || (v.touchedFields || F.touchedFields) && x !== n);
       }
-      h && y && _.state.next(g);
+      h && m && _.state.next(g);
     }
     return h ? g : {};
   }, oe = (r, i, n, d) => {
-    const y = m(t.errors, r), h = (v.isValid || F.isValid) && Y(i) && t.isValid !== i;
-    if (s.delayError && n ? (S = T(() => k(r, n)), S(s.delayError)) : (clearTimeout(O), S = null, n ? R(t.errors, r, n) : B(t.errors, r)), (n ? !K(y, n) : y) || !j(d) || h) {
+    const m = y(t.errors, r), h = (v.isValid || F.isValid) && Y(i) && t.isValid !== i;
+    if (s.delayError && n ? (S = T(() => D(r, n)), S(s.delayError)) : (clearTimeout(O), S = null, n ? C(t.errors, r, n) : B(t.errors, r)), (n ? !K(m, n) : m) || !W(d) || h) {
       const c = {
         ...d,
         ...h && Y(i) ? { isValid: i } : {},
@@ -743,12 +752,12 @@ function gr(e = {}) {
         ...c
       }, _.state.next(c);
     }
-  }, Q = async (r) => (I(r, !0), await s.resolver(l, s.context, ur(r || f.mount, a, s.criteriaMode, s.shouldUseNativeValidation))), ve = async (r) => {
+  }, Q = async (r) => (I(r, !0), await s.resolver(l, s.context, or(r || f.mount, a, s.criteriaMode, s.shouldUseNativeValidation))), be = async (r) => {
     const { errors: i } = await Q(r);
     if (I(r), r)
       for (const n of r) {
-        const d = m(i, n);
-        d ? f.array.has(n) && p(d) && !Object.keys(d).some((y) => !Number.isNaN(Number(y))) ? ct(t.errors, { [n]: d }, n) : R(t.errors, n, d) : B(t.errors, n);
+        const d = y(i, n);
+        d ? f.array.has(n) && p(d) && !Object.keys(d).some((m) => !Number.isNaN(Number(m))) ? mt(t.errors, { [n]: d }, n) : C(t.errors, n, d) : B(t.errors, n);
       }
     else
       t.errors = i;
@@ -763,41 +772,41 @@ function gr(e = {}) {
       });
       if (p(n))
         for (const d in n) {
-          const y = n[d];
-          y && Fe(`${pe}.${d}`, {
-            message: $(y.message) ? y.message : "",
-            type: y.type || Z.validate
+          const m = n[d];
+          m && xe(`${pe}.${d}`, {
+            message: $(m.message) ? m.message : "",
+            type: m.type || Z.validate
           });
         }
-      else $(n) || !n ? Fe(pe, {
+      else $(n) || !n ? xe(pe, {
         message: n || "",
         type: Z.validate
-      }) : Ye(pe);
+      }) : Ke(pe);
       return n;
     }
     return !0;
-  }, A = async ({ fields: r, onlyCheckValid: i, name: n, eventType: d, context: y = {
+  }, w = async ({ fields: r, onlyCheckValid: i, name: n, eventType: d, context: m = {
     valid: !0,
     runRootValidation: !1
   } }) => {
-    if (e.validate && (y.runRootValidation = !0, !await E({
+    if (e.validate && (m.runRootValidation = !0, !await E({
       name: n,
       eventType: d
-    }) && (y.valid = !1, i)))
-      return y.valid;
+    }) && (m.valid = !1, i)))
+      return m.valid;
     for (const h in r) {
       const c = r[h];
       if (c) {
         const { _f: g, ...x } = c;
         if (g) {
-          const L = f.array.has(g.name), J = c._f && or(c._f), X = v.validatingFields || v.isValidating || F.validatingFields || F.isValidating;
+          const L = f.array.has(g.name), J = c._f && dr(c._f), X = v.validatingFields || v.isValidating || F.validatingFields || F.isValidating;
           J && X && I([g.name], !0);
-          const ne = await mt(c, f.disabled, l, W, s.shouldUseNativeValidation && !i, L);
-          if (J && X && I([g.name]), ne[g.name] && (y.valid = !1, i) || (!i && (m(ne, g.name) ? L ? ct(t.errors, ne, g.name) : R(t.errors, g.name, ne[g.name]) : B(t.errors, g.name)), e.shouldUseNativeValidation && ne[g.name]))
+          const ne = await gt(c, f.disabled, l, q, s.shouldUseNativeValidation && !i, L);
+          if (J && X && I([g.name]), ne[g.name] && (m.valid = !1, i) || (!i && (y(ne, g.name) ? L ? mt(t.errors, ne, g.name) : C(t.errors, g.name, ne[g.name]) : B(t.errors, g.name)), e.shouldUseNativeValidation && ne[g.name]))
             break;
         }
-        !j(x) && await A({
-          context: y,
+        !W(x) && await w({
+          context: m,
           onlyCheckValid: i,
           fields: x,
           name: h,
@@ -805,38 +814,38 @@ function gr(e = {}) {
         });
       }
     }
-    return y.valid;
+    return m.valid;
   }, P = () => {
     for (const r of f.unMount) {
-      const i = m(a, r);
-      i && (i._f.refs ? i._f.refs.every((n) => !Ie(n)) : !Ie(i._f.ref)) && Se(r);
+      const i = y(a, r);
+      i && (i._f.refs ? i._f.refs.every((n) => !Ie(n)) : !Ie(i._f.ref)) && Ce(r);
     }
     f.unMount = /* @__PURE__ */ new Set();
-  }, U = (r, i) => !s.disabled && (r && i && R(l, r, i), !K(Ge(), u)), z = (r, i, n) => Ue(r, f, {
-    ...o.mount ? l : C(i) ? u : $(r) ? { [r]: i } : i
-  }, n, i), se = (r) => Dt(m(o.mount ? l : u, r, s.shouldUnregister ? m(u, r, []) : [])), de = (r, i, n = {}, d = !1) => {
-    const y = m(a, r);
+  }, U = (r, i) => !s.disabled && (r && i && C(l, r, i), !K($e(), u)), z = (r, i, n) => Ne(r, f, {
+    ...o.mount ? l : R(i) ? u : $(r) ? { [r]: i } : i
+  }, n, i), se = (r) => kt(y(o.mount ? l : u, r, s.shouldUnregister ? y(u, r, []) : [])), de = (r, i, n = {}, d = !1) => {
+    const m = y(a, r);
     let h = i;
-    if (y) {
-      const c = y._f;
-      c && (!c.disabled && R(l, r, Rt(i, c)), h = Ae(c.ref) && q(i) ? "" : i, kt(c.ref) ? [...c.ref.options].forEach((g) => g.selected = h.includes(g.value)) : c.refs ? ge(c.ref) ? c.refs.forEach((g) => {
+    if (m) {
+      const c = m._f;
+      c && (!c.disabled && C(l, r, Ot(i, c)), h = De(c.ref) && H(i) ? "" : i, St(c.ref) ? [...c.ref.options].forEach((g) => g.selected = h.includes(g.value)) : c.refs ? Ve(c.ref) ? c.refs.forEach((g) => {
         (!g.defaultChecked || !g.disabled) && (Array.isArray(h) ? g.checked = !!h.find((x) => x === g.value) : g.checked = h === g.value || !!h);
-      }) : c.refs.forEach((g) => g.checked = g.value === h) : We(c.ref) ? c.ref.value = "" : (c.ref.value = h, c.ref.type || _.state.next({
+      }) : c.refs.forEach((g) => g.checked = g.value === h) : qe(c.ref) ? c.ref.value = "" : (c.ref.value = h, c.ref.type || _.state.next({
         name: r,
         values: d ? l : N(l)
       })));
     }
-    (n.shouldDirty || n.shouldTouch) && _e(r, h, n.shouldTouch, n.shouldDirty, !0), n.shouldValidate && Ee(r);
+    (n.shouldDirty || n.shouldTouch) && ve(r, h, n.shouldTouch, n.shouldDirty, !0), n.shouldValidate && Se(r);
   }, ce = (r, i, n, d = !1) => {
-    for (const y in i) {
-      if (!i.hasOwnProperty(y))
+    for (const m in i) {
+      if (!i.hasOwnProperty(m))
         return;
-      const h = i[y], c = r + "." + y, g = m(a, c);
+      const h = i[m], c = r + "." + m, g = y(a, c);
       (f.array.has(r) || p(h) || g && !g._f) && !ue(h) ? ce(c, h, n, d) : de(c, h, n, d);
     }
-  }, be = (r, i, n, d) => {
-    const y = m(a, r), h = f.array.has(r), c = d ? i : N(i), g = m(l, r), x = K(g, c);
-    if (x || R(l, r, c), h)
+  }, Fe = (r, i, n, d) => {
+    const m = y(a, r), h = f.array.has(r), c = d ? i : N(i), g = y(l, r), x = K(g, c);
+    if (x || C(l, r, c), h)
       _.array.next({
         name: r,
         values: d ? l : N(l)
@@ -846,18 +855,18 @@ function gr(e = {}) {
         isDirty: U(r, c)
       }));
     else {
-      const L = Array.isArray(c) && !c.length || j(c);
-      !y || y._f || q(c) || L ? de(r, c, n, d) : ce(r, c, n, d);
+      const L = Array.isArray(c) && !c.length || W(c);
+      !m || m._f || H(c) || L ? de(r, c, n, d) : ce(r, c, n, d);
     }
     if (!x) {
-      const L = dt(r, f), J = d ? l : N(l);
+      const L = ct(r, f), J = d ? l : N(l);
       _.state.next({
         ...L && t,
         name: o.mount || L ? r : void 0,
         values: J
       });
     }
-  }, ye = (r, i, n = {}) => be(r, i, n, !1), Tt = (r, i = {}) => {
+  }, ye = (r, i, n = {}) => Fe(r, i, n, !1), It = (r, i = {}) => {
     const n = G(r) ? r(l) : r;
     if (!K(l, n)) {
       l = {
@@ -865,7 +874,7 @@ function gr(e = {}) {
         ...n
       };
       for (const d of f.mount)
-        be(d, m(n, d), i, !0);
+        Fe(d, y(n, d), i, !0);
       _.state.next({
         ...t,
         name: void 0,
@@ -873,58 +882,60 @@ function gr(e = {}) {
         values: l
       }), i.shouldValidate && M();
     }
-  }, qe = async (r) => {
+  }, je = async (r) => {
     o.mount = !0;
     const i = r.target;
     let n = i.name, d = !0;
-    const y = m(a, n), h = (x) => {
-      d = Number.isNaN(x) || ue(x) && isNaN(x.getTime()) || K(x, m(l, n, x));
-    }, c = ut(s.mode), g = ut(s.reValidateMode);
-    if (y) {
+    const m = y(a, n), h = (x) => {
+      d = Number.isNaN(x) || ue(x) && isNaN(x.getTime()) || K(x, y(l, n, x));
+    }, c = dt(s.mode), g = dt(s.reValidateMode);
+    if (m) {
       let x, L;
-      const J = i.type ? lt(y._f) : _t(r), X = r.type === ae.BLUR || r.type === ae.FOCUS_OUT, ne = !dr(y._f) && !e.validate && !s.resolver && !m(t.errors, n) && !y._f.deps || yr(X, m(t.touchedFields, n), t.isSubmitted, g, c), Oe = dt(n, f, X);
-      R(l, n, J), X ? (!i || !i.readOnly) && (y._f.onBlur && y._f.onBlur(r), S && S(0)) : y._f.onChange && y._f.onChange(r);
-      const Te = _e(n, J, X), Bt = !j(Te) || Oe;
+      const J = i.type ? ot(m._f) : Ue(r), X = r.type === ae.BLUR || r.type === ae.FOCUS_OUT, ne = !fr(m._f) && !e.validate && !s.resolver && !y(t.errors, n) && !m._f.deps || mr(X, y(t.touchedFields, n), t.isSubmitted, g, c), Te = ct(n, f, X);
+      C(l, n, J), X ? (!i || !i.readOnly) && (m._f.onBlur && m._f.onBlur(r), S && S(0)) : m._f.onChange && m._f.onChange(r);
+      const me = ve(n, J, X), Wt = !W(me) || Te;
       if (!X && _.state.next({
         name: n,
         type: r.type,
         values: N(l)
       }), ne)
-        return (v.isValid || F.isValid) && (s.mode === "onBlur" ? X && M() : X || M()), Bt && _.state.next({ name: n, ...Oe ? {} : Te });
+        return (v.isValid || F.isValid) && (s.mode === "onBlur" ? X && M() : X || M()), Wt && _.state.next({ name: n, ...Te ? {} : me });
       if (!s.resolver && e.validate && await E({
         name: n,
         eventType: r.type
-      }), !X && Oe && _.state.next({ ...t }), s.resolver) {
-        const { errors: et } = await Q([n]);
-        if (I([n]), h(J), d) {
-          const Pt = ft(t.errors, a, n), tt = ft(et, a, Pt.name || n);
-          x = tt.error, n = tt.name, L = j(et);
+      }), !X && Te && _.state.next({ ...t }), s.resolver) {
+        const { errors: tt } = await Q([n]);
+        if (I([n]), h(J), !d) {
+          !W(me) && _.state.next(me);
+          return;
         }
+        const qt = yt(t.errors, a, n), rt = yt(tt, a, qt.name || n);
+        x = rt.error, n = rt.name, L = W(tt);
       } else
-        I([n], !0), x = (await mt(y, f.disabled, l, W, s.shouldUseNativeValidation))[n], I([n]), h(J), d && (x ? L = !1 : (v.isValid || F.isValid) && (L = await A({
+        I([n], !0), x = (await gt(m, f.disabled, l, q, s.shouldUseNativeValidation))[n], I([n]), h(J), d && (x ? L = !1 : (v.isValid || F.isValid) && (L = await w({
           fields: a,
           onlyCheckValid: !0,
           name: n,
           eventType: r.type
         })));
-      d && (y._f.deps && (!Array.isArray(y._f.deps) || y._f.deps.length > 0) && Ee(y._f.deps), oe(n, L, x, Te));
+      d && (m._f.deps && (!Array.isArray(m._f.deps) || m._f.deps.length > 0) && Se(m._f.deps), oe(n, L, x, me));
     }
-  }, He = (r, i) => {
-    if (m(t.errors, i) && r.focus)
+  }, Ge = (r, i) => {
+    if (y(t.errors, i) && r.focus)
       return r.focus(), 1;
-  }, Ee = async (r, i = {}) => {
+  }, Se = async (r, i = {}) => {
     let n, d;
-    const y = xe(r);
+    const m = Ae(r);
     if (s.resolver) {
-      const h = await ve(C(r) ? r : y);
-      n = j(h), d = r ? !y.some((c) => m(h, c)) : n;
-    } else r ? (d = (await Promise.all(y.map(async (h) => {
-      const c = m(a, h);
-      return await A({
+      const h = await be(R(r) ? r : m);
+      n = W(h), d = r ? !m.some((c) => y(h, c)) : n;
+    } else r ? (d = (await Promise.all(m.map(async (h) => {
+      const c = y(a, h);
+      return await w({
         fields: c && c._f ? { [h]: c } : c,
         eventType: ae.TRIGGER
       });
-    }))).every(Boolean), !(!d && !t.isValid) && M()) : d = n = await A({
+    }))).every(Boolean), !(!d && !t.isValid) && M()) : d = n = await w({
       fields: a,
       name: r,
       eventType: ae.TRIGGER
@@ -933,20 +944,20 @@ function gr(e = {}) {
       ...!$(r) || (v.isValid || F.isValid) && n !== t.isValid ? {} : { name: r },
       ...s.resolver || !r ? { isValid: n } : {},
       errors: t.errors
-    }), i.shouldFocus && !d && he(a, He, r ? y : f.mount), d;
-  }, Ge = (r, i) => {
+    }), i.shouldFocus && !d && ge(a, Ge, r ? m : f.mount), d;
+  }, $e = (r, i) => {
     let n = {
       ...o.mount ? l : u
     };
-    return i && (n = wt(i.dirtyFields ? t.dirtyFields : t.touchedFields, n)), C(r) ? n : $(r) ? m(n, r) : r.map((d) => m(n, d));
-  }, $e = (r, i) => ({
-    invalid: !!m((i || t).errors, r),
-    isDirty: !!m((i || t).dirtyFields, r),
-    error: m((i || t).errors, r),
-    isValidating: !!m(t.validatingFields, r),
-    isTouched: !!m((i || t).touchedFields, r)
-  }), Ye = (r) => {
-    const i = r ? xe(r) : void 0;
+    return i && (n = Et(i.dirtyFields ? t.dirtyFields : t.touchedFields, n)), R(r) ? n : $(r) ? y(n, r) : r.map((d) => y(n, d));
+  }, Ye = (r, i) => ({
+    invalid: !!y((i || t).errors, r),
+    isDirty: !!y((i || t).dirtyFields, r),
+    error: y((i || t).errors, r),
+    isValidating: !!y(t.validatingFields, r),
+    isTouched: !!y((i || t).touchedFields, r)
+  }), Ke = (r) => {
+    const i = r ? Ae(r) : void 0;
     i == null || i.forEach((n) => B(t.errors, n)), i ? i.forEach((n) => {
       _.state.next({
         name: n,
@@ -955,9 +966,9 @@ function gr(e = {}) {
     }) : _.state.next({
       errors: {}
     });
-  }, Fe = (r, i, n) => {
-    const d = (m(a, r, { _f: {} })._f || {}).ref, y = m(t.errors, r) || {}, { ref: h, message: c, type: g, ...x } = y;
-    R(t.errors, r, {
+  }, xe = (r, i, n) => {
+    const d = (y(a, r, { _f: {} })._f || {}).ref, m = y(t.errors, r) || {}, { ref: h, message: c, type: g, ...x } = m;
+    C(t.errors, r, {
       ...x,
       ...i,
       ref: d
@@ -966,11 +977,11 @@ function gr(e = {}) {
       errors: t.errors,
       isValid: !1
     }), n && n.shouldFocus && d && d.focus && d.focus();
-  }, pt = (r, i) => G(r) ? _.state.subscribe({
+  }, Ut = (r, i) => G(r) ? _.state.subscribe({
     next: (n) => "values" in n && r(n.values || z(void 0, i), n)
-  }) : z(r, i, !0), Ke = (r) => _.state.subscribe({
+  }) : z(r, i, !0), ze = (r) => _.state.subscribe({
     next: (i) => {
-      if (cr(r.name, i.name, r.exact) && fr(i, r.formState || v, Lt, r.reRenderRoot)) {
+      if (yr(r.name, i.name, r.exact) && cr(i, r.formState || v, Pt, r.reRenderRoot)) {
         const n = { ...l };
         r.callback({
           values: n,
@@ -980,17 +991,17 @@ function gr(e = {}) {
         });
       }
     }
-  }).unsubscribe, It = (r) => (o.mount = !0, F = {
+  }).unsubscribe, Nt = (r) => (o.mount = !0, F = {
     ...F,
     ...r.formState
-  }, Ke({
+  }, ze({
     ...r,
     formState: {
-      ...H,
+      ...j,
       ...r.formState
     }
-  })), Se = (r, i = {}) => {
-    for (const n of r ? xe(r) : f.mount)
+  })), Ce = (r, i = {}) => {
+    for (const n of r ? Ae(r) : f.mount)
       f.mount.delete(n), f.array.delete(n), i.keepValue || (B(a, n), B(l, n)), !i.keepError && B(t.errors, n), !i.keepDirty && B(t.dirtyFields, n), !i.keepTouched && B(t.touchedFields, n), !i.keepIsValidating && B(t.validatingFields, n), !s.shouldUnregister && !i.keepDefaultValue && B(u, n);
     _.state.next({
       values: N(l)
@@ -998,15 +1009,15 @@ function gr(e = {}) {
       ...t,
       ...i.keepDirty ? { isDirty: U() } : {}
     }), !i.keepIsValid && M();
-  }, ze = ({ disabled: r, name: i }) => {
+  }, Je = ({ disabled: r, name: i }) => {
     if (Y(r) && o.mount || r || f.disabled.has(i)) {
-      const y = f.disabled.has(i) !== !!r;
-      r ? f.disabled.add(i) : f.disabled.delete(i), y && o.mount && !o.action && M();
+      const m = f.disabled.has(i) !== !!r;
+      r ? f.disabled.add(i) : f.disabled.delete(i), m && o.mount && !o.action && M();
     }
   }, Re = (r, i = {}) => {
-    let n = m(a, r);
-    const d = Y(i.disabled) || Y(s.disabled), y = !f.registerName.has(r) && n && n._f && !n._f.mount;
-    return R(a, r, {
+    let n = y(a, r);
+    const d = Y(i.disabled) || Y(s.disabled), m = !f.registerName.has(r) && n && n._f && !n._f.mount;
+    return C(a, r, {
       ...n || {},
       _f: {
         ...n && n._f ? n._f : { ref: { name: r } },
@@ -1014,92 +1025,92 @@ function gr(e = {}) {
         mount: !0,
         ...i
       }
-    }), f.mount.add(r), n && !y ? ze({
+    }), f.mount.add(r), n && !m ? Je({
       disabled: Y(i.disabled) ? i.disabled : s.disabled,
       name: r
     }) : re(r, !0, i.value), {
       ...d ? { disabled: i.disabled || s.disabled } : {},
       ...s.progressive ? {
         required: !!i.required,
-        min: me(i.min),
-        max: me(i.max),
-        minLength: me(i.minLength),
-        maxLength: me(i.maxLength),
-        pattern: me(i.pattern)
+        min: he(i.min),
+        max: he(i.max),
+        minLength: he(i.minLength),
+        maxLength: he(i.maxLength),
+        pattern: he(i.pattern)
       } : {},
       name: r,
-      onChange: qe,
-      onBlur: qe,
+      onChange: je,
+      onBlur: je,
       ref: (h) => {
         if (h) {
-          f.registerName.add(r), Re(r, i), f.registerName.delete(r), n = m(a, r);
-          const c = C(h.value) && h.querySelectorAll && h.querySelectorAll("input,select,textarea")[0] || h, g = ir(c), x = n._f.refs || [];
+          f.registerName.add(r), Re(r, i), f.registerName.delete(r), n = y(a, r);
+          const c = R(h.value) && h.querySelectorAll && h.querySelectorAll("input,select,textarea")[0] || h, g = ar(c), x = n._f.refs || [];
           if (g ? x.find((L) => L === c) : c === n._f.ref)
             return;
-          R(a, r, {
+          C(a, r, {
             _f: {
               ...n._f,
               ...g ? {
                 refs: [
                   ...x.filter(Ie),
                   c,
-                  ...Array.isArray(m(u, r)) ? [{}] : []
+                  ...Array.isArray(y(u, r)) ? [{}] : []
                 ],
                 ref: { type: c.type, name: r }
               } : { ref: c }
             }
           }), re(r, !1, void 0, c);
         } else
-          n = m(a, r, {}), n._f && (n._f.mount = !1), (s.shouldUnregister || i.shouldUnregister) && !(vt(f.array, r) && o.action) && f.unMount.add(r);
+          n = y(a, r, {}), n._f && (n._f.mount = !1), (s.shouldUnregister || i.shouldUnregister) && !(bt(f.array, r) && o.action) && f.unMount.add(r);
       }
     };
-  }, Ce = () => s.shouldFocusError && !s.shouldUseNativeValidation && he(a, He, f.mount), Ut = (r) => {
-    Y(r) && (_.state.next({ disabled: r }), he(a, (i, n) => {
-      const d = m(a, n);
-      d && (i.disabled = d._f.disabled || r, Array.isArray(d._f.refs) && d._f.refs.forEach((y) => {
-        y.disabled = d._f.disabled || r;
+  }, Oe = () => s.shouldFocusError && !s.shouldUseNativeValidation && ge(a, Ge, f.mount), Mt = (r) => {
+    Y(r) && (_.state.next({ disabled: r }), ge(a, (i, n) => {
+      const d = y(a, n);
+      d && (i.disabled = d._f.disabled || r, Array.isArray(d._f.refs) && d._f.refs.forEach((m) => {
+        m.disabled = d._f.disabled || r;
       }));
     }, 0, !1));
-  }, Je = (r, i) => async (n) => {
+  }, Qe = (r, i) => async (n) => {
     let d;
     n && (n.preventDefault && n.preventDefault(), n.persist && n.persist());
-    let y = N(l);
+    let m = N(l);
     if (_.state.next({
       isSubmitting: !0
     }), s.resolver) {
       const { errors: h, values: c } = await Q();
-      I(), t.errors = h, y = N(c);
+      I(), t.errors = h, m = N(c);
     } else
-      await A({
+      await w({
         fields: a,
         eventType: ae.SUBMIT
       });
     if (f.disabled.size)
       for (const h of f.disabled)
-        B(y, h);
-    if (B(t.errors, bt), j(t.errors)) {
+        B(m, h);
+    if (B(t.errors, xt), W(t.errors)) {
       _.state.next({
         errors: {}
       });
       try {
-        await r(y, n);
+        await r(m, n);
       } catch (h) {
         d = h;
       }
     } else
-      i && await i({ ...t.errors }, n), Ce(), setTimeout(Ce);
+      i && await i({ ...t.errors }, n), Oe(), setTimeout(Oe);
     if (_.state.next({
       isSubmitted: !0,
       isSubmitting: !1,
-      isSubmitSuccessful: j(t.errors) && !d,
+      isSubmitSuccessful: W(t.errors) && !d,
       submitCount: t.submitCount + 1,
       errors: t.errors
     }), d)
       throw d;
-  }, Nt = (r, i = {}) => {
-    m(a, r) && (C(i.defaultValue) ? ye(r, N(m(u, r))) : (ye(r, i.defaultValue), R(u, r, N(i.defaultValue))), i.keepTouched || B(t.touchedFields, r), i.keepDirty || (B(t.dirtyFields, r), t.isDirty = i.defaultValue ? U(r, N(m(u, r))) : U()), i.keepError || (B(t.errors, r), v.isValid && M()), _.state.next({ ...t }));
-  }, Qe = (r, i = {}) => {
-    const n = r ? N(r) : u, d = N(n), y = j(r), h = d;
+  }, Lt = (r, i = {}) => {
+    y(a, r) && (R(i.defaultValue) ? ye(r, N(y(u, r))) : (ye(r, i.defaultValue), C(u, r, N(i.defaultValue))), i.keepTouched || B(t.touchedFields, r), i.keepDirty || (B(t.dirtyFields, r), t.isDirty = i.defaultValue ? U(r, N(y(u, r))) : U()), i.keepError || (B(t.errors, r), v.isValid && M()), _.state.next({ ...t }));
+  }, Xe = (r, i = {}) => {
+    const n = r ? N(r) : u, d = N(n), m = W(r), h = d;
     if (i.keepDefaultValues || (u = n), !i.keepValues) {
       if (i.keepDirtyValues) {
         const c = /* @__PURE__ */ new Set([
@@ -1107,16 +1118,16 @@ function gr(e = {}) {
           ...Object.keys(le(u, l))
         ]);
         for (const g of Array.from(c)) {
-          const x = m(t.dirtyFields, g), L = m(l, g), J = m(h, g);
-          x && !C(L) ? R(h, g, L) : !x && !C(J) && ye(g, J);
+          const x = y(t.dirtyFields, g), L = y(l, g), J = y(h, g);
+          x && !R(L) ? C(h, g, L) : !x && !R(J) && ye(g, J);
         }
       } else {
-        if (we && C(r))
+        if (ke && R(r))
           for (const c of f.mount) {
-            const g = m(a, c);
+            const g = y(a, c);
             if (g && g._f) {
               const x = Array.isArray(g._f.refs) ? g._f.refs[0] : g._f.ref;
-              if (Ae(x)) {
+              if (De(x)) {
                 const L = x.closest("form");
                 if (L) {
                   L.reset();
@@ -1127,14 +1138,14 @@ function gr(e = {}) {
           }
         if (i.keepFieldsRef)
           for (const c of f.mount)
-            ye(c, m(h, c));
+            ye(c, y(h, c));
         else
           a = {};
       }
       if (s.shouldUnregister) {
         if (l = i.keepDefaultValues ? N(u) : {}, i.keepFieldsRef)
           for (const c of f.mount)
-            R(l, c, m(h, c));
+            C(l, c, y(h, c));
       } else
         l = N(h);
       _.array.next({
@@ -1152,56 +1163,56 @@ function gr(e = {}) {
       watch: /* @__PURE__ */ new Set(),
       watchAll: !1,
       focus: ""
-    }, o.mount = !v.isValid || !!i.keepIsValid || !!i.keepDirtyValues || !s.shouldUnregister && !j(h), o.watch = !!s.shouldUnregister, o.keepIsValid = !!i.keepIsValid, o.action = !1, i.keepErrors || (t.errors = {}), _.state.next({
+    }, o.mount = !v.isValid || !!i.keepIsValid || !!i.keepDirtyValues || !s.shouldUnregister && !W(h), o.watch = !!s.shouldUnregister, o.keepIsValid = !!i.keepIsValid, o.action = !1, i.keepErrors || (t.errors = {}), _.state.next({
       submitCount: i.keepSubmitCount ? t.submitCount : 0,
-      isDirty: y ? !1 : i.keepDirty ? t.isDirty : i.keepValues ? U() : !!(i.keepDefaultValues && !K(r, u)),
+      isDirty: m ? !1 : i.keepDirty ? t.isDirty : i.keepValues ? U() : !!(i.keepDefaultValues && !K(r, u)),
       isSubmitted: i.keepIsSubmitted ? t.isSubmitted : !1,
-      dirtyFields: y ? {} : i.keepDirtyValues ? i.keepDefaultValues && l ? le(u, l) : t.dirtyFields : i.keepDefaultValues && r ? le(u, r) : i.keepDirty ? t.dirtyFields : {},
+      dirtyFields: m ? {} : i.keepDirtyValues ? i.keepDefaultValues && l ? le(u, l) : t.dirtyFields : i.keepDefaultValues && r ? le(u, r) : i.keepDirty ? t.dirtyFields : {},
       touchedFields: i.keepTouched ? t.touchedFields : {},
       errors: i.keepErrors ? t.errors : {},
       isSubmitSuccessful: i.keepIsSubmitSuccessful ? t.isSubmitSuccessful : !1,
       isSubmitting: !1,
       defaultValues: u
     });
-  }, Xe = (r, i) => Qe(G(r) ? r(l) : r, { ...s.resetOptions, ...i }), Mt = (r, i = {}) => {
-    const n = m(a, r), d = n && n._f;
+  }, Ze = (r, i) => Xe(G(r) ? r(l) : r, { ...s.resetOptions, ...i }), Bt = (r, i = {}) => {
+    const n = y(a, r), d = n && n._f;
     if (d) {
-      const y = d.refs ? d.refs[0] : d.ref;
-      y.focus && setTimeout(() => {
-        y.focus(), i.shouldSelect && G(y.select) && y.select();
+      const m = d.refs ? d.refs[0] : d.ref;
+      m.focus && setTimeout(() => {
+        m.focus(), i.shouldSelect && G(m.select) && m.select();
       });
     }
-  }, Lt = (r) => {
+  }, Pt = (r) => {
     t = {
       ...t,
       ...r
     };
-  }, Ze = {
+  }, et = {
     control: {
       register: Re,
-      unregister: Se,
-      getFieldState: $e,
-      handleSubmit: Je,
-      setError: Fe,
-      _subscribe: Ke,
+      unregister: Ce,
+      getFieldState: Ye,
+      handleSubmit: Qe,
+      setError: xe,
+      _subscribe: ze,
       _runSchema: Q,
       _updateIsValidating: I,
-      _focusError: Ce,
+      _focusError: Oe,
       _getWatch: z,
       _getDirty: U,
       _setValid: M,
-      _setFieldArray: D,
-      _setDisabledField: ze,
-      _setErrors: w,
+      _setFieldArray: A,
+      _setDisabledField: Je,
+      _setErrors: k,
       _getFieldArray: se,
-      _reset: Qe,
+      _reset: Xe,
       _resetDefaultValues: () => G(s.defaultValues) && s.defaultValues().then((r) => {
-        Xe(r, s.resetOptions), _.state.next({
+        Ze(r, s.resetOptions), _.state.next({
           isLoading: !1
         });
       }),
       _removeUnmounted: P,
-      _disableForm: Ut,
+      _disableForm: Mt,
       _subjects: _,
       _proxyFormState: v,
       get _fields() {
@@ -1238,40 +1249,40 @@ function gr(e = {}) {
         };
       }
     },
-    subscribe: It,
-    trigger: Ee,
+    subscribe: Nt,
+    trigger: Se,
     register: Re,
-    handleSubmit: Je,
-    watch: pt,
+    handleSubmit: Qe,
+    watch: Ut,
     setValue: ye,
-    setValues: Tt,
-    getValues: Ge,
-    reset: Xe,
-    resetField: Nt,
+    setValues: It,
+    getValues: $e,
+    reset: Ze,
+    resetField: Lt,
     resetDefaultValues: (r, i = {}) => {
       if (u = N(r), !i.keepDirty) {
         const n = le(u, l);
-        t.dirtyFields = n, t.isDirty = !j(n);
+        t.dirtyFields = n, t.isDirty = !W(n);
       }
       i.keepIsValid || M(), _.state.next({
         ...t,
         defaultValues: u
       });
     },
-    clearErrors: Ye,
-    unregister: Se,
-    setError: Fe,
-    setFocus: Mt,
-    getFieldState: $e
+    clearErrors: Ke,
+    unregister: Ce,
+    setError: xe,
+    setFocus: Bt,
+    getFieldState: Ye
   };
   return {
-    ...Ze,
-    formControl: Ze
+    ...et,
+    formControl: et
   };
 }
-function Vr(e = {}) {
+function _r(e = {}) {
   const s = b.useRef(void 0), t = b.useRef(void 0), [a, u] = b.useState(() => ({
-    ...N(Ot),
+    ...N(pt),
     isLoading: G(e.defaultValues),
     errors: e.errors || {},
     disabled: e.disabled || !1,
@@ -1284,14 +1295,14 @@ function Vr(e = {}) {
         formState: a
       }, e.defaultValues && !G(e.defaultValues) && e.formControl.reset(e.defaultValues, e.resetOptions);
     else {
-      const { formControl: o, ...f } = gr(e);
+      const { formControl: o, ...f } = Vr(e);
       s.current = {
         ...f,
         formState: a
       };
     }
   const l = s.current.control;
-  return l._options = e, Pe(() => {
+  return l._options = e, We(() => {
     const o = l._subscribe({
       formState: l._proxyFormState,
       callback: () => u({
@@ -1327,57 +1338,57 @@ function Vr(e = {}) {
     }), !((o = l._options.resetOptions) === null || o === void 0) && o.keepIsValid || l._setValid(), t.current = e.values, u((f) => ({ ...f }))) : l._resetDefaultValues();
   }, [l, e.values]), b.useEffect(() => {
     l._state.mount || (l._setValid(), l._state.mount = !0), l._state.watch && (l._state.watch = !1, l._subjects.state.next({ ...l._formState })), l._removeUnmounted();
-  }), s.current.formState = b.useMemo(() => At(a, l), [l, a]), s.current;
+  }), s.current.formState = b.useMemo(() => wt(a, l), [l, a]), s.current;
 }
-const ht = (e) => e === null || e === "" || isNaN(+e) ? null : +e, gt = (e) => typeof e == "number" && !isNaN(+e) ? { value: e, message: "Invalid range" } : void 0, Rr = ({ isLoading: e, valueFrom: s, valueTo: t, onSave: a, units: u }) => {
-  const { t: l } = Jt("uiKit", { keyPrefix: "widgets" }), {
+const Vt = (e) => e === null || e === "" || isNaN(+e) ? null : +e, _t = (e) => typeof e == "number" && !isNaN(+e) ? { value: e, message: "Invalid range" } : void 0, Rr = ({ isLoading: e, valueFrom: s, valueTo: t, onSave: a, units: u }) => {
+  const { t: l } = Xt("uiKit", { keyPrefix: "widgets" }), {
     control: o,
     formState: { errors: f, isValid: S },
     handleSubmit: O,
-    setValue: H,
+    setValue: j,
     watch: v
-  } = Vr({
+  } = _r({
     defaultValues: {
       from: s ?? "",
       to: t ?? ""
     },
     mode: "onChange"
-  }), F = v("from"), _ = v("to"), W = ["from", "to"], T = Wt(() => {
-    const V = s === +F || s === void 0 && F === "", D = t === +_ || t === void 0 && _ === "";
-    return V && D && !(s === void 0 && t === void 0) && !e;
+  }), F = v("from"), _ = v("to"), q = ["from", "to"], T = Ht(() => {
+    const V = s === +F || s === void 0 && F === "", A = t === +_ || t === void 0 && _ === "";
+    return V && A && !(s === void 0 && t === void 0) && !e;
   }, [s, t, F, _, e]), M = (V) => {
     a({
-      from: ht(V.from),
-      to: ht(V.to)
+      from: Vt(V.from),
+      to: Vt(V.to)
     });
   }, I = () => {
     a({ from: null, to: null });
   };
   return jt(() => {
-    H("from", s ?? ""), H("to", t ?? "");
-  }, [s, t, H]), /* @__PURE__ */ ie.jsxs(qt, { component: "form", onSubmit: O(M), onReset: I, children: [
-    /* @__PURE__ */ ie.jsxs(rt, { direction: "row", justifyContent: "space-between", children: [
-      /* @__PURE__ */ ie.jsx(zt, { color: "text.text3", variant: "caption12", children: l("Set the optimal value range") }),
-      /* @__PURE__ */ ie.jsx(Ht, { type: "reset", value: l("Reset"), disableUnderline: !0, disabled: e, onClick: I })
+    j("from", s ?? ""), j("to", t ?? "");
+  }, [s, t, j]), /* @__PURE__ */ ie.jsxs(Gt, { component: "form", onSubmit: O(M), onReset: I, children: [
+    /* @__PURE__ */ ie.jsxs(st, { direction: "row", justifyContent: "space-between", children: [
+      /* @__PURE__ */ ie.jsx(Qt, { color: "text.text3", variant: "caption12", children: l("Set the optimal value range") }),
+      /* @__PURE__ */ ie.jsx($t, { type: "reset", value: l("Reset"), disableUnderline: !0, disabled: e, onClick: I })
     ] }),
-    /* @__PURE__ */ ie.jsxs(rt, { direction: "row", gap: "8px", alignItems: "flex-end", children: [
-      W.map((V) => /* @__PURE__ */ ie.jsx(
-        tr,
+    /* @__PURE__ */ ie.jsxs(st, { direction: "row", gap: "8px", alignItems: "flex-end", children: [
+      q.map((V) => /* @__PURE__ */ ie.jsx(
+        rr,
         {
           name: V,
           control: o,
           rules: {
-            min: V === "from" ? void 0 : gt(F),
-            max: V === "to" ? void 0 : gt(_),
-            pattern: { value: $t, message: "Invalid format" }
+            min: V === "from" ? void 0 : _t(F),
+            max: V === "to" ? void 0 : _t(_),
+            pattern: { value: Kt, message: "Invalid format" }
           },
-          render: ({ field: D }) => {
-            var k;
+          render: ({ field: A }) => {
+            var D;
             return /* @__PURE__ */ ie.jsx(
-              Gt,
+              Yt,
               {
-                ...D,
-                label: ((k = f[V]) == null ? void 0 : k.message) || l(V),
+                ...A,
+                label: ((D = f[V]) == null ? void 0 : D.message) || l(V),
                 error: !!f[V],
                 placeholder: `0 ${u}`
               }
@@ -1387,7 +1398,7 @@ const ht = (e) => e === null || e === "" || isNaN(+e) ? null : +e, gt = (e) => t
         V
       )),
       /* @__PURE__ */ ie.jsxs(
-        Kt,
+        Jt,
         {
           type: "submit",
           size: "small",
@@ -1402,7 +1413,7 @@ const ht = (e) => e === null || e === "" || isNaN(+e) ? null : +e, gt = (e) => t
           },
           children: [
             l(T ? "Saved" : "Save"),
-            T && /* @__PURE__ */ ie.jsx(Yt, {})
+            T && /* @__PURE__ */ ie.jsx(zt, {})
           ]
         }
       )
