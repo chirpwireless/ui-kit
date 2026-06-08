@@ -43,6 +43,7 @@ import "../table/components/table-component/style.es.js";
 import "@tanstack/react-virtual";
 /* empty css                              */
 import "../range-picker/styles.es.js";
+import "date-fns/locale";
 import "../range-picker/constants.es.js";
 import "../range-picker/components/range-picker-menu.es.js";
 import "../toast/style.es.js";
@@ -59,7 +60,7 @@ import "../widgets/quantitative-list-widget/style.es.js";
 import "../widgets/progress-widget/style.es.js";
 import "../widgets/list-with-icons-widget/style.es.js";
 import "@mui/material/styles";
-import { Checkmark as Fr, CheckmarkPin as Gr, HiddenInput as Jr, Label$2 as Kr, Toggle as Mr } from "../../style-CvP40jkz.js";
+import { Checkmark as Gr, CheckmarkPin as Jr, HiddenInput as Kr, Label$2 as Mr, Toggle as Nr } from "../../style-B2KorHsf.js";
 import "../charts/vertical-bar-chart/index.es.js";
 import "../charts/zoom-bar-chart/index.es.js";
 import "../charts/stacked-chart/index.es.js";
@@ -89,9 +90,9 @@ import "../slider/style.es.js";
 import "../map/helpers/geocoding-client.es.js";
 import "../select-with-search/style.es.js";
 export {
-  Fr as Checkmark,
-  Gr as CheckmarkPin,
-  Jr as HiddenInput,
-  Kr as Label,
-  Mr as Toggle
+  Gr as Checkmark,
+  Jr as CheckmarkPin,
+  Kr as HiddenInput,
+  Mr as Label,
+  Nr as Toggle
 };

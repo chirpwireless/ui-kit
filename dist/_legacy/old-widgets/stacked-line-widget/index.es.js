@@ -44,6 +44,7 @@ import "../../table/components/table-component/style.es.js";
 import "@tanstack/react-virtual";
 /* empty css                                 */
 import "../../range-picker/styles.es.js";
+import "date-fns/locale";
 import "../../range-picker/constants.es.js";
 import "../../range-picker/components/range-picker-menu.es.js";
 import "../../toast/style.es.js";
@@ -59,7 +60,7 @@ import "../../widgets/quantitative-list-widget/style.es.js";
 import "../../widgets/progress-widget/style.es.js";
 import "../../widgets/list-with-icons-widget/style.es.js";
 import "@mui/material/styles";
-import "../../../style-CvP40jkz.js";
+import "../../../style-B2KorHsf.js";
 import "../../charts/vertical-bar-chart/index.es.js";
 import "../../charts/zoom-bar-chart/index.es.js";
 import { StackedChart as K } from "../../charts/stacked-chart/index.es.js";
@@ -91,7 +92,7 @@ import "../../select-with-search/style.es.js";
 import { arrayToMap as L } from "../../../helpers/array-to-map.es.js";
 import { StyledMenuItem as V } from "./styles.es.js";
 import { CurrentItemContent as D } from "./current-item-content.es.js";
-const Mr = (I) => {
+const Br = (I) => {
   var j, v;
   const { t: u } = W("uiKit", { keyPrefix: "widgets" }), S = T(), {
     collection: l,
@@ -192,5 +193,5 @@ const Mr = (I) => {
   );
 };
 export {
-  Mr as StackedLineChartWidget
+  Br as StackedLineChartWidget
 };

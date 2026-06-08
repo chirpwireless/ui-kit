@@ -44,6 +44,7 @@ import "../../table/components/table-component/style.es.js";
 import "@tanstack/react-virtual";
 /* empty css                                 */
 import "../../range-picker/styles.es.js";
+import "date-fns/locale";
 import "../../range-picker/constants.es.js";
 import "../../range-picker/components/range-picker-menu.es.js";
 import "../../toast/style.es.js";
@@ -60,7 +61,7 @@ import "../../widgets/quantitative-list-widget/style.es.js";
 import "../../widgets/progress-widget/style.es.js";
 import "../../widgets/list-with-icons-widget/style.es.js";
 import "@mui/material/styles";
-import "../../../style-CvP40jkz.js";
+import "../../../style-B2KorHsf.js";
 import { VerticalBarChart as w } from "../../charts/vertical-bar-chart/index.es.js";
 import "../../charts/zoom-bar-chart/index.es.js";
 import "../../charts/stacked-chart/index.es.js";
@@ -89,7 +90,7 @@ import "../../badge-select/style.es.js";
 import "../../slider/style.es.js";
 import "../../map/helpers/geocoding-client.es.js";
 import "../../select-with-search/style.es.js";
-const lr = (h) => {
+const hr = (h) => {
   const x = B(), { collection: r, valueKey: i, maxItems: E = 10, chartStyles: m, nameKey: e, unit: d, listLabel: u, ...f } = h, [j, g] = s([]), [y, b] = s([]);
   return D(() => {
     if (!(r != null && r.length)) return;
@@ -124,5 +125,5 @@ const lr = (h) => {
   ] }) }) });
 };
 export {
-  lr as VerticalBarsChartWidget
+  hr as VerticalBarsChartWidget
 };

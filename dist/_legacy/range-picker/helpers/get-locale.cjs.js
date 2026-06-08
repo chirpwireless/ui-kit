@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("../../../get-locale-DoTVClJV.cjs");exports.getLocaleObj=e.getLocaleObj;
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("date-fns/locale"),l={en:e.enUS,ru:e.ru,fr:e.fr,de:e.de,es:e.es},r=t=>{const o=t.split("-")[0];return l[o]||e.enUS};exports.getLocaleObj=r;

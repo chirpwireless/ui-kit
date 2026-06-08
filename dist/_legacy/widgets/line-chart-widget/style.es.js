@@ -43,6 +43,7 @@ import "../../table/components/table-component/style.es.js";
 import "@tanstack/react-virtual";
 /* empty css                                 */
 import "../../range-picker/styles.es.js";
+import "date-fns/locale";
 import "../../range-picker/constants.es.js";
 import "../../range-picker/components/range-picker-menu.es.js";
 import "../../toast/style.es.js";
@@ -59,7 +60,7 @@ import "../quantitative-list-widget/style.es.js";
 import "../progress-widget/style.es.js";
 import "../list-with-icons-widget/style.es.js";
 import "@mui/material/styles";
-import { Dot as Ko, Label as Mo, LabelAndDotWrapper as No, LegendContainer as Oo } from "../../../style-CvP40jkz.js";
+import { Dot as Mo, Label as No, LabelAndDotWrapper as Oo, LegendContainer as Po } from "../../../style-B2KorHsf.js";
 import "../../charts/vertical-bar-chart/index.es.js";
 import "../../charts/zoom-bar-chart/index.es.js";
 import "../../charts/stacked-chart/index.es.js";
@@ -89,8 +90,8 @@ import "../../slider/style.es.js";
 import "../../map/helpers/geocoding-client.es.js";
 import "../../select-with-search/style.es.js";
 export {
-  Ko as Dot,
-  Mo as Label,
-  No as LabelAndDotWrapper,
-  Oo as LegendContainer
+  Mo as Dot,
+  No as Label,
+  Oo as LabelAndDotWrapper,
+  Po as LegendContainer
 };

@@ -44,6 +44,7 @@ import "../../table/components/table-component/style.es.js";
 import "@tanstack/react-virtual";
 /* empty css                                 */
 import "../../range-picker/styles.es.js";
+import "date-fns/locale";
 import "../../range-picker/constants.es.js";
 import "../../range-picker/components/range-picker-menu.es.js";
 import "../../toast/style.es.js";
@@ -59,7 +60,7 @@ import "../quantitative-list-widget/style.es.js";
 import "../progress-widget/style.es.js";
 import "../list-with-icons-widget/style.es.js";
 import "@mui/material/styles";
-import { LabelAndDotWrapper as u, Dot as y, Label as C, LegendContainer as D } from "../../../style-CvP40jkz.js";
+import { LabelAndDotWrapper as u, Dot as y, Label as C, LegendContainer as D } from "../../../style-B2KorHsf.js";
 import "../../charts/vertical-bar-chart/index.es.js";
 import "../../charts/zoom-bar-chart/index.es.js";
 import { StackedChart as L } from "../../charts/stacked-chart/index.es.js";
@@ -88,7 +89,7 @@ import "../../badge-select/style.es.js";
 import "../../slider/style.es.js";
 import "../../map/helpers/geocoding-client.es.js";
 import "../../select-with-search/style.es.js";
-const er = (e) => {
+const ar = (e) => {
   const a = g(), { chartData: o, selectedItems: i, colors: r, chartStyles: n, emptyFallbackMsg: s, xAxisData: l, ...c } = e, m = o.length > 0, h = b(() => i.map((p, d) => /* @__PURE__ */ t.jsxs(u, { children: [
     /* @__PURE__ */ t.jsx(y, { bgcolor: r[d % r.length] }),
     /* @__PURE__ */ t.jsx(C, { variant: "caption12", children: p.label })
@@ -111,5 +112,5 @@ const er = (e) => {
   );
 };
 export {
-  er as LineChartWidget
+  ar as LineChartWidget
 };

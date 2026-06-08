@@ -44,6 +44,7 @@ import "../../table/components/table-component/style.es.js";
 import "@tanstack/react-virtual";
 /* empty css                                 */
 import "../../range-picker/styles.es.js";
+import "date-fns/locale";
 import "../../range-picker/constants.es.js";
 import "../../range-picker/components/range-picker-menu.es.js";
 import "../../toast/style.es.js";
@@ -60,7 +61,7 @@ import "../../widgets/quantitative-list-widget/style.es.js";
 import "../../widgets/progress-widget/style.es.js";
 import "../../widgets/list-with-icons-widget/style.es.js";
 import "@mui/material/styles";
-import "../../../style-CvP40jkz.js";
+import "../../../style-B2KorHsf.js";
 import "../../charts/vertical-bar-chart/index.es.js";
 import "../../charts/zoom-bar-chart/index.es.js";
 import "../../charts/stacked-chart/index.es.js";
@@ -89,7 +90,7 @@ import "../../badge-select/style.es.js";
 import "../../slider/style.es.js";
 import "../../map/helpers/geocoding-client.es.js";
 import "../../select-with-search/style.es.js";
-const ro = (s) => {
+const io = (s) => {
   const { data: o, colors: m, centerText: l, title: p, renderSelectedContent: c, ...a } = s, [r, e] = x(null);
   return /* @__PURE__ */ t.jsx(
     u,
@@ -121,5 +122,5 @@ const ro = (s) => {
   );
 };
 export {
-  ro as DonutWidget
+  io as DonutWidget
 };

@@ -1,7 +1,7 @@
 import { jsxRuntimeExports as o } from "../../../jsx-runtime-BgepH7Pb.js";
 import { useCallback as v } from "react";
 import { BaseWidget as C } from "../base-widget/index.es.js";
-import { LegendContainer$1 as D, LabelAndDotWrapper$1 as L, Dot$1 as W, Label$1 as w } from "../../../style-CvP40jkz.js";
+import { LegendContainer$1 as D, LabelAndDotWrapper$1 as L, Dot$1 as W, Label$1 as w } from "../../../style-B2KorHsf.js";
 import { useTheme as F, Stack as T } from "@mui/material";
 import "../../select-indicator/style.es.js";
 import "../../avatar/styles.es.js";
@@ -45,6 +45,7 @@ import "../../table/components/table-component/style.es.js";
 import "@tanstack/react-virtual";
 /* empty css                                 */
 import "../../range-picker/styles.es.js";
+import "date-fns/locale";
 import "../../range-picker/constants.es.js";
 import "../../range-picker/components/range-picker-menu.es.js";
 import "../../toast/style.es.js";
@@ -88,7 +89,7 @@ import "../../badge-select/style.es.js";
 import "../../slider/style.es.js";
 import "../../map/helpers/geocoding-client.es.js";
 import "../../select-with-search/style.es.js";
-const fo = (d) => {
+const $o = (d) => {
   const { legendItems: n, data: i, legendContainerSx: x, emptyFallbackMsg: h, ...y } = d, t = F(), { t: p, i18n: a } = z("uiKit", { keyPrefix: "widgets" }), s = i.categories.length && i.series.length, f = v(
     (r) => {
       var c, g;
@@ -135,5 +136,5 @@ const fo = (d) => {
   );
 };
 export {
-  fo as BarChartWidget
+  $o as BarChartWidget
 };

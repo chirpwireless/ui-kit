@@ -43,6 +43,7 @@ import "../../_legacy/table/components/table-component/style.es.js";
 import "@tanstack/react-virtual";
 /* empty css                              */
 import "../../_legacy/range-picker/styles.es.js";
+import "date-fns/locale";
 import "../../_legacy/range-picker/constants.es.js";
 import "../../_legacy/range-picker/components/range-picker-menu.es.js";
 import "../../_legacy/toast/style.es.js";
@@ -59,7 +60,7 @@ import "../../_legacy/widgets/quantitative-list-widget/style.es.js";
 import "../../_legacy/widgets/progress-widget/style.es.js";
 import "../../_legacy/widgets/list-with-icons-widget/style.es.js";
 import "@mui/material/styles";
-import "../../style-CvP40jkz.js";
+import "../../style-B2KorHsf.js";
 import "../../_legacy/charts/vertical-bar-chart/index.es.js";
 import "../../_legacy/charts/zoom-bar-chart/index.es.js";
 import "../../_legacy/charts/stacked-chart/index.es.js";
@@ -88,7 +89,7 @@ import "../../_legacy/badge-select/style.es.js";
 import "../../_legacy/slider/style.es.js";
 import "../../_legacy/map/helpers/geocoding-client.es.js";
 import "../../_legacy/select-with-search/style.es.js";
-const Uo = (o) => {
+const Vo = (o) => {
   var r, i, m, p, t, n, d, s, u;
   return {
     MuiCssBaseline: {
@@ -267,5 +268,5 @@ const Uo = (o) => {
   };
 };
 export {
-  Uo as createComponents
+  Vo as createComponents
 };
