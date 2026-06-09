@@ -7,6 +7,12 @@ export { uiKit as uiKitLocaleModule };
 export declare const uiKitModule: {
     uiKit: {
         en: {
+            Close: string;
+            "I agree": string;
+            Yes: string;
+            No: string;
+            Back: string;
+            Continue: string;
             error: string;
             warning: string;
             success: string;
@@ -129,6 +135,12 @@ export declare const uiKitModule: {
             "Yes, edit": string;
         };
         fr: {
+            Close: string;
+            "I agree": string;
+            Yes: string;
+            No: string;
+            Back: string;
+            Continue: string;
             error: string;
             warning: string;
             success: string;
@@ -251,6 +263,12 @@ export declare const uiKitModule: {
             "Yes, edit": string;
         };
         de: {
+            Close: string;
+            "I agree": string;
+            Yes: string;
+            No: string;
+            Back: string;
+            Continue: string;
             error: string;
             warning: string;
             success: string;
@@ -373,6 +391,12 @@ export declare const uiKitModule: {
             "Yes, edit": string;
         };
         es: {
+            Close: string;
+            "I agree": string;
+            Yes: string;
+            No: string;
+            Back: string;
+            Continue: string;
             error: string;
             warning: string;
             success: string;
@@ -495,6 +519,12 @@ export declare const uiKitModule: {
             "Yes, edit": string;
         };
         ru: {
+            Close: string;
+            "I agree": string;
+            Yes: string;
+            No: string;
+            Back: string;
+            Continue: string;
             error: string;
             warning: string;
             success: string;

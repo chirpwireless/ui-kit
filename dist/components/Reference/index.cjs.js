@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const r=require("../../jsx-runtime-BRMkMA8J.cjs"),s=require("../Link/index.cjs.js"),i=require("./style.cjs.js"),c=({href:e="#",children:n,isExternalLink:o,...t})=>o?r.jsxRuntimeExports.jsx(i.Anchor,{href:e,...t,children:n}):r.jsxRuntimeExports.jsx(s.Link,{to:e,...t,children:n});exports.Reference=c;

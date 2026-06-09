@@ -1,4 +1,10 @@
 const e = {
+  Close: "Close",
+  "I agree": "I agree",
+  Yes: "Yes",
+  No: "No",
+  Back: "Back",
+  Continue: "Continue",
   error: "error",
   warning: "warning",
   success: "success",
@@ -120,6 +126,12 @@ const e = {
   "After you edit this tag, the devices it is assigned to will use the updated name.": "After you edit this tag, the devices it is assigned to will use the updated name.",
   "Yes, edit": "Yes, edit"
 }, a = {
+  Close: "Fermer",
+  "I agree": "J'accepte",
+  Yes: "Oui",
+  No: "Non",
+  Back: "Retour",
+  Continue: "Continuer",
   error: "erreur",
   warning: "avertissement",
   success: "succès",
@@ -241,6 +253,12 @@ const e = {
   "After you edit this tag, the devices it is assigned to will use the updated name.": "Après avoir modifié ce tag, les appareils auxquels il est attribué utiliseront le nom mis à jour.",
   "Yes, edit": "Oui, modifier"
 }, t = {
+  Close: "Schließen",
+  "I agree": "Ich stimme zu",
+  Yes: "Ja",
+  No: "Nein",
+  Back: "Zurück",
+  Continue: "Fortfahren",
   error: "Fehler",
   warning: "Warnung",
   success: "Erfolg",
@@ -362,6 +380,12 @@ const e = {
   "After you edit this tag, the devices it is assigned to will use the updated name.": "Nach der Bearbeitung dieses Tags verwenden die zugewiesenen Geräte den aktualisierten Namen.",
   "Yes, edit": "Ja, bearbeiten"
 }, n = {
+  Close: "Cerrar",
+  "I agree": "Acepto",
+  Yes: "Sí",
+  No: "No",
+  Back: "Atrás",
+  Continue: "Continuar",
   error: "error",
   warning: "advertencia",
   success: "éxito",
@@ -483,6 +507,12 @@ const e = {
   "After you edit this tag, the devices it is assigned to will use the updated name.": "Después de editar esta etiqueta, los dispositivos a los que está asignada usarán el nombre actualizado.",
   "Yes, edit": "Sí, editar"
 }, o = {
+  Close: "Закрыть",
+  "I agree": "Я согласен",
+  Yes: "Да",
+  No: "Нет",
+  Back: "Назад",
+  Continue: "Продолжить",
   error: "ошибка",
   warning: "предупреждение",
   success: "успех",
