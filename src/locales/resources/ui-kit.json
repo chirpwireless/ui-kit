@@ -1,5 +1,11 @@
 {
     "en": {
+        "Close": "Close",
+        "I agree": "I agree",
+        "Yes": "Yes",
+        "No": "No",
+        "Back": "Back",
+        "Continue": "Continue",
         "error": "error",
         "warning": "warning",
         "success": "success",
@@ -122,6 +128,12 @@
         "Yes, edit": "Yes, edit"
     },
     "fr": {
+        "Close": "Fermer",
+        "I agree": "J'accepte",
+        "Yes": "Oui",
+        "No": "Non",
+        "Back": "Retour",
+        "Continue": "Continuer",
         "error": "erreur",
         "warning": "avertissement",
         "success": "succès",
@@ -244,6 +256,12 @@
         "Yes, edit": "Oui, modifier"
     },
     "de": {
+        "Close": "Schließen",
+        "I agree": "Ich stimme zu",
+        "Yes": "Ja",
+        "No": "Nein",
+        "Back": "Zurück",
+        "Continue": "Fortfahren",
         "error": "Fehler",
         "warning": "Warnung",
         "success": "Erfolg",
@@ -366,6 +384,12 @@
         "Yes, edit": "Ja, bearbeiten"
     },
     "es": {
+        "Close": "Cerrar",
+        "I agree": "Acepto",
+        "Yes": "Sí",
+        "No": "No",
+        "Back": "Atrás",
+        "Continue": "Continuar",
         "error": "error",
         "warning": "advertencia",
         "success": "éxito",
@@ -488,6 +512,12 @@
         "Yes, edit": "Sí, editar"
     },
     "ru": {
+        "Close": "Закрыть",
+        "I agree": "Я согласен",
+        "Yes": "Да",
+        "No": "Нет",
+        "Back": "Назад",
+        "Continue": "Продолжить",
         "error": "ошибка",
         "warning": "предупреждение",
         "success": "успех",
