@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=require("@mui/material"),o=t.styled(t.Stack)(({theme:e})=>({width:"100%",overflow:"hidden",padding:"4px",[e.breakpoints.down("md")]:{height:"auto"},[e.breakpoints.between("md","lg")]:{height:"auto"}}));exports.MobileWrapper=o;

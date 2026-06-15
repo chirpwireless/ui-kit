@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Alliance No.2";
+  src: local("Alliance No.2"), url("@chirp/ui/assets/fonts/alliance_no_2/alliance_no_2_regular.woff2") format("woff2"), url("@chirp/ui/assets//fonts/alliance_no_2/alliance_no_2_regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Alliance No.2";
+  src: local("Alliance No.2"), url("@chirp/ui/assets/fonts/alliance_no_2/alliance_no_2_medium.woff2") format("woff2"), url("@chirp/ui/assets//fonts/alliance_no_2/alliance_no_2_medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Simplon mono";
+  src: local("Simplon mono"), local("Simplon-mono"), url("@chirp/ui/assets//fonts/simplon_mono/simplon_mono_regular.woff2") format("woff2"), url("@chirp/ui/assets//fonts/simplon_mono/simplon_mono_regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Simplon mono";
+  src: local("Simplon mono"), local("Simplon-mono"), url("@chirp/ui/assets//fonts/simplon_mono/simplon_mono_medium.woff2") format("woff2"), url("@chirp/ui/assets//fonts/simplon_mono/simplon_mono_medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+:root .Toastify {
+  --toastify-z-index: 1000001;
+}
+
+#sleek-widget-wrap {
+  width: 400px;
+  height: 420px;
+  inset: auto auto 10px 10px;
+  background-color: #1a1a1a;
+}
+
+@media screen and (max-width: 450px) {
+  #sleek-widget-wrap {
+    top: auto !important;
+    bottom: 0 !important;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wkit-dialog__overlay {
+  z-index: 10000 !important;
+}
+
+/*# sourceMappingURL=style.css.map */

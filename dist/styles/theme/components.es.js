@@ -1,0 +1,183 @@
+import { alpha as b } from "@mui/material";
+import { SelectIndicator as m } from "../../components/SelectIndicator/index.es.js";
+const a = (o) => {
+  var r, i, n, d, s, u, g, c, x;
+  return {
+    MuiCssBaseline: {
+      styleOverrides: {
+        "html, body, #__next": {
+          height: "100%",
+          "& ::-webkit-scrollbar": {
+            width: "2px",
+            height: "2px"
+          },
+          "& ::-webkit-scrollbar-track": {
+            backgroundColor: (r = o == null ? void 0 : o.background) == null ? void 0 : r.background6
+          },
+          "& ::-webkit-scrollbar-thumb": {
+            borderRadius: "31px",
+            backgroundColor: (i = o == null ? void 0 : o.text) == null ? void 0 : i.search
+          }
+        }
+      }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: "6px",
+          ".MuiButton-endIcon": {
+            marginLeft: "4px"
+          },
+          ".MuiButton-startIcon": {
+            marginRight: "4px"
+          }
+        }
+      }
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: "6px",
+          svg: {
+            width: "20px",
+            height: "20px"
+          }
+        }
+      }
+    },
+    MuiSelect: {
+      defaultProps: {
+        IconComponent: m
+      },
+      styleOverrides: {
+        icon: {
+          top: "50%",
+          transform: "translateY(-50%)",
+          transition: "transform 200ms",
+          color: (n = o == null ? void 0 : o.text) == null ? void 0 : n.secondary
+        }
+      }
+    },
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          borderRadius: 0,
+          backgroundImage: "none",
+          minWidth: "544px",
+          padding: "32px"
+        }
+      }
+    },
+    MuiDialogTitle: {
+      styleOverrides: {
+        root: {
+          fontSize: "24px",
+          lineHeight: "29px",
+          letterSpacing: "0.3px",
+          padding: 0,
+          marginBottom: "12px"
+        }
+      }
+    },
+    MuiDialogContent: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Simplon Mono",
+          fontSize: "14px",
+          lineHeight: "160%",
+          letterSpacing: "0.25px",
+          textTransform: "uppercase",
+          maxWidth: "330px",
+          textAlign: "center",
+          padding: 0,
+          marginBottom: "40px"
+        }
+      }
+    },
+    MuiDialogContentText: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Simplon Mono",
+          fontSize: "14px",
+          lineHeight: "160%",
+          letterSpacing: "0.25px",
+          textTransform: "uppercase"
+        }
+      }
+    },
+    MuiDialogActions: {
+      styleOverrides: {
+        root: {
+          flexDirection: "column",
+          padding: 0,
+          gap: "16px",
+          width: "75%"
+        }
+      }
+    },
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          borderRadius: 0,
+          background: (d = o == null ? void 0 : o.background) == null ? void 0 : d.background15,
+          padding: "8px 16px",
+          fontSize: "14px",
+          lineHeight: "20px",
+          color: (s = o == null ? void 0 : o.text) == null ? void 0 : s.primary
+        }
+      }
+    },
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          borderColor: o == null ? void 0 : o.border.input
+        }
+      }
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          padding: "2px 16px 2px 16px",
+          height: "36px",
+          "&:hover": {
+            backgroundColor: ((u = o == null ? void 0 : o.base) == null ? void 0 : u.color61) && b((g = o == null ? void 0 : o.base) == null ? void 0 : g.color61, 0.1),
+            color: o == null ? void 0 : o.base.color6
+          }
+        }
+      }
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          ".MuiInputAdornment-root": {
+            width: "20px",
+            height: "20px"
+          }
+        }
+      }
+    },
+    MuiAutocomplete: {
+      defaultProps: {
+        slotProps: {
+          paper: {
+            sx: {
+              backgroundColor: (c = o == null ? void 0 : o.background) == null ? void 0 : c.background2
+            }
+          }
+        }
+      }
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: (x = o == null ? void 0 : o.background) == null ? void 0 : x.background2,
+          backgroundImage: "none",
+          marginTop: "4px"
+        }
+      }
+    }
+  };
+};
+export {
+  a as createComponents
+};

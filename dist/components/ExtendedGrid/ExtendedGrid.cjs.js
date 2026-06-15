@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=require("../../jsx-runtime-BRMkMA8J.cjs"),r=require("@mui/material/Grid"),i=e=>t.jsxRuntimeExports.jsx(r,{...e});exports.ExtendedGrid=i;

@@ -1,0 +1,8 @@
+export declare const Dialog: import('@emotion/styled').StyledComponent<import('@mui/material').DialogProps & import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme>, {}, {}>;
+export declare const CloseButton: import('@emotion/styled').StyledComponent<import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme>, import('react').DetailedHTMLProps<import('react').ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, {}>;
+export declare const Wrapper: import('@emotion/styled').StyledComponent<import('@mui/material').StackOwnProps & import('../../../node_modules/@mui/material/OverridableComponent').CommonProps & Omit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof import('../../../node_modules/@mui/material/OverridableComponent').CommonProps | keyof import('@mui/material').StackOwnProps> & import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme>, {}, {}>;
+type Direction = 'row' | 'column' | 'row-reverse' | 'column-reverse';
+export declare const ButtonGroup: import('@emotion/styled').StyledComponent<import('@mui/material').StackOwnProps & import('../../../node_modules/@mui/material/OverridableComponent').CommonProps & Omit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof import('../../../node_modules/@mui/material/OverridableComponent').CommonProps | keyof import('@mui/material').StackOwnProps> & import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme> & {
+    direction?: Direction;
+}, {}, {}>;
+export {};

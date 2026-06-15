@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("../../jsx-runtime-BRMkMA8J.cjs"),r=require("react"),t=require("../PageLoader/PageLoader.cjs.js"),o=({children:s})=>e.jsxRuntimeExports.jsx(r.Suspense,{fallback:e.jsxRuntimeExports.jsx(t.PageLoader,{}),children:s});exports.SuspenseWrapper=o;

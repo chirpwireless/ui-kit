@@ -1,0 +1,6 @@
+export declare const Row: import('@emotion/styled').StyledComponent<import('@mui/material').TableRowOwnProps & import('../../../node_modules/@mui/material/OverridableComponent').CommonProps & Omit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLTableRowElement>, HTMLTableRowElement>, "className" | "style" | "classes" | "children" | "sx" | "selected" | "hover"> & import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme> & {
+    disableHover?: boolean;
+}, {}, {}>;
+export declare const Cell: import('@emotion/styled').StyledComponent<import('@mui/material').TableCellProps & import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme>, {}, {}>;
+export declare const TableWrapper: import('@emotion/styled').StyledComponent<import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme>, import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;
+export declare const HeaderWrapper: import('@emotion/styled').StyledComponent<import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme>, import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;

@@ -1,0 +1,33 @@
+import { default as React } from 'react';
+import { Tag } from './types';
+export interface CustomPaperProps {
+    children?: React.ReactNode;
+    searchValue: string;
+    onSearchChange: (value: string) => void;
+    searchPlaceholder: string;
+    isAddingNewTag: boolean;
+    newTagValue: string;
+    onNewTagValueChange: (value: string) => void;
+    onStartAddNewTag: () => void;
+    onCreateTag: (value: string) => void;
+    onCancelAddNewTag: () => void;
+    addNewTagPlaceholder: string;
+    enterTagNamePlaceholder: string;
+    newTagInputRef: React.RefObject<HTMLInputElement>;
+    searchInputRef: React.RefObject<HTMLInputElement>;
+    dropdownRef: React.RefObject<HTMLDivElement>;
+    deleteConfirmTag: Tag | null;
+    onConfirmDelete: () => void;
+    onCancelDelete: () => void;
+    deleteTitle: string;
+    deleteSubtitle: string;
+    cancelText: string;
+    confirmDeleteText: string;
+    editConfirmTag: Tag | null;
+    onConfirmStartEdit: () => void;
+    onCancelStartEdit: () => void;
+    editTitle: string;
+    editSubtitle: string;
+    confirmEditText: string;
+}
+export declare const CustomPaper: React.NamedExoticComponent<CustomPaperProps & import('@mui/material').PaperOwnProps & import('../../../node_modules/@mui/material/OverridableComponent').CommonProps & Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | "style" | "classes" | "children" | "sx" | "variant" | "elevation" | "square">>;

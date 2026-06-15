@@ -1,0 +1,2 @@
+export declare const CheckboxIcon: import('@emotion/styled').StyledComponent<import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme>, import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, {}>;
+export declare const CheckboxCheckedIcon: import('@emotion/styled').StyledComponent<import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme> & import('react').ClassAttributes<HTMLSpanElement> & import('react').HTMLAttributes<HTMLSpanElement>, {}, {}>;

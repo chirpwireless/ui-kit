@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=t=>t?t.split(";").map(e=>e.split("=")).reduce((e,r)=>(e[decodeURIComponent(r[0].trim())]=decodeURIComponent(r[1].trim()),e),{}):{};exports.parseCookie=o;

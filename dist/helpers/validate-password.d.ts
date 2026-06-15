@@ -1,0 +1,1 @@
+export declare const validatePassword: (password: string) => "" | "Password must be between 8 and 16 characters long" | "Password must contain at least one uppercase letter" | "Password must contain at least one digit" | "Password must contain at least one special character (!, @, $, &, ?, _, -, +, *, /)";

@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const a=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,o=/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-z\-0-9]+\.)+[a-z]{2,}))$/i,t=/^[+-]?([0-9]*[.])?[0-9]+$/;exports.emailFormat=o;exports.numericFormat=t;exports.passwordFormat=a;

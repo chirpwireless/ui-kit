@@ -10,7 +10,7 @@ pnpm-lock.yaml
 
 node_modules
 storybook-static
-dist
+# dist is committed intentionally — the package is consumed as a git dependency
 dist-ssr
 *.local
 

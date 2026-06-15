@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("../../jsx-runtime-BRMkMA8J.cjs"),o=require("@mui/material"),r=require("./styles.cjs.js"),n=t=>e.jsxRuntimeExports.jsx(o.FormControl,{fullWidth:!0,children:e.jsxRuntimeExports.jsx(r.PhoneField,{...t,slotProps:{inputLabel:{shrink:!0}}})});exports.PhoneField=n;

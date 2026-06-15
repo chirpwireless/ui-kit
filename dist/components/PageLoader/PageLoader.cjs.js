@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("../../jsx-runtime-BRMkMA8J.cjs"),t=require("@mui/material"),r=require("../Loader/index.cjs.js"),o=()=>e.jsxRuntimeExports.jsx(t.Stack,{width:"100%",height:"100vh",children:e.jsxRuntimeExports.jsx(r.Loader,{})});exports.PageLoader=o;
