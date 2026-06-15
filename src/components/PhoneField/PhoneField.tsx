@@ -6,6 +6,6 @@ import * as S from './styles';
 
 export const PhoneField: FC<MuiTelInputProps> = (props) => (
     <FormControl fullWidth>
-        <S.PhoneField {...props} InputLabelProps={{ shrink: true }} />
+        <S.PhoneField {...props} slotProps={{ inputLabel: { shrink: true } }} />
     </FormControl>
 );

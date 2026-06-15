@@ -1,7 +1,6 @@
 import type { Meta } from '@storybook/react';
 import { lightTheme } from './theme/light';
-import { Stack } from '@mui/material';
-import { ClickableColorCell, Typography } from '../_legacy';
+import { Box, Stack, Typography } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import { darkTheme } from './theme/dark';
 
@@ -31,9 +30,17 @@ export const Default = {
                             <Typography>{key}</Typography>
                             {key in palette &&
                                 Object.keys(palette[key]).map((color) => (
-                                    <Stack direction="row" gap={1}>
+                                    <Stack direction="row" gap={1} alignItems="center">
                                         <Typography>{color}</Typography>
-                                        <ClickableColorCell color={palette?.[key]?.[color]} />
+                                        <Box
+                                            sx={{
+                                                width: 24,
+                                                height: 24,
+                                                borderRadius: 1,
+                                                border: '1px solid rgba(0,0,0,0.12)',
+                                                backgroundColor: palette?.[key]?.[color],
+                                            }}
+                                        />
                                     </Stack>
                                 ))}
                         </Stack>

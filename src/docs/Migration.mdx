@@ -6,7 +6,7 @@ import { Meta } from '@storybook/blocks';
 
 `@chirpwireless/ui-kit` v1.0 — мажорный rewrite. Новый публичный API: shell-компоненты
 (`BaseLayout`, `Sidebar`, `UserMenu`, `Header`), обновлённая тема, чистый набор иконок.
-Старая поверхность сохранена под подпутем `/legacy` на одну минорную итерацию для плавной миграции.
+Старая v0.x-поверхность (подпуть `/legacy`) удалена — пакет полностью v1-only.
 
 ## Что нового
 
@@ -14,9 +14,8 @@ import { Meta } from '@storybook/blocks';
   organizations / wallets / feature-flags. Всё прокидывается props/slots.
 - **Тема**: семантическая палитра (`neutral`, `primaryColors`, `borders`, `alerts`, `widgets`) +
   типографика Alliance No.2 / Simplon mono. Два бренд-варианта: `default` (Kilo-blue) и `chirp` (orange).
-- **Иконки**: фокусированный chirp-набор в `@chirpwireless/ui-kit/icons`. Старые наборы
-  (`new-icons`, `themed-fleet-icons`, `fleet-icons`) доступны через `@chirpwireless/ui-kit/legacy`.
-- **MUI 7** в peerDependencies.
+- **Иконки**: фокусированный chirp-набор в `@chirpwireless/ui-kit/icons`.
+- **MUI 9** в peerDependencies.
 
 ## Subpath exports
 
@@ -25,9 +24,6 @@ import { Sidebar, UserMenu, BaseLayout, getTheme } from '@chirpwireless/ui-kit';
 import { DashboardIcon, BellIcon } from '@chirpwireless/ui-kit/icons';
 import { getTheme, type ThemeVariant } from '@chirpwireless/ui-kit/theme';
 import '@chirpwireless/ui-kit/styles.css';
-
-// Legacy (deprecated):
-import { Modal, BadgeSelect } from '@chirpwireless/ui-kit/legacy';
 ```
 
 ## Минимальная интеграция
@@ -88,11 +84,10 @@ export const App = () => {
 - `lightTheme` / `darkTheme` из корневого экспорта переименованы:
   - **Old**: `import { lightTheme, darkTheme } from '@chirpwireless/ui-kit';` → теперь это `kiloLightTheme` /
     `kiloDarkTheme` (или используйте фабрику `getTheme`).
-  - Legacy theme (с `background1..16`, `text1..9`) доступна как `legacyLightTheme` / `legacyDarkTheme`.
 - `LogoutIcon` из старого `./assets/icons` → переименован в `LegacyLogoutIcon` при экспорте из корня.
   Новая иконка — `import { LogoutIcon } from '@chirpwireless/ui-kit/icons'`.
-- MUI 5 → 7. Потребитель обязан обновить свои peers.
-- `@mui/base` / `@mui/styled-engine-sc` убраны из peerDependencies. UserMenu теперь использует MUI 7
+- MUI 5 → 9. Потребитель обязан обновить свои peers.
+- `@mui/base` / `@mui/lab` убраны из peerDependencies. UserMenu теперь использует MUI
   `Menu` напрямую.
 
 ## Что осталось как было
@@ -101,16 +96,10 @@ export const App = () => {
 - `useBreakpoints`, `useDebounce`, `useToggle` — на месте.
 - `uiKitLocaleModule` — i18next-ресурсы по-прежнему мерджатся в потребителя.
 
-## Что переехало под `/legacy`
+## Удалённый `/legacy`
 
 Весь v0.x UI-слой (Modal, Cards, Table, Charts, Maps, Tabs, Select, Autocomplete, …),
 legacy-тема (`theme-provider`, reference-палитры, `legacyLightTheme` / `legacyDarkTheme`) и
-старые наборы иконок больше **не** реэкспортятся из корня — только через подпуть:
-
-```ts
-import { Modal, Table, BadgeSelect } from '@chirpwireless/ui-kit/legacy';
-import { legacyLightTheme } from '@chirpwireless/ui-kit/legacy';
-import { ChirpAltIcon } from '@chirpwireless/ui-kit/legacy/icons';
-```
-
-Так корневой entry остаётся чисто v1, и потребитель не вытягивает legacy случайно.
+старые наборы иконок, ранее доступные через подпуть `@chirpwireless/ui-kit/legacy`, **полностью
+удалены**. Используйте v1-эквиваленты из корневого экспорта, `@chirpwireless/ui-kit/primitives`,
+`@chirpwireless/ui-kit/shell` и `@chirpwireless/ui-kit/icons`.

@@ -67,8 +67,8 @@ export {
 } from './styles/constants';
 
 // --- Shared infrastructure (helpers / hooks / i18n) ---
-// The full v0.x component + theme + icon surface now lives behind the `/legacy`
-// subpath so the root entry stays v1-only and consumers can't pull legacy by accident.
+// The v0.x component/theme/icon surface (previously behind the `/legacy` subpath) has been
+// removed; the package is v1-only.
 
 export * from './helpers';
 

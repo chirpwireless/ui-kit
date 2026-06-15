@@ -13,7 +13,7 @@ export const Tooltip: React.FC<Props> = ({ children, tooltipProps, childrenProps
 
     return (
         <MuiTooltip
-            componentsProps={{
+            slotProps={{
                 tooltip: {
                     sx: {
                         /* 10px as was set in Figma is too small */

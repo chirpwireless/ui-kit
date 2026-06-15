@@ -16,7 +16,7 @@ export const RightSidebarOverlay: FC<Props> = ({ children, gutters = true, isOpe
             gutters={gutters}
             open={isOpen}
             onClose={onClose}
-            BackdropProps={{ sx: { backdropFilter: 'blur(5px)', background: 'rgba(0, 0, 0, 0.12)' } }}
+            slotProps={{ backdrop: { sx: { backdropFilter: 'blur(5px)', background: 'rgba(0, 0, 0, 0.12)' } } }}
         >
             {children}
         </S.Overlay>

@@ -65,17 +65,19 @@ export const ActionsMenu: FC<ActionsMenuProps> = ({
                 anchorReference="anchorPosition"
                 anchorPosition={menuPosition ? { top: menuPosition.top, left: menuPosition.left } : undefined}
                 transformOrigin={transformOrigin}
-                PaperProps={{
-                    sx: {
-                        backgroundColor: (theme) =>
-                            theme.palette.mode === CurrentTheme.Dark
-                                ? chirpPalette(theme).neutral.grey1
-                                : chirpPalette(theme).neutral.white,
-                        border: (theme) => `1px solid ${chirpPalette(theme).borders.primary}`,
-                        borderRadius: '12px',
-                        boxShadow: (theme) => `0 8px 24px ${chirpPalette(theme).shadow ?? 'rgba(0, 0, 0, 0.14)'}`,
-                        backdropFilter: 'blur(10px)',
-                        backgroundImage: 'none',
+                slotProps={{
+                    paper: {
+                        sx: {
+                            backgroundColor: (theme) =>
+                                theme.palette.mode === CurrentTheme.Dark
+                                    ? chirpPalette(theme).neutral.grey1
+                                    : chirpPalette(theme).neutral.white,
+                            border: (theme) => `1px solid ${chirpPalette(theme).borders.primary}`,
+                            borderRadius: '12px',
+                            boxShadow: (theme) => `0 8px 24px ${chirpPalette(theme).shadow ?? 'rgba(0, 0, 0, 0.14)'}`,
+                            backdropFilter: 'blur(10px)',
+                            backgroundImage: 'none',
+                        },
                     },
                 }}
                 sx={{

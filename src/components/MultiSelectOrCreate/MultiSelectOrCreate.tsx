@@ -368,29 +368,31 @@ export const MultiSelectOrCreate: React.FC<MultiSelectOrCreateProps> = ({
                                     autoFocus
                                     fullWidth
                                     onClick={(e) => e.stopPropagation()}
-                                    InputProps={{
-                                        endAdornment: (
-                                            <InputAdornment position="end">
-                                                <IconButton
-                                                    size="small"
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-                                                        handleSaveEdit();
-                                                    }}
-                                                >
-                                                    <CheckIcon fontSize="small" />
-                                                </IconButton>
-                                                <IconButton
-                                                    size="small"
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-                                                        handleCancelEdit();
-                                                    }}
-                                                >
-                                                    <CloseIcon fontSize="small" />
-                                                </IconButton>
-                                            </InputAdornment>
-                                        ),
+                                    slotProps={{
+                                        input: {
+                                            endAdornment: (
+                                                <InputAdornment position="end">
+                                                    <IconButton
+                                                        size="small"
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            handleSaveEdit();
+                                                        }}
+                                                    >
+                                                        <CheckIcon fontSize="small" />
+                                                    </IconButton>
+                                                    <IconButton
+                                                        size="small"
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            handleCancelEdit();
+                                                        }}
+                                                    >
+                                                        <CloseIcon fontSize="small" />
+                                                    </IconButton>
+                                                </InputAdornment>
+                                            ),
+                                        },
                                     }}
                                 />
                             </Box>
@@ -518,9 +520,6 @@ export const MultiSelectOrCreate: React.FC<MultiSelectOrCreateProps> = ({
                     filterOptions={filterOptions}
                     autoHighlight={false}
                     disableListWrap
-                    ListboxProps={{
-                        style: { scrollBehavior: 'auto', maxHeight: '300px', overflow: 'auto' },
-                    }}
                     renderInput={(params) => {
                         const selectedNames = selectedTags.map((tag) => tag.name).join(', ');
 
@@ -528,23 +527,26 @@ export const MultiSelectOrCreate: React.FC<MultiSelectOrCreateProps> = ({
                             <TextField
                                 {...params}
                                 placeholder={selectedNames || placeholder || t('Select tags')}
-                                InputProps={{
-                                    ...params.InputProps,
-                                    startAdornment: null,
-                                }}
-                                inputProps={{
-                                    ...params.inputProps,
-                                    value: selectedNames || params.inputProps?.value || '',
-                                    readOnly: true,
+                                slotProps={{
+                                    ...params.slotProps,
+
+                                    input: {
+                                        ...params.slotProps.input,
+                                        startAdornment: null,
+                                    },
+
+                                    htmlInput: {
+                                        ...params.slotProps.htmlInput,
+                                        value: selectedNames || params.slotProps.htmlInput?.value || '',
+                                        readOnly: true,
+                                    },
                                 }}
                             />
                         );
                     }}
-                    renderTags={() => null}
+                    renderValue={() => null}
                     renderOption={renderOptionMemo}
                     popupIcon={<DropdownIcon />}
-                    PopperComponent={CustomPopper}
-                    PaperComponent={PaperComponentMemo}
                     sx={{
                         '& .MuiOutlinedInput-root': {
                             bgcolor: 'neutral.grey1',
@@ -589,6 +591,15 @@ export const MultiSelectOrCreate: React.FC<MultiSelectOrCreateProps> = ({
                         },
                         '& .MuiAutocomplete-popupIndicator:hover': {
                             backgroundColor: 'transparent',
+                        },
+                    }}
+                    slots={{
+                        paper: PaperComponentMemo,
+                        popper: CustomPopper,
+                    }}
+                    slotProps={{
+                        listbox: {
+                            style: { scrollBehavior: 'auto', maxHeight: '300px', overflow: 'auto' },
                         },
                     }}
                 />

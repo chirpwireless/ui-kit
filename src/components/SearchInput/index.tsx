@@ -28,15 +28,17 @@ export const SearchInput: React.FC<Props> = ({ value, sx, placeholder, onChange,
             placeholder={placeholder || t('Search by name')}
             variant="outlined"
             size={size}
-            InputProps={{
-                startAdornment: (
-                    <InputAdornment
-                        position="start"
-                        sx={{ color: value ? palette.primaryColors.accent : theme.palette.text.disabled }}
-                    >
-                        <SearchIcon width="16px" height="16px" />
-                    </InputAdornment>
-                ),
+            slotProps={{
+                input: {
+                    startAdornment: (
+                        <InputAdornment
+                            position="start"
+                            sx={{ color: value ? palette.primaryColors.accent : theme.palette.text.disabled }}
+                        >
+                            <SearchIcon width="16px" height="16px" />
+                        </InputAdornment>
+                    ),
+                },
             }}
         />
     );

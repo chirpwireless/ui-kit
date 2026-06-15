@@ -23,9 +23,11 @@ export const Notification: FC<Props> = ({ open, message, actionComponent, sx }) 
                 ...sx,
             }}
             action={actionComponent}
-            ContentProps={{
-                sx: {
-                    color: 'neutral.white',
+            slotProps={{
+                content: {
+                    sx: {
+                        color: 'neutral.white',
+                    },
                 },
             }}
         />

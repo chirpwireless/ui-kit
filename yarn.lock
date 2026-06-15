@@ -1574,13 +1574,6 @@
   dependencies:
     undici-types "~6.21.0"
 
-"@types/node@^22.14.1":
-  version "22.19.20"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.19.20.tgz#243823634b177312895dab14a7fb1d0103094313"
-  integrity sha512-6tELRwSDYWW9EdZhbeZmYGZ1/7Djkt+Ah3/ScEYT9cDord7UJzasR/4D3VONg9tQI5CDp+/CZC1AXj2pCFOvpw==
-  dependencies:
-    undici-types "~6.21.0"
-
 "@types/pbf@*", "@types/pbf@^3.0.5":
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/@types/pbf/-/pbf-3.0.5.tgz#a9495a58d8c75be4ffe9a0bd749a307715c07404"
@@ -4026,7 +4019,7 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
-libphonenumber-js@^1.12.6:
+libphonenumber-js@^1.12.41:
   version "1.13.6"
   resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-1.13.6.tgz#83ac92a032292a366edbdd2358f64c5e9c05a983"
   integrity sha512-NdB6O6QvlGMCoG003m0YIKG2+Xw7DjmCZhmc1RH+K6HncADUbRf8TZeLegxBBN1VFyPHcNpPTKpIhYLXzJVy1Q==
@@ -4305,13 +4298,12 @@ muggle-string@^0.4.1:
   resolved "https://registry.yarnpkg.com/muggle-string/-/muggle-string-0.4.1.tgz#3b366bd43b32f809dc20659534dd30e7c8a0d328"
   integrity sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==
 
-mui-tel-input@^9.0.1:
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/mui-tel-input/-/mui-tel-input-9.0.1.tgz#65bb37a2f2acad6971743edb3d05ceaccbcdd6d9"
-  integrity sha512-rt5S7kskx4UpDJfXsclaGJSumG4NHI087aDrzxSXKY84qVQeo6ddd96sD/JurY5gVe/s+M2HVRAZ6uNmzbcXGg==
+mui-tel-input@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/mui-tel-input/-/mui-tel-input-11.0.0.tgz#bb20e3714a3c4c9b2bed81d46036202f6f8cb7d7"
+  integrity sha512-F9OLHW2LHpJavV8eO+OdBRNYBE+j2e1C4Dnj/vfojGl853bawp/ddpNz0Jze1lWTEIau5tRiBDZeQ1EMKA/ZnA==
   dependencies:
-    "@types/node" "^22.14.1"
-    libphonenumber-js "^1.12.6"
+    libphonenumber-js "^1.12.41"
 
 murmurhash-js@^1.0.0:
   version "1.0.0"

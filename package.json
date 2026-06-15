@@ -47,16 +47,6 @@
             "import": "./dist/locales/resources/index.es.js",
             "require": "./dist/locales/resources/index.cjs.js"
         },
-        "./legacy": {
-            "types": "./dist/_legacy/index.d.ts",
-            "import": "./dist/_legacy/index.es.js",
-            "require": "./dist/_legacy/index.cjs.js"
-        },
-        "./legacy/icons": {
-            "types": "./dist/_legacy/assets/index.d.ts",
-            "import": "./dist/_legacy/assets/index.es.js",
-            "require": "./dist/_legacy/assets/index.cjs.js"
-        },
         "./styles.css": "./dist/style.css",
         "./package.json": "./package.json"
     },
@@ -88,12 +78,10 @@
         "@mapbox/mapbox-gl-geocoder": "^5.0.3",
         "@mapbox/mapbox-gl-language": "^1.0.1",
         "@mapbox/mapbox-sdk": "^0.16.1",
-        "@mui/base": "^5.0.0-beta.68",
-        "@mui/icons-material": "^7.0.0",
-        "@mui/lab": "^7.0.0",
-        "@mui/material": "^7.0.0",
-        "@mui/styled-engine-sc": "^6.0.0-alpha.18",
-        "@mui/x-tree-view": "^7.15.0",
+        "@mui/icons-material": "^9.0.0",
+        "@mui/material": "^9.0.0",
+        "@mui/styled-engine-sc": "^9.0.0",
+        "@mui/x-tree-view": "^9.0.0",
         "@nivo/line": "^0.88.0",
         "@tanstack/react-table": "^8.20.6",
         "@tanstack/react-virtual": "^3.10.7",
@@ -109,7 +97,7 @@
         "mapbox-gl": "^3.9.3",
         "mapbox-gl-draw-geodesic": "^2.3.1",
         "moment": "^2.30.1",
-        "mui-tel-input": "^9.0.1",
+        "mui-tel-input": "^11.0.0",
         "react": "^19.0.0",
         "react-colorful": "^5.6.1",
         "react-date-range": "^1.4.0",
@@ -161,7 +149,7 @@
         "glob": "^11.0.0",
         "globals": "^16.0.0",
         "install-peers": "^1.0.4",
-        "mui-tel-input": "^9.0.1",
+        "mui-tel-input": "^11.0.0",
         "prettier": "^3.1.1",
         "react-date-range": "^1.4.0",
         "react-dropzone": "^14.2.10",

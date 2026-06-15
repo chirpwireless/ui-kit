@@ -1,5 +1,5 @@
 import { alpha, ThemeOptions } from '@mui/material';
-import { SelectIndicator } from '@chirp/ui/_legacy';
+import { SelectIndicator } from '@chirp/ui/components/SelectIndicator';
 
 type ComponentCreator = (palette: ThemeOptions['palette']) => ThemeOptions['components'];
 

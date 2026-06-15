@@ -1,4 +1,8 @@
-import type { ThemeOptions } from '@mui/material';
+import type { ThemeOptions, TypographyProps } from '@mui/material';
+
+// Union of all Typography variants — built-in plus the custom ones added via module
+// augmentation (TypographyPropsVariantOverrides in styles/theme.d.ts, e.g. caption12).
+export type CustomTypographyVariant = NonNullable<TypographyProps['variant']>;
 
 export const themeTemplate: ThemeOptions = {
     spacing: 4,
