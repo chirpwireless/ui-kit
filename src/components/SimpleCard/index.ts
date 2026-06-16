@@ -1,16 +1,16 @@
 import type { FC } from 'react';
 
-import { styled, Stack, type StackProps } from '@mui/material';
+import { styled, Box, type BoxProps } from '@mui/material';
 
 import { CurrentTheme } from '../../styles/constants';
 import { chirpPalette } from '../../theme/palette';
 
-// Annotated as FC<StackProps> — Stack is an MUI OverridableComponent; exported styled(Stack)
-// otherwise collapses to `any` in consumers (breaks sx/theme typing). See Stacks/Button.
-export const SimpleCard = styled(Stack)(({ theme }) => {
+export const SimpleCard = styled(Box)(({ theme }) => {
     const palette = chirpPalette(theme);
 
     return {
+        display: 'flex',
+        flexDirection: 'column',
         backgroundColor: theme.palette.mode === CurrentTheme.Dark ? palette.neutral.black : palette.neutral.white,
         border: `none`,
         borderRadius: '12px',
@@ -22,12 +22,14 @@ export const SimpleCard = styled(Stack)(({ theme }) => {
             display: 'none',
         },
     };
-}) as FC<StackProps>;
+}) as FC<BoxProps>;
 
-export const SimpleSmallCard = styled(Stack)(({ theme }) => {
+export const SimpleSmallCard = styled(Box)(({ theme }) => {
     const palette = chirpPalette(theme);
 
     return {
+        display: 'flex',
+        flexDirection: 'column',
         backgroundColor: theme.palette.mode === CurrentTheme.Dark ? palette.neutral.black : palette.neutral.white,
         border: `none`,
         borderRadius: '8px',
@@ -35,4 +37,4 @@ export const SimpleSmallCard = styled(Stack)(({ theme }) => {
         alignItems: 'center',
         justifyContent: 'center',
     };
-}) as FC<StackProps>;
+}) as FC<BoxProps>;

@@ -1,62 +1,36 @@
-import type { CSSProperties, FC } from 'react';
+import type { FC } from 'react';
 
-import { Stack, type StackProps, styled } from '@mui/material';
+import { Box, type BoxProps, styled } from '@mui/material';
 
-type StackLayoutProps = StackProps & {
-    gap?: number;
-    width?: CSSProperties['width'];
-    minWidth?: CSSProperties['minWidth'];
-    maxWidth?: CSSProperties['maxWidth'];
-    flex?: CSSProperties['flex'];
-    overflow?: CSSProperties['overflow'];
-};
+// Layout wrappers built on Box (not Stack). MUI v9 dropped system props from Stack but kept them on
+// Box, so consumers can pass gap/width/alignItems/justifyContent/p/m/position/... directly. These
+// wrappers never used Stack's spacing/divider (gap is plain CSS gap), so Box + explicit flex is
+// behaviourally identical to the old Stack version and needs no per-prop allowlist.
+export const StackRow = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: theme.spacing(2),
+})) as FC<BoxProps>;
 
-const LAYOUT_PROPS = ['gap', 'width', 'minWidth', 'maxWidth', 'flex', 'overflow'];
-const shouldForwardProp = (prop: PropertyKey) => !LAYOUT_PROPS.includes(prop as string);
-
-export const StackRow = styled(Stack, { shouldForwardProp })<StackLayoutProps>(
-    ({ theme, gap, width, minWidth, maxWidth, flex, overflow }) => ({
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: gap ? theme.spacing(gap) : theme.spacing(2),
-        ...(width !== undefined && { width }),
-        ...(minWidth !== undefined && { minWidth }),
-        ...(maxWidth !== undefined && { maxWidth }),
-        ...(flex !== undefined && { flex }),
-        ...(overflow !== undefined && { overflow }),
-    }),
-) as FC<StackLayoutProps>;
-
-export const StackRowJC = styled(StackRow)(() => ({
+export const StackRowJC = styled(StackRow)({
     justifyContent: 'center',
-})) as FC<StackLayoutProps>;
+}) as FC<BoxProps>;
 
-export const StackRowJB = styled(StackRow)(() => ({
+export const StackRowJB = styled(StackRow)({
     justifyContent: 'space-between',
-})) as FC<StackLayoutProps>;
+}) as FC<BoxProps>;
 
-export const StackColumn = styled(Stack, { shouldForwardProp })<StackLayoutProps>(
-    ({ theme, gap, width, minWidth, maxWidth, flex, overflow }) => ({
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: gap ? theme.spacing(gap) : theme.spacing(2),
-        ...(width !== undefined && { width }),
-        ...(minWidth !== undefined && { minWidth }),
-        ...(maxWidth !== undefined && { maxWidth }),
-        ...(flex !== undefined && { flex }),
-        ...(overflow !== undefined && { overflow }),
-    }),
-) as FC<StackLayoutProps>;
+export const StackColumn = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: theme.spacing(2),
+})) as FC<BoxProps>;
 
-export const StackColumnS = styled(Stack, { shouldForwardProp })<StackLayoutProps>(
-    ({ theme, gap, width, minWidth, maxWidth, flex, overflow }) => ({
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        gap: gap ? theme.spacing(gap) : theme.spacing(2),
-        ...(width !== undefined && { width }),
-        ...(minWidth !== undefined && { minWidth }),
-        ...(maxWidth !== undefined && { maxWidth }),
-        ...(flex !== undefined && { flex }),
-        ...(overflow !== undefined && { overflow }),
-    }),
-) as FC<StackLayoutProps>;
+export const StackColumnS = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    gap: theme.spacing(2),
+})) as FC<BoxProps>;

@@ -1,10 +1,12 @@
-import { styled as t, Stack as o } from "@mui/material";
-import { CurrentTheme as a } from "../../styles/constants.es.js";
+import { styled as o, Box as t } from "@mui/material";
+import { CurrentTheme as l } from "../../styles/constants.es.js";
 import { chirpPalette as n } from "../../theme/palette.es.js";
-const i = t(o)(({ theme: e }) => {
+const p = o(t)(({ theme: e }) => {
   const r = n(e);
   return {
-    backgroundColor: e.palette.mode === a.Dark ? r.neutral.black : r.neutral.white,
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: e.palette.mode === l.Dark ? r.neutral.black : r.neutral.white,
     border: "none",
     borderRadius: "12px",
     padding: "24px",
@@ -14,10 +16,12 @@ const i = t(o)(({ theme: e }) => {
       display: "none"
     }
   };
-}), c = t(o)(({ theme: e }) => {
+}), c = o(t)(({ theme: e }) => {
   const r = n(e);
   return {
-    backgroundColor: e.palette.mode === a.Dark ? r.neutral.black : r.neutral.white,
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: e.palette.mode === l.Dark ? r.neutral.black : r.neutral.white,
     border: "none",
     borderRadius: "8px",
     padding: "11px",
@@ -26,6 +30,6 @@ const i = t(o)(({ theme: e }) => {
   };
 });
 export {
-  i as SimpleCard,
+  p as SimpleCard,
   c as SimpleSmallCard
 };

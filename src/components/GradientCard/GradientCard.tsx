@@ -1,12 +1,14 @@
-import { Stack, StackProps, styled } from '@mui/material';
+import { Box, BoxProps, styled } from '@mui/material';
 import { FC } from 'react';
 
 import { chirpPalette } from '../../theme/palette';
 
-export const GradientCard = styled(Stack)(({ theme }) => {
+export const GradientCard = styled(Box)(({ theme }) => {
     const palette = chirpPalette(theme);
 
     return {
+        display: 'flex',
+        flexDirection: 'column',
         padding: '16px',
         background:
             palette.framing?.opacityGradient ??
@@ -16,4 +18,4 @@ export const GradientCard = styled(Stack)(({ theme }) => {
         boxShadow: `0 8px 24px ${palette.shadow ?? 'rgba(0, 0, 0, 0.14)'}`,
         textAlign: 'center',
     };
-}) as FC<StackProps>;
+}) as FC<BoxProps>;
