@@ -1,31 +1,15 @@
-import { styled as n, Stack as r } from "@mui/material";
-import { shouldForwardLayoutProp as a, layoutStyles as c } from "../_layout/layoutProps.es.js";
-const s = n(r, { shouldForwardProp: a })(
-  ({ theme: o, ...t }) => ({
-    flexDirection: "row",
-    alignItems: "center",
-    gap: o.spacing(2),
-    ...c(o, t)
-  })
-), i = n(s)({ justifyContent: "center" }), p = n(s)({ justifyContent: "space-between" }), u = n(r, { shouldForwardProp: a })(
-  ({ theme: o, ...t }) => ({
-    flexDirection: "column",
-    alignItems: "center",
-    gap: o.spacing(2),
-    ...c(o, t)
-  })
-), d = n(r, { shouldForwardProp: a })(
-  ({ theme: o, ...t }) => ({
-    flexDirection: "column",
-    alignItems: "flex-start",
-    gap: o.spacing(2),
-    ...c(o, t)
-  })
+import { styled as n, Stack as e } from "@mui/material";
+const c = (o, t) => typeof t == "number" ? o.spacing(t) : t ?? o.spacing(2), r = n(e, { shouldForwardProp: (o) => o !== "gap" })(
+  ({ theme: o, gap: t }) => ({ flexDirection: "row", alignItems: "center", gap: c(o, t) })
+), s = n(r)({ justifyContent: "center" }), l = n(r)({ justifyContent: "space-between" }), i = n(e, { shouldForwardProp: (o) => o !== "gap" })(
+  ({ theme: o, gap: t }) => ({ flexDirection: "column", alignItems: "center", gap: c(o, t) })
+), p = n(e, { shouldForwardProp: (o) => o !== "gap" })(
+  ({ theme: o, gap: t }) => ({ flexDirection: "column", alignItems: "flex-start", gap: c(o, t) })
 );
 export {
-  u as StackColumn,
-  d as StackColumnS,
-  s as StackRow,
-  p as StackRowJB,
-  i as StackRowJC
+  i as StackColumn,
+  p as StackColumnS,
+  r as StackRow,
+  l as StackRowJB,
+  s as StackRowJC
 };
