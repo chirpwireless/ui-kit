@@ -223,7 +223,15 @@ export const CustomPaper = React.memo<CustomPaperProps & React.ComponentProps<ty
                                         }
                                     }}
                                 >
-                                    <Box px={3} sx={{ display: 'flex', alignItems: 'center', gap: 1, flex: 1 }}>
+                                    <Box
+                                        sx={{
+                                            px: 3,
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: 1,
+                                            flex: 1,
+                                        }}
+                                    >
                                         <Checkbox checked={false} disabled />
                                         <TextField
                                             inputRef={newTagInputRef}
@@ -262,8 +270,14 @@ export const CustomPaper = React.memo<CustomPaperProps & React.ComponentProps<ty
                                 </ClickAwayListener>
                             ) : (
                                 <Box
-                                    px={3}
-                                    sx={{ display: 'flex', alignItems: 'center', gap: 1, flex: 1, cursor: 'pointer' }}
+                                    sx={{
+                                        px: 3,
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: 1,
+                                        flex: 1,
+                                        cursor: 'pointer',
+                                    }}
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         onStartAddNewTag();

@@ -1,6 +1,7 @@
 import { Stack, SxProps, Theme, Typography, useTheme } from '@mui/material';
 import { FC, ReactNode } from 'react';
 
+import { mergeSx } from '../../helpers/merge-sx';
 import { chirpPalette } from '../../theme/palette';
 
 interface MobilePageHeaderProps {
@@ -16,17 +17,33 @@ export const MobilePageHeader: FC<MobilePageHeaderProps> = ({ children, text, su
     return (
         <Stack
             direction="row"
-            alignItems="center"
-            gap={4}
-            justifyContent="space-between"
-            width="auto"
-            px={5}
-            minHeight="64px"
-            borderBottom={`1px solid ${chirpPalette(theme).borders.primary}`}
-            sx={sx}
+            sx={mergeSx(
+                {
+                    alignItems: 'center',
+                    gap: 4,
+                    justifyContent: 'space-between',
+                    width: 'auto',
+                    px: 5,
+                    minHeight: '64px',
+                    borderBottom: `1px solid ${chirpPalette(theme).borders.primary}`,
+                },
+                sx,
+            )}
         >
-            <Stack mb={4} mt={4}>
-                <Typography color="neutral.primary" lineHeight="28px" variant="h3" mb="4px">
+            <Stack
+                sx={{
+                    mb: 4,
+                    mt: 4,
+                }}
+            >
+                <Typography
+                    color="neutral.primary"
+                    variant="h3"
+                    sx={{
+                        lineHeight: '28px',
+                        mb: '4px',
+                    }}
+                >
                     {text}
                 </Typography>
                 {subText ? (

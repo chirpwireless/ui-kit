@@ -1,5 +1,5 @@
 import { jsxRuntimeExports as r } from "../../jsx-runtime-BgepH7Pb.js";
-import { useCallback as x } from "react";
+import { useCallback as c } from "react";
 import { useNavigate as f } from "react-router-dom";
 import { Button as d } from "../Button/Button.es.js";
 import { Loader as j } from "../Loader/index.es.js";
@@ -16,10 +16,10 @@ const B = ({
   sx: p,
   link: o
 }) => {
-  const t = f(), c = x(() => {
+  const t = f(), x = c(() => {
     o && t(o);
   }, [o, t]);
-  return /* @__PURE__ */ r.jsx(h, { sx: p, onClick: c, children: m ? /* @__PURE__ */ r.jsx(j, { size: 48, sx: { color: "neutral.primary" } }) : /* @__PURE__ */ r.jsxs(r.Fragment, { children: [
+  return /* @__PURE__ */ r.jsx(h, { sx: p, onClick: x, children: m ? /* @__PURE__ */ r.jsx(j, { size: 48, sx: { color: "neutral.primary" } }) : /* @__PURE__ */ r.jsxs(r.Fragment, { children: [
     /* @__PURE__ */ r.jsxs(u, { sx: { alignItems: "flex-start" }, children: [
       l,
       a || (e && s ? /* @__PURE__ */ r.jsx(
@@ -34,7 +34,15 @@ const B = ({
         }
       ) : null)
     ] }),
-    /* @__PURE__ */ r.jsx(g, { overflow: "hidden", children: n })
+    /* @__PURE__ */ r.jsx(
+      g,
+      {
+        sx: {
+          overflow: "hidden"
+        },
+        children: n
+      }
+    )
   ] }) });
 };
 export {

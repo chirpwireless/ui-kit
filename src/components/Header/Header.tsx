@@ -34,7 +34,13 @@ const HeaderRoot = styled('header', {
 
 export const Header = ({ logo, rightSlot, onMenuOpen, showMenuButton = true, transparent }: HeaderProps) => (
     <HeaderRoot transparent={transparent}>
-        <Stack direction="row" alignItems="center" gap={2}>
+        <Stack
+            direction="row"
+            sx={{
+                alignItems: 'center',
+                gap: 2,
+            }}
+        >
             {showMenuButton && onMenuOpen ? (
                 <IconButton onClick={onMenuOpen} size="small" edge="start" color="inherit">
                     <ToggleSidebarIcon />

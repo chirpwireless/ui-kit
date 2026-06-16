@@ -15,10 +15,21 @@ export const Modal: FC<Props> = ({ title, description, actionComponent, icon }) 
         <S.Container>
             <S.Modal>
                 {icon}
-                <S.Title mt="24px" mb="12px">
+                <S.Title
+                    sx={{
+                        mt: '24px',
+                        mb: '12px',
+                    }}
+                >
                     {title}
                 </S.Title>
-                <S.Description mb="24px">{description}</S.Description>
+                <S.Description
+                    sx={{
+                        mb: '24px',
+                    }}
+                >
+                    {description}
+                </S.Description>
                 {actionComponent}
             </S.Modal>
         </S.Container>

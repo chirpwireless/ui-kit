@@ -17,14 +17,24 @@ export const Accordion: React.FC<AccordionProps> = ({ expanded, onChange, summar
         <Stack sx={sx}>
             <Stack
                 direction="row"
-                justifyContent="space-between"
-                alignItems="center"
-                gap="12px"
                 onClick={onChange}
-                sx={{ cursor: 'pointer' }}
+                sx={{
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    gap: '12px',
+                    cursor: 'pointer',
+                }}
             >
                 {summary}
-                <Stack direction="row" gap="8px" alignItems="center" justifyContent="flex-end" sx={{ minWidth: 56 }}>
+                <Stack
+                    direction="row"
+                    sx={{
+                        gap: '8px',
+                        alignItems: 'center',
+                        justifyContent: 'flex-end',
+                        minWidth: 56,
+                    }}
+                >
                     {endContent}
                     <Box
                         sx={{
@@ -37,7 +47,6 @@ export const Accordion: React.FC<AccordionProps> = ({ expanded, onChange, summar
                     </Box>
                 </Stack>
             </Stack>
-
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 {children}
             </Collapse>

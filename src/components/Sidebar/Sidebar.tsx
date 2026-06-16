@@ -78,12 +78,21 @@ export const Sidebar = ({
             ) : (
                 topSlot
             )}
-
             <S.List>
                 {groups.map((group, index) => (
-                    <Stack width="100%" key={group[0]?.id ?? group[0]?.name ?? `routes-group-${index}`}>
+                    <Stack
+                        key={group[0]?.id ?? group[0]?.name ?? `routes-group-${index}`}
+                        sx={{
+                            width: '100%',
+                        }}
+                    >
                         {group.map((item) => (
-                            <Stack key={item.id ?? item.name} width="100%">
+                            <Stack
+                                key={item.id ?? item.name}
+                                sx={{
+                                    width: '100%',
+                                }}
+                            >
                                 <RoutesList
                                     item={item}
                                     activePathname={activePathname}
@@ -96,7 +105,14 @@ export const Sidebar = ({
                             </Stack>
                         ))}
                         {index === groups.length - 1 && bottomSlot ? (
-                            <Stack width="100%" mt="12px" gap={3} alignItems="center">
+                            <Stack
+                                sx={{
+                                    width: '100%',
+                                    mt: '12px',
+                                    gap: 3,
+                                    alignItems: 'center',
+                                }}
+                            >
                                 {bottomSlot}
                             </Stack>
                         ) : null}
@@ -104,7 +120,6 @@ export const Sidebar = ({
                     </Stack>
                 ))}
             </S.List>
-
             {footerSlot ? <S.Footer>{footerSlot}</S.Footer> : null}
         </S.SidebarDrawer>
     );

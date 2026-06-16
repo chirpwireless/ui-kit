@@ -30,11 +30,19 @@ export const DialogForm = ({
     return (
         <Box
             component="form"
-            minWidth={{ xs: '100%', sm: '350px', md: 'auto' }}
-            maxWidth={maxWidth}
             onSubmit={onSubmit}
+            sx={{
+                minWidth: { xs: '100%', sm: '350px', md: 'auto' },
+                maxWidth: maxWidth,
+            }}
         >
-            <Stack textAlign="center" gap={2} mb={3}>
+            <Stack
+                sx={{
+                    textAlign: 'center',
+                    gap: 2,
+                    mb: 3,
+                }}
+            >
                 <Typography variant="subtitle1" color="neutral.primary">
                     {title}
                 </Typography>
@@ -44,10 +52,19 @@ export const DialogForm = ({
                     </Typography>
                 )}
             </Stack>
-            <Stack gap="16px" mb="24px">
+            <Stack
+                sx={{
+                    gap: '16px',
+                    mb: '24px',
+                }}
+            >
                 {children}
             </Stack>
-            <StackRowJB width="100%">
+            <StackRowJB
+                sx={{
+                    width: '100%',
+                }}
+            >
                 <Button variant="secondary" type="button" size="medium" onClick={onCancel} sx={{ width: '50%' }}>
                     {cancelText}
                 </Button>

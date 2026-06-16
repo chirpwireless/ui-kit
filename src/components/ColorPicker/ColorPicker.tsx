@@ -89,13 +89,12 @@ export const ColorPicker = ({ value, onChange, title = 'Color', placement = 'top
                     },
                 }}
             />
-
             <Stack
                 direction="row"
-                justifyContent="center"
-                alignItems="center"
                 onClick={handleClick}
                 sx={{
+                    justifyContent: 'center',
+                    alignItems: 'center',
                     width: '100%',
                     minWidth: '40px',
                     height: '36px',
@@ -105,9 +104,11 @@ export const ColorPicker = ({ value, onChange, title = 'Color', placement = 'top
                     cursor: 'pointer',
                     marginTop: hideTitle ? 0 : '16px',
                     boxSizing: 'border-box',
+
                     '&:hover': {
                         borderColor: palette.primaryColors.accent,
                     },
+
                     ...sx,
                 }}
             >
@@ -120,7 +121,6 @@ export const ColorPicker = ({ value, onChange, title = 'Color', placement = 'top
                     }}
                 />
             </Stack>
-
             <Popover
                 open={open}
                 anchorEl={anchorEl}

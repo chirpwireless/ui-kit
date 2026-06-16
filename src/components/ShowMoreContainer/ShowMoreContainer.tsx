@@ -36,11 +36,22 @@ export const ShowMoreContainer: FC<ShowMoreContainerProps> = ({ height, children
 
     return (
         <S.Wrapper>
-            <S.BoxWrapper open={open} height={height} heightFull={heightFull}>
+            <S.BoxWrapper
+                open={open}
+                heightFull={heightFull}
+                sx={{
+                    height: height,
+                }}
+            >
                 {children}
-                <S.Mark className="last-badge" height={height} ref={lastBlockRef} />
+                <S.Mark
+                    className="last-badge"
+                    ref={lastBlockRef}
+                    sx={{
+                        height: height,
+                    }}
+                />
             </S.BoxWrapper>
-
             {!isVisibleLast && (
                 <S.Arrow open={open} onClick={(e) => handleClick(e)}>
                     <ExpandMoreIcon sx={{ width: '16px' }} />

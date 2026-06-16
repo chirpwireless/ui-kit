@@ -96,8 +96,19 @@ export const RoutesList: FC<RoutesListProps> = ({
                             disabled={item.disabled}
                             onClick={handleLeafClick(item)}
                         >
-                            <Stack direction="row" alignItems="center">
-                                <Stack width={ICON_SIZE} height={ICON_SIZE} alignItems="center">
+                            <Stack
+                                direction="row"
+                                sx={{
+                                    alignItems: 'center',
+                                }}
+                            >
+                                <Stack
+                                    sx={{
+                                        width: ICON_SIZE,
+                                        height: ICON_SIZE,
+                                        alignItems: 'center',
+                                    }}
+                                >
                                     {item.icon}
                                 </Stack>
                                 {!isSidebarCollapsed && <S.LinkText variant="body1">{item.name}</S.LinkText>}
@@ -106,7 +117,13 @@ export const RoutesList: FC<RoutesListProps> = ({
                     ) : (
                         <S.MenuParentItem onClick={() => onParentClick(item)}>
                             <Stack direction="row">
-                                <Stack width={ICON_SIZE} height={ICON_SIZE} alignItems="center">
+                                <Stack
+                                    sx={{
+                                        width: ICON_SIZE,
+                                        height: ICON_SIZE,
+                                        alignItems: 'center',
+                                    }}
+                                >
                                     {item.icon}
                                 </Stack>
                                 {!isSidebarCollapsed && <S.LinkText variant="body1">{item.name}</S.LinkText>}
@@ -120,14 +137,31 @@ export const RoutesList: FC<RoutesListProps> = ({
                     )}
                 </S.SidebarItemBox>
             </S.ListItem>
-
-            <Stack sx={childRoutesStyles} direction="column" justifyContent="flex-start" width="100%">
+            <Stack
+                sx={[
+                    {
+                        justifyContent: 'flex-start',
+                        width: '100%',
+                    },
+                    ...(Array.isArray(childRoutesStyles)
+                        ? childRoutesStyles
+                        : childRoutesStyles
+                          ? [childRoutesStyles]
+                          : []),
+                ]}
+                direction="column"
+            >
                 {item.children?.map((child) => {
                     const childIsFolder = isParent(child);
 
                     if (!childIsFolder && child.href) {
                         return (
-                            <Stack width="100%" key={child.id ?? child.name}>
+                            <Stack
+                                key={child.id ?? child.name}
+                                sx={{
+                                    width: '100%',
+                                }}
+                            >
                                 <S.ListChildItem>
                                     <S.SidebarItemBox isActive={matchesPath(child, activePathname)}>
                                         <LinkComponent
@@ -137,9 +171,20 @@ export const RoutesList: FC<RoutesListProps> = ({
                                             disabled={child.disabled}
                                             onClick={handleLeafClick(child)}
                                         >
-                                            <Stack direction="row" alignItems="center">
+                                            <Stack
+                                                direction="row"
+                                                sx={{
+                                                    alignItems: 'center',
+                                                }}
+                                            >
                                                 {child.icon && (
-                                                    <Stack width={ICON_SIZE} height={ICON_SIZE} alignItems="center">
+                                                    <Stack
+                                                        sx={{
+                                                            width: ICON_SIZE,
+                                                            height: ICON_SIZE,
+                                                            alignItems: 'center',
+                                                        }}
+                                                    >
                                                         {child.icon}
                                                     </Stack>
                                                 )}
@@ -156,14 +201,22 @@ export const RoutesList: FC<RoutesListProps> = ({
                     }
 
                     return (
-                        <Stack width="100%" key={child.id ?? child.name}>
+                        <Stack
+                            key={child.id ?? child.name}
+                            sx={{
+                                width: '100%',
+                            }}
+                        >
                             <S.ListChildItem>
                                 <S.SidebarItemBox>
                                     <S.MenuParentItem onClick={() => onParentClick(child)} sx={{ paddingLeft: 0 }}>
                                         <Stack
                                             direction="row"
-                                            alignItems="center"
-                                            sx={{ overflow: 'hidden', minWidth: 0 }}
+                                            sx={{
+                                                alignItems: 'center',
+                                                overflow: 'hidden',
+                                                minWidth: 0,
+                                            }}
                                         >
                                             <S.DropdownIconWrapper isOpen={Boolean(menuParentIsOpen[child.name])}>
                                                 <DropdownIcon />
@@ -179,12 +232,16 @@ export const RoutesList: FC<RoutesListProps> = ({
                             </S.ListChildItem>
                             <Stack
                                 direction="column"
-                                justifyContent="flex-start"
-                                width="100%"
-                                sx={getCollapseStyles(
-                                    Boolean(menuParentIsOpen[child.name]),
-                                    (child.children?.length ?? 0) * (MENU_ITEM_HEIGHT + MENU_ITEM_MARGIN),
-                                )}
+                                sx={[
+                                    {
+                                        justifyContent: 'flex-start',
+                                        width: '100%',
+                                    },
+                                    getCollapseStyles(
+                                        Boolean(menuParentIsOpen[child.name]),
+                                        (child.children?.length ?? 0) * (MENU_ITEM_HEIGHT + MENU_ITEM_MARGIN),
+                                    ),
+                                ]}
                             >
                                 {child.children?.map((grandChild) => (
                                     <S.ListChildItem key={grandChild.id ?? grandChild.name}>
@@ -198,11 +255,21 @@ export const RoutesList: FC<RoutesListProps> = ({
                                             >
                                                 <Stack
                                                     direction="row"
-                                                    alignItems="center"
-                                                    sx={{ paddingLeft: '22px', overflow: 'hidden', minWidth: 0 }}
+                                                    sx={{
+                                                        alignItems: 'center',
+                                                        paddingLeft: '22px',
+                                                        overflow: 'hidden',
+                                                        minWidth: 0,
+                                                    }}
                                                 >
                                                     {grandChild.icon && (
-                                                        <Stack width={ICON_SIZE} height={ICON_SIZE} alignItems="center">
+                                                        <Stack
+                                                            sx={{
+                                                                width: ICON_SIZE,
+                                                                height: ICON_SIZE,
+                                                                alignItems: 'center',
+                                                            }}
+                                                        >
                                                             {grandChild.icon}
                                                         </Stack>
                                                     )}
@@ -221,7 +288,6 @@ export const RoutesList: FC<RoutesListProps> = ({
                     );
                 })}
             </Stack>
-
             {item.appendSlot?.(Boolean(menuParentIsOpen[item.name]))}
         </>
     );

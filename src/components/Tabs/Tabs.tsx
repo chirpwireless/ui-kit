@@ -40,7 +40,13 @@ export function Tabs<T extends string>({
                 const text = renderLabel ? renderLabel(tab) : tab;
 
                 const label = hasCount ? (
-                    <Stack direction="row" alignItems="center" gap="4px">
+                    <Stack
+                        direction="row"
+                        sx={{
+                            alignItems: 'center',
+                            gap: '4px',
+                        }}
+                    >
                         <Typography variant="caption">{text}</Typography>
                         <S.TabBadge>{count}</S.TabBadge>
                     </Stack>

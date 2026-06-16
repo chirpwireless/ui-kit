@@ -7,12 +7,12 @@ import { LogoutIcon as q } from "../../icons/LogoutIcon/index.es.js";
 import { CurrentTheme as z } from "../../styles/constants.es.js";
 import { chirpPalette as v } from "../../theme/palette.es.js";
 import { Avatar as a } from "../../ui/Avatar/Avatar.es.js";
-import { AvatarContainer as y, UserMenuWrap as J, IconButton as h, AlertsIcon as K, Menu as Q, MenuItem as c } from "./styles.es.js";
+import { AvatarContainer as y, UserMenuWrap as J, IconButton as h, AlertsIcon as K, Menu as Q, MenuItem as s } from "./styles.es.js";
 const le = ({
   user: t,
   isMobile: I,
   isCollapsed: k,
-  avatarLoader: s,
+  avatarLoader: c,
   menuItems: u = [],
   organizations: d,
   currentOrganizationId: b,
@@ -39,31 +39,65 @@ const le = ({
     M,
     /* @__PURE__ */ e.jsx(G, { onClickAway: S, children: /* @__PURE__ */ e.jsxs(L, { children: [
       I ? /* @__PURE__ */ e.jsxs(y, { children: [
-        /* @__PURE__ */ e.jsx(h, { onClick: p, children: /* @__PURE__ */ e.jsxs(r, { direction: "row", gap: "8px", alignItems: "center", sx: { cursor: "pointer" }, children: [
-          /* @__PURE__ */ e.jsx(a, { avatar: t.avatar, userName: t.name, loader: s }),
-          /* @__PURE__ */ e.jsx(i, { fontSize: "16px", lineHeight: "16px", color: "neutral.primary", children: t.name })
-        ] }) }),
+        /* @__PURE__ */ e.jsx(h, { onClick: p, children: /* @__PURE__ */ e.jsxs(
+          r,
+          {
+            direction: "row",
+            sx: {
+              gap: "8px",
+              alignItems: "center",
+              cursor: "pointer"
+            },
+            children: [
+              /* @__PURE__ */ e.jsx(a, { avatar: t.avatar, userName: t.name, loader: c }),
+              /* @__PURE__ */ e.jsx(
+                i,
+                {
+                  color: "neutral.primary",
+                  sx: {
+                    fontSize: "16px",
+                    lineHeight: "16px"
+                  },
+                  children: t.name
+                }
+              )
+            ]
+          }
+        ) }),
         t.subtitle ? /* @__PURE__ */ e.jsx(i, { variant: "caption", color: "neutral.grey4", children: t.subtitle }) : null
-      ] }) : /* @__PURE__ */ e.jsx(y, { children: k ? /* @__PURE__ */ e.jsx(r, { direction: "row", alignItems: "center", justifyContent: "center", width: "100%", children: /* @__PURE__ */ e.jsx(
-        a,
+      ] }) : /* @__PURE__ */ e.jsx(y, { children: k ? /* @__PURE__ */ e.jsx(
+        r,
         {
-          avatar: t.avatar,
-          userName: t.name,
-          loader: s,
-          sx: { width: 32, height: 32 }
+          direction: "row",
+          sx: {
+            alignItems: "center",
+            justifyContent: "center",
+            width: "100%"
+          },
+          children: /* @__PURE__ */ e.jsx(
+            a,
+            {
+              avatar: t.avatar,
+              userName: t.name,
+              loader: c,
+              sx: { width: 32, height: 32 }
+            }
+          )
         }
-      ) }) : /* @__PURE__ */ e.jsxs(e.Fragment, { children: [
+      ) : /* @__PURE__ */ e.jsxs(e.Fragment, { children: [
         /* @__PURE__ */ e.jsxs(J, { onClick: p, children: [
-          /* @__PURE__ */ e.jsx(h, { children: /* @__PURE__ */ e.jsx(a, { avatar: t.avatar, userName: t.name, loader: s }) }),
+          /* @__PURE__ */ e.jsx(h, { children: /* @__PURE__ */ e.jsx(a, { avatar: t.avatar, userName: t.name, loader: c }) }),
           /* @__PURE__ */ e.jsxs(
             r,
             {
               direction: "column",
-              alignItems: "flex-start",
-              justifyContent: "center",
-              width: "44px",
-              flexGrow: 1,
-              overflow: "hidden",
+              sx: {
+                alignItems: "flex-start",
+                justifyContent: "center",
+                width: "44px",
+                flexGrow: 1,
+                overflow: "hidden"
+              },
               children: [
                 /* @__PURE__ */ e.jsx(
                   i,
@@ -107,39 +141,93 @@ const le = ({
           anchorOrigin: { vertical: "bottom", horizontal: "left" },
           transformOrigin: { vertical: "top", horizontal: "left" },
           children: [
-            /* @__PURE__ */ e.jsx(c, { children: /* @__PURE__ */ e.jsxs(r, { direction: "row", width: "100%", justifyContent: "space-between", alignItems: "center", children: [
-              /* @__PURE__ */ e.jsx(h, { onClick: p, children: /* @__PURE__ */ e.jsxs(r, { direction: "row", gap: "8px", alignItems: "center", sx: { cursor: "pointer" }, children: [
-                /* @__PURE__ */ e.jsx(
-                  a,
-                  {
-                    sx: { width: 40, height: 40 },
-                    avatar: t.avatar,
-                    userName: t.name,
-                    loader: s
-                  }
-                ),
-                /* @__PURE__ */ e.jsx(i, { fontSize: "16px", lineHeight: "16px", color: "neutral.primary", children: t.name })
-              ] }) }),
-              /* @__PURE__ */ e.jsx(
-                r,
-                {
-                  width: 20,
-                  height: 20,
+            /* @__PURE__ */ e.jsx(s, { children: /* @__PURE__ */ e.jsxs(
+              r,
+              {
+                direction: "row",
+                sx: {
+                  width: "100%",
+                  justifyContent: "space-between",
+                  alignItems: "center"
+                },
+                children: [
+                  /* @__PURE__ */ e.jsx(h, { onClick: p, children: /* @__PURE__ */ e.jsxs(
+                    r,
+                    {
+                      direction: "row",
+                      sx: {
+                        gap: "8px",
+                        alignItems: "center",
+                        cursor: "pointer"
+                      },
+                      children: [
+                        /* @__PURE__ */ e.jsx(
+                          a,
+                          {
+                            sx: { width: 40, height: 40 },
+                            avatar: t.avatar,
+                            userName: t.name,
+                            loader: c
+                          }
+                        ),
+                        /* @__PURE__ */ e.jsx(
+                          i,
+                          {
+                            color: "neutral.primary",
+                            sx: {
+                              fontSize: "16px",
+                              lineHeight: "16px"
+                            },
+                            children: t.name
+                          }
+                        )
+                      ]
+                    }
+                  ) }),
+                  /* @__PURE__ */ e.jsx(
+                    r,
+                    {
+                      onClick: g,
+                      sx: {
+                        width: 20,
+                        height: 20,
+                        alignItems: "center",
+                        justifyContent: "center"
+                      },
+                      children: /* @__PURE__ */ e.jsx($, {})
+                    }
+                  )
+                ]
+              }
+            ) }),
+            T.map((n) => /* @__PURE__ */ e.jsx(s, { onClick: () => E(n.onClick), children: /* @__PURE__ */ e.jsxs(
+              r,
+              {
+                direction: "row",
+                sx: {
                   alignItems: "center",
-                  justifyContent: "center",
-                  onClick: g,
-                  children: /* @__PURE__ */ e.jsx($, {})
-                }
-              )
-            ] }) }),
-            T.map((n) => /* @__PURE__ */ e.jsx(c, { onClick: () => E(n.onClick), children: /* @__PURE__ */ e.jsxs(r, { direction: "row", alignItems: "center", gap: 2, children: [
-              n.icon ? /* @__PURE__ */ e.jsx(r, { width: 20, height: 20, alignItems: "center", children: n.icon }) : null,
-              /* @__PURE__ */ e.jsx(i, { variant: "body1", children: n.label })
-            ] }) }, n.id)),
+                  gap: 2
+                },
+                children: [
+                  n.icon ? /* @__PURE__ */ e.jsx(
+                    r,
+                    {
+                      sx: {
+                        width: 20,
+                        height: 20,
+                        alignItems: "center"
+                      },
+                      children: n.icon
+                    }
+                  ) : null,
+                  /* @__PURE__ */ e.jsx(i, { variant: "body1", children: n.label })
+                ]
+              }
+            ) }, n.id)),
             d && d.length > 0 ? [
               /* @__PURE__ */ e.jsx(C, {}, "org-divider"),
               /* @__PURE__ */ e.jsx(
-                c,
+                s,
                 {
                   color: "neutral.grey4",
                   sx: {
@@ -155,40 +243,54 @@ const le = ({
               ...d.map((n) => {
                 var f;
                 const o = b === n.id;
-                return /* @__PURE__ */ e.jsx(c, { onClick: () => W(n.id), children: /* @__PURE__ */ e.jsxs(
+                return /* @__PURE__ */ e.jsx(s, { onClick: () => W(n.id), children: /* @__PURE__ */ e.jsxs(
                   r,
                   {
                     direction: "row",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    width: "100%",
+                    sx: {
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      width: "100%"
+                    },
                     children: [
-                      /* @__PURE__ */ e.jsxs(r, { direction: "row", alignItems: "center", gap: 2, children: [
-                        /* @__PURE__ */ e.jsx(P, { sx: { width: 24, height: 24 }, children: ((f = n.name) == null ? void 0 : f[0]) ?? "" }),
-                        /* @__PURE__ */ e.jsx(
-                          i,
-                          {
-                            variant: "body1",
-                            title: n.name,
-                            sx: {
-                              width: n.badge ? "100px" : "165px",
-                              overflow: "hidden",
-                              textOverflow: "ellipsis",
-                              whiteSpace: "nowrap"
-                            },
-                            children: n.name
-                          }
-                        ),
-                        n.badge
-                      ] }),
+                      /* @__PURE__ */ e.jsxs(
+                        r,
+                        {
+                          direction: "row",
+                          sx: {
+                            alignItems: "center",
+                            gap: 2
+                          },
+                          children: [
+                            /* @__PURE__ */ e.jsx(P, { sx: { width: 24, height: 24 }, children: ((f = n.name) == null ? void 0 : f[0]) ?? "" }),
+                            /* @__PURE__ */ e.jsx(
+                              i,
+                              {
+                                variant: "body1",
+                                title: n.name,
+                                sx: {
+                                  width: n.badge ? "100px" : "165px",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap"
+                                },
+                                children: n.name
+                              }
+                            ),
+                            n.badge
+                          ]
+                        }
+                      ),
                       o ? /* @__PURE__ */ e.jsx(
                         r,
                         {
-                          width: 24,
-                          height: 24,
-                          alignItems: "center",
-                          justifyContent: "center",
                           color: "primaryColors.accent",
+                          sx: {
+                            width: 24,
+                            height: 24,
+                            alignItems: "center",
+                            justifyContent: "center"
+                          },
                           children: /* @__PURE__ */ e.jsx(R, {})
                         }
                       ) : null
@@ -198,10 +300,30 @@ const le = ({
               })
             ] : null,
             /* @__PURE__ */ e.jsx(C, {}),
-            /* @__PURE__ */ e.jsx(c, { onClick: F, children: /* @__PURE__ */ e.jsxs(r, { direction: "row", alignItems: "center", gap: 2, children: [
-              /* @__PURE__ */ e.jsx(r, { width: 20, height: 20, alignItems: "center", children: /* @__PURE__ */ e.jsx(q, {}) }),
-              /* @__PURE__ */ e.jsx(i, { variant: "body1", children: D })
-            ] }) })
+            /* @__PURE__ */ e.jsx(s, { onClick: F, children: /* @__PURE__ */ e.jsxs(
+              r,
+              {
+                direction: "row",
+                sx: {
+                  alignItems: "center",
+                  gap: 2
+                },
+                children: [
+                  /* @__PURE__ */ e.jsx(
+                    r,
+                    {
+                      sx: {
+                        width: 20,
+                        height: 20,
+                        alignItems: "center"
+                      },
+                      children: /* @__PURE__ */ e.jsx(q, {})
+                    }
+                  ),
+                  /* @__PURE__ */ e.jsx(i, { variant: "body1", children: D })
+                ]
+              }
+            ) })
           ]
         }
       ) : null

@@ -7,11 +7,11 @@ import { Dialog as W, Wrapper as B, CloseButton as P, ButtonGroup as R } from ".
 const M = ({
   isOpen: p,
   title: u,
-  subTitle: c,
-  icon: m,
+  subTitle: x,
+  icon: c,
   confirmButtonText: i,
   cancelButtonText: o,
-  onCancel: x,
+  onCancel: m,
   onConfirm: h,
   onClose: t,
   buttonDirection: g = "row",
@@ -38,11 +38,29 @@ const M = ({
       sx: l ? { "& .MuiDialog-paper": l } : void 0,
       children: /* @__PURE__ */ r.jsxs(B, { children: [
         t ? /* @__PURE__ */ r.jsx(P, { type: "button", onClick: t, "aria-label": e("Close"), children: /* @__PURE__ */ r.jsx(D, {}) }) : null,
-        m,
-        /* @__PURE__ */ r.jsxs(C, { gap: 2, children: [
-          /* @__PURE__ */ r.jsx(s, { variant: "subtitle1", children: u }),
-          /* @__PURE__ */ r.jsx(s, { variant: "body1", color: "neutral.grey4", padding: "0px 26px", children: c })
-        ] }),
+        c,
+        /* @__PURE__ */ r.jsxs(
+          C,
+          {
+            sx: {
+              gap: 2
+            },
+            children: [
+              /* @__PURE__ */ r.jsx(s, { variant: "subtitle1", children: u }),
+              /* @__PURE__ */ r.jsx(
+                s,
+                {
+                  variant: "body1",
+                  color: "neutral.grey4",
+                  sx: {
+                    padding: "0px 26px"
+                  },
+                  children: x
+                }
+              )
+            ]
+          }
+        ),
         f,
         /* @__PURE__ */ r.jsxs(R, { direction: g, children: [
           o ? /* @__PURE__ */ r.jsx(
@@ -51,7 +69,7 @@ const M = ({
               variant: j,
               size: "medium",
               fullWidth: !0,
-              onClick: x,
+              onClick: m,
               "data-automationid": y,
               children: o
             }

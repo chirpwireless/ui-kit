@@ -52,10 +52,12 @@ const F = 40, O = 50, G = ({
   }, [c]), /* @__PURE__ */ E.jsx(
     A,
     {
-      height: "100%",
-      overflow: "auto",
       ref: r,
       onScroll: (t) => c(t.target),
+      sx: {
+        height: "100%",
+        overflow: "auto"
+      },
       children: /* @__PURE__ */ E.jsx(
         Y,
         {

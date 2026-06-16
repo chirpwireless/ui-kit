@@ -99,21 +99,24 @@ export const TableVirtualizedInfinite = <TData,>({
 
     return (
         <Box
-            height="100%"
-            overflow="auto"
             ref={virtualizedRef}
             onScroll={handleScroll}
             sx={{
+                height: '100%',
+                overflow: 'auto',
                 position: 'relative',
                 borderRadius: '12px',
                 width: '100%',
                 overflowX: 'hidden',
+
                 '::-webkit-scrollbar': {
                     width: '3px',
                 },
+
                 '::-webkit-scrollbar-thumb': {
                     borderRadius: '4px',
                 },
+
                 '&:hover': {
                     '::-webkit-scrollbar-thumb': {
                         backgroundColor: 'neutral.grey4',

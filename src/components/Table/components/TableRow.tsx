@@ -27,7 +27,12 @@ export const TableRow = <TData,>({
         <>
             <S.Row sx={sx} onClick={() => onClick?.(row)} disableHover={disableHover}>
                 {row.getVisibleCells().map((cell) => (
-                    <S.Cell key={cell.id} width={cell.column.getSize()}>
+                    <S.Cell
+                        key={cell.id}
+                        sx={{
+                            width: cell.column.getSize(),
+                        }}
+                    >
                         {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </S.Cell>
                 ))}

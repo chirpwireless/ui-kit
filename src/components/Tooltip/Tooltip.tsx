@@ -1,5 +1,6 @@
 import { Box, Tooltip as MuiTooltip, SxProps, TooltipProps, alpha, useTheme } from '@mui/material';
 
+import { mergeSx } from '../../helpers/merge-sx';
 import { chirpPalette } from '../../theme/palette';
 
 type Props = TooltipProps & {
@@ -29,7 +30,17 @@ export const Tooltip: React.FC<Props> = ({ children, tooltipProps, childrenProps
             }}
             {...props}
         >
-            <Box display="inline-block" height="min-content" width="min-content" maxWidth="100%" sx={childrenProps}>
+            <Box
+                sx={mergeSx(
+                    {
+                        display: 'inline-block',
+                        height: 'min-content',
+                        width: 'min-content',
+                        maxWidth: '100%',
+                    },
+                    childrenProps,
+                )}
+            >
                 {children}
             </Box>
         </MuiTooltip>

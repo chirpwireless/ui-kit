@@ -6,27 +6,41 @@ const d = ({ expanded: o, onChange: r, summary: e, endContent: i, children: s, s
     n,
     {
       direction: "row",
-      justifyContent: "space-between",
-      alignItems: "center",
-      gap: "12px",
       onClick: r,
-      sx: { cursor: "pointer" },
+      sx: {
+        justifyContent: "space-between",
+        alignItems: "center",
+        gap: "12px",
+        cursor: "pointer"
+      },
       children: [
         e,
-        /* @__PURE__ */ t.jsxs(n, { direction: "row", gap: "8px", alignItems: "center", justifyContent: "flex-end", sx: { minWidth: 56 }, children: [
-          i,
-          /* @__PURE__ */ t.jsx(
-            c,
-            {
-              sx: {
-                display: "flex",
-                transition: "transform 0.2s",
-                transform: o ? "rotate(180deg)" : "none"
-              },
-              children: /* @__PURE__ */ t.jsx(a, {})
-            }
-          )
-        ] })
+        /* @__PURE__ */ t.jsxs(
+          n,
+          {
+            direction: "row",
+            sx: {
+              gap: "8px",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              minWidth: 56
+            },
+            children: [
+              i,
+              /* @__PURE__ */ t.jsx(
+                c,
+                {
+                  sx: {
+                    display: "flex",
+                    transition: "transform 0.2s",
+                    transform: o ? "rotate(180deg)" : "none"
+                  },
+                  children: /* @__PURE__ */ t.jsx(a, {})
+                }
+              )
+            ]
+          }
+        )
       ]
     }
   ),

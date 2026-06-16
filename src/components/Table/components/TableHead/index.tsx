@@ -30,8 +30,12 @@ export const TableHead = <TData,>({ columns, enableSorting, sortingState }: Prop
                     return (
                         <S.HeadCell
                             key={id}
-                            sx={{ width: (meta as TableMeta)?.width, maxWidth, textAlign: (meta as TableMeta)?.align }}
-                            width={columnDef.size}
+                            sx={{
+                                width: columnDef.size,
+                                width: (meta as TableMeta)?.width,
+                                maxWidth,
+                                textAlign: (meta as TableMeta)?.align,
+                            }}
                         >
                             {needSorting ? (
                                 <TableSortLabel IconComponent={IconComponent} onClick={getToggleSortingHandler()}>

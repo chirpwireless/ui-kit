@@ -1,6 +1,7 @@
 import { SxProps } from '@mui/material';
 import { ChangeEvent } from 'react';
 
+import { mergeSx } from '../../helpers/merge-sx';
 import * as S from './style';
 
 type Props = {
@@ -16,7 +17,7 @@ type Props = {
 
 const Toggle = ({ name, label, checked, isLoading, disabled = false, onChange, sx, labelSx }: Props) => {
     return (
-        <S.Toggle sx={{ cursor: disabled ? 'initial' : 'pointer', ...(sx ? { sx } : {}) }}>
+        <S.Toggle sx={mergeSx({ cursor: disabled ? 'initial' : 'pointer' }, sx)}>
             <S.HiddenInput
                 type="checkbox"
                 checked={checked}
@@ -37,7 +38,7 @@ const Toggle = ({ name, label, checked, isLoading, disabled = false, onChange, s
 };
 
 const MobileToggle = ({ name, label, checked, isLoading, disabled = false, onChange, sx, labelSx }: Props) => (
-    <S.MobileToggle sx={{ cursor: disabled ? 'initial' : 'pointer', ...(sx ? { sx } : {}) }}>
+    <S.MobileToggle sx={mergeSx({ cursor: disabled ? 'initial' : 'pointer' }, sx)}>
         <S.HiddenInput
             type="checkbox"
             checked={checked}
@@ -46,7 +47,12 @@ const MobileToggle = ({ name, label, checked, isLoading, disabled = false, onCha
             disabled={disabled || isLoading}
         />
         {label && (
-            <S.Label component="span" checked={checked} disabled={disabled} mr="0 !important" sx={labelSx}>
+            <S.Label
+                component="span"
+                checked={checked}
+                disabled={disabled}
+                sx={mergeSx({ mr: '0 !important' }, labelSx)}
+            >
                 {label}
             </S.Label>
         )}

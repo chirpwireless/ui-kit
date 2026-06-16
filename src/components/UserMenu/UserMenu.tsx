@@ -64,13 +64,19 @@ export const UserMenu = ({
     return (
         <>
             {bannerSlot}
-
             <ClickAwayListener onClickAway={handleClickAway}>
                 <Box>
                     {!isMobile ? (
                         <S.AvatarContainer>
                             {isCollapsed ? (
-                                <Stack direction="row" alignItems="center" justifyContent="center" width="100%">
+                                <Stack
+                                    direction="row"
+                                    sx={{
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        width: '100%',
+                                    }}
+                                >
                                     <Avatar
                                         avatar={user.avatar}
                                         userName={user.name}
@@ -86,11 +92,13 @@ export const UserMenu = ({
                                         </S.IconButton>
                                         <Stack
                                             direction="column"
-                                            alignItems="flex-start"
-                                            justifyContent="center"
-                                            width="44px"
-                                            flexGrow={1}
-                                            overflow="hidden"
+                                            sx={{
+                                                alignItems: 'flex-start',
+                                                justifyContent: 'center',
+                                                width: '44px',
+                                                flexGrow: 1,
+                                                overflow: 'hidden',
+                                            }}
                                         >
                                             <Typography
                                                 color="currentColor"
@@ -131,9 +139,22 @@ export const UserMenu = ({
                     ) : (
                         <S.AvatarContainer>
                             <S.IconButton onClick={handleMenuClick}>
-                                <Stack direction="row" gap="8px" alignItems="center" sx={{ cursor: 'pointer' }}>
+                                <Stack
+                                    direction="row"
+                                    sx={{
+                                        gap: '8px',
+                                        alignItems: 'center',
+                                        cursor: 'pointer',
+                                    }}
+                                >
                                     <Avatar avatar={user.avatar} userName={user.name} loader={avatarLoader} />
-                                    <Typography fontSize="16px" lineHeight="16px" color="neutral.primary">
+                                    <Typography
+                                        color="neutral.primary"
+                                        sx={{
+                                            fontSize: '16px',
+                                            lineHeight: '16px',
+                                        }}
+                                    >
                                         {user.name}
                                     </Typography>
                                 </Stack>
@@ -155,26 +176,48 @@ export const UserMenu = ({
                             transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                         >
                             <S.MenuItem>
-                                <Stack direction="row" width="100%" justifyContent="space-between" alignItems="center">
+                                <Stack
+                                    direction="row"
+                                    sx={{
+                                        width: '100%',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center',
+                                    }}
+                                >
                                     <S.IconButton onClick={handleMenuClick}>
-                                        <Stack direction="row" gap="8px" alignItems="center" sx={{ cursor: 'pointer' }}>
+                                        <Stack
+                                            direction="row"
+                                            sx={{
+                                                gap: '8px',
+                                                alignItems: 'center',
+                                                cursor: 'pointer',
+                                            }}
+                                        >
                                             <Avatar
                                                 sx={{ width: 40, height: 40 }}
                                                 avatar={user.avatar}
                                                 userName={user.name}
                                                 loader={avatarLoader}
                                             />
-                                            <Typography fontSize="16px" lineHeight="16px" color="neutral.primary">
+                                            <Typography
+                                                color="neutral.primary"
+                                                sx={{
+                                                    fontSize: '16px',
+                                                    lineHeight: '16px',
+                                                }}
+                                            >
                                                 {user.name}
                                             </Typography>
                                         </Stack>
                                     </S.IconButton>
                                     <Stack
-                                        width={20}
-                                        height={20}
-                                        alignItems="center"
-                                        justifyContent="center"
                                         onClick={handleClose}
+                                        sx={{
+                                            width: 20,
+                                            height: 20,
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                        }}
                                     >
                                         <DropdownIcon />
                                     </Stack>
@@ -183,9 +226,21 @@ export const UserMenu = ({
 
                             {visibleMenuItems.map((item) => (
                                 <S.MenuItem key={item.id} onClick={() => handleMenuItemClick(item.onClick)}>
-                                    <Stack direction="row" alignItems="center" gap={2}>
+                                    <Stack
+                                        direction="row"
+                                        sx={{
+                                            alignItems: 'center',
+                                            gap: 2,
+                                        }}
+                                    >
                                         {item.icon ? (
-                                            <Stack width={20} height={20} alignItems="center">
+                                            <Stack
+                                                sx={{
+                                                    width: 20,
+                                                    height: 20,
+                                                    alignItems: 'center',
+                                                }}
+                                            >
                                                 {item.icon}
                                             </Stack>
                                         ) : null}
@@ -220,11 +275,19 @@ export const UserMenu = ({
                                               <S.MenuItem key={org.id} onClick={() => handleSelectOrganization(org.id)}>
                                                   <Stack
                                                       direction="row"
-                                                      alignItems="center"
-                                                      justifyContent="space-between"
-                                                      width="100%"
+                                                      sx={{
+                                                          alignItems: 'center',
+                                                          justifyContent: 'space-between',
+                                                          width: '100%',
+                                                      }}
                                                   >
-                                                      <Stack direction="row" alignItems="center" gap={2}>
+                                                      <Stack
+                                                          direction="row"
+                                                          sx={{
+                                                              alignItems: 'center',
+                                                              gap: 2,
+                                                          }}
+                                                      >
                                                           <MuiAvatar sx={{ width: 24, height: 24 }}>
                                                               {org.name?.[0] ?? ''}
                                                           </MuiAvatar>
@@ -244,11 +307,13 @@ export const UserMenu = ({
                                                       </Stack>
                                                       {isCurrent ? (
                                                           <Stack
-                                                              width={24}
-                                                              height={24}
-                                                              alignItems="center"
-                                                              justifyContent="center"
                                                               color="primaryColors.accent"
+                                                              sx={{
+                                                                  width: 24,
+                                                                  height: 24,
+                                                                  alignItems: 'center',
+                                                                  justifyContent: 'center',
+                                                              }}
                                                           >
                                                               <Checkmark />
                                                           </Stack>
@@ -262,8 +327,20 @@ export const UserMenu = ({
 
                             <Divider />
                             <S.MenuItem onClick={handleLogout}>
-                                <Stack direction="row" alignItems="center" gap={2}>
-                                    <Stack width={20} height={20} alignItems="center">
+                                <Stack
+                                    direction="row"
+                                    sx={{
+                                        alignItems: 'center',
+                                        gap: 2,
+                                    }}
+                                >
+                                    <Stack
+                                        sx={{
+                                            width: 20,
+                                            height: 20,
+                                            alignItems: 'center',
+                                        }}
+                                    >
                                         <LogoutIcon />
                                     </Stack>
                                     <Typography variant="body1">{logoutLabel}</Typography>

@@ -13,10 +13,14 @@ export const TextSkeleton: React.FC<TextSkeletonProps> = ({ width, height, sx })
 
     return (
         <Box
-            width={width ?? '120px'}
-            height={height ?? theme.typography.body1.lineHeight}
-            display="inline-block"
-            sx={{ borderRadius: '8px', overflow: 'hidden', ...sx }}
+            sx={{
+                width: width ?? '120px',
+                height: height ?? theme.typography.body1.lineHeight,
+                display: 'inline-block',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                ...sx,
+            }}
         >
             <Skeleton />
         </Box>

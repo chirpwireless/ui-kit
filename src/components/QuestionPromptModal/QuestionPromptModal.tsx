@@ -51,7 +51,11 @@ export const QuestionPromptModal: FC<Props> = ({
         >
             <S.Wrapper>
                 {icon}
-                <Stack gap={3}>
+                <Stack
+                    sx={{
+                        gap: 3,
+                    }}
+                >
                     <Typography variant="caption" color="neutral.grey4">
                         {subTitle}
                     </Typography>

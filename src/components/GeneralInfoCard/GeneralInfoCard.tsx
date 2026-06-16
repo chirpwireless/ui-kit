@@ -62,7 +62,13 @@ export const GeneralInfoCard: React.FC<GeneralInfoCardProps> = ({
                             </Button>
                         ) : null}
                     </StackRowJB>
-                    <StackRow overflow="hidden">{footer}</StackRow>
+                    <StackRow
+                        sx={{
+                            overflow: 'hidden',
+                        }}
+                    >
+                        {footer}
+                    </StackRow>
                 </>
             )}
         </S.Wrapper>

@@ -159,44 +159,62 @@ const j = Y(o)(({ theme: i }) => ({
               onClickAway: () => {
                 t.trim() ? c(t) : x();
               },
-              children: /* @__PURE__ */ e.jsxs(o, { px: 3, sx: { display: "flex", alignItems: "center", gap: 1, flex: 1 }, children: [
-                /* @__PURE__ */ e.jsx(y, { checked: !1, disabled: !0 }),
-                /* @__PURE__ */ e.jsx(
-                  H,
-                  {
-                    inputRef: D,
-                    size: "small",
-                    fullWidth: !0,
-                    value: t,
-                    onChange: (r) => C(r.target.value),
-                    onKeyDown: (r) => {
-                      r.stopPropagation(), r.key === "Enter" && t.trim() ? (r.preventDefault(), c(t)) : r.key === "Escape" && x();
-                    },
-                    onClick: (r) => r.stopPropagation(),
-                    onMouseDown: (r) => r.stopPropagation(),
-                    onFocus: (r) => r.stopPropagation(),
-                    placeholder: I,
-                    autoFocus: !0,
-                    sx: {
-                      "& .MuiOutlinedInput-root": {
-                        bgcolor: "transparent"
-                      },
-                      "& .MuiOutlinedInput-notchedOutline": {
-                        border: "none"
-                      },
-                      "& .MuiInputBase-input": {
-                        p: 0
+              children: /* @__PURE__ */ e.jsxs(
+                o,
+                {
+                  sx: {
+                    px: 3,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+                    flex: 1
+                  },
+                  children: [
+                    /* @__PURE__ */ e.jsx(y, { checked: !1, disabled: !0 }),
+                    /* @__PURE__ */ e.jsx(
+                      H,
+                      {
+                        inputRef: D,
+                        size: "small",
+                        fullWidth: !0,
+                        value: t,
+                        onChange: (r) => C(r.target.value),
+                        onKeyDown: (r) => {
+                          r.stopPropagation(), r.key === "Enter" && t.trim() ? (r.preventDefault(), c(t)) : r.key === "Escape" && x();
+                        },
+                        onClick: (r) => r.stopPropagation(),
+                        onMouseDown: (r) => r.stopPropagation(),
+                        onFocus: (r) => r.stopPropagation(),
+                        placeholder: I,
+                        autoFocus: !0,
+                        sx: {
+                          "& .MuiOutlinedInput-root": {
+                            bgcolor: "transparent"
+                          },
+                          "& .MuiOutlinedInput-notchedOutline": {
+                            border: "none"
+                          },
+                          "& .MuiInputBase-input": {
+                            p: 0
+                          }
+                        }
                       }
-                    }
-                  }
-                )
-              ] })
+                    )
+                  ]
+                }
+              )
             }
           ) : /* @__PURE__ */ e.jsxs(
             o,
             {
-              px: 3,
-              sx: { display: "flex", alignItems: "center", gap: 1, flex: 1, cursor: "pointer" },
+              sx: {
+                px: 3,
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+                flex: 1,
+                cursor: "pointer"
+              },
               onClick: (r) => {
                 r.stopPropagation(), a();
               },

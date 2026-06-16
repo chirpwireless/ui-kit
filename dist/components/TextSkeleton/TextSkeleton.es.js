@@ -6,10 +6,14 @@ const d = ({ width: o, height: t, sx: r }) => {
   return /* @__PURE__ */ e.jsx(
     p,
     {
-      width: o ?? "120px",
-      height: t ?? i.typography.body1.lineHeight,
-      display: "inline-block",
-      sx: { borderRadius: "8px", overflow: "hidden", ...r },
+      sx: {
+        width: o ?? "120px",
+        height: t ?? i.typography.body1.lineHeight,
+        display: "inline-block",
+        borderRadius: "8px",
+        overflow: "hidden",
+        ...r
+      },
       children: /* @__PURE__ */ e.jsx(s, {})
     }
   );

@@ -13,8 +13,12 @@ const k = ({ columns: l, enableSorting: m, sortingState: c }) => /* @__PURE__ */
   return r && (s = r != null && r.desc ? b : j), /* @__PURE__ */ t.jsx(
     T,
     {
-      sx: { width: o == null ? void 0 : o.width, maxWidth: x, textAlign: o == null ? void 0 : o.align },
-      width: n.size,
+      sx: {
+        width: n.size,
+        width: o == null ? void 0 : o.width,
+        maxWidth: x,
+        textAlign: o == null ? void 0 : o.align
+      },
       children: h ? /* @__PURE__ */ t.jsx(C, { IconComponent: s, onClick: p(), children: i }) : i
     },
     e

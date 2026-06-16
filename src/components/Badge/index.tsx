@@ -15,7 +15,13 @@ export const Badge = forwardRef(({ index, text, sx, getRef }: BadgeProps, ref) =
 
     return (
         <S.Badge ref={getRef ? getRef(index ?? 0) : ref} sx={sx}>
-            <Typography noWrap fontSize="12px" lineHeight="16px">
+            <Typography
+                noWrap
+                sx={{
+                    fontSize: '12px',
+                    lineHeight: '16px',
+                }}
+            >
                 {text}
             </Typography>
         </S.Badge>
@@ -28,7 +34,13 @@ interface SimpleBadgeProps {
 
 export const SimpleBadge = ({ text }: SimpleBadgeProps) => (
     <S.SimpleBadge>
-        <Typography noWrap fontSize="12px" lineHeight="16px">
+        <Typography
+            noWrap
+            sx={{
+                fontSize: '12px',
+                lineHeight: '16px',
+            }}
+        >
             {text}
         </Typography>
     </S.SimpleBadge>

@@ -58,10 +58,10 @@ const I = (o) => !!o, O = {
       w,
       {
         direction: "row",
-        justifyContent: "center",
-        alignItems: "center",
         onClick: b,
         sx: {
+          justifyContent: "center",
+          alignItems: "center",
           width: "100%",
           minWidth: "40px",
           height: "36px",

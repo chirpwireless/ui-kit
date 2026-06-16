@@ -31,10 +31,18 @@ const E = ({
       },
       children: /* @__PURE__ */ r.jsxs(R, { children: [
         m,
-        /* @__PURE__ */ r.jsxs(v, { gap: 3, children: [
-          /* @__PURE__ */ r.jsx(s, { variant: "caption", color: "neutral.grey4", children: x }),
-          /* @__PURE__ */ r.jsx(s, { variant: "h4", children: p })
-        ] }),
+        /* @__PURE__ */ r.jsxs(
+          v,
+          {
+            sx: {
+              gap: 3
+            },
+            children: [
+              /* @__PURE__ */ r.jsx(s, { variant: "caption", color: "neutral.grey4", children: x }),
+              /* @__PURE__ */ r.jsx(s, { variant: "h4", children: p })
+            ]
+          }
+        ),
         /* @__PURE__ */ r.jsx(w, { sx: { borderColor: "borders.primary", width: "100%" } }),
         /* @__PURE__ */ r.jsxs(z, { children: [
           /* @__PURE__ */ r.jsx(t, { children: /* @__PURE__ */ r.jsx(

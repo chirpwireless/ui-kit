@@ -30,23 +30,48 @@ export const Card: React.FC<CardProps> = ({
     return (
         <S.Card className={className} sx={sx} fullContent={fullContent} isClickable={isClickable} onClick={onClick}>
             {(actions || title || icon) && (
-                <Stack direction="row" alignItems="center" gap="12px" justifyContent="space-between">
-                    <Stack direction="row" alignItems="center" gap="12px">
+                <Stack
+                    direction="row"
+                    sx={{
+                        alignItems: 'center',
+                        gap: '12px',
+                        justifyContent: 'space-between',
+                    }}
+                >
+                    <Stack
+                        direction="row"
+                        sx={{
+                            alignItems: 'center',
+                            gap: '12px',
+                        }}
+                    >
                         {icon && (
-                            <Stack alignItems="center" justifyContent="center" width="24px" height="24px">
+                            <Stack
+                                sx={{
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    width: '24px',
+                                    height: '24px',
+                                }}
+                            >
                                 {icon}
                             </Stack>
                         )}
                         {title && <S.Title size={size}>{title}</S.Title>}
                     </Stack>
                     {actions && (
-                        <Stack direction="row" alignItems="center" gap="12px">
+                        <Stack
+                            direction="row"
+                            sx={{
+                                alignItems: 'center',
+                                gap: '12px',
+                            }}
+                        >
                             {actions.map((action) => action)}
                         </Stack>
                     )}
                 </Stack>
             )}
-
             {children}
         </S.Card>
     );

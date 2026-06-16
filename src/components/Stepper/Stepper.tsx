@@ -1,6 +1,7 @@
 import { Stack, IconButton, useTheme, SxProps } from '@mui/material';
 import { FC } from 'react';
 
+import { mergeSx } from '../../helpers/merge-sx';
 import { StepIcon } from '../../icons';
 import { chirpPalette } from '../../theme/palette';
 
@@ -21,7 +22,19 @@ export const Stepper: FC<StepperProps> = ({ activeStep, handleSetStep, steps, sx
     }
 
     return (
-        <Stack direction="row" gap="8px" height="24px" alignItems="center" justifyContent="center" mb="32px" sx={sx}>
+        <Stack
+            direction="row"
+            sx={mergeSx(
+                {
+                    gap: '8px',
+                    height: '24px',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    mb: '32px',
+                },
+                sx,
+            )}
+        >
             {steps.map((step) => (
                 <IconButton
                     key={step}

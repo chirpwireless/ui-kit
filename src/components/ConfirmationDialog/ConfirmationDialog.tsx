@@ -48,19 +48,34 @@ export const ConfirmationDialog: React.FC<Props> = ({
             {icon && <S.IconWrapper>{icon}</S.IconWrapper>}
             <S.Content>
                 {title ? (
-                    <Typography fontSize="16px" lineHeight="20px">
+                    <Typography
+                        sx={{
+                            fontSize: '16px',
+                            lineHeight: '20px',
+                        }}
+                    >
                         {title}
                     </Typography>
                 ) : null}
                 {subTitle ? (
-                    <Typography fontSize="12px" lineHeight="16px" color="neutral.grey4">
+                    <Typography
+                        color="neutral.grey4"
+                        sx={{
+                            fontSize: '12px',
+                            lineHeight: '16px',
+                        }}
+                    >
                         {subTitle}
                     </Typography>
                 ) : null}
                 {children}
             </S.Content>
             {!hideCancelButton ? (
-                <StackRowJB width="100%">
+                <StackRowJB
+                    sx={{
+                        width: '100%',
+                    }}
+                >
                     <Button
                         variant="secondary"
                         size="medium"

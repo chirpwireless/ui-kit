@@ -32,12 +32,23 @@ export const Toast: FC<Props> = ({ id, status, message }) => {
     const handleCloseClick = () => toast.dismiss(id);
 
     return (
-        <S.Root direction="row" gap={2} sx={{ backgroundColor: chirpPalette(theme).alerts[bgColor] }}>
+        <S.Root
+            direction="row"
+            sx={{
+                gap: 2,
+                backgroundColor: chirpPalette(theme).alerts[bgColor],
+            }}
+        >
             <S.IconWrap>
                 <Icon />
             </S.IconWrap>
             <Box>
-                <S.Title variant="h5" mb={0.5}>
+                <S.Title
+                    variant="h5"
+                    sx={{
+                        mb: 0.5,
+                    }}
+                >
                     {t(status)}
                 </S.Title>
                 <S.Text variant="body2">{message}</S.Text>

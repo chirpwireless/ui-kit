@@ -40,10 +40,12 @@ export const SidebarLogo = ({
     return (
         <Stack
             direction="row"
-            width="100%"
-            justifyContent={isSidebarCollapsed ? 'center' : 'space-between'}
-            alignItems="start"
-            gap={0}
+            sx={{
+                width: '100%',
+                justifyContent: isSidebarCollapsed ? 'center' : 'space-between',
+                alignItems: 'start',
+                gap: 0,
+            }}
         >
             {renderLogo()}
             {isSidebarHovered ? (

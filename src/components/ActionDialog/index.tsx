@@ -44,18 +44,28 @@ export const ActionDialog: React.FC<Props> = ({
             <S.Card>
                 <S.IconWrapper>{icon ?? <CheckCircleIcon color={palette.primary.main} />}</S.IconWrapper>
                 <Typography
-                    mt="24px"
-                    fontSize="16px"
-                    lineHeight="20px"
-                    fontWeight={500}
-                    textAlign="center"
                     color="neutral.primary"
+                    sx={{
+                        mt: '24px',
+                        fontSize: '16px',
+                        lineHeight: '20px',
+                        fontWeight: 500,
+                        textAlign: 'center',
+                    }}
                 >
                     {title}
                 </Typography>
                 {nodeDescription ? nodeDescription : null}
                 {description ? (
-                    <Typography mt={3} fontSize="13px" lineHeight="20px" textAlign="center" color="neutral.grey4">
+                    <Typography
+                        color="neutral.grey4"
+                        sx={{
+                            mt: 3,
+                            fontSize: '13px',
+                            lineHeight: '20px',
+                            textAlign: 'center',
+                        }}
+                    >
                         {description}
                     </Typography>
                 ) : null}

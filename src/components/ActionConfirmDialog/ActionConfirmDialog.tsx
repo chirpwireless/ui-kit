@@ -69,9 +69,19 @@ export const ActionConfirmDialog: FC<Props> = ({
                     </S.CloseButton>
                 ) : null}
                 {icon}
-                <Stack gap={2}>
+                <Stack
+                    sx={{
+                        gap: 2,
+                    }}
+                >
                     <Typography variant="subtitle1">{title}</Typography>
-                    <Typography variant="body1" color="neutral.grey4" padding="0px 26px">
+                    <Typography
+                        variant="body1"
+                        color="neutral.grey4"
+                        sx={{
+                            padding: '0px 26px',
+                        }}
+                    >
                         {subTitle}
                     </Typography>
                 </Stack>

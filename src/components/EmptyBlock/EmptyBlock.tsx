@@ -11,32 +11,45 @@ interface EmptyBlockProps {
 
 export const EmptyBlock: FC<EmptyBlockProps> = ({ title, children, icon, textColor, sx = {} }) => {
     return (
-        <Stack alignItems="center" justifyContent="center" gap="16px" sx={{ ...sx, width: '100%', height: '100%' }}>
+        <Stack
+            sx={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '16px',
+                ...sx,
+                width: '100%',
+                height: '100%',
+            }}
+        >
             {icon}
             <Stack
                 direction="column"
-                gap="8px"
-                alignItems="center"
-                justifyContent="center"
-                width="100%"
                 color={textColor ?? 'neutral.grey4'}
+                sx={{
+                    gap: '8px',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '100%',
+                }}
             >
                 <Typography
-                    fontSize="12px"
-                    lineHeight="16px"
                     color="inherit"
-                    textTransform="uppercase"
-                    textAlign="center"
+                    sx={{
+                        fontSize: '12px',
+                        lineHeight: '16px',
+                        textTransform: 'uppercase',
+                        textAlign: 'center',
+                    }}
                 >
                     {title}
                 </Typography>
                 <Typography
                     component="div"
-                    fontSize="12px"
-                    lineHeight="16px"
                     color="inherit"
-                    letterSpacing="0.1px"
                     sx={{
+                        fontSize: '12px',
+                        lineHeight: '16px',
+                        letterSpacing: '0.1px',
                         small: { color: 'neutral.primary' },
                     }}
                 >

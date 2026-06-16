@@ -60,11 +60,11 @@ const Z = 60, y = 50, K = ({
   return /* @__PURE__ */ g.jsx(
     H,
     {
-      height: "100%",
-      overflow: "auto",
       ref: o,
       onScroll: D,
       sx: {
+        height: "100%",
+        overflow: "auto",
         position: "relative",
         borderRadius: "12px",
         width: "100%",
