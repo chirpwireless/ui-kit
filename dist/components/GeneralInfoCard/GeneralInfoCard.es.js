@@ -6,35 +6,35 @@ import { Loader as j } from "../Loader/index.es.js";
 import { StackRowJB as u, StackRow as g } from "../Stacks/index.es.js";
 import { Wrapper as h } from "./styles.es.js";
 const B = ({
-  customAction: e,
-  disabled: s,
+  customAction: a,
+  disabled: i,
   header: l,
-  headerAction: a,
-  headerActionContent: i,
+  headerAction: e,
+  headerActionContent: s,
   isLoading: m,
   footer: n,
-  sx: c,
+  sx: p,
   link: o
 }) => {
-  const t = f(), p = x(() => {
+  const t = f(), c = x(() => {
     o && t(o);
   }, [o, t]);
-  return /* @__PURE__ */ r.jsx(h, { sx: c, onClick: p, children: m ? /* @__PURE__ */ r.jsx(j, { size: 48, sx: { color: "neutral.primary" } }) : /* @__PURE__ */ r.jsxs(r.Fragment, { children: [
+  return /* @__PURE__ */ r.jsx(h, { sx: p, onClick: c, children: m ? /* @__PURE__ */ r.jsx(j, { size: 48, sx: { color: "neutral.primary" } }) : /* @__PURE__ */ r.jsxs(r.Fragment, { children: [
     /* @__PURE__ */ r.jsxs(u, { sx: { alignItems: "flex-start" }, children: [
       l,
-      e || (a && i ? /* @__PURE__ */ r.jsx(
+      a || (e && s ? /* @__PURE__ */ r.jsx(
         d,
         {
-          disabled: s,
-          onClick: a,
+          disabled: i,
+          onClick: e,
           color: "primary",
           size: "small",
           variant: "secondary",
-          children: i
+          children: s
         }
       ) : null)
     ] }),
-    /* @__PURE__ */ r.jsx(g, { direction: "row", overflow: "hidden", children: n })
+    /* @__PURE__ */ r.jsx(g, { overflow: "hidden", children: n })
   ] }) });
 };
 export {

@@ -1,18 +1,19 @@
-import { jsxRuntimeExports as r } from "../../jsx-runtime-BgepH7Pb.js";
-import { FormControl as o } from "@mui/material";
-import { forwardRef as i } from "react";
-import { TextField as l } from "./style.es.js";
-const m = i((t, e) => /* @__PURE__ */ r.jsx(o, { fullWidth: !0, children: /* @__PURE__ */ r.jsx(
-  l,
+import { jsxRuntimeExports as i } from "../../jsx-runtime-BgepH7Pb.js";
+import { FormControl as m } from "@mui/material";
+import { forwardRef as n } from "react";
+import { TextField as x } from "./style.es.js";
+const d = n(({ slotProps: e, ...r }, t) => /* @__PURE__ */ i.jsx(m, { fullWidth: !0, children: /* @__PURE__ */ i.jsx(
+  x,
   {
-    ...t,
-    inputRef: e,
+    ...r,
+    inputRef: t,
     slotProps: {
-      inputLabel: { shrink: !0 }
+      ...e,
+      inputLabel: { shrink: !0, ...e == null ? void 0 : e.inputLabel }
     }
   }
 ) }));
-m.displayName = "TextField";
+d.displayName = "TextField";
 export {
-  m as TextField
+  d as TextField
 };

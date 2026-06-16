@@ -1,31 +1,46 @@
-import { styled as t, Stack as c } from "@mui/material";
-const a = t(c, {
-  shouldForwardProp: (o) => o !== "gap"
-})(({ theme: o, gap: n }) => ({
-  flexDirection: "row",
-  gap: n ? o.spacing(n) : o.spacing(2),
-  alignItems: "center"
-})), r = t(a)(() => ({
+import { styled as e, Stack as d } from "@mui/material";
+const p = ["gap", "width", "minWidth", "maxWidth", "flex", "overflow"], v = (o) => !p.includes(o), r = e(d, { shouldForwardProp: v })(
+  ({ theme: o, gap: n, width: c, minWidth: i, maxWidth: t, flex: s, overflow: a }) => ({
+    flexDirection: "row",
+    alignItems: "center",
+    gap: n ? o.spacing(n) : o.spacing(2),
+    ...c !== void 0 && { width: c },
+    ...i !== void 0 && { minWidth: i },
+    ...t !== void 0 && { maxWidth: t },
+    ...s !== void 0 && { flex: s },
+    ...a !== void 0 && { overflow: a }
+  })
+), l = e(r)(() => ({
   justifyContent: "center"
-})), e = t(a)(() => ({
+})), u = e(r)(() => ({
   justifyContent: "space-between"
-})), i = t(c, {
-  shouldForwardProp: (o) => o !== "gap"
-})(({ theme: o, gap: n }) => ({
-  flexDirection: "column",
-  gap: n ? o.spacing(n) : o.spacing(2),
-  alignItems: "center"
-})), l = t(c, {
-  shouldForwardProp: (o) => o !== "gap"
-})(({ theme: o, gap: n }) => ({
-  flexDirection: "column",
-  gap: n ? o.spacing(n) : o.spacing(2),
-  alignItems: "flex-start"
-}));
+})), S = e(d, { shouldForwardProp: v })(
+  ({ theme: o, gap: n, width: c, minWidth: i, maxWidth: t, flex: s, overflow: a }) => ({
+    flexDirection: "column",
+    alignItems: "center",
+    gap: n ? o.spacing(n) : o.spacing(2),
+    ...c !== void 0 && { width: c },
+    ...i !== void 0 && { minWidth: i },
+    ...t !== void 0 && { maxWidth: t },
+    ...s !== void 0 && { flex: s },
+    ...a !== void 0 && { overflow: a }
+  })
+), k = e(d, { shouldForwardProp: v })(
+  ({ theme: o, gap: n, width: c, minWidth: i, maxWidth: t, flex: s, overflow: a }) => ({
+    flexDirection: "column",
+    alignItems: "flex-start",
+    gap: n ? o.spacing(n) : o.spacing(2),
+    ...c !== void 0 && { width: c },
+    ...i !== void 0 && { minWidth: i },
+    ...t !== void 0 && { maxWidth: t },
+    ...s !== void 0 && { flex: s },
+    ...a !== void 0 && { overflow: a }
+  })
+);
 export {
-  i as StackColumn,
-  l as StackColumnS,
-  a as StackRow,
-  e as StackRowJB,
-  r as StackRowJC
+  S as StackColumn,
+  k as StackColumnS,
+  r as StackRow,
+  u as StackRowJB,
+  l as StackRowJC
 };

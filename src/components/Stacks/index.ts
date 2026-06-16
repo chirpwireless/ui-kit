@@ -1,38 +1,62 @@
-import type { FC } from 'react';
+import type { CSSProperties, FC } from 'react';
 
 import { Stack, type StackProps, styled } from '@mui/material';
 
-// Annotated as FC<StackProps> — Stack is an MUI OverridableComponent, so vite-plugin-dts emits a
-// broken deep path for exported styled(Stack), collapsing the type to `any` in consumers (which
-// breaks the `sx`/`theme` callback typing at call sites). See Button/IconButton for the same fix.
-export const StackRow = styled(Stack, {
-    shouldForwardProp: (prop) => prop !== 'gap',
-})(({ theme, gap }) => ({
-    flexDirection: 'row',
-    gap: gap ? theme.spacing(gap as number) : theme.spacing(2),
-    alignItems: 'center',
-})) as FC<StackProps>;
+type StackLayoutProps = StackProps & {
+    gap?: number;
+    width?: CSSProperties['width'];
+    minWidth?: CSSProperties['minWidth'];
+    maxWidth?: CSSProperties['maxWidth'];
+    flex?: CSSProperties['flex'];
+    overflow?: CSSProperties['overflow'];
+};
+
+const LAYOUT_PROPS = ['gap', 'width', 'minWidth', 'maxWidth', 'flex', 'overflow'];
+const shouldForwardProp = (prop: PropertyKey) => !LAYOUT_PROPS.includes(prop as string);
+
+export const StackRow = styled(Stack, { shouldForwardProp })<StackLayoutProps>(
+    ({ theme, gap, width, minWidth, maxWidth, flex, overflow }) => ({
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: gap ? theme.spacing(gap) : theme.spacing(2),
+        ...(width !== undefined && { width }),
+        ...(minWidth !== undefined && { minWidth }),
+        ...(maxWidth !== undefined && { maxWidth }),
+        ...(flex !== undefined && { flex }),
+        ...(overflow !== undefined && { overflow }),
+    }),
+) as FC<StackLayoutProps>;
 
 export const StackRowJC = styled(StackRow)(() => ({
     justifyContent: 'center',
-})) as FC<StackProps>;
+})) as FC<StackLayoutProps>;
 
 export const StackRowJB = styled(StackRow)(() => ({
     justifyContent: 'space-between',
-})) as FC<StackProps>;
+})) as FC<StackLayoutProps>;
 
-export const StackColumn = styled(Stack, {
-    shouldForwardProp: (prop) => prop !== 'gap',
-})(({ theme, gap }) => ({
-    flexDirection: 'column',
-    gap: gap ? theme.spacing(gap as number) : theme.spacing(2),
-    alignItems: 'center',
-})) as FC<StackProps>;
+export const StackColumn = styled(Stack, { shouldForwardProp })<StackLayoutProps>(
+    ({ theme, gap, width, minWidth, maxWidth, flex, overflow }) => ({
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: gap ? theme.spacing(gap) : theme.spacing(2),
+        ...(width !== undefined && { width }),
+        ...(minWidth !== undefined && { minWidth }),
+        ...(maxWidth !== undefined && { maxWidth }),
+        ...(flex !== undefined && { flex }),
+        ...(overflow !== undefined && { overflow }),
+    }),
+) as FC<StackLayoutProps>;
 
-export const StackColumnS = styled(Stack, {
-    shouldForwardProp: (prop) => prop !== 'gap',
-})(({ theme, gap }) => ({
-    flexDirection: 'column',
-    gap: gap ? theme.spacing(gap as number) : theme.spacing(2),
-    alignItems: 'flex-start',
-})) as FC<StackProps>;
+export const StackColumnS = styled(Stack, { shouldForwardProp })<StackLayoutProps>(
+    ({ theme, gap, width, minWidth, maxWidth, flex, overflow }) => ({
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        gap: gap ? theme.spacing(gap) : theme.spacing(2),
+        ...(width !== undefined && { width }),
+        ...(minWidth !== undefined && { minWidth }),
+        ...(maxWidth !== undefined && { maxWidth }),
+        ...(flex !== undefined && { flex }),
+        ...(overflow !== undefined && { overflow }),
+    }),
+) as FC<StackLayoutProps>;
