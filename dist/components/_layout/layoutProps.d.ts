@@ -1,0 +1,20 @@
+import { CSSProperties } from 'react';
+import { CSSObject, Theme } from '../../../node_modules/@mui/material/styles';
+export type LayoutProps = {
+    gap?: number;
+    p?: number;
+    mb?: number;
+    width?: CSSProperties['width'];
+    minWidth?: CSSProperties['minWidth'];
+    maxWidth?: CSSProperties['maxWidth'];
+    height?: CSSProperties['height'];
+    flex?: CSSProperties['flex'];
+    flexGrow?: CSSProperties['flexGrow'];
+    alignItems?: CSSProperties['alignItems'];
+    justifyContent?: CSSProperties['justifyContent'];
+    alignSelf?: CSSProperties['alignSelf'];
+    position?: CSSProperties['position'];
+    overflow?: CSSProperties['overflow'];
+};
+export declare const shouldForwardLayoutProp: (prop: PropertyKey) => boolean;
+export declare const layoutStyles: (theme: Theme, props: LayoutProps) => CSSObject;

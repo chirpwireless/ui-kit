@@ -1,21 +1,25 @@
-import { Box, BoxProps, styled } from '@mui/material';
+import { Stack, type StackProps, styled } from '@mui/material';
 import { FC } from 'react';
 
 import { chirpPalette } from '../../theme/palette';
+import { type LayoutProps, layoutStyles, shouldForwardLayoutProp } from '../_layout/layoutProps';
 
-export const GradientCard = styled(Box)(({ theme }) => {
-    const palette = chirpPalette(theme);
+type CardProps = StackProps & LayoutProps;
 
-    return {
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '16px',
-        background:
-            palette.framing?.opacityGradient ??
-            `linear-gradient(180deg, transparent 0%, ${palette.primaryColors.accentLight} 100%)`,
-        border: `1px solid ${palette.borders.primary}`,
-        borderRadius: '12px',
-        boxShadow: `0 8px 24px ${palette.shadow ?? 'rgba(0, 0, 0, 0.14)'}`,
-        textAlign: 'center',
-    };
-}) as FC<BoxProps>;
+export const GradientCard = styled(Stack, { shouldForwardProp: shouldForwardLayoutProp })<CardProps>(
+    ({ theme, ...props }) => {
+        const palette = chirpPalette(theme);
+
+        return {
+            padding: '16px',
+            background:
+                palette.framing?.opacityGradient ??
+                `linear-gradient(180deg, transparent 0%, ${palette.primaryColors.accentLight} 100%)`,
+            border: `1px solid ${palette.borders.primary}`,
+            borderRadius: '12px',
+            boxShadow: `0 8px 24px ${palette.shadow ?? 'rgba(0, 0, 0, 0.14)'}`,
+            textAlign: 'center',
+            ...layoutStyles(theme, props),
+        };
+    },
+) as FC<CardProps>;

@@ -1,19 +1,21 @@
-import { styled as a, Box as o } from "@mui/material";
-import { chirpPalette as i } from "../../theme/palette.es.js";
-const p = a(o)(({ theme: t }) => {
-  var e;
-  const r = i(t);
-  return {
-    display: "flex",
-    flexDirection: "column",
-    padding: "16px",
-    background: ((e = r.framing) == null ? void 0 : e.opacityGradient) ?? `linear-gradient(180deg, transparent 0%, ${r.primaryColors.accentLight} 100%)`,
-    border: `1px solid ${r.borders.primary}`,
-    borderRadius: "12px",
-    boxShadow: `0 8px 24px ${r.shadow ?? "rgba(0, 0, 0, 0.14)"}`,
-    textAlign: "center"
-  };
-});
+import { styled as d, Stack as e } from "@mui/material";
+import { chirpPalette as p } from "../../theme/palette.es.js";
+import { shouldForwardLayoutProp as i, layoutStyles as n } from "../_layout/layoutProps.es.js";
+const g = d(e, { shouldForwardProp: i })(
+  ({ theme: o, ...a }) => {
+    var t;
+    const r = p(o);
+    return {
+      padding: "16px",
+      background: ((t = r.framing) == null ? void 0 : t.opacityGradient) ?? `linear-gradient(180deg, transparent 0%, ${r.primaryColors.accentLight} 100%)`,
+      border: `1px solid ${r.borders.primary}`,
+      borderRadius: "12px",
+      boxShadow: `0 8px 24px ${r.shadow ?? "rgba(0, 0, 0, 0.14)"}`,
+      textAlign: "center",
+      ...n(o, a)
+    };
+  }
+);
 export {
-  p as GradientCard
+  g as GradientCard
 };

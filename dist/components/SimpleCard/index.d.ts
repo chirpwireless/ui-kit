@@ -1,4 +1,7 @@
 import { FC } from 'react';
-import { BoxProps } from '@mui/material';
-export declare const SimpleCard: FC<BoxProps>;
-export declare const SimpleSmallCard: FC<BoxProps>;
+import { StackProps } from '@mui/material';
+import { LayoutProps } from '../_layout/layoutProps';
+type CardProps = StackProps & LayoutProps;
+export declare const SimpleCard: FC<CardProps>;
+export declare const SimpleSmallCard: FC<CardProps>;
+export {};

@@ -1,7 +1,10 @@
 import { FC } from 'react';
-import { BoxProps } from '@mui/material';
-export declare const StackRow: FC<BoxProps>;
-export declare const StackRowJC: FC<BoxProps>;
-export declare const StackRowJB: FC<BoxProps>;
-export declare const StackColumn: FC<BoxProps>;
-export declare const StackColumnS: FC<BoxProps>;
+import { StackProps } from '@mui/material';
+import { LayoutProps } from '../_layout/layoutProps';
+type StackLayoutProps = StackProps & LayoutProps;
+export declare const StackRow: FC<StackLayoutProps>;
+export declare const StackRowJC: FC<StackLayoutProps>;
+export declare const StackRowJB: FC<StackLayoutProps>;
+export declare const StackColumn: FC<StackLayoutProps>;
+export declare const StackColumnS: FC<StackLayoutProps>;
+export {};
