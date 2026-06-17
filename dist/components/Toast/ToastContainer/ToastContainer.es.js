@@ -9,9 +9,7 @@ const i = () => /* @__PURE__ */ o.jsx(
     icon: !1,
     hideProgressBar: !0,
     limit: 5,
-    sx: {
-      position: "bottom-right"
-    }
+    position: "bottom-right"
   }
 );
 export {

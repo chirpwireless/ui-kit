@@ -1,6 +1,6 @@
 import { jsxRuntimeExports as r } from "../../jsx-runtime-BgepH7Pb.js";
-import { useState as l, useCallback as x } from "react";
-import { Divider as G, Stack as h } from "@mui/material";
+import { useState as l, useCallback as o } from "react";
+import { Divider as G, Stack as x } from "@mui/material";
 import { DefaultLink as I } from "./components/DefaultLink.es.js";
 import { RoutesList as N } from "./components/RoutesList.es.js";
 import { SidebarLogo as $ } from "./SidebarLogo.es.js";
@@ -15,24 +15,24 @@ const B = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), Y = ({
   activePathname: S,
   logo: w,
   logoCollapsed: v,
-  logoHref: g,
-  footerSlot: u,
-  bottomSlot: p,
-  topSlot: D,
-  isMobile: M,
+  logoHref: D,
+  footerSlot: h,
+  bottomSlot: u,
+  topSlot: M,
+  isMobile: g,
   linkComponent: E = B
 }) => {
-  const [F, c] = l({}), [H, f] = l(!1), O = x(
+  const [F, c] = l({}), [H, p] = l(!1), O = o(
     (e) => {
       i == null || i(e), t && n(), c((s) => ({ ...s, [e.name]: !s[e.name] }));
     },
     [t, n, i]
-  ), R = x(
+  ), R = o(
     (e, s) => {
       d == null || d(e, s);
     },
     [d]
-  ), y = x(() => {
+  ), y = o(() => {
     c({}), n();
   }, [n]);
   return /* @__PURE__ */ r.jsxs(
@@ -43,10 +43,10 @@ const B = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), Y = ({
       anchor: "left",
       open: L,
       isCollapsed: t,
-      onMouseEnter: () => f(!0),
-      onMouseLeave: () => f(!1),
+      onMouseEnter: () => p(!0),
+      onMouseLeave: () => p(!1),
       children: [
-        M ? D : /* @__PURE__ */ r.jsxs(r.Fragment, { children: [
+        g ? M : /* @__PURE__ */ r.jsxs(r.Fragment, { children: [
           /* @__PURE__ */ r.jsx(
             $,
             {
@@ -55,28 +55,27 @@ const B = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), Y = ({
               onToggle: y,
               logo: w,
               logoCollapsed: v,
-              logoHref: g
+              logoHref: D
             }
           ),
-          /* @__PURE__ */ r.jsx(G, { sx: { width: "100%", borderColor: "borders.primary", padding: "16px 0" } })
+          /* @__PURE__ */ r.jsx(G, { sx: { width: "100%", borderColor: "borders.primary", mb: 2 } })
         ] }),
         /* @__PURE__ */ r.jsx(z, { children: a.map((e, s) => {
           var j, b;
-          const m = s === a.length - 1;
+          const f = s === a.length - 1;
           return /* @__PURE__ */ r.jsxs(
-            h,
+            x,
             {
               sx: {
                 width: "100%",
                 gap: 1,
-                mt: m ? "auto" : 0,
-                mb: m ? 0 : 2
+                mt: f ? "auto" : 0
               },
               children: [
-                e.map((o) => /* @__PURE__ */ r.jsx(h, { sx: { width: "100%" }, children: /* @__PURE__ */ r.jsx(
+                e.map((m) => /* @__PURE__ */ r.jsx(x, { sx: { width: "100%" }, children: /* @__PURE__ */ r.jsx(
                   N,
                   {
-                    item: o,
+                    item: m,
                     activePathname: S,
                     isSidebarCollapsed: t,
                     menuParentIsOpen: F,
@@ -84,14 +83,14 @@ const B = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), Y = ({
                     onParentClick: O,
                     onItemClick: R
                   }
-                ) }, o.id ?? o.name)),
-                m && p ? /* @__PURE__ */ r.jsx(h, { sx: { width: "100%", mt: 1, gap: 3, alignItems: "center" }, children: p }) : null
+                ) }, m.id ?? m.name)),
+                f && u ? /* @__PURE__ */ r.jsx(x, { sx: { width: "100%", mt: 1, gap: 3, alignItems: "center" }, children: u }) : null
               ]
             },
             ((j = e[0]) == null ? void 0 : j.id) ?? ((b = e[0]) == null ? void 0 : b.name) ?? `routes-group-${s}`
           );
         }) }),
-        u ? /* @__PURE__ */ r.jsx(A, { children: u }) : null
+        h ? /* @__PURE__ */ r.jsx(A, { children: h }) : null
       ]
     }
   );

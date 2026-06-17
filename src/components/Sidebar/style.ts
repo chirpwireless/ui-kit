@@ -160,6 +160,7 @@ export const List = styled(MuiList)({
     flexFlow: 'column nowrap',
     alignItems: 'center',
     flex: 1,
+    gap: '16px',
     padding: 0,
     overflowX: 'hidden',
     overflowY: 'auto',

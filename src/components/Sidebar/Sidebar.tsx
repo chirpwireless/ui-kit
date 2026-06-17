@@ -76,7 +76,7 @@ export const Sidebar = ({
                         logoCollapsed={logoCollapsed}
                         logoHref={logoHref}
                     />
-                    <Divider sx={{ width: '100%', borderColor: 'borders.primary', padding: '16px 0' }} />
+                    <Divider sx={{ width: '100%', borderColor: 'borders.primary', mb: 2 }} />
                 </>
             ) : (
                 topSlot
@@ -92,7 +92,6 @@ export const Sidebar = ({
                                 width: '100%',
                                 gap: 1,
                                 mt: isLastGroup ? 'auto' : 0,
-                                mb: isLastGroup ? 0 : 2,
                             }}
                         >
                             {group.map((item) => (

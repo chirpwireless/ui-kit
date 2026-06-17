@@ -8,8 +8,6 @@ export const ToastContainer = () => (
         icon={false}
         hideProgressBar
         limit={5}
-        sx={{
-            position: 'bottom-right',
-        }}
+        position="bottom-right"
     />
 );

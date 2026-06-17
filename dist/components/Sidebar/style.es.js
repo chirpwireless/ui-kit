@@ -1,4 +1,4 @@
-import { styled as n, Drawer as u, drawerClasses as a, Box as t, Stack as l, List as x, ListItem as c, Typography as f } from "@mui/material";
+import { styled as n, Drawer as x, drawerClasses as a, Box as t, Stack as l, List as u, ListItem as c, Typography as f } from "@mui/material";
 import { CLOSED_SIDEBAR_WIDTH as b, SIDEBAR_COLLAPSED_WIDTH as g, SIDEBAR_WIDTH as w, CurrentTheme as d } from "../../styles/constants.es.js";
 import { chirpPalette as r } from "../../theme/palette.es.js";
 const s = (o, i) => ({
@@ -37,7 +37,7 @@ const s = (o, i) => ({
     width: b,
     zIndex: 100
   }
-}), L = n(u, {
+}), L = n(x, {
   shouldForwardProp: (o) => o !== "isCollapsed"
 })(({ theme: o, open: i, isCollapsed: e }) => ({
   display: "flex",
@@ -105,11 +105,12 @@ const s = (o, i) => ({
   "&:hover": {
     background: o ? r(i).primaryColors.accentLight : r(i).primaryColors.accentLight2 ?? r(i).primaryColors.accentLight
   }
-})), C = n(x)({
+})), C = n(u)({
   display: "flex",
   flexFlow: "column nowrap",
   alignItems: "center",
   flex: 1,
+  gap: "16px",
   padding: 0,
   overflowX: "hidden",
   overflowY: "auto"
