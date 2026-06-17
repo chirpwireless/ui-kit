@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 
-import { ToggleSidebarIcon } from '../../icons';
+import { DoubleChevronRight } from '../../assets/icons/DoubleChevronRight';
 
 interface SidebarToggleProps {
     isSidebarHovered: boolean;
@@ -20,8 +20,8 @@ export const SidebarToggle = ({ isSidebarHovered, isSidebarCollapsed, onToggle }
         }}
         onClick={onToggle}
     >
-        <ToggleSidebarIcon
-            style={{
+        <DoubleChevronRight
+            sx={{
                 transform: isSidebarCollapsed ? 'rotate(0deg)' : 'rotate(180deg)',
                 transition: 'transform 0.3s ease-in-out',
             }}

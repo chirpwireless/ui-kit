@@ -2,6 +2,7 @@ import type { FC, MouseEvent } from 'react';
 import { useCallback, useMemo } from 'react';
 
 import { Divider, Stack, useTheme } from '@mui/material';
+import type { SxProps, Theme } from '@mui/material';
 
 import { DropdownIcon } from '../../../icons';
 import type { SidebarItem, SidebarLinkComponent } from '../types';
@@ -20,6 +21,16 @@ interface RoutesListProps {
 const ICON_SIZE = 20;
 const MENU_ITEM_HEIGHT = 36;
 const MENU_ITEM_MARGIN = 4;
+
+// Normalize icons of varying intrinsic size/viewBox (20 vs 24) to one centered box
+// so the collapsed rail aligns and stroke weights read consistently.
+const ICON_WRAPPER_SX: SxProps<Theme> = {
+    width: ICON_SIZE,
+    height: ICON_SIZE,
+    alignItems: 'center',
+    justifyContent: 'center',
+    '& svg': { width: ICON_SIZE, height: ICON_SIZE },
+};
 
 const calculateChildrenHeight = (
     children: SidebarItem[] | undefined,
@@ -102,30 +113,14 @@ export const RoutesList: FC<RoutesListProps> = ({
                                     alignItems: 'center',
                                 }}
                             >
-                                <Stack
-                                    sx={{
-                                        width: ICON_SIZE,
-                                        height: ICON_SIZE,
-                                        alignItems: 'center',
-                                    }}
-                                >
-                                    {item.icon}
-                                </Stack>
+                                <Stack sx={ICON_WRAPPER_SX}>{item.icon}</Stack>
                                 {!isSidebarCollapsed && <S.LinkText variant="body1">{item.name}</S.LinkText>}
                             </Stack>
                         </LinkComponent>
                     ) : (
                         <S.MenuParentItem onClick={() => onParentClick(item)}>
                             <Stack direction="row">
-                                <Stack
-                                    sx={{
-                                        width: ICON_SIZE,
-                                        height: ICON_SIZE,
-                                        alignItems: 'center',
-                                    }}
-                                >
-                                    {item.icon}
-                                </Stack>
+                                <Stack sx={ICON_WRAPPER_SX}>{item.icon}</Stack>
                                 {!isSidebarCollapsed && <S.LinkText variant="body1">{item.name}</S.LinkText>}
                             </Stack>
                             {!isSidebarCollapsed && (
@@ -177,17 +172,7 @@ export const RoutesList: FC<RoutesListProps> = ({
                                                     alignItems: 'center',
                                                 }}
                                             >
-                                                {child.icon && (
-                                                    <Stack
-                                                        sx={{
-                                                            width: ICON_SIZE,
-                                                            height: ICON_SIZE,
-                                                            alignItems: 'center',
-                                                        }}
-                                                    >
-                                                        {child.icon}
-                                                    </Stack>
-                                                )}
+                                                {child.icon && <Stack sx={ICON_WRAPPER_SX}>{child.icon}</Stack>}
                                                 {!isSidebarCollapsed && (
                                                     <S.LinkText variant="body1">{child.name}</S.LinkText>
                                                 )}
@@ -263,15 +248,7 @@ export const RoutesList: FC<RoutesListProps> = ({
                                                     }}
                                                 >
                                                     {grandChild.icon && (
-                                                        <Stack
-                                                            sx={{
-                                                                width: ICON_SIZE,
-                                                                height: ICON_SIZE,
-                                                                alignItems: 'center',
-                                                            }}
-                                                        >
-                                                            {grandChild.icon}
-                                                        </Stack>
+                                                        <Stack sx={ICON_WRAPPER_SX}>{grandChild.icon}</Stack>
                                                     )}
                                                     {!isSidebarCollapsed && (
                                                         <S.LinkText variant="body1" title={grandChild.name}>
