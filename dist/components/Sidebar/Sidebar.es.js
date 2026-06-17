@@ -15,16 +15,16 @@ const B = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), Y = ({
   activePathname: S,
   logo: w,
   logoCollapsed: v,
-  logoHref: D,
+  logoHref: g,
   footerSlot: u,
-  bottomSlot: c,
-  topSlot: M,
-  isMobile: g,
+  bottomSlot: p,
+  topSlot: D,
+  isMobile: M,
   linkComponent: E = B
 }) => {
-  const [F, p] = l({}), [H, f] = l(!1), O = x(
+  const [F, c] = l({}), [H, f] = l(!1), O = x(
     (e) => {
-      i == null || i(e), t && n(), p((s) => ({ ...s, [e.name]: !s[e.name] }));
+      i == null || i(e), t && n(), c((s) => ({ ...s, [e.name]: !s[e.name] }));
     },
     [t, n, i]
   ), R = x(
@@ -33,7 +33,7 @@ const B = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), Y = ({
     },
     [d]
   ), y = x(() => {
-    p({}), n();
+    c({}), n();
   }, [n]);
   return /* @__PURE__ */ r.jsxs(
     q,
@@ -46,7 +46,7 @@ const B = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), Y = ({
       onMouseEnter: () => f(!0),
       onMouseLeave: () => f(!1),
       children: [
-        g ? M : /* @__PURE__ */ r.jsxs(r.Fragment, { children: [
+        M ? D : /* @__PURE__ */ r.jsxs(r.Fragment, { children: [
           /* @__PURE__ */ r.jsx(
             $,
             {
@@ -55,10 +55,10 @@ const B = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), Y = ({
               onToggle: y,
               logo: w,
               logoCollapsed: v,
-              logoHref: D
+              logoHref: g
             }
           ),
-          /* @__PURE__ */ r.jsx(G, { sx: { width: "100%", borderColor: "borders.primary" } })
+          /* @__PURE__ */ r.jsx(G, { sx: { width: "100%", borderColor: "borders.primary", padding: "16px 0" } })
         ] }),
         /* @__PURE__ */ r.jsx(z, { children: a.map((e, s) => {
           var j, b;
@@ -85,7 +85,7 @@ const B = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), Y = ({
                     onItemClick: R
                   }
                 ) }, o.id ?? o.name)),
-                m && c ? /* @__PURE__ */ r.jsx(h, { sx: { width: "100%", mt: 1, gap: 3, alignItems: "center" }, children: c }) : null
+                m && p ? /* @__PURE__ */ r.jsx(h, { sx: { width: "100%", mt: 1, gap: 3, alignItems: "center" }, children: p }) : null
               ]
             },
             ((j = e[0]) == null ? void 0 : j.id) ?? ((b = e[0]) == null ? void 0 : b.name) ?? `routes-group-${s}`

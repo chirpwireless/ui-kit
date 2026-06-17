@@ -76,7 +76,7 @@ export const Sidebar = ({
                         logoCollapsed={logoCollapsed}
                         logoHref={logoHref}
                     />
-                    <Divider sx={{ width: '100%', borderColor: 'borders.primary' }} />
+                    <Divider sx={{ width: '100%', borderColor: 'borders.primary', padding: '16px 0' }} />
                 </>
             ) : (
                 topSlot
