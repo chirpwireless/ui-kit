@@ -1,4 +1,4 @@
-import { styled as n, Drawer as x, drawerClasses as a, Box as t, Stack as l, List as u, ListItem as c, Typography as f } from "@mui/material";
+import { styled as n, Drawer as u, drawerClasses as a, Box as t, Stack as l, List as x, ListItem as c, Typography as f } from "@mui/material";
 import { CLOSED_SIDEBAR_WIDTH as b, SIDEBAR_COLLAPSED_WIDTH as g, SIDEBAR_WIDTH as w, CurrentTheme as d } from "../../styles/constants.es.js";
 import { chirpPalette as r } from "../../theme/palette.es.js";
 const s = (o, i) => ({
@@ -37,7 +37,7 @@ const s = (o, i) => ({
     width: b,
     zIndex: 100
   }
-}), L = n(x, {
+}), L = n(u, {
   shouldForwardProp: (o) => o !== "isCollapsed"
 })(({ theme: o, open: i, isCollapsed: e }) => ({
   display: "flex",
@@ -95,7 +95,7 @@ const s = (o, i) => ({
 })), S = n(t, {
   shouldForwardProp: (o) => o !== "isActive"
 })(({ isActive: o, theme: i }) => ({
-  color: o ? r(i).primaryColors.accent : i.palette.primary.contrastText,
+  color: o ? r(i).primaryColors.accent : r(i).neutral.grey4,
   background: o ? r(i).primaryColors.accentLight : "transparent",
   width: "100%",
   padding: 0,
@@ -105,7 +105,7 @@ const s = (o, i) => ({
   "&:hover": {
     background: o ? r(i).primaryColors.accentLight : r(i).primaryColors.accentLight2 ?? r(i).primaryColors.accentLight
   }
-})), C = n(u)({
+})), C = n(x)({
   display: "flex",
   flexFlow: "column nowrap",
   alignItems: "center",

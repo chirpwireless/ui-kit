@@ -22,3 +22,4 @@ export { Settings } from './Settings';
 export { ToggleSidebarIcon } from './ToggleSidebarIcon';
 export { TrashIcon } from './TrashIcon';
 export { UserIcon } from './UserIcon';
+export { WarningTriangleIcon } from './WarningTriangleIcon';

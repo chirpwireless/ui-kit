@@ -79,46 +79,38 @@ export const Sidebar = ({
                 topSlot
             )}
             <S.List>
-                {groups.map((group, index) => (
-                    <Stack
-                        key={group[0]?.id ?? group[0]?.name ?? `routes-group-${index}`}
-                        sx={{
-                            width: '100%',
-                        }}
-                    >
-                        {group.map((item) => (
-                            <Stack
-                                key={item.id ?? item.name}
-                                sx={{
-                                    width: '100%',
-                                }}
-                            >
-                                <RoutesList
-                                    item={item}
-                                    activePathname={activePathname}
-                                    isSidebarCollapsed={isCollapsed}
-                                    menuParentIsOpen={menuParentIsOpen}
-                                    linkComponent={linkComponent}
-                                    onParentClick={handleParentClick}
-                                    onItemClick={handleItemClick}
-                                />
-                            </Stack>
-                        ))}
-                        {index === groups.length - 1 && bottomSlot ? (
-                            <Stack
-                                sx={{
-                                    width: '100%',
-                                    mt: '12px',
-                                    gap: 3,
-                                    alignItems: 'center',
-                                }}
-                            >
-                                {bottomSlot}
-                            </Stack>
-                        ) : null}
-                        <br />
-                    </Stack>
-                ))}
+                {groups.map((group, index) => {
+                    const isLastGroup = index === groups.length - 1;
+
+                    return (
+                        <Stack
+                            key={group[0]?.id ?? group[0]?.name ?? `routes-group-${index}`}
+                            sx={{
+                                width: '100%',
+                                gap: 1,
+                                mt: isLastGroup ? 'auto' : 0,
+                                mb: isLastGroup ? 0 : 2,
+                            }}
+                        >
+                            {group.map((item) => (
+                                <Stack key={item.id ?? item.name} sx={{ width: '100%' }}>
+                                    <RoutesList
+                                        item={item}
+                                        activePathname={activePathname}
+                                        isSidebarCollapsed={isCollapsed}
+                                        menuParentIsOpen={menuParentIsOpen}
+                                        linkComponent={linkComponent}
+                                        onParentClick={handleParentClick}
+                                        onItemClick={handleItemClick}
+                                    />
+                                </Stack>
+                            ))}
+                            {isLastGroup && bottomSlot ? (
+                                <Stack sx={{ width: '100%', mt: 1, gap: 3, alignItems: 'center' }}>{bottomSlot}</Stack>
+                            ) : null}
+                        </Stack>
+                    );
+                })}
             </S.List>
             {footerSlot ? <S.Footer>{footerSlot}</S.Footer> : null}
         </S.SidebarDrawer>

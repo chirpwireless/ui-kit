@@ -1,6 +1,6 @@
 import { styled as o } from "@mui/material";
 import { ToastContainer as i } from "react-toastify";
-const n = o(i)(({ theme: t }) => ({
+const r = o(i)(({ theme: t }) => ({
   "&&&.Toastify__toast-container": {
     width: "min(460px, calc(100% - 2rem))",
     padding: 0,
@@ -20,12 +20,16 @@ const n = o(i)(({ theme: t }) => ({
   },
   ".Toastify__toast": {
     padding: 0,
-    borderRadius: "8px"
+    borderRadius: "8px",
+    minHeight: "unset",
+    background: "transparent",
+    overflow: "hidden"
   },
   ".Toastify__toast-body": {
-    padding: 0
+    padding: 0,
+    margin: 0
   }
 }));
 export {
-  n as Container
+  r as Container
 };

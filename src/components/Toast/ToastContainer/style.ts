@@ -24,8 +24,12 @@ export const Container = styled(ToastContainer)(({ theme }) => ({
     '.Toastify__toast': {
         padding: 0,
         borderRadius: '8px',
+        minHeight: 'unset',
+        background: 'transparent',
+        overflow: 'hidden',
     },
     '.Toastify__toast-body': {
         padding: 0,
+        margin: 0,
     },
 }));

@@ -140,7 +140,7 @@ export const SideBarToggledWrap = styled(Box)(({ theme }) => ({
 export const SidebarItemBox = styled(Box, {
     shouldForwardProp: (prop) => prop !== 'isActive',
 })<{ isActive?: boolean }>(({ isActive, theme }) => ({
-    color: isActive ? chirpPalette(theme).primaryColors.accent : theme.palette.primary.contrastText,
+    color: isActive ? chirpPalette(theme).primaryColors.accent : chirpPalette(theme).neutral.grey4,
     background: isActive ? chirpPalette(theme).primaryColors.accentLight : 'transparent',
     width: '100%',
     padding: 0,
