@@ -1,6 +1,6 @@
-import { styled as a, Switch as e } from "@mui/material";
+import { styled as e, Switch as a } from "@mui/material";
 import { chirpPalette as r } from "../../theme/palette.es.js";
-const h = a(e)(({ theme: o }) => {
+const h = e(a)(({ theme: o }) => {
   const t = r(o);
   return {
     width: 54,
@@ -29,7 +29,7 @@ const h = a(e)(({ theme: o }) => {
       backgroundColor: o.palette.primary.main,
       width: 28,
       height: 28,
-      boxShadow: `0 4px 12px ${t.shadow ?? "rgba(0, 0, 0, 0.14)"}`,
+      boxShadow: "none",
       transition: "background-color 0.2s ease-in-out",
       "&::before": {
         content: "''",

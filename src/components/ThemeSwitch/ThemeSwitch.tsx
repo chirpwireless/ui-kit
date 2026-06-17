@@ -33,7 +33,7 @@ export const ThemeSwitch = styled(Switch)(({ theme }) => {
             backgroundColor: theme.palette.primary.main,
             width: 28,
             height: 28,
-            boxShadow: `0 4px 12px ${palette.shadow ?? 'rgba(0, 0, 0, 0.14)'}`,
+            boxShadow: 'none',
             transition: 'background-color 0.2s ease-in-out',
             '&::before': {
                 content: "''",

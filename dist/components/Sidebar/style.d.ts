@@ -1,4 +1,5 @@
 import { Theme } from '@mui/material';
+import { ElementType } from 'react';
 interface DrawerProps {
     isOpen?: boolean;
     isCollapsed?: boolean;
@@ -19,6 +20,10 @@ export declare const ListChildItem: import('@emotion/styled').StyledComponent<im
 interface LinkBoxProps {
     isSidebarCollapsed?: boolean;
     disabled?: boolean;
+    component?: ElementType;
+    href?: string;
+    target?: string;
+    rel?: string;
 }
 export declare const LinkBox: import('@emotion/styled').StyledComponent<import('@mui/system').BoxOwnProps<Theme> & Omit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof import('@mui/system').BoxOwnProps<Theme>> & import('@mui/system').MUIStyledCommonProps<Theme> & LinkBoxProps, {}, {}>;
 export declare const MenuParentItem: import('@emotion/styled').StyledComponent<import('@mui/material').StackOwnProps & import('../../../node_modules/@mui/material/OverridableComponent').CommonProps & Omit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLDivElement>, HTMLDivElement>, keyof import('../../../node_modules/@mui/material/OverridableComponent').CommonProps | keyof import('@mui/material').StackOwnProps> & import('@mui/system').MUIStyledCommonProps<Theme>, {}, {}>;

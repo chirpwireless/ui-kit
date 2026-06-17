@@ -10,6 +10,7 @@ import {
     type CSSObject,
     type Theme,
 } from '@mui/material';
+import type { ElementType } from 'react';
 
 import { CLOSED_SIDEBAR_WIDTH, CurrentTheme, SIDEBAR_COLLAPSED_WIDTH, SIDEBAR_WIDTH } from '../../styles/constants';
 import '../../theme/augmentation';
@@ -186,6 +187,12 @@ export const ListChildItem = styled(MuiListItem, {
 interface LinkBoxProps {
     isSidebarCollapsed?: boolean;
     disabled?: boolean;
+    // LinkBox is rendered as an <a> via `component`. styled(Box) drops Box's polymorphic `component`
+    // prop and anchor attributes from its type, so declare the ones we pass through here.
+    component?: ElementType;
+    href?: string;
+    target?: string;
+    rel?: string;
 }
 
 export const LinkBox = styled(Box, {

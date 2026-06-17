@@ -1,6 +1,8 @@
 import { FormControl, SelectProps } from '@mui/material';
 import { FC } from 'react';
 
+import { SelectIcon } from '../../icons';
+
 import { InputLabel } from './components/InputLabel';
 import * as S from './style';
 
@@ -24,7 +26,7 @@ export const Select: FC<SelectProps> = ({ label, labelId, ...props }) => {
                     }}
                 />
             ) : null}
-            <S.Select {...props} />
+            <S.Select IconComponent={SelectIcon} {...props} />
         </FormControl>
     );
 };

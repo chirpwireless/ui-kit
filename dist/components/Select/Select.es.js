@@ -1,14 +1,15 @@
-import { jsxRuntimeExports as r } from "../../jsx-runtime-BgepH7Pb.js";
-import { FormControl as l } from "@mui/material";
-import { InputLabel as n } from "./components/InputLabel/index.es.js";
-import { Select as s } from "./style.es.js";
-const a = ({ label: t, labelId: o, ...e }) => {
-  const i = !!t;
-  return /* @__PURE__ */ r.jsxs(l, { fullWidth: !0, children: [
-    i ? /* @__PURE__ */ r.jsx(
-      n,
+import { jsxRuntimeExports as o } from "../../jsx-runtime-BgepH7Pb.js";
+import { FormControl as i } from "@mui/material";
+import { SelectIcon as l } from "../../icons/SelectIcon/index.es.js";
+import { InputLabel as m } from "./components/InputLabel/index.es.js";
+import { Select as p } from "./style.es.js";
+const a = ({ label: t, labelId: r, ...e }) => {
+  const n = !!t;
+  return /* @__PURE__ */ o.jsxs(i, { fullWidth: !0, children: [
+    n ? /* @__PURE__ */ o.jsx(
+      m,
       {
-        labelId: o,
+        labelId: r,
         label: t,
         className: e.error ? "Mui-error" : void 0,
         sx: {
@@ -21,7 +22,7 @@ const a = ({ label: t, labelId: o, ...e }) => {
         }
       }
     ) : null,
-    /* @__PURE__ */ r.jsx(s, { ...e })
+    /* @__PURE__ */ o.jsx(p, { IconComponent: l, ...e })
   ] });
 };
 export {
