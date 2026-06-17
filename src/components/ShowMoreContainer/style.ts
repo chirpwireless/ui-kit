@@ -29,7 +29,7 @@ export const Arrow = styled(Stack, {
 }));
 
 export const BoxWrapper = styled(Box, {
-    shouldForwardProp: (prop) => prop !== 'open' && prop !== 'heightFull',
+    shouldForwardProp: (prop) => prop !== 'open' && prop !== 'heightFull' && prop !== 'height',
 })<BoxWrapperProps>(({ open, height, heightFull }) => ({
     transition: 'all 0.3s ease',
     height: open ? heightFull : height,

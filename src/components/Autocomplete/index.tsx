@@ -1,5 +1,4 @@
 import { Autocomplete as MuiAutocomplete, AutocompleteProps, styled } from '@mui/material';
-import React from 'react';
 
 import { SelectIcon } from '../../icons';
 

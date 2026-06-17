@@ -2,8 +2,8 @@ import { CalendarToday as CalendarTodayIcon } from '@mui/icons-material';
 import { FormControl, Popover, Typography, useTheme } from '@mui/material';
 import type { Locale } from 'date-fns';
 import { de, es, enUS, fr } from 'date-fns/locale';
-import { MouseEvent, useState } from 'react';
-import { Calendar } from 'react-date-range';
+import { ComponentProps, FC, MouseEvent, useState } from 'react';
+import { Calendar as CalendarBase } from 'react-date-range';
 import 'react-date-range/dist/styles.css';
 import { useTranslation } from 'react-i18next';
 
@@ -13,6 +13,10 @@ import { InputLabel } from '../Select';
 import { RangePickerWrapper } from '../RangePicker';
 
 import * as S from './style';
+
+// react-date-range ships a nested @types/react whose ReactNode is incompatible with this project's
+// React types, so Calendar fails as a JSX element (TS2786). Re-type it against the project's React.
+const Calendar = CalendarBase as unknown as FC<ComponentProps<typeof CalendarBase>>;
 
 const localesMap: Record<string, Locale> = { en: enUS, de, es, fr };
 

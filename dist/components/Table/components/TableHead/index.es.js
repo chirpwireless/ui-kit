@@ -1,29 +1,28 @@
-import { jsxRuntimeExports as t } from "../../../../jsx-runtime-BgepH7Pb.js";
-import { TableHead as w, TableSortLabel as C } from "@mui/material";
-import { CaretDownIcon as b } from "../../../../icons/CaretDownIcon/index.es.js";
-import { CaretUpIcon as j } from "../../../../icons/CaretUpIcon/index.es.js";
-import { SortIcon as H } from "../../../../icons/SortIcon/index.es.js";
-import { Row as I, HeadCell as T } from "./style.es.js";
-const k = ({ columns: l, enableSorting: m, sortingState: c }) => /* @__PURE__ */ t.jsx(w, { children: /* @__PURE__ */ t.jsx(I, { children: l.map(({ id: e, columnDef: n, getCanSort: d, getToggleSortingHandler: p }) => {
-  const { meta: o, maxSize: x, header: i } = n, h = m && d(), r = c.find((f) => {
-    var a;
-    return ((a = f.id) == null ? void 0 : a.toLowerCase()) === (e == null ? void 0 : e.toLowerCase());
+import { jsxRuntimeExports as n } from "../../../../jsx-runtime-BgepH7Pb.js";
+import { TableHead as w, TableSortLabel as j } from "@mui/material";
+import { CaretDownIcon as H } from "../../../../icons/CaretDownIcon/index.es.js";
+import { CaretUpIcon as I } from "../../../../icons/CaretUpIcon/index.es.js";
+import { SortIcon as T } from "../../../../icons/SortIcon/index.es.js";
+import { Row as g, HeadCell as u } from "./style.es.js";
+const A = ({ columns: s, enableSorting: c, sortingState: a }) => /* @__PURE__ */ n.jsx(w, { children: /* @__PURE__ */ n.jsx(g, { children: s.map(({ id: r, columnDef: l, getCanSort: p, getToggleSortingHandler: x }) => {
+  const { meta: d, maxSize: f, header: t } = l, o = d, h = c && p(), e = a.find((C) => {
+    var i;
+    return ((i = C.id) == null ? void 0 : i.toLowerCase()) === (r == null ? void 0 : r.toLowerCase());
   });
-  let s = H;
-  return r && (s = r != null && r.desc ? b : j), /* @__PURE__ */ t.jsx(
-    T,
+  let m = T;
+  return e && (m = e != null && e.desc ? H : I), /* @__PURE__ */ n.jsx(
+    u,
     {
       sx: {
-        width: n.size,
         width: o == null ? void 0 : o.width,
-        maxWidth: x,
+        maxWidth: f,
         textAlign: o == null ? void 0 : o.align
       },
-      children: h ? /* @__PURE__ */ t.jsx(C, { IconComponent: s, onClick: p(), children: i }) : i
+      children: h ? /* @__PURE__ */ n.jsx(j, { IconComponent: m, onClick: x(), children: t }) : t
     },
-    e
+    r
   );
 }) }) });
 export {
-  k as TableHead
+  A as TableHead
 };

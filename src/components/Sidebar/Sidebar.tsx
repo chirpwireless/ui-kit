@@ -1,7 +1,7 @@
 import type { MouseEvent } from 'react';
 import { useCallback, useState } from 'react';
 
-import { Stack } from '@mui/material';
+import { Divider, Stack } from '@mui/material';
 
 import { DefaultLink } from './components/DefaultLink';
 import { RoutesList } from './components/RoutesList';
@@ -67,14 +67,17 @@ export const Sidebar = ({
             onMouseLeave={() => setIsSidebarHovered(false)}
         >
             {!isMobile ? (
-                <SidebarLogo
-                    isSidebarCollapsed={isCollapsed}
-                    isSidebarHovered={isSidebarHovered}
-                    onToggle={handleToggleCollapsed}
-                    logo={logo}
-                    logoCollapsed={logoCollapsed}
-                    logoHref={logoHref}
-                />
+                <>
+                    <SidebarLogo
+                        isSidebarCollapsed={isCollapsed}
+                        isSidebarHovered={isSidebarHovered}
+                        onToggle={handleToggleCollapsed}
+                        logo={logo}
+                        logoCollapsed={logoCollapsed}
+                        logoHref={logoHref}
+                    />
+                    <Divider sx={{ width: '100%', borderColor: 'borders.primary' }} />
+                </>
             ) : (
                 topSlot
             )}

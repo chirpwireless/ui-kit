@@ -19,6 +19,7 @@ export const TableHead = <TData,>({ columns, enableSorting, sortingState }: Prop
             <S.Row>
                 {columns.map(({ id, columnDef, getCanSort, getToggleSortingHandler }) => {
                     const { meta, maxSize: maxWidth, header } = columnDef;
+                    const tableMeta = meta as TableMeta | undefined;
                     const needSorting = enableSorting && getCanSort();
                     const containedSort = sortingState.find((item) => item.id?.toLowerCase() === id?.toLowerCase());
                     let IconComponent = SortIcon;
@@ -31,10 +32,9 @@ export const TableHead = <TData,>({ columns, enableSorting, sortingState }: Prop
                         <S.HeadCell
                             key={id}
                             sx={{
-                                width: columnDef.size,
-                                width: (meta as TableMeta)?.width,
+                                width: tableMeta?.width,
                                 maxWidth,
-                                textAlign: (meta as TableMeta)?.align,
+                                textAlign: tableMeta?.align,
                             }}
                         >
                             {needSorting ? (

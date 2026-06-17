@@ -1,39 +1,39 @@
 import { jsxRuntimeExports as r } from "../../jsx-runtime-BgepH7Pb.js";
-import { useState as L, useCallback as u } from "react";
-import { Stack as h } from "@mui/material";
+import { useState as l, useCallback as x } from "react";
+import { Divider as G, Stack as h } from "@mui/material";
 import { DefaultLink as I } from "./components/DefaultLink.es.js";
 import { RoutesList as N } from "./components/RoutesList.es.js";
 import { SidebarLogo as $ } from "./SidebarLogo.es.js";
-import { SidebarDrawer as q, List as y, Footer as z } from "./style.es.js";
-const A = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), X = ({
+import { SidebarDrawer as q, List as z, Footer as A } from "./style.es.js";
+const B = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), Y = ({
   groups: a,
-  isOpen: S,
+  isOpen: L,
   isCollapsed: t,
   onCollapseToggle: n,
   onItemClick: d,
   onParentClick: i,
-  activePathname: l,
+  activePathname: S,
   logo: w,
   logoCollapsed: v,
-  logoHref: M,
-  footerSlot: x,
+  logoHref: D,
+  footerSlot: u,
   bottomSlot: c,
-  topSlot: D,
-  isMobile: E,
-  linkComponent: H = A
+  topSlot: M,
+  isMobile: g,
+  linkComponent: E = B
 }) => {
-  const [O, f] = L({}), [R, p] = L(!1), g = u(
+  const [F, p] = l({}), [H, f] = l(!1), O = x(
     (e) => {
-      i == null || i(e), t && n(), f((s) => ({ ...s, [e.name]: !s[e.name] }));
+      i == null || i(e), t && n(), p((s) => ({ ...s, [e.name]: !s[e.name] }));
     },
     [t, n, i]
-  ), F = u(
+  ), R = x(
     (e, s) => {
       d == null || d(e, s);
     },
     [d]
-  ), G = u(() => {
-    f({}), n();
+  ), y = x(() => {
+    p({}), n();
   }, [n]);
   return /* @__PURE__ */ r.jsxs(
     q,
@@ -41,23 +41,26 @@ const A = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), X = ({
       className: "sidebar",
       variant: "permanent",
       anchor: "left",
-      open: S,
+      open: L,
       isCollapsed: t,
-      onMouseEnter: () => p(!0),
-      onMouseLeave: () => p(!1),
+      onMouseEnter: () => f(!0),
+      onMouseLeave: () => f(!1),
       children: [
-        E ? D : /* @__PURE__ */ r.jsx(
-          $,
-          {
-            isSidebarCollapsed: t,
-            isSidebarHovered: R,
-            onToggle: G,
-            logo: w,
-            logoCollapsed: v,
-            logoHref: M
-          }
-        ),
-        /* @__PURE__ */ r.jsx(y, { children: a.map((e, s) => {
+        g ? M : /* @__PURE__ */ r.jsxs(r.Fragment, { children: [
+          /* @__PURE__ */ r.jsx(
+            $,
+            {
+              isSidebarCollapsed: t,
+              isSidebarHovered: H,
+              onToggle: y,
+              logo: w,
+              logoCollapsed: v,
+              logoHref: D
+            }
+          ),
+          /* @__PURE__ */ r.jsx(G, { sx: { width: "100%", borderColor: "borders.primary" } })
+        ] }),
+        /* @__PURE__ */ r.jsx(z, { children: a.map((e, s) => {
           var j, b;
           const m = s === a.length - 1;
           return /* @__PURE__ */ r.jsxs(
@@ -74,12 +77,12 @@ const A = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), X = ({
                   N,
                   {
                     item: o,
-                    activePathname: l,
+                    activePathname: S,
                     isSidebarCollapsed: t,
-                    menuParentIsOpen: O,
-                    linkComponent: H,
-                    onParentClick: g,
-                    onItemClick: F
+                    menuParentIsOpen: F,
+                    linkComponent: E,
+                    onParentClick: O,
+                    onItemClick: R
                   }
                 ) }, o.id ?? o.name)),
                 m && c ? /* @__PURE__ */ r.jsx(h, { sx: { width: "100%", mt: 1, gap: 3, alignItems: "center" }, children: c }) : null
@@ -88,11 +91,11 @@ const A = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), X = ({
             ((j = e[0]) == null ? void 0 : j.id) ?? ((b = e[0]) == null ? void 0 : b.name) ?? `routes-group-${s}`
           );
         }) }),
-        x ? /* @__PURE__ */ r.jsx(z, { children: x }) : null
+        u ? /* @__PURE__ */ r.jsx(A, { children: u }) : null
       ]
     }
   );
 };
 export {
-  X as Sidebar
+  Y as Sidebar
 };

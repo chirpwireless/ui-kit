@@ -6,6 +6,31 @@ import './augmentation';
 
 type ChirpTheme = Omit<MuiTheme, 'palette'> & { palette: ChirpPaletteOptions };
 
+// Explicit return type: without it TS infers a shape that references react/node_modules/csstype
+// (via CSS-like keys such as shapeRendering), which is not portable and breaks the lib build (TS2742).
+interface BarChartTheme {
+    crosshair: { line: { stroke: string; strokeDasharray: string; strokeOpacity: number } };
+    tooltip: {
+        table: { marginTop: string; padding: number };
+        tableCell: { padding: string; color: string };
+        tableCellValue: { color: string; marginLeft: string };
+        container: {
+            background: string;
+            backdropFilter: string;
+            borderRadius: number;
+            border: string;
+            fontFamily: string | undefined;
+            padding: string;
+            fontSize: string;
+            lineHeight: string;
+            color: string;
+        };
+        chip: { width: string; height: string; borderRadius: number };
+    };
+    legends: { text: { fontSize: string } };
+    axis: { ticks: { text: { fill: string; fontSize: string; shapeRendering: string; textShadow: string } } };
+}
+
 // Replaces the alpha channel of an `rgba(r, g, b, a)` string with the provided opacity.
 const replaceRgbaOpacity = (rgba: string, opacity: number): string => {
     const match = rgba.match(/^rgba?\(([^)]+)\)$/);
@@ -18,7 +43,7 @@ const replaceRgbaOpacity = (rgba: string, opacity: number): string => {
     return `rgba(${r}, ${g}, ${b}, ${opacity})`;
 };
 
-export const createBarTheme = (themeInput: MuiTheme) => {
+export const createBarTheme = (themeInput: MuiTheme): BarChartTheme => {
     const theme = themeInput as unknown as ChirpTheme;
     const neutralPrimary = theme.palette.neutral?.primary ?? '';
     const neutralGrey1 = theme.palette.neutral?.grey1 ?? '';

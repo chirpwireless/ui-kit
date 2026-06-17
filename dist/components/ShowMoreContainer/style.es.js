@@ -1,7 +1,7 @@
-import { styled as o, Box as r, Stack as e } from "@mui/material";
-const i = o(r)(() => ({
+import { styled as o, Box as e, Stack as r } from "@mui/material";
+const s = o(e)(() => ({
   float: "left"
-})), l = o(e, {
+})), l = o(r, {
   shouldForwardProp: (t) => t !== "open"
 })(({ open: t }) => ({
   height: 26,
@@ -13,14 +13,14 @@ const i = o(r)(() => ({
     transition: "transform 0.2s ease",
     transform: t ? "rotate(-180deg)" : "rotate(0deg)"
   }
-})), d = o(r, {
-  shouldForwardProp: (t) => t !== "open" && t !== "heightFull"
+})), d = o(e, {
+  shouldForwardProp: (t) => t !== "open" && t !== "heightFull" && t !== "height"
 })(({ open: t, height: a, heightFull: n }) => ({
   transition: "all 0.3s ease",
   height: t ? n : a,
   overflow: "hidden",
   paddingRight: "30px"
-})), p = o(e)(() => ({
+})), h = o(r)(() => ({
   flexDirection: "row",
   justifyContent: "flex-start",
   flexWrap: "nowrap",
@@ -29,6 +29,6 @@ const i = o(r)(() => ({
 export {
   l as Arrow,
   d as BoxWrapper,
-  i as Mark,
-  p as Wrapper
+  s as Mark,
+  h as Wrapper
 };

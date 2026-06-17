@@ -3,7 +3,7 @@ import { ExpandMore as g } from "@mui/icons-material";
 import { useState as i, useRef as j, useEffect as R } from "react";
 import { Wrapper as b, BoxWrapper as C, Mark as k, Arrow as B } from "./style.es.js";
 const M = ({ height: e, children: c }) => {
-  const [l, a] = i(!1), [p, u] = i(!0), [x, f] = i(e), r = j(null), m = (t) => {
+  const [l, a] = i(!1), [p, u] = i(!0), [f, x] = i(e), r = j(null), m = (t) => {
     t.stopPropagation(), t.preventDefault(), a((o) => !o);
   };
   return R(() => {
@@ -12,33 +12,23 @@ const M = ({ height: e, children: c }) => {
       const { bottom: o } = r.current.getBoundingClientRect(), n = (t = r.current.parentElement) == null ? void 0 : t.getBoundingClientRect();
       if (n) {
         const d = o - n.top <= e;
-        f(o - n.top), u(d);
+        x(o - n.top), u(d);
       }
     }
   }, [e]), /* @__PURE__ */ s.jsxs(b, { children: [
-    /* @__PURE__ */ s.jsxs(
-      C,
-      {
-        open: l,
-        heightFull: x,
-        sx: {
-          height: e
-        },
-        children: [
-          c,
-          /* @__PURE__ */ s.jsx(
-            k,
-            {
-              className: "last-badge",
-              ref: r,
-              sx: {
-                height: e
-              }
-            }
-          )
-        ]
-      }
-    ),
+    /* @__PURE__ */ s.jsxs(C, { open: l, heightFull: f, height: e, children: [
+      c,
+      /* @__PURE__ */ s.jsx(
+        k,
+        {
+          className: "last-badge",
+          ref: r,
+          sx: {
+            height: e
+          }
+        }
+      )
+    ] }),
     !p && /* @__PURE__ */ s.jsx(B, { open: l, onClick: (t) => m(t), children: /* @__PURE__ */ s.jsx(g, { sx: { width: "16px" } }) })
   ] });
 };

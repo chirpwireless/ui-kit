@@ -1,4 +1,4 @@
-import type { MouseEvent, ReactNode } from 'react';
+import type { MouseEvent, MouseEventHandler, ReactNode } from 'react';
 
 import * as S from '../style';
 
@@ -30,7 +30,9 @@ export const DefaultLink = ({
     <S.LinkBox
         component="a"
         href={disabled ? '#' : href}
-        onClick={onClick}
+        // LinkBox renders an <a> via `component="a"`, so the handler runs on an anchor at runtime,
+        // but styled(Box)'s onClick is typed for the default div element. Bridge the element type.
+        onClick={onClick as MouseEventHandler<HTMLDivElement> | undefined}
         disabled={disabled}
         isSidebarCollapsed={isSidebarCollapsed}
         className={className}

@@ -107,10 +107,9 @@ export const SidebarDrawer = styled(Drawer, {
 export const AppLogo = styled(Box)({
     display: 'flex',
     alignItems: 'center',
-    overflowX: 'hidden',
+    overflow: 'hidden',
     padding: 0,
-    height: 'auto',
-    minHeight: 60,
+    height: 60,
 });
 
 export const LogoWrap = styled('div')({

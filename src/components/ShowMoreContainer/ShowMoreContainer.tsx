@@ -36,13 +36,7 @@ export const ShowMoreContainer: FC<ShowMoreContainerProps> = ({ height, children
 
     return (
         <S.Wrapper>
-            <S.BoxWrapper
-                open={open}
-                heightFull={heightFull}
-                sx={{
-                    height: height,
-                }}
-            >
+            <S.BoxWrapper open={open} heightFull={heightFull} height={height}>
                 {children}
                 <S.Mark
                     className="last-badge"

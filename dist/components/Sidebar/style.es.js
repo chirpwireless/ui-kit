@@ -70,10 +70,9 @@ const s = (o, i) => ({
 })), k = n(t)({
   display: "flex",
   alignItems: "center",
-  overflowX: "hidden",
+  overflow: "hidden",
   padding: 0,
-  height: "auto",
-  minHeight: 60
+  height: 60
 }), D = n("div")({
   display: "inline-flex",
   minWidth: 145,
@@ -160,7 +159,7 @@ const s = (o, i) => ({
   justifyContent: "center",
   transform: o ? "rotate(180deg)" : "rotate(0deg)",
   transition: "transform 0.2s ease"
-})), H = n(f)({
+})), R = n(f)({
   marginLeft: 8,
   fontSize: 12,
   lineHeight: "18px",
@@ -168,7 +167,7 @@ const s = (o, i) => ({
   whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis"
-}), R = n("footer")(({ theme: o }) => ({
+}), $ = n("footer")(({ theme: o }) => ({
   backgroundColor: o.palette.mode === d.Dark ? r(o).neutral.black : r(o).neutral.white,
   marginTop: "auto",
   overflow: "hidden",
@@ -181,9 +180,9 @@ const s = (o, i) => ({
 export {
   k as AppLogo,
   F as DropdownIconWrapper,
-  R as Footer,
+  $ as Footer,
   W as LinkBox,
-  H as LinkText,
+  R as LinkText,
   C as List,
   P as ListChildItem,
   T as ListItem,
