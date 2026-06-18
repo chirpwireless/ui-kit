@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 
-import { DoubleChevronRight } from '../../assets/icons/DoubleChevronRight';
+import { DoubleChevronRight } from '../../icons/DoubleChevronRight';
 
 interface SidebarToggleProps {
     isSidebarHovered: boolean;

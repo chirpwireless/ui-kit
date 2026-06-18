@@ -1,6 +1,6 @@
 import { jsxRuntimeExports as o } from "../../jsx-runtime-BgepH7Pb.js";
 import { Box as i } from "@mui/material";
-import { DoubleChevronRight as s } from "../../assets/icons/DoubleChevronRight/index.es.js";
+import { DoubleChevronRight as s } from "../../icons/DoubleChevronRight/index.es.js";
 const p = ({ isSidebarHovered: t, isSidebarCollapsed: r, onToggle: e }) => /* @__PURE__ */ o.jsx(
   i,
   {

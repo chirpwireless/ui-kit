@@ -47,3 +47,234 @@ export { TrashIcon } from './TrashIcon';
 export { UserIcon } from './UserIcon';
 
 export { WarningTriangleIcon } from './WarningTriangleIcon';
+
+export { CheckCircleSmallIcon } from './CheckCircleSmallIcon';
+
+// --- migrated from assets/icons (CHIRP-3362): now part of the public ./icons surface ---
+export * from './AerialIcon';
+
+export * from './ArrowLeftIcon';
+
+export * from './ArrowRightIcon';
+
+export * from './ArrowsIcon';
+
+export * from './BackSideIcon';
+
+export * from './Billing';
+
+export * from './CalendarIcon';
+
+export * from './CaretLeftIcon';
+
+export * from './CaretRightIcon';
+
+export * from './CheckDailyIcon';
+
+export * from './CheckIcon';
+
+export * from './CheckboxChecked';
+
+export * from './CheckboxCheckedOutlined';
+
+export * from './CheckboxUnchecked';
+
+export * from './CheckboxUncheckedOutlined2';
+
+export * from './ChevronRightIcon';
+
+export * from './ChirpCoinIcon';
+
+export * from './ChirpIcon';
+
+export * from './ChirpLoginIcon';
+
+export * from './ChirpTokenIcon';
+
+export * from './CitiesIcon';
+
+export * from './CoinsIcon';
+
+export * from './CollapseIcon';
+
+export * from './CopyIcon';
+
+export * from './CountriesIcon';
+
+export * from './CurrencyCoinsIcon';
+
+export * from './DataCreditsIcon';
+
+export * from './DataCreditsIconBig';
+
+export * from './DeviceGearIcon';
+
+export * from './DeviceIcon';
+
+export * from './DeviceMenuIcon';
+
+export * from './DisconnectWallet';
+
+export * from './DiscordIcon';
+
+export * from './DocsIcon';
+
+export * from './DollarIcon';
+
+export * from './DoubleChevronRight';
+
+export * from './DownloadFileIcon';
+
+export * from './EmailIcon';
+
+export * from './EmptyMap';
+
+export * from './EnergyIcon';
+
+export * from './ExitIcon';
+
+export * from './Explorer';
+
+export * from './EyeClosedIcon';
+
+export * from './EyeIcon';
+
+export * from './FaceSadIcon';
+
+export * from './FinishedIcon';
+
+export * from './FireIcon';
+
+export * from './FullscreenIcon';
+
+export * from './GPSIcon';
+
+export * from './HelpIcon';
+
+export * from './Info';
+
+export * from './IoTIcon';
+
+export * from './LoRaWanDeviceIcon';
+
+export * from './LocationIcon';
+
+export * from './ManageIcon';
+
+export * from './MapIcon';
+
+export * from './MarketplaceIcon';
+
+export * from './MeasureIcon';
+
+export * from './MediumIcon';
+
+export * from './MessagesIcon';
+
+export * from './MinerIcon';
+
+export * from './MiningBoard';
+
+export * from './MobileCloseIcon';
+
+export * from './MoonIcon';
+
+export * from './NewEditIcon';
+
+export * from './NftEmptyIcon';
+
+export * from './NftIcon';
+
+export * from './OrdersIcon';
+
+export * from './PenIcon';
+
+export * from './PhotoPlusIcon';
+
+export * from './PinIcon';
+
+export * from './PingsIcon';
+
+export * from './PowerIcon';
+
+export * from './Processing';
+
+export * from './ProfileIcon';
+
+export * from './QRCodeIcon';
+
+export * from './QuestionIcon';
+
+export * from './RedditIcon';
+
+export * from './ResetIcon';
+
+export * from './RewardsWalletIcon';
+
+export * from './SadFaceIcon';
+
+export * from './SatelliteIcon';
+
+export * from './SendIcon';
+
+export * from './ShareIcon';
+
+export * from './ShoppingBag';
+
+export * from './SidebarArrowIcon';
+
+export * from './SidebarIcon';
+
+export * from './SimCardIcon';
+
+export * from './SimDeviceIcon';
+
+export * from './StarIcon';
+
+export * from './StatsIcon';
+
+export * from './StreetIcon';
+
+export * from './SubLocationIcon';
+
+export * from './SubLocationTagIcon';
+
+export * from './SuiIcon';
+
+export * from './SunIcon';
+
+export * from './TabletIcon';
+
+export * from './TargetIcon';
+
+export * from './TelegramIcon';
+
+export * from './TipIcon';
+
+export * from './TopUpIcon';
+
+export * from './Traffic';
+
+export * from './TwitterIcon';
+
+export * from './UnknownDeviceLogo';
+
+export * from './UserBoardIcon';
+
+export * from './UsersIcon';
+
+export * from './VendorsIcon';
+
+export * from './WalletIcon';
+
+export * from './WalletNotVerifiedIcon';
+
+export * from './WalletVerifiedIcon';
+
+export * from './WarningIcon';
+
+export * from './WiFiIcon';
+
+export * from './YoutubeIcon';
+
+export * from './Zipper';

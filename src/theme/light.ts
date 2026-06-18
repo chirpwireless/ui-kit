@@ -88,6 +88,8 @@ export const lightTheme = {
         background: {
             default: 'rgba(251, 251, 251, 1)',
             paper: 'rgba(251, 251, 251, 1)',
+            primary: 'rgba(251, 251, 251, 1)',
+            secondary: 'rgba(251, 251, 251, 1)',
         },
         text: {
             primary: 'rgba(16, 16, 16, 1)',

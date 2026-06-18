@@ -85,6 +85,8 @@ export declare const chirpDarkTheme: {
         background: {
             default: string;
             paper: string;
+            primary: string;
+            secondary: string;
         };
         text: {
             primary: string;

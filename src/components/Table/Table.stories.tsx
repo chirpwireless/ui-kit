@@ -2,7 +2,7 @@ import { Box, Stack } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { CallIcon } from '@chirp/ui/assets/fleet-icons';
-import { EyeIcon } from '@chirp/ui/assets/icons';
+import { EyeIcon } from '@chirp/ui/icons';
 
 import { Table } from './Table';
 import { TableVirtualized } from './TableVirtualized';

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { EyeIcon } from '@chirp/ui/assets/icons';
+import { EyeIcon } from '@chirp/ui/icons';
 
 import { Tooltip } from './Tooltip';
 

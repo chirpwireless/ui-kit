@@ -36,10 +36,10 @@ export interface GetThemeOptions {
 
 const pickPalette = (mode: PaletteMode, variant: 'default' | 'chirp'): ChirpPaletteOptions => {
     if (variant === 'chirp') {
-        return (mode === 'light' ? chirpLightTheme : chirpDarkTheme).palette as ChirpPaletteOptions;
+        return (mode === 'light' ? chirpLightTheme : chirpDarkTheme).palette as unknown as ChirpPaletteOptions;
     }
 
-    return (mode === 'light' ? lightTheme : darkTheme).palette as ChirpPaletteOptions;
+    return (mode === 'light' ? lightTheme : darkTheme).palette as unknown as ChirpPaletteOptions;
 };
 
 export const getTheme = ({ mode = 'light', variant = 'default' }: GetThemeOptions = {}): Theme => {

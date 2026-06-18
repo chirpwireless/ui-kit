@@ -85,6 +85,8 @@ export declare const darkTheme: {
         background: {
             default: string;
             paper: string;
+            primary: string;
+            secondary: string;
         };
         text: {
             primary: string;

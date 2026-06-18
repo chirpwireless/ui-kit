@@ -84,7 +84,9 @@ const g = {
     },
     background: {
       default: "rgba(16, 16, 16, 1)",
-      paper: "rgba(35, 35, 35, 1)"
+      paper: "rgba(35, 35, 35, 1)",
+      primary: "rgba(16, 16, 16, 1)",
+      secondary: "rgba(35, 35, 35, 1)"
     },
     text: {
       primary: "rgba(255, 255, 255, 1)",
