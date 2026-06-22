@@ -1,0 +1,12 @@
+export const VideoCameraIcon = (props: React.SVGProps<SVGSVGElement>) => {
+    return (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <path
+                d="M12.9167 8.33333L16.0417 6.45833V13.5417L12.9167 11.6667M5.62501 14.375H11.0417C11.9622 14.375 12.7083 13.6288 12.7083 12.7083V7.29167C12.7083 6.37119 11.9622 5.625 11.0417 5.625H5.62501C4.70454 5.625 3.95834 6.37119 3.95834 7.29167V12.7083C3.95834 13.6288 4.70454 14.375 5.62501 14.375Z"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+};

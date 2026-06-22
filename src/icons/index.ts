@@ -1,56 +1,3 @@
-export { BackIcon } from './BackIcon';
-
-export { ErrorSolidIcon } from './ErrorSolidIcon';
-
-export { SuccessSolidIcon } from './SuccessSolidIcon';
-
-export { WarningSolidIcon } from './WarningSolidIcon';
-
-export { CaretDownIcon } from './CaretDownIcon';
-
-export { CaretUpIcon } from './CaretUpIcon';
-
-export { SortIcon } from './SortIcon';
-
-export { StepIcon } from './StepIcon';
-
-export { CheckCircleIcon } from './CheckCircleIcon';
-
-export { Checkmark } from './Checkmark';
-
-export { CloseIcon } from './CloseIcon';
-
-export { ChevronDownIcon } from './ChevronDownIcon';
-
-export { DashboardIcon } from './DashboardIcon';
-
-export { DropdownIcon } from './DropdownIcon';
-
-export { EditIcon } from './EditIcon';
-
-export { LogoutIcon } from './LogoutIcon';
-
-export { MoneyIcon } from './MoneyIcon';
-
-export { NotificationIcon } from './NotificationIcon';
-
-export { SearchIcon } from './SearchIcon';
-
-export { SelectIcon } from './SelectIcon';
-
-export { Settings } from './Settings';
-
-export { ToggleSidebarIcon } from './ToggleSidebarIcon';
-
-export { TrashIcon } from './TrashIcon';
-
-export { UserIcon } from './UserIcon';
-
-export { WarningTriangleIcon } from './WarningTriangleIcon';
-
-export { CheckCircleSmallIcon } from './CheckCircleSmallIcon';
-
-// --- migrated from assets/icons (CHIRP-3362): now part of the public ./icons surface ---
 export * from './AerialIcon';
 
 export * from './ArrowLeftIcon';
@@ -59,19 +6,23 @@ export * from './ArrowRightIcon';
 
 export * from './ArrowsIcon';
 
+export { BackIcon } from './BackIcon';
+
 export * from './BackSideIcon';
 
 export * from './Billing';
 
 export * from './CalendarIcon';
 
+export { CaretDownIcon } from './CaretDownIcon';
+
 export * from './CaretLeftIcon';
 
 export * from './CaretRightIcon';
 
-export * from './CheckDailyIcon';
+export { CaretUpIcon } from './CaretUpIcon';
 
-export * from './CheckIcon';
+export * from './CctvIcon';
 
 export * from './CheckboxChecked';
 
@@ -80,6 +31,18 @@ export * from './CheckboxCheckedOutlined';
 export * from './CheckboxUnchecked';
 
 export * from './CheckboxUncheckedOutlined2';
+
+export { CheckCircleIcon } from './CheckCircleIcon';
+
+export { CheckCircleSmallIcon } from './CheckCircleSmallIcon';
+
+export * from './CheckDailyIcon';
+
+export * from './CheckIcon';
+
+export { Checkmark } from './Checkmark';
+
+export { ChevronDownIcon } from './ChevronDownIcon';
 
 export * from './ChevronRightIcon';
 
@@ -93,6 +56,8 @@ export * from './ChirpTokenIcon';
 
 export * from './CitiesIcon';
 
+export { CloseIcon } from './CloseIcon';
+
 export * from './CoinsIcon';
 
 export * from './CollapseIcon';
@@ -102,6 +67,8 @@ export * from './CopyIcon';
 export * from './CountriesIcon';
 
 export * from './CurrencyCoinsIcon';
+
+export { DashboardIcon } from './DashboardIcon';
 
 export * from './DataCreditsIcon';
 
@@ -125,11 +92,17 @@ export * from './DoubleChevronRight';
 
 export * from './DownloadFileIcon';
 
+export { DropdownIcon } from './DropdownIcon';
+
+export { EditIcon } from './EditIcon';
+
 export * from './EmailIcon';
 
 export * from './EmptyMap';
 
 export * from './EnergyIcon';
+
+export { ErrorSolidIcon } from './ErrorSolidIcon';
 
 export * from './ExitIcon';
 
@@ -155,9 +128,11 @@ export * from './Info';
 
 export * from './IoTIcon';
 
-export * from './LoRaWanDeviceIcon';
-
 export * from './LocationIcon';
+
+export { LogoutIcon } from './LogoutIcon';
+
+export * from './LoRaWanDeviceIcon';
 
 export * from './ManageIcon';
 
@@ -177,6 +152,8 @@ export * from './MiningBoard';
 
 export * from './MobileCloseIcon';
 
+export { MoneyIcon } from './MoneyIcon';
+
 export * from './MoonIcon';
 
 export * from './NewEditIcon';
@@ -185,15 +162,17 @@ export * from './NftEmptyIcon';
 
 export * from './NftIcon';
 
+export { NotificationIcon } from './NotificationIcon';
+
 export * from './OrdersIcon';
 
 export * from './PenIcon';
 
 export * from './PhotoPlusIcon';
 
-export * from './PinIcon';
-
 export * from './PingsIcon';
+
+export * from './PinIcon';
 
 export * from './PowerIcon';
 
@@ -215,7 +194,13 @@ export * from './SadFaceIcon';
 
 export * from './SatelliteIcon';
 
+export { SearchIcon } from './SearchIcon';
+
+export { SelectIcon } from './SelectIcon';
+
 export * from './SendIcon';
+
+export { Settings } from './Settings';
 
 export * from './ShareIcon';
 
@@ -229,15 +214,21 @@ export * from './SimCardIcon';
 
 export * from './SimDeviceIcon';
 
+export { SortIcon } from './SortIcon';
+
 export * from './StarIcon';
 
 export * from './StatsIcon';
+
+export { StepIcon } from './StepIcon';
 
 export * from './StreetIcon';
 
 export * from './SubLocationIcon';
 
 export * from './SubLocationTagIcon';
+
+export { SuccessSolidIcon } from './SuccessSolidIcon';
 
 export * from './SuiIcon';
 
@@ -251,9 +242,13 @@ export * from './TelegramIcon';
 
 export * from './TipIcon';
 
+export { ToggleSidebarIcon } from './ToggleSidebarIcon';
+
 export * from './TopUpIcon';
 
 export * from './Traffic';
+
+export { TrashIcon } from './TrashIcon';
 
 export * from './TwitterIcon';
 
@@ -261,9 +256,13 @@ export * from './UnknownDeviceLogo';
 
 export * from './UserBoardIcon';
 
+export { UserIcon } from './UserIcon';
+
 export * from './UsersIcon';
 
 export * from './VendorsIcon';
+
+export * from './VideoCameraIcon';
 
 export * from './WalletIcon';
 
@@ -272,6 +271,10 @@ export * from './WalletNotVerifiedIcon';
 export * from './WalletVerifiedIcon';
 
 export * from './WarningIcon';
+
+export { WarningSolidIcon } from './WarningSolidIcon';
+
+export { WarningTriangleIcon } from './WarningTriangleIcon';
 
 export * from './WiFiIcon';
 
