@@ -28,6 +28,8 @@ export * from './ChirpLoginIcon';
 export * from './ChirpTokenIcon';
 export * from './CitiesIcon';
 export { CloseIcon } from './CloseIcon';
+export * from './CloudeIcon';
+export * from './CodeIcon';
 export * from './CoinsIcon';
 export * from './CollapseIcon';
 export * from './CopyIcon';
