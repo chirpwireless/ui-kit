@@ -12,6 +12,8 @@ export * from './BackSideIcon';
 
 export * from './Billing';
 
+export * from './BuildingsIcon';
+
 export * from './CalendarIcon';
 
 export { CaretDownIcon } from './CaretDownIcon';
@@ -124,7 +126,11 @@ export * from './FireIcon';
 
 export * from './FullscreenIcon';
 
+export * from './GitBranchIcon';
+
 export * from './GPSIcon';
+
+export * from './GridMasonryIcon';
 
 export * from './HelpIcon';
 
@@ -191,6 +197,8 @@ export * from './QRCodeIcon';
 export * from './QuestionIcon';
 
 export * from './RedditIcon';
+
+export * from './RepeatIcon';
 
 export * from './ResetIcon';
 
