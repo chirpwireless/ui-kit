@@ -1,4 +1,4 @@
-import { Box, styled, Tab as MuiTab, Tabs as MuiTabs } from '@mui/material';
+import { Box, Tab as MuiTab, Tabs as MuiTabs, styled } from '@mui/material';
 
 import { chirpPalette } from '../../theme/palette';
 
@@ -60,7 +60,7 @@ export const TabsContainer = styled(Box)(({ theme }) => ({
 }));
 
 export const Tabs = styled(MuiTabs)(({ theme }) => ({
-    minWidth: '200px',
+    minWidth: 'min-content',
     minHeight: 'auto',
 
     '.MuiTabs-flexContainer': {
