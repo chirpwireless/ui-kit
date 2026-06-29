@@ -3,8 +3,8 @@ export const PlayIcon = (props: React.SVGProps<SVGSVGElement>) => (
         <path
             d="M13.6875 9L4.3125 4.3125V13.6875L13.6875 9Z"
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
         />
     </svg>
 );
