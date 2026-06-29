@@ -48,8 +48,8 @@ const l = e("span")(({ theme: t }) => {
       width: "fit-content"
     }
   }
-})), x = e(r)(({ theme: t }) => ({
-  minWidth: "200px",
+})), c = e(r)(({ theme: t }) => ({
+  minWidth: "min-content",
   minHeight: "auto",
   ".MuiTabs-flexContainer": {
     columnGap: "4px",
@@ -62,7 +62,7 @@ const l = e("span")(({ theme: t }) => {
   ".MuiTabs-indicator": {
     display: "none"
   }
-})), c = e(a)(({ theme: t }) => {
+})), x = e(a)(({ theme: t }) => {
   const o = i(t);
   return {
     minWidth: "auto",
@@ -84,8 +84,8 @@ const l = e("span")(({ theme: t }) => {
   };
 });
 export {
-  c as Tab,
+  x as Tab,
   l as TabBadge,
-  x as Tabs,
+  c as Tabs,
   s as TabsContainer
 };
