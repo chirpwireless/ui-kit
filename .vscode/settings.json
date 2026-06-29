@@ -35,5 +35,11 @@
     // OTHER
     "yaml.customTags": [
         "!reference sequence"
-    ] // Fix !reference type into gitlab-ci file
+    ],
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    } // Fix !reference type into gitlab-ci file
 }

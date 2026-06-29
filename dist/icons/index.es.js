@@ -13,7 +13,7 @@ import { CaretUpIcon as w } from "./CaretUpIcon/index.es.js";
 import { CctvIcon as M } from "./CctvIcon.es.js";
 import { CheckboxChecked as v } from "./CheckboxChecked/index.es.js";
 import { CheckboxCheckedOutlined as E } from "./CheckboxCheckedOutlined/index.es.js";
-import { CheckboxUnchecked as y } from "./CheckboxUnchecked/index.es.js";
+import { CheckboxUnchecked as L } from "./CheckboxUnchecked/index.es.js";
 import { CheckboxUncheckedOutlined as R } from "./CheckboxUncheckedOutlined2/index.es.js";
 import { CheckCircleIcon as F } from "./CheckCircleIcon/index.es.js";
 import { CheckCircleSmallIcon as N } from "./CheckCircleSmallIcon.es.js";
@@ -39,7 +39,7 @@ import { DashboardIcon as bo } from "./DashboardIcon/index.es.js";
 import { DataCreditsIcon as To } from "./DataCreditsIcon/index.es.js";
 import { DataCreditsIconBig as Wo } from "./DataCreditsIconBig/index.es.js";
 import { DeviceGearIcon as Bo } from "./DeviceGearIcon/index.es.js";
-import { DeviceIcon as Lo } from "./DeviceIcon/index.es.js";
+import { DeviceIcon as yo } from "./DeviceIcon/index.es.js";
 import { DeviceMenuIcon as Po } from "./DeviceMenuIcon/index.es.js";
 import { DisconnectWallet as Uo } from "./DisconnectWallet/index.es.js";
 import { DiscordIcon as Ao } from "./DiscordIcon/index.es.js";
@@ -66,7 +66,7 @@ import { HelpIcon as br } from "./HelpIcon/index.es.js";
 import { Info as Tr } from "./Info/index.es.js";
 import { IoTIcon as Wr } from "./IoTIcon/index.es.js";
 import { LocationIcon as Br } from "./LocationIcon/index.es.js";
-import { LogoutIcon as Lr } from "./LogoutIcon/index.es.js";
+import { LogoutIcon as yr } from "./LogoutIcon/index.es.js";
 import { LoRaWanDeviceBigIcon as Pr, LoRaWanDeviceIcon as Rr } from "./LoRaWanDeviceIcon/index.es.js";
 import { ManageIcon as Fr } from "./ManageIcon/index.es.js";
 import { MapIcon as Nr } from "./MapIcon/index.es.js";
@@ -88,60 +88,61 @@ import { PenIcon as Ce } from "./PenIcon/index.es.js";
 import { PhotoPlusIcon as se } from "./PhotoPlusIcon/index.es.js";
 import { PingsIcon as ge } from "./PingsIcon/index.es.js";
 import { PinIcon as De } from "./PinIcon/index.es.js";
-import { PowerIcon as ue } from "./PowerIcon/index.es.js";
-import { Processing as we } from "./Processing/index.es.js";
-import { ProfileIcon as Me } from "./ProfileIcon/index.es.js";
-import { QRCodeIcon as ve } from "./QRCodeIcon/index.es.js";
-import { QuestionIcon as Ee } from "./QuestionIcon/index.es.js";
-import { RedditIcon as ye } from "./RedditIcon/index.es.js";
-import { ResetIcon as Re } from "./ResetIcon/index.es.js";
-import { RewardsWalletIcon as Fe } from "./RewardsWalletIcon/index.es.js";
-import { SadFaceIcon as Ne } from "./SadFaceIcon/index.es.js";
-import { SatelliteIcon as Oe } from "./SatelliteIcon/index.es.js";
-import { SearchIcon as Qe } from "./SearchIcon/index.es.js";
-import { SelectIcon as Ye } from "./SelectIcon/index.es.js";
-import { SendIcon as je } from "./SendIcon/index.es.js";
-import { Settings as ze } from "./Settings/index.es.js";
-import { ShareIcon as Ke } from "./ShareIcon/index.es.js";
-import { ShoppingBag as _e } from "./ShoppingBag/index.es.js";
-import { SidebarArrowIcon as ot } from "./SidebarArrowIcon/index.es.js";
-import { SidebarIcon as et, SimCardColoredIcon as tt } from "./SidebarIcon/index.es.js";
-import { SimCardIcon as ct } from "./SimCardIcon/index.es.js";
-import { SimDeviceBigIcon as ft, SimDeviceIcon as mt } from "./SimDeviceIcon/index.es.js";
-import { SortIcon as It } from "./SortIcon/index.es.js";
-import { StarIcon as at } from "./StarIcon/index.es.js";
-import { StatsIcon as Ct } from "./StatsIcon/index.es.js";
-import { StepIcon as st } from "./StepIcon/index.es.js";
-import { StreetIcon as gt } from "./StreetIcon/index.es.js";
-import { SubLocationIcon as Dt } from "./SubLocationIcon/index.es.js";
-import { SubLocationTagIcon as ut } from "./SubLocationTagIcon/index.es.js";
-import { SuccessSolidIcon as wt } from "./SuccessSolidIcon/index.es.js";
-import { SuiIcon as Mt } from "./SuiIcon/index.es.js";
-import { SunIcon as vt } from "./SunIcon/index.es.js";
-import { TabletIcon as Et } from "./TabletIcon/index.es.js";
-import { TargetIcon as yt } from "./TargetIcon/index.es.js";
-import { TelegramIcon as Rt } from "./TelegramIcon/index.es.js";
-import { TipIcon as Ft } from "./TipIcon/index.es.js";
-import { ToggleSidebarIcon as Nt } from "./ToggleSidebarIcon/index.es.js";
-import { TopUpIcon as Ot } from "./TopUpIcon/index.es.js";
-import { TrafficDown as Qt, TrafficUp as Ht } from "./Traffic/index.es.js";
-import { TrashIcon as Zt } from "./TrashIcon/index.es.js";
-import { TwitterIcon as qt } from "./TwitterIcon/index.es.js";
-import { UnknownDeviceLogoBig as Jt } from "./UnknownDeviceLogo/index.es.js";
-import { UserBoardIcon as Xt } from "./UserBoardIcon/index.es.js";
-import { UserIcon as $t } from "./UserIcon/index.es.js";
-import { UsersIcon as rn } from "./UsersIcon/index.es.js";
-import { VendorsIcon as tn } from "./VendorsIcon/index.es.js";
-import { VideoCameraIcon as cn } from "./VideoCameraIcon.es.js";
-import { WalletIcon as fn, WalletIconBig as mn } from "./WalletIcon/index.es.js";
-import { WalletNotVerifiedIcon as In } from "./WalletNotVerifiedIcon/index.es.js";
-import { WalletVerifiedIcon as ln } from "./WalletVerifiedIcon/index.es.js";
-import { WarningIcon as dn } from "./WarningIcon/index.es.js";
-import { WarningSolidIcon as Sn } from "./WarningSolidIcon/index.es.js";
-import { WarningTriangleIcon as hn } from "./WarningTriangleIcon.es.js";
-import { WiFiIcon as kn } from "./WiFiIcon/index.es.js";
-import { YoutubeIcon as bn } from "./YoutubeIcon/index.es.js";
-import { Zipper as Tn } from "./Zipper/index.es.js";
+import { PlayIcon as ue } from "./PlayIcon.es.js";
+import { PowerIcon as we } from "./PowerIcon/index.es.js";
+import { Processing as Me } from "./Processing/index.es.js";
+import { ProfileIcon as ve } from "./ProfileIcon/index.es.js";
+import { QRCodeIcon as Ee } from "./QRCodeIcon/index.es.js";
+import { QuestionIcon as Le } from "./QuestionIcon/index.es.js";
+import { RedditIcon as Re } from "./RedditIcon/index.es.js";
+import { ResetIcon as Fe } from "./ResetIcon/index.es.js";
+import { RewardsWalletIcon as Ne } from "./RewardsWalletIcon/index.es.js";
+import { SadFaceIcon as Oe } from "./SadFaceIcon/index.es.js";
+import { SatelliteIcon as Qe } from "./SatelliteIcon/index.es.js";
+import { SearchIcon as Ye } from "./SearchIcon/index.es.js";
+import { SelectIcon as je } from "./SelectIcon/index.es.js";
+import { SendIcon as ze } from "./SendIcon/index.es.js";
+import { Settings as Ke } from "./Settings/index.es.js";
+import { ShareIcon as _e } from "./ShareIcon/index.es.js";
+import { ShoppingBag as ot } from "./ShoppingBag/index.es.js";
+import { SidebarArrowIcon as et } from "./SidebarArrowIcon/index.es.js";
+import { SidebarIcon as nt, SimCardColoredIcon as ct } from "./SidebarIcon/index.es.js";
+import { SimCardIcon as ft } from "./SimCardIcon/index.es.js";
+import { SimDeviceBigIcon as xt, SimDeviceIcon as It } from "./SimDeviceIcon/index.es.js";
+import { SortIcon as at } from "./SortIcon/index.es.js";
+import { StarIcon as Ct } from "./StarIcon/index.es.js";
+import { StatsIcon as st } from "./StatsIcon/index.es.js";
+import { StepIcon as gt } from "./StepIcon/index.es.js";
+import { StreetIcon as Dt } from "./StreetIcon/index.es.js";
+import { SubLocationIcon as ut } from "./SubLocationIcon/index.es.js";
+import { SubLocationTagIcon as wt } from "./SubLocationTagIcon/index.es.js";
+import { SuccessSolidIcon as Mt } from "./SuccessSolidIcon/index.es.js";
+import { SuiIcon as vt } from "./SuiIcon/index.es.js";
+import { SunIcon as Et } from "./SunIcon/index.es.js";
+import { TabletIcon as Lt } from "./TabletIcon/index.es.js";
+import { TargetIcon as Rt } from "./TargetIcon/index.es.js";
+import { TelegramIcon as Ft } from "./TelegramIcon/index.es.js";
+import { TipIcon as Nt } from "./TipIcon/index.es.js";
+import { ToggleSidebarIcon as Ot } from "./ToggleSidebarIcon/index.es.js";
+import { TopUpIcon as Qt } from "./TopUpIcon/index.es.js";
+import { TrafficDown as Yt, TrafficUp as Zt } from "./Traffic/index.es.js";
+import { TrashIcon as qt } from "./TrashIcon/index.es.js";
+import { TwitterIcon as Jt } from "./TwitterIcon/index.es.js";
+import { UnknownDeviceLogoBig as Xt } from "./UnknownDeviceLogo/index.es.js";
+import { UserBoardIcon as $t } from "./UserBoardIcon/index.es.js";
+import { UserIcon as rn } from "./UserIcon/index.es.js";
+import { UsersIcon as tn } from "./UsersIcon/index.es.js";
+import { VendorsIcon as cn } from "./VendorsIcon/index.es.js";
+import { VideoCameraIcon as fn } from "./VideoCameraIcon.es.js";
+import { WalletIcon as xn, WalletIconBig as In } from "./WalletIcon/index.es.js";
+import { WalletNotVerifiedIcon as ln } from "./WalletNotVerifiedIcon/index.es.js";
+import { WalletVerifiedIcon as dn } from "./WalletVerifiedIcon/index.es.js";
+import { WarningIcon as Sn } from "./WarningIcon/index.es.js";
+import { WarningSolidIcon as hn } from "./WarningSolidIcon/index.es.js";
+import { WarningTriangleIcon as kn } from "./WarningTriangleIcon.es.js";
+import { WiFiIcon as bn } from "./WiFiIcon/index.es.js";
+import { YoutubeIcon as Tn } from "./YoutubeIcon/index.es.js";
+import { Zipper as Wn } from "./Zipper/index.es.js";
 export {
   e as AerialIcon,
   n as ArrowLeftIcon,
@@ -163,7 +164,7 @@ export {
   z as CheckIconIcon,
   v as CheckboxChecked,
   E as CheckboxCheckedOutlined,
-  y as CheckboxUnchecked,
+  L as CheckboxUnchecked,
   R as CheckboxUncheckedOutlined,
   Y as Checkmark,
   j as ChevronDownIcon,
@@ -184,7 +185,7 @@ export {
   To as DataCreditsIcon,
   Wo as DataCreditsIconBig,
   Bo as DeviceGearIcon,
-  Lo as DeviceIcon,
+  yo as DeviceIcon,
   Po as DeviceMenuIcon,
   Uo as DisconnectWallet,
   Ao as DiscordIcon,
@@ -213,7 +214,7 @@ export {
   Pr as LoRaWanDeviceBigIcon,
   Rr as LoRaWanDeviceIcon,
   Br as LocationIcon,
-  Lr as LogoutIcon,
+  yr as LogoutIcon,
   Fr as ManageIcon,
   Nr as MapIcon,
   Or as MarketplaceIcon,
@@ -234,62 +235,63 @@ export {
   se as PhotoPlusIcon,
   De as PinIcon,
   ge as PingsIcon,
-  ue as PowerIcon,
-  we as Processing,
-  Me as ProfileIcon,
-  ve as QRCodeIcon,
-  Ee as QuestionIcon,
-  ye as RedditIcon,
-  Re as ResetIcon,
-  Fe as RewardsWalletIcon,
-  Ne as SadFaceIcon,
-  Oe as SatelliteIcon,
-  Qe as SearchIcon,
-  Ye as SelectIcon,
-  je as SendIcon,
-  ze as Settings,
-  Ke as ShareIcon,
-  _e as ShoppingBag,
-  ot as SidebarArrowIcon,
-  et as SidebarIcon,
-  tt as SimCardColoredIcon,
-  ct as SimCardIcon,
-  ft as SimDeviceBigIcon,
-  mt as SimDeviceIcon,
-  It as SortIcon,
-  at as StarIcon,
-  Ct as StatsIcon,
-  st as StepIcon,
-  gt as StreetIcon,
-  Dt as SubLocationIcon,
-  ut as SubLocationTagIcon,
-  wt as SuccessSolidIcon,
-  Mt as SuiIcon,
-  vt as SunIcon,
-  Et as TabletIcon,
-  yt as TargetIcon,
-  Rt as TelegramIcon,
-  Ft as TipIcon,
-  Nt as ToggleSidebarIcon,
-  Ot as TopUpIcon,
-  Qt as TrafficDown,
-  Ht as TrafficUp,
-  Zt as TrashIcon,
-  qt as TwitterIcon,
-  Jt as UnknownDeviceLogoBig,
-  Xt as UserBoardIcon,
-  $t as UserIcon,
-  rn as UsersIcon,
-  tn as VendorsIcon,
-  cn as VideoCameraIcon,
-  fn as WalletIcon,
-  mn as WalletIconBig,
-  In as WalletNotVerifiedIcon,
-  ln as WalletVerifiedIcon,
-  dn as WarningIcon,
-  Sn as WarningSolidIcon,
-  hn as WarningTriangleIcon,
-  kn as WiFiIcon,
-  bn as YoutubeIcon,
-  Tn as Zipper
+  ue as PlayIcon,
+  we as PowerIcon,
+  Me as Processing,
+  ve as ProfileIcon,
+  Ee as QRCodeIcon,
+  Le as QuestionIcon,
+  Re as RedditIcon,
+  Fe as ResetIcon,
+  Ne as RewardsWalletIcon,
+  Oe as SadFaceIcon,
+  Qe as SatelliteIcon,
+  Ye as SearchIcon,
+  je as SelectIcon,
+  ze as SendIcon,
+  Ke as Settings,
+  _e as ShareIcon,
+  ot as ShoppingBag,
+  et as SidebarArrowIcon,
+  nt as SidebarIcon,
+  ct as SimCardColoredIcon,
+  ft as SimCardIcon,
+  xt as SimDeviceBigIcon,
+  It as SimDeviceIcon,
+  at as SortIcon,
+  Ct as StarIcon,
+  st as StatsIcon,
+  gt as StepIcon,
+  Dt as StreetIcon,
+  ut as SubLocationIcon,
+  wt as SubLocationTagIcon,
+  Mt as SuccessSolidIcon,
+  vt as SuiIcon,
+  Et as SunIcon,
+  Lt as TabletIcon,
+  Rt as TargetIcon,
+  Ft as TelegramIcon,
+  Nt as TipIcon,
+  Ot as ToggleSidebarIcon,
+  Qt as TopUpIcon,
+  Yt as TrafficDown,
+  Zt as TrafficUp,
+  qt as TrashIcon,
+  Jt as TwitterIcon,
+  Xt as UnknownDeviceLogoBig,
+  $t as UserBoardIcon,
+  rn as UserIcon,
+  tn as UsersIcon,
+  cn as VendorsIcon,
+  fn as VideoCameraIcon,
+  xn as WalletIcon,
+  In as WalletIconBig,
+  ln as WalletNotVerifiedIcon,
+  dn as WalletVerifiedIcon,
+  Sn as WarningIcon,
+  hn as WarningSolidIcon,
+  kn as WarningTriangleIcon,
+  bn as WiFiIcon,
+  Tn as YoutubeIcon,
+  Wn as Zipper
 };

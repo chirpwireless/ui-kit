@@ -88,6 +88,7 @@ export * from './PenIcon';
 export * from './PhotoPlusIcon';
 export * from './PingsIcon';
 export * from './PinIcon';
+export * from './PlayIcon';
 export * from './PowerIcon';
 export * from './Processing';
 export * from './ProfileIcon';
