@@ -1,100 +1,105 @@
-import { jsxRuntimeExports as r } from "../../jsx-runtime-BgepH7Pb.js";
-import { useState as l, useCallback as o } from "react";
-import { Divider as G, Stack as x } from "@mui/material";
-import { DefaultLink as I } from "./components/DefaultLink.es.js";
-import { RoutesList as N } from "./components/RoutesList.es.js";
-import { SidebarLogo as $ } from "./SidebarLogo.es.js";
-import { SidebarDrawer as q, List as z, Footer as A } from "./style.es.js";
-const B = (a) => /* @__PURE__ */ r.jsx(I, { ...a }), Y = ({
-  groups: a,
-  isOpen: L,
-  isCollapsed: t,
-  onCollapseToggle: n,
-  onItemClick: d,
-  onParentClick: i,
-  activePathname: S,
+import { jsxRuntimeExports as e } from "../../jsx-runtime-BgepH7Pb.js";
+import { useState as L, useCallback as x } from "react";
+import { Divider as N, Stack as c } from "@mui/material";
+import { DefaultLink as $ } from "./components/DefaultLink.es.js";
+import { RoutesList as g } from "./components/RoutesList.es.js";
+import { SidebarLogo as q } from "./SidebarLogo.es.js";
+import { SidebarDrawer as z, List as A, Footer as B } from "./style.es.js";
+const J = (r) => /* @__PURE__ */ e.jsx($, { ...r }), S = (r) => {
+  const d = {};
+  return r.forEach((n) => n.forEach((s) => {
+    s.defaultExpanded && (d[s.name] = !0);
+  })), d;
+}, Z = ({
+  groups: r,
+  isOpen: d,
+  isCollapsed: n,
+  onCollapseToggle: s,
+  onItemClick: i,
+  onParentClick: o,
+  activePathname: E,
   logo: w,
   logoCollapsed: v,
   logoHref: D,
   footerSlot: h,
-  bottomSlot: u,
+  bottomSlot: f,
   topSlot: M,
-  isMobile: g,
-  linkComponent: E = B
+  isMobile: F,
+  linkComponent: H = J
 }) => {
-  const [F, c] = l({}), [H, p] = l(!1), O = o(
-    (e) => {
-      i == null || i(e), t && n(), c((s) => ({ ...s, [e.name]: !s[e.name] }));
+  const [I, u] = L(() => S(r)), [O, p] = L(!1), R = x(
+    (a) => {
+      o == null || o(a), n && s(), u((t) => ({ ...t, [a.name]: !t[a.name] }));
     },
-    [t, n, i]
-  ), R = o(
-    (e, s) => {
-      d == null || d(e, s);
+    [n, s, o]
+  ), y = x(
+    (a, t) => {
+      i == null || i(a, t);
     },
-    [d]
-  ), y = o(() => {
-    c({}), n();
-  }, [n]);
-  return /* @__PURE__ */ r.jsxs(
-    q,
+    [i]
+  ), G = x(() => {
+    u(S(r)), s();
+  }, [r, s]);
+  return /* @__PURE__ */ e.jsxs(
+    z,
     {
       className: "sidebar",
       variant: "permanent",
       anchor: "left",
-      open: L,
-      isCollapsed: t,
+      open: d,
+      isCollapsed: n,
       onMouseEnter: () => p(!0),
       onMouseLeave: () => p(!1),
       children: [
-        g ? M : /* @__PURE__ */ r.jsxs(r.Fragment, { children: [
-          /* @__PURE__ */ r.jsx(
-            $,
+        F ? M : /* @__PURE__ */ e.jsxs(e.Fragment, { children: [
+          /* @__PURE__ */ e.jsx(
+            q,
             {
-              isSidebarCollapsed: t,
-              isSidebarHovered: H,
-              onToggle: y,
+              isSidebarCollapsed: n,
+              isSidebarHovered: O,
+              onToggle: G,
               logo: w,
               logoCollapsed: v,
               logoHref: D
             }
           ),
-          /* @__PURE__ */ r.jsx(G, { sx: { width: "100%", borderColor: "borders.primary", mb: 2 } })
+          /* @__PURE__ */ e.jsx(N, { sx: { width: "100%", borderColor: "borders.primary", mb: 2 } })
         ] }),
-        /* @__PURE__ */ r.jsx(z, { children: a.map((e, s) => {
-          var j, b;
-          const f = s === a.length - 1;
-          return /* @__PURE__ */ r.jsxs(
-            x,
+        /* @__PURE__ */ e.jsx(A, { children: r.map((a, t) => {
+          var b, l;
+          const j = t === r.length - 1;
+          return /* @__PURE__ */ e.jsxs(
+            c,
             {
               sx: {
                 width: "100%",
                 gap: 1,
-                mt: f ? "auto" : 0
+                mt: j ? "auto" : 0
               },
               children: [
-                e.map((m) => /* @__PURE__ */ r.jsx(x, { sx: { width: "100%" }, children: /* @__PURE__ */ r.jsx(
-                  N,
+                a.map((m) => /* @__PURE__ */ e.jsx(c, { sx: { width: "100%" }, children: /* @__PURE__ */ e.jsx(
+                  g,
                   {
                     item: m,
-                    activePathname: S,
-                    isSidebarCollapsed: t,
-                    menuParentIsOpen: F,
-                    linkComponent: E,
-                    onParentClick: O,
-                    onItemClick: R
+                    activePathname: E,
+                    isSidebarCollapsed: n,
+                    menuParentIsOpen: I,
+                    linkComponent: H,
+                    onParentClick: R,
+                    onItemClick: y
                   }
                 ) }, m.id ?? m.name)),
-                f && u ? /* @__PURE__ */ r.jsx(x, { sx: { width: "100%", mt: 1, gap: 3, alignItems: "center" }, children: u }) : null
+                j && f ? /* @__PURE__ */ e.jsx(c, { sx: { width: "100%", mt: 1, gap: 3, alignItems: "center" }, children: f }) : null
               ]
             },
-            ((j = e[0]) == null ? void 0 : j.id) ?? ((b = e[0]) == null ? void 0 : b.name) ?? `routes-group-${s}`
+            ((b = a[0]) == null ? void 0 : b.id) ?? ((l = a[0]) == null ? void 0 : l.name) ?? `routes-group-${t}`
           );
         }) }),
-        h ? /* @__PURE__ */ r.jsx(A, { children: h }) : null
+        h ? /* @__PURE__ */ e.jsx(B, { children: h }) : null
       ]
     }
   );
 };
 export {
-  Y as Sidebar
+  Z as Sidebar
 };

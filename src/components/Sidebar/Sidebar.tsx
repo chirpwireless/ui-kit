@@ -11,6 +11,17 @@ import type { SidebarItem, SidebarLinkComponentProps, SidebarProps } from './typ
 
 const defaultLinkComponent = (props: SidebarLinkComponentProps) => <DefaultLink {...props} />;
 
+// Parent items flagged `defaultExpanded` start open (and stay open across collapse toggles).
+const getInitialExpanded = (groups: SidebarItem[][]): Record<string, boolean> => {
+    const expanded: Record<string, boolean> = {};
+
+    groups.forEach((group) => group.forEach((item) => {
+        if (item.defaultExpanded) expanded[item.name] = true;
+    }));
+
+    return expanded;
+};
+
 export const Sidebar = ({
     groups,
     isOpen,
@@ -28,7 +39,7 @@ export const Sidebar = ({
     isMobile,
     linkComponent = defaultLinkComponent,
 }: SidebarProps) => {
-    const [menuParentIsOpen, setMenuParentIsOpen] = useState<Record<string, boolean>>({});
+    const [menuParentIsOpen, setMenuParentIsOpen] = useState<Record<string, boolean>>(() => getInitialExpanded(groups));
     const [isSidebarHovered, setIsSidebarHovered] = useState(false);
 
     const handleParentClick = useCallback(
@@ -52,9 +63,9 @@ export const Sidebar = ({
     );
 
     const handleToggleCollapsed = useCallback(() => {
-        setMenuParentIsOpen({});
+        setMenuParentIsOpen(getInitialExpanded(groups));
         onCollapseToggle();
-    }, [onCollapseToggle]);
+    }, [groups, onCollapseToggle]);
 
     return (
         <S.SidebarDrawer

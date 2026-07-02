@@ -10,6 +10,7 @@ export interface SidebarItem {
     hasDivider?: boolean;
     onClick?: () => void;
     children?: SidebarItem[];
+    defaultExpanded?: boolean;
     /**
      * Extra content rendered right after this top-level item (e.g. a "manage" row).
      * Receives the item's current expanded state. App-specific; kept generic via a render fn.
