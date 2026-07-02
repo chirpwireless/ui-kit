@@ -78,11 +78,17 @@ export const RoutesList: FC<RoutesListProps> = ({
     );
 
     const childRoutesStyles = useMemo(() => {
+        // Always-open sections render at natural height so the list (and any appendSlot
+        // right after it) sits flush — an estimated fixed height would leave a gap below.
+        if (item.defaultExpanded) {
+            return { height: 'auto' };
+        }
+
         const isOpen = Boolean(menuParentIsOpen[item.name]);
         const totalHeight = calculateChildrenHeight(item.children, menuParentIsOpen);
 
         return getCollapseStyles(isOpen, totalHeight);
-    }, [item.children, item.name, menuParentIsOpen, getCollapseStyles]);
+    }, [item.children, item.name, item.defaultExpanded, menuParentIsOpen, getCollapseStyles]);
 
     const handleLeafClick = (target: SidebarItem) => (event: MouseEvent<HTMLAnchorElement>) => {
         if (target.disabled) {
