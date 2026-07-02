@@ -78,13 +78,15 @@ export const RoutesList: FC<RoutesListProps> = ({
     );
 
     const childRoutesStyles = useMemo(() => {
-        // Always-open sections render at natural height so the list (and any appendSlot
-        // right after it) sits flush — an estimated fixed height would leave a gap below.
+        const isOpen = Boolean(menuParentIsOpen[item.name]);
+
+        // Always-open sections render at natural height when open (so the list and the
+        // appendSlot right after it sit flush — an estimated fixed height leaves a gap),
+        // and still collapse to 0 on toggle so children hide together with the appendSlot.
         if (item.defaultExpanded) {
-            return { height: 'auto' };
+            return isOpen ? { height: 'auto' } : { height: 0, overflow: 'hidden' };
         }
 
-        const isOpen = Boolean(menuParentIsOpen[item.name]);
         const totalHeight = calculateChildrenHeight(item.children, menuParentIsOpen);
 
         return getCollapseStyles(isOpen, totalHeight);

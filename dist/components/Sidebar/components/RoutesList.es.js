@@ -2,8 +2,8 @@ import { jsxRuntimeExports as n } from "../../../jsx-runtime-BgepH7Pb.js";
 import { useCallback as T, useMemo as D } from "react";
 import { useTheme as N, Stack as i, Divider as H } from "@mui/material";
 import { DropdownIcon as B } from "../../../icons/DropdownIcon/index.es.js";
-import { ListItem as W, SidebarItemBox as w, LinkText as j, MenuParentItem as M, DropdownIconWrapper as _, ListChildItem as y } from "../style.es.js";
-const E = 20, g = 36, m = 4, p = {
+import { ListItem as W, SidebarItemBox as w, LinkText as j, MenuParentItem as M, DropdownIconWrapper as _, ListChildItem as g } from "../style.es.js";
+const E = 20, y = 36, m = 4, p = {
   width: E,
   height: E,
   alignItems: "center",
@@ -11,8 +11,8 @@ const E = 20, g = 36, m = 4, p = {
   "& svg": { width: E, height: E }
 }, F = (e, r) => e != null && e.length ? e.reduce((c, t) => {
   var h;
-  let l = g + m;
-  return (h = t.children) != null && h.length && r[t.name] && (l += t.children.length * (g + m)), c + l;
+  let l = y + m;
+  return (h = t.children) != null && h.length && r[t.name] && (l += t.children.length * (y + m)), c + l;
 }, 0) : 0, L = (e) => {
   var r;
   return !!((r = e.children) != null && r.length) || !e.href;
@@ -37,9 +37,10 @@ const E = 20, g = 36, m = 4, p = {
     }),
     [f.transitions]
   ), u = D(() => {
+    const s = !!t[e.name];
     if (e.defaultExpanded)
-      return { height: "auto" };
-    const s = !!t[e.name], x = F(e.children, t);
+      return s ? { height: "auto" } : { height: 0, overflow: "hidden" };
+    const x = F(e.children, t);
     return I(s, x);
   }, [e.children, e.name, e.defaultExpanded, t, I]), v = (s) => (x) => {
     var a;
@@ -99,7 +100,7 @@ const E = 20, g = 36, m = 4, p = {
                 width: "100%"
               },
               children: [
-                /* @__PURE__ */ n.jsx(y, { children: /* @__PURE__ */ n.jsx(w, { isActive: d(s, r), children: /* @__PURE__ */ n.jsx(
+                /* @__PURE__ */ n.jsx(g, { children: /* @__PURE__ */ n.jsx(w, { isActive: d(s, r), children: /* @__PURE__ */ n.jsx(
                   l,
                   {
                     href: s.href,
@@ -133,7 +134,7 @@ const E = 20, g = 36, m = 4, p = {
                 width: "100%"
               },
               children: [
-                /* @__PURE__ */ n.jsx(y, { children: /* @__PURE__ */ n.jsx(w, { children: /* @__PURE__ */ n.jsx(M, { onClick: () => h(s), sx: { paddingLeft: 0 }, children: /* @__PURE__ */ n.jsxs(
+                /* @__PURE__ */ n.jsx(g, { children: /* @__PURE__ */ n.jsx(w, { children: /* @__PURE__ */ n.jsx(M, { onClick: () => h(s), sx: { paddingLeft: 0 }, children: /* @__PURE__ */ n.jsxs(
                   i,
                   {
                     direction: "row",
@@ -159,10 +160,10 @@ const E = 20, g = 36, m = 4, p = {
                       },
                       I(
                         !!t[s.name],
-                        (((a = s.children) == null ? void 0 : a.length) ?? 0) * (g + m)
+                        (((a = s.children) == null ? void 0 : a.length) ?? 0) * (y + m)
                       )
                     ],
-                    children: (k = s.children) == null ? void 0 : k.map((o) => /* @__PURE__ */ n.jsx(y, { children: /* @__PURE__ */ n.jsx(w, { isActive: d(o, r), children: /* @__PURE__ */ n.jsx(
+                    children: (k = s.children) == null ? void 0 : k.map((o) => /* @__PURE__ */ n.jsx(g, { children: /* @__PURE__ */ n.jsx(w, { isActive: d(o, r), children: /* @__PURE__ */ n.jsx(
                       l,
                       {
                         href: o.href ?? "#",
