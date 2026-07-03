@@ -62,6 +62,8 @@ export { CloseIcon } from './CloseIcon';
 
 export * from './CloudeIcon';
 
+export * from './Code2Icon';
+
 export * from './CodeIcon';
 
 export * from './CoinsIcon';
