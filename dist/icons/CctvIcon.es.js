@@ -5,8 +5,8 @@ const t = (r) => /* @__PURE__ */ o.jsxs("svg", { width: "20", height: "20", view
     {
       d: "M14.7934 8.30701L6.45831 3.95825L3.95831 8.33325L11.6666 11.8749L14.8702 9.73921C15.3973 9.38781 15.3551 8.60004 14.7934 8.30701Z",
       stroke: "currentColor",
-      "stroke-linecap": "round",
-      "stroke-linejoin": "round"
+      strokeLinecap: "round",
+      strokeLinejoin: "round"
     }
   ),
   /* @__PURE__ */ o.jsx(
