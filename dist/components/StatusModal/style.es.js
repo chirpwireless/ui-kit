@@ -1,7 +1,7 @@
-import { styled as a, Dialog as i, dialogClasses as p, Stack as o, alpha as t } from "@mui/material";
-import { chirpPalette as d } from "../../theme/palette.es.js";
-const x = a(i)(({ theme: r }) => {
-  const e = d(r);
+import { styled as e, Dialog as i, dialogClasses as p, Stack as o, alpha as a } from "@mui/material";
+import { chirpPalette as n } from "../../theme/palette.es.js";
+const x = e(i)(({ theme: r }) => {
+  const t = n(r);
   return {
     [`& .${p.paper}`]: {
       display: "flex",
@@ -13,12 +13,12 @@ const x = a(i)(({ theme: r }) => {
       margin: "0px",
       padding: "24px",
       borderRadius: "12px",
-      backgroundColor: e.neutral.grey1,
-      border: `1px solid ${e.borders.primary}`,
-      boxShadow: `0 8px 32px ${e.shadow ?? "rgba(0, 0, 0, 0.14)"}`
+      backgroundColor: t.neutral.grey1,
+      border: `1px solid ${t.borders.primary}`,
+      boxShadow: `0 8px 32px ${t.shadow ?? "rgba(0, 0, 0, 0.14)"}`
     }
   };
-}), c = a(o, {
+}), c = e(o, {
   shouldForwardProp: (r) => r !== "statusColor"
 })(({ statusColor: r }) => ({
   width: "72px",
@@ -28,14 +28,22 @@ const x = a(i)(({ theme: r }) => {
   alignItems: "center",
   justifyContent: "center",
   color: r,
-  background: `radial-gradient(circle at 50% 30%, ${t(r, 0.2)} 0%, ${t(r, 0)} 75%)`
-})), g = a(o)(() => ({
+  background: `radial-gradient(circle at 50% 30%, ${a(r, 0.2)} 0%, ${a(r, 0)} 75%)`
+})), s = e(o)(() => ({
   gap: "12px",
   width: "100%",
   textAlign: "center"
+})), g = e(o)(() => ({
+  flexDirection: "row",
+  gap: "12px",
+  width: "100%",
+  "& > *": {
+    flex: 1
+  }
 }));
 export {
+  g as ButtonsRow,
   x as Dialog,
   c as IconCircle,
-  g as TextWrapper
+  s as TextWrapper
 };

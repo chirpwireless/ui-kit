@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export type StatusModalType = 'accent' | 'success';
+export type StatusModalType = 'accent' | 'success' | 'alert';
 
 export interface StatusModalProps {
     open: boolean;
@@ -11,5 +11,8 @@ export interface StatusModalProps {
     type?: StatusModalType;
     /** Overrides the default check-circle icon inside the tinted circle. */
     icon?: ReactNode;
+    /** When provided together with onSecondaryAction, renders a secondary button before the primary one. */
+    secondaryButtonText?: string;
+    onSecondaryAction?(): void;
     onClose?(): void;
 }

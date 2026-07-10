@@ -41,3 +41,13 @@ export const TextWrapper = styled(Stack)(() => ({
     width: '100%',
     textAlign: 'center',
 }));
+
+export const ButtonsRow = styled(Stack)(() => ({
+    flexDirection: 'row',
+    gap: '12px',
+    width: '100%',
+
+    '& > *': {
+        flex: 1,
+    },
+}));

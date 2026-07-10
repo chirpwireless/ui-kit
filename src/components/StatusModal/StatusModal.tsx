@@ -1,12 +1,23 @@
-import { Typography, useTheme } from '@mui/material';
+import { darken, Typography, useTheme } from '@mui/material';
 import { FC } from 'react';
 
 import { CheckCircleIcon } from '../../icons';
-import { chirpPalette } from '../../theme/palette';
+import { chirpPalette, ChirpPalette } from '../../theme/palette';
 import { Button } from '../Button';
 
 import * as S from './style';
-import { StatusModalProps } from './types';
+import { StatusModalProps, StatusModalType } from './types';
+
+const getStatusColor = (type: StatusModalType, palette: ChirpPalette): string => {
+    switch (type) {
+        case 'success':
+            return palette.alerts.success;
+        case 'alert':
+            return palette.alerts.alert;
+        default:
+            return palette.primaryColors.accent;
+    }
+};
 
 export const StatusModal: FC<StatusModalProps> = ({
     open,
@@ -16,12 +27,23 @@ export const StatusModal: FC<StatusModalProps> = ({
     onPrimaryAction,
     type = 'accent',
     icon,
+    secondaryButtonText,
+    onSecondaryAction,
     onClose,
 }) => {
     const theme = useTheme();
     const palette = chirpPalette(theme);
 
-    const statusColor = type === 'success' ? palette.alerts.success : palette.primaryColors.accent;
+    const statusColor = getStatusColor(type, palette);
+
+    // The kit Button has no destructive variant, so the alert flavor recolors the primary action locally.
+    const alertButtonSx =
+        type === 'alert'
+            ? {
+                  backgroundColor: palette.alerts.alert,
+                  '&:hover': { backgroundColor: darken(palette.alerts.alert, 0.15) },
+              }
+            : undefined;
 
     return (
         <S.Dialog
@@ -46,9 +68,16 @@ export const StatusModal: FC<StatusModalProps> = ({
                 )}
             </S.TextWrapper>
 
-            <Button size="medium" variant="primary" fullWidth onClick={onPrimaryAction}>
-                {primaryButtonText}
-            </Button>
+            <S.ButtonsRow>
+                {onSecondaryAction && (
+                    <Button size="medium" variant="secondary" onClick={onSecondaryAction}>
+                        {secondaryButtonText}
+                    </Button>
+                )}
+                <Button size="medium" variant="primary" onClick={onPrimaryAction} sx={alertButtonSx}>
+                    {primaryButtonText}
+                </Button>
+            </S.ButtonsRow>
         </S.Dialog>
     );
 };
