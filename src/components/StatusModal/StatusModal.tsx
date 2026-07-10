@@ -30,6 +30,7 @@ export const StatusModal: FC<StatusModalProps> = ({
     secondaryButtonText,
     onSecondaryAction,
     onClose,
+    sx,
 }) => {
     const theme = useTheme();
     const palette = chirpPalette(theme);
@@ -49,6 +50,7 @@ export const StatusModal: FC<StatusModalProps> = ({
         <S.Dialog
             open={open}
             onClose={onClose}
+            sx={sx}
             slotProps={{
                 backdrop: {
                     sx: { backdropFilter: 'blur(5px)', background: 'rgba(0, 0, 0, 0.12)' },

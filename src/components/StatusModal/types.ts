@@ -1,3 +1,4 @@
+import { SxProps, Theme } from '@mui/material';
 import { ReactNode } from 'react';
 
 export type StatusModalType = 'accent' | 'success' | 'alert';
@@ -15,4 +16,6 @@ export interface StatusModalProps {
     secondaryButtonText?: string;
     onSecondaryAction?(): void;
     onClose?(): void;
+    /** Forwarded to the underlying Dialog for consumer-side style overrides. */
+    sx?: SxProps<Theme>;
 }
