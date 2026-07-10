@@ -8,6 +8,8 @@ const x = e(i)(({ theme: r }) => {
       flexDirection: "column",
       alignItems: "center",
       gap: "24px",
+      // The theme sets a global 544px minWidth on dialog papers; reset it so the 320px design width wins.
+      minWidth: "320px",
       width: "320px",
       maxWidth: "320px",
       margin: "0px",
