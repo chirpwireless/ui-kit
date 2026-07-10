@@ -161,7 +161,3 @@ export type { MenuAction } from './components/ActionsMenu';
 export { ActionConfirmDialog } from './components/ActionConfirmDialog';
 
 export { QuestionPromptModal } from './components/QuestionPromptModal';
-
-export { StatusModal } from './components/StatusModal';
-
-export type { StatusModalProps, StatusModalType } from './components/StatusModal';
