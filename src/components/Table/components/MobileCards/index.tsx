@@ -1,4 +1,4 @@
-import { Skeleton, Typography } from '@mui/material';
+import { Skeleton } from '@mui/material';
 import { flexRender, Row } from '@tanstack/react-table';
 import { Fragment, ReactElement } from 'react';
 
@@ -29,14 +29,8 @@ const CardContent = <TData,>({ row }: { row: Row<TData> }) => (
 
             return (
                 <S.CardField key={cell.id}>
-                    {label ? (
-                        <Typography variant="caption" color="neutral.grey5" component="div">
-                            {label}
-                        </Typography>
-                    ) : null}
-                    <Typography variant="body2" color="neutral.primary" component="div" sx={{ textAlign: 'right' }}>
-                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </Typography>
+                    {label ? <S.FieldLabel>{label}</S.FieldLabel> : null}
+                    <S.FieldValue>{flexRender(cell.column.columnDef.cell, cell.getContext())}</S.FieldValue>
                 </S.CardField>
             );
         })}
@@ -79,9 +73,7 @@ export const MobileCards = <TData,>({
             {rows.map((row) =>
                 row.subRows.length ? (
                     <Fragment key={`${row.id}_${row.index}`}>
-                        <S.GroupLabel>
-                            <Typography variant="caption">{row.groupingValue as string}</Typography>
-                        </S.GroupLabel>
+                        <S.GroupLabel>{row.groupingValue as string}</S.GroupLabel>
                         {row.subRows.map(renderCard)}
                     </Fragment>
                 ) : (

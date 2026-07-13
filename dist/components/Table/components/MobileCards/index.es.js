@@ -1,44 +1,44 @@
 import { jsxRuntimeExports as n } from "../../../../jsx-runtime-BgepH7Pb.js";
-import { Skeleton as m, Typography as s } from "@mui/material";
-import { flexRender as x } from "@tanstack/react-table";
-import { Fragment as u } from "react";
-import { EmptyBlock as p } from "../../../EmptyBlock/EmptyBlock.es.js";
-import { CardsList as d, GroupLabel as h, Card as g, CardField as f } from "./style.es.js";
-const j = 3, b = ({ row: l }) => /* @__PURE__ */ n.jsx(n.Fragment, { children: l.getVisibleCells().map((i) => {
-  const t = i.column, e = t.columnDef.meta;
-  if (e != null && e.mobileHidden) return null;
-  const o = (e == null ? void 0 : e.mobileLabel) ?? t.columnDef.header;
-  return /* @__PURE__ */ n.jsxs(f, { children: [
-    o ? /* @__PURE__ */ n.jsx(s, { variant: "caption", color: "neutral.grey5", component: "div", children: o }) : null,
-    /* @__PURE__ */ n.jsx(s, { variant: "body2", color: "neutral.primary", component: "div", sx: { textAlign: "right" }, children: x(i.column.columnDef.cell, i.getContext()) })
-  ] }, i.id);
-}) }), R = ({
-  rows: l,
-  isLoading: i,
-  onRowClick: t,
-  renderMobileCard: e,
-  renderEmptyBlock: o
+import { Skeleton as a } from "@mui/material";
+import { flexRender as u } from "@tanstack/react-table";
+import { Fragment as c } from "react";
+import { EmptyBlock as x } from "../../../EmptyBlock/EmptyBlock.es.js";
+import { CardsList as d, GroupLabel as h, Card as f, CardField as p, FieldLabel as j, FieldValue as g } from "./style.es.js";
+const b = 3, C = ({ row: s }) => /* @__PURE__ */ n.jsx(n.Fragment, { children: s.getVisibleCells().map((r) => {
+  const l = r.column, i = l.columnDef.meta;
+  if (i != null && i.mobileHidden) return null;
+  const t = (i == null ? void 0 : i.mobileLabel) ?? l.columnDef.header;
+  return /* @__PURE__ */ n.jsxs(p, { children: [
+    t ? /* @__PURE__ */ n.jsx(j, { children: t }) : null,
+    /* @__PURE__ */ n.jsx(g, { children: u(r.column.columnDef.cell, r.getContext()) })
+  ] }, r.id);
+}) }), E = ({
+  rows: s,
+  isLoading: r,
+  onRowClick: l,
+  renderMobileCard: i,
+  renderEmptyBlock: t
 }) => {
-  if (i)
-    return /* @__PURE__ */ n.jsx(d, { children: Array.from({ length: j }, (r, c) => /* @__PURE__ */ n.jsx(m, { variant: "rounded", height: 96, sx: { borderRadius: "12px" } }, c)) });
-  if (l.length === 0)
-    return o ? o() : /* @__PURE__ */ n.jsx(p, {});
-  const a = (r) => /* @__PURE__ */ n.jsx(
-    g,
+  if (r)
+    return /* @__PURE__ */ n.jsx(d, { children: Array.from({ length: b }, (e, m) => /* @__PURE__ */ n.jsx(a, { variant: "rounded", height: 96, sx: { borderRadius: "12px" } }, m)) });
+  if (s.length === 0)
+    return t ? t() : /* @__PURE__ */ n.jsx(x, {});
+  const o = (e) => /* @__PURE__ */ n.jsx(
+    f,
     {
-      clickable: !!t,
-      onClick: t ? () => t(r.original) : void 0,
-      children: e ? e(r.original) : /* @__PURE__ */ n.jsx(b, { row: r })
+      clickable: !!l,
+      onClick: l ? () => l(e.original) : void 0,
+      children: i ? i(e.original) : /* @__PURE__ */ n.jsx(C, { row: e })
     },
-    `${r.id}_${r.index}`
+    `${e.id}_${e.index}`
   );
-  return /* @__PURE__ */ n.jsx(d, { children: l.map(
-    (r) => r.subRows.length ? /* @__PURE__ */ n.jsxs(u, { children: [
-      /* @__PURE__ */ n.jsx(h, { children: /* @__PURE__ */ n.jsx(s, { variant: "caption", children: r.groupingValue }) }),
-      r.subRows.map(a)
-    ] }, `${r.id}_${r.index}`) : a(r)
+  return /* @__PURE__ */ n.jsx(d, { children: s.map(
+    (e) => e.subRows.length ? /* @__PURE__ */ n.jsxs(c, { children: [
+      /* @__PURE__ */ n.jsx(h, { children: e.groupingValue }),
+      e.subRows.map(o)
+    ] }, `${e.id}_${e.index}`) : o(e)
   ) });
 };
 export {
-  R as MobileCards
+  E as MobileCards
 };

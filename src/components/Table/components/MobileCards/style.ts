@@ -27,11 +27,45 @@ export const CardField = styled(Stack)(() => ({
     gap: '12px',
 }));
 
+// Mirrors the table's HeadCell typography so cards read like the table headers.
+export const FieldLabel = styled('div')(({ theme }) => {
+    const palette = chirpPalette(theme);
+
+    return {
+        fontSize: '14px',
+        lineHeight: '20px',
+        letterSpacing: '0.2px',
+        fontFamily: theme.typography.fontFamily,
+        color: palette.neutral.grey3,
+        flexShrink: 0,
+    };
+});
+
+// Mirrors the table's body Cell typography.
+export const FieldValue = styled('div')(({ theme }) => {
+    const palette = chirpPalette(theme);
+
+    return {
+        fontSize: '14px',
+        lineHeight: '20px',
+        letterSpacing: '0.2px',
+        fontFamily: theme.typography.fontFamily,
+        color: palette.neutral.primary,
+        textAlign: 'right',
+        minWidth: 0,
+    };
+});
+
+// Mirrors the table's GroupedRow accent styling.
 export const GroupLabel = styled(Stack)(({ theme }) => {
     const palette = chirpPalette(theme);
 
     return {
         padding: '8px 4px 0',
-        color: palette.neutral.grey5,
+        fontSize: '14px',
+        lineHeight: '20px',
+        letterSpacing: '0.2px',
+        fontFamily: theme.typography.fontFamily,
+        color: palette.primaryColors.accent,
     };
 });
