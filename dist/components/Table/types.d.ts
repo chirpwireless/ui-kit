@@ -5,6 +5,10 @@ export type TableMeta = {
     isVisible?: boolean;
     isGrouping?: boolean;
     align?: 'left' | 'center' | 'right';
+    /** Mobile-cards mode (Table `mobileCards` prop): label shown next to the cell value; falls back to `header`. */
+    mobileLabel?: ReactNode;
+    /** Mobile-cards mode: exclude this column from cards (e.g. selection or actions columns). */
+    mobileHidden?: boolean;
 };
 type WithNodeHeader<T> = T extends unknown ? Omit<T, 'header'> & {
     header: ReactNode;
