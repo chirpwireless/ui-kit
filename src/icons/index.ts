@@ -74,6 +74,8 @@ export * from './CopyIcon';
 
 export * from './CountriesIcon';
 
+export * from './CpuIcon';
+
 export * from './CurrencyCoinsIcon';
 
 export { DashboardIcon } from './DashboardIcon';
@@ -225,6 +227,8 @@ export * from './ShoppingBag';
 export * from './SidebarArrowIcon';
 
 export * from './SidebarIcon';
+
+export * from './SimCard2Icon';
 
 export * from './SimCardIcon';
 
