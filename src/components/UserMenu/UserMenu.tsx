@@ -10,6 +10,9 @@ import { Avatar } from '../../ui/Avatar';
 import * as S from './styles';
 import type { UserMenuProps } from './types';
 
+// Organization names are ellipsised, so they must not stretch the menu — its width is set by the item labels
+const ORGANIZATION_NAME_MAX_WIDTH = 165;
+
 export const UserMenu = ({
     user,
     isMobile,
@@ -239,6 +242,7 @@ export const UserMenu = ({
                                                     width: 20,
                                                     height: 20,
                                                     alignItems: 'center',
+                                                    flexShrink: 0,
                                                 }}
                                             >
                                                 {item.icon}
@@ -286,16 +290,19 @@ export const UserMenu = ({
                                                           sx={{
                                                               alignItems: 'center',
                                                               gap: 2,
+                                                              minWidth: 0,
+                                                              flexGrow: 1,
                                                           }}
                                                       >
-                                                          <MuiAvatar sx={{ width: 24, height: 24 }}>
+                                                          <MuiAvatar sx={{ width: 24, height: 24, flexShrink: 0 }}>
                                                               {org.name?.[0] ?? ''}
                                                           </MuiAvatar>
                                                           <Typography
                                                               variant="body1"
                                                               title={org.name}
                                                               sx={{
-                                                                  width: org.badge ? '100px' : '165px',
+                                                                  minWidth: 0,
+                                                                  maxWidth: ORGANIZATION_NAME_MAX_WIDTH,
                                                                   overflow: 'hidden',
                                                                   textOverflow: 'ellipsis',
                                                                   whiteSpace: 'nowrap',
@@ -303,7 +310,11 @@ export const UserMenu = ({
                                                           >
                                                               {org.name}
                                                           </Typography>
-                                                          {org.badge}
+                                                          {org.badge ? (
+                                                              <Box sx={{ flexShrink: 0, display: 'flex' }}>
+                                                                  {org.badge}
+                                                              </Box>
+                                                          ) : null}
                                                       </Stack>
                                                       {isCurrent ? (
                                                           <Stack
@@ -313,6 +324,7 @@ export const UserMenu = ({
                                                                   height: 24,
                                                                   alignItems: 'center',
                                                                   justifyContent: 'center',
+                                                                  flexShrink: 0,
                                                               }}
                                                           >
                                                               <Checkmark />

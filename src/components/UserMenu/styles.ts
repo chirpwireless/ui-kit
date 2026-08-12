@@ -11,6 +11,9 @@ import { CurrentTheme, SIDEBAR_WIDTH } from '../../styles/constants';
 import '../../theme/augmentation';
 import { chirpPalette } from '../../theme/palette';
 
+// Localized labels (de/es/pt) are much longer than the sidebar, so the menu grows up to this cap
+const MENU_MAX_WIDTH = 340;
+
 export const AvatarContainer = styled(Stack)({
     flexDirection: 'row',
     alignItems: 'center',
@@ -53,7 +56,6 @@ export const AlertsIcon = styled(Stack)({
 });
 
 export const Menu = styled(MuiMenu)(({ theme }) => ({
-    width: SIDEBAR_WIDTH,
     padding: 0,
 
     '.MuiList-root': {
@@ -71,8 +73,8 @@ export const Menu = styled(MuiMenu)(({ theme }) => ({
     },
 
     '& .MuiPaper-root': {
-        width: SIDEBAR_WIDTH,
-        maxWidth: SIDEBAR_WIDTH,
+        width: 'max-content',
+        maxWidth: MENU_MAX_WIDTH,
         minWidth: SIDEBAR_WIDTH,
         left: '0 !important',
         right: 'auto !important',
@@ -109,6 +111,9 @@ export const MenuItem = styled(MuiMenuItem)(({ theme }) => ({
     color: chirpPalette(theme).neutral.primary,
     cursor: 'pointer',
     minWidth: `calc(${SIDEBAR_WIDTH}px - 2px)`,
+    maxWidth: '100%',
+    whiteSpace: 'normal',
+    overflowWrap: 'anywhere',
 
     '&:first-of-type': {
         borderTop: 'none',
