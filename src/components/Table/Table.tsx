@@ -58,11 +58,14 @@ const StandardTable = <TData,>({
         defaultSorting,
     });
 
+    // With no rows the empty block fills the wrapper, and there is nothing there to click
+    const isRowClickable = rows.length > 0 && Boolean(onRowClick || renderExpandableBlock);
+
     return (
         <Table
             table={table}
             rows={rows}
-            sx={{ ...sx, cursor: onRowClick || renderExpandableBlock ? 'pointer' : 'default' }}
+            sx={{ ...sx, cursor: isRowClickable ? 'pointer' : 'default' }}
             isLoading={isLoading}
             enableSorting={enableSorting}
             page={page}
