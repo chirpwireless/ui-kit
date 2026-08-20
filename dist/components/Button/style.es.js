@@ -1,7 +1,7 @@
 import { styled as d, ButtonBase as l } from "@mui/material";
 import { CurrentTheme as n } from "../../styles/constants.es.js";
 import { chirpPalette as o } from "../../theme/palette.es.js";
-const b = d(l, { shouldForwardProp: (a) => a !== "fullWidth" })(({ fullWidth: a, theme: r, size: c, variant: i, hasIcon: p }) => ({
+const e = ["fullWidth", "size", "variant", "hasIcon"], x = d(l, { shouldForwardProp: (a) => !e.includes(a) })(({ fullWidth: a, theme: r, size: c, variant: i, hasIcon: p }) => ({
   boxSizing: "border-box",
   borderRadius: "8px",
   display: "flex",
@@ -169,5 +169,5 @@ const b = d(l, { shouldForwardProp: (a) => a !== "fullWidth" })(({ fullWidth: a,
   }
 }));
 export {
-  b as Button
+  x as Button
 };
