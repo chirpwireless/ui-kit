@@ -1,67 +1,67 @@
 import { jsxRuntimeExports as g } from "../../jsx-runtime-BgepH7Pb.js";
 import { Box as H } from "@mui/material";
-import { useVirtualizer as S } from "@tanstack/react-virtual";
-import { useRef as _, useMemo as $, useCallback as E, useEffect as C } from "react";
+import { useVirtualizer as R } from "@tanstack/react-virtual";
+import { useRef as S, useMemo as _, useCallback as E, useEffect as $ } from "react";
 import { useDebounceCallback as L } from "../../hooks/use-debounce-callback.es.js";
-import { Table as R } from "./components/Table/index.es.js";
-import { useReactTable as Y } from "./hooks/useReactTable.es.js";
-const Z = 60, y = 50, K = ({
+import { Table as Y } from "./components/Table/index.es.js";
+import { useReactTable as Z } from "./hooks/useReactTable.es.js";
+const y = 60, B = 50, P = ({
   data: T,
   columns: k,
   sx: w = {},
   isLoading: i,
-  enableSorting: a,
+  enableSorting: h,
   defaultSorting: z,
   expandedRowIndex: I,
   hasNextPage: m,
-  estimateSize: h = Z,
+  estimateSize: p = y,
   onBottomReached: M,
-  onRowClick: p,
+  onRowClick: b,
   renderEmptyBlock: A,
   renderExpandableBlock: V,
   rowSx: e
 }) => {
-  const o = _(null), s = L(M, 300), { table: j, rows: u } = Y({
+  const t = S(null), s = L(M, 300), { table: j, rows: a } = Z({
     data: T,
     columns: k,
-    enableSorting: a,
+    enableSorting: h,
     defaultSorting: z
-  }), b = S({
-    count: u.length,
-    estimateSize: () => h,
-    getScrollElement: () => (o == null ? void 0 : o.current) ?? null,
+  }), f = R({
+    count: a.length,
+    estimateSize: () => p,
+    getScrollElement: () => (t == null ? void 0 : t.current) ?? null,
     overscan: 5
-  }), f = b.getVirtualItems(), v = b.getTotalSize() + y * 2 + h * 2, d = $(
-    () => f.map((t, c) => {
-      const n = u[t.index], r = {
-        height: `${t.size}px`,
-        transform: `translateY(${t.start - c * t.size}px)`
-      }, x = e == null ? void 0 : e(n);
-      return { ...n, sx: { ...r, ...x || {} } };
+  }), d = f.getVirtualItems(), v = f.getTotalSize() + B * 2 + p * 2, u = _(
+    () => d.map((o, n) => {
+      const c = a[o.index], r = {
+        height: `${o.size}px`,
+        transform: `translateY(${o.start - n * o.size}px)`
+      }, x = e == null ? void 0 : e(c);
+      return { ...c, sx: { ...r, ...x || {} } };
     }),
-    [f, u, e]
+    [d, a, e]
   ), l = E(
-    (t) => {
-      if (!t || i || !m) return;
-      const { scrollHeight: c, scrollTop: n, clientHeight: r } = t;
-      (c - n - r < r * 0.3 || c <= r) && (s == null || s());
+    (o) => {
+      if (!o || i || !m) return;
+      const { scrollHeight: n, scrollTop: c, clientHeight: r } = o;
+      (n - c - r < r * 0.3 || n <= r) && (s == null || s());
     },
     [s, i, m]
   );
-  C(() => {
-    l(o.current);
+  $(() => {
+    l(t.current);
   }, [l]);
-  const D = E(
-    (t) => {
-      l(t.target);
+  const C = E(
+    (o) => {
+      l(o.target);
     },
     [l]
-  );
+  ), D = u.length > 0 && !!b;
   return /* @__PURE__ */ g.jsx(
     H,
     {
-      ref: o,
-      onScroll: D,
+      ref: t,
+      onScroll: C,
       sx: {
         height: "100%",
         overflow: "auto",
@@ -82,20 +82,20 @@ const Z = 60, y = 50, K = ({
         }
       },
       children: /* @__PURE__ */ g.jsx(
-        R,
+        Y,
         {
           table: j,
-          rows: d,
+          rows: u,
           sx: {
             ...w,
-            height: d.length ? `${v}px` : "100%",
+            height: u.length ? `${v}px` : "100%",
             overflowY: "hidden",
-            cursor: p ? "pointer" : "default"
+            cursor: D ? "pointer" : "default"
           },
           isLoading: i,
-          enableSorting: a,
+          enableSorting: h,
           expandedRowIndex: I,
-          onRowClick: p,
+          onRowClick: b,
           renderEmptyBlock: A,
           renderExpandableBlock: V
         }
@@ -104,6 +104,6 @@ const Z = 60, y = 50, K = ({
   );
 };
 export {
-  Z as DEFAULT_ESTIMATE_SIZE,
-  K as TableVirtualizedInfinite
+  y as DEFAULT_ESTIMATE_SIZE,
+  P as TableVirtualizedInfinite
 };

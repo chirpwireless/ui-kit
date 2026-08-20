@@ -1,76 +1,76 @@
-import { jsxRuntimeExports as s } from "../../jsx-runtime-BgepH7Pb.js";
-import { useTheme as M, useMediaQuery as C } from "@mui/material";
-import { MobileCards as h } from "./components/MobileCards/index.es.js";
-import { Table as p } from "./components/Table/index.es.js";
+import { jsxRuntimeExports as o } from "../../jsx-runtime-BgepH7Pb.js";
+import { useTheme as C, useMediaQuery as h } from "@mui/material";
+import { MobileCards as w } from "./components/MobileCards/index.es.js";
+import { Table as R } from "./components/Table/index.es.js";
 import { useReactTable as u } from "./hooks/useReactTable.es.js";
-const l = ({
+const c = ({
   data: e,
-  columns: t,
-  sx: r = {},
-  isLoading: n,
-  enableSorting: o,
+  columns: s,
+  sx: t = {},
+  isLoading: a,
+  enableSorting: r,
   defaultSorting: m,
-  expandedRowIndex: b,
+  expandedRowIndex: l,
   onRowClick: i,
-  renderExpandableBlock: a,
+  renderExpandableBlock: n,
   renderEmptyBlock: x,
-  getRowDisableHover: c,
-  getCanExpand: T,
-  page: f
+  getRowDisableHover: T,
+  getCanExpand: f,
+  page: j
 }) => {
-  const { table: j, rows: d } = u({
+  const { table: d, rows: b } = u({
     data: e,
-    columns: t,
-    enableSorting: o,
+    columns: s,
+    enableSorting: r,
     defaultSorting: m
-  });
-  return /* @__PURE__ */ s.jsx(
-    p,
+  }), M = b.length > 0 && !!(i || n);
+  return /* @__PURE__ */ o.jsx(
+    R,
     {
-      table: j,
-      rows: d,
-      sx: { ...r, cursor: i || a ? "pointer" : "default" },
-      isLoading: n,
-      enableSorting: o,
-      page: f,
-      expandedRowIndex: b,
+      table: d,
+      rows: b,
+      sx: { ...t, cursor: M ? "pointer" : "default" },
+      isLoading: a,
+      enableSorting: r,
+      page: j,
+      expandedRowIndex: l,
       onRowClick: i,
-      renderExpandableBlock: a,
+      renderExpandableBlock: n,
       renderEmptyBlock: x,
-      getRowDisableHover: c,
-      getCanExpand: T
+      getRowDisableHover: T,
+      getCanExpand: f
     }
   );
-}, w = ({
+}, p = ({
   data: e,
-  columns: t,
-  isLoading: r,
-  enableSorting: n,
-  defaultSorting: o,
+  columns: s,
+  isLoading: t,
+  enableSorting: a,
+  defaultSorting: r,
   onRowClick: m,
-  renderEmptyBlock: b,
+  renderEmptyBlock: l,
   renderMobileCard: i
 }) => {
-  const { rows: a } = u({
+  const { rows: n } = u({
     data: e,
-    columns: t,
-    enableSorting: n,
-    defaultSorting: o
+    columns: s,
+    enableSorting: a,
+    defaultSorting: r
   });
-  return /* @__PURE__ */ s.jsx(
-    h,
+  return /* @__PURE__ */ o.jsx(
+    w,
     {
-      rows: a,
-      isLoading: r,
+      rows: n,
+      isLoading: t,
       onRowClick: m,
       renderMobileCard: i,
-      renderEmptyBlock: b
+      renderEmptyBlock: l
     }
   );
-}, R = (e) => {
-  const t = M();
-  return C(t.breakpoints.down(e.mobileBreakpoint ?? "sm")) ? /* @__PURE__ */ s.jsx(w, { ...e }) : /* @__PURE__ */ s.jsx(l, { ...e });
-}, z = (e) => e.mobileCards ? /* @__PURE__ */ s.jsx(R, { ...e }) : /* @__PURE__ */ s.jsx(l, { ...e });
+}, k = (e) => {
+  const s = C();
+  return h(s.breakpoints.down(e.mobileBreakpoint ?? "sm")) ? /* @__PURE__ */ o.jsx(p, { ...e }) : /* @__PURE__ */ o.jsx(c, { ...e });
+}, q = (e) => e.mobileCards ? /* @__PURE__ */ o.jsx(k, { ...e }) : /* @__PURE__ */ o.jsx(c, { ...e });
 export {
-  z as Table
+  q as Table
 };

@@ -97,6 +97,9 @@ export const TableVirtualizedInfinite = <TData,>({
         [checkAndLoadMore],
     );
 
+    // With no rows the empty block fills the wrapper, and there is nothing there to click
+    const isRowClickable = rows.length > 0 && Boolean(onRowClick);
+
     return (
         <Box
             ref={virtualizedRef}
@@ -131,7 +134,7 @@ export const TableVirtualizedInfinite = <TData,>({
                     ...sx,
                     height: rows.length ? `${tableSize}px` : '100%',
                     overflowY: 'hidden',
-                    cursor: onRowClick ? 'pointer' : 'default',
+                    cursor: isRowClickable ? 'pointer' : 'default',
                 }}
                 isLoading={isLoading}
                 enableSorting={enableSorting}
