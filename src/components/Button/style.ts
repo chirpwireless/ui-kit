@@ -4,7 +4,10 @@ import { CurrentTheme } from '../../styles/constants';
 import { chirpPalette } from '../../theme/palette';
 import { ButtonProps } from './Button';
 
-export const Button = styled(ButtonBase, { shouldForwardProp: (prop) => prop !== 'fullWidth' })<
+// Styling-only props: ButtonBase spreads whatever it receives onto the DOM node, so keep them out
+const STYLE_ONLY_PROPS = ['fullWidth', 'size', 'variant', 'hasIcon'];
+
+export const Button = styled(ButtonBase, { shouldForwardProp: (prop) => !STYLE_ONLY_PROPS.includes(prop) })<
     Pick<ButtonProps, 'fullWidth' | 'size' | 'variant' | 'hasIcon'>
 >(({ fullWidth, theme, size, variant, hasIcon }) => ({
     boxSizing: 'border-box',

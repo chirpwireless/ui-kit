@@ -29,6 +29,8 @@ export { Loader } from './components/Loader';
 export { Skeleton } from './components/Skeleton';
 export { TextSkeleton } from './components/TextSkeleton';
 export { EmptyBlock } from './components/EmptyBlock';
+export { PromoBanner } from './components/PromoBanner';
+export type { PromoBannerProps } from './components/PromoBanner';
 export { Card } from './components/Card';
 export type { CardProps } from './components/Card';
 export { SimpleCard, SimpleSmallCard } from './components/SimpleCard';
