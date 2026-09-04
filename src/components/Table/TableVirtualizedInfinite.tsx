@@ -10,7 +10,6 @@ import { useReactTable } from './hooks/useReactTable';
 import { Props as TableProps } from './Table';
 
 export const DEFAULT_ESTIMATE_SIZE = 60;
-const HEADER_SIZE = 50;
 
 type Props<TData> = Omit<TableProps<TData>, 'page'> & {
     hasNextPage: boolean;
@@ -52,24 +51,34 @@ export const TableVirtualizedInfinite = <TData,>({
         overscan: 5,
     });
 
+    const { measureElement } = rowVirtualizer;
+
     const virtualRows = rowVirtualizer.getVirtualItems();
-    const tableSize = rowVirtualizer.getTotalSize() + HEADER_SIZE * 2 + estimateSize * 2;
+    // Rows out of the DOM still need their room, otherwise the last ones end up below the scroll range
+    const renderedSize = virtualRows.length ? virtualRows[virtualRows.length - 1].end - virtualRows[0].start : 0;
+    const spacerSize = Math.max(rowVirtualizer.getTotalSize() - renderedSize, 0);
 
-    const rows = useMemo(
-        () =>
-            virtualRows.map((virtualRow, index) => {
-                const row = allRows[virtualRow.index] as Row<TData>;
-                const sxProps = {
-                    height: `${virtualRow.size}px`,
-                    transform: `translateY(${virtualRow.start - index * virtualRow.size}px)`,
-                } as SxProps;
+    const rows = useMemo(() => {
+        // Rendered rows keep their place in the table flow, so the whole window shares one offset
+        const windowOffset = virtualRows[0]?.start ?? 0;
 
-                const customRowSx = rowSx?.(row);
+        return virtualRows.map((virtualRow) => {
+            const row = allRows[virtualRow.index] as Row<TData>;
+            const sxProps = {
+                height: `${estimateSize}px`,
+                transform: `translateY(${windowOffset}px)`,
+            } as SxProps;
 
-                return { ...row, sx: { ...sxProps, ...(customRowSx || {}) } };
-            }),
-        [virtualRows, allRows, rowSx],
-    );
+            const customRowSx = rowSx?.(row);
+
+            return {
+                ...row,
+                sx: { ...sxProps, ...(customRowSx || {}) },
+                virtualIndex: virtualRow.index,
+                measureRef: measureElement,
+            };
+        });
+    }, [virtualRows, allRows, rowSx, estimateSize, measureElement]);
 
     const checkAndLoadMore = useCallback(
         (containerRefElement?: HTMLDivElement | null) => {
@@ -130,10 +139,10 @@ export const TableVirtualizedInfinite = <TData,>({
             <Table
                 table={table}
                 rows={rows}
+                spacerSize={rows.length ? spacerSize : undefined}
                 sx={{
                     ...sx,
-                    height: rows.length ? `${tableSize}px` : '100%',
-                    overflowY: 'hidden',
+                    height: rows.length ? 'auto' : '100%',
                     cursor: isRowClickable ? 'pointer' : 'default',
                 }}
                 isLoading={isLoading}

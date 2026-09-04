@@ -1,80 +1,86 @@
-import { jsxRuntimeExports as s } from "../../../../jsx-runtime-BgepH7Pb.js";
-import { Table as S, TableBody as F } from "@mui/material";
-import { useState as _, useMemo as y, useEffect as o, Fragment as V } from "react";
+import { jsxRuntimeExports as i } from "../../../../jsx-runtime-BgepH7Pb.js";
+import { Table as y, TableBody as F } from "@mui/material";
+import { useState as _, useMemo as I, useEffect as o, Fragment as V } from "react";
 import { EmptyBlock as G } from "../../../EmptyBlock/EmptyBlock.es.js";
 import { SkeletonRows as M } from "../SkeletonRows.es.js";
 import { TableHead as W } from "../TableHead/index.es.js";
 import { TableRow as T } from "../TableRow.es.js";
 import { TableWrapper as Y, GroupedRow as k } from "./style.es.js";
 import { Cell as q } from "../../style.es.js";
-const P = ({
-  table: e,
-  rows: r,
-  sx: $ = {},
-  page: g,
-  isLoading: l,
-  enableSorting: E = !1,
-  expandedRowIndex: x,
-  onRowClick: t,
-  renderExpandableBlock: a,
-  renderEmptyBlock: c = () => /* @__PURE__ */ s.jsx(G, {}),
-  getRowDisableHover: d,
-  getCanExpand: f
+const U = ({
+  table: x,
+  rows: p,
+  sx: g = {},
+  page: E,
+  isLoading: a,
+  enableSorting: S = !1,
+  expandedRowIndex: d,
+  spacerSize: u,
+  onRowClick: m,
+  renderExpandableBlock: h,
+  renderEmptyBlock: f = () => /* @__PURE__ */ i.jsx(G, {}),
+  getRowDisableHover: e,
+  getCanExpand: j
 }) => {
-  const j = e.getVisibleFlatColumns(), [m, p] = _(x ?? null), h = y(
-    () => r.map((i) => ({
-      ...i,
-      isExpanded: m === i.index,
-      subRows: i.subRows.map((n) => ({ ...n, isExpanded: m === n.index }))
+  const l = x.getVisibleFlatColumns(), [t, r] = _(d ?? null), c = I(
+    () => p.map((s) => ({
+      ...s,
+      isExpanded: t === s.index,
+      subRows: s.subRows.map((n) => ({ ...n, isExpanded: t === n.index }))
     })),
-    [r, m]
-  ), u = (i) => {
-    t == null || t(i.original), !(f && !f(i.original)) && p(m === i.index ? null : i.index);
+    [p, t]
+  ), $ = (s) => {
+    m == null || m(s.original), !(j && !j(s.original)) && r(t === s.index ? null : s.index);
   };
   return o(() => {
-    p(null);
-  }, [g]), o(() => {
-    x !== void 0 && p(x);
-  }, [x]), /* @__PURE__ */ s.jsx(Y, { sx: { height: "100%", overflowY: "auto", ...$ }, children: h.length === 0 && l === !1 && c ? c() : /* @__PURE__ */ s.jsx(S, { stickyHeader: !0, children: l ? /* @__PURE__ */ s.jsx(M, { columns: j }) : /* @__PURE__ */ s.jsxs(s.Fragment, { children: [
-    /* @__PURE__ */ s.jsx(
+    r(null);
+  }, [E]), o(() => {
+    d !== void 0 && r(d);
+  }, [d]), /* @__PURE__ */ i.jsx(Y, { sx: { height: "100%", overflowY: "auto", ...g }, children: c.length === 0 && a === !1 && f ? f() : /* @__PURE__ */ i.jsx(y, { stickyHeader: !0, children: a ? /* @__PURE__ */ i.jsx(M, { columns: l }) : /* @__PURE__ */ i.jsxs(i.Fragment, { children: [
+    /* @__PURE__ */ i.jsx(
       W,
       {
-        columns: j,
-        enableSorting: E,
-        sortingState: e.getState().sorting
+        columns: l,
+        enableSorting: S,
+        sortingState: x.getState().sorting
       }
     ),
-    /* @__PURE__ */ s.jsx(F, { children: h.map(
-      (i) => i.subRows.length ? /* @__PURE__ */ s.jsxs(V, { children: [
-        /* @__PURE__ */ s.jsx(k, { children: /* @__PURE__ */ s.jsx(q, { children: i.groupingValue }) }),
-        i.subRows.map((n) => /* @__PURE__ */ s.jsx(
+    /* @__PURE__ */ i.jsxs(F, { children: [
+      c.map(
+        (s) => s.subRows.length ? /* @__PURE__ */ i.jsxs(V, { children: [
+          /* @__PURE__ */ i.jsx(k, { children: /* @__PURE__ */ i.jsx(q, { children: s.groupingValue }) }),
+          s.subRows.map((n) => /* @__PURE__ */ i.jsx(
+            T,
+            {
+              row: n,
+              table: x,
+              isExpanded: n.isExpanded,
+              disableHover: e == null ? void 0 : e(n.original),
+              onClick: $,
+              renderExpandableBlock: h
+            },
+            `${n.id}_${n.index}`
+          ))
+        ] }, `${s.id}_${s.index}`) : /* @__PURE__ */ i.jsx(
           T,
           {
-            row: n,
-            table: e,
-            isExpanded: n.isExpanded,
-            disableHover: d == null ? void 0 : d(n.original),
-            onClick: u,
-            renderExpandableBlock: a
+            sx: s.sx,
+            row: s,
+            virtualIndex: s.virtualIndex,
+            measureRef: s.measureRef,
+            table: x,
+            isExpanded: s.isExpanded,
+            disableHover: e == null ? void 0 : e(s.original),
+            onClick: $,
+            renderExpandableBlock: h
           },
-          `${n.id}_${n.index}`
-        ))
-      ] }, `${i.id}_${i.index}`) : /* @__PURE__ */ s.jsx(
-        T,
-        {
-          sx: i.sx,
-          row: i,
-          table: e,
-          isExpanded: i.isExpanded,
-          disableHover: d == null ? void 0 : d(i.original),
-          onClick: u,
-          renderExpandableBlock: a
-        },
-        `${i.id}_${i.index}`
-      )
-    ) })
+          `${s.id}_${s.index}`
+        )
+      ),
+      u ? /* @__PURE__ */ i.jsx("tr", { style: { height: `${u}px` }, children: /* @__PURE__ */ i.jsx("td", { colSpan: l.length }) }) : null
+    ] })
   ] }) }) });
 };
 export {
-  P as Table
+  U as Table
 };

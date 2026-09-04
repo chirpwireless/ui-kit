@@ -6,6 +6,7 @@ import { EyeIcon } from '@chirp/ui/icons';
 
 import { Table } from './Table';
 import { TableVirtualized } from './TableVirtualized';
+import { TableVirtualizedInfinite } from './TableVirtualizedInfinite';
 import { TableColumnDef } from './types';
 
 type Person = {
@@ -83,6 +84,32 @@ export const Virtualized: Story = {
                 columns={columns}
                 onRowClick={(row) => alert(row.id)}
             />
+        </Box>
+    ),
+};
+
+// Rows here wrap to a different number of lines each, which is what breaks a fixed-size virtualizer
+const variableHeightData: Person[] = Array.from({ length: 60 }, (_, index) => ({
+    id: index + 1,
+    first_name: `Person ${index + 1}`,
+    last_name: 'Doe',
+    age: 20 + (index % 40),
+    occupation: 'Software Engineer',
+    someKey: 'lorem ipsum dolor sit amet '.repeat(1 + (index % 4)),
+}));
+
+export const VirtualizedVariableRowHeight: Story = {
+    render: () => (
+        <Box height="400px" width="800px">
+            <TableVirtualized hasNextPage={false} estimateSize={56} data={variableHeightData} columns={columns} />
+        </Box>
+    ),
+};
+
+export const VirtualizedInfiniteVariableRowHeight: Story = {
+    render: () => (
+        <Box height="400px" width="800px">
+            <TableVirtualizedInfinite hasNextPage={false} data={variableHeightData} columns={columns} />
         </Box>
     ),
 };

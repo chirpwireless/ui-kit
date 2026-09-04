@@ -10,6 +10,8 @@ type Props<TData> = {
     sx?: SxProps;
     isExpanded?: boolean;
     disableHover?: boolean;
+    virtualIndex?: number;
+    measureRef?: (node: HTMLTableRowElement | null) => void;
     onClick?(row: Row<TData>): void;
     renderExpandableBlock?(row: TData): ReactElement;
 };
@@ -20,12 +22,20 @@ export const TableRow = <TData,>({
     sx,
     isExpanded = false,
     disableHover = false,
+    virtualIndex,
+    measureRef,
     onClick,
     renderExpandableBlock,
 }: Props<TData>) => {
     return (
         <>
-            <S.Row sx={sx} onClick={() => onClick?.(row)} disableHover={disableHover}>
+            <S.Row
+                ref={measureRef}
+                data-index={virtualIndex}
+                sx={sx}
+                onClick={() => onClick?.(row)}
+                disableHover={disableHover}
+            >
                 {row.getVisibleCells().map((cell) => (
                     <S.Cell
                         key={cell.id}
