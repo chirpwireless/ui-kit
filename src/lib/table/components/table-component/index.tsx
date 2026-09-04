@@ -13,6 +13,8 @@ import * as S from './style';
 type Row<TData> = RowType<TData> & {
     isExpanded?: boolean;
     sx?: SxProps;
+    virtualIndex?: number;
+    measureRef?: (node: HTMLTableRowElement | null) => void;
 };
 
 type Props<TData> = {
@@ -27,6 +29,8 @@ type Props<TData> = {
     tableSx?: SxProps;
     headerSx?: SxProps;
     columnWidths?: string[];
+    /** Virtualization only: flow space reserved for the rows kept out of the DOM. */
+    spacerSize?: number;
 
     onRowClick?(row: TData): void;
     onRowDoubleClick?(row: TData): void;
@@ -49,6 +53,7 @@ export const TableComponent = <TData,>({
     columnWidths,
     onRowDoubleClick,
     tableSx,
+    spacerSize,
     renderExpandableBlock,
     renderEmptyBlock = () => <EmptyFallback />,
     onScroll,
@@ -142,6 +147,8 @@ export const TableComponent = <TData,>({
                                             key={`${row.id}_${row.index}`}
                                             sx={row.sx}
                                             row={row}
+                                            virtualIndex={row.virtualIndex}
+                                            measureRef={row.measureRef}
                                             table={table}
                                             columns={columns}
                                             isExpanded={row.isExpanded}
@@ -151,6 +158,11 @@ export const TableComponent = <TData,>({
                                         />
                                     ),
                                 )}
+                                {spacerSize ? (
+                                    <tr style={{ height: `${spacerSize}px` }}>
+                                        <td colSpan={columns.length} />
+                                    </tr>
+                                ) : null}
                             </TableBody>
                         </>
                     )}

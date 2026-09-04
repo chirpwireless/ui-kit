@@ -7,7 +7,6 @@ import { useReactTable } from './hooks/use-react-table';
 import { ITableContainerProps as TableProps } from './table';
 
 const DEFAULT_ESTIMATE_SIZE = 40;
-const HEADER_SIZE = 50;
 
 type Props<TData> = Omit<TableProps<TData>, 'page'> & {
     hasNextPage: boolean;
@@ -49,20 +48,24 @@ export const TableVirtualized = <TData,>({
         overscan: 5,
     });
 
+    const { measureElement } = rowVirtualizer;
+
     const virtualRows = rowVirtualizer.getVirtualItems();
-    const tableSize = rowVirtualizer.getTotalSize() + HEADER_SIZE;
+    // The window is offset by marginTop, so only the rows after it still need their room reserved
+    const renderedEnd = virtualRows.length ? virtualRows[virtualRows.length - 1].end : 0;
+    const spacerSize = Math.max(rowVirtualizer.getTotalSize() - renderedEnd, 0);
 
     const rows = useMemo(
         () =>
             virtualRows.map((virtualRow) => {
                 const row = allRows[virtualRow.index] as Row<TData>;
                 const sxProps = {
-                    height: `${virtualRow.size}px`,
+                    height: `${estimateSize}px`,
                 };
 
-                return { ...row, sx: sxProps };
+                return { ...row, sx: sxProps, virtualIndex: virtualRow.index, measureRef: measureElement };
             }),
-        [virtualRows, allRows],
+        [virtualRows, allRows, estimateSize, measureElement],
     );
 
     const fetchMoreOnBottomReached = useCallback(
@@ -92,9 +95,9 @@ export const TableVirtualized = <TData,>({
             table={table}
             columnWidths={columnWidths}
             rows={rows}
+            spacerSize={rows.length ? spacerSize : undefined}
             sx={{
                 ...sx,
-                height: rows.length ? `${tableSize}px` : '100%',
                 cursor: onRowClick ? 'pointer' : 'default',
                 overflowY: 'initial',
             }}

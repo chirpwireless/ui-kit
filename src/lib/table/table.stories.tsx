@@ -167,3 +167,33 @@ export const Virtualized: Story = {
         </Box>
     ),
 };
+
+// Cells are nowrap here, so height has to vary through the rendered block itself
+export const VirtualizedVariableRowHeight: Story = {
+    render: () => (
+        <Box height="400px" width="800px">
+            <TableVirtualized
+                hasNextPage={false}
+                estimateSize={56}
+                data={mockedData}
+                columnWidths={['80px', '200px', '520px']}
+                columns={[
+                    { header: 'table.ID', accessorKey: 'id' },
+                    { header: 'table.Last name', accessorKey: 'last_name' },
+                    {
+                        header: 'table.Note',
+                        accessorKey: 'email',
+                        enableSorting: false,
+                        cell: ({ row }: { row: { index: number } }) => (
+                            <Stack>
+                                {Array.from({ length: 1 + (row.index % 4) }, (_, line) => (
+                                    <Box key={line}>lorem ipsum dolor sit amet</Box>
+                                ))}
+                            </Stack>
+                        ),
+                    },
+                ]}
+            />
+        </Box>
+    ),
+};

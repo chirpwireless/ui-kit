@@ -12,6 +12,8 @@ type Props<TData> = {
     columns?: TableColumn<TData>[];
     sx?: SxProps;
     isExpanded?: boolean;
+    virtualIndex?: number;
+    measureRef?: (node: HTMLTableRowElement | null) => void;
     onClick?(row: Row<TData>): void;
     onDoubleClick?(row: Row<TData>): void;
     renderExpandableBlock?(row: TData): ReactElement;
@@ -22,6 +24,8 @@ export const TableRow = <TData,>({
     table,
     sx,
     isExpanded = false,
+    virtualIndex,
+    measureRef,
     onClick,
     onDoubleClick,
     renderExpandableBlock,
@@ -29,6 +33,8 @@ export const TableRow = <TData,>({
     return (
         <>
             <S.Row
+                ref={measureRef}
+                data-index={virtualIndex}
                 sx={sx}
                 className={onDoubleClick ? 'hoverable' : ''}
                 onClick={() => onClick?.(row)}
