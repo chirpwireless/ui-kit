@@ -13,6 +13,8 @@ import * as S from './style';
 type Row<TData> = RowType<TData> & {
     isExpanded?: boolean;
     sx?: SxProps;
+    virtualIndex?: number;
+    measureRef?: (node: HTMLTableRowElement | null) => void;
 };
 
 type Props<TData> = {
@@ -23,6 +25,8 @@ type Props<TData> = {
     isLoading?: boolean;
     enableSorting?: boolean;
     expandedRowIndex?: number;
+    /** Virtualization only: flow space reserved for the rows kept out of the DOM. */
+    spacerSize?: number;
     onRowClick?(row: TData): void;
     renderExpandableBlock?(row: TData): ReactElement;
     renderEmptyBlock?(): ReactElement;
@@ -38,6 +42,7 @@ export const Table = <TData,>({
     isLoading,
     enableSorting = false,
     expandedRowIndex: defaultExpandedRowIndex,
+    spacerSize,
     onRowClick,
     renderExpandableBlock,
     renderEmptyBlock = () => <EmptyBlock />,
@@ -114,6 +119,8 @@ export const Table = <TData,>({
                                             key={`${row.id}_${row.index}`}
                                             sx={row.sx}
                                             row={row}
+                                            virtualIndex={row.virtualIndex}
+                                            measureRef={row.measureRef}
                                             table={table}
                                             isExpanded={row.isExpanded}
                                             disableHover={getRowDisableHover?.(row.original)}
@@ -122,6 +129,11 @@ export const Table = <TData,>({
                                         />
                                     ),
                                 )}
+                                {spacerSize ? (
+                                    <tr style={{ height: `${spacerSize}px` }}>
+                                        <td colSpan={columns.length} />
+                                    </tr>
+                                ) : null}
                             </TableBody>
                         </>
                     )}
