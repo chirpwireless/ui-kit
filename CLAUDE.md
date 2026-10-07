@@ -2,9 +2,13 @@
 
 `@chirpwireless/ui-kit` — публикуемая npm-библиотека: тема, иконки, shell-компоненты (`BaseLayout`, `Sidebar`, `UserMenu`, `Header`) и общая компонентная база для приложений Chirp / Kilo. Потребители получают одинаковый chrome (боковое меню, user-меню, layout), отличается только контент страниц.
 
+Related team rules: [`.claude/CLAUDE.md`](../.claude/CLAUDE.md) (командный файл, грузится в каждой сессии внутри монорепо)
+и [`.claude/rules/react.md`](../.claude/rules/react.md) (правила chirp-frontend, главного потребителя кита; здесь
+автоматически не грузится). Личные настройки — в `CLAUDE.local.md` каждого разработчика, он не коммитится.
+
 ## Language
 
-- Общение с пользователем — на **русском**.
+- Talk to the user in the language their personal instructions name (`~/.claude/CLAUDE.md`, `CLAUDE.local.md`); otherwise **Russian**.
 - README, комментарии в коде, commit messages, PR descriptions — на **английском**.
 - **Никогда** не добавлять `Co-Authored-By` в commit messages.
 
@@ -94,9 +98,9 @@ Sidebar.displayName = 'Sidebar';
 ## i18n
 
 - Библиотека: `react-i18next` + `i18next`.
-- Translation files: `src/locales/resources/*.json`.
-- Default namespaces ui-kit: `common`, `sidebar`, `userMenu`.
-- **4 языка** обязательны: `en`, `de`, `fr`, `es`.
+- Translation file: один `src/locales/resources/ui-kit.json`, ключи верхнего уровня — языки (`en`, `de`, `fr`, `es`, `ru`).
+- Namespace ui-kit: один `uiKit`; компоненты берут свой раздел через `keyPrefix` (`useTranslation('uiKit', { keyPrefix: 'SearchInput' })`).
+- **5 языков** обязательны: `en`, `de`, `fr`, `es`, `ru` (`src/locales/languages.ts`).
 - **Key = English text**.
 - Потребитель мерджит `uiKitLocaleModule` со своими ресурсами.
 - В компонентах: большинство строк приходит из props. Внутренний `t()` — только для дефолтов (когда соответствующий prop не задан).
@@ -104,7 +108,7 @@ Sidebar.displayName = 'Sidebar';
 ```typescript
 // ✅ Дефолт через t(), переопределяемый из props
 const Sidebar = ({ collapseTooltip, ... }: SidebarProps) => {
-  const { t } = useTranslation('sidebar');
+  const { t } = useTranslation('uiKit');
   const collapseLabel = collapseTooltip ?? t('Collapse sidebar');
   ...
 };
@@ -151,7 +155,7 @@ useEffect(() => { doAdditionalWork(selected); }, [selected]);
 - [ ] Только named exports.
 - [ ] Нет default-export + `displayName`.
 - [ ] Все public types реэкспортированы из `src/index.ts`.
-- [ ] Дефолтные строки локализованы через `t()` (4 языка).
+- [ ] Дефолтные строки локализованы через `t()` (5 языков).
 - [ ] Storybook-story есть для нового публичного компонента.
 - [ ] `yarn build` проходит.
 - [ ] `yarn lint` зелёный.
