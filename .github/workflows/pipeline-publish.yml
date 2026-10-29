@@ -7,29 +7,21 @@ on:
             - main
 
 concurrency:
-    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
-    cancel-in-progress: true
+    group: ${{ github.workflow }}
+    cancel-in-progress: false
 
 jobs:
     build:
-        if: ${{github.actor != 'chirpwireless-builder[bot]'}}
+        if: github.ref == 'refs/heads/main'
         runs-on: ubuntu-latest
         permissions:
             contents: write
             packages: write
-            checks: write
         steps:
-            - uses: actions/create-github-app-token@v1
-              id: app-token
-              with:
-                  app-id: ${{ secrets.GOLANG_BUILDER_APP_ID }}
-                  private-key: ${{ secrets.GOLANG_BUILDER_PRIVATE_KEY }}
-                  owner: ${{ github.repository_owner }}
             - name: Checkout code
               uses: actions/checkout@v4
               with:
                   fetch-depth: 0
-                  token: ${{ steps.app-token.outputs.token }}
             - name: Setup NodeJS
               uses: actions/setup-node@v4
               with:
@@ -39,13 +31,26 @@ jobs:
               run: yarn install --frozen-lockfile
             - name: Run build
               run: yarn build
+            # The version lives in tags only: main is protected and nothing commits to it.
+            - name: Next version
+              id: version
+              run: |
+                  last=$(git tag --list 'v*' --sort=-v:refname | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -n1)
+                  if [[ ! $last =~ ^v([0-9]+)\.([0-9]+)\.[0-9]+$ ]]; then
+                      echo "no vX.Y.Z tag to bump from" >&2
+                      exit 1
+                  fi
+                  echo "next=${BASH_REMATCH[1]}.$((BASH_REMATCH[2] + 1)).0" >> "$GITHUB_OUTPUT"
+            # Tag and release first: a failed publish then leaves a gap, not a version that every next run collides with.
+            - name: Tag and release
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  NEXT: ${{ steps.version.outputs.next }}
+              run: gh release create "v$NEXT" --target "$GITHUB_SHA" --generate-notes
             - name: Publish package
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NEXT: ${{ steps.version.outputs.next }}
               run: |
-                  git config user.name github-actions
-                  git config user.email github-actions[bot]@users.noreply.github.com
-                  echo "//npm.pkg.github.com/:_authToken=${{ env.NODE_AUTH_TOKEN }}" > ~/.npmrc
-                  yarn version --minor
-                  yarn publish
-                  git push origin --follow-tags
+                  echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+                  yarn publish --new-version "$NEXT" --no-git-tag-version --non-interactive
