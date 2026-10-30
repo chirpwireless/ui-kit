@@ -36,6 +36,8 @@ export * from './CheckboxUncheckedOutlined2';
 
 export { CheckCircleIcon } from './CheckCircleIcon';
 
+export { CheckCircleOutlinedIcon } from './CheckCircleOutlinedIcon';
+
 export { CheckCircleSmallIcon } from './CheckCircleSmallIcon';
 
 export * from './CheckDailyIcon';
@@ -48,7 +50,11 @@ export { ChevronDownIcon } from './ChevronDownIcon';
 
 export * from './ChevronRightIcon';
 
+export { ChirpAltIcon } from './ChirpAltIcon';
+
 export * from './ChirpCoinIcon';
+
+export { ChirpErrorIcon } from './ChirpErrorIcon';
 
 export * from './ChirpIcon';
 
@@ -111,6 +117,8 @@ export * from './EmailIcon';
 export * from './EmptyMap';
 
 export * from './EnergyIcon';
+
+export { ErrorIcon } from './ErrorIcon';
 
 export { ErrorSolidIcon } from './ErrorSolidIcon';
 
@@ -247,6 +255,8 @@ export * from './StreetIcon';
 export * from './SubLocationIcon';
 
 export * from './SubLocationTagIcon';
+
+export { SuccessIcon } from './SuccessIcon';
 
 export { SuccessSolidIcon } from './SuccessSolidIcon';
 
