@@ -53,16 +53,6 @@ export * from './UserIcon';
 export * from './WarningTriangleIcon';
 
 // SVG-as-component exports (vite-plugin-svgr).
-export { default as CheckCircleOutlinedIcon } from './check-circle-outlined-icon.svg?react';
-
-export { default as ChirpAltIcon } from './chirp-alt-icon.svg?react';
-
-export { default as ChirpErrorIcon } from './chirp-error-icon.svg?react';
-
 export { default as CloseIcon } from './close-icon.svg?react';
 
-export { default as ErrorIcon } from './error-icon.svg?react';
-
 export { default as LogoutIcon } from './logout-icon.svg?react';
-
-export { default as SuccessIcon } from './success-icon.svg?react';
