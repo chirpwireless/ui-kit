@@ -1,5 +1,5 @@
 import { Box, Stack } from '@mui/material';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
 import { ColorPicker } from './ColorPicker';

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { DateRange, Range } from 'react-date-range';
 import 'react-date-range/dist/styles.css';

@@ -1,5 +1,5 @@
 import { Box, MenuItem } from '@mui/material';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
 import { Select } from './Select';
