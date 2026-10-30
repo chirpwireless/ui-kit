@@ -52,7 +52,7 @@ export default defineConfig(({ mode }) => {
                     ...Object.fromEntries(
                         glob
                             .sync('src/**/*.{ts,tsx}', {
-                                ignore: ['src/**/*.stories.tsx'],
+                                ignore: ['src/**/*.stories.tsx', 'src/**/*.d.ts'],
                             })
                             .map((file) => [
                                 // The name of the entry point
@@ -65,8 +65,8 @@ export default defineConfig(({ mode }) => {
                     ),
                 },
                 external: [
-                    'react',
-                    'react-dom',
+                    /^react($|\/)/,
+                    /^react-dom($|\/)/,
                     'react-i18next',
                     'i18next',
                     'react-toastify',
