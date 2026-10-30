@@ -23,5 +23,5 @@ type Props<TData> = {
     getRowDisableHover?(row: TData): boolean;
     getCanExpand?(row: TData): boolean;
 };
-export declare const Table: <TData>({ table, rows: allRows, sx, page, isLoading, enableSorting, expandedRowIndex: defaultExpandedRowIndex, spacerSize, onRowClick, renderExpandableBlock, renderEmptyBlock, getRowDisableHover, getCanExpand, }: Props<TData>) => import("react/jsx-runtime").JSX.Element;
+export declare const Table: <TData>({ table, rows: allRows, sx, page, isLoading, enableSorting, expandedRowIndex: defaultExpandedRowIndex, spacerSize, onRowClick, renderExpandableBlock, renderEmptyBlock, getRowDisableHover, getCanExpand, }: Props<TData>) => import('react').JSX.Element;
 export {};

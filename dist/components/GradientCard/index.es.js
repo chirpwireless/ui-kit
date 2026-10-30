@@ -1,4 +1,1 @@
-import { GradientCard as d } from "./GradientCard.es.js";
-export {
-  d as GradientCard
-};
+export { GradientCard } from "./GradientCard.es.js";

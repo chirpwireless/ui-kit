@@ -1,45 +1,34 @@
-import { jsxRuntimeExports as c } from "../../jsx-runtime-BgepH7Pb.js";
-import { useTheme as p, Stack as u, IconButton as a } from "@mui/material";
-import { mergeSx as g } from "../../helpers/merge-sx.es.js";
-import { StepIcon as l } from "../../icons/StepIcon/index.es.js";
-import { chirpPalette as h } from "../../theme/palette.es.js";
-const y = ({ activeStep: n, handleSetStep: r, steps: o, sx: m }) => {
-  const x = p(), i = h(x), e = i.primaryColors.accentLight2 ?? i.primaryColors.accentLight;
-  return o != null && o.length ? /* @__PURE__ */ c.jsx(
-    u,
-    {
-      direction: "row",
-      sx: g(
-        {
-          gap: "8px",
-          height: "24px",
-          alignItems: "center",
-          justifyContent: "center",
-          mb: "32px"
-        },
-        m
-      ),
-      children: o.map((t) => /* @__PURE__ */ c.jsx(
-        a,
-        {
-          sx: {
-            color: n === t ? i.primaryColors.accent : i.neutral.grey4,
-            width: "6px",
-            minWidth: "24px",
-            height: "24px",
-            borderRadius: "8px",
-            padding: "0",
-            cursor: r ? "pointer" : "default",
-            "&:hover": r ? { backgroundColor: e } : void 0
-          },
-          onClick: () => r == null ? void 0 : r(t),
-          children: /* @__PURE__ */ c.jsx(l, {})
-        },
-        t
-      ))
-    }
-  ) : null;
+import { chirpPalette as e } from "../../theme/palette.es.js";
+import { StepIcon as t } from "../../icons/StepIcon/index.es.js";
+import { mergeSx as n } from "../../helpers/merge-sx.es.js";
+import { IconButton as r, Stack as i, useTheme as a } from "@mui/material";
+import { jsx as o } from "react/jsx-runtime";
+// src/components/Stepper/Stepper.tsx
+var s = ({ activeStep: s, handleSetStep: c, steps: l, sx: u }) => {
+	let d = a(), f = e(d), p = f.primaryColors.accentLight2 ?? f.primaryColors.accentLight;
+	return l?.length ? /* @__PURE__ */ o(i, {
+		direction: "row",
+		sx: n({
+			gap: "8px",
+			height: "24px",
+			alignItems: "center",
+			justifyContent: "center",
+			mb: "32px"
+		}, u),
+		children: l.map((e) => /* @__PURE__ */ o(r, {
+			sx: {
+				color: s === e ? f.primaryColors.accent : f.neutral.grey4,
+				width: "6px",
+				minWidth: "24px",
+				height: "24px",
+				borderRadius: "8px",
+				padding: "0",
+				cursor: c ? "pointer" : "default",
+				"&:hover": c ? { backgroundColor: p } : void 0
+			},
+			onClick: () => c?.(e),
+			children: /* @__PURE__ */ o(t, {})
+		}, e))
+	}) : null;
 };
-export {
-  y as Stepper
-};
+export { s as Stepper };

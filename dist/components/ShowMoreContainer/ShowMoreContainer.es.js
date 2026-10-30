@@ -1,37 +1,33 @@
-import { jsxRuntimeExports as s } from "../../jsx-runtime-BgepH7Pb.js";
-import { ExpandMore as g } from "@mui/icons-material";
-import { useState as i, useRef as j, useEffect as R } from "react";
-import { Wrapper as b, BoxWrapper as C, Mark as k, Arrow as B } from "./style.es.js";
-const M = ({ height: e, children: c }) => {
-  const [l, a] = i(!1), [p, u] = i(!0), [f, x] = i(e), r = j(null), m = (t) => {
-    t.stopPropagation(), t.preventDefault(), a((o) => !o);
-  };
-  return R(() => {
-    var t;
-    if (r.current) {
-      const { bottom: o } = r.current.getBoundingClientRect(), n = (t = r.current.parentElement) == null ? void 0 : t.getBoundingClientRect();
-      if (n) {
-        const d = o - n.top <= e;
-        x(o - n.top), u(d);
-      }
-    }
-  }, [e]), /* @__PURE__ */ s.jsxs(b, { children: [
-    /* @__PURE__ */ s.jsxs(C, { open: l, heightFull: f, height: e, children: [
-      c,
-      /* @__PURE__ */ s.jsx(
-        k,
-        {
-          className: "last-badge",
-          ref: r,
-          sx: {
-            height: e
-          }
-        }
-      )
-    ] }),
-    !p && /* @__PURE__ */ s.jsx(B, { open: l, onClick: (t) => m(t), children: /* @__PURE__ */ s.jsx(g, { sx: { width: "16px" } }) })
-  ] });
+import { Arrow as e, BoxWrapper as t, Mark as n, Wrapper as r } from "./style.es.js";
+import { useEffect as i, useRef as a, useState as o } from "react";
+import { jsx as s, jsxs as c } from "react/jsx-runtime";
+import { ExpandMore as l } from "@mui/icons-material";
+// src/components/ShowMoreContainer/ShowMoreContainer.tsx
+var u = ({ height: u, children: d }) => {
+	let [f, p] = o(!1), [m, h] = o(!0), [g, _] = o(u), v = a(null), y = (e) => {
+		e.stopPropagation(), e.preventDefault(), p((e) => !e);
+	};
+	return i(() => {
+		if (v.current) {
+			let { bottom: e } = v.current.getBoundingClientRect(), t = v.current.parentElement?.getBoundingClientRect();
+			if (t) {
+				let n = e - t.top <= u;
+				_(e - t.top), h(n);
+			}
+		}
+	}, [u]), /* @__PURE__ */ c(r, { children: [/* @__PURE__ */ c(t, {
+		open: f,
+		heightFull: g,
+		height: u,
+		children: [d, /* @__PURE__ */ s(n, {
+			className: "last-badge",
+			ref: v,
+			sx: { height: u }
+		})]
+	}), !m && /* @__PURE__ */ s(e, {
+		open: f,
+		onClick: (e) => y(e),
+		children: /* @__PURE__ */ s(l, { sx: { width: "16px" } })
+	})] });
 };
-export {
-  M as ShowMoreContainer
-};
+export { u as ShowMoreContainer };

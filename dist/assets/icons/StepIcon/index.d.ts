@@ -1,1 +1,1 @@
-export declare const StepIcon: () => import("react/jsx-runtime").JSX.Element;
+export declare const StepIcon: () => import('react').JSX.Element;

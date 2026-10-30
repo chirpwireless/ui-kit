@@ -1,1 +1,1 @@
-export declare const WarningTriangleIcon: () => import("react/jsx-runtime").JSX.Element;
+export declare const WarningTriangleIcon: () => import('react').JSX.Element;

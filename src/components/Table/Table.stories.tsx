@@ -1,5 +1,5 @@
 import { Box, Stack } from '@mui/material';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { CallIcon } from '@chirp/ui/assets/fleet-icons';
 import { EyeIcon } from '@chirp/ui/icons';

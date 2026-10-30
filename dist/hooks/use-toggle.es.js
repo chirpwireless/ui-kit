@@ -1,20 +1,19 @@
-import { useState as c, useCallback as t } from "react";
-const g = (s = !1) => {
-  const [o, e] = c(s), l = t(() => {
-    e((r) => !r);
-  }, [e]), a = t(() => {
-    e(!0);
-  }, [e]), u = t(() => {
-    e(!1);
-  }, [e]);
-  return {
-    value: o,
-    setValue: e,
-    toggle: l,
-    setTrue: a,
-    setFalse: u
-  };
+import { useCallback as e, useState as t } from "react";
+// src/hooks/use-toggle.ts
+var n = (n = !1) => {
+	let [r, i] = t(n);
+	return {
+		value: r,
+		setValue: i,
+		toggle: e(() => {
+			i((e) => !e);
+		}, [i]),
+		setTrue: e(() => {
+			i(!0);
+		}, [i]),
+		setFalse: e(() => {
+			i(!1);
+		}, [i])
+	};
 };
-export {
-  g as useToggle
-};
+export { n as useToggle };

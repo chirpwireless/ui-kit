@@ -1,4 +1,1 @@
-import { MediaImage as m } from "./MediaImage.es.js";
-export {
-  m as MediaImage
-};
+export { MediaImage } from "./MediaImage.es.js";

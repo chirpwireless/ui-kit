@@ -1,4 +1,1 @@
-import { Avatar as o } from "./Avatar.es.js";
-export {
-  o as Avatar
-};
+export { Avatar } from "./Avatar.es.js";

@@ -1,0 +1,165 @@
+import { CurrentTheme as e } from "./styles/constants.es.js";
+// node_modules/@turf/helpers/dist/esm/index.js
+var t = 6371008.8, n = {
+	centimeters: t * 100,
+	centimetres: t * 100,
+	cm: t * 100,
+	degrees: 360 / (2 * Math.PI),
+	deg: 360 / (2 * Math.PI),
+	feet: t * 3.28084,
+	ft: t * 3.28084,
+	inches: t * 39.37,
+	in: t * 39.37,
+	kilometers: t / 1e3,
+	kilometres: t / 1e3,
+	km: t / 1e3,
+	meters: t,
+	metres: t,
+	m: t,
+	miles: t / 1609.344,
+	mi: t / 1609.344,
+	millimeters: t * 1e3,
+	millimetres: t * 1e3,
+	mm: t * 1e3,
+	nauticalmiles: t / 1852,
+	nmi: t / 1852,
+	radians: 1,
+	rad: 1,
+	yards: t * 1.0936,
+	yd: t * 1.0936
+};
+function r(e, t, n = {}) {
+	let r = { type: "Feature" };
+	return (n.id === 0 || n.id) && (r.id = n.id), n.bbox && (r.bbox = n.bbox), r.properties = t || {}, r.geometry = e, r;
+}
+function i(e, t, n = {}) {
+	if (!e) throw Error("coordinates is required");
+	if (!Array.isArray(e)) throw Error("coordinates must be an Array");
+	if (e.length < 2) throw Error("coordinates must be at least 2 numbers long");
+	if (!s(e[0]) || !s(e[1])) throw Error("coordinates must contain numbers");
+	return r({
+		type: "Point",
+		coordinates: e
+	}, t, n);
+}
+function a(e, t = "kilometers") {
+	let r = n[t];
+	if (!r) throw Error(t + " units is invalid");
+	return e * r;
+}
+function o(e) {
+	return e % 360 * Math.PI / 180;
+}
+function s(e) {
+	return !isNaN(e) && e !== null && !Array.isArray(e);
+}
+// node_modules/@turf/meta/dist/esm/index.js
+function c(e, t, n) {
+	if (e !== null) for (var r, i, a, o, s, l, u, d = 0, f = 0, p, m = e.type, h = m === "FeatureCollection", g = m === "Feature", _ = h ? e.features.length : 1, v = 0; v < _; v++) {
+		u = h ? e.features[v].geometry : g ? e.geometry : e, p = u ? u.type === "GeometryCollection" : !1, s = p ? u.geometries.length : 1;
+		for (var y = 0; y < s; y++) {
+			var b = 0, x = 0;
+			if (o = p ? u.geometries[y] : u, o !== null) {
+				l = o.coordinates;
+				var S = o.type;
+				switch (d = n && (S === "Polygon" || S === "MultiPolygon") ? 1 : 0, S) {
+					case null: break;
+					case "Point":
+						if (t(l, f, v, b, x) === !1) return !1;
+						f++, b++;
+						break;
+					case "LineString":
+					case "MultiPoint":
+						for (r = 0; r < l.length; r++) {
+							if (t(l[r], f, v, b, x) === !1) return !1;
+							f++, S === "MultiPoint" && b++;
+						}
+						S === "LineString" && b++;
+						break;
+					case "Polygon":
+					case "MultiLineString":
+						for (r = 0; r < l.length; r++) {
+							for (i = 0; i < l[r].length - d; i++) {
+								if (t(l[r][i], f, v, b, x) === !1) return !1;
+								f++;
+							}
+							S === "MultiLineString" && b++, S === "Polygon" && x++;
+						}
+						S === "Polygon" && b++;
+						break;
+					case "MultiPolygon":
+						for (r = 0; r < l.length; r++) {
+							for (x = 0, i = 0; i < l[r].length; i++) {
+								for (a = 0; a < l[r][i].length - d; a++) {
+									if (t(l[r][i][a], f, v, b, x) === !1) return !1;
+									f++;
+								}
+								x++;
+							}
+							b++;
+						}
+						break;
+					case "GeometryCollection":
+						for (r = 0; r < o.geometries.length; r++) if (c(o.geometries[r], t, n) === !1) return !1;
+						break;
+					default: throw Error("Unknown Geometry Type");
+				}
+			}
+		}
+	}
+}
+// node_modules/@turf/centroid/dist/esm/index.js
+function l(e, t = {}) {
+	let n = 0, r = 0, a = 0;
+	return c(e, function(e) {
+		n += e[0], r += e[1], a++;
+	}, !0), i([n / a, r / a], t.properties);
+}
+var u = l;
+// node_modules/@turf/invariant/dist/esm/index.js
+function d(e) {
+	if (!e) throw Error("coord is required");
+	if (!Array.isArray(e)) {
+		if (e.type === "Feature" && e.geometry !== null && e.geometry.type === "Point") return [...e.geometry.coordinates];
+		if (e.type === "Point") return [...e.coordinates];
+	}
+	if (Array.isArray(e) && e.length >= 2 && !Array.isArray(e[0]) && !Array.isArray(e[1])) return [...e];
+	throw Error("coord must be GeoJSON Point or an Array of numbers");
+}
+// node_modules/@turf/distance/dist/esm/index.js
+function f(e, t, n = {}) {
+	var r = d(e), i = d(t), s = o(i[1] - r[1]), c = o(i[0] - r[0]), l = o(r[1]), u = o(i[1]), f = Math.sin(s / 2) ** 2 + Math.sin(c / 2) ** 2 * Math.cos(l) * Math.cos(u);
+	return a(2 * Math.atan2(Math.sqrt(f), Math.sqrt(1 - f)), n.units);
+}
+var p = f, m = (e, t, n) => {
+	e.getSource(t) || e.addSource(t, n);
+}, h = (e, t, n, r) => {
+	e.getLayer(t) || e.addLayer(n, r);
+}, g = (e, t) => {
+	e.on("mouseenter", t, () => {
+		e.getCanvas().style.cursor = "pointer";
+	}), e.on("mouseleave", t, () => {
+		e.getCanvas().style.cursor = "";
+	});
+}, _ = (e) => [Math.min(...e.map((e) => e.lon)), Math.min(...e.map((e) => e.lat))], v = (e) => [Math.max(...e.map((e) => e.lon)), Math.max(...e.map((e) => e.lat))], y = (e) => [_(e), v(e)], b = (e) => e >= 0 && e <= 7 ? 0 : e >= 8 && e <= 9 ? 2 : 3, x = "chirp", S = "cm0aruft100n701pdhk5ocz34", C = "cm0arv5hz00n901pl5akl2mff", w = (t) => `mapbox://styles/${x}/${t === e.Dark ? C : S}`, T = (e, t) => {
+	e.getLayer(t) && e.removeLayer(t);
+}, E = (e, t) => {
+	e.getSource(t) && e.removeSource(t);
+}, D = (e) => {
+	let t = u(e).geometry.coordinates;
+	if (e.type === "Feature" && e.geometry.type === "Polygon") {
+		let n = e.geometry?.coordinates[0], r = n.map((e) => p(t, e, { units: "kilometers" })), i = r.reduce((e, t) => e + t, 0) / r.length;
+		return r.every((e) => Math.abs(e - i) < i / 10) && n.length === 65;
+	}
+	return !1;
+}, O = (e) => {
+	let t = u(e).geometry.coordinates;
+	if (e.type === "Feature" && e.geometry.type === "Polygon") {
+		let n = e.geometry.coordinates[0][0];
+		return {
+			center: t,
+			radius: p(t, n, { units: "kilometers" })
+		};
+	}
+};
+export { h as addLayer, m as addSource, y as calcBoundsFromCoordinates, D as checkCirclePolygon, O as getCircleGeometryFromPolygon, b as getCoverageZoomLvl, v as getNECoordinates, _ as getSWCoordinates, w as getUiKitMapStyleId, T as removeMapLayer, E as removeMapSource, g as setPointerOnHover };

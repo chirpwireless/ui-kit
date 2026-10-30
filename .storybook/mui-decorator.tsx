@@ -1,7 +1,7 @@
-import { StoryContext } from '@storybook/react';
+import { StoryContext } from '@storybook/react-vite';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
-import { PaletteMode } from '@mui/material/index';
+import { PaletteMode } from '@mui/material';
 import { useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
 

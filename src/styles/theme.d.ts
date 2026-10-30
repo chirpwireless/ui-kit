@@ -12,9 +12,7 @@ declare module '@mui/material/styles' {
     export interface PaletteOptions extends CustomPalette, ReferencePalette {}
 
     export interface TypeBackground
-        extends TypeBackground,
-            CustomTypeBackground,
-            Record<BackgroundColorNameType, string> {}
+        extends TypeBackground, CustomTypeBackground, Record<BackgroundColorNameType, string> {}
 
     export interface TypeText extends TypeText, CustomTypeText, Record<TextColorNameType, string> {}
 
@@ -98,15 +96,7 @@ type TextColorNameType =
     | 'textInput802';
 
 type BorderColorNameType =
-    | 'border1'
-    | 'border2'
-    | 'border3'
-    | 'border4'
-    | 'border5'
-    | 'input'
-    | 'input2'
-    | 'input3'
-    | 'input4Error';
+    'border1' | 'border2' | 'border3' | 'border4' | 'border5' | 'input' | 'input2' | 'input3' | 'input4Error';
 
 type DarkeningColorNameType = 'darkening';
 

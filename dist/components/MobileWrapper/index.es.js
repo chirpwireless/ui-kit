@@ -1,15 +1,10 @@
-import { styled as t, Stack as e } from "@mui/material";
-const i = t(e)(({ theme: o }) => ({
-  width: "100%",
-  overflow: "hidden",
-  padding: "4px",
-  [o.breakpoints.down("md")]: {
-    height: "auto"
-  },
-  [o.breakpoints.between("md", "lg")]: {
-    height: "auto"
-  }
+import { Stack as e, styled as t } from "@mui/material";
+// src/components/MobileWrapper/index.ts
+var n = t(e)(({ theme: e }) => ({
+	width: "100%",
+	overflow: "hidden",
+	padding: "4px",
+	[e.breakpoints.down("md")]: { height: "auto" },
+	[e.breakpoints.between("md", "lg")]: { height: "auto" }
 }));
-export {
-  i as MobileWrapper
-};
+export { n as MobileWrapper };

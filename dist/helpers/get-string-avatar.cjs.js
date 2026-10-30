@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const r=t=>t?t[0]:"";exports.getStringAvatar=r;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});var e=e=>e?e[0]:``;exports.getStringAvatar=e;

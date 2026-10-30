@@ -1,4 +1,3 @@
-const t = (r) => typeof r == "object" && r !== null && !Array.isArray(r);
-export {
-  t as isObject
-};
+// src/helpers/is-object.ts
+var e = (e) => typeof e == "object" && !!e && !Array.isArray(e);
+export { e as isObject };

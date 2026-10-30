@@ -1,14 +1,18 @@
-import { jsxRuntimeExports as o } from "../../jsx-runtime-BgepH7Pb.js";
-const e = (t) => /* @__PURE__ */ o.jsx("svg", { width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...t, children: /* @__PURE__ */ o.jsx(
-  "path",
-  {
-    d: "M8.46997 10.74L12 14.26L15.53 10.74",
-    stroke: "currentColor",
-    strokeWidth: "1.5",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }
-) });
-export {
-  e as CaretDownIcon
-};
+import { jsx as e } from "react/jsx-runtime";
+// src/icons/CaretDownIcon/index.tsx
+var t = (t) => /* @__PURE__ */ e("svg", {
+	width: "24",
+	height: "24",
+	viewBox: "0 0 24 24",
+	fill: "none",
+	xmlns: "http://www.w3.org/2000/svg",
+	...t,
+	children: /* @__PURE__ */ e("path", {
+		d: "M8.46997 10.74L12 14.26L15.53 10.74",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "round",
+		strokeLinejoin: "round"
+	})
+});
+export { t as CaretDownIcon };

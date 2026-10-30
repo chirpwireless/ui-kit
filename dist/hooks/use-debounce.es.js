@@ -1,13 +1,12 @@
-import { useState as c, useEffect as n } from "react";
-const m = (e, t) => {
-  const [o, u] = c(e);
-  return n(() => {
-    const r = setTimeout(() => u(e), t || 500);
-    return () => {
-      clearTimeout(r);
-    };
-  }, [e, t]), o;
+import { useEffect as e, useState as t } from "react";
+// src/hooks/use-debounce.ts
+var n = (n, r) => {
+	let [i, a] = t(n);
+	return e(() => {
+		let e = setTimeout(() => a(n), r || 500);
+		return () => {
+			clearTimeout(e);
+		};
+	}, [n, r]), i;
 };
-export {
-  m as useDebounce
-};
+export { n as useDebounce };

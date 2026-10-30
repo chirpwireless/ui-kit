@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=t=>typeof t=="object"&&t!==null&&!Array.isArray(t);exports.isObject=e;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});var e=e=>typeof e==`object`&&!!e&&!Array.isArray(e);exports.isObject=e;

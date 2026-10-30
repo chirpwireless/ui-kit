@@ -4,5 +4,5 @@ type Props = {
     onChange: (value: string) => void;
     minDate?: Date;
 };
-export declare const DatePicker: ({ label, value, onChange, minDate }: Props) => import("react/jsx-runtime").JSX.Element;
+export declare const DatePicker: ({ label, value, onChange, minDate }: Props) => import('react').JSX.Element;
 export {};

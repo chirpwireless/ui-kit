@@ -10,10 +10,10 @@
 
 ## Stack
 
-- **React 19 + TypeScript 5.7 + Vite 5** (lib mode, ES + CJS, `vite-plugin-dts`).
-- **MUI 7** (`@mui/material`, `@mui/lab`, `@mui/icons-material`) + Emotion.
-- **react-i18next v15** (встроенные namespaces в `src/locales/`).
-- **Storybook 8** для разработки и визуальной документации.
+- **React 19 + TypeScript 6 + Vite 8** (lib mode, ES + CJS, `vite-plugin-dts`), Node 24 (`.nvmrc`).
+- **MUI 9** (`@mui/material`, `@mui/icons-material`) + Emotion.
+- **react-i18next v17** (встроенные namespaces в `src/locales/`).
+- **Storybook 10** для разработки и визуальной документации.
 - **Yarn** (`yarn.lock` — source of truth).
 
 ## Architecture — куда что класть

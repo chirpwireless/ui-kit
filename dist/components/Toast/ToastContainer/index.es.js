@@ -1,4 +1,1 @@
-import { ToastContainer as t } from "./ToastContainer.es.js";
-export {
-  t as ToastContainer
-};
+export { ToastContainer } from "./ToastContainer.es.js";

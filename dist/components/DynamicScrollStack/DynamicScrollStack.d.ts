@@ -6,5 +6,5 @@ interface DynamicScrollStackProps {
     onScroll?(): void;
     scrollRef?: RefObject<HTMLDivElement | null>;
 }
-export declare const DynamicScrollStack: ({ children, sx, onScroll, scrollRef }: DynamicScrollStackProps) => import("react/jsx-runtime").JSX.Element;
+export declare const DynamicScrollStack: ({ children, sx, onScroll, scrollRef }: DynamicScrollStackProps) => import('react').JSX.Element;
 export {};

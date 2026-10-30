@@ -1,4 +1,1 @@
-import { DatePicker as o } from "./DatePicker.es.js";
-export {
-  o as DatePicker
-};
+export { DatePicker } from "./DatePicker.es.js";

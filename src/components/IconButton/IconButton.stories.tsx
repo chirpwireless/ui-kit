@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { DcIcon } from '@chirp/ui/assets/new-icons';
 import Stack from '@mui/material/Stack';
 

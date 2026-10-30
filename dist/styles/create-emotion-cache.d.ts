@@ -1,1 +1,1 @@
-export declare const createEmotionCache: () => import('@emotion/cache').EmotionCache;
+export declare const createEmotionCache: () => import('@emotion/utils').EmotionCache;

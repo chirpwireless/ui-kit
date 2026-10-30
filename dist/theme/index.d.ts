@@ -1,4 +1,4 @@
-import { PaletteMode, Theme } from '../../node_modules/@mui/material/styles';
+import { PaletteMode, Theme } from '@mui/material/styles';
 import { chirpDarkTheme } from './chirp/dark';
 import { chirpLightTheme } from './chirp/light';
 import { createComponents } from './components';

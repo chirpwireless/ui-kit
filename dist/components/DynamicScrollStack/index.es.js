@@ -1,4 +1,1 @@
-import { DynamicScrollStack as r } from "./DynamicScrollStack.es.js";
-export {
-  r as DynamicScrollStack
-};
+export { DynamicScrollStack } from "./DynamicScrollStack.es.js";

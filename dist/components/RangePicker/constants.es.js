@@ -1,12 +1,9 @@
-import { hooks as t } from "../../moment-DHYryOIn.js";
-const o = /* @__PURE__ */ new Date(), n = t().unix(), a = t().subtract(2, "months").toDate(), e = o, u = {
-  today: [t().startOf("day").unix(), t().endOf("day").unix()],
-  "last week": [t().subtract(1, "week").unix(), n],
-  "last month": [t().subtract(1, "month").unix(), n],
-  "last 2 months": [t().subtract(2, "month").unix(), n]
+import { hooks as e } from "../../moment-DoaiFqFV.js";
+// src/components/RangePicker/constants.ts
+var t = /* @__PURE__ */ new Date(), n = e().unix(), r = e().subtract(2, "months").toDate(), i = t, a = {
+	today: [e().startOf("day").unix(), e().endOf("day").unix()],
+	"last week": [e().subtract(1, "week").unix(), n],
+	"last month": [e().subtract(1, "month").unix(), n],
+	"last 2 months": [e().subtract(2, "month").unix(), n]
 };
-export {
-  e as MAX_DATE_OF_DATE_FILTER,
-  a as MIN_DATE_OF_DATE_FILTER,
-  u as QUICK_SELECT_OPTIONS
-};
+export { i as MAX_DATE_OF_DATE_FILTER, r as MIN_DATE_OF_DATE_FILTER, a as QUICK_SELECT_OPTIONS };

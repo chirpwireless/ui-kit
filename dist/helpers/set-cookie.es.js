@@ -1,17 +1,10 @@
-const m = ({
-  name: i,
-  value: s,
-  days: e = 365,
-  isRootDomain: c = !1,
-  path: a = "; path=/"
-}) => {
-  let t = "", n = "";
-  if (e) {
-    const o = /* @__PURE__ */ new Date();
-    o.setTime(o.getTime() + e * 864e5), t = `; expires=${o.toUTCString()}`;
-  }
-  c && (n = `; domain=${window.location.hostname.split(".").slice(-2).join(".")}`), document.cookie = `${i}=${encodeURIComponent(s)}${a}${t}${n}`;
+// src/helpers/set-cookie.ts
+var e = ({ name: e, value: t, days: n = 365, isRootDomain: r = !1, path: i = "; path=/" }) => {
+	let a = "", o = "";
+	if (n) {
+		let e = /* @__PURE__ */ new Date();
+		e.setTime(e.getTime() + n * 864e5), a = `; expires=${e.toUTCString()}`;
+	}
+	r && (o = `; domain=${window.location.hostname.split(".").slice(-2).join(".")}`), document.cookie = `${e}=${encodeURIComponent(t)}${i}${a}${o}`;
 };
-export {
-  m as setCookie
-};
+export { e as setCookie };

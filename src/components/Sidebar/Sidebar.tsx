@@ -15,9 +15,11 @@ const defaultLinkComponent = (props: SidebarLinkComponentProps) => <DefaultLink 
 const getInitialExpanded = (groups: SidebarItem[][]): Record<string, boolean> => {
     const expanded: Record<string, boolean> = {};
 
-    groups.forEach((group) => group.forEach((item) => {
-        if (item.defaultExpanded) expanded[item.name] = true;
-    }));
+    groups.forEach((group) =>
+        group.forEach((item) => {
+            if (item.defaultExpanded) expanded[item.name] = true;
+        }),
+    );
 
     return expanded;
 };

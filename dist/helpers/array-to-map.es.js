@@ -1,4 +1,6 @@
-const e = (a, o) => a.reduce((c, r) => ({ ...c, [r[o]]: r }), {});
-export {
-  e as arrayToMap
-};
+// src/helpers/array-to-map.tsx
+var e = (e, t) => e.reduce((e, n) => ({
+	...e,
+	[n[t]]: n
+}), {});
+export { e as arrayToMap };

@@ -1,1 +1,1 @@
-export declare const Link: import('@emotion/styled').StyledComponent<import('react-router-dom').LinkProps & import('react').RefAttributes<HTMLAnchorElement> & import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme>, {}, {}>;
+export declare const Link: import('@emotion/styled').StyledComponent<import('react-router').LinkProps & import('react').RefAttributes<HTMLAnchorElement> & import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme>, {}, {}>;

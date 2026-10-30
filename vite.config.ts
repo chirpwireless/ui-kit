@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => {
         },
         resolve: {
             alias: {
-                '@chirp/ui': path.resolve(__dirname, 'src'),
+                '@chirp/ui': path.resolve(import.meta.dirname, 'src'),
             },
         },
         css: {
@@ -41,9 +41,10 @@ export default defineConfig(({ mode }) => {
         build: {
             outDir: 'dist',
             lib: {
-                entry: path.resolve(__dirname, 'src/index.ts'),
+                entry: path.resolve(import.meta.dirname, 'src/index.ts'),
                 name: '@chirp/ui',
                 fileName: (format) => `chirp-ui.${format}.js`,
+                cssFileName: 'style',
                 formats: ['es', 'cjs'],
             },
             rollupOptions: {
@@ -51,7 +52,7 @@ export default defineConfig(({ mode }) => {
                     ...Object.fromEntries(
                         glob
                             .sync('src/**/*.{ts,tsx}', {
-                                ignore: ['src/**/*.stories.tsx'],
+                                ignore: ['src/**/*.stories.tsx', 'src/**/*.d.ts'],
                             })
                             .map((file) => [
                                 // The name of the entry point
@@ -64,8 +65,8 @@ export default defineConfig(({ mode }) => {
                     ),
                 },
                 external: [
-                    'react',
-                    'react-dom',
+                    /^react($|\/)/,
+                    /^react-dom($|\/)/,
                     'react-i18next',
                     'i18next',
                     'react-toastify',
@@ -87,7 +88,6 @@ export default defineConfig(({ mode }) => {
                 ],
                 output: {
                     minifyInternalExports: false,
-                    inlineDynamicImports: false, // отключите инлайн динамические импорты
                     assetFileNames: '[name][extname]',
                     entryFileNames: '[name].[format].js',
                     globals: {

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
 import { FilterItem } from './index';
@@ -17,7 +17,7 @@ export default meta;
 type Story = StoryObj<typeof FilterItem>;
 
 export const Default: Story = {
-    render: () => {
+    render: function Render() {
         const [checkedState, setCheckedState] = useState(false);
 
         return (

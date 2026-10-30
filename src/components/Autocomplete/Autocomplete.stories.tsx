@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
 import { TextField } from '@chirp/ui/components/TextField';
@@ -19,7 +19,7 @@ export default meta;
 type Story = StoryObj<typeof Autocomplete>;
 
 export const Default: Story = {
-    render: () => {
+    render: function Render() {
         const [isOpen, setIsOpen] = useState(false);
         const [inputValue, setInputValue] = useState('');
 

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
 import { Sidebar } from '../../components/Sidebar';
@@ -28,7 +28,7 @@ export default meta;
 type Story = StoryObj<typeof BaseLayout>;
 
 export const Default: Story = {
-    render: () => {
+    render: function Render() {
         const [isCollapsed, setIsCollapsed] = useState(false);
 
         const sidebar = (

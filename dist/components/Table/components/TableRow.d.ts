@@ -12,5 +12,5 @@ type Props<TData> = {
     onClick?(row: Row<TData>): void;
     renderExpandableBlock?(row: TData): ReactElement;
 };
-export declare const TableRow: <TData>({ row, table, sx, isExpanded, disableHover, virtualIndex, measureRef, onClick, renderExpandableBlock, }: Props<TData>) => import("react/jsx-runtime").JSX.Element;
+export declare const TableRow: <TData>({ row, table, sx, isExpanded, disableHover, virtualIndex, measureRef, onClick, renderExpandableBlock, }: Props<TData>) => import('react').JSX.Element;
 export {};

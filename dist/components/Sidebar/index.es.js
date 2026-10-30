@@ -1,10 +1,5 @@
-import { Sidebar as o } from "./Sidebar.es.js";
-import { SidebarLogo as f } from "./SidebarLogo.es.js";
+import { DefaultLink as e } from "./components/DefaultLink.es.js";
 import { SidebarToggle as t } from "./SidebarToggle.es.js";
-import { DefaultLink as d } from "./components/DefaultLink.es.js";
-export {
-  o as Sidebar,
-  d as SidebarDefaultLink,
-  f as SidebarLogo,
-  t as SidebarToggle
-};
+import { SidebarLogo as n } from "./SidebarLogo.es.js";
+import { Sidebar as r } from "./Sidebar.es.js";
+export { r as Sidebar, e as SidebarDefaultLink, n as SidebarLogo, t as SidebarToggle };

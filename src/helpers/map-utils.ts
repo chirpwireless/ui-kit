@@ -61,12 +61,14 @@ export const getCoverageZoomLvl = (zoom: number) => {
     }
 };
 
+const MAPBOX_STYLE_OWNER = 'chirp';
+const MAPBOX_LIGHT_STYLE_ID = 'cm0aruft100n701pdhk5ocz34';
+const MAPBOX_DARK_STYLE_ID = 'cm0arv5hz00n901pl5akl2mff';
+
 export const getUiKitMapStyleId = (themeMode: PaletteMode): string => {
-    return `mapbox://styles/${import.meta.env.VITE_UI_MAPBOX_USER_NAME}/${
-        themeMode === CurrentTheme.Dark
-            ? import.meta.env.VITE_UI_DARK_MAP_STYLE_ID
-            : import.meta.env.VITE_UI_LIGHT_MAP_STYLE_ID
-    }`;
+    const styleId = themeMode === CurrentTheme.Dark ? MAPBOX_DARK_STYLE_ID : MAPBOX_LIGHT_STYLE_ID;
+
+    return `mapbox://styles/${MAPBOX_STYLE_OWNER}/${styleId}`;
 };
 
 export const removeMapLayer = (map: mapboxgl.Map, name: string) => {

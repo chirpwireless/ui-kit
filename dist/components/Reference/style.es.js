@@ -1,9 +1,8 @@
-import { styled as o } from "@mui/material";
-const t = o("a")`
+import { styled as e } from "@mui/material";
+// src/components/Reference/style.ts
+var t = e("a")`
     color: unset;
     text-decoration: none;
     cursor: pointer;
 `;
-export {
-  t as Anchor
-};
+export { t as Anchor };

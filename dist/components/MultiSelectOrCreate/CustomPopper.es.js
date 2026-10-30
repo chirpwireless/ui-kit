@@ -1,17 +1,18 @@
-import { jsxRuntimeExports as i } from "../../jsx-runtime-BgepH7Pb.js";
-import { Popper as n } from "@mui/material";
-const s = (r) => {
-  const { anchorEl: t, ...e } = r, o = t && "clientWidth" in t ? t.clientWidth : void 0;
-  return /* @__PURE__ */ i.jsx(
-    n,
-    {
-      anchorEl: t,
-      ...e,
-      placement: "bottom-start",
-      style: { zIndex: 1300, width: o, maxWidth: o }
-    }
-  );
+import "react";
+import { Popper as e } from "@mui/material";
+import { jsx as t } from "react/jsx-runtime";
+// src/components/MultiSelectOrCreate/CustomPopper.tsx
+var n = (n) => {
+	let { anchorEl: r, ...i } = n, a = r && "clientWidth" in r ? r.clientWidth : void 0;
+	return /* @__PURE__ */ t(e, {
+		anchorEl: r,
+		...i,
+		placement: "bottom-start",
+		style: {
+			zIndex: 1300,
+			width: a,
+			maxWidth: a
+		}
+	});
 };
-export {
-  s as CustomPopper
-};
+export { n as CustomPopper };

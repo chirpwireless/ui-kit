@@ -3,5 +3,5 @@ interface PlusIconProps {
     height?: number;
     width?: number;
 }
-export declare const PlusIcon: ({ color, width, height }: PlusIconProps) => import("react/jsx-runtime").JSX.Element;
+export declare const PlusIcon: ({ color, width, height }: PlusIconProps) => import('react').JSX.Element;
 export {};

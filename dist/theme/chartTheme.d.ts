@@ -1,4 +1,4 @@
-import { Theme as MuiTheme } from '../../node_modules/@mui/material/styles';
+import { Theme as MuiTheme } from '@mui/material/styles';
 interface BarChartTheme {
     crosshair: {
         line: {

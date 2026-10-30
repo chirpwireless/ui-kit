@@ -1,4 +1,1 @@
-import { ShowMoreContainer as e } from "./ShowMoreContainer.es.js";
-export {
-  e as ShowMoreContainer
-};
+export { ShowMoreContainer } from "./ShowMoreContainer.es.js";

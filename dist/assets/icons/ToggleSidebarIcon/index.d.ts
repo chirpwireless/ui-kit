@@ -1,1 +1,1 @@
-export declare const ToggleSidebarIcon: () => import("react/jsx-runtime").JSX.Element;
+export declare const ToggleSidebarIcon: () => import('react').JSX.Element;

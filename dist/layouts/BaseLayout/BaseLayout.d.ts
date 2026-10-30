@@ -8,4 +8,4 @@ export interface BaseLayoutProps {
     toastContainer?: ReactNode;
     overlaySlot?: ReactNode;
 }
-export declare const BaseLayout: ({ sidebar, header, children, isSidebarOpen, isSidebarCollapsed, toastContainer, overlaySlot, }: BaseLayoutProps) => import("react/jsx-runtime").JSX.Element;
+export declare const BaseLayout: ({ sidebar, header, children, isSidebarOpen, isSidebarCollapsed, toastContainer, overlaySlot, }: BaseLayoutProps) => import('react').JSX.Element;

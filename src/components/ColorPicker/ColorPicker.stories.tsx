@@ -1,5 +1,5 @@
 import { Box, Stack } from '@mui/material';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
 import { ColorPicker } from './ColorPicker';
@@ -18,7 +18,7 @@ export default meta;
 type Story = StoryObj<typeof ColorPicker>;
 
 export const Default: Story = {
-    render: () => {
+    render: function Render() {
         const [color, setColor] = useState('#aabbcc');
         const [color2, setColor2] = useState('#123456');
         const [color3, setColor3] = useState('#00ff00');
@@ -36,7 +36,7 @@ export const Default: Story = {
 };
 
 export const ClickableColorCells: Story = {
-    render: () => {
+    render: function Render() {
         const [color, setColor] = useState('#aabbcc');
 
         const swatches = ['#aabbcc', '#ff00ff', '#00ff0f'];

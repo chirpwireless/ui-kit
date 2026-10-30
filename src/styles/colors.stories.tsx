@@ -1,4 +1,4 @@
-import type { Meta } from '@storybook/react';
+import type { Meta } from '@storybook/react-vite';
 import { lightTheme } from './theme/light';
 import { Box, Stack, Typography } from '@mui/material';
 import { useTheme } from '@emotion/react';
@@ -15,7 +15,7 @@ const meta: Meta = {
 export default meta;
 
 export const Default = {
-    render: () => {
+    render: function Render() {
         const theme = useTheme();
         const palette =
             theme.palette.mode === 'light'

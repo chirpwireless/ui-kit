@@ -1,16 +1,15 @@
-import { useCallback as n } from "react";
-function l({ file: o, cb: t }) {
-  return n(() => {
-    try {
-      if (o) {
-        const r = window.URL.createObjectURL(new Blob([o])), e = document.createElement("a");
-        e.href = r, e.setAttribute("download", "report.xlsx"), document.body.appendChild(e), e.click(), e.remove(), t();
-      }
-    } catch (r) {
-      console.error("Error downloading the file:", r);
-    }
-  }, [t, o]);
+import { useCallback as e } from "react";
+// src/hooks/use-download-xlsx.ts
+function t({ file: t, cb: n }) {
+	return e(() => {
+		try {
+			if (t) {
+				let e = window.URL.createObjectURL(new Blob([t])), r = document.createElement("a");
+				r.href = e, r.setAttribute("download", "report.xlsx"), document.body.appendChild(r), r.click(), r.remove(), n();
+			}
+		} catch (e) {
+			console.error("Error downloading the file:", e);
+		}
+	}, [n, t]);
 }
-export {
-  l as useDownloadXlsx
-};
+export { t as useDownloadXlsx };

@@ -7,7 +7,7 @@ import { ButtonProps } from './Button';
 // Styling-only props: ButtonBase spreads whatever it receives onto the DOM node, so keep them out
 const STYLE_ONLY_PROPS = ['fullWidth', 'size', 'variant', 'hasIcon'];
 
-export const Button = styled(ButtonBase, { shouldForwardProp: (prop) => !STYLE_ONLY_PROPS.includes(prop) })<
+export const Button = styled(ButtonBase, { shouldForwardProp: (prop) => !STYLE_ONLY_PROPS.includes(String(prop)) })<
     Pick<ButtonProps, 'fullWidth' | 'size' | 'variant' | 'hasIcon'>
 >(({ fullWidth, theme, size, variant, hasIcon }) => ({
     boxSizing: 'border-box',

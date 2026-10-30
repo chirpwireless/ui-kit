@@ -1,29 +1,17 @@
-import { jsxRuntimeExports as x } from "../../../jsx-runtime-BgepH7Pb.js";
-import { LinkBox as f } from "../style.es.js";
-const i = {
-  target: "_blank",
-  rel: "noopener noreferrer"
-}, k = ({
-  href: o,
-  isExternal: e,
-  disabled: r,
-  isSidebarCollapsed: n,
-  onClick: t,
-  children: p,
-  className: m
-}) => /* @__PURE__ */ x.jsx(
-  f,
-  {
-    component: "a",
-    href: r ? "#" : o,
-    onClick: t,
-    disabled: r,
-    isSidebarCollapsed: n,
-    className: m,
-    ...e ? i : {},
-    children: p
-  }
-);
-export {
-  k as DefaultLink
-};
+import { LinkBox as e } from "../style.es.js";
+import { jsx as t } from "react/jsx-runtime";
+// src/components/Sidebar/components/DefaultLink.tsx
+var n = {
+	target: "_blank",
+	rel: "noopener noreferrer"
+}, r = ({ href: r, isExternal: i, disabled: a, isSidebarCollapsed: o, onClick: s, children: c, className: l }) => /* @__PURE__ */ t(e, {
+	component: "a",
+	href: a ? "#" : r,
+	onClick: s,
+	disabled: a,
+	isSidebarCollapsed: o,
+	className: l,
+	...i ? n : {},
+	children: c
+});
+export { r as DefaultLink };

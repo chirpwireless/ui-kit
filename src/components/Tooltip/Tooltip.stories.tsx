@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { EyeIcon } from '@chirp/ui/icons';
 
 import { Tooltip } from './Tooltip';

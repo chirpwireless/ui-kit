@@ -9,5 +9,5 @@ interface MediaImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'src
         sx?: Record<string, unknown>;
     };
 }
-export declare const MediaImage: ({ src, alt, fallback, skeletonProps, style, ...imgProps }: MediaImageProps) => import("react/jsx-runtime").JSX.Element;
+export declare const MediaImage: ({ src, alt, fallback, skeletonProps, style, ...imgProps }: MediaImageProps) => import('react').JSX.Element;
 export {};

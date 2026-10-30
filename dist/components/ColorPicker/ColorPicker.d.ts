@@ -7,5 +7,5 @@ interface Props {
     hideTitle?: boolean;
     sx?: SxProps;
 }
-export declare const ColorPicker: ({ value, onChange, title, placement, hideTitle, sx }: Props) => import("react/jsx-runtime").JSX.Element;
+export declare const ColorPicker: ({ value, onChange, title, placement, hideTitle, sx }: Props) => import('react').JSX.Element;
 export {};

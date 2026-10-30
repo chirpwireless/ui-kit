@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 
 import { TextField } from '@chirp/ui/components/TextField';
@@ -19,7 +19,7 @@ export default meta;
 type Story = StoryObj<typeof PhoneField>;
 
 export const Default: Story = {
-    render: () => {
+    render: function Render() {
         const [value, setValue] = useState<string>('+491512125694');
 
         return (
@@ -37,7 +37,7 @@ export const Default: Story = {
 };
 
 export const Disabled: Story = {
-    render: () => {
+    render: function Render() {
         const [value, setValue] = useState<string>('+491512125694');
 
         return (
@@ -56,7 +56,7 @@ export const Disabled: Story = {
 };
 
 export const Error: Story = {
-    render: () => {
+    render: function Render() {
         const [value, setValue] = useState<string>('+491512125694');
 
         return (
@@ -75,7 +75,7 @@ export const Error: Story = {
 };
 
 export const Empty: Story = {
-    render: () => {
+    render: function Render() {
         const [value, setValue] = useState<string>('');
 
         return (

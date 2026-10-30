@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=(a,e)=>a.reduce((o,r)=>({...o,[r[e]]:r}),{});exports.arrayToMap=t;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});var e=(e,t)=>e.reduce((e,n)=>({...e,[n[t]]:n}),{});exports.arrayToMap=e;

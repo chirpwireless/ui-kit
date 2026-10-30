@@ -1,4 +1,1 @@
-import { PromoBanner as e } from "./PromoBanner.es.js";
-export {
-  e as PromoBanner
-};
+export { PromoBanner } from "./PromoBanner.es.js";

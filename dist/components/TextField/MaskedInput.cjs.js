@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const r=require("../../jsx-runtime-BRMkMA8J.cjs"),n=require("react"),u=require("react-imask"),e=n.forwardRef((t,s)=>r.jsxRuntimeExports.jsx(u.IMaskInput,{...t,inputRef:s}));e.displayName="MaskedInput";exports.MaskedInput=e;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});let e=require("react"),t=require("react/jsx-runtime"),n=require("react-imask");var r=(0,e.forwardRef)((e,r)=>(0,t.jsx)(n.IMaskInput,{...e,inputRef:r}));r.displayName=`MaskedInput`,exports.MaskedInput=r;

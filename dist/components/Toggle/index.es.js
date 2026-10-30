@@ -1,43 +1,62 @@
-import { jsxRuntimeExports as o } from "../../jsx-runtime-BgepH7Pb.js";
-import { mergeSx as j } from "../../helpers/merge-sx.es.js";
-import { Toggle as T, HiddenInput as i, Label as l, Checkmark as g, CheckmarkPin as c, MobileToggle as f } from "./style.es.js";
-const y = ({ name: s, label: x, checked: n, isLoading: t, disabled: r = !1, onChange: p, sx: e, labelSx: m }) => /* @__PURE__ */ o.jsxs(T, { sx: j({ cursor: r ? "initial" : "pointer" }, e), children: [
-  /* @__PURE__ */ o.jsx(
-    i,
-    {
-      type: "checkbox",
-      checked: n,
-      onChange: p,
-      name: s,
-      disabled: r || t
-    }
-  ),
-  x && /* @__PURE__ */ o.jsx(l, { component: "span", checked: n, disabled: r, sx: m, children: x }),
-  /* @__PURE__ */ o.jsx(g, { disabled: r, checked: n, isLoading: t, children: /* @__PURE__ */ o.jsx(c, { disabled: r, checked: n, isLoading: t }) })
-] }), C = ({ name: s, label: x, checked: n, isLoading: t, disabled: r = !1, onChange: p, sx: e, labelSx: m }) => /* @__PURE__ */ o.jsxs(f, { sx: j({ cursor: r ? "initial" : "pointer" }, e), children: [
-  /* @__PURE__ */ o.jsx(
-    i,
-    {
-      type: "checkbox",
-      checked: n,
-      onChange: p,
-      name: s,
-      disabled: r || t
-    }
-  ),
-  x && /* @__PURE__ */ o.jsx(
-    l,
-    {
-      component: "span",
-      checked: n,
-      disabled: r,
-      sx: j({ mr: "0 !important" }, m),
-      children: x
-    }
-  ),
-  /* @__PURE__ */ o.jsx(g, { disabled: r, checked: n, isLoading: t, children: /* @__PURE__ */ o.jsx(c, { disabled: r, checked: n, isLoading: t }) })
-] });
-export {
-  C as MobileToggle,
-  y as Toggle
-};
+import { mergeSx as e } from "../../helpers/merge-sx.es.js";
+import { Checkmark as t, CheckmarkPin as n, HiddenInput as r, Label as i, MobileToggle as a, Toggle as o } from "./style.es.js";
+import { jsx as s, jsxs as c } from "react/jsx-runtime";
+// src/components/Toggle/index.tsx
+var l = ({ name: a, label: l, checked: u, isLoading: d, disabled: f = !1, onChange: p, sx: m, labelSx: h }) => /* @__PURE__ */ c(o, {
+	sx: e({ cursor: f ? "initial" : "pointer" }, m),
+	children: [
+		/* @__PURE__ */ s(r, {
+			type: "checkbox",
+			checked: u,
+			onChange: p,
+			name: a,
+			disabled: f || d
+		}),
+		l && /* @__PURE__ */ s(i, {
+			component: "span",
+			checked: u,
+			disabled: f,
+			sx: h,
+			children: l
+		}),
+		/* @__PURE__ */ s(t, {
+			disabled: f,
+			checked: u,
+			isLoading: d,
+			children: /* @__PURE__ */ s(n, {
+				disabled: f,
+				checked: u,
+				isLoading: d
+			})
+		})
+	]
+}), u = ({ name: o, label: l, checked: u, isLoading: d, disabled: f = !1, onChange: p, sx: m, labelSx: h }) => /* @__PURE__ */ c(a, {
+	sx: e({ cursor: f ? "initial" : "pointer" }, m),
+	children: [
+		/* @__PURE__ */ s(r, {
+			type: "checkbox",
+			checked: u,
+			onChange: p,
+			name: o,
+			disabled: f || d
+		}),
+		l && /* @__PURE__ */ s(i, {
+			component: "span",
+			checked: u,
+			disabled: f,
+			sx: e({ mr: "0 !important" }, h),
+			children: l
+		}),
+		/* @__PURE__ */ s(t, {
+			disabled: f,
+			checked: u,
+			isLoading: d,
+			children: /* @__PURE__ */ s(n, {
+				disabled: f,
+				checked: u,
+				isLoading: d
+			})
+		})
+	]
+});
+export { u as MobileToggle, l as Toggle };

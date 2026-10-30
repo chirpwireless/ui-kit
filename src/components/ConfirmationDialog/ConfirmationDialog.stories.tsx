@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TrashIcon } from '@chirp/ui/assets/new-icons';
 import { FleetSuccessIcon } from '@chirp/ui/assets/fleet-icons';
 

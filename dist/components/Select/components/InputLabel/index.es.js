@@ -1,24 +1,20 @@
-import { jsxRuntimeExports as p } from "../../../../jsx-runtime-BgepH7Pb.js";
-import { useTheme as a, InputLabel as i } from "@mui/material";
-import { chirpPalette as m } from "../../../../theme/palette.es.js";
-const c = ({ labelId: r, label: t, className: e, sx: o }) => {
-  const n = a();
-  return /* @__PURE__ */ p.jsx(
-    i,
-    {
-      id: r,
-      shrink: !0,
-      className: e,
-      sx: {
-        padding: 0,
-        backgroundColor: "transparent",
-        color: m(n).neutral.primary,
-        ...o
-      },
-      children: t
-    }
-  );
+import { chirpPalette as e } from "../../../../theme/palette.es.js";
+import { InputLabel as t, useTheme as n } from "@mui/material";
+import { jsx as r } from "react/jsx-runtime";
+// src/components/Select/components/InputLabel/index.tsx
+var i = ({ labelId: i, label: a, className: o, sx: s }) => {
+	let c = n();
+	return /* @__PURE__ */ r(t, {
+		id: i,
+		shrink: !0,
+		className: o,
+		sx: {
+			padding: 0,
+			backgroundColor: "transparent",
+			color: e(c).neutral.primary,
+			...s
+		},
+		children: a
+	});
 };
-export {
-  c as InputLabel
-};
+export { i as InputLabel };

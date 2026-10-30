@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("./Accordion.cjs.js");exports.Accordion=o.Accordion;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});const e=require("./Accordion.cjs.js");exports.Accordion=e.Accordion;

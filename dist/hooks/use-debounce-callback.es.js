@@ -1,12 +1,11 @@
-import { useRef as r, useCallback as u } from "react";
-const s = (e, t) => {
-  const o = r(void 0);
-  return u(() => {
-    clearTimeout(o.current), o.current = setTimeout(() => {
-      e == null || e();
-    }, t);
-  }, [e, t]);
+import { useCallback as e, useRef as t } from "react";
+// src/hooks/use-debounce-callback.ts
+var n = (n, r) => {
+	let i = t(void 0);
+	return e(() => {
+		clearTimeout(i.current), i.current = setTimeout(() => {
+			n?.();
+		}, r);
+	}, [n, r]);
 };
-export {
-  s as useDebounceCallback
-};
+export { n as useDebounceCallback };

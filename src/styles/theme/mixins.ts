@@ -1,6 +1,6 @@
 import { CSSObject, ThemeOptions } from '@mui/material';
 
-declare module '@mui/material/styles/createMixins' {
+declare module '@mui/material/styles' {
     // Allow for custom mixins to be added
     interface Mixins {
         linearBackground?: CSSObject;

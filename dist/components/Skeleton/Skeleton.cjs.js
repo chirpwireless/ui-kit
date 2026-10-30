@@ -1,11 +1,11 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const a=require("../../jsx-runtime-BRMkMA8J.cjs"),n=require("@mui/material"),s=require("react"),c=require("../../styles/constants.cjs.js"),u=require("../../theme/palette.cjs.js"),d=n.keyframes`
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});const e=require("../../styles/constants.cjs.js"),t=require("../../theme/palette.cjs.js");let n=require("react"),r=require("@mui/material"),i=require("react/jsx-runtime");var a=r.keyframes`
   0% {
     transform: translateX(calc(-1 * var(--diagonal-length))) rotate(-15deg);
   }
   100% {
     transform: translateX(var(--diagonal-length)) rotate(-15deg);
   }
-`,g=n.styled(n.Box)(({theme:t})=>{const e=u.chirpPalette(t);return{position:"relative",width:"100%",height:"100%",background:`linear-gradient(240.16deg, ${t.palette.mode===c.CurrentTheme.Dark?e.neutral.grey1:e.neutral.white} 0%, transparent 100%)`,color:e.neutral.white,overflow:"hidden","--diagonal-length":"0px"}}),h=n.styled("div")`
+`,o=(0,r.styled)(r.Box)(({theme:n})=>{let r=t.chirpPalette(n);return{position:`relative`,width:`100%`,height:`100%`,background:`linear-gradient(240.16deg, ${n.palette.mode===e.CurrentTheme.Dark?r.neutral.grey1:r.neutral.white} 0%, transparent 100%)`,color:r.neutral.white,overflow:`hidden`,"--diagonal-length":`0px`}}),s=(0,r.styled)(`div`)`
     position: absolute;
     bottom: 0;
     left: 0;
@@ -14,6 +14,6 @@
     background-color: currentColor;
     transform-origin: bottom left;
     opacity: 0.1;
-    animation: ${d} 1s linear infinite;
+    animation: ${a} 1s linear infinite;
     filter: blur(20px);
-`,f=({sx:t})=>{const e=s.useRef(null),r=()=>{if(e.current){const o=e.current.offsetWidth,i=e.current.offsetHeight,l=Math.sqrt(o*o+i*i);e.current.style.setProperty("--diagonal-length",`${l}px`)}};return s.useEffect(()=>(r(),window.addEventListener("resize",r),()=>{window.removeEventListener("resize",r)}),[]),a.jsxRuntimeExports.jsx(g,{ref:e,sx:t,children:a.jsxRuntimeExports.jsx(h,{})})};exports.Skeleton=f;
+`,c=({sx:e})=>{let t=(0,n.useRef)(null),r=()=>{if(t.current){let e=t.current.offsetWidth,n=t.current.offsetHeight,r=Math.sqrt(e*e+n*n);t.current.style.setProperty(`--diagonal-length`,`${r}px`)}};return(0,n.useEffect)(()=>(r(),window.addEventListener(`resize`,r),()=>{window.removeEventListener(`resize`,r)}),[]),(0,i.jsx)(o,{ref:t,sx:e,children:(0,i.jsx)(s,{})})};exports.Skeleton=c;

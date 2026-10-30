@@ -9,6 +9,7 @@ import js from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import { FlatCompat } from '@eslint/eslintrc';
 import unusedImports from 'eslint-plugin-unused-imports';
+import reactHooks from 'eslint-plugin-react-hooks';
 
 const compat = new FlatCompat({
     recommendedConfig: js.configs.recommended,
@@ -30,7 +31,6 @@ export default [
         compat.extends(
             'eslint:recommended',
             'plugin:@typescript-eslint/recommended',
-            'plugin:react-hooks/recommended',
             'plugin:import/typescript',
             'prettier',
             'plugin:storybook/recommended',
@@ -39,6 +39,7 @@ export default [
     {
         plugins: {
             import: fixupPluginRules(_import),
+            'react-hooks': reactHooks,
             'react-refresh': reactRefresh,
             prettier,
             'check-file': checkFile,
@@ -73,6 +74,8 @@ export default [
 
         rules: {
             'prettier/prettier': 'error',
+            'react-hooks/rules-of-hooks': 'error',
+            'react-hooks/exhaustive-deps': 'warn',
 
             'react-refresh/only-export-components': [
                 'warn',

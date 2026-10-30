@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const u=require("react"),r=(e,t)=>{const[o,c]=u.useState(e);return u.useEffect(()=>{const n=setTimeout(()=>c(e),t||500);return()=>{clearTimeout(n)}},[e,t]),o};exports.useDebounce=r;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});let e=require("react");var t=(t,n)=>{let[r,i]=(0,e.useState)(t);return(0,e.useEffect)(()=>{let e=setTimeout(()=>i(t),n||500);return()=>{clearTimeout(e)}},[t,n]),r};exports.useDebounce=t;

@@ -1,4 +1,1 @@
-import { PageLoader as r } from "./PageLoader.es.js";
-export {
-  r as PageLoader
-};
+export { PageLoader } from "./PageLoader.es.js";

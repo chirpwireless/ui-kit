@@ -1,34 +1,24 @@
-import { styled as o, Box as e, Stack as r } from "@mui/material";
-const s = o(e)(() => ({
-  float: "left"
-})), l = o(r, {
-  shouldForwardProp: (t) => t !== "open"
-})(({ open: t }) => ({
-  height: 26,
-  width: 30,
-  alignItems: "center",
-  position: "absolute",
-  right: "0",
-  svg: {
-    transition: "transform 0.2s ease",
-    transform: t ? "rotate(-180deg)" : "rotate(0deg)"
-  }
-})), d = o(e, {
-  shouldForwardProp: (t) => t !== "open" && t !== "heightFull" && t !== "height"
-})(({ open: t, height: a, heightFull: n }) => ({
-  transition: "all 0.3s ease",
-  height: t ? n : a,
-  overflow: "hidden",
-  paddingRight: "30px"
-})), h = o(r)(() => ({
-  flexDirection: "row",
-  justifyContent: "flex-start",
-  flexWrap: "nowrap",
-  padding: 2
+import { Box as e, Stack as t, styled as n } from "@mui/material";
+// src/components/ShowMoreContainer/style.ts
+var r = n(e)(() => ({ float: "left" })), i = n(t, { shouldForwardProp: (e) => e !== "open" })(({ open: e }) => ({
+	height: 26,
+	width: 30,
+	alignItems: "center",
+	position: "absolute",
+	right: "0",
+	svg: {
+		transition: "transform 0.2s ease",
+		transform: e ? "rotate(-180deg)" : "rotate(0deg)"
+	}
+})), a = n(e, { shouldForwardProp: (e) => e !== "open" && e !== "heightFull" && e !== "height" })(({ open: e, height: t, heightFull: n }) => ({
+	transition: "all 0.3s ease",
+	height: e ? n : t,
+	overflow: "hidden",
+	paddingRight: "30px"
+})), o = n(t)(() => ({
+	flexDirection: "row",
+	justifyContent: "flex-start",
+	flexWrap: "nowrap",
+	padding: 2
 }));
-export {
-  l as Arrow,
-  d as BoxWrapper,
-  s as Mark,
-  h as Wrapper
-};
+export { i as Arrow, a as BoxWrapper, r as Mark, o as Wrapper };

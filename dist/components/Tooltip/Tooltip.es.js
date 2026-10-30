@@ -1,45 +1,30 @@
-import { jsxRuntimeExports as r } from "../../jsx-runtime-BgepH7Pb.js";
-import { useTheme as n, Tooltip as m, alpha as s, Box as a } from "@mui/material";
-import { mergeSx as x } from "../../helpers/merge-sx.es.js";
-import { chirpPalette as c } from "../../theme/palette.es.js";
-const f = ({ children: t, tooltipProps: e, childrenProps: i, ...p }) => {
-  const l = n(), o = c(l);
-  return /* @__PURE__ */ r.jsx(
-    m,
-    {
-      slotProps: {
-        tooltip: {
-          sx: {
-            /* 10px as was set in Figma is too small */
-            fontSize: "12px",
-            backgroundColor: s(o.neutral.grey1, 0.9),
-            color: o.neutral.primary,
-            border: `1px solid ${o.borders.primary}`,
-            borderRadius: "12px",
-            backdropFilter: "blur(10px)",
-            ...e
-          }
-        }
-      },
-      ...p,
-      children: /* @__PURE__ */ r.jsx(
-        a,
-        {
-          sx: x(
-            {
-              display: "inline-block",
-              height: "min-content",
-              width: "min-content",
-              maxWidth: "100%"
-            },
-            i
-          ),
-          children: t
-        }
-      )
-    }
-  );
+import { chirpPalette as e } from "../../theme/palette.es.js";
+import { mergeSx as t } from "../../helpers/merge-sx.es.js";
+import { Box as n, Tooltip as r, alpha as i, useTheme as a } from "@mui/material";
+import { jsx as o } from "react/jsx-runtime";
+// src/components/Tooltip/Tooltip.tsx
+var s = ({ children: s, tooltipProps: c, childrenProps: l, ...u }) => {
+	let d = a(), f = e(d);
+	return /* @__PURE__ */ o(r, {
+		slotProps: { tooltip: { sx: {
+			fontSize: "12px",
+			backgroundColor: i(f.neutral.grey1, .9),
+			color: f.neutral.primary,
+			border: `1px solid ${f.borders.primary}`,
+			borderRadius: "12px",
+			backdropFilter: "blur(10px)",
+			...c
+		} } },
+		...u,
+		children: /* @__PURE__ */ o(n, {
+			sx: t({
+				display: "inline-block",
+				height: "min-content",
+				width: "min-content",
+				maxWidth: "100%"
+			}, l),
+			children: s
+		})
+	});
 };
-export {
-  f as Tooltip
-};
+export { s as Tooltip };

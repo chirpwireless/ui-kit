@@ -1,36 +1,34 @@
-import { styled as t, Box as o } from "@mui/material";
-import { CurrentTheme as i } from "../../styles/constants.es.js";
-import { chirpPalette as n } from "../../theme/palette.es.js";
-const p = t(o)(({ theme: e }) => {
-  const r = n(e);
-  return {
-    borderRadius: "12px",
-    padding: "4px 12px",
-    background: e.palette.mode === i.Dark ? r.neutral.grey1 : r.neutral.white,
-    border: `1px solid ${r.borders.primary}`,
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    textAlign: "center",
-    width: "min-content",
-    color: r.neutral.primary
-  };
-}), m = t(o)(({ theme: e }) => {
-  const r = n(e);
-  return {
-    borderRadius: "12px",
-    padding: "4px 12px",
-    background: e.palette.mode === i.Dark ? r.neutral.grey1 : r.neutral.white,
-    border: `1px solid ${r.borders.primary}`,
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    textAlign: "center",
-    width: "min-content",
-    color: r.neutral.primary,
-    float: "left",
-    margin: "2px"
-  };
+import { CurrentTheme as e } from "../../styles/constants.es.js";
+import { chirpPalette as t } from "../../theme/palette.es.js";
+import { Box as n, styled as r } from "@mui/material";
+// src/components/Badge/style.ts
+var i = r(n)(({ theme: n }) => {
+	let r = t(n);
+	return {
+		borderRadius: "12px",
+		padding: "4px 12px",
+		background: n.palette.mode === e.Dark ? r.neutral.grey1 : r.neutral.white,
+		border: `1px solid ${r.borders.primary}`,
+		overflow: "hidden",
+		textOverflow: "ellipsis",
+		textAlign: "center",
+		width: "min-content",
+		color: r.neutral.primary
+	};
+}), a = r(n)(({ theme: n }) => {
+	let r = t(n);
+	return {
+		borderRadius: "12px",
+		padding: "4px 12px",
+		background: n.palette.mode === e.Dark ? r.neutral.grey1 : r.neutral.white,
+		border: `1px solid ${r.borders.primary}`,
+		overflow: "hidden",
+		textOverflow: "ellipsis",
+		textAlign: "center",
+		width: "min-content",
+		color: r.neutral.primary,
+		float: "left",
+		margin: "2px"
+	};
 });
-export {
-  p as Badge,
-  m as SimpleBadge
-};
+export { i as Badge, a as SimpleBadge };

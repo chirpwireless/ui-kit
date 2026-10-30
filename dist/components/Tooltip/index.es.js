@@ -1,4 +1,1 @@
-import { Tooltip as r } from "./Tooltip.es.js";
-export {
-  r as Tooltip
-};
+export { Tooltip } from "./Tooltip.es.js";

@@ -7,7 +7,7 @@ type Props<TData> = {
     defaultSorting?: SortingState;
 };
 export declare const useReactTable: <TData>({ data, columns, enableSorting, defaultSorting }: Props<TData>) => {
-    table: import('@tanstack/react-table').Table<TData>;
-    rows: import('@tanstack/react-table').Row<TData>[];
+    table: import('@tanstack/table-core').Table<TData>;
+    rows: import('@tanstack/table-core').Row<TData>[];
 };
 export {};

@@ -1,1 +1,1 @@
-export declare const EditIcon: () => import("react/jsx-runtime").JSX.Element;
+export declare const EditIcon: () => import('react').JSX.Element;
