@@ -1,13 +1,13 @@
-import { jsxRuntimeExports as o } from "../../jsx-runtime-BgepH7Pb.js";
-import { useDropzone as n } from "react-dropzone";
-import { DragBox as m } from "./style.es.js";
-const c = ({ children: r, sx: t, ...p }) => {
-  const { getRootProps: s, getInputProps: e } = n(p);
-  return /* @__PURE__ */ o.jsxs(m, { sx: t, ...s(), children: [
-    /* @__PURE__ */ o.jsx("input", { ...e() }),
-    r
-  ] });
+import { DragBox as e } from "./style.es.js";
+import { jsx as t, jsxs as n } from "react/jsx-runtime";
+import { useDropzone as r } from "react-dropzone";
+// src/components/Dropzone/index.tsx
+var i = ({ children: i, sx: a, ...o }) => {
+	let { getRootProps: s, getInputProps: c } = r(o);
+	return /* @__PURE__ */ n(e, {
+		sx: a,
+		...s(),
+		children: [/* @__PURE__ */ t("input", { ...c() }), i]
+	});
 };
-export {
-  c as Dropzone
-};
+export { i as Dropzone };

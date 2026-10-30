@@ -1,4 +1,1 @@
-import { RouterLink as e } from "./RouterLink.es.js";
-export {
-  e as RouterLink
-};
+export { RouterLink } from "./RouterLink.es.js";

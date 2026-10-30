@@ -1,18 +1,17 @@
-import { useState as c, useRef as u, useEffect as f } from "react";
-const b = () => {
-  const [s, n] = c(0), t = u(null);
-  return f(() => {
-    const e = t.current, r = new ResizeObserver((o) => {
-      n(o[0].contentRect.width);
-    });
-    return e && r.observe(e), () => {
-      e && r.unobserve(e);
-    };
-  }, []), {
-    width: s,
-    ref: t
-  };
+import { useEffect as e, useRef as t, useState as n } from "react";
+// src/hooks/user-observe-element-width.ts
+var r = () => {
+	let [r, i] = n(0), a = t(null);
+	return e(() => {
+		let e = a.current, t = new ResizeObserver((e) => {
+			i(e[0].contentRect.width);
+		});
+		return e && t.observe(e), () => {
+			e && t.unobserve(e);
+		};
+	}, []), {
+		width: r,
+		ref: a
+	};
 };
-export {
-  b as useObserveElementWidth
-};
+export { r as useObserveElementWidth };

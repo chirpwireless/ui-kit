@@ -1,4 +1,1 @@
-import { GeneralInfoCard as o } from "./GeneralInfoCard.es.js";
-export {
-  o as GeneralInfoCard
-};
+export { GeneralInfoCard } from "./GeneralInfoCard.es.js";

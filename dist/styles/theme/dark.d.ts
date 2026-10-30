@@ -1,3 +1,3 @@
-import { ThemeOptions } from '../../../node_modules/@mui/material/styles';
+import { ThemeOptions } from '@mui/material/styles';
 import { ReferencePaletteType } from './types';
 export declare const darkTheme: (refLightTheme?: ReferencePaletteType, refDarkTheme?: ReferencePaletteType) => ThemeOptions;

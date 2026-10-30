@@ -1,1 +1,1 @@
-export declare const GPSIcon: () => import("react/jsx-runtime").JSX.Element;
+export declare const GPSIcon: () => import('react').JSX.Element;

@@ -1,18 +1,13 @@
-const i = (e, r) => {
-  let t = parseInt(e.toString());
-  const a = Math.abs((e - t) * 60);
-  let o = Math.floor(a);
-  const c = (a - o) * 60;
-  let n = Math.round((c + Number.EPSILON) * 100) / 100;
-  t = Math.abs(t), n === 60 && (o++, n = 0), o === 60 && (t++, o = 0);
-  const s = {
-    dir: e < 0 ? r ? "W" : "S" : r ? "E" : "N",
-    deg: t,
-    min: o,
-    sec: n
-  };
-  return `${s.deg}° ${s.min}' ${s.sec}" ${s.dir}`;
+// src/helpers/geoposition.tsx
+var e = (e, t) => {
+	let n = parseInt(e.toString()), r = Math.abs((e - n) * 60), i = Math.floor(r), a = (r - i) * 60, o = Math.round((a + 2 ** -52) * 100) / 100;
+	n = Math.abs(n), o === 60 && (i++, o = 0), i === 60 && (n++, i = 0);
+	let s = {
+		dir: e < 0 ? t ? "W" : "S" : t ? "E" : "N",
+		deg: n,
+		min: i,
+		sec: o
+	};
+	return `${s.deg}\u00B0 ${s.min}' ${s.sec}" ${s.dir}`;
 };
-export {
-  i as convertDDToDMS
-};
+export { e as convertDDToDMS };

@@ -1,4 +1,1 @@
-import { ThemeSwitch as m } from "./ThemeSwitch.es.js";
-export {
-  m as ThemeSwitch
-};
+export { ThemeSwitch } from "./ThemeSwitch.es.js";

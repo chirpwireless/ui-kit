@@ -1,4 +1,4 @@
-import { Palette, PaletteOptions } from '../../node_modules/@mui/material/styles';
+import { Palette, PaletteOptions } from '@mui/material/styles';
 import { PaletteAdditionalColors, PaletteAlerts, PaletteBorders, PaletteFraming, PaletteNeutral, PalettePrimaryColors, PaletteWidgets } from './augmentation';
 export type ChirpPaletteOptions = PaletteOptions & {
     neutral?: PaletteNeutral;

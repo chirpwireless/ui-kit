@@ -11,7 +11,7 @@ export declare const CheckmarkPin: import('@emotion/styled').StyledComponent<imp
     isLoading: boolean;
     disabled?: boolean;
 }, {}, {}>;
-export declare const Label: import('@emotion/styled').StyledComponent<import('@mui/material').TypographyOwnProps & import('../../../node_modules/@mui/material/OverridableComponent').CommonProps & Omit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "color" | "className" | "style" | "classes" | "children" | "sx" | "variant" | "align" | "gutterBottom" | "noWrap" | "variantMapping"> & import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme> & {
+export declare const Label: import('@emotion/styled').StyledComponent<import('@mui/material').TypographyOwnProps & import('@mui/material/OverridableComponent').CommonProps & Omit<import('react').DetailedHTMLProps<import('react').HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, "color" | "className" | "style" | "classes" | "children" | "sx" | "variant" | "align" | "gutterBottom" | "noWrap" | "variantMapping"> & import('@mui/system').MUIStyledCommonProps<import('@mui/material').Theme> & {
     component: string;
     checked: boolean;
     disabled: boolean;

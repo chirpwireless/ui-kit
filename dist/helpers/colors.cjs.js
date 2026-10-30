@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const n=t=>{const e=parseInt(t.slice(1),16);return t.length>7&&t.length!==3?[e>>24&255,e>>16&255,e>>8&255,Number(((e&255)/255).toFixed(2))]:[e>>16&255,e>>8&255,e&255,1]};exports.hex2rgba=n;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});var e=e=>{let t=parseInt(e.slice(1),16);return e.length>7&&e.length!==3?[t>>24&255,t>>16&255,t>>8&255,Number(((t&255)/255).toFixed(2))]:[t>>16&255,t>>8&255,t&255,1]};exports.hex2rgba=e;

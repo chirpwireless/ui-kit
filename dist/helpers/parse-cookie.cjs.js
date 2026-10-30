@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=t=>t?t.split(";").map(e=>e.split("=")).reduce((e,r)=>(e[decodeURIComponent(r[0].trim())]=decodeURIComponent(r[1].trim()),e),{}):{};exports.parseCookie=o;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});var e=e=>e?e.split(`;`).map(e=>e.split(`=`)).reduce((e,t)=>(e[decodeURIComponent(t[0].trim())]=decodeURIComponent(t[1].trim()),e),{}):{};exports.parseCookie=e;

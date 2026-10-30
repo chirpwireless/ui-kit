@@ -1,1 +1,1 @@
-export declare const ToastContainer: () => import("react/jsx-runtime").JSX.Element;
+export declare const ToastContainer: () => import('react').JSX.Element;

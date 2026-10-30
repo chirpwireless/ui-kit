@@ -8,5 +8,5 @@ type Props<TData> = Omit<TableProps<TData>, 'page'> & {
     onBottomReached?(): void;
     rowSx?: (row: Row<TData>) => SxProps | undefined;
 };
-export declare const TableVirtualizedInfinite: <TData>({ data, columns, sx, isLoading, enableSorting, defaultSorting, expandedRowIndex, hasNextPage, estimateSize, onBottomReached, onRowClick, renderEmptyBlock, renderExpandableBlock, rowSx, }: Props<TData>) => import("react/jsx-runtime").JSX.Element;
+export declare const TableVirtualizedInfinite: <TData>({ data, columns, sx, isLoading, enableSorting, defaultSorting, expandedRowIndex, hasNextPage, estimateSize, onBottomReached, onRowClick, renderEmptyBlock, renderExpandableBlock, rowSx, }: Props<TData>) => import('react').JSX.Element;
 export {};

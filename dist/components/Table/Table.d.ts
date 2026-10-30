@@ -28,5 +28,5 @@ export type Props<TData> = {
     /** Custom card body for mobile-cards mode; receives the row data. */
     renderMobileCard?(row: TData): ReactElement;
 };
-declare const TableContainer: <TData>(props: Props<TData>) => import("react/jsx-runtime").JSX.Element;
+declare const TableContainer: <TData>(props: Props<TData>) => import('react').JSX.Element;
 export { TableContainer as Table };

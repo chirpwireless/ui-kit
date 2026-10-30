@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("@mui/material"),t=e.styled(e.Box)(()=>({position:"relative",display:"flex",alignItems:"center",justifyContent:"center",width:"100%",height:"100%"}));exports.Wrapper=t;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});let e=require("@mui/material");var t=(0,e.styled)(e.Box)(()=>({position:`relative`,display:`flex`,alignItems:`center`,justifyContent:`center`,width:`100%`,height:`100%`}));exports.Wrapper=t;

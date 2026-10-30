@@ -1,44 +1,27 @@
-import { jsxRuntimeExports as n } from "../../../../jsx-runtime-BgepH7Pb.js";
-import { Skeleton as a } from "@mui/material";
-import { flexRender as u } from "@tanstack/react-table";
-import { Fragment as c } from "react";
-import { EmptyBlock as x } from "../../../EmptyBlock/EmptyBlock.es.js";
-import { CardsList as d, GroupLabel as h, Card as f, CardField as p, FieldLabel as j, FieldValue as g } from "./style.es.js";
-const b = 3, C = ({ row: s }) => /* @__PURE__ */ n.jsx(n.Fragment, { children: s.getVisibleCells().map((r) => {
-  const l = r.column, i = l.columnDef.meta;
-  if (i != null && i.mobileHidden) return null;
-  const t = (i == null ? void 0 : i.mobileLabel) ?? l.columnDef.header;
-  return /* @__PURE__ */ n.jsxs(p, { children: [
-    t ? /* @__PURE__ */ n.jsx(j, { children: t }) : null,
-    /* @__PURE__ */ n.jsx(g, { children: u(r.column.columnDef.cell, r.getContext()) })
-  ] }, r.id);
-}) }), E = ({
-  rows: s,
-  isLoading: r,
-  onRowClick: l,
-  renderMobileCard: i,
-  renderEmptyBlock: t
-}) => {
-  if (r)
-    return /* @__PURE__ */ n.jsx(d, { children: Array.from({ length: b }, (e, m) => /* @__PURE__ */ n.jsx(a, { variant: "rounded", height: 96, sx: { borderRadius: "12px" } }, m)) });
-  if (s.length === 0)
-    return t ? t() : /* @__PURE__ */ n.jsx(x, {});
-  const o = (e) => /* @__PURE__ */ n.jsx(
-    f,
-    {
-      clickable: !!l,
-      onClick: l ? () => l(e.original) : void 0,
-      children: i ? i(e.original) : /* @__PURE__ */ n.jsx(C, { row: e })
-    },
-    `${e.id}_${e.index}`
-  );
-  return /* @__PURE__ */ n.jsx(d, { children: s.map(
-    (e) => e.subRows.length ? /* @__PURE__ */ n.jsxs(c, { children: [
-      /* @__PURE__ */ n.jsx(h, { children: e.groupingValue }),
-      e.subRows.map(o)
-    ] }, `${e.id}_${e.index}`) : o(e)
-  ) });
+import { EmptyBlock as e } from "../../../EmptyBlock/EmptyBlock.es.js";
+import { Card as t, CardField as n, CardsList as r, FieldLabel as i, FieldValue as a, GroupLabel as o } from "./style.es.js";
+import { Fragment as s } from "react";
+import { Skeleton as c } from "@mui/material";
+import { Fragment as l, jsx as u, jsxs as d } from "react/jsx-runtime";
+import { flexRender as f } from "@tanstack/react-table";
+// src/components/Table/components/MobileCards/index.tsx
+var p = 3, m = ({ row: e }) => /* @__PURE__ */ u(l, { children: e.getVisibleCells().map((e) => {
+	let t = e.column, r = t.columnDef.meta;
+	if (r?.mobileHidden) return null;
+	let o = r?.mobileLabel ?? t.columnDef.header;
+	return /* @__PURE__ */ d(n, { children: [o ? /* @__PURE__ */ u(i, { children: o }) : null, /* @__PURE__ */ u(a, { children: f(e.column.columnDef.cell, e.getContext()) })] }, e.id);
+}) }), h = ({ rows: n, isLoading: i, onRowClick: a, renderMobileCard: l, renderEmptyBlock: f }) => {
+	if (i) return /* @__PURE__ */ u(r, { children: Array.from({ length: p }, (e, t) => /* @__PURE__ */ u(c, {
+		variant: "rounded",
+		height: 96,
+		sx: { borderRadius: "12px" }
+	}, t)) });
+	if (n.length === 0) return f ? f() : /* @__PURE__ */ u(e, {});
+	let h = (e) => /* @__PURE__ */ u(t, {
+		clickable: !!a,
+		onClick: a ? () => a(e.original) : void 0,
+		children: l ? l(e.original) : /* @__PURE__ */ u(m, { row: e })
+	}, `${e.id}_${e.index}`);
+	return /* @__PURE__ */ u(r, { children: n.map((e) => e.subRows.length ? /* @__PURE__ */ d(s, { children: [/* @__PURE__ */ u(o, { children: e.groupingValue }), e.subRows.map(h)] }, `${e.id}_${e.index}`) : h(e)) });
 };
-export {
-  E as MobileCards
-};
+export { h as MobileCards };

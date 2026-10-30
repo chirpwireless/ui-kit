@@ -7,5 +7,5 @@ type Props<TData> = {
     renderMobileCard?(row: TData): ReactElement;
     renderEmptyBlock?(): ReactElement;
 };
-export declare const MobileCards: <TData>({ rows, isLoading, onRowClick, renderMobileCard, renderEmptyBlock, }: Props<TData>) => import("react/jsx-runtime").JSX.Element;
+export declare const MobileCards: <TData>({ rows, isLoading, onRowClick, renderMobileCard, renderEmptyBlock, }: Props<TData>) => import('react').JSX.Element;
 export {};

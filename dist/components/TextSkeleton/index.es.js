@@ -1,4 +1,1 @@
-import { TextSkeleton as t } from "./TextSkeleton.es.js";
-export {
-  t as TextSkeleton
-};
+export { TextSkeleton } from "./TextSkeleton.es.js";

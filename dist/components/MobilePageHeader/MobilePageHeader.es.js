@@ -1,55 +1,40 @@
-import { jsxRuntimeExports as r } from "../../jsx-runtime-BgepH7Pb.js";
-import { useTheme as s, Stack as t, Typography as o } from "@mui/material";
-import { mergeSx as a } from "../../helpers/merge-sx.es.js";
-import { chirpPalette as l } from "../../theme/palette.es.js";
-const g = ({ children: i, text: n, subText: e, sx: m }) => {
-  const p = s();
-  return /* @__PURE__ */ r.jsxs(
-    t,
-    {
-      direction: "row",
-      sx: a(
-        {
-          alignItems: "center",
-          gap: 4,
-          justifyContent: "space-between",
-          width: "auto",
-          px: 5,
-          minHeight: "64px",
-          borderBottom: `1px solid ${l(p).borders.primary}`
-        },
-        m
-      ),
-      children: [
-        /* @__PURE__ */ r.jsxs(
-          t,
-          {
-            sx: {
-              mb: 4,
-              mt: 4
-            },
-            children: [
-              /* @__PURE__ */ r.jsx(
-                o,
-                {
-                  color: "neutral.primary",
-                  variant: "h3",
-                  sx: {
-                    lineHeight: "28px",
-                    mb: "4px"
-                  },
-                  children: n
-                }
-              ),
-              e ? /* @__PURE__ */ r.jsx(o, { color: "neutral.grey4", variant: "body2", children: e }) : null
-            ]
-          }
-        ),
-        i
-      ]
-    }
-  );
+import { chirpPalette as e } from "../../theme/palette.es.js";
+import { mergeSx as t } from "../../helpers/merge-sx.es.js";
+import { Stack as n, Typography as r, useTheme as i } from "@mui/material";
+import { jsx as a, jsxs as o } from "react/jsx-runtime";
+// src/components/MobilePageHeader/MobilePageHeader.tsx
+var s = ({ children: s, text: c, subText: l, sx: u }) => {
+	let d = i();
+	return /* @__PURE__ */ o(n, {
+		direction: "row",
+		sx: t({
+			alignItems: "center",
+			gap: 4,
+			justifyContent: "space-between",
+			width: "auto",
+			px: 5,
+			minHeight: "64px",
+			borderBottom: `1px solid ${e(d).borders.primary}`
+		}, u),
+		children: [/* @__PURE__ */ o(n, {
+			sx: {
+				mb: 4,
+				mt: 4
+			},
+			children: [/* @__PURE__ */ a(r, {
+				color: "neutral.primary",
+				variant: "h3",
+				sx: {
+					lineHeight: "28px",
+					mb: "4px"
+				},
+				children: c
+			}), l ? /* @__PURE__ */ a(r, {
+				color: "neutral.grey4",
+				variant: "body2",
+				children: l
+			}) : null]
+		}), s]
+	});
 };
-export {
-  g as MobilePageHeader
-};
+export { s as MobilePageHeader };

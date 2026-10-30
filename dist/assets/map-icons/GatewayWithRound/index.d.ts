@@ -1,1 +1,1 @@
-export declare const GatewayWithRound: () => import("react/jsx-runtime").JSX.Element;
+export declare const GatewayWithRound: () => import('react').JSX.Element;

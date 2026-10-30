@@ -1,21 +1,25 @@
-import { jsxRuntimeExports as a } from "../../jsx-runtime-BgepH7Pb.js";
-import { useState as m, useRef as p, useEffect as x } from "react";
-import { ScrollContainer as E } from "./styles.es.js";
-const S = ({ children: o, sx: i, onScroll: e, scrollRef: c }) => {
-  const [l, n] = m(!1), f = p(null), r = c || f;
-  return x(() => {
-    const s = () => {
-      n(!0);
-      const u = setTimeout(() => {
-        n(!1);
-      }, 500);
-      return e == null || e(), () => clearTimeout(u);
-    }, t = r.current;
-    return t && t.addEventListener("scroll", s), () => {
-      t && t.removeEventListener("scroll", s);
-    };
-  }, [e, r]), /* @__PURE__ */ a.jsx(E, { ref: r, isScrolling: l, sx: i, children: o });
+import { ScrollContainer as e } from "./styles.es.js";
+import { useEffect as t, useRef as n, useState as r } from "react";
+import { jsx as i } from "react/jsx-runtime";
+// src/components/DynamicScrollStack/DynamicScrollStack.tsx
+var a = ({ children: a, sx: o, onScroll: s, scrollRef: c }) => {
+	let [l, u] = r(!1), d = n(null), f = c || d;
+	return t(() => {
+		let e = () => {
+			u(!0);
+			let e = setTimeout(() => {
+				u(!1);
+			}, 500);
+			return s?.(), () => clearTimeout(e);
+		}, t = f.current;
+		return t && t.addEventListener("scroll", e), () => {
+			t && t.removeEventListener("scroll", e);
+		};
+	}, [s, f]), /* @__PURE__ */ i(e, {
+		ref: f,
+		isScrolling: l,
+		sx: o,
+		children: a
+	});
 };
-export {
-  S as DynamicScrollStack
-};
+export { a as DynamicScrollStack };

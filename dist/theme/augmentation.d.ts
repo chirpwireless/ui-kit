@@ -1,5 +1,5 @@
-import { CSSObject } from '../../node_modules/@mui/material/styles';
-declare module '../../node_modules/@mui/material/styles' {
+import { CSSObject } from '@mui/material/styles';
+declare module '@mui/material/styles' {
     interface BreakpointOverrides {
         xs: true;
         sm: true;

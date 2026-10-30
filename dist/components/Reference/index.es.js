@@ -1,7 +1,14 @@
-import { jsxRuntimeExports as m } from "../../jsx-runtime-BgepH7Pb.js";
-import { Link as n } from "../Link/index.es.js";
-import { Anchor as i } from "./style.es.js";
-const j = ({ href: r = "#", children: o, isExternalLink: e, ...t }) => e ? /* @__PURE__ */ m.jsx(i, { href: r, ...t, children: o }) : /* @__PURE__ */ m.jsx(n, { to: r, ...t, children: o });
-export {
-  j as Reference
-};
+import { Link as e } from "../Link/index.es.js";
+import { Anchor as t } from "./style.es.js";
+import { jsx as n } from "react/jsx-runtime";
+// src/components/Reference/index.tsx
+var r = ({ href: r = "#", children: i, isExternalLink: a, ...o }) => a ? /* @__PURE__ */ n(t, {
+	href: r,
+	...o,
+	children: i
+}) : /* @__PURE__ */ n(e, {
+	to: r,
+	...o,
+	children: i
+});
+export { r as Reference };

@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("./Select.cjs.js"),t=require("./components/InputLabel/index.cjs.js");exports.Select=e.Select;exports.InputLabel=t.InputLabel;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});const e=require("./components/InputLabel/index.cjs.js"),t=require("./Select.cjs.js");exports.InputLabel=e.InputLabel,exports.Select=t.Select;

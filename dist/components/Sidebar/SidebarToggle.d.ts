@@ -3,5 +3,5 @@ interface SidebarToggleProps {
     isSidebarCollapsed: boolean;
     onToggle: () => void;
 }
-export declare const SidebarToggle: ({ isSidebarHovered, isSidebarCollapsed, onToggle }: SidebarToggleProps) => import("react/jsx-runtime").JSX.Element;
+export declare const SidebarToggle: ({ isSidebarHovered, isSidebarCollapsed, onToggle }: SidebarToggleProps) => import('react').JSX.Element;
 export {};

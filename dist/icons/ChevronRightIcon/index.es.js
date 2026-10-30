@@ -1,14 +1,18 @@
-import { jsxRuntimeExports as e } from "../../jsx-runtime-BgepH7Pb.js";
-const r = (o) => /* @__PURE__ */ e.jsx("svg", { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", ...o, children: /* @__PURE__ */ e.jsx(
-  "path",
-  {
-    d: "M9 5.25L15.75 12L9 18.75",
-    stroke: "currentColor",
-    strokeWidth: "1.5",
-    strokeLinecap: "square",
-    strokeLinejoin: "bevel"
-  }
-) });
-export {
-  r as CheckIconIcon
-};
+import { jsx as e } from "react/jsx-runtime";
+// src/icons/ChevronRightIcon/index.tsx
+var t = (t) => /* @__PURE__ */ e("svg", {
+	xmlns: "http://www.w3.org/2000/svg",
+	width: "24",
+	height: "24",
+	viewBox: "0 0 24 24",
+	fill: "none",
+	...t,
+	children: /* @__PURE__ */ e("path", {
+		d: "M9 5.25L15.75 12L9 18.75",
+		stroke: "currentColor",
+		strokeWidth: "1.5",
+		strokeLinecap: "square",
+		strokeLinejoin: "bevel"
+	})
+});
+export { t as CheckIconIcon };

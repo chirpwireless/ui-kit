@@ -9,5 +9,5 @@ interface DefaultLinkProps {
     children: ReactNode;
     className?: string;
 }
-export declare const DefaultLink: ({ href, isExternal, disabled, isSidebarCollapsed, onClick, children, className, }: DefaultLinkProps) => import("react/jsx-runtime").JSX.Element;
+export declare const DefaultLink: ({ href, isExternal, disabled, isSidebarCollapsed, onClick, children, className, }: DefaultLinkProps) => import('react').JSX.Element;
 export {};

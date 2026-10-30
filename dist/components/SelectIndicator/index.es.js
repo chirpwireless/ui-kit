@@ -1,7 +1,9 @@
-import { jsxRuntimeExports as o } from "../../jsx-runtime-BgepH7Pb.js";
-import { CaretDownIcon as t } from "../../icons/CaretDownIcon/index.es.js";
-import { Root as e } from "./style.es.js";
-const c = ({ className: r }) => /* @__PURE__ */ o.jsx(e, { className: r, children: /* @__PURE__ */ o.jsx(t, {}) });
-export {
-  c as SelectIndicator
-};
+import { CaretDownIcon as e } from "../../icons/CaretDownIcon/index.es.js";
+import { Root as t } from "./style.es.js";
+import { jsx as n } from "react/jsx-runtime";
+// src/components/SelectIndicator/index.tsx
+var r = ({ className: r }) => /* @__PURE__ */ n(t, {
+	className: r,
+	children: /* @__PURE__ */ n(e, {})
+});
+export { r as SelectIndicator };

@@ -1,86 +1,75 @@
-import { jsxRuntimeExports as w } from "../../jsx-runtime-BgepH7Pb.js";
-import { Box as H } from "@mui/material";
-import { useVirtualizer as O } from "@tanstack/react-virtual";
-import { useRef as _, useMemo as $, useCallback as k, useEffect as C } from "react";
-import { Table as D } from "./components/Table/index.es.js";
-import { useReactTable as F } from "./hooks/useReactTable.es.js";
-const U = 40, K = ({
-  data: T,
-  columns: E,
-  sx: S = {},
-  isLoading: u,
-  enableSorting: p,
-  defaultSorting: b,
-  expandedRowIndex: z,
-  hasNextPage: x,
-  estimateSize: i = U,
-  onBottomReached: s,
-  onRowClick: h,
-  renderEmptyBlock: d,
-  renderExpandableBlock: I
-}) => {
-  const e = _(null), { table: M, rows: a } = F({
-    data: T,
-    columns: E,
-    enableSorting: p,
-    defaultSorting: b
-  }), f = O({
-    count: a.length,
-    estimateSize: () => i,
-    getScrollElement: () => (e == null ? void 0 : e.current) ?? null,
-    overscan: 5
-  }), { measureElement: g } = f, t = f.getVirtualItems(), V = t.length ? t[t.length - 1].end - t[0].start : 0, j = Math.max(f.getTotalSize() - V, 0), o = $(() => {
-    var l;
-    const r = ((l = t[0]) == null ? void 0 : l.start) ?? 0;
-    return t.map((n) => {
-      const c = a[n.index], A = {
-        height: `${i}px`,
-        transform: `translateY(${r}px)`
-      };
-      return { ...c, sx: A, virtualIndex: n.index, measureRef: g };
-    });
-  }, [t, a, i, g]), m = k(
-    (r) => {
-      if (r) {
-        const { scrollHeight: l, scrollTop: n, clientHeight: c } = r;
-        l - n - c < c - 100 && !u && x && (s == null || s());
-      }
-    },
-    [s, u, x]
-  ), v = o.length > 0 && !!h;
-  return C(() => {
-    m(e.current);
-  }, [m]), /* @__PURE__ */ w.jsx(
-    H,
-    {
-      ref: e,
-      onScroll: (r) => m(r.target),
-      sx: {
-        height: "100%",
-        overflow: "auto"
-      },
-      children: /* @__PURE__ */ w.jsx(
-        D,
-        {
-          table: M,
-          rows: o,
-          spacerSize: o.length ? j : void 0,
-          sx: {
-            ...S,
-            height: o.length ? "auto" : "100%",
-            cursor: v ? "pointer" : "default"
-          },
-          isLoading: u,
-          enableSorting: p,
-          expandedRowIndex: z,
-          onRowClick: h,
-          renderEmptyBlock: d,
-          renderExpandableBlock: I
-        }
-      )
-    }
-  );
+import { Table as e } from "./components/Table/index.es.js";
+import { useReactTable as t } from "./hooks/useReactTable.es.js";
+import { useCallback as n, useEffect as r, useMemo as i, useRef as a } from "react";
+import { Box as o } from "@mui/material";
+import { jsx as s } from "react/jsx-runtime";
+import { useVirtualizer as c } from "@tanstack/react-virtual";
+// src/components/Table/TableVirtualized.tsx
+var l = 40, u = ({ data: u, columns: d, sx: f = {}, isLoading: p, enableSorting: m, defaultSorting: h, expandedRowIndex: g, hasNextPage: _, estimateSize: v = l, onBottomReached: y, onRowClick: b, renderEmptyBlock: x, renderExpandableBlock: S }) => {
+	let C = a(null), { table: w, rows: T } = t({
+		data: u,
+		columns: d,
+		enableSorting: m,
+		defaultSorting: h
+	}), E = c({
+		count: T.length,
+		estimateSize: () => v,
+		getScrollElement: () => C?.current ?? null,
+		overscan: 5
+	}), { measureElement: D } = E, O = E.getVirtualItems(), k = O.length ? O[O.length - 1].end - O[0].start : 0, A = Math.max(E.getTotalSize() - k, 0), j = i(() => {
+		let e = O[0]?.start ?? 0;
+		return O.map((t) => {
+			let n = T[t.index], r = {
+				height: `${v}px`,
+				transform: `translateY(${e}px)`
+			};
+			return {
+				...n,
+				sx: r,
+				virtualIndex: t.index,
+				measureRef: D
+			};
+		});
+	}, [
+		O,
+		T,
+		v,
+		D
+	]), M = n((e) => {
+		if (e) {
+			let { scrollHeight: t, scrollTop: n, clientHeight: r } = e;
+			t - n - r < r - 100 && !p && _ && y?.();
+		}
+	}, [
+		y,
+		p,
+		_
+	]), N = j.length > 0 && !!b;
+	return r(() => {
+		M(C.current);
+	}, [M]), /* @__PURE__ */ s(o, {
+		ref: C,
+		onScroll: (e) => M(e.target),
+		sx: {
+			height: "100%",
+			overflow: "auto"
+		},
+		children: /* @__PURE__ */ s(e, {
+			table: w,
+			rows: j,
+			spacerSize: j.length ? A : void 0,
+			sx: {
+				...f,
+				height: j.length ? "auto" : "100%",
+				cursor: N ? "pointer" : "default"
+			},
+			isLoading: p,
+			enableSorting: m,
+			expandedRowIndex: g,
+			onRowClick: b,
+			renderEmptyBlock: x,
+			renderExpandableBlock: S
+		})
+	});
 };
-export {
-  K as TableVirtualized
-};
+export { u as TableVirtualized };

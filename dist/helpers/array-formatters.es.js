@@ -1,4 +1,3 @@
-const o = (t, e) => !t || !(t != null && t.length) ? [] : t.map((n) => n[e]);
-export {
-  o as takeId
-};
+// src/helpers/array-formatters.tsx
+var e = (e, t) => !e || !e?.length ? [] : e.map((e) => e[t]);
+export { e as takeId };

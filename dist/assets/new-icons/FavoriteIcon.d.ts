@@ -1,1 +1,1 @@
-export declare const FavoriteIcon: () => import("react/jsx-runtime").JSX.Element;
+export declare const FavoriteIcon: () => import('react').JSX.Element;

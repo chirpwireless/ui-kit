@@ -1,24 +1,29 @@
-import { jsxRuntimeExports as o } from "../../jsx-runtime-BgepH7Pb.js";
-import { Avatar as i } from "@mui/material";
-import { useState as u, useCallback as m, useEffect as j } from "react";
-const A = (t) => t ? t[0] : "", g = ({ avatar: t, avatarFile: s, sx: e, userName: n, loader: c }) => {
-  const [r, f] = u(""), R = s == null ? void 0 : s[0], U = m(
-    async (L) => {
-      if (!c) {
-        f(L);
-        return;
-      }
-      const b = await c(L);
-      b && f(URL.createObjectURL(b));
-    },
-    [c]
-  );
-  return j(() => {
-    t && U(t);
-  }, [t, U]), j(() => () => {
-    r && r.startsWith("blob:") && URL.revokeObjectURL(r);
-  }), R ? /* @__PURE__ */ o.jsx(i, { src: URL.createObjectURL(R), sx: e }) : r ? /* @__PURE__ */ o.jsx(i, { src: r, sx: e }) : /* @__PURE__ */ o.jsx(i, { sx: e, children: n ? A(n) : "" });
+import { useCallback as e, useEffect as t, useState as n } from "react";
+import { Avatar as r } from "@mui/material";
+import { jsx as i } from "react/jsx-runtime";
+// src/components/Avatar/Avatar.tsx
+var a = (e) => e ? e[0] : "", o = ({ avatar: o, avatarFile: s, sx: c, userName: l, loader: u }) => {
+	let [d, f] = n(""), p = s?.[0], m = e(async (e) => {
+		if (!u) {
+			f(e);
+			return;
+		}
+		let t = await u(e);
+		t && f(URL.createObjectURL(t));
+	}, [u]);
+	return t(() => {
+		o && m(o);
+	}, [o, m]), t(() => () => {
+		d && d.startsWith("blob:") && URL.revokeObjectURL(d);
+	}), p ? /* @__PURE__ */ i(r, {
+		src: URL.createObjectURL(p),
+		sx: c
+	}) : d ? /* @__PURE__ */ i(r, {
+		src: d,
+		sx: c
+	}) : /* @__PURE__ */ i(r, {
+		sx: c,
+		children: l ? a(l) : ""
+	});
 };
-export {
-  g as Avatar
-};
+export { o as Avatar };

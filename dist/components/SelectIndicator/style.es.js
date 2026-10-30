@@ -1,9 +1,8 @@
-import { styled as t, Box as e } from "@mui/material";
-const n = t(e)`
+import { Box as e, styled as t } from "@mui/material";
+// src/components/SelectIndicator/style.ts
+var n = t(e)`
     display: flex;
     align-items: center;
     justify-content: center;
 `;
-export {
-  n as Root
-};
+export { n as Root };

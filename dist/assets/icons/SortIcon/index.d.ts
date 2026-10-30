@@ -1,1 +1,1 @@
-export declare const SortIcon: () => import("react/jsx-runtime").JSX.Element;
+export declare const SortIcon: () => import('react').JSX.Element;

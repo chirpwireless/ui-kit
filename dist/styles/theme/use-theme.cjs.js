@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("@mui/material"),t=e.useTheme;exports.useTheme=t;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});var e=require("@mui/material").useTheme;exports.useTheme=e;

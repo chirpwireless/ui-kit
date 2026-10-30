@@ -1,28 +1,23 @@
-import { jsxRuntimeExports as n } from "../../../../jsx-runtime-BgepH7Pb.js";
-import { TableHead as w, TableSortLabel as j } from "@mui/material";
-import { CaretDownIcon as H } from "../../../../icons/CaretDownIcon/index.es.js";
-import { CaretUpIcon as I } from "../../../../icons/CaretUpIcon/index.es.js";
-import { SortIcon as T } from "../../../../icons/SortIcon/index.es.js";
-import { Row as g, HeadCell as u } from "./style.es.js";
-const A = ({ columns: s, enableSorting: c, sortingState: a }) => /* @__PURE__ */ n.jsx(w, { children: /* @__PURE__ */ n.jsx(g, { children: s.map(({ id: r, columnDef: l, getCanSort: p, getToggleSortingHandler: x }) => {
-  const { meta: d, maxSize: f, header: t } = l, o = d, h = c && p(), e = a.find((C) => {
-    var i;
-    return ((i = C.id) == null ? void 0 : i.toLowerCase()) === (r == null ? void 0 : r.toLowerCase());
-  });
-  let m = T;
-  return e && (m = e != null && e.desc ? H : I), /* @__PURE__ */ n.jsx(
-    u,
-    {
-      sx: {
-        width: o == null ? void 0 : o.width,
-        maxWidth: f,
-        textAlign: o == null ? void 0 : o.align
-      },
-      children: h ? /* @__PURE__ */ n.jsx(j, { IconComponent: m, onClick: x(), children: t }) : t
-    },
-    r
-  );
+import { CaretDownIcon as e } from "../../../../icons/CaretDownIcon/index.es.js";
+import { CaretUpIcon as t } from "../../../../icons/CaretUpIcon/index.es.js";
+import { SortIcon as n } from "../../../../icons/SortIcon/index.es.js";
+import { HeadCell as r, Row as i } from "./style.es.js";
+import { TableHead as a, TableSortLabel as o } from "@mui/material";
+import { jsx as s } from "react/jsx-runtime";
+// src/components/Table/components/TableHead/index.tsx
+var c = ({ columns: c, enableSorting: l, sortingState: u }) => /* @__PURE__ */ s(a, { children: /* @__PURE__ */ s(i, { children: c.map(({ id: i, columnDef: a, getCanSort: c, getToggleSortingHandler: d }) => {
+	let { meta: f, maxSize: p, header: m } = a, h = f, g = l && c(), _ = u.find((e) => e.id?.toLowerCase() === i?.toLowerCase()), v = n;
+	return _ && (v = _?.desc ? e : t), /* @__PURE__ */ s(r, {
+		sx: {
+			width: h?.width,
+			maxWidth: p,
+			textAlign: h?.align
+		},
+		children: g ? /* @__PURE__ */ s(o, {
+			IconComponent: v,
+			onClick: d(),
+			children: m
+		}) : m
+	}, i);
 }) }) });
-export {
-  A as TableHead
-};
+export { c as TableHead };

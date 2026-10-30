@@ -30,4 +30,4 @@ export interface CustomPaperProps {
     editSubtitle: string;
     confirmEditText: string;
 }
-export declare const CustomPaper: React.NamedExoticComponent<CustomPaperProps & import('@mui/material').PaperOwnProps & import('../../../node_modules/@mui/material/OverridableComponent').CommonProps & Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | "style" | "classes" | "children" | "sx" | "variant" | "elevation" | "square">>;
+export declare const CustomPaper: React.NamedExoticComponent<CustomPaperProps & import('@mui/material').PaperOwnProps & import('@mui/material/OverridableComponent').CommonProps & Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | "style" | "classes" | "children" | "sx" | "variant" | "elevation" | "square">>;

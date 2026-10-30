@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=e=>e.palette;exports.chirpPalette=t;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});var e=e=>e.palette;exports.chirpPalette=e;

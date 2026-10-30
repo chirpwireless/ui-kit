@@ -1,10 +1,9 @@
-import { styled as t, IconButton as r } from "@mui/material";
-import { chirpPalette as n } from "../../theme/palette.es.js";
-const e = t(r)(({ theme: o }) => ({
-  color: n(o).neutral.primary,
-  padding: 0,
-  "&:hover": { backgroundColor: "transparent" }
+import { chirpPalette as e } from "../../theme/palette.es.js";
+import { IconButton as t, styled as n } from "@mui/material";
+// src/components/IconButton/index.ts
+var r = n(t)(({ theme: t }) => ({
+	color: e(t).neutral.primary,
+	padding: 0,
+	"&:hover": { backgroundColor: "transparent" }
 }));
-export {
-  e as IconButton
-};
+export { r as IconButton };

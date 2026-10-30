@@ -1,6 +1,3 @@
-import { Select as r } from "./Select.es.js";
-import { InputLabel as p } from "./components/InputLabel/index.es.js";
-export {
-  p as InputLabel,
-  r as Select
-};
+import { InputLabel as e } from "./components/InputLabel/index.es.js";
+import { Select as t } from "./Select.es.js";
+export { e as InputLabel, t as Select };

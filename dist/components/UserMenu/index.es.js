@@ -1,4 +1,1 @@
-import { UserMenu as o } from "./UserMenu.es.js";
-export {
-  o as UserMenu
-};
+export { UserMenu } from "./UserMenu.es.js";

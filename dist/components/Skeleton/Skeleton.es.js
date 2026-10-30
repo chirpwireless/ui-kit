@@ -1,27 +1,28 @@
-import { jsxRuntimeExports as i } from "../../jsx-runtime-BgepH7Pb.js";
-import { keyframes as s, styled as a, Box as c } from "@mui/material";
-import { useRef as d, useEffect as g } from "react";
-import { CurrentTheme as f } from "../../styles/constants.es.js";
-import { chirpPalette as h } from "../../theme/palette.es.js";
-const m = s`
+import { CurrentTheme as e } from "../../styles/constants.es.js";
+import { chirpPalette as t } from "../../theme/palette.es.js";
+import { useEffect as n, useRef as r } from "react";
+import { Box as i, keyframes as a, styled as o } from "@mui/material";
+import { jsx as s } from "react/jsx-runtime";
+// src/components/Skeleton/Skeleton.tsx
+var c = a`
   0% {
     transform: translateX(calc(-1 * var(--diagonal-length))) rotate(-15deg);
   }
   100% {
     transform: translateX(var(--diagonal-length)) rotate(-15deg);
   }
-`, p = a(c)(({ theme: e }) => {
-  const t = h(e);
-  return {
-    position: "relative",
-    width: "100%",
-    height: "100%",
-    background: `linear-gradient(240.16deg, ${e.palette.mode === f.Dark ? t.neutral.grey1 : t.neutral.white} 0%, transparent 100%)`,
-    color: t.neutral.white,
-    overflow: "hidden",
-    "--diagonal-length": "0px"
-  };
-}), u = a("div")`
+`, l = o(i)(({ theme: n }) => {
+	let r = t(n);
+	return {
+		position: "relative",
+		width: "100%",
+		height: "100%",
+		background: `linear-gradient(240.16deg, ${n.palette.mode === e.Dark ? r.neutral.grey1 : r.neutral.white} 0%, transparent 100%)`,
+		color: r.neutral.white,
+		overflow: "hidden",
+		"--diagonal-length": "0px"
+	};
+}), u = o("div")`
     position: absolute;
     bottom: 0;
     left: 0;
@@ -30,19 +31,21 @@ const m = s`
     background-color: currentColor;
     transform-origin: bottom left;
     opacity: 0.1;
-    animation: ${m} 1s linear infinite;
+    animation: ${c} 1s linear infinite;
     filter: blur(20px);
-`, y = ({ sx: e }) => {
-  const t = d(null), r = () => {
-    if (t.current) {
-      const n = t.current.offsetWidth, o = t.current.offsetHeight, l = Math.sqrt(n * n + o * o);
-      t.current.style.setProperty("--diagonal-length", `${l}px`);
-    }
-  };
-  return g(() => (r(), window.addEventListener("resize", r), () => {
-    window.removeEventListener("resize", r);
-  }), []), /* @__PURE__ */ i.jsx(p, { ref: t, sx: e, children: /* @__PURE__ */ i.jsx(u, {}) });
+`, d = ({ sx: e }) => {
+	let t = r(null), i = () => {
+		if (t.current) {
+			let e = t.current.offsetWidth, n = t.current.offsetHeight, r = Math.sqrt(e * e + n * n);
+			t.current.style.setProperty("--diagonal-length", `${r}px`);
+		}
+	};
+	return n(() => (i(), window.addEventListener("resize", i), () => {
+		window.removeEventListener("resize", i);
+	}), []), /* @__PURE__ */ s(l, {
+		ref: t,
+		sx: e,
+		children: /* @__PURE__ */ s(u, {})
+	});
 };
-export {
-  y as Skeleton
-};
+export { d as Skeleton };

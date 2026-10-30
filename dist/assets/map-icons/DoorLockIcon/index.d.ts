@@ -1,1 +1,1 @@
-export declare const DoorLockIcon: () => import("react/jsx-runtime").JSX.Element;
+export declare const DoorLockIcon: () => import('react').JSX.Element;

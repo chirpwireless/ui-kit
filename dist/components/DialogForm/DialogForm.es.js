@@ -1,66 +1,62 @@
-import { jsxRuntimeExports as r } from "../../jsx-runtime-BgepH7Pb.js";
-import { Box as l, Stack as i, Typography as o } from "@mui/material";
-import { Button as s } from "../Button/Button.es.js";
-import { StackRowJB as h } from "../Stacks/index.es.js";
-const g = ({
-  cancelText: e,
-  children: n,
-  onCancel: m,
-  onSubmit: x,
-  isLoading: a,
-  title: d,
-  subtitle: t,
-  submitText: p,
-  maxWidth: c
-}) => /* @__PURE__ */ r.jsxs(
-  l,
-  {
-    component: "form",
-    onSubmit: x,
-    sx: {
-      minWidth: { xs: "100%", sm: "350px", md: "auto" },
-      maxWidth: c
-    },
-    children: [
-      /* @__PURE__ */ r.jsxs(
-        i,
-        {
-          sx: {
-            textAlign: "center",
-            gap: 2,
-            mb: 3
-          },
-          children: [
-            /* @__PURE__ */ r.jsx(o, { variant: "subtitle1", color: "neutral.primary", children: d }),
-            t && /* @__PURE__ */ r.jsx(o, { variant: "body1", color: "neutral.grey4", children: t })
-          ]
-        }
-      ),
-      /* @__PURE__ */ r.jsx(
-        i,
-        {
-          sx: {
-            gap: "16px",
-            mb: "24px"
-          },
-          children: n
-        }
-      ),
-      /* @__PURE__ */ r.jsxs(
-        h,
-        {
-          sx: {
-            width: "100%"
-          },
-          children: [
-            /* @__PURE__ */ r.jsx(s, { variant: "secondary", type: "button", size: "medium", onClick: m, sx: { width: "50%" }, children: e }),
-            /* @__PURE__ */ r.jsx(s, { variant: "primary", type: "submit", size: "medium", disabled: a, sx: { width: "50%" }, children: p })
-          ]
-        }
-      )
-    ]
-  }
-);
-export {
-  g as DialogForm
-};
+import { Button as e } from "../Button/Button.es.js";
+import { StackRowJB as t } from "../Stacks/index.es.js";
+import "react";
+import { Box as n, Stack as r, Typography as i } from "@mui/material";
+import { jsx as a, jsxs as o } from "react/jsx-runtime";
+// src/components/DialogForm/DialogForm.tsx
+var s = ({ cancelText: s, children: c, onCancel: l, onSubmit: u, isLoading: d, title: f, subtitle: p, submitText: m, maxWidth: h }) => /* @__PURE__ */ o(n, {
+	component: "form",
+	onSubmit: u,
+	sx: {
+		minWidth: {
+			xs: "100%",
+			sm: "350px",
+			md: "auto"
+		},
+		maxWidth: h
+	},
+	children: [
+		/* @__PURE__ */ o(r, {
+			sx: {
+				textAlign: "center",
+				gap: 2,
+				mb: 3
+			},
+			children: [/* @__PURE__ */ a(i, {
+				variant: "subtitle1",
+				color: "neutral.primary",
+				children: f
+			}), p && /* @__PURE__ */ a(i, {
+				variant: "body1",
+				color: "neutral.grey4",
+				children: p
+			})]
+		}),
+		/* @__PURE__ */ a(r, {
+			sx: {
+				gap: "16px",
+				mb: "24px"
+			},
+			children: c
+		}),
+		/* @__PURE__ */ o(t, {
+			sx: { width: "100%" },
+			children: [/* @__PURE__ */ a(e, {
+				variant: "secondary",
+				type: "button",
+				size: "medium",
+				onClick: l,
+				sx: { width: "50%" },
+				children: s
+			}), /* @__PURE__ */ a(e, {
+				variant: "primary",
+				type: "submit",
+				size: "medium",
+				disabled: d,
+				sx: { width: "50%" },
+				children: m
+			})]
+		})
+	]
+});
+export { s as DialogForm };

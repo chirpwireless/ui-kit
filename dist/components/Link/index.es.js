@@ -1,9 +1,8 @@
-import { styled as o } from "@mui/material";
+import { styled as e } from "@mui/material";
 import { Link as t } from "react-router-dom";
-const e = o(t)(() => ({
-  textDecoration: "none",
-  color: "unset"
+// src/components/Link/index.ts
+var n = e(t)(() => ({
+	textDecoration: "none",
+	color: "unset"
 }));
-export {
-  e as Link
-};
+export { n as Link };

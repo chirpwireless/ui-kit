@@ -10,4 +10,4 @@ export interface DialogFormProps {
     subtitle?: string;
     maxWidth?: string;
 }
-export declare const DialogForm: ({ cancelText, children, onCancel, onSubmit, isLoading, title, subtitle, submitText, maxWidth, }: DialogFormProps) => import("react/jsx-runtime").JSX.Element;
+export declare const DialogForm: ({ cancelText, children, onCancel, onSubmit, isLoading, title, subtitle, submitText, maxWidth, }: DialogFormProps) => React.JSX.Element;

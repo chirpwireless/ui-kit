@@ -1,15 +1,14 @@
-import { useState as o, useCallback as e } from "react";
-const u = ({ defaultOpen: a = !0, defaultCollapsed: r = !1 } = {}) => {
-  const [l, s] = o(a), [d, i] = o(r), n = e(() => s(!0), []), b = e(() => s(!1), []), c = e(() => s((t) => !t), []), S = e(() => i((t) => !t), []);
-  return {
-    isSidebarOpen: l,
-    isSidebarCollapsed: d,
-    openSidebar: n,
-    closeSidebar: b,
-    toggleSidebar: c,
-    toggleSidebarCollapsed: S
-  };
+import { useCallback as e, useState as t } from "react";
+// src/hooks/useLayout.ts
+var n = ({ defaultOpen: n = !0, defaultCollapsed: r = !1 } = {}) => {
+	let [i, a] = t(n), [o, s] = t(r);
+	return {
+		isSidebarOpen: i,
+		isSidebarCollapsed: o,
+		openSidebar: e(() => a(!0), []),
+		closeSidebar: e(() => a(!1), []),
+		toggleSidebar: e(() => a((e) => !e), []),
+		toggleSidebarCollapsed: e(() => s((e) => !e), [])
+	};
 };
-export {
-  u as useLayout
-};
+export { n as useLayout };

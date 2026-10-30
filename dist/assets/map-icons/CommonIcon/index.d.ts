@@ -1,1 +1,1 @@
-export declare const CommonIcon: () => import("react/jsx-runtime").JSX.Element;
+export declare const CommonIcon: () => import('react').JSX.Element;

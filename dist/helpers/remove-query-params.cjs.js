@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const r=e=>{new URLSearchParams().delete(e)};exports.removeQueryParam=r;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});var e=e=>{new URLSearchParams().delete(e)};exports.removeQueryParam=e;

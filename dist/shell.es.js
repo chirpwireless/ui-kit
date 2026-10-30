@@ -1,14 +1,10 @@
-import { Sidebar as o } from "./components/Sidebar/Sidebar.es.js";
-import { SidebarLogo as f } from "./components/Sidebar/SidebarLogo.es.js";
-import { SidebarToggle as i } from "./components/Sidebar/SidebarToggle.es.js";
-import { DefaultLink as p } from "./components/Sidebar/components/DefaultLink.es.js";
-import { UserMenu as d } from "./components/UserMenu/UserMenu.es.js";
-import { Header as S } from "./components/Header/Header.es.js";
-export {
-  S as Header,
-  o as Sidebar,
-  p as SidebarDefaultLink,
-  f as SidebarLogo,
-  i as SidebarToggle,
-  d as UserMenu
-};
+import { DefaultLink as e } from "./components/Sidebar/components/DefaultLink.es.js";
+import { SidebarToggle as t } from "./components/Sidebar/SidebarToggle.es.js";
+import { SidebarLogo as n } from "./components/Sidebar/SidebarLogo.es.js";
+import { Sidebar as r } from "./components/Sidebar/Sidebar.es.js";
+import "./components/Sidebar/index.es.js";
+import { UserMenu as i } from "./components/UserMenu/UserMenu.es.js";
+import "./components/UserMenu/index.es.js";
+import { Header as a } from "./components/Header/Header.es.js";
+import "./components/Header/index.es.js";
+export { a as Header, r as Sidebar, e as SidebarDefaultLink, n as SidebarLogo, t as SidebarToggle, i as UserMenu };

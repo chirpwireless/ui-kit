@@ -10,6 +10,6 @@ type Props = {
     sx?: SxProps;
     labelSx?: SxProps;
 };
-declare const Toggle: ({ name, label, checked, isLoading, disabled, onChange, sx, labelSx }: Props) => import("react/jsx-runtime").JSX.Element;
-declare const MobileToggle: ({ name, label, checked, isLoading, disabled, onChange, sx, labelSx }: Props) => import("react/jsx-runtime").JSX.Element;
+declare const Toggle: ({ name, label, checked, isLoading, disabled, onChange, sx, labelSx }: Props) => import('react').JSX.Element;
+declare const MobileToggle: ({ name, label, checked, isLoading, disabled, onChange, sx, labelSx }: Props) => import('react').JSX.Element;
 export { Toggle, MobileToggle };

@@ -10,5 +10,5 @@ export declare const Badge: import('react').ForwardRefExoticComponent<BadgeProps
 interface SimpleBadgeProps {
     text: string | ReactNode;
 }
-export declare const SimpleBadge: ({ text }: SimpleBadgeProps) => import("react/jsx-runtime").JSX.Element;
+export declare const SimpleBadge: ({ text }: SimpleBadgeProps) => import('react').JSX.Element;
 export {};

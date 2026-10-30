@@ -1,4 +1,4 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e={mixins:{linearBackground:{background:`repeating-linear-gradient(
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});var e={mixins:{linearBackground:{background:`repeating-linear-gradient(
         106deg,
         #32353833,
         #32353833 2px,

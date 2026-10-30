@@ -10,5 +10,5 @@ type Props<T extends string> = {
     counts?: Partial<Record<T, number>>;
     renderLabel?: (tab: T) => ReactNode;
 };
-export declare function Tabs<T extends string>({ items, activeTab, setActiveTab, sx, tabSx, variant, counts, renderLabel, }: Props<T>): import("react/jsx-runtime").JSX.Element;
+export declare function Tabs<T extends string>({ items, activeTab, setActiveTab, sx, tabSx, variant, counts, renderLabel, }: Props<T>): import('react').JSX.Element;
 export {};

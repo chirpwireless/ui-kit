@@ -1,7 +1,3 @@
-const t = (r) => Array.isArray(r), y = (r, o) => [
-  ...t(r) ? r : [r],
-  ...t(o) ? o : o ? [o] : []
-];
-export {
-  y as mergeSx
-};
+// src/helpers/merge-sx.ts
+var e = (e) => Array.isArray(e), t = (t, n) => [...e(t) ? t : [t], ...e(n) ? n : n ? [n] : []];
+export { t as mergeSx };

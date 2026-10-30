@@ -1,1 +1,1 @@
-"use strict";const u=require("../languages.cjs.js"),c=require("./merged-resourses.cjs.js"),o=Object.keys(u.languages).reduce((e,s)=>(Object.keys(c.mergedResources).map(r=>{e[s]={...e[s]??{},[r]:c.mergedResources[r][s]}}),e),{});module.exports=o;
+const e=require("../../merged-resourses-D-VGNgaV.cjs"),t=require("../languages.cjs.js");var n=Object.keys(t.languages).reduce((t,n)=>(Object.keys(e.mergedResources).map(r=>{t[n]={...t[n]??{},[r]:e.mergedResources[r][n]}}),t),{});module.exports=n;

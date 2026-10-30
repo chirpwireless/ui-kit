@@ -1,30 +1,26 @@
-import { jsxRuntimeExports as e } from "../../jsx-runtime-BgepH7Pb.js";
-import { Typography as p } from "@mui/material";
-import { forwardRef as t } from "react";
-import { Badge as d, SimpleBadge as m } from "./style.es.js";
-const s = t(({ index: r, text: i, sx: n, getRef: o }, a) => i ? /* @__PURE__ */ e.jsx(d, { ref: o ? o(r ?? 0) : a, sx: n, children: /* @__PURE__ */ e.jsx(
-  p,
-  {
-    noWrap: !0,
-    sx: {
-      fontSize: "12px",
-      lineHeight: "16px"
-    },
-    children: i
-  }
-) }) : null), h = ({ text: r }) => /* @__PURE__ */ e.jsx(m, { children: /* @__PURE__ */ e.jsx(
-  p,
-  {
-    noWrap: !0,
-    sx: {
-      fontSize: "12px",
-      lineHeight: "16px"
-    },
-    children: r
-  }
-) });
-s.displayName = "Badge";
-export {
-  s as Badge,
-  h as SimpleBadge
-};
+import { Badge as e, SimpleBadge as t } from "./style.es.js";
+import { forwardRef as n } from "react";
+import { Typography as r } from "@mui/material";
+import { jsx as i } from "react/jsx-runtime";
+// src/components/Badge/index.tsx
+var a = n(({ index: t, text: n, sx: a, getRef: o }, s) => n ? /* @__PURE__ */ i(e, {
+	ref: o ? o(t ?? 0) : s,
+	sx: a,
+	children: /* @__PURE__ */ i(r, {
+		noWrap: !0,
+		sx: {
+			fontSize: "12px",
+			lineHeight: "16px"
+		},
+		children: n
+	})
+}) : null), o = ({ text: e }) => /* @__PURE__ */ i(t, { children: /* @__PURE__ */ i(r, {
+	noWrap: !0,
+	sx: {
+		fontSize: "12px",
+		lineHeight: "16px"
+	},
+	children: e
+}) });
+a.displayName = "Badge";
+export { a as Badge, o as SimpleBadge };

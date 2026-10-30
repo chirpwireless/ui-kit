@@ -1,18 +1,24 @@
-import { useRef as o, useEffect as f, useCallback as s } from "react";
-const R = (r, u) => {
-  const c = o(r), n = o(null);
-  f(() => {
-    c.current = r;
-  }, [r]);
-  const t = s(() => {
-    n.current = setTimeout(() => c.current(), u);
-  }, [u]), e = s(() => {
-    n.current && clearTimeout(n.current);
-  }, []);
-  return f(() => (t(), e), [u, t, e]), { reset: s(() => {
-    e(), t();
-  }, [e, t]), clear: e };
+import { useCallback as e, useEffect as t, useRef as n } from "react";
+// src/hooks/use-timeout.tsx
+var r = (r, i) => {
+	let a = n(r), o = n(null);
+	t(() => {
+		a.current = r;
+	}, [r]);
+	let s = e(() => {
+		o.current = setTimeout(() => a.current(), i);
+	}, [i]), c = e(() => {
+		o.current && clearTimeout(o.current);
+	}, []);
+	return t(() => (s(), c), [
+		i,
+		s,
+		c
+	]), {
+		reset: e(() => {
+			c(), s();
+		}, [c, s]),
+		clear: c
+	};
 };
-export {
-  R as useTimeout
-};
+export { r as useTimeout };

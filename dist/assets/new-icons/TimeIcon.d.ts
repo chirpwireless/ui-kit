@@ -1,1 +1,1 @@
-export declare const TimeIcon: () => import("react/jsx-runtime").JSX.Element;
+export declare const TimeIcon: () => import('react').JSX.Element;

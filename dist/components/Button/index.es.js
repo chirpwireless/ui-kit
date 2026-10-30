@@ -1,4 +1,1 @@
-import { Button as r } from "./Button.es.js";
-export {
-  r as Button
-};
+export { Button } from "./Button.es.js";

@@ -1,7 +1,9 @@
-import { jsxRuntimeExports as o } from "../../jsx-runtime-BgepH7Pb.js";
+import { getTheme as e } from "./index.es.js";
 import { ThemeProvider as t } from "@mui/material";
-import { getTheme as i } from "./index.es.js";
-const x = ({ mode: e, customPalette: r, ...m }) => /* @__PURE__ */ o.jsx(t, { theme: i(e, r), ...m });
-export {
-  x as ThemeProvider
-};
+import { jsx as n } from "react/jsx-runtime";
+// src/styles/theme/theme-provider.tsx
+var r = ({ mode: r, customPalette: i, ...a }) => /* @__PURE__ */ n(t, {
+	theme: e(r, i),
+	...a
+});
+export { r as ThemeProvider };

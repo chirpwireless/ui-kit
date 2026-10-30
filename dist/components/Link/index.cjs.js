@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("@mui/material"),t=require("react-router-dom"),o=e.styled(t.Link)(()=>({textDecoration:"none",color:"unset"}));exports.Link=o;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});let e=require("@mui/material"),t=require("react-router-dom");var n=(0,e.styled)(t.Link)(()=>({textDecoration:`none`,color:`unset`}));exports.Link=n;

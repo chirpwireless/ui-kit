@@ -1,6 +1,5 @@
-import { jsxRuntimeExports as t } from "../../jsx-runtime-BgepH7Pb.js";
-import o from "@mui/material/Grid";
-const m = (r) => /* @__PURE__ */ t.jsx(o, { ...r });
-export {
-  m as ExtendedGrid
-};
+import { jsx as e } from "react/jsx-runtime";
+import t from "@mui/material/Grid";
+// src/components/ExtendedGrid/ExtendedGrid.tsx
+var n = (n) => /* @__PURE__ */ e(t, { ...n });
+export { n as ExtendedGrid };

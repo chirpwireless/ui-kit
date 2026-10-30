@@ -1,6 +1,3 @@
-import { TextField as r } from "./TextField.es.js";
-import { MaskedInput as p } from "./MaskedInput.es.js";
-export {
-  p as MaskedInput,
-  r as TextField
-};
+import { TextField as e } from "./TextField.es.js";
+import { MaskedInput as t } from "./MaskedInput.es.js";
+export { t as MaskedInput, e as TextField };

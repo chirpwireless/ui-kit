@@ -1,85 +1,65 @@
-import { jsxRuntimeExports as e } from "../../jsx-runtime-BgepH7Pb.js";
-import { Menu as m, MenuItem as h, Typography as x } from "@mui/material";
-import { useState as g, cloneElement as b } from "react";
-import { CurrentTheme as C } from "../../styles/constants.es.js";
+import { CurrentTheme as e } from "../../styles/constants.es.js";
 import { chirpPalette as t } from "../../theme/palette.es.js";
-const j = ({
-  actions: s,
-  children: i,
-  transformOrigin: c = { vertical: "top", horizontal: "left" }
-}) => {
-  const [n, l] = g(null), d = (o) => {
-    o.stopPropagation();
-    const r = o.currentTarget.getBoundingClientRect();
-    l({
-      top: r.bottom,
-      left: r.right
-    });
-    const p = i.props;
-    p.onClick && p.onClick(o);
-  }, a = () => {
-    l(null);
-  }, u = (o) => (r) => {
-    r.stopPropagation(), o.onClick(), a();
-  };
-  return /* @__PURE__ */ e.jsxs(e.Fragment, { children: [
-    b(i, {
-      onClick: d
-    }),
-    /* @__PURE__ */ e.jsx(
-      m,
-      {
-        open: !!n,
-        onClose: a,
-        anchorReference: "anchorPosition",
-        anchorPosition: n ? { top: n.top, left: n.left } : void 0,
-        transformOrigin: c,
-        slotProps: {
-          paper: {
-            sx: {
-              backgroundColor: (o) => o.palette.mode === C.Dark ? t(o).neutral.grey1 : t(o).neutral.white,
-              border: (o) => `1px solid ${t(o).borders.primary}`,
-              borderRadius: "12px",
-              boxShadow: (o) => `0 8px 24px ${t(o).shadow ?? "rgba(0, 0, 0, 0.14)"}`,
-              backdropFilter: "blur(10px)",
-              backgroundImage: "none"
-            }
-          }
-        },
-        sx: {
-          "& .MuiPaper-root": {
-            minWidth: "160px"
-          },
-          "& .MuiMenuItem-root": {
-            gap: "8px",
-            padding: "8px 16px",
-            "&:hover": {
-              backgroundColor: "action.hover"
-            }
-          }
-        },
-        children: s.map((o, r) => /* @__PURE__ */ e.jsxs(
-          h,
-          {
-            disabled: o.disabled,
-            onClick: u(o),
-            sx: {
-              color: "neutral.primary",
-              "&:hover": {
-                backgroundColor: "action.hover"
-              }
-            },
-            children: [
-              o.icon,
-              /* @__PURE__ */ e.jsx(x, { variant: "caption", color: "neutral.primary", children: o.label })
-            ]
-          },
-          r
-        ))
-      }
-    )
-  ] });
+import { cloneElement as n, useState as r } from "react";
+import { Menu as i, MenuItem as a, Typography as o } from "@mui/material";
+import { Fragment as s, jsx as c, jsxs as l } from "react/jsx-runtime";
+// src/components/ActionsMenu/ActionsMenu.tsx
+var u = ({ actions: u, children: d, transformOrigin: f = {
+	vertical: "top",
+	horizontal: "left"
+} }) => {
+	let [p, m] = r(null), h = (e) => {
+		e.stopPropagation();
+		let t = e.currentTarget.getBoundingClientRect();
+		m({
+			top: t.bottom,
+			left: t.right
+		});
+		let n = d.props;
+		n.onClick && n.onClick(e);
+	}, g = () => {
+		m(null);
+	}, _ = (e) => (t) => {
+		t.stopPropagation(), e.onClick(), g();
+	};
+	return /* @__PURE__ */ l(s, { children: [n(d, { onClick: h }), /* @__PURE__ */ c(i, {
+		open: !!p,
+		onClose: g,
+		anchorReference: "anchorPosition",
+		anchorPosition: p ? {
+			top: p.top,
+			left: p.left
+		} : void 0,
+		transformOrigin: f,
+		slotProps: { paper: { sx: {
+			backgroundColor: (n) => n.palette.mode === e.Dark ? t(n).neutral.grey1 : t(n).neutral.white,
+			border: (e) => `1px solid ${t(e).borders.primary}`,
+			borderRadius: "12px",
+			boxShadow: (e) => `0 8px 24px ${t(e).shadow ?? "rgba(0, 0, 0, 0.14)"}`,
+			backdropFilter: "blur(10px)",
+			backgroundImage: "none"
+		} } },
+		sx: {
+			"& .MuiPaper-root": { minWidth: "160px" },
+			"& .MuiMenuItem-root": {
+				gap: "8px",
+				padding: "8px 16px",
+				"&:hover": { backgroundColor: "action.hover" }
+			}
+		},
+		children: u.map((e, t) => /* @__PURE__ */ l(a, {
+			disabled: e.disabled,
+			onClick: _(e),
+			sx: {
+				color: "neutral.primary",
+				"&:hover": { backgroundColor: "action.hover" }
+			},
+			children: [e.icon, /* @__PURE__ */ c(o, {
+				variant: "caption",
+				color: "neutral.primary",
+				children: e.label
+			})]
+		}, t))
+	})] });
 };
-export {
-  j as ActionsMenu
-};
+export { u as ActionsMenu };

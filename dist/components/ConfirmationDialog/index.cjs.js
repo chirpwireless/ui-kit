@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("./ConfirmationDialog.cjs.js");exports.ConfirmationDialog=o.ConfirmationDialog;
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});const e=require("./ConfirmationDialog.cjs.js");exports.ConfirmationDialog=e.ConfirmationDialog;

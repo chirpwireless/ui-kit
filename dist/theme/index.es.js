@@ -1,29 +1,20 @@
-import { createTheme as m } from "@mui/material/styles";
-import { chirpDarkTheme as o } from "./chirp/dark.es.js";
-import { chirpLightTheme as i } from "./chirp/light.es.js";
-import { createComponents as p } from "./components.es.js";
-import { darkTheme as h } from "./dark.es.js";
-import { lightTheme as a } from "./light.es.js";
-import { themeMixins as c } from "./mixins.es.js";
-import { themeTemplate as f } from "./template.es.js";
-import { createBarTheme as L } from "./chartTheme.es.js";
-const n = (e, t) => t === "chirp" ? (e === "light" ? i : o).palette : (e === "light" ? a : h).palette, B = ({ mode: e = "light", variant: t = "default" } = {}) => {
-  const r = n(e, t);
-  return m({
-    ...f,
-    ...c,
-    palette: r,
-    components: p(r)
-  });
+import { chirpDarkTheme as e } from "./chirp/dark.es.js";
+import { chirpLightTheme as t } from "./chirp/light.es.js";
+import { createComponents as n } from "./components.es.js";
+import { darkTheme as r } from "./dark.es.js";
+import { lightTheme as i } from "./light.es.js";
+import { themeMixins as a } from "./mixins.es.js";
+import { themeTemplate as o } from "./template.es.js";
+import { createBarTheme as s } from "./chartTheme.es.js";
+import { createTheme as c } from "@mui/material/styles";
+// src/theme/index.ts
+var l = (n, a) => a === "chirp" ? (n === "light" ? t : e).palette : (n === "light" ? i : r).palette, u = ({ mode: e = "light", variant: t = "default" } = {}) => {
+	let r = l(e, t);
+	return c({
+		...o,
+		...a,
+		palette: r,
+		components: n(r)
+	});
 };
-export {
-  o as chirpDarkTheme,
-  i as chirpLightTheme,
-  L as createBarTheme,
-  p as createComponents,
-  h as darkTheme,
-  B as getTheme,
-  a as lightTheme,
-  c as themeMixins,
-  f as themeTemplate
-};
+export { e as chirpDarkTheme, t as chirpLightTheme, s as createBarTheme, n as createComponents, r as darkTheme, u as getTheme, i as lightTheme, a as themeMixins, o as themeTemplate };

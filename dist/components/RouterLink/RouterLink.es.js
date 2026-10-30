@@ -1,13 +1,13 @@
-import { jsxRuntimeExports as e } from "../../jsx-runtime-BgepH7Pb.js";
-import { styled as n } from "@mui/material";
-import { Link as i } from "react-router-dom";
-const m = n(i)(({ theme: t }) => ({
-  color: t.palette.primary.main,
-  textDecoration: "none",
-  "&:hover": {
-    textDecoration: "underline"
-  }
-})), a = ({ href: t, to: o, ...r }) => /* @__PURE__ */ e.jsx(m, { to: o || t || "", ...r });
-export {
-  a as RouterLink
-};
+import { styled as e } from "@mui/material";
+import { jsx as t } from "react/jsx-runtime";
+import { Link as n } from "react-router-dom";
+// src/components/RouterLink/RouterLink.tsx
+var r = e(n)(({ theme: e }) => ({
+	color: e.palette.primary.main,
+	textDecoration: "none",
+	"&:hover": { textDecoration: "underline" }
+})), i = ({ href: e, to: n, ...i }) => /* @__PURE__ */ t(r, {
+	to: n || e || "",
+	...i
+});
+export { i as RouterLink };

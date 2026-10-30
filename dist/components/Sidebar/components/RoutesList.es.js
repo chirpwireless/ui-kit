@@ -1,206 +1,171 @@
-import { jsxRuntimeExports as n } from "../../../jsx-runtime-BgepH7Pb.js";
-import { useCallback as T, useMemo as D } from "react";
-import { useTheme as N, Stack as i, Divider as H } from "@mui/material";
-import { DropdownIcon as B } from "../../../icons/DropdownIcon/index.es.js";
-import { ListItem as W, SidebarItemBox as w, LinkText as j, MenuParentItem as M, DropdownIconWrapper as _, ListChildItem as g } from "../style.es.js";
-const E = 20, y = 36, m = 4, p = {
-  width: E,
-  height: E,
-  alignItems: "center",
-  justifyContent: "center",
-  "& svg": { width: E, height: E }
-}, F = (e, r) => e != null && e.length ? e.reduce((c, t) => {
-  var h;
-  let l = y + m;
-  return (h = t.children) != null && h.length && r[t.name] && (l += t.children.length * (y + m)), c + l;
-}, 0) : 0, L = (e) => {
-  var r;
-  return !!((r = e.children) != null && r.length) || !e.href;
-}, d = (e, r) => !!(r && e.match && e.match.test(r)), $ = ({
-  item: e,
-  activePathname: r,
-  isSidebarCollapsed: c,
-  menuParentIsOpen: t,
-  linkComponent: l,
-  onParentClick: h,
-  onItemClick: R
-}) => {
-  var A, b;
-  const f = N(), I = T(
-    (s, x) => ({
-      transition: f.transitions.create("height", {
-        easing: f.transitions.easing.sharp,
-        duration: f.transitions.duration.enteringScreen
-      }),
-      height: s ? `${x}px` : 0,
-      overflow: "hidden"
-    }),
-    [f.transitions]
-  ), u = D(() => {
-    const s = !!t[e.name];
-    if (e.defaultExpanded)
-      return s ? { height: "auto" } : { height: 0, overflow: "hidden" };
-    const x = F(e.children, t);
-    return I(s, x);
-  }, [e.children, e.name, e.defaultExpanded, t, I]), v = (s) => (x) => {
-    var a;
-    if (s.disabled) {
-      x.preventDefault();
-      return;
-    }
-    (a = s.onClick) == null || a.call(s), R(s, x);
-  };
-  return /* @__PURE__ */ n.jsxs(n.Fragment, { children: [
-    /* @__PURE__ */ n.jsx(W, { children: /* @__PURE__ */ n.jsx(w, { isActive: d(e, r), children: !L(e) && e.href ? /* @__PURE__ */ n.jsx(
-      l,
-      {
-        href: e.href,
-        isExternal: e.isExternal,
-        isActive: d(e, r),
-        disabled: e.disabled,
-        onClick: v(e),
-        children: /* @__PURE__ */ n.jsxs(
-          i,
-          {
-            direction: "row",
-            sx: {
-              alignItems: "center"
-            },
-            children: [
-              /* @__PURE__ */ n.jsx(i, { sx: p, children: e.icon }),
-              !c && /* @__PURE__ */ n.jsx(j, { variant: "body1", children: e.name })
-            ]
-          }
-        )
-      }
-    ) : /* @__PURE__ */ n.jsxs(M, { onClick: () => h(e), children: [
-      /* @__PURE__ */ n.jsxs(i, { direction: "row", children: [
-        /* @__PURE__ */ n.jsx(i, { sx: p, children: e.icon }),
-        !c && /* @__PURE__ */ n.jsx(j, { variant: "body1", children: e.name })
-      ] }),
-      !c && /* @__PURE__ */ n.jsx(_, { isOpen: !!t[e.name], children: /* @__PURE__ */ n.jsx(B, {}) })
-    ] }) }) }),
-    /* @__PURE__ */ n.jsx(
-      i,
-      {
-        sx: [
-          {
-            justifyContent: "flex-start",
-            width: "100%"
-          },
-          ...Array.isArray(u) ? u : u ? [u] : []
-        ],
-        direction: "column",
-        children: (A = e.children) == null ? void 0 : A.map((s) => {
-          var a, k;
-          return !L(s) && s.href ? /* @__PURE__ */ n.jsxs(
-            i,
-            {
-              sx: {
-                width: "100%"
-              },
-              children: [
-                /* @__PURE__ */ n.jsx(g, { children: /* @__PURE__ */ n.jsx(w, { isActive: d(s, r), children: /* @__PURE__ */ n.jsx(
-                  l,
-                  {
-                    href: s.href,
-                    isExternal: s.isExternal,
-                    isActive: d(s, r),
-                    disabled: s.disabled,
-                    onClick: v(s),
-                    children: /* @__PURE__ */ n.jsxs(
-                      i,
-                      {
-                        direction: "row",
-                        sx: {
-                          alignItems: "center"
-                        },
-                        children: [
-                          s.icon && /* @__PURE__ */ n.jsx(i, { sx: p, children: s.icon }),
-                          !c && /* @__PURE__ */ n.jsx(j, { variant: "body1", children: s.name })
-                        ]
-                      }
-                    )
-                  }
-                ) }) }),
-                s.hasDivider ? /* @__PURE__ */ n.jsx(H, { sx: { marginTop: 1 } }) : null
-              ]
-            },
-            s.id ?? s.name
-          ) : /* @__PURE__ */ n.jsxs(
-            i,
-            {
-              sx: {
-                width: "100%"
-              },
-              children: [
-                /* @__PURE__ */ n.jsx(g, { children: /* @__PURE__ */ n.jsx(w, { children: /* @__PURE__ */ n.jsx(M, { onClick: () => h(s), sx: { paddingLeft: 0 }, children: /* @__PURE__ */ n.jsxs(
-                  i,
-                  {
-                    direction: "row",
-                    sx: {
-                      alignItems: "center",
-                      overflow: "hidden",
-                      minWidth: 0
-                    },
-                    children: [
-                      /* @__PURE__ */ n.jsx(_, { isOpen: !!t[s.name], children: /* @__PURE__ */ n.jsx(B, {}) }),
-                      !c && /* @__PURE__ */ n.jsx(j, { variant: "body1", sx: { marginLeft: 0 }, title: s.name, children: s.name })
-                    ]
-                  }
-                ) }) }) }),
-                /* @__PURE__ */ n.jsx(
-                  i,
-                  {
-                    direction: "column",
-                    sx: [
-                      {
-                        justifyContent: "flex-start",
-                        width: "100%"
-                      },
-                      I(
-                        !!t[s.name],
-                        (((a = s.children) == null ? void 0 : a.length) ?? 0) * (y + m)
-                      )
-                    ],
-                    children: (k = s.children) == null ? void 0 : k.map((o) => /* @__PURE__ */ n.jsx(g, { children: /* @__PURE__ */ n.jsx(w, { isActive: d(o, r), children: /* @__PURE__ */ n.jsx(
-                      l,
-                      {
-                        href: o.href ?? "#",
-                        isExternal: o.isExternal,
-                        isActive: d(o, r),
-                        disabled: o.disabled,
-                        onClick: v(o),
-                        children: /* @__PURE__ */ n.jsxs(
-                          i,
-                          {
-                            direction: "row",
-                            sx: {
-                              alignItems: "center",
-                              paddingLeft: "22px",
-                              overflow: "hidden",
-                              minWidth: 0
-                            },
-                            children: [
-                              o.icon && /* @__PURE__ */ n.jsx(i, { sx: p, children: o.icon }),
-                              !c && /* @__PURE__ */ n.jsx(j, { variant: "body1", title: o.name, children: o.name })
-                            ]
-                          }
-                        )
-                      }
-                    ) }) }, o.id ?? o.name))
-                  }
-                )
-              ]
-            },
-            s.id ?? s.name
-          );
-        })
-      }
-    ),
-    (b = e.appendSlot) == null ? void 0 : b.call(e, !!t[e.name])
-  ] });
+import { DropdownIconWrapper as e, LinkText as t, ListChildItem as n, ListItem as r, MenuParentItem as i, SidebarItemBox as a } from "../style.es.js";
+import { DropdownIcon as o } from "../../../icons/DropdownIcon/index.es.js";
+import { useCallback as s, useMemo as c } from "react";
+import { Divider as l, Stack as u, useTheme as d } from "@mui/material";
+import { Fragment as f, jsx as p, jsxs as m } from "react/jsx-runtime";
+// src/components/Sidebar/components/RoutesList.tsx
+var h = 20, g = {
+	width: h,
+	height: h,
+	alignItems: "center",
+	justifyContent: "center",
+	"& svg": {
+		width: h,
+		height: h
+	}
+}, _ = (e, t) => e?.length ? e.reduce((e, n) => {
+	let r = 40;
+	return n.children?.length && t[n.name] && (r += n.children.length * 40), e + r;
+}, 0) : 0, v = (e) => !!e.children?.length || !e.href, y = (e, t) => !!(t && e.match && e.match.test(t)), b = ({ item: h, activePathname: b, isSidebarCollapsed: x, menuParentIsOpen: S, linkComponent: C, onParentClick: w, onItemClick: T }) => {
+	let E = d(), D = s((e, t) => ({
+		transition: E.transitions.create("height", {
+			easing: E.transitions.easing.sharp,
+			duration: E.transitions.duration.enteringScreen
+		}),
+		height: e ? `${t}px` : 0,
+		overflow: "hidden"
+	}), [E.transitions]), O = c(() => {
+		let e = !!S[h.name];
+		if (h.defaultExpanded) return e ? { height: "auto" } : {
+			height: 0,
+			overflow: "hidden"
+		};
+		let t = _(h.children, S);
+		return D(e, t);
+	}, [
+		h.children,
+		h.name,
+		h.defaultExpanded,
+		S,
+		D
+	]), k = (e) => (t) => {
+		e.disabled ? t.preventDefault() : (e.onClick?.(), T(e, t));
+	};
+	return /* @__PURE__ */ m(f, { children: [
+		/* @__PURE__ */ p(r, { children: /* @__PURE__ */ p(a, {
+			isActive: y(h, b),
+			children: !v(h) && h.href ? /* @__PURE__ */ p(C, {
+				href: h.href,
+				isExternal: h.isExternal,
+				isActive: y(h, b),
+				disabled: h.disabled,
+				onClick: k(h),
+				children: /* @__PURE__ */ m(u, {
+					direction: "row",
+					sx: { alignItems: "center" },
+					children: [/* @__PURE__ */ p(u, {
+						sx: g,
+						children: h.icon
+					}), !x && /* @__PURE__ */ p(t, {
+						variant: "body1",
+						children: h.name
+					})]
+				})
+			}) : /* @__PURE__ */ m(i, {
+				onClick: () => w(h),
+				children: [/* @__PURE__ */ m(u, {
+					direction: "row",
+					children: [/* @__PURE__ */ p(u, {
+						sx: g,
+						children: h.icon
+					}), !x && /* @__PURE__ */ p(t, {
+						variant: "body1",
+						children: h.name
+					})]
+				}), !x && /* @__PURE__ */ p(e, {
+					isOpen: !!S[h.name],
+					children: /* @__PURE__ */ p(o, {})
+				})]
+			})
+		}) }),
+		/* @__PURE__ */ p(u, {
+			sx: [{
+				justifyContent: "flex-start",
+				width: "100%"
+			}, ...Array.isArray(O) ? O : O ? [O] : []],
+			direction: "column",
+			children: h.children?.map((r) => !v(r) && r.href ? /* @__PURE__ */ m(u, {
+				sx: { width: "100%" },
+				children: [/* @__PURE__ */ p(n, { children: /* @__PURE__ */ p(a, {
+					isActive: y(r, b),
+					children: /* @__PURE__ */ p(C, {
+						href: r.href,
+						isExternal: r.isExternal,
+						isActive: y(r, b),
+						disabled: r.disabled,
+						onClick: k(r),
+						children: /* @__PURE__ */ m(u, {
+							direction: "row",
+							sx: { alignItems: "center" },
+							children: [r.icon && /* @__PURE__ */ p(u, {
+								sx: g,
+								children: r.icon
+							}), !x && /* @__PURE__ */ p(t, {
+								variant: "body1",
+								children: r.name
+							})]
+						})
+					})
+				}) }), r.hasDivider ? /* @__PURE__ */ p(l, { sx: { marginTop: 1 } }) : null]
+			}, r.id ?? r.name) : /* @__PURE__ */ m(u, {
+				sx: { width: "100%" },
+				children: [/* @__PURE__ */ p(n, { children: /* @__PURE__ */ p(a, { children: /* @__PURE__ */ p(i, {
+					onClick: () => w(r),
+					sx: { paddingLeft: 0 },
+					children: /* @__PURE__ */ m(u, {
+						direction: "row",
+						sx: {
+							alignItems: "center",
+							overflow: "hidden",
+							minWidth: 0
+						},
+						children: [/* @__PURE__ */ p(e, {
+							isOpen: !!S[r.name],
+							children: /* @__PURE__ */ p(o, {})
+						}), !x && /* @__PURE__ */ p(t, {
+							variant: "body1",
+							sx: { marginLeft: 0 },
+							title: r.name,
+							children: r.name
+						})]
+					})
+				}) }) }), /* @__PURE__ */ p(u, {
+					direction: "column",
+					sx: [{
+						justifyContent: "flex-start",
+						width: "100%"
+					}, D(!!S[r.name], (r.children?.length ?? 0) * 40)],
+					children: r.children?.map((e) => /* @__PURE__ */ p(n, { children: /* @__PURE__ */ p(a, {
+						isActive: y(e, b),
+						children: /* @__PURE__ */ p(C, {
+							href: e.href ?? "#",
+							isExternal: e.isExternal,
+							isActive: y(e, b),
+							disabled: e.disabled,
+							onClick: k(e),
+							children: /* @__PURE__ */ m(u, {
+								direction: "row",
+								sx: {
+									alignItems: "center",
+									paddingLeft: "22px",
+									overflow: "hidden",
+									minWidth: 0
+								},
+								children: [e.icon && /* @__PURE__ */ p(u, {
+									sx: g,
+									children: e.icon
+								}), !x && /* @__PURE__ */ p(t, {
+									variant: "body1",
+									title: e.name,
+									children: e.name
+								})]
+							})
+						})
+					}) }, e.id ?? e.name))
+				})]
+			}, r.id ?? r.name))
+		}),
+		h.appendSlot?.(!!S[h.name])
+	] });
 };
-export {
-  $ as RoutesList
-};
+export { b as RoutesList };

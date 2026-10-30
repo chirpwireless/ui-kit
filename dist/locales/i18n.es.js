@@ -1,27 +1,20 @@
-import e from "i18next";
-import { default as m } from "i18next";
-import { initReactI18next as a } from "react-i18next";
-import { languages as t } from "./languages.es.js";
-import r from "./resources/index.es.js";
-const n = "language";
-e.use(a).init({
-  resources: r,
-  fallbackLng: "ru",
-  supportedLngs: Object.keys(t),
-  interpolation: {
-    escapeValue: !1
-  },
-  detection: {
-    order: ["cookie"],
-    lookupCookie: n,
-    caches: ["cookie"]
-  }
+import { languages as e } from "./languages.es.js";
+import t from "./resources/index.es.js";
+import { initReactI18next as n } from "react-i18next";
+import r from "i18next";
+// src/locales/i18n.ts
+r.use(n).init({
+	resources: t,
+	fallbackLng: "ru",
+	supportedLngs: Object.keys(e),
+	interpolation: { escapeValue: !1 },
+	detection: {
+		order: ["cookie"],
+		lookupCookie: "language",
+		caches: ["cookie"]
+	}
 });
-const p = (o) => {
-  e.changeLanguage(o);
-};
-export {
-  p as changeLanguage,
-  m as default,
-  t as languages
-};
+var i = (e) => {
+	r.changeLanguage(e);
+}, a = r;
+export { i as changeLanguage, a as default, e as languages };

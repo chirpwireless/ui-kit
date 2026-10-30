@@ -4,5 +4,5 @@ type Props<TData> = {
     enableSorting: boolean;
     sortingState: SortingState;
 };
-export declare const TableHead: <TData>({ columns, enableSorting, sortingState }: Props<TData>) => import("react/jsx-runtime").JSX.Element;
+export declare const TableHead: <TData>({ columns, enableSorting, sortingState }: Props<TData>) => import('react').JSX.Element;
 export {};
