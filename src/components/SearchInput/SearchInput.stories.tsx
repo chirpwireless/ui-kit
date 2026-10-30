@@ -17,7 +17,7 @@ export default meta;
 type Story = StoryObj<typeof SearchInput>;
 
 export const Default: Story = {
-    render: () => {
+    render: function Render() {
         const [value, setValue] = useState('');
 
         return <SearchInput value={value} onChange={setValue} />;
@@ -25,7 +25,7 @@ export const Default: Story = {
 };
 
 export const WithCustomPlaceholder: Story = {
-    render: () => {
+    render: function Render() {
         const [value, setValue] = useState('');
 
         return <SearchInput placeholder="Search by name" value={value} onChange={setValue} />;
@@ -33,7 +33,7 @@ export const WithCustomPlaceholder: Story = {
 };
 
 export const Small: Story = {
-    render: () => {
+    render: function Render() {
         const [value, setValue] = useState('');
 
         return <SearchInput size="small" placeholder="Search by name" value={value} onChange={setValue} />;

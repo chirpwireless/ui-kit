@@ -13,7 +13,7 @@
         "isolatedModules": true,
         "esModuleInterop": true,
         "noEmit": false,
-        "moduleResolution": "node", // Убедитесь, что разрешение модулей настроено корректно
+        "moduleResolution": "bundler",
         "jsx": "react-jsx",
         /* Linting */
         "strict": true,
@@ -21,10 +21,8 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
         "noImplicitAny": true,
-        "baseUrl": "./",
         "types": ["node", "@types/mapbox__mapbox-sdk", "vite/client"],
         "paths": {
-            "@mui/material/*": ["./node_modules/@mui/material/*"],
             "@chirp/ui/*": ["./src/*"]
         }
     },

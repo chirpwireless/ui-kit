@@ -17,7 +17,7 @@ export default meta;
 type Story = StoryObj<typeof Tabs>;
 
 export const Default: Story = {
-    render: () => {
+    render: function Render() {
         const [activeTab, setActiveTab] = useState('One');
 
         return <Tabs items={['One', 'Two', 'Three']} activeTab={activeTab} setActiveTab={setActiveTab} />;
@@ -25,7 +25,7 @@ export const Default: Story = {
 };
 
 export const WithCounts: Story = {
-    render: () => {
+    render: function Render() {
         const [activeTab, setActiveTab] = useState('One');
 
         return (

@@ -19,7 +19,7 @@ export default meta;
 type Story = StoryObj<typeof Autocomplete>;
 
 export const Default: Story = {
-    render: () => {
+    render: function Render() {
         const [isOpen, setIsOpen] = useState(false);
         const [inputValue, setInputValue] = useState('');
 

@@ -43,5 +43,4 @@ type AccessorFnDef<TData, TValue> = ExtendedColumnDefBase<TData, TValue> & {
 };
 
 export type ExtendedTableColumnDef<TData, TValue = unknown> =
-    | AccessorKeyDef<TData, TValue>
-    | AccessorFnDef<TData, TValue>;
+    AccessorKeyDef<TData, TValue> | AccessorFnDef<TData, TValue>;

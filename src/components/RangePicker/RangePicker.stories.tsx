@@ -26,7 +26,7 @@ const INITIAL_RANGE: Range = {
 };
 
 export const Default: Story = {
-    render: () => {
+    render: function Render() {
         const [range, setRange] = useState<Range>(INITIAL_RANGE);
 
         return (

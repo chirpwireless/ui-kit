@@ -17,7 +17,7 @@ export default meta;
 type Story = StoryObj<typeof Toggle>;
 
 export const Default: Story = {
-    render: () => {
+    render: function Render() {
         const [checkedState, setCheckedState] = useState(false);
 
         return (

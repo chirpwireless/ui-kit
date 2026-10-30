@@ -27,7 +27,7 @@ const preview: Preview = {
                     { value: 'light', icon: 'circlehollow', title: 'light' },
                     { value: 'dark', icon: 'circle', title: 'dark' },
                 ],
-                showName: true,
+                dynamicTitle: true,
             },
         },
         language: {
@@ -36,7 +36,7 @@ const preview: Preview = {
             toolbar: {
                 icon: 'globe',
                 items: ['en', 'ru', 'es', 'fr', 'de'],
-                showName: true,
+                dynamicTitle: true,
             },
         },
     },
